@@ -1,6 +1,5 @@
 {
-  "name": "daquintero",
-  "homepage": "http://daquintero.github.io",
+  "name": "voto-frontend",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
