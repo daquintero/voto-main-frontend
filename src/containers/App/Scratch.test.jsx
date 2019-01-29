@@ -1,17 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
-import Layout from './Layout';
+import Scratch from './Scratch';
 
-it('Layout renders without crashing', () => {
+it('Scratch renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<Layout />, div);
+  ReactDOM.render(<Scratch />, div);
   ReactDOM.unmountComponentAtNode(div);
 });
 
-it('Layout renders correctly without crashing', () => {
+it('Scratch renders correctly without crashing', () => {
   const tree = renderer
-    .create(<Layout />)
+    .create(<Scratch />)
     .toJSON();
   expect(tree).toMatchSnapshot();
 });

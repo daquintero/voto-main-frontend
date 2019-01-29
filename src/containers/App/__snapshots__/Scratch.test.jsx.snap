@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Layout renders correctly without crashing 1`] = `
+exports[`Scratch renders correctly without crashing 1`] = `
 <div
   className="layout"
 >
-  Hello
+  Hello adsfadsf a
 </div>
 `;

@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TopBar /> TopBar renders correctly without crashing 1`] = `
+<div>
+  <nav
+    className="navbar navbar-expand-md navbar-light bg-faded"
+  >
+    <a
+      className="navbar-brand"
+      href="/"
+    >
+      LOGO HERE
+    </a>
+    <button
+      className="mr-2 navbar-toggler"
+      onClick={[Function]}
+      type="button"
+    >
+      <span
+        className="navbar-toggler-icon"
+      />
+    </button>
+    <div
+      className="collapse navbar-collapse"
+      style={Object {}}
+    >
+      <ul
+        className="nav"
+      >
+        Will add as I go building
+      </ul>
+    </div>
+  </nav>
+</div>
+`;
