@@ -1,6 +1,14 @@
+// The fonts importing
+// TODO customize the fonts specifically for our system
+//$font-family-sans-serif: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, Arial, sans-serif !default;
+//$font-family-serif:      Georgia, "Arial", Times, serif !default;
+//$font-family-monospace:  Menlo, Monaco, Consolas, "Arial", "Courier New", monospace !default;
+//$font-family-base:       $font-family-sans-serif !default;
+
+// Overall Color Themes
 $themes: (
   light: (
-    colorBackground: white,
+    color-background: #FAFAFA,
     colorBackgroundBody: #f2f4f7,
     colorText: #646777,
     colorTextAdditional: #646777,
@@ -38,25 +46,22 @@ $themes: (
   @return map-get($theme-map, $key);
 }
 
+// Variables Colors
 $color-accent: #4ce1b6;
 $color-accent-hover: darken($color-accent, 10%);
 $color-additional: #999999;
 $color-additional-hover: darken($color-additional, 10%);
-
 $color-yellow: #f6da6e;
 $color-yellow-hover: darken($color-yellow, 10%);
-
 $color-violet: #c88ffa;
-
 $color-red: #ff4861;
 $color-red-hover: darken($color-red, 10%);
-
 $color-blue: #70bbfd;
 $color-blue-hover: darken($color-blue, 10%);
-
 $color-gray: #787985;
 
 
+// The loading icon when SVG
 .load {
   height: 100vh;
   width: 100vw;
@@ -104,3 +109,4 @@ $color-gray: #787985;
     opacity: 0;
   }
 }
+

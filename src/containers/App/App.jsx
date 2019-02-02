@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { hot } from 'react-hot-loader';
 import { BrowserRouter } from 'react-router-dom';
 // import 'bootstrap/dist/css/bootstrap.css';
-import '../../scss/app.scss';
+import '../app.scss';
 import Router from './Router';
 
 class App extends Component {

@@ -12,6 +12,7 @@ body {
 
   @include themify($themes) {
     color: themed('colorText');
+    background: themed('color-background');
   }
 }
 

@@ -1,0 +1,8 @@
+@import 'App/scss/settings/variable';  //themes' colors
+
+@import 'App/scss/base/scaffolding';         // styles of base elements
+@import 'App/scss/base/typography'; // base styles of h1-h6, p, span
+
+
+// Reusable
+@import 'Reusable/Video/scss/video';

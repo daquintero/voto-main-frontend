@@ -4,6 +4,6 @@ exports[`Scratch renders correctly without crashing 1`] = `
 <div
   className="layout"
 >
-  Hello adsfadsf a
+  sad
 </div>
 `;

@@ -9,7 +9,7 @@ exports[`<TopBar /> TopBar renders correctly without crashing 1`] = `
       className="navbar-brand"
       href="/"
     >
-      LOGO HERE
+      VotoInformado
     </a>
     <button
       className="mr-2 navbar-toggler"
@@ -25,9 +25,129 @@ exports[`<TopBar /> TopBar renders correctly without crashing 1`] = `
       style={Object {}}
     >
       <ul
-        className="nav"
+        className="navbar-nav-scroll navbar-nav"
       >
-        Will add as I go building
+        <li
+          className="nav-item"
+        >
+          <div
+            className="form-group"
+          >
+            <input
+              className="form-control"
+              id="homeSearch"
+              name="text"
+              placeholder="Investiga!"
+              type="string"
+            />
+          </div>
+        </li>
+        <li
+          className="nav-item"
+        >
+          <a
+            className="nav-link"
+            href="/home"
+            onClick={[Function]}
+          >
+            <i
+              className="fa fa-home"
+            />
+            Home
+          </a>
+        </li>
+        <li
+          className="nav-item"
+        >
+          <a
+            className="nav-link"
+            href="/mapa"
+            onClick={[Function]}
+          >
+            <i
+              className="fa fa-map"
+            />
+            Mapa
+          </a>
+        </li>
+        <li
+          className="nav-item"
+        >
+          <li
+            className="dropdown nav-item"
+            onKeyDown={[Function]}
+          >
+            <a
+              aria-expanded={false}
+              aria-haspopup={true}
+              className="dropdown-toggle nav-link"
+              href="#"
+              onClick={[Function]}
+            >
+              <i
+                className="fa fa-podium-star"
+              />
+              Candidatos
+            </a>
+            <div
+              aria-hidden={true}
+              className="dropdown-menu dropdown-menu-right"
+              role="menu"
+              tabIndex="-1"
+            >
+              <button
+                className="dropdown-item"
+                onClick={[Function]}
+                role="menuitem"
+                tabIndex="0"
+                type="button"
+              >
+                <a
+                  className="nav-link"
+                  href="/descubre-candidatos"
+                  onClick={[Function]}
+                >
+                  <i
+                    className="fa fa-eye"
+                  />
+                  Descubre Candidatos
+                </a>
+              </button>
+              <button
+                className="dropdown-item"
+                onClick={[Function]}
+                role="menuitem"
+                tabIndex="0"
+                type="button"
+              >
+                <a
+                  className="nav-link"
+                  href="/compara-candidatos"
+                  onClick={[Function]}
+                >
+                  <i
+                    className="fa fa-check-square"
+                  />
+                  Compara Candidatos
+                </a>
+              </button>
+            </div>
+          </li>
+        </li>
+        <li
+          className="nav-item"
+        >
+          <a
+            className="nav-link"
+            href="/mapa"
+            onClick={[Function]}
+          >
+            <i
+              className="fa fa-info-circle"
+            />
+            Acerca de Voto Informado
+          </a>
+        </li>
       </ul>
     </div>
   </nav>

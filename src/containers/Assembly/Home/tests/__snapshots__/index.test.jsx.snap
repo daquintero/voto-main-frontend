@@ -10,17 +10,7 @@ exports[`<Home /> HomePage renders correctly without crashing 1`] = `
     <div
       className="col"
     >
-      <div
-        className="form-group"
-      >
-        <input
-          className="form-control"
-          id="homeSearch"
-          name="text"
-          placeholder="Investiga!"
-          type="string"
-        />
-      </div>
+      gg
     </div>
   </div>
 </div>

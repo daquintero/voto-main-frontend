@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+import { Container, Row, Col } from 'reactstrap';
 import PropTypes from 'prop-types';
 
-class Whatever extends Component {
+// TODO create the pagination and grid system
+class InformativeCardGrid extends Component {
   static propTypes = {
     hi: PropTypes.string.isRequired,
   };
@@ -23,25 +25,17 @@ class Whatever extends Component {
   };
   render() {
     return (
-      <div>{this.props.hi}</div>
+      <div>
+        <Container>
+          <Row>
+            <Col>
+              {this.props.hi}
+            </Col>
+          </Row>
+        </Container>
+      </div>
     );
   }
 }
 
-export default Whatever;
-
-// ---- Common Usage Lines ----
-// import { Container, Row, Col } from 'reactstrap';
-
-
-// ---- Generic mounting test in enzyme ----
-// import React from 'react';
-// import renderer from 'react-test-renderer';
-// import TopBar from '../components/index';
-//
-// it('TopBar renders correctly without crashing', () => {
-//   const tree = renderer
-//     .create(<TopBar />)
-//     .toJSON();
-//   expect(tree).toMatchSnapshot();
-// });
+export default InformativeCardGrid;
