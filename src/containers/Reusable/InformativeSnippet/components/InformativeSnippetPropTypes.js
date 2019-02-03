@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 export const CardPropTypes = {
   position: PropTypes.string,
   info: PropTypes.shape({
-    title: PropTypes.string.isRequired,
+    title: PropTypes.string,
     images: PropTypes.arrayOf(PropTypes.shape({ // We only need one image.
       image: PropTypes.string,
     })),
@@ -20,6 +20,7 @@ export const CardPropTypes = {
 export const CardDefaultPropTypes = {
   position: 'left',
   info: {
+    title: '',
     images: [{
       image: '',
     }],

@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Card /> Card renders correctly without crashing 1`] = `
+<div
+  className="bg-white card"
+>
+  <img
+    alt="Something"
+    className="card-img"
+    src=""
+    width="100%"
+  />
+  <div
+    className="p-2 card-body"
+  >
+    <h4
+      className="card-title"
+    >
+      
+    </h4>
+    <div
+      className="d-flex justify-content-between"
+    >
+      <a
+        className="p-2 text-center justify-content-center card-link"
+        href=""
+      >
+        <i
+          aria-hidden="true"
+          className="fa p-2 fa-2x fa-"
+        />
+        <div
+          className="justify-content-between"
+        >
+          <div>
+             
+            
+             
+          </div>
+          <div>
+             
+            
+             
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+`;

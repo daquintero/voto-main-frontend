@@ -19,7 +19,7 @@ const urls = {
 const relatedCorruptionCases = (subsetNumber, parentClass, parentId) =>
   axios.get(`${urls.get.relatedCorruptionCases}${buildQueryString({
     sn: subsetNumber,
-    pc: parentClass,
+    pc: parentClass, // TODO Rename to ml Model Label
     pid: parentId,
   })}`);
 

@@ -15,7 +15,9 @@ exports[`<Card /> HomePage renders correctly without crashing 1`] = `
   >
     <h4
       className="card-title"
-    />
+    >
+      
+    </h4>
   </div>
 </div>
 `;

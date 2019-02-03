@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 // TODO Add statistics in the individual cards
 export const CardPropTypes = {
   info: PropTypes.shape({
-    title: PropTypes.string.isRequired,
+    title: PropTypes.string,
     images: PropTypes.arrayOf(PropTypes.shape({ // We only need one image.
       image: PropTypes.string,
     })),
@@ -19,6 +19,7 @@ export const CardPropTypes = {
 export const CardDefaultPropTypes = {
   position: 'left',
   info: {
+    title: '',
     images: [{
       image: '',
     }],

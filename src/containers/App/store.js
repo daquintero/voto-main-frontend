@@ -14,7 +14,7 @@ import {
 const openPage = combineReducers({
   informativeSnippet: informativeSnippetReducer,
   individual: individualReducer,
-  corruption: corruptionCaseReducer,
+  corruptionCase: corruptionCaseReducer,
   organization: organizationReducer,
   financialItem: financialItemReducer,
 });

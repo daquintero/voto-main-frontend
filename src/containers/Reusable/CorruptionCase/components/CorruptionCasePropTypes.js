@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types';
 
 export const PageProps = {
-  info: PropTypes.shape({
-    title: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
-    longDescription: PropTypes.string.isRequired,
-  }),
+  dispatch: PropTypes.func.isRequired,
+  id: PropTypes.number.isRequired,
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  longDescription: PropTypes.string.isRequired,
   videos: PropTypes.arrayOf(PropTypes.shape({
     embedUrlSrc: PropTypes.string,
   })),
@@ -62,7 +62,7 @@ export const PageProps = {
 
 export const CardPropTypes = {
   info: PropTypes.shape({
-    title: PropTypes.string.isRequired,
+    title: PropTypes.string,
     images: PropTypes.arrayOf(PropTypes.shape({ // We only need one image.
       image: PropTypes.string,
     })),
@@ -78,6 +78,7 @@ export const CardPropTypes = {
 export const CardDefaultPropTypes = {
   position: 'left',
   info: {
+    title: '',
     images: [{
       image: '',
     }],
