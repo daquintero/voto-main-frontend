@@ -21,3 +21,12 @@ deformities that implies. Limits onto grids
 per each of the cards is decided beforehand 
 by the type of card used. However, I assume
 Bootstrap does this automatically. 
+
+
+#### API Data Validation
+Note that data is passed as pure
+functions into each of the 
+components, so data validation
+has to be done on the first point
+of arrival of API data so that 
+the system works correctly.

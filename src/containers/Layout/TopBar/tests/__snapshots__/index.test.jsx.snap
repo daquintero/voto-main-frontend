@@ -9,7 +9,9 @@ exports[`<TopBar /> TopBar renders correctly without crashing 1`] = `
       className="navbar-brand"
       href="/"
     >
-      VotoInformado
+      <h1>
+        VotoInformado
+      </h1>
     </a>
     <button
       className="mr-2 navbar-toggler"
@@ -25,13 +27,13 @@ exports[`<TopBar /> TopBar renders correctly without crashing 1`] = `
       style={Object {}}
     >
       <ul
-        className="navbar-nav-scroll navbar-nav"
+        className="navbar-nav-scroll justify-content-center p-1 navbar-nav"
       >
         <li
           className="nav-item"
         >
           <div
-            className="form-group"
+            className="p-2 m-0 form-group"
           >
             <input
               className="form-control"
@@ -51,7 +53,7 @@ exports[`<TopBar /> TopBar renders correctly without crashing 1`] = `
             onClick={[Function]}
           >
             <i
-              className="fa fa-home"
+              className="fa fa-home p-2"
             />
             Home
           </a>
@@ -65,7 +67,7 @@ exports[`<TopBar /> TopBar renders correctly without crashing 1`] = `
             onClick={[Function]}
           >
             <i
-              className="fa fa-map"
+              className="fa fa-map p-2"
             />
             Mapa
           </a>
@@ -85,7 +87,7 @@ exports[`<TopBar /> TopBar renders correctly without crashing 1`] = `
               onClick={[Function]}
             >
               <i
-                className="fa fa-podium-star"
+                className="fa fa-podium-star p-2"
               />
               Candidatos
             </a>
@@ -108,7 +110,7 @@ exports[`<TopBar /> TopBar renders correctly without crashing 1`] = `
                   onClick={[Function]}
                 >
                   <i
-                    className="fa fa-eye"
+                    className="fa fa-eye p-2"
                   />
                   Descubre Candidatos
                 </a>
@@ -126,7 +128,7 @@ exports[`<TopBar /> TopBar renders correctly without crashing 1`] = `
                   onClick={[Function]}
                 >
                   <i
-                    className="fa fa-check-square"
+                    className="fa fa-check-square p-2"
                   />
                   Compara Candidatos
                 </a>
@@ -143,7 +145,7 @@ exports[`<TopBar /> TopBar renders correctly without crashing 1`] = `
             onClick={[Function]}
           >
             <i
-              className="fa fa-info-circle"
+              className="fa fa-info-circle p-2"
             />
             Acerca de Voto Informado
           </a>

@@ -1,52 +1,50 @@
 // Generic InformativeSnippet Card
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Card, CardImg, CardText, CardBody,
-  CardTitle, CardLink } from 'reactstrap';
+import React, { PureComponent } from 'react';
+import { Card, CardBody, CardLink, CardImg, Row, Col } from 'reactstrap';
+import moment from 'moment'; // Date conversion
+import 'moment/locale/es'; // Date language
+import { CardPropTypes, CardDefaultPropTypes } from './InformativeSnippetPropTypes';
 
-// Using the position to organize images in the card
-const InformativeSnippetCard = (info, position) => (
-  <div>
-    <Card>
-      <CardImg
-        {...position}
-        width="100%"
-        src={info.image}
-        alt="Card image cap"
-      />
-      <CardBody>
-        <CardTitle>{info.title}</CardTitle>
-        <CardText>
-          {info.date}
-        </CardText>
-        <CardLink className="text-left">
-          <i className="fa fa-link" aria-hidden="true">
-            {info.link}
-          </i>
-        </CardLink>
-      </CardBody>
-    </Card>
-  </div>
-);
+// Configure moment settings
+moment.locale('es');
 
-InformativeSnippetCard.propTypes = {
-  position: PropTypes.string,
-  info: PropTypes.shape({
-    title: PropTypes.string.isRequired,
-    image: PropTypes.string.isRequired,
-    link: PropTypes.string.isRequired,
-    date: PropTypes.instanceOf(Date).isRequired,
-  }),
-};
-
-InformativeSnippetCard.defaultProps = {
-  position: 'left',
-  info: {
-    title: '',
-    image: '',
-    link: '',
-    date: new Date(),
-  },
-};
+class InformativeSnippetCard extends PureComponent {
+  static propTypes = CardPropTypes;
+  static defaultProps = CardDefaultPropTypes;
+  render() {
+    const { info } = this.props;
+    return (
+      <Card className="bg-white">
+        <Row noGutters>
+          <Col xs={4} sm={6}>
+            <CardImg
+              width="100%"
+              src={info.images[0].image}
+              alt="Something"
+            />
+          </Col>
+          <Col xs={8} sm={6}>
+            <CardBody className="p-2">
+              <h4 className="card-title">{info.title}</h4>
+              <div className="d-flex justify-content-between">
+                <CardLink className="p-2 text-center justify-content-center" href={info.statistics[0].link} >
+                  <i className={`fa p-2 fa-2x fa-${info.statistics[0].icon}`} aria-hidden="true" />
+                  <div className="justify-content-between">
+                    <div> {info.statistics[0].data} </div>
+                    <div> {info.statistics[0].title} </div>
+                  </div>
+                </CardLink>
+                <div className="p-2 mt-0 text-center">
+                  <i className="fa p-2 fa-calendar fa-2x" />
+                  <p> Publicado { moment(info.date).fromNow() } </p>
+                </div>
+              </div>
+            </CardBody>
+          </Col>
+        </Row>
+      </Card>
+    );
+  }
+}
 
 export default InformativeSnippetCard;

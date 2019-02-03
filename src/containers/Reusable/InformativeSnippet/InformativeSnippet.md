@@ -22,3 +22,7 @@ of `InformationalSnippet`
 model data, whilst it can handle
 pagination in the `CardGrid`
 component by itself. 
+
+
+Note that thge `date` are the
+submission dates.

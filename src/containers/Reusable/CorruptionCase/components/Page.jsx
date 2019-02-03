@@ -1,6 +1,6 @@
 // Full Page for the Corruption Page Component
 import React, { Component } from 'react';
-import { PageProps } from './PropTypes';
+import { PageProps } from './CorruptionCasePropTypes';
 
 class Page extends Component {
   static propTypes = PageProps;

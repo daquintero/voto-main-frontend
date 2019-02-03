@@ -41,7 +41,7 @@ class TopBar extends Component {
         <Navbar color="faded" light expand="md">
           {/* Main Info and Functions for Dropdown NavBar */}
           <NavbarBrand href="/">
-            VotoInformado
+            <h1>VotoInformado</h1>
           </NavbarBrand>
           <NavbarToggler
             onClick={this.toggleNavbar}
@@ -50,10 +50,10 @@ class TopBar extends Component {
           {/* Dropdown Links - can be taken
           into new file later if it expands */}
           <Collapse isOpen={!this.state.collapsed} navbar>
-            <Nav className="navbar-nav-scroll" navbar>
+            <Nav className="navbar-nav-scroll justify-content-center p-1" navbar>
               {/* Search at the top, container needed for resizing */}
               <NavItem>
-                <FormGroup>
+                <FormGroup className="p-2 m-0">
                   <Input
                     type="string"
                     name="text"
@@ -64,15 +64,15 @@ class TopBar extends Component {
               </NavItem>
               {/* Home Page */}
               <NavItem>
-                <NavLink href="/home" >
-                  <i className="fa fa-home" />
+                <NavLink href="/home">
+                  <i className="fa fa-home p-2" />
                   Home
                 </NavLink>
               </NavItem>
               {/* Mapa */}
               <NavItem>
                 <NavLink href="/mapa" >
-                  <i className="fa fa-map" />
+                  <i className="fa fa-map p-2" />
                   Mapa
                 </NavLink>
               </NavItem>
@@ -80,19 +80,19 @@ class TopBar extends Component {
               <NavItem>
                 <UncontrolledDropdown nav inNavbar>
                   <DropdownToggle nav caret>
-                    <i className="fa fa-podium-star" />
+                    <i className="fa fa-podium-star p-2" />
                     Candidatos
                   </DropdownToggle>
                   <DropdownMenu right>
                     <DropdownItem>
                       <NavLink href="/descubre-candidatos" >
-                        <i className="fa fa-eye" />
+                        <i className="fa fa-eye p-2" />
                         Descubre Candidatos
                       </NavLink>
                     </DropdownItem>
                     <DropdownItem>
                       <NavLink href="/compara-candidatos" >
-                        <i className="fa fa-check-square" />
+                        <i className="fa fa-check-square p-2" />
                         Compara Candidatos
                       </NavLink>
                     </DropdownItem>
@@ -102,7 +102,7 @@ class TopBar extends Component {
               {/* About Us */}
               <NavItem>
                 <NavLink href="/mapa" >
-                  <i className="fa fa-info-circle" />
+                  <i className="fa fa-info-circle p-2" />
                   Acerca de Voto Informado
                 </NavLink>
               </NavItem>

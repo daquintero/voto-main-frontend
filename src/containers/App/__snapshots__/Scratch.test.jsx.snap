@@ -4,6 +4,51 @@ exports[`Scratch renders correctly without crashing 1`] = `
 <div
   className="layout"
 >
-  sad
+  <div
+    className="bg-white card"
+  >
+    <img
+      alt="Something"
+      className="card-img"
+      src="jjj"
+      width="100%"
+    />
+    <div
+      className="p-2 card-body"
+    >
+      <h4
+        className="card-title"
+      >
+        Whatsup asdn amsda jasd nas dn asnd 
+      </h4>
+      <div
+        className="d-flex justify-content-between"
+      >
+        <a
+          className="p-2 text-center justify-content-center card-link"
+          href="jjj"
+        >
+          <i
+            aria-hidden="true"
+            className="fa p-2 fa-2x fa-user"
+          />
+          <div
+            className="justify-content-between"
+          >
+            <div>
+               
+              jjj
+               
+            </div>
+            <div>
+               
+              informacion
+               
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
 </div>
 `;

@@ -1,7 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Card /> HomePage renders correctly without crashing 1`] = `
-<div>
-  asdf
+<div
+  className="bg-white card"
+>
+  <img
+    alt="Something"
+    className="card-img"
+    src=""
+    width="100%"
+  />
+  <div
+    className="p-2 card-body"
+  >
+    <h4
+      className="card-title"
+    />
+  </div>
 </div>
 `;

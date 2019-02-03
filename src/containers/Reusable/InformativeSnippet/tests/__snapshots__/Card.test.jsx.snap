@@ -1,32 +1,71 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Card /> HomePage renders correctly without crashing 1`] = `
-<div>
+<div
+  className="bg-white card"
+>
   <div
-    className="card"
+    className="no-gutters row"
   >
-    <img
-      alt="Card image cap"
-      className="card-img"
-      width="100%"
-    />
     <div
-      className="card-body"
+      className="col-4 col-sm-6"
+    >
+      <img
+        alt="Something"
+        className="card-img"
+        src=""
+        width="100%"
+      />
+    </div>
+    <div
+      className="col-8 col-sm-6"
     >
       <div
-        className="card-title"
-      />
-      <p
-        className="card-text"
-      />
-      <a
-        className="text-left card-link"
+        className="p-2 card-body"
       >
-        <i
-          aria-hidden="true"
-          className="fa fa-link"
+        <h4
+          className="card-title"
         />
-      </a>
+        <div
+          className="d-flex justify-content-between"
+        >
+          <a
+            className="p-2 text-center justify-content-center card-link"
+            href=""
+          >
+            <i
+              aria-hidden="true"
+              className="fa p-2 fa-2x fa-"
+            />
+            <div
+              className="justify-content-between"
+            >
+              <div>
+                 
+                
+                 
+              </div>
+              <div>
+                 
+                
+                 
+              </div>
+            </div>
+          </a>
+          <div
+            className="p-2 mt-0 text-center"
+          >
+            <i
+              className="fa p-2 fa-calendar fa-2x"
+            />
+            <p>
+               Publicado 
+              hace unos segundos
+               
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

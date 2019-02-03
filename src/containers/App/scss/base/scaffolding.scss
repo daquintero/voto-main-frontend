@@ -1,12 +1,22 @@
+html {
+  @include themify($themes) {
+    background: themed('color-background');
+  }
+}
+
 main {
   padding: 0;
+
+  @include themify($themes) {
+    background: themed('color-background');
+  }
 }
 
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: SansSerif;
+  font-family: 'Helvetica', sans-serif;
   font-size: 13px;
   line-height: 1.6;
 
