@@ -1,11 +1,15 @@
-import { GET_RECENT_INFORMATIVE_SNIPPETS } from './actionCreators';
-import { initializeActions, actionResult } from '../../../App/redux-utils';
+import {
+  GET_RECENT_INFORMATIVE_SNIPPETS,
+  GET_RELATED_INFORMATIVE_SNIPPETS,
+} from './actionCreators';
+import { initializeActions, actionResult } from '../../../App/utils';
 
 // Initial State for snippets
 const initialState = {
   recentInformativeSnippets: {},
   actions: initializeActions([
     'GET_RECENT_INFORMATIVE_SNIPPETS',
+    'GET_RELATED_INFORMATIVE_SNIPPETS',
   ]),
 };
 
@@ -19,24 +23,50 @@ export default function (state = initialState, action) {
           ...actionResult('GET_RECENT_INFORMATIVE_SNIPPETS.REQUEST'),
         },
       };
-    case GET_RECENT_INFORMATIVE_SNIPPETS.SUCCESS: {
+    case GET_RECENT_INFORMATIVE_SNIPPETS.SUCCESS:
       return {
         ...state,
         recentInformativeSnippets:
-          [...state.informativeSnippets.recentInformativeSnippets, action.recentInformativeSnippets],
+          [...state.openPage.informativeSnippet.recentInformativeSnippets, action.recentInformativeSnippets],
         subsetNumber: action.subsetNumber,
         actions: {
           ...state.actions,
           ...actionResult('GET_RECENT_INFORMATIVE_SNIPPETS.SUCCESS'),
         },
       };
-    }
     case GET_RECENT_INFORMATIVE_SNIPPETS.ERROR:
       return {
         ...state,
         actions: {
           ...state.actions,
-          ...actionResult('GET_RECENT_INFORMATIVE_SNIPPETS', { error: action.error }),
+          ...actionResult('GET_RECENT_INFORMATIVE_SNIPPETS.ERROR', { error: action.error }),
+        },
+      };
+    case GET_RELATED_INFORMATIVE_SNIPPETS.REQUEST:
+      return {
+        ...state,
+        actions: {
+          ...state.actions,
+          ...actionResult('GET_RELATED_INFORMATIVE_SNIPPETS.REQUEST'),
+        },
+      };
+    case GET_RELATED_INFORMATIVE_SNIPPETS.SUCCESS:
+      return {
+        ...state,
+        relatedInformativeSnippets:
+          [...state.openPage.informativeSnippet.relatedInformativeSnippets, action.relatedInformativeSnippets],
+        subsetNumber: action.subsetNumber,
+        actions: {
+          ...state.actions,
+          ...actionResult('GET_RELATED_INFORMATIVE_SNIPPETS.SUCCESS'),
+        },
+      };
+    case GET_RELATED_INFORMATIVE_SNIPPETS.ERROR:
+      return {
+        ...state,
+        actions: {
+          ...state.actions,
+          ...actionResult('GET_RELATED_INFORMATIVE_SNIPPETS.ERROR', { error: action.error }),
         },
       };
     default:

@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { buildQueryString } from '../../App/utils';
 
 // Local url for the views
 const baseUrl = process.env.REACT_APP_BASE_URL;
@@ -7,6 +8,7 @@ const snippetApiUrl = `${baseUrl}/snippet/api/v1`;
 const urls = {
   get: {
     recentInformativeSnippets: `${snippetApiUrl}/get_recent_informative_snippets/`,
+    relatedInformativeSnippets: `${snippetApiUrl}/get_related_informative_snippets/`,
   },
   post: {
   },
@@ -15,12 +17,22 @@ const urls = {
 };
 
 // Snippets GET Requests
-const recentInformativeSnippets = () => axios.get(urls.get.recentInformativeSnippets);
+const recentInformativeSnippets = subsetNumber =>
+  axios.get(`${urls.get.recentInformativeSnippets}${buildQueryString({
+    sn: subsetNumber,
+  })}`);
+const relatedInformativeSnippets = (subsetNumber, parentClass, parentId) =>
+  axios.get(`${urls.get.relatedInformativeSnippets}${buildQueryString({
+    sn: subsetNumber,
+    pc: parentClass,
+    pid: parentId,
+  })}`);
 
 // Exported Services
 const snippetService = {
   get: {
     recentInformativeSnippets,
+    relatedInformativeSnippets,
   },
   post: {},
   delete: {},

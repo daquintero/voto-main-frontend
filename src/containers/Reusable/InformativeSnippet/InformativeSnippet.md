@@ -26,3 +26,10 @@ component by itself.
 
 Note that thge `date` are the
 submission dates.
+
+
+## Redux Actions
+Related Informative Snippets takes
+in the parent container and label
+and returns the requried informative
+snippets.

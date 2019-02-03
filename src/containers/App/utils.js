@@ -1,3 +1,4 @@
+// ------- REDUX UTILS -------
 const actionResult = (action, { id = undefined, error = null } = {}) => {
   const [actionName, actionState] = id ? [id, action.split('.')[1]] : action.split('.');
   switch (actionState) {
@@ -24,7 +25,23 @@ const initializeActions = (actions) => {
   return actionsObj;
 };
 
+
+// ------ API SERVICE -------
+const buildQueryString = (params) => {
+  const esc = encodeURIComponent;
+  return `?${Object.keys(params)
+    .map(k => `${esc(k)}=${esc(params[k])}`)
+    .join('&')}`;
+};
+// params = { al: 'Hello', mn: 'Hi' }
+
+// const buildUrl = (appLabel, modelName, id) =>
+// `/workshop/editor/${this.buildQueryString({ al: appLabel, mn: modelName, id })}`;
+
+
+// ---------  EXPORTS  -------------
 export {
   initializeActions,
   actionResult,
+  buildQueryString,
 };

@@ -5,10 +5,22 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 // Reusable Reducer Functions
 import {
   informativeSnippetReducer,
+  individualReducer,
+  corruptionCaseReducer,
+  organizationReducer,
+  financialItemReducer,
 } from '../Reusable/reusable-redux-index';
 
+const openPage = combineReducers({
+  informativeSnippet: informativeSnippetReducer,
+  individual: individualReducer,
+  corruption: corruptionCaseReducer,
+  organization: organizationReducer,
+  financialItem: financialItemReducer,
+});
+
 const reducer = combineReducers({
-  informativeSnippets: informativeSnippetReducer,
+  openPage,
 });
 
 const store = createStore(
