@@ -73,3 +73,19 @@ the data that is sent. For example, any
 will receive certain necessary types of data. 
 
 The repository of these Dynamic Data Models is organized as
+
+### Redux Architecture
+
+The app is divided into several components, and each of these components
+has its own redux folder containing the action creators, actions and 
+reducers for each of the specific models. All of the reducers are
+united in the `<section>-redux-index.js` file and then combined in the 
+`store.js` that imports them. `redux-utils` in the main `App` directory
+holds the async functions used by several components actions and 
+reducers in their specific sections. 
+
+The reducer architecture follows
+the patterns developed in EasyDev
+and in general redux adoption in
+terms of naming and positioning the
+store and state.
