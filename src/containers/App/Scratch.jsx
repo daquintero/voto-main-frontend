@@ -15,7 +15,49 @@ const info = [{
   statistics: [{
     link: 'jjj',
     title: 'informacion',
-    data: 'jjj',
+    data: '10',
+    icon: 'user',
+  },
+  {
+    link: 'jjj',
+    title: 'informacion',
+    data: '10',
+    icon: 'user',
+  },
+  ],
+}, {
+  title: 'Whatsup asdn amsda jasd nas dn asnd ',
+  date: new Date(),
+  images: [{
+    image: imageTest,
+  }],
+  statistics: [{
+    link: 'jjj',
+    title: 'informacion',
+    data: '10',
+    icon: 'user',
+  }],
+},
+{
+  title: 'Whatsup asdn amsda jasd nas dn asnd ',
+  date: new Date(),
+  statistics: [{
+    link: 'jjj',
+    title: 'informacion',
+    data: '10',
+    icon: 'user',
+  }],
+},
+{
+  title: 'Whatsup asdn amsda jasd nas dn asnd ',
+  date: new Date(),
+  images: [{
+    image: imageTest,
+  }],
+  statistics: [{
+    link: 'jjj',
+    title: 'informacion',
+    data: '10',
     icon: 'user',
   }],
 }];

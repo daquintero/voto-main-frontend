@@ -44,3 +44,7 @@ approaches. Basically, it
 controls the layout approach in an a 
 imperative functional approach from 
 props. 
+
+Note that a responsive approach is taken so
+if no images are available these become,
+`NoImgCard`.

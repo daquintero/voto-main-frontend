@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import { Container, Row, Col } from 'reactstrap';
-import Card from './Card';
+import InformativeSnippetCard from './Card';
 import { CardGridDefaultPropTypes, CardGridPropTypes } from './InformativeSnippetPropTypes';
 
 /* Imperative PureFunction Grid Approach  */
@@ -13,8 +13,16 @@ class InformativeCardGrid extends PureComponent {
       <div>
         <Container className="p-0">
           <Row noGutters>
-            <Col xs={12} md={6} xl={4}>
-              <Card info={info[0]} />
+
+            {/* Controlled widths by the frontend design */}
+            <Col xs={12} md={6} >
+              <Row noGutters>
+                {info.map(obj => (
+                  <Col xs={6} className="p-2">
+                    <InformativeSnippetCard objIn={obj} />
+                  </Col>
+                ))}
+              </Row>
             </Col>
           </Row>
         </Container>

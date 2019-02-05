@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 
 // ---------- CARD PROPS -----------------------
 export const CardPropTypes = {
-  info: PropTypes.shape({
+  objIn: PropTypes.shape({
     title: PropTypes.string,
     // We only need one image.
     images: PropTypes.arrayOf(PropTypes.shape({
@@ -21,8 +21,7 @@ export const CardPropTypes = {
 };
 
 export const CardDefaultPropTypes = {
-  position: 'left',
-  info: {
+  objIn: {
     title: '',
     images: [{
       image: '',

@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 // Prop Types
-import { PageProps, defaultPageProps } from './CorruptionCasePropTypes';
+import { PageProps, DefaultPageProps } from './CorruptionCasePropTypes';
 // Redux Actions
 import { getRelatedCorruptionCases } from '../redux/actions';
 import { getRelatedIndividuals } from '../../Individual/redux/actions';
@@ -12,7 +12,7 @@ import { getRelatedOrganizations } from '../../Organization/redux/actions';
 
 class Page extends Component {
   static propTypes = PageProps;
-  static defaultProps = defaultPageProps; // TODO Define defaults
+  static defaultProps = DefaultPageProps; // TODO Define defaults
   constructor(props) {
     super(props);
     this.state = {

@@ -8,7 +8,7 @@ exports[`<Card /> HomePage renders correctly without crashing 1`] = `
     className="no-gutters row"
   >
     <div
-      className="col-4 col-sm-6"
+      className="col-4 col-sm-5"
     >
       <img
         alt="Something"
@@ -17,7 +17,7 @@ exports[`<Card /> HomePage renders correctly without crashing 1`] = `
       />
     </div>
     <div
-      className="col-8 col-sm-6"
+      className="col-8 col-sm-7"
     >
       <div
         className="p-2 card-body"
@@ -45,8 +45,7 @@ exports[`<Card /> HomePage renders correctly without crashing 1`] = `
                 className="small"
               >
                  
-                
-                 
+                0
               </p>
               <p
                 className="small m-0"

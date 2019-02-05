@@ -4,46 +4,74 @@ exports[`<MainCard /> renders correctly without crashing 1`] = `
 <div
   className="bg-white card"
 >
-  <img
-    alt="Something"
-    className="card-img"
-    src=""
-    width="100%"
-  />
   <div
-    className="p-2 card-body"
+    className="no-gutters row"
   >
-    <h4
-      className="card-title"
-    >
-      
-    </h4>
     <div
-      className="d-flex justify-content-between"
+      className="col-12"
     >
-      <a
-        className="p-2 text-center justify-content-center card-link"
-        href=""
+      <img
+        alt="Something"
+        className="img-cover"
+        src=""
+      />
+    </div>
+    <div
+      className="col-12"
+    >
+      <div
+        className="p-2 card-body"
       >
-        <i
-          aria-hidden="true"
-          className="fal p-2 fa-2x fa-"
-        />
-        <div
-          className="justify-content-between"
+        <h4
+          className="card-title mb-0"
         >
-          <div>
-             
-            
-             
-          </div>
-          <div>
-             
-            
-             
+          
+        </h4>
+        <div
+          className="d-flex justify-content-between"
+        >
+          <a
+            className="p-2 text-center justify-content-center card-link"
+            href=""
+          >
+            <i
+              aria-hidden="true"
+              className="fal p-2 fa-"
+            />
+            <div
+              className="justify-content-between"
+            >
+              <p
+                className="small"
+              >
+                 
+                0
+              </p>
+              <p
+                className="small m-0"
+              >
+                 
+                
+                 
+              </p>
+            </div>
+          </a>
+          <div
+            className="p-2 mt-0 text-center"
+          >
+            <i
+              className="fal p-2 fa-calendar"
+            />
+            <p
+              className="small m-0"
+            >
+               Publicado 
+              hace unos segundos
+               
+            </p>
           </div>
         </div>
-      </a>
+      </div>
     </div>
   </div>
 </div>

@@ -100,3 +100,7 @@ the patterns developed in EasyDev
 and in general redux adoption in
 terms of naming and positioning the
 store and state.
+
+### SCSS
+ Note that within the App directory the main stylings
+ for the main typography and scaffoling are there.

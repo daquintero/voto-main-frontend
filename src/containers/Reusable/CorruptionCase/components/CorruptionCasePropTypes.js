@@ -60,6 +60,10 @@ export const PageProps = {
   })),
 };
 
+// TODO Define Page Default Props
+
+export const DefaultPageProps = {};
+
 export const CardPropTypes = {
   info: PropTypes.shape({
     title: PropTypes.string,
