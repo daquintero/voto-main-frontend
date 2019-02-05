@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Card /> Card renders correctly without crashing 1`] = `
+exports[`<MainCard /> renders correctly without crashing 1`] = `
 <div
   className="bg-white card"
 >

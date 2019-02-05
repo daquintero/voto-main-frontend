@@ -72,7 +72,18 @@ the data that is sent. For example, any
 `InformativeSnippet` or `Individual` card components
 will receive certain necessary types of data. 
 
-The repository of these Dynamic Data Models is organized as
+The way the validation works for each of these types of 
+data so that the the site can handle when certain types
+of data may be missing is designed in a top-down approach.
+This means that data validation must be done at the higher
+levels, i.e. the closest ones that recieve the data from
+the API and Redux. For example, data arrives in the forms of arrays 
+of objects, so that upon arrival the higher-level file
+must check if the required data is available before 
+rendering the nested components that use that data. 
+Another example is that a `CardGrid` checks whether there
+are two or more objects in the array before passing them
+into the `map` function that generates the cards.
 
 ### Redux Architecture
 

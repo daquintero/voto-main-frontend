@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
-import Scratch from './Scratch';
+import Scratch from '../Scratch';
 
 it('Scratch renders without crashing', () => {
   const div = document.createElement('div');

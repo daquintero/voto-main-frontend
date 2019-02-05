@@ -1,35 +1,20 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { Container, Row, Col } from 'reactstrap';
-import PropTypes from 'prop-types';
+import Card from './Card';
+import { CardGridDefaultPropTypes, CardGridPropTypes } from './InformativeSnippetPropTypes';
 
-// TODO create the pagination and grid system
-class InformativeCardGrid extends Component {
-  static propTypes = {
-    hi: PropTypes.string.isRequired,
-  };
-  constructor(props) {
-    super(props);
-    this.state = {
-      test: false,
-    };
-  }
-  onClick = () => {
-    this.setState(prevState => ({ test: !prevState.test }));
-  };
-  toggleMoreInfo = (type) => {
-    if (type === this.state.active) {
-      this.setState({ active: '' });
-    } else {
-      this.setState({ active: type });
-    }
-  };
+/* Imperative PureFunction Grid Approach  */
+class InformativeCardGrid extends PureComponent {
+  static propTypes = CardGridPropTypes;
+  static defaultProps = CardGridDefaultPropTypes;
   render() {
+    const { info } = this.props;
     return (
       <div>
-        <Container>
-          <Row>
-            <Col>
-              {this.props.hi}
+        <Container className="p-0">
+          <Row noGutters>
+            <Col xs={12} md={6} xl={4}>
+              <Card info={info[0]} />
             </Col>
           </Row>
         </Container>

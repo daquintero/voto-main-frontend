@@ -11,10 +11,10 @@ class Whatever extends Component {
       test: false,
     };
   }
-  onClick = () => {
+  onClick = () => { // TODO REMOVE IF NOT NEEDED
     this.setState(prevState => ({ test: !prevState.test }));
   };
-  toggleMoreInfo = (type) => {
+  toggleMoreInfo = (type) => { // TODO REMOVE IF NOT NEEDED
     if (type === this.state.active) {
       this.setState({ active: '' });
     } else {

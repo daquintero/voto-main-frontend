@@ -1,14 +1,17 @@
 import PropTypes from 'prop-types';
 
+// ---------- CARD PROPS -----------------------
 export const CardPropTypes = {
-  position: PropTypes.string,
   info: PropTypes.shape({
     title: PropTypes.string,
-    images: PropTypes.arrayOf(PropTypes.shape({ // We only need one image.
+    // We only need one image.
+    images: PropTypes.arrayOf(PropTypes.shape({
       image: PropTypes.string,
     })),
-    date: PropTypes.instanceOf(Date).isRequired, // Note that this is the submission date
-    statistics: PropTypes.arrayOf(PropTypes.shape({ // We only need one statistic
+    // Note that this is the submission date
+    date: PropTypes.instanceOf(Date),
+    // We only need one statistic for ISCard
+    statistics: PropTypes.arrayOf(PropTypes.shape({
       link: PropTypes.string,
       title: PropTypes.string,
       data: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
@@ -24,6 +27,7 @@ export const CardDefaultPropTypes = {
     images: [{
       image: '',
     }],
+    date: new Date(),
     statistics: [{
       link: '',
       title: '',
@@ -32,3 +36,13 @@ export const CardDefaultPropTypes = {
     }],
   },
 };
+
+
+// ---------------- CARD GRID PROPS -----------------
+
+export const CardGridPropTypes = {
+  info: PropTypes.arrayOf(CardPropTypes),
+};
+
+export const CardGridDefaultPropTypes = [
+  CardDefaultPropTypes, CardDefaultPropTypes, CardDefaultPropTypes];

@@ -12,9 +12,8 @@ exports[`<Card /> HomePage renders correctly without crashing 1`] = `
     >
       <img
         alt="Something"
-        className="card-img"
+        className="img-cover"
         src=""
-        width="100%"
       />
     </div>
     <div
@@ -24,7 +23,7 @@ exports[`<Card /> HomePage renders correctly without crashing 1`] = `
         className="p-2 card-body"
       >
         <h4
-          className="card-title"
+          className="card-title mb-0"
         >
           
         </h4>
@@ -37,30 +36,36 @@ exports[`<Card /> HomePage renders correctly without crashing 1`] = `
           >
             <i
               aria-hidden="true"
-              className="fa p-2 fa-2x fa-"
+              className="fal p-2 fa-"
             />
             <div
               className="justify-content-between"
             >
-              <div>
+              <p
+                className="small"
+              >
                  
                 
                  
-              </div>
-              <div>
+              </p>
+              <p
+                className="small m-0"
+              >
                  
                 
                  
-              </div>
+              </p>
             </div>
           </a>
           <div
             className="p-2 mt-0 text-center"
           >
             <i
-              className="fa p-2 fa-calendar fa-2x"
+              className="fal p-2 fa-calendar"
             />
-            <p>
+            <p
+              className="small m-0"
+            >
                Publicado 
               hace unos segundos
                

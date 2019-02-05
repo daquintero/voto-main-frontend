@@ -1,13 +1,16 @@
 // Main Scratch Indexing Container for all of the Routes
 import React from 'react';
-import Card from '../Reusable/CorruptionCase/components/Card';
+import CardGrid from '../Reusable/InformativeSnippet/components/CardGrid';
+
+// TODO REMOVE IMAGE TEST
+const imageTest = `${process.env.PUBLIC_URL}/img-test/a.jpg`;
 
 // Each Compendium
-const info = {
+const info = [{
   title: 'Whatsup asdn amsda jasd nas dn asnd ',
   date: new Date(),
   images: [{
-    image: 'jjj',
+    image: imageTest,
   }],
   statistics: [{
     link: 'jjj',
@@ -15,11 +18,11 @@ const info = {
     data: 'jjj',
     icon: 'user',
   }],
-};
+}];
 
 const Scratch = () => (
   <div className="layout">
-    <Card info={info} />
+    <CardGrid info={info} />
   </div>
 );
 

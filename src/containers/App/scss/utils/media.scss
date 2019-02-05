@@ -1,0 +1,6 @@
+// Custom class so that images cover specific container in bootstrap
+.img-cover {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}

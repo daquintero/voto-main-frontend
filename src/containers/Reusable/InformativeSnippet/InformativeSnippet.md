@@ -28,8 +28,19 @@ Note that thge `date` are the
 submission dates.
 
 
-## Redux Actions
+### Redux Actions
 Related Informative Snippets takes
 in the parent container and label
-and returns the requried informative
+and returns the required informative
 snippets.
+
+### Card Grid
+The card grid takes in as props an array
+of objects of informative snippets and
+returns a collection of objects in a 
+grid-like manner that is specifically
+custom for each of the mobile responsive
+approaches. Basically, it
+controls the layout approach in an a 
+imperative functional approach from 
+props. 

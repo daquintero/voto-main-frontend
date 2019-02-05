@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const GenericFunction = ({ section }) => (
+const GenericFunction = ({ section }) => ( // TODO REMOVE IF NOT NEEDED
   <>
     <div>
       {section}

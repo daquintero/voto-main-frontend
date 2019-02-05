@@ -3,7 +3,7 @@ import React, { PureComponent } from 'react';
 import { Card, CardBody, CardLink, CardImg } from 'reactstrap';
 import { CardPropTypes, CardDefaultPropTypes } from './CorruptionCasePropTypes';
 
-class InformativeSnippetCard extends PureComponent {
+class CorruptionCaseCard extends PureComponent {
   static propTypes = CardPropTypes;
   static defaultProps = CardDefaultPropTypes;
   render() {
@@ -19,7 +19,7 @@ class InformativeSnippetCard extends PureComponent {
           <h4 className="card-title">{info.title}</h4>
           <div className="d-flex justify-content-between">
             <CardLink className="p-2 text-center justify-content-center" href={info.statistics[0].link} >
-              <i className={`fa p-2 fa-2x fa-${info.statistics[0].icon}`} aria-hidden="true" />
+              <i className={`fal p-2 fa-2x fa-${info.statistics[0].icon}`} aria-hidden="true" />
               <div className="justify-content-between">
                 <div> {info.statistics[0].data} </div>
                 <div> {info.statistics[0].title} </div>
@@ -27,7 +27,7 @@ class InformativeSnippetCard extends PureComponent {
             </CardLink>
             {info.statistics[1] ? (
               <CardLink className="p-2 text-center justify-content-center" href={info.statistics[0].link} >
-                <i className={`fa p-2 fa-2x fa-${info.statistics[1].icon}`} aria-hidden="true" />
+                <i className={`fal p-2 fa-2x fa-${info.statistics[1].icon}`} aria-hidden="true" />
                 <div className="justify-content-between">
                   <div> {info.statistics[1].data} </div>
                   <div> {info.statistics[1].title} </div>
@@ -36,7 +36,7 @@ class InformativeSnippetCard extends PureComponent {
             ) : null}
             {info.statistics[2] ? (
               <CardLink className="p-2 text-center justify-content-center" href={info.statistics[0].link} >
-                <i className={`fa p-2 fa-2x fa-${info.statistics[2].icon}`} aria-hidden="true" />
+                <i className={`fal p-2 fa-2x fa-${info.statistics[2].icon}`} aria-hidden="true" />
                 <div className="justify-content-between">
                   <div> {info.statistics[2].data} </div>
                   <div> {info.statistics[2].title} </div>
@@ -50,4 +50,4 @@ class InformativeSnippetCard extends PureComponent {
   }
 }
 
-export default InformativeSnippetCard;
+export default CorruptionCaseCard;

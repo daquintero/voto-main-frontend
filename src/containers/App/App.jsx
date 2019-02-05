@@ -7,6 +7,8 @@ import store from './store'; // redux
 import '../app.scss';
 import Router from './Router';
 
+// TODO Remove all images for frontend testing from public img
+
 class App extends Component {
   constructor() {
     super();
