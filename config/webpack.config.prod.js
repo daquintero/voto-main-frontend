@@ -363,7 +363,7 @@ module.exports = {
           // as in the CSS routine, except that "sass-loader" runs first
           // to compile SASS files into CSS.
           // By default we support SASS Modules with the
-          // extensions .module.scss or .module.sass
+          // extensions .module.styling or .module.sass
           {
             test: sassRegex,
             exclude: sassModuleRegex,
@@ -381,7 +381,7 @@ module.exports = {
             sideEffects: true,
           },
           // Adds support for CSS Modules, but using SASS
-          // using the extension .module.scss or .module.sass
+          // using the extension .module.styling or .module.sass
           {
             test: sassModuleRegex,
             loader: getStyleLoaders(

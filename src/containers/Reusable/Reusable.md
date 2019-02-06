@@ -30,3 +30,10 @@ components, so data validation
 has to be done on the first point
 of arrival of API data so that 
 the system works correctly.
+
+
+#### Grid System Validation
+We will be using the backend to control the grid
+display via the relevance of each section, by
+sending a `size` parameter that is read and mapped
+accoringly per the `layoutMap` function in utils.

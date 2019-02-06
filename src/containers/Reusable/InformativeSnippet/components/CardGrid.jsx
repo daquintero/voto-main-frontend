@@ -2,6 +2,8 @@ import React, { PureComponent } from 'react';
 import { Container, Row, Col } from 'reactstrap';
 import InformativeSnippetCard from './Card';
 import { CardGridDefaultPropTypes, CardGridPropTypes } from './InformativeSnippetPropTypes';
+// Layout Map
+import layoutMap from '../styling/layoutMap';
 
 /* Imperative PureFunction Grid Approach  */
 class InformativeCardGrid extends PureComponent {
@@ -18,8 +20,16 @@ class InformativeCardGrid extends PureComponent {
             <Col xs={12} md={6} >
               <Row noGutters>
                 {info.map(obj => (
-                  <Col xs={6} className="p-2">
-                    <InformativeSnippetCard objIn={obj} />
+                  <Col
+                    xs={layoutMap[obj.size].xs.outer.wrapper}
+                    sm={layoutMap[obj.size].sm.outer.wrapper}
+                    md={layoutMap[obj.size].md.outer.wrapper}
+                    lg={layoutMap[obj.size].lg.outer.wrapper}
+                    xl={layoutMap[obj.size].xl.outer.wrapper}
+                    className="p-2"
+                    key={obj.id}
+                  >
+                    <InformativeSnippetCard objIn={obj} key={obj.id} />
                   </Col>
                 ))}
               </Row>

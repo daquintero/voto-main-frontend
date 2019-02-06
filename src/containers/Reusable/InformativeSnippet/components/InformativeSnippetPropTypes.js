@@ -1,15 +1,18 @@
 import PropTypes from 'prop-types';
 
+// TODO FIND ORIGIN OF FAILED PROP TYPE OF CARD GRID
 // ---------- CARD PROPS -----------------------
 export const CardPropTypes = {
   objIn: PropTypes.shape({
+    id: PropTypes.number,
+    size: PropTypes.string,
     title: PropTypes.string,
+    // Note that this is the submission date
+    date: PropTypes.instanceOf(Date),
     // We only need one image.
     images: PropTypes.arrayOf(PropTypes.shape({
       image: PropTypes.string,
     })),
-    // Note that this is the submission date
-    date: PropTypes.instanceOf(Date),
     // We only need one statistic for ISCard
     statistics: PropTypes.arrayOf(PropTypes.shape({
       link: PropTypes.string,
@@ -22,11 +25,13 @@ export const CardPropTypes = {
 
 export const CardDefaultPropTypes = {
   objIn: {
+    id: 0,
+    size: 'full',
     title: '',
+    date: new Date(),
     images: [{
       image: '',
     }],
-    date: new Date(),
     statistics: [{
       link: '',
       title: '',

@@ -1,6 +1,8 @@
 // Generic InformativeSnippet Card
 import React, { PureComponent } from 'react';
-import { Card, CardBody, CardLink, Row, Col } from 'reactstrap';
+import { Card, CardBody, Row, Col } from 'reactstrap';
+// Routing for each card
+import { Link } from 'react-router-dom';
 // Numerical Formatting
 import numeral from 'numeral';
 // Date conversion
@@ -8,11 +10,12 @@ import moment from 'moment';
 // Date language
 import 'moment/locale/es';
 import { CardPropTypes, CardDefaultPropTypes } from './InformativeSnippetPropTypes';
-
+// Layout Map
+import layoutMap from '../styling/layoutMap';
 // Configure moment settings
 moment.locale('es');
 
-class ISCard extends PureComponent {
+class InformativeSnippetCard extends PureComponent {
   static propTypes = CardPropTypes;
   static defaultProps = CardDefaultPropTypes;
 
@@ -20,19 +23,22 @@ class ISCard extends PureComponent {
     const { objIn } = this.props;
 
     const imgFalseCard = obj => (
-      <Card className="bg-white border-0">
-        <Row noGutters>
-          <Col xs={12} sm={6}>
-            <CardBody className="p-2">
+      <Card className="bg-white border-0 h-100">
+        <Row noGutters className="h-100">
+          <Col
+            xs={layoutMap[obj.size].xs.inner.imgWrapper + layoutMap[obj.size].xs.inner.contentWrapper}
+            md={layoutMap[obj.size].md.inner.imgWrapper + layoutMap[obj.size].md.inner.contentWrapper}
+          >
+            <CardBody className="p-2 justify-self-center h-100">
               <h4 className="card-title mb-0">{obj.title}</h4>
-              <div className="d-flex justify-content-between">
-                <CardLink className="p-2 text-center justify-content-center" href={obj.statistics[0].link} >
+              <div className="d-flex justify-content-between emp-card-info-btm">
+                <div className="p-2 text-center justify-content-center" >
                   <i className={`fal p-2 fa-${obj.statistics[0].icon}`} aria-hidden="true" />
                   <div className="justify-content-between">
                     <p className="small" > {numeral(obj.statistics[0].data).format('0a')}</p>
                     <p className="small m-0" > {obj.statistics[0].title} </p>
                   </div>
-                </CardLink>
+                </div>
                 <div className="p-2 mt-0 text-center">
                   <i className="fal p-2 fa-calendar" />
                   <p className="small m-0"> Publicado { moment(obj.date).fromNow() } </p>
@@ -47,24 +53,36 @@ class ISCard extends PureComponent {
     const imgTrueCard = obj => (
       <Card className="bg-white border-0">
         <Row noGutters>
-          <Col xs={6} sm={5}>
+          <Col
+            xs={layoutMap[obj.size].xs.inner.imgWrapper}
+            sm={layoutMap[obj.size].sm.inner.imgWrapper}
+            md={layoutMap[obj.size].md.inner.imgWrapper}
+            lg={layoutMap[obj.size].lg.inner.imgWrapper}
+            xl={layoutMap[obj.size].xl.inner.imgWrapper}
+          >
             <img
               className="img-cover"
               src={obj.images[0].image}
               alt="Something"
             />
           </Col>
-          <Col xs={8} sm={7}>
+          <Col
+            xs={layoutMap[obj.size].xs.inner.contentWrapper}
+            sm={layoutMap[obj.size].sm.inner.contentWrapper}
+            md={layoutMap[obj.size].md.inner.contentWrapper}
+            lg={layoutMap[obj.size].lg.inner.contentWrapper}
+            xl={layoutMap[obj.size].xl.inner.contentWrapper}
+          >
             <CardBody className="p-2">
               <h4 className="card-title mb-0">{obj.title}</h4>
               <div className="d-flex justify-content-between">
-                <CardLink className="p-2 text-center justify-content-center" href={obj.statistics[0].link} >
+                <div className="p-2 text-center justify-content-center">
                   <i className={`fal p-2 fa-${obj.statistics[0].icon}`} aria-hidden="true" />
                   <div className="justify-content-between">
                     <p className="small" > {numeral(obj.statistics[0].data).format('0a')}</p>
                     <p className="small m-0" > {obj.statistics[0].title} </p>
                   </div>
-                </CardLink>
+                </div>
                 <div className="p-2 mt-0 text-center">
                   <i className="fal p-2 fa-calendar" />
                   <p className="small m-0"> Publicado { moment(obj.date).fromNow() } </p>
@@ -77,11 +95,11 @@ class ISCard extends PureComponent {
     );
 
     return (
-      <>
-        { objIn.images && objIn.images[0] ? imgTrueCard(objIn) : imgFalseCard(objIn) }
-      </>
+      <Link to={`/noticia/${objIn.id}`}>
+        { objIn.images ? imgTrueCard(objIn) : imgFalseCard(objIn) }
+      </Link>
     );
   }
 }
 
-export default ISCard;
+export default InformativeSnippetCard;

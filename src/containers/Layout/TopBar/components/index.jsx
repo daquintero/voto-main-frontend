@@ -11,10 +11,11 @@ import {
   Nav,
   Input,
   FormGroup,
-  UncontrolledDropdown,
-  DropdownMenu,
-  DropdownToggle,
-  DropdownItem,
+  // TODO ADD THIS AFTER Fixing Dropdown
+  // UncontrolledDropdown,
+  // DropdownMenu,
+  // DropdownToggle,
+  // DropdownItem,
 } from 'reactstrap';
 
 // TODO Validate DOM Nesting with Uncontrolled Dropdown
@@ -76,29 +77,30 @@ class TopBar extends Component {
                   Mapa
                 </NavLink>
               </NavItem>
+              {/* TODO FIX LIST INSIDE LIST */}
               {/* Candidates Dropdown */}
-              <NavItem>
-                <UncontrolledDropdown nav inNavbar>
-                  <DropdownToggle nav caret>
-                    <i className="fa fa-podium-star p-2" />
-                    Candidatos
-                  </DropdownToggle>
-                  <DropdownMenu right>
-                    <DropdownItem>
-                      <NavLink href="/descubre-candidatos" >
-                        <i className="fa fa-eye p-2" />
-                        Descubre Candidatos
-                      </NavLink>
-                    </DropdownItem>
-                    <DropdownItem>
-                      <NavLink href="/compara-candidatos" >
-                        <i className="fa fa-check-square p-2" />
-                        Compara Candidatos
-                      </NavLink>
-                    </DropdownItem>
-                  </DropdownMenu>
-                </UncontrolledDropdown>
-              </NavItem>
+              {/* <NavItem> */}
+              {/* <UncontrolledDropdown nav inNavbar> */}
+              {/* <DropdownToggle nav caret> */}
+              {/* <i className="fa fa-podium-star p-2" /> */}
+              {/* Candidatos */}
+              {/* </DropdownToggle> */}
+              {/* <DropdownMenu right> */}
+              {/* <DropdownItem> */}
+              {/* <NavLink href="/descubre-candidatos" > */}
+              {/* <i className="fa fa-eye p-2" /> */}
+              {/* Descubre Candidatos */}
+              {/* </NavLink> */}
+              {/* </DropdownItem> */}
+              {/* <DropdownItem> */}
+              {/* <NavLink href="/compara-candidatos" > */}
+              {/* <i className="fa fa-check-square p-2" /> */}
+              {/* Compara Candidatos */}
+              {/* </NavLink> */}
+              {/* </DropdownItem> */}
+              {/* </DropdownMenu> */}
+              {/* </UncontrolledDropdown> */}
+              {/* </NavItem> */}
               {/* About Us */}
               <NavItem>
                 <NavLink href="/mapa" >
