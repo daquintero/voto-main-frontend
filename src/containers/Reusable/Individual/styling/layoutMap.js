@@ -6,7 +6,7 @@ const layoutMap = {
         contentWrapper: 12,
       },
       outer: {
-        wrapper: 12,
+        wrapper: 6,
       },
     },
     sm: {
@@ -15,7 +15,7 @@ const layoutMap = {
         contentWrapper: 12,
       },
       outer: {
-        wrapper: 12,
+        wrapper: 6,
       },
     },
     md: {
@@ -24,7 +24,7 @@ const layoutMap = {
         contentWrapper: 12,
       },
       outer: {
-        wrapper: 12,
+        wrapper: 6,
       },
     },
     lg: {
@@ -33,7 +33,7 @@ const layoutMap = {
         contentWrapper: 12,
       },
       outer: {
-        wrapper: 12,
+        wrapper: 6,
       },
     },
     xl: {
@@ -42,7 +42,7 @@ const layoutMap = {
         contentWrapper: 12,
       },
       outer: {
-        wrapper: 12,
+        wrapper: 6,
       },
     },
   },

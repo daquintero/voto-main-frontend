@@ -1,12 +1,12 @@
 import React, { PureComponent } from 'react';
 import { Container, Row, Col } from 'reactstrap';
-import CorruptionCaseCard from './Card';
-import { CardGridDefaultPropTypes, CardGridPropTypes } from './CorruptionCasePropTypes';
+import IndividualCard from './Card';
+import { CardGridDefaultPropTypes, CardGridPropTypes } from './IndividualPropTypes';
 // Layout Map
 import layoutMap from '../styling/layoutMap';
 
 /* Imperative PureFunction Grid Approach  */
-class CorruptionCaseCardGrid extends PureComponent {
+class IndividualCardGrid extends PureComponent {
   static propTypes = CardGridPropTypes;
   static defaultProps = CardGridDefaultPropTypes;
   render() {
@@ -29,7 +29,7 @@ class CorruptionCaseCardGrid extends PureComponent {
                     className="p-2"
                     key={obj.id}
                   >
-                    <CorruptionCaseCard objIn={obj} key={obj.id} />
+                    <IndividualCard objIn={obj} key={obj.id} />
                   </Col>
                 ))}
               </Row>
@@ -41,4 +41,4 @@ class CorruptionCaseCardGrid extends PureComponent {
   }
 }
 
-export default CorruptionCaseCardGrid;
+export default IndividualCardGrid;

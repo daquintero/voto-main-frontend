@@ -19,7 +19,7 @@ class InformativeCardGrid extends PureComponent {
             {/* Controlled widths by the frontend design */}
             <Col xs={12} md={6} >
               <Row noGutters>
-                {info.map(obj => (
+                {info && info.map(obj => (
                   <Col
                     xs={layoutMap[obj.size].xs.outer.wrapper}
                     sm={layoutMap[obj.size].sm.outer.wrapper}

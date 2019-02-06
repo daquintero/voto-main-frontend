@@ -1,33 +1,46 @@
 import PropTypes from 'prop-types';
 
-// TODO Add statistics in the individual cards
+// ---------- CARD PROPS -----------------------
 export const CardPropTypes = {
-  info: PropTypes.shape({
-    title: PropTypes.string,
-    images: PropTypes.arrayOf(PropTypes.shape({ // We only need one image.
+  objIn: PropTypes.shape({
+    id: PropTypes.number,
+    size: PropTypes.string,
+    name: PropTypes.string,
+    alias: PropTypes.string,
+    images: PropTypes.arrayOf(PropTypes.shape({
       image: PropTypes.string,
     })),
-    statistics: PropTypes.arrayOf(PropTypes.shape({ // We only need one statistic
-      link: PropTypes.string,
-      title: PropTypes.string,
-      data: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-      icon: PropTypes.string,
-    })),
+    // Corruption Index has its own equation
+    corruptionIndex: PropTypes.shape({
+      change: PropTypes.bool,
+      value: PropTypes.number,
+    }),
   }),
 };
 
 export const CardDefaultPropTypes = {
-  position: 'left',
-  info: {
-    title: '',
+  objIn: {
+    id: 0,
+    size: 'full',
+    name: '',
+    alias: '',
+    date: new Date(),
     images: [{
       image: '',
     }],
-    statistics: [{
-      link: '',
-      title: '',
-      data: '',
-      icon: '',
-    }],
+    corruptionIndex: {
+      change: false,
+      value: '',
+    },
   },
 };
+
+
+// ---------------- CARD GRID PROPS -----------------
+
+export const CardGridPropTypes = {
+  info: PropTypes.arrayOf(CardPropTypes),
+};
+
+export const CardGridDefaultPropTypes = [
+  CardDefaultPropTypes, CardDefaultPropTypes, CardDefaultPropTypes];

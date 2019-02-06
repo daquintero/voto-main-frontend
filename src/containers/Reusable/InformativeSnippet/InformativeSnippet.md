@@ -45,6 +45,10 @@ controls the layout approach in an a
 imperative functional approach from 
 props. 
 
-Note that a responsive approach is taken so
-if no images are available these become,
-`NoImgCard`.
+The `LayoutMap` controls the positining
+of the objects via server requests and 
+data. Each `LayoutMap.jsx` is in the `styling`
+folder. It controls the numerical values of the 
+Bootstrap Columns and varys them accordingly to
+any defined pattern. The defined patterns are 
+`full` and `half` for `InformativeSnippetCards`.

@@ -15,6 +15,7 @@ export const CardPropTypes = {
     })),
     // We only need one statistic for ISCard
     statistics: PropTypes.arrayOf(PropTypes.shape({
+      id: PropTypes.number,
       link: PropTypes.string,
       title: PropTypes.string,
       data: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
@@ -33,6 +34,7 @@ export const CardDefaultPropTypes = {
       image: '',
     }],
     statistics: [{
+      id: 0,
       link: '',
       title: '',
       data: '',

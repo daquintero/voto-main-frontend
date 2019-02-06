@@ -63,6 +63,8 @@ All of these `GeneralSections` will be held within a `WrappedRoutes`
 React function that then appends the outer layout like the TopBar
 Navigation.
 
+All the reusable `DetailedPages` are within the `Reusable` index component. 
+
 
 ### Dynamic Data Architecture
 
@@ -104,3 +106,8 @@ store and state.
 ### SCSS
  Note that within the App directory the main stylings
  for the main typography and scaffoling are there.
+
+
+### Development Practice
+Note that several `Scratch` files were used with sample data for each
+and should be available within the test folders in the form `SampleData<Component>.jsx`.

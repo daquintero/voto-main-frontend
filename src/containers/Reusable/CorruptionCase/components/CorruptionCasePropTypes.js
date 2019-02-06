@@ -60,17 +60,24 @@ export const PageProps = {
   })),
 };
 
+
 // TODO Define Page Default Props
 
-export const DefaultPageProps = {};
-
+// ---------- CARD PROPS -----------------------
 export const CardPropTypes = {
-  info: PropTypes.shape({
+  objIn: PropTypes.shape({
+    id: PropTypes.number,
+    size: PropTypes.string,
     title: PropTypes.string,
-    images: PropTypes.arrayOf(PropTypes.shape({ // We only need one image.
+    // Note that this is the submission date
+    date: PropTypes.instanceOf(Date),
+    // We only need one image.
+    images: PropTypes.arrayOf(PropTypes.shape({
       image: PropTypes.string,
     })),
-    statistics: PropTypes.arrayOf(PropTypes.shape({ // We only need one statistic
+    // We only need one statistic for ISCard
+    statistics: PropTypes.arrayOf(PropTypes.shape({
+      id: PropTypes.number,
       link: PropTypes.string,
       title: PropTypes.string,
       data: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
@@ -80,13 +87,16 @@ export const CardPropTypes = {
 };
 
 export const CardDefaultPropTypes = {
-  position: 'left',
-  info: {
+  objIn: {
+    id: 0,
+    size: 'full',
     title: '',
+    date: new Date(),
     images: [{
       image: '',
     }],
     statistics: [{
+      id: 0,
       link: '',
       title: '',
       data: '',
@@ -94,3 +104,13 @@ export const CardDefaultPropTypes = {
     }],
   },
 };
+
+
+// ---------------- CARD GRID PROPS -----------------
+
+export const CardGridPropTypes = {
+  info: PropTypes.arrayOf(CardPropTypes),
+};
+
+export const CardGridDefaultPropTypes = [
+  CardDefaultPropTypes, CardDefaultPropTypes, CardDefaultPropTypes];

@@ -1,6 +1,6 @@
 // Main Scratch Indexing Container for all of the Routes
 import React from 'react';
-import CardGrid from '../Reusable/InformativeSnippet/components/CardGrid';
+import CardGrid from '../Reusable/Individual/components/CardGrid';
 
 // TODO REMOVE IMAGE TEST
 const imageTest = `${process.env.PUBLIC_URL}/img-test/a.jpg`;
@@ -9,20 +9,20 @@ const imageTest = `${process.env.PUBLIC_URL}/img-test/a.jpg`;
 // const one = [{
 //   id: 1,
 //   size: 'full',
-//   title: 'Whatsup asdn amsda jasd nas dn asnd ',
+//   name: 'Whatsup asdn amsda jasd nas dn asnd ',
 //   date: new Date(),
 //   images: [{
 //     image: imageTest,
 //   }],
 //   statistics: [{
 //     link: 'jjj',
-//     title: 'informacion',
+//     name: 'informacion',
 //     data: '10',
 //     icon: 'user',
 //   },
 //   {
 //     link: 'jjj',
-//     title: 'informacion',
+//     name: 'informacion',
 //     data: '10',
 //     icon: 'user',
 //   },
@@ -33,92 +33,45 @@ const imageTest = `${process.env.PUBLIC_URL}/img-test/a.jpg`;
 const info = [{
   id: 1,
   size: 'full',
-  title: 'Whatsup asdn amsda jasd nas dn asnd ',
-  date: new Date(),
+  name: 'Carlos Perez Herrera',
+  alias: 'alias',
   images: [{
     image: imageTest,
   }],
-  statistics: [{
-    link: 'jjj',
-    title: 'informacion',
-    data: '10',
-    icon: 'user',
+  corruptionIndex: {
+    change: false,
+    value: 33,
   },
-  {
-    link: 'jjj',
-    title: 'informacion',
-    data: '10',
-    icon: 'user',
-  },
-  ],
 }, {
   id: 2,
   size: 'full',
-  title: 'Whatsup asdn amsda jasd nas dn asnd ',
-  date: new Date(),
-  images: [{
-    image: imageTest,
-  }],
-  statistics: [{
-    link: 'jjj',
-    title: 'informacion',
-    data: '10',
-    icon: 'user',
-  }],
-},
-{
+  name: 'Laurentino Cortizo',
+  alias: 'alias',
+  corruptionIndex: {
+    change: false,
+    value: 4.43,
+  },
+}, {
   id: 3,
-  size: 'half',
-  title: 'Whatsup asdn amsda jasd nas dn asnd ',
-  date: new Date(),
-  statistics: [{
-    link: 'jjj',
-    title: 'informacion',
-    data: '10',
-    icon: 'user',
+  size: 'full',
+  name: 'Laurentino Cortizo',
+  alias: 'alias',
+  images: [{
+    image: imageTest,
   }],
-},
-{
+  corruptionIndex: {
+    change: true,
+    value: 5.53,
+  },
+}, {
   id: 4,
-  size: 'half',
-  title: 'Whatsup asdn amsda jasd nas dn asnd ',
-  date: new Date(),
-  images: [{
-    image: imageTest,
-  }],
-  statistics: [{
-    link: 'jjj',
-    title: 'informacion',
-    data: '10',
-    icon: 'user',
-  }],
-},
-{
-  id: 5,
-  size: 'half',
-  title: 'Whatsup asdn amsda jasd nas dn asnd ',
-  date: new Date(),
-  statistics: [{
-    link: 'jjj',
-    title: 'informacion',
-    data: '10',
-    icon: 'user',
-  }],
-},
-{
-  id: 6,
-  size: 'half',
-  title: 'Whatsup asdn amsda jasd nas dn asnd ',
-  date: new Date(),
-  images: [{
-    image: imageTest,
-  }],
-  statistics: [{
-    link: 'jjj',
-    title: 'informacion',
-    data: '10',
-    icon: 'user',
-  }],
+  size: 'full',
+  name: 'Laurentino Cortizo',
+  alias: 'alias',
+  corruptionIndex: {
+    change: true,
+    value: 34.5,
+  },
 }];
 
 const Scratch = () => (
