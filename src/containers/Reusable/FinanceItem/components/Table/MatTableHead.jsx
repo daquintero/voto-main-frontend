@@ -22,24 +22,29 @@ export default class MatTableHead extends PureComponent {
   };
   render() {
     const { rows, order, orderBy } = this.props;
+
     return (
       <TableHead>
         <TableRow>
           {rows.map(row => (
             <TableCell
-              className="material-table__cell material-table__cell--sort"
+              className="material-table__cell material-table__cell--sort material-table__cell--mobile"
               key={row.id}
               padding="default"
               sortDirection={orderBy === row.id ? order : false}
             >
-              <TableSortLabel
-                active={orderBy === row.id}
-                direction={order}
-                onClick={this.createSortHandler(row.id)}
-                className="material-table__sort-label"
-              >
-                {row.label}
-              </TableSortLabel>
+              {row.numeric ?
+                (
+                  <TableSortLabel
+                    active={orderBy === row.id}
+                    direction={order}
+                    onClick={this.createSortHandler(row.id)}
+                  >
+                    <h5 className="material-table__sort-label">{row.label}</h5>
+                  </TableSortLabel>
+                ) :
+                  <h5 className="material-table__sort-label">{row.label}</h5>
+              }
             </TableCell>
           ), this)}
         </TableRow>

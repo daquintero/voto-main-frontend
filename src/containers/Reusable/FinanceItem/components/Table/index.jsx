@@ -2,6 +2,9 @@
 // ----------------- ABSOLUTE IMPORTS -------------------------
 import React, { Component } from 'react';
 
+// Bootstrap
+import { Row, Col } from 'reactstrap';
+
 // Material UI Components
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -16,9 +19,22 @@ import { MatTablePropTypes, MatTableDefaultPropTypes } from './MatTablePropTypes
 // Components
 import MatTableHead from './MatTableHead';
 
+// Utils
+import squashString from '../../../utils/squashString';
+
+// Util for array ordering under these
+const getNestedSorting = (obj, orderBy) => {
+  if (!obj[orderBy]) {
+    return obj.tableValues.descriptors.filter(f => f.name === orderBy)[0].value;
+  }
+  return obj[orderBy];
+};
+
 // Array ordering function
-const getSorting = (order, orderBy) =>
-  (order === 'desc' ? (a, b) => b[orderBy] - a[orderBy] : (a, b) => a[orderBy] - b[orderBy]);
+const getSorting = (order, orderBy) => (order === 'desc' ?
+  (a, b) => getNestedSorting(b, orderBy) - getNestedSorting(a, orderBy)
+  :
+  (a, b) => getNestedSorting(a, orderBy) - getNestedSorting(b, orderBy));
 
 // ----------------- CLASS -------------------
 
@@ -29,7 +45,7 @@ export default class MatTable extends Component {
     super(props);
     this.state = {
       order: 'asc',
-      orderBy: 'id',
+      orderBy: 'amount',
       page: 0,
       rowsPerPage: 5,
     };
@@ -54,61 +70,79 @@ export default class MatTable extends Component {
     // Contains all data
     const { field } = this.props;
     // Headers and Inner request data
-    const { relatedInstances } = field;
+    // const { relatedInstances } = field;
     // Extraction of data
-    const { instances, tableHeads } = relatedInstances;
+    const { instances, tableHeads } = field;
+
+    // TODO RENAME CASES TO FINAL SPANISH DESCRIPTORS
+    const specialStyling = (descriptor) => {
+      switch (descriptor.type) {
+        case 'link':
+          return (
+            <a href={descriptor.value}> <i className="fal fa-external-link enlarge" /> </a>
+          );
+        case 'amount':
+          return (
+            <p className=""> {squashString(descriptor.value, 0, '0.0a')} </p>
+          );
+        default:
+          return (squashString(descriptor.value, 20, '$ 0.0a'));
+      }
+    };
 
     // Full MatTable Component
     return (
-      <>
-        <div className="material-table__wrap">
-          <Table className="material-table">
-            <MatTableHead
-              rows={tableHeads}
-              order={order}
-              orderBy={orderBy}
-              onRequestSort={this.handleRequestSort}
+      <Row>
+        <Col xs={12} className="p-2">
+          <div className="bg-white rounded">
+            <div className="material-table__wrap">
+              <Table className="material-table">
+                <MatTableHead
+                  rows={tableHeads}
+                  order={order}
+                  orderBy={orderBy}
+                  onRequestSort={this.handleRequestSort}
+                />
+                <TableBody>
+                  { instances
+                .sort(getSorting(order, orderBy))
+                .slice(page * rowsPerPage, (page * rowsPerPage) + rowsPerPage)
+                .map(instance => (
+                  <TableRow
+                    className="material-table__row"
+                    key={instance.id}
+                  >
+                    {/* Descriptors set from Json Reply */}
+                    {instance.tableValues.descriptors.map(descriptor => (
+                      <TableCell
+                        key={descriptor.name}
+                        className="material-table__cell material-table__cell--mobile "
+                        component="th"
+                        scope="row"
+                        padding="default"
+                        align="right"
+                      >
+                        {specialStyling(descriptor)}
+                      </TableCell>
+                    ))}
+                  </TableRow>
+                ))
+              }
+                </TableBody>
+              </Table>
+            </div>
+            <TablePagination
+              component="div"
+              className="material-table__pagination"
+              count={instances.length}
+              onChangePage={this.handleChangePage}
+              page={page}
+              rowsPerPage={rowsPerPage}
+              labelRowsPerPage="Filas por página"
             />
-          </Table>
-          <TableBody>
-            { instances
-              .sort(getSorting(order, orderBy))
-              .slice(page * rowsPerPage, (page * rowsPerPage) + rowsPerPage)
-              .map(instance => (
-                <TableRow
-                  className="material-table__row"
-                  key={instance.id}
-                >
-                  <TableCell className="material-table__cell">
-                    {instance.id}
-                  </TableCell>
-                  {/* TODO Assuming that the sent descriptors are title, amount, and link */}
-                  {instance.tableValues.descriptors.map(descriptor => (
-                    <TableCell
-                      key={descriptor.name}
-                      className="material-table__cell"
-                      component="th"
-                      scope="row"
-                      padding="default"
-                    >
-                      {/* TODO Add the squashString */}
-                      {descriptor.value}
-                    </TableCell>
-                  ))}
-                </TableRow>
-              ))
-            }
-          </TableBody>
-        </div>
-        <TablePagination
-          component="div"
-          className="material-table__pagination"
-          count={instances.length}
-          onChangePage={this.handleChangePage}
-          page={page}
-          rowsPerPage={rowsPerPage}
-        />
-      </>
+          </div>
+        </Col>
+      </Row>
     ); // TODO Complete MatTable and relationships
   }
 }

@@ -1,5 +1,6 @@
 // Main Scratch Indexing Container for all of the Routes
 import React from 'react';
+import { Container } from 'reactstrap';
 import Table from '../Reusable/FinanceItem/components/Table/index';
 
 // TODO REMOVE IMAGE TEST
@@ -17,14 +18,18 @@ const one = {
           {
             name: 'title',
             value: 'Two',
+            type: '',
           },
           {
-            name: 'brief_description',
-            value: 'sdfg',
+            name: 'amount',
+            value: 49849494,
+            type: '',
+            numeric: true,
           },
           {
             name: 'source',
             value: 'https://test-voto-backend.herokuapp.com/admin/calendars/event/add/',
+            type: 'link',
           },
         ],
         userEmail: 'jw17202@bristol.ac.uk',
@@ -51,12 +56,14 @@ const one = {
             value: 'dfgdsfgsdfg',
           },
           {
-            name: 'brief_description',
-            value: 'sdfg',
+            name: 'amount',
+            value: 122992929,
+            numeric: true,
           },
           {
             name: 'source',
             value: 'https://test-voto-backend.herokuapp.com/admin/calendars/event/add/',
+            type: 'link',
           },
         ],
         userEmail: 'jw17202@bristol.ac.uk',
@@ -81,10 +88,10 @@ const one = {
       label: 'Title',
     },
     {
-      id: 'brief_description',
-      numeric: false,
+      id: 'amount',
+      numeric: true,
       disablePadding: false,
-      label: 'Brief Description',
+      label: 'Amount',
     },
     {
       id: 'source',
@@ -145,7 +152,9 @@ const one = {
 
 const Scratch = () => (
   <div className="layout">
-    <Table field={one} />
+    <Container>
+      <Table field={one} />
+    </Container>
   </div>
 );
 

@@ -1,3 +1,4 @@
+// TODO DESTRUCTURE PROPS IN SM, MD, LG
 import React, { PureComponent } from 'react';
 import { Container, Row, Col } from 'reactstrap';
 import CorruptionCaseCard from './Card';
