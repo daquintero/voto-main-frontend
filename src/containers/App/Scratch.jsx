@@ -1,82 +1,151 @@
 // Main Scratch Indexing Container for all of the Routes
 import React from 'react';
-import CardGrid from '../Reusable/Individual/components/CardGrid';
+import Table from '../Reusable/FinanceItem/components/Table/index';
 
 // TODO REMOVE IMAGE TEST
-const imageTest = `${process.env.PUBLIC_URL}/img-test/a.jpg`;
+// const imageTest = `${process.env.PUBLIC_URL}/img-test/a.jpg`;
 
 // // One Card
-// const one = [{
+const one = {
+  instances: [
+    {
+      modelLabel: 'corruption.InformativeSnippet',
+      user: 1,
+      tableValues: {
+        id: 6,
+        descriptors: [
+          {
+            name: 'title',
+            value: 'Two',
+          },
+          {
+            name: 'brief_description',
+            value: 'sdfg',
+          },
+          {
+            name: 'source',
+            value: 'https://test-voto-backend.herokuapp.com/admin/calendars/event/add/',
+          },
+        ],
+        userEmail: 'jw17202@bristol.ac.uk',
+        userId: 1,
+        appLabel: 'corruption',
+        modelName: 'informativesnippet',
+        modelLabel: 'corruption.InformativeSnippet',
+      },
+      id: 6,
+      dateCreated: '2019-02-07T01:03:11.662971+00:00',
+      tracked: true,
+      title: '',
+      longDescription: '<p></p>',
+      refresh: true,
+    },
+    {
+      modelLabel: 'corruption.InformativeSnippet',
+      user: 1,
+      tableValues: {
+        id: 1,
+        descriptors: [
+          {
+            name: 'title',
+            value: 'dfgdsfgsdfg',
+          },
+          {
+            name: 'brief_description',
+            value: 'sdfg',
+          },
+          {
+            name: 'source',
+            value: 'https://test-voto-backend.herokuapp.com/admin/calendars/event/add/',
+          },
+        ],
+        userEmail: 'jw17202@bristol.ac.uk',
+        userId: 1,
+        appLabel: 'corruption',
+        modelName: 'informativesnippet',
+        modelLabel: 'corruption.InformativeSnippet',
+      },
+      id: 1,
+      dateCreated: '2019-02-06T23:58:12.222078+00:00',
+      tracked: true,
+      title: '',
+      longDescription: '<p></p>',
+      refresh: true,
+    },
+  ],
+  tableHeads: [
+    {
+      id: 'title',
+      numeric: false,
+      disablePadding: false,
+      label: 'Title',
+    },
+    {
+      id: 'brief_description',
+      numeric: false,
+      disablePadding: false,
+      label: 'Brief Description',
+    },
+    {
+      id: 'source',
+      numeric: false,
+      disablePadding: false,
+      label: 'Source',
+    },
+  ],
+  modelLabel: 'corruption.InformativeSnippet',
+  modelName: 'informativesnippet',
+  verboseName: 'informative snippet',
+};
+
+// // Each Compendium
+// const info = [{
 //   id: 1,
 //   size: 'full',
-//   name: 'Whatsup asdn amsda jasd nas dn asnd ',
-//   date: new Date(),
+//   name: 'Carlos Perez Herrera',
+//   alias: 'alias',
 //   images: [{
 //     image: imageTest,
 //   }],
-//   statistics: [{
-//     link: 'jjj',
-//     name: 'informacion',
-//     data: '10',
-//     icon: 'user',
+//   corruptionIndex: {
+//     change: false,
+//     value: 33,
 //   },
-//   {
-//     link: 'jjj',
-//     name: 'informacion',
-//     data: '10',
-//     icon: 'user',
+// }, {
+//   id: 2,
+//   size: 'full',
+//   name: 'Laurentino Cortizo',
+//   alias: 'alias',
+//   corruptionIndex: {
+//     change: false,
+//     value: 4.43,
 //   },
-//   ],
+// }, {
+//   id: 3,
+//   size: 'full',
+//   name: 'Laurentino Cortizo',
+//   alias: 'alias',
+//   images: [{
+//     image: imageTest,
+//   }],
+//   corruptionIndex: {
+//     change: true,
+//     value: 5.53,
+//   },
+// }, {
+//   id: 4,
+//   size: 'full',
+//   name: 'Laurentino Cortizo',
+//   alias: 'alias',
+//   corruptionIndex: {
+//     change: true,
+//     value: 34.5,
+//   },
 // }];
-
-// Each Compendium
-const info = [{
-  id: 1,
-  size: 'full',
-  name: 'Carlos Perez Herrera',
-  alias: 'alias',
-  images: [{
-    image: imageTest,
-  }],
-  corruptionIndex: {
-    change: false,
-    value: 33,
-  },
-}, {
-  id: 2,
-  size: 'full',
-  name: 'Laurentino Cortizo',
-  alias: 'alias',
-  corruptionIndex: {
-    change: false,
-    value: 4.43,
-  },
-}, {
-  id: 3,
-  size: 'full',
-  name: 'Laurentino Cortizo',
-  alias: 'alias',
-  images: [{
-    image: imageTest,
-  }],
-  corruptionIndex: {
-    change: true,
-    value: 5.53,
-  },
-}, {
-  id: 4,
-  size: 'full',
-  name: 'Laurentino Cortizo',
-  alias: 'alias',
-  corruptionIndex: {
-    change: true,
-    value: 34.5,
-  },
-}];
 
 const Scratch = () => (
   <div className="layout">
-    <CardGrid info={info} />
+    <Table field={one} />
   </div>
 );
 

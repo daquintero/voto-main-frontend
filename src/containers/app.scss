@@ -1,3 +1,4 @@
+// ---------------------------- BASE -----------------------------
 @import 'App/scss/settings/variable';  //themes' colors
 
 // styles of base elements
@@ -9,7 +10,8 @@
 // Content Object Fit
 @import 'App/scss/utils/media';
 
-// Reusable
+// ---------------------------- REUSABLE ------------------------
 @import 'Reusable/Video/scss/video';
-
 @import 'Reusable/InformativeSnippet/styling/card';
+// Material Table
+@import 'Reusable/FinanceItem/styling/material-table';

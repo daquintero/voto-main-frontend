@@ -3,9 +3,9 @@ import React, { PureComponent } from 'react';
 import { Card, CardBody, Row, Col } from 'reactstrap';
 // Routing for each card
 import { Link } from 'react-router-dom';
-import { CardPropTypes, CardDefaultPropTypes } from './IndividualPropTypes';
 // Numerical Formatting
-// import numeral from 'numeral'; TODO FINISH
+import numeral from 'numeral';
+import { CardPropTypes, CardDefaultPropTypes } from './IndividualPropTypes';
 // Layout Map
 import layoutMap from '../styling/layoutMap';
 
@@ -88,7 +88,7 @@ class IndividualCard extends PureComponent {
                       'fa-caret-up text-success fa-2x' :
                       'fa-caret-down text-danger fa-2x'}`}
                   />
-                  <p className="m-0 text-center">{obj.corruptionIndex.value}</p>
+                  <p className="m-0 text-center">{ numeral(obj.corruptionIndex.value).format('0.0')}</p>
                   <p className="m-0 small">Indíce</p>
                 </Col>
                 <Col xs={9} className="mb-2">
