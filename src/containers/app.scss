@@ -1,3 +1,7 @@
+// ---------------------------- NODE MODULES STYLES --------------
+// React-Image-Gallery
+@import "../../node_modules/react-image-gallery/styles/scss/image-gallery.scss";
+
 // ---------------------------- BASE -----------------------------
 @import 'App/scss/settings/variable';  //themes' colors
 
@@ -13,5 +17,5 @@
 // ---------------------------- REUSABLE ------------------------
 @import 'Reusable/Video/scss/video';
 @import 'Reusable/InformativeSnippet/styling/card';
-// Material Table
-@import 'Reusable/FinanceItem/styling/material-table';
+// Material MatTable
+@import 'Reusable/MatTable/styling/material-table';

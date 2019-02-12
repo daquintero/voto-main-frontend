@@ -84,7 +84,7 @@ class IndividualCard extends PureComponent {
               <Row noGutters>
                 <Col xs={3} className="text-center p-1">
                   <i
-                    className={`text-center fal ${obj.corruptionIndex && obj.corruptionIndex.change ?
+                    className={`text-center enlarge fal ${obj.corruptionIndex && obj.corruptionIndex.change ?
                       'fa-caret-up text-success fa-2x' :
                       'fa-caret-down text-danger fa-2x'}`}
                   />

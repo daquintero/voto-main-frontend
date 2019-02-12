@@ -9,9 +9,11 @@ import { Route, Switch } from 'react-router-dom';
 // ---------------- BASE IMPORTS ----------------------
 // Home Page
 import Home from '../Assembly/Home/components/index';
-// Scratch File
-import Scratch from './Scratch';
 import Layout from '../Layout/TopBar/components/index';
+
+// Testing Files
+import Scratch from './Scratch';
+import APITestPage from './ApiTestPage';
 
 // --------------- REUSABLE IMPORTS -------------------
 // TODO FIX FOR PATH
@@ -30,7 +32,10 @@ const wrappedRoutes = () => (
   <div>
     <Layout />
     <Route exact path="/" component={Home} />
+
+    {/* Test Files */}
     <Route path="/a" component={Scratch} />
+    <Route path="/api-test" component={APITestPage} />
   </div>
 );
 

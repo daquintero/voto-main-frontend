@@ -33,7 +33,7 @@ class InformativeSnippetCard extends PureComponent {
               <h4 className="card-title mb-0">{obj.title}</h4>
               <div className="d-flex justify-content-between emp-card-info-btm">
                 <div className="p-2 text-center justify-content-center" >
-                  <i className={`fal p-2 fa-${obj.statistics[0].icon}`} aria-hidden="true" />
+                  <i className={`fal p-2 enlarge fa-${obj.statistics[0].icon}`} aria-hidden="true" />
                   <div className="justify-content-between">
                     <p className="small" > {numeral(obj.statistics[0].data).format('0a')}</p>
                     <p className="small m-0" > {obj.statistics[0].title} </p>

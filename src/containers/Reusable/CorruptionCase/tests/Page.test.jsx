@@ -1,7 +1,7 @@
 // Test for the Card
 import React from 'react';
 import renderer from 'react-test-renderer';
-import Page from '../components/Page';
+import Page from '../components/Page/Page';
 
 describe('<Page />', () => {
   it('Full Page renders correctly without crashing', () => {

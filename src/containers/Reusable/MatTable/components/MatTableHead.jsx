@@ -16,7 +16,7 @@ import { MatTableHeadPropTypes } from './MatTablePropTypes';
 
 export default class MatTableHead extends PureComponent {
   static propTypes = MatTableHeadPropTypes;
-  // Sort Handler from Main Table
+  // Sort Handler from Main MatTable
   createSortHandler = property => (event) => {
     this.props.onRequestSort(event, property);
   };

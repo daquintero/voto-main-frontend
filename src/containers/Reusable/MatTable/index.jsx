@@ -14,13 +14,13 @@ import TablePagination from '@material-ui/core/TablePagination';
 
 // ----------------- RELATIVE IMPORTS -------------------------
 // PropTypes
-import { MatTablePropTypes, MatTableDefaultPropTypes } from './MatTablePropTypes';
+import { MatTablePropTypes, MatTableDefaultPropTypes } from './components/MatTablePropTypes';
 
 // Components
-import MatTableHead from './MatTableHead';
+import MatTableHead from './components/MatTableHead';
 
 // Utils
-import squashString from '../../../utils/squashString';
+import squashString from '../utils/squashString';
 
 // Util for array ordering under these
 const getNestedSorting = (obj, orderBy) => {
