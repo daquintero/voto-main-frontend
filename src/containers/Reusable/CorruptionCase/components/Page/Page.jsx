@@ -1,6 +1,6 @@
 // Full Page for the Corruption Page Component
 import React, { PureComponent } from 'react';
-import { Container, Row} from 'reactstrap';
+import { Container, Row } from 'reactstrap';
 
 // TODO Many things are incomplete
 // Prop Types
@@ -31,7 +31,6 @@ class Page extends PureComponent {
           <Header />
           {/* TODO Finish Stats */}
           {/* <Statistics /> */}
-          {/* TODO Finish Image Gallery */}
           <Gallery />
           <Relationships />
         </Row>

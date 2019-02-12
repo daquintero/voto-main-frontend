@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 // Redux Actions
@@ -9,10 +8,18 @@ import { getRelatedInformativeSnippets } from '../../../InformativeSnippet/redux
 import { getRelatedFinanceItems } from '../../../FinanceItem/redux/actions';
 import { getRelatedOrganizations } from '../../../Organization/redux/actions';
 
+// Components
+import IndividualCardGrid from '../../../Individual/components/CardGrid';
+import CorruptionCaseCardGrid from '../CardGrid';
+import InformativeCardGrid from '../../../InformativeSnippet/components/CardGrid';
+
+// Prop Types
+import { RelationshipProps } from '../CorruptionCasePropTypes';
+
+// TODO Props validation
 class Relationships extends Component {
-  static propTypes = {
-    hi: PropTypes.string.isRequired,
-  };
+  static propTypes = RelationshipProps;
+
   componentDidMount() {
     this.props.dispatch(getRelatedCorruptionCases(0, 'corruption.corruptioncase', this.props.id));
     this.props.dispatch(getRelatedIndividuals(0, 'individuals.individual', this.props.id));
@@ -21,8 +28,14 @@ class Relationships extends Component {
     this.props.dispatch(getRelatedOrganizations(0, 'individuals.organizations', this.props.id));
   }
   render() {
+    const { individuals, corruptionCases, informativeSnippets } = this.props;
     return (
-      <div>{this.props.hi}</div>
+      <div>
+        <IndividualCardGrid info={individuals} />
+        <InformativeCardGrid info={informativeSnippets} />
+        {/* TODO Organization Card Grid */}
+        <CorruptionCaseCardGrid info={corruptionCases} />
+      </div>
     );
   }
 }

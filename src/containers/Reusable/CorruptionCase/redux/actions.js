@@ -6,7 +6,7 @@ import corruptionCaseService from '../corruption-case-service';
 
 // --------------- PAGE --------------
 // Basic Corruption Case Page detailed action that gets the basic fields for the parentID
-export const getBasicCorruptionCasePage = (parentId) => (dispatch) => {
+export const getBasicCorruptionCasePage = parentId => (dispatch) => {
   dispatch({
     type: GET_BASIC_CORRUPTION_CASE_PAGE.REQUEST,
   });
@@ -42,6 +42,4 @@ export const getRelatedCorruptionCases = (subsetNumber, parentClass, parentId) =
     }),
   );
 };
-
-
 

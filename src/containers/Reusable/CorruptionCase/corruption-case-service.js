@@ -19,7 +19,7 @@ const urls = {
 };
 
 // ----------- PAGE ---------------
-const detailedCorruptionCasePage = (parentId) =>
+const detailedCorruptionCasePage = parentId =>
   axios.get(`${urls.get.detailedCorruptionCasePage}${buildQueryString({
     pid: parentId,
   })}`);

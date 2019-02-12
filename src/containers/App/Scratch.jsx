@@ -1,25 +1,23 @@
 // Main Scratch Indexing Container for all of the Routes
 import React from 'react';
-import { Container } from 'reactstrap';
+import { Container, Row, Col } from 'reactstrap';
 import Header from '../Reusable/CorruptionCase/components/Page/Header';
 
 // TODO REMOVE IMAGE TEST
 // const imageTest = `${process.env.PUBLIC_URL}/img-test/a.jpg`;
 
-// // One Card
-// const one = [{
-//   original: imageTest,
-//   thumbnail: imageTest,
-//   description: 'test',
-// }];
+// One Card
+const basic = {
+  title: 'This corruption case',
+  description: 'Some bries description of this information to make sure we are on the same page',
+  longDescription: 'Some bries description of this information to make sure we are on the same page',
+};
 
 // // Each Compendium
 // const info = [{
 //   original: imageTest,
 //   thumbnail: imageTest,
-//   embedUrl: 'https://www.youtube.com/embed/4pSzhZ76GdM?autoplay=1&showinfo=0',
 //   description: 'Render custom slides within the gallery',
-//   type: 'video',
 // }, {
 //   original: imageTest,
 //   thumbnail: imageTest,
@@ -37,7 +35,11 @@ import Header from '../Reusable/CorruptionCase/components/Page/Header';
 const Scratch = () => (
   <div className="layout">
     <Container>
-      <Header />
+      <Row>
+        <Col>
+          <Header basic={basic} />
+        </Col>
+      </Row>
     </Container>
   </div>
 );

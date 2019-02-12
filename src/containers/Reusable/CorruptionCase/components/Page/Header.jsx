@@ -3,23 +3,21 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
 // Redux
-import { connect } from 'react-redux';
+// import { connect } from 'react-redux';
 
 // Containers
 import { Row, Col, Card } from 'reactstrap';
 
 class Header extends PureComponent {
   static propTypes = {
-    title: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
-    longDescription: PropTypes.string.isRequired,
-
-  };
+    basic: PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      description: PropTypes.string.isRequired,
+      longDescription: PropTypes.string.isRequired,
+  })};
   render() {
     const {
-      title,
-      description,
-      longDescription,
+      basic
     } = this.props;
     return (
       <div>
@@ -27,9 +25,9 @@ class Header extends PureComponent {
           {/* Fill entire card container */}
           <Col xs={12}>
             <Card>
-              <h2>{title}</h2>
-              {description}
-              {longDescription}
+              <h2>{basic.title}</h2>
+              {basic.description}
+              {basic.longDescription}
             </Card>
           </Col>
         </Row>
@@ -38,9 +36,11 @@ class Header extends PureComponent {
   }
 }
 
-export default connect(state => ({
-  // Basic Page information
-  title: state.openPage.basic.title,
-  description: state.openPage.basic.description,
-  longDescription: state.openPage.basic.longDescription,
-}))(Header);
+export default Header;
+// // Redux
+// export default connect(state => ({
+//   // Basic Page information
+//   title: state.openPage.basic.title,
+//   description: state.openPage.basic.description,
+//   longDescription: state.openPage.basic.longDescription,
+// }))(Header);
