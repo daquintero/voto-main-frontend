@@ -4,87 +4,299 @@ exports[`Scratch renders correctly without crashing 1`] = `
 <div
   className="layout"
 >
-  <div>
+  <div
+    className="container"
+  >
     <div
-      className="p-0 container"
+      className="row"
     >
       <div
-        className="no-gutters row"
+        className="p-2 col-12"
       >
         <div
-          className="col-12 col-md-6 col-xl-4"
+          className="bg-white rounded"
         >
           <div
-            className="bg-white card"
+            className="material-table__wrap"
           >
-            <div
-              className="no-gutters row"
+            <table
+              className="MuiTable-root-122 material-table"
             >
-              <div
-                className="col-12"
+              <thead
+                className="MuiTableHead-root-123"
               >
-                <img
-                  alt="Something"
-                  className="img-cover"
-                  src="/img-test/a.jpg"
-                />
-              </div>
-              <div
-                className="col-12"
-              >
-                <div
-                  className="p-2 card-body"
+                <tr
+                  className="MuiTableRow-root-124 MuiTableRow-head-127"
                 >
-                  <h4
-                    className="card-title mb-0"
+                  <th
+                    aria-sort={null}
+                    className="MuiTableCell-root-129 MuiTableCell-head-130 material-table__cell material-table__cell--sort material-table__cell--mobile"
+                    scope="col"
                   >
-                    Whatsup asdn amsda jasd nas dn asnd 
-                  </h4>
-                  <div
-                    className="d-flex justify-content-between"
+                    <h5
+                      className="material-table__sort-label"
+                    >
+                      Title
+                    </h5>
+                  </th>
+                  <th
+                    aria-sort="ascending"
+                    className="MuiTableCell-root-129 MuiTableCell-head-130 material-table__cell material-table__cell--sort material-table__cell--mobile"
+                    scope="col"
+                  >
+                    <span
+                      className="MuiButtonBase-root-146 MuiTableSortLabel-root-141 MuiTableSortLabel-active-142"
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onContextMenu={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      onKeyUp={[Function]}
+                      onMouseDown={[Function]}
+                      onMouseLeave={[Function]}
+                      onMouseUp={[Function]}
+                      onTouchEnd={[Function]}
+                      onTouchMove={[Function]}
+                      onTouchStart={[Function]}
+                      role="button"
+                      tabIndex="0"
+                    >
+                      <h5
+                        className="material-table__sort-label"
+                      >
+                        Amount
+                      </h5>
+                      <svg
+                        aria-hidden="true"
+                        className="MuiSvgIcon-root-149 MuiTableSortLabel-icon-143 MuiTableSortLabel-iconDirectionAsc-145"
+                        focusable="false"
+                        role="presentation"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"
+                        />
+                      </svg>
+                    </span>
+                  </th>
+                  <th
+                    aria-sort={null}
+                    className="MuiTableCell-root-129 MuiTableCell-head-130 material-table__cell material-table__cell--sort material-table__cell--mobile"
+                    scope="col"
+                  >
+                    <h5
+                      className="material-table__sort-label"
+                    >
+                      Source
+                    </h5>
+                  </th>
+                </tr>
+              </thead>
+              <tbody
+                className="MuiTableBody-root-158"
+              >
+                <tr
+                  className="MuiTableRow-root-124 material-table__row"
+                >
+                  <th
+                    aria-sort={null}
+                    className="MuiTableCell-root-129 MuiTableCell-body-131 MuiTableCell-alignRight-139 material-table__cell material-table__cell--mobile "
+                    scope="row"
+                  >
+                    Two
+                  </th>
+                  <th
+                    aria-sort={null}
+                    className="MuiTableCell-root-129 MuiTableCell-body-131 MuiTableCell-alignRight-139 material-table__cell material-table__cell--mobile "
+                    scope="row"
+                  >
+                    $ 49.8M
+                  </th>
+                  <th
+                    aria-sort={null}
+                    className="MuiTableCell-root-129 MuiTableCell-body-131 MuiTableCell-alignRight-139 material-table__cell material-table__cell--mobile "
+                    scope="row"
                   >
                     <a
-                      className="p-2 text-center justify-content-center card-link"
-                      href="jjj"
+                      href="https://test-voto-backend.herokuapp.com/admin/calendars/event/add/"
                     >
+                       
                       <i
-                        aria-hidden="true"
-                        className="fal p-2 fa-user"
+                        className="fal fa-external-link enlarge"
                       />
-                      <div
-                        className="justify-content-between"
-                      >
-                        <p
-                          className="small"
-                        >
-                           
-                          10
-                        </p>
-                        <p
-                          className="small m-0"
-                        >
-                           
-                          informacion
-                           
-                        </p>
-                      </div>
+                       
                     </a>
-                    <div
-                      className="p-2 mt-0 text-center"
+                  </th>
+                </tr>
+                <tr
+                  className="MuiTableRow-root-124 material-table__row"
+                >
+                  <th
+                    aria-sort={null}
+                    className="MuiTableCell-root-129 MuiTableCell-body-131 MuiTableCell-alignRight-139 material-table__cell material-table__cell--mobile "
+                    scope="row"
+                  >
+                    dfgdsfgsdfg
+                  </th>
+                  <th
+                    aria-sort={null}
+                    className="MuiTableCell-root-129 MuiTableCell-body-131 MuiTableCell-alignRight-139 material-table__cell material-table__cell--mobile "
+                    scope="row"
+                  >
+                    $ 123.0M
+                  </th>
+                  <th
+                    aria-sort={null}
+                    className="MuiTableCell-root-129 MuiTableCell-body-131 MuiTableCell-alignRight-139 material-table__cell material-table__cell--mobile "
+                    scope="row"
+                  >
+                    <a
+                      href="https://test-voto-backend.herokuapp.com/admin/calendars/event/add/"
                     >
+                       
                       <i
-                        className="fal p-2 fa-calendar"
+                        className="fal fa-external-link enlarge"
                       />
-                      <p
-                        className="small m-0"
-                      >
-                         Publicado 
-                        hace unos segundos
-                         
-                      </p>
-                    </div>
+                       
+                    </a>
+                  </th>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div
+            className="material-table__pagination"
+          >
+            <div
+              className="MuiToolbar-root-169 MuiToolbar-regular-171 MuiToolbar-gutters-170 MuiTablePagination-toolbar-160"
+            >
+              <div
+                className="MuiTablePagination-spacer-161"
+              />
+              <span
+                className="MuiTypography-root-173 MuiTypography-caption-183 MuiTypography-colorInherit-202 MuiTablePagination-caption-162"
+              >
+                Filas por página
+              </span>
+              <div
+                className="MuiInputBase-root-216 MuiTablePagination-input-166"
+                onClick={[Function]}
+              >
+                <div
+                  className="MuiSelect-root-209 MuiTablePagination-selectRoot-163"
+                >
+                  <div
+                    aria-haspopup="true"
+                    aria-pressed="false"
+                    className="MuiSelect-select-210 MuiTablePagination-select-164 MuiSelect-selectMenu-213 MuiInputBase-input-226"
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    role="button"
+                    tabIndex={0}
+                  >
+                    <span
+                      dangerouslySetInnerHTML={
+                        Object {
+                          "__html": "&#8203;",
+                        }
+                      }
+                    />
                   </div>
+                  <input
+                    type="hidden"
+                    value={5}
+                  />
+                  <svg
+                    aria-hidden="true"
+                    className="MuiSvgIcon-root-149 MuiSelect-icon-215 MuiTablePagination-selectIcon-165"
+                    focusable="false"
+                    role="presentation"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M7 10l5 5 5-5z"
+                    />
+                  </svg>
                 </div>
+              </div>
+              <span
+                className="MuiTypography-root-173 MuiTypography-caption-183 MuiTypography-colorInherit-202 MuiTablePagination-caption-162"
+              >
+                1-2 of 2
+              </span>
+              <div
+                className="MuiTablePagination-actions-168"
+              >
+                <button
+                  className="MuiButtonBase-root-146 MuiButtonBase-disabled-147 MuiIconButton-root-237 MuiIconButton-colorInherit-238 MuiIconButton-disabled-241"
+                  disabled={true}
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onContextMenu={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
+                  onMouseDown={[Function]}
+                  onMouseLeave={[Function]}
+                  onMouseUp={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchMove={[Function]}
+                  onTouchStart={[Function]}
+                  tabIndex="-1"
+                  type="button"
+                >
+                  <span
+                    className="MuiIconButton-label-242"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      className="MuiSvgIcon-root-149"
+                      focusable="false"
+                      role="presentation"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M15.41 16.09l-4.58-4.59 4.58-4.59L14 5.5l-6 6 6 6z"
+                      />
+                    </svg>
+                  </span>
+                </button>
+                <button
+                  className="MuiButtonBase-root-146 MuiButtonBase-disabled-147 MuiIconButton-root-237 MuiIconButton-colorInherit-238 MuiIconButton-disabled-241"
+                  disabled={true}
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onContextMenu={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
+                  onMouseDown={[Function]}
+                  onMouseLeave={[Function]}
+                  onMouseUp={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchMove={[Function]}
+                  onTouchStart={[Function]}
+                  tabIndex="-1"
+                  type="button"
+                >
+                  <span
+                    className="MuiIconButton-label-242"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      className="MuiSvgIcon-root-149"
+                      focusable="false"
+                      role="presentation"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"
+                      />
+                    </svg>
+                  </span>
+                </button>
               </div>
             </div>
           </div>

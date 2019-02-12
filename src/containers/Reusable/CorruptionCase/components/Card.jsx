@@ -24,7 +24,7 @@ class CorruptionCaseCard extends PureComponent {
 
     const statisticsItem = stats => (
       <div className="p-2 text-center justify-content-center" key={stats.id}>
-        <i className={`fal p-2 fa-${stats.icon}`} aria-hidden="true" />
+        <i className={`fal p-2 enlarge fa-${stats.icon}`} aria-hidden="true" />
         <div className="justify-content-between">
           <p className="small" >
             {/* Check if number or string */}
