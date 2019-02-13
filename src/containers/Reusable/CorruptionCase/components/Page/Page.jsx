@@ -27,7 +27,6 @@ class Page extends PureComponent {
     return (
       <Container>
         <Row>
-          {/* TODO Build Header */}
           <Header />
           {/* TODO Finish Stats */}
           {/* <Statistics /> */}

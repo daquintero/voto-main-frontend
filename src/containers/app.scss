@@ -14,8 +14,14 @@
 // Content Object Fit
 @import 'App/scss/utils/media';
 
+// Modal
+@import 'Reusable/utils/styling/modal';
+
 // ---------------------------- REUSABLE ------------------------
+// Media
 @import 'Reusable/Video/scss/video';
 @import 'Reusable/InformativeSnippet/styling/card';
 // Material MatTable
 @import 'Reusable/MatTable/styling/material-table';
+//Corruption Case
+@import 'Reusable/CorruptionCase/styling/corruption-case';

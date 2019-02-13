@@ -6,7 +6,10 @@ import PropTypes from 'prop-types';
 // import { connect } from 'react-redux';
 
 // Containers
-import { Row, Col, Card } from 'reactstrap';
+import { Row, Col, Card, Button } from 'reactstrap';
+
+// Components
+import Modal from './Modal';
 
 class Header extends PureComponent {
   static propTypes = {
@@ -23,13 +26,16 @@ class Header extends PureComponent {
       <div>
         <Row noGutters>
           {/* Fill entire card container */}
-          <Col xs={12}>
-            <Card>
-              <h2>{basic.title}</h2>
-              {basic.description}
-              {basic.longDescription}
+            <Card className="page-header">
+              <h2 className="p-2 text-center">{basic.title}</h2>
+              <h5 className="p-2 text-muted">{basic.description}</h5>
+              <Col xs={6} md={3}>
+                <Button outline color="info" className="p-2 m-2 align-bottom">
+                  Averigua Más
+                </Button>
+              </Col>
             </Card>
-          </Col>
+          <Modal/>
         </Row>
       </div>
     );
