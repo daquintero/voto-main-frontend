@@ -18,6 +18,15 @@ class Header extends PureComponent {
       description: PropTypes.string.isRequired,
       longDescription: PropTypes.string.isRequired,
   })};
+  constructor(props) {
+    super(props);
+    this.state = {
+      openModal: false,
+    };
+  }
+  toggleOpenModal= () => { // TODO REMOVE IF NOT NEEDED
+    this.setState(prevState => ({ openModal: !prevState.openModal }));
+  };
   render() {
     const {
       basic
@@ -29,13 +38,18 @@ class Header extends PureComponent {
             <Card className="page-header">
               <h2 className="p-2 text-center">{basic.title}</h2>
               <h5 className="p-2 text-muted">{basic.description}</h5>
-              <Col xs={6} md={3}>
-                <Button outline color="info" className="p-2 m-2 align-bottom">
+              <Col xs={6} md={6}>
+                <Button outline color="info" className="p-2 m-2 align-bottom" onClick={this.toggleOpenModal}>
                   Averigua Más
                 </Button>
               </Col>
             </Card>
-          <Modal/>
+          <Modal
+            isOpen={this.state.openModal}
+            toggle={this.toggleOpenModal}
+          >
+            {basic.longDescription}
+          </Modal>
         </Row>
       </div>
     );

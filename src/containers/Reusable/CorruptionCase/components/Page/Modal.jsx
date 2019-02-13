@@ -9,36 +9,39 @@ import PropTypes from 'prop-types';
 class InfoModal extends PureComponent {
   static propTypes = {
     children: PropTypes.node,
-    action: PropTypes.shape({
-      loading: PropTypes.bool.isRequired,
-      loaded: PropTypes.bool.isRequired,
-      error: PropTypes.bool.isRequired,
-    }),
+    // TODO Add with redux
+    // action: PropTypes.shape({
+    //   loading: PropTypes.bool.isRequired,
+    //   loaded: PropTypes.bool.isRequired,
+    //   error: PropTypes.bool.isRequired,
+    // }),
     toggle: PropTypes.func.isRequired,
     isOpen: PropTypes.bool.isRequired,
+
   };
 
   static defaultProps = {
     children: null,
-    action: {
-      loading: false,
-      loaded: false,
-      error: false,
-    },
+    // action: {
+    //   loading: false,
+    //   loaded: false,
+    //   error: false,
+    // },
   };
   render() {
     const {
-      toggle, isOpen, action, children,
+      toggle, isOpen, children, // TODO action,
     } = this.props;
     // TODO Add loading and error, finish modularizing Modal Function
-    const { loading } = action;
+    // const { loading } = action;
     return (
       <Modal
         isOpen={isOpen}
         toggle={toggle}
         className="modal-dialog--success"
       >
-        { loading ? (<>fghdfg</>) : ({ children }) }
+        {/* { loading ? (<>fghdfg</>) : ({ children }) } */}
+        {children}
       </Modal>
     );
   }
