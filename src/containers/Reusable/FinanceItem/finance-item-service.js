@@ -16,10 +16,10 @@ const urls = {
 };
 
 // Corruption Cases GET Requests
-const relatedFinanceItems = (subsetNumber, parentClass, parentId) =>
+const relatedFinanceItems = (subsetNumber, modelLabel, parentId) =>
   axios.get(`${urls.get.relatedFinanceItems}${buildQueryString({
     sn: subsetNumber,
-    pc: parentClass,
+    pc: modelLabel,
     pid: parentId,
   })}`);
 

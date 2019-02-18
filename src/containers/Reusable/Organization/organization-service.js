@@ -16,10 +16,10 @@ const urls = {
 };
 
 // Corruption Cases GET Requests
-const relatedOrganizations = (subsetNumber, parentClass, parentId) =>
+const relatedOrganizations = (subsetNumber, modelLabel, parentId) =>
   axios.get(`${urls.get.relatedOrganizations}${buildQueryString({
     sn: subsetNumber,
-    pc: parentClass,
+    pc: modelLabel,
     pid: parentId,
   })}`);
 

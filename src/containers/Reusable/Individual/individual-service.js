@@ -16,10 +16,10 @@ const urls = {
 };
 
 // Individuals GET Requests
-const relatedIndividuals = (subsetNumber, parentClass, parentId) =>
+const relatedIndividuals = (subsetNumber, modelLabel, parentId) =>
   axios.get(`${urls.get.relatedIndividuals}${buildQueryString({
     sn: subsetNumber,
-    pc: parentClass,
+    pc: modelLabel,
     pid: parentId,
   })}`);
 

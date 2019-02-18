@@ -1,11 +1,7 @@
-// Libraries
 import React, { PureComponent } from 'react';
-
-// Prop Types
 import PropTypes from 'prop-types';
 
-// Declaration
-class Whatever extends PureComponent {
+class FinanceItem extends PureComponent {
   static propTypes = {
     hi: PropTypes.string.isRequired,
   };
@@ -16,7 +12,4 @@ class Whatever extends PureComponent {
   }
 }
 
-// TODO State Store Connection
-export default Whatever;
-
-
+export default FinanceItem;

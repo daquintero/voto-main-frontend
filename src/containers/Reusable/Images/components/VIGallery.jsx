@@ -1,22 +1,15 @@
 // Custom implementation of React-Image-Gallery
 // --------------- IMPORTS --------------------
 import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
 import ImageGallery from 'react-image-gallery';
 
+// PropTypes
+import { VIGalleryPropTypes, VIGalleryDefaultProps } from './ImagesPropTypes';
 
 // TODO Note that backend object has to match this.
 export default class VIGallery extends PureComponent {
-    static propTypes = {
-      data: PropTypes.arrayOf(PropTypes.shape({
-        original: PropTypes.string.isRequired,
-        thumbnail: PropTypes.string.isRequired,
-        description: PropTypes.string.isRequired,
-      })),
-    };
-    static defaultProps = {
-      data: [],
-    };
+    static propTypes = VIGalleryPropTypes;
+    static defaultProps = VIGalleryDefaultProps;
 
     constructor() {
       super();
@@ -29,12 +22,16 @@ export default class VIGallery extends PureComponent {
       const { data } = this.props;
       return (
       // Parameters are infinite sliding, fullscreen, thumbnails, navigation
-        <ImageGallery
-          items={data}
-          showPlayButton={this.state.showPlayButton}
-          onSlide={this.onSlide}
-          showFullscreenButton={this.state.showFullscreenButton}
-        />
+        <>
+          {data[0] ? (
+            <ImageGallery
+              items={data}
+              showPlayButton={this.state.showPlayButton}
+              onSlide={this.onSlide}
+              showFullscreenButton={this.state.showFullscreenButton}
+            />
+          ) : null}
+        </>
       );
     }
 }

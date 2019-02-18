@@ -1,23 +1,19 @@
 /* eslint-disable */
+// Libraries
 import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
-
+import { Row, Col, Card, Button, Modal } from 'reactstrap';
 // Redux
 // import { connect } from 'react-redux';
 
-// Containers
-import { Row, Col, Card, Button } from 'reactstrap';
-
 // Components
-import Modal from './Modal';
+import MainFinanceList from '../../../../FinanceItem/components/MainFinanceList';
+
+// Prop Types
+import { headerPropTypes, headerDefaultProps } from './PagePropTypes';
 
 class Header extends PureComponent {
-  static propTypes = {
-    basic: PropTypes.shape({
-      title: PropTypes.string.isRequired,
-      description: PropTypes.string.isRequired,
-      longDescription: PropTypes.string.isRequired,
-  })};
+  static propTypes = headerPropTypes;
+  static defaultProps = headerDefaultProps;
   constructor(props) {
     super(props);
     this.state = {
@@ -32,32 +28,36 @@ class Header extends PureComponent {
       basic
     } = this.props;
     return (
-      <div>
         <Row noGutters>
+          <Col xs={12}>
           {/* Fill entire card container */}
             <Card className="page-header">
               <h2 className="p-2 text-center">{basic.title}</h2>
-              <h5 className="p-2 text-muted">{basic.description}</h5>
+              <h5 className="p-3 text-muted">{basic.description}</h5>
               <Col xs={6} md={6}>
                 <Button outline color="info" className="p-2 m-2 align-bottom" onClick={this.toggleOpenModal}>
                   Averigua Más
                 </Button>
               </Col>
+              <MainFinanceList
+                nonCorruptionRelatedFunds={basic.nonCorruptionRelatedFunds}
+                corruptionRelatedFunds={basic.corruptionRelatedFunds}/>
             </Card>
+          {/* Long Description Modal */}
           <Modal
             isOpen={this.state.openModal}
             toggle={this.toggleOpenModal}
           >
             {basic.longDescription}
           </Modal>
+          </Col>
         </Row>
-      </div>
     );
   }
 }
 
 export default Header;
-// // Redux
+// // TODO Reconnect to Redux
 // export default connect(state => ({
 //   // Basic Page information
 //   title: state.openPage.basic.title,

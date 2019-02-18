@@ -21,10 +21,10 @@ const recentInformativeSnippets = subsetNumber =>
   axios.get(`${urls.get.recentInformativeSnippets}${buildQueryString({
     sn: subsetNumber,
   })}`);
-const relatedInformativeSnippets = (subsetNumber, parentClass, parentId) =>
+const relatedInformativeSnippets = (subsetNumber, modelLabel, parentId) =>
   axios.get(`${urls.get.relatedInformativeSnippets}${buildQueryString({
     sn: subsetNumber,
-    pc: parentClass,
+    pc: modelLabel,
     pid: parentId,
   })}`);
 

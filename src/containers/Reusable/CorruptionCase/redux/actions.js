@@ -26,11 +26,11 @@ export const getBasicCorruptionCasePage = parentId => (dispatch) => {
 
 // ------------- RELATIONSHIPS --------------
 // This function inputs the current subset and waits for the server updates prior to updating the subsets data/number
-export const getRelatedCorruptionCases = (subsetNumber, parentClass, parentId) => (dispatch) => {
+export const getRelatedCorruptionCases = (subsetNumber, modelLabel, parentId) => (dispatch) => {
   dispatch({
     type: GET_RELATED_CORRUPTION_CASES.REQUEST,
   });
-  return corruptionCaseService.get.relatedCorruptionCases(subsetNumber, parentClass, parentId).then(
+  return corruptionCaseService.get.relatedCorruptionCases(subsetNumber, modelLabel, parentId).then(
     response => dispatch({
       type: GET_RELATED_CORRUPTION_CASES.SUCCESS,
       subsetNumber: response.data,

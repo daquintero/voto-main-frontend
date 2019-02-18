@@ -1,9 +1,7 @@
 // Main Scratch Indexing Container for all of the Routes
 import React from 'react';
-// import { Container, Row, Col } from 'reactstrap';
-
-// TODO FINISH PAGE TEST
-import Page from '../Reusable/CorruptionCase/components/Page/components/Page';
+import { Container, Row } from 'reactstrap';
+import MainFinanceList from '../components/MainFinanceList';
 
 // TODO REMOVE IMAGE TEST
 // const imageTest = `${process.env.PUBLIC_URL}/img-test/a.jpg`;
@@ -41,7 +39,11 @@ import Page from '../Reusable/CorruptionCase/components/Page/components/Page';
 
 const Scratch = () => (
   <div className="layout">
-    <Page />
+    <Container>
+      <Row>
+        <MainFinanceList corruptionRelatedFunds={1231241.1} nonCorruptionRelatedFunds={12349829.2} />
+      </Row>
+    </Container>
   </div>
 );
 

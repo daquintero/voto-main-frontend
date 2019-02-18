@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
-import Page from '../Reusable/CorruptionCase/components/Page/Page';
+import Page from '../Reusable/CorruptionCase/components/Page/components/Page';
 // ----- TO TEST API -----
 /* Use Corruption Page sample */
 
