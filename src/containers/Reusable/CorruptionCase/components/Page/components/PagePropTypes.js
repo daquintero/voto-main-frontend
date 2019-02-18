@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 
 // TODO Refactor Page Props into each separate section
 
-// Statistics and Finance
-import { mainFinanceListPropTypes } from '../../../../FinanceItem/components/FinanceItemPropTypes';
+// TODO do something with Statistics and Finance
+// import { mainFinanceListPropTypes } from '../../../../FinanceItem/components/FinanceItemPropTypes';
 
 // ------------------ PAGE PROPS -------------------
 export const RelationshipProps = {
@@ -126,7 +126,6 @@ export const headerDefaultProps = {
     title: '',
     description: '',
     longDescription: '',
-    mainFinanceListPropTypes,
   },
 };
 

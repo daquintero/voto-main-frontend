@@ -18,6 +18,7 @@ import Header from './Header';
 import Gallery from './Gallery';
 import Relationships from './Relationships';
 import Statistics from './Statistics';
+import MainFinancesNav from '../../../../FinanceItem/components/MainFinancesNav';
 
 class Page extends PureComponent {
   // TODO Move the proptypes accordingly
@@ -32,14 +33,22 @@ class Page extends PureComponent {
       <Container>
         <Row className="p-2">
           <Col xs={12} md={6}>
-            <Header />
+            <Header />-
           </Col>
           <Col xs={12} md={6}>
             {/* Todo Give Data to Gallery */}
             <Gallery />
           </Col>
-          <Statistics />
-          <Relationships />
+          <MainFinancesNav corruptionRelatedFunds={123123123.1} nonCorruptionRelatedFunds={1231232.2} />
+          <Col xs={12} className="p-2">
+            <h3 className="text-center">Estadística</h3>
+            <Statistics />
+          </Col>
+          <Row>
+            <Col xs={12}>
+              <Relationships />
+            </Col>
+          </Row>
         </Row>
       </Container>
     );

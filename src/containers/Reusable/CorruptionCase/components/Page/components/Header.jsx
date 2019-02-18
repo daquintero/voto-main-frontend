@@ -5,9 +5,6 @@ import { Row, Col, Card, Button, Modal } from 'reactstrap';
 // Redux
 // import { connect } from 'react-redux';
 
-// Components
-import MainFinanceList from '../../../../FinanceItem/components/MainFinanceList';
-
 // Prop Types
 import { headerPropTypes, headerDefaultProps } from './PagePropTypes';
 
@@ -23,36 +20,18 @@ class Header extends PureComponent {
       openModal: false,
     };
   }
-  toggleOpenModal= () => { // TODO REMOVE IF NOT NEEDED
-    this.setState(prevState => ({ openModal: !prevState.openModal }));
-  };
   render() {
     const {
       basic
     } = headerData;
     return (
-        <Row noGutters>
+        <Row noGutters className="h-100">
           <Col xs={12}>
           {/* Fill entire card container */}
-            <Card className="page-header">
-              <h2 className="p-2 text-center">{basic.title}</h2>
-              <h5 className="p-3 text-muted">{basic.description}</h5>
-              <Col xs={6} md={6}>
-                <Button outline color="info" className="p-2 m-2 align-bottom" onClick={this.toggleOpenModal}>
-                  Averigua Más
-                </Button>
-              </Col>
-              <MainFinanceList
-                nonCorruptionRelatedFunds={basic.nonCorruptionRelatedFunds}
-                corruptionRelatedFunds={basic.corruptionRelatedFunds}/>
+            <Card className="page-header h-100">
+              <h2 className="p-4 text-center">{basic.title}</h2>
+              <h4 className="p-4 text-muted">{basic.description}</h4>
             </Card>
-          {/* Long Description Modal */}
-          <Modal
-            isOpen={this.state.openModal}
-            toggle={this.toggleOpenModal}
-          >
-            {basic.longDescription}
-          </Modal>
           </Col>
         </Row>
     );

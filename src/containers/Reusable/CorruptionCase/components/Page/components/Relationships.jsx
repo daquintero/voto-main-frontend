@@ -2,6 +2,8 @@
 import React, { Component } from 'react';
 // import { connect } from 'react-redux';
 
+import { Row, Col } from 'reactstrap';
+
 // Redux Actions
 // import { getRelatedCorruptionCases } from '../../../redux/actions';
 // import { getRelatedIndividuals } from '../../../../Individual/redux/actions';
@@ -32,12 +34,21 @@ class Relationships extends Component {
   render() {
     // const { individuals, corruptionCases, informativeSnippets } = this.props;
     return (
-      <div>
-        <IndividualCardGrid info={individualCardData} />
-        <InformativeCardGrid info={informativeSnippetCardData} />
+      <Row>
+        <Col xs={12} md={6}>
+          <h3>Individuos Relacionados</h3>
+          <IndividualCardGrid info={individualCardData} />
+        </Col>
+        <Col xs={12} md={6}>
+          <h3>Noticias Relacionadas</h3>
+          <InformativeCardGrid info={informativeSnippetCardData} />
+        </Col>
         {/* TODO Organization Card Grid */}
-        <CorruptionCaseCardGrid info={corruptionCaseCardData} />
-      </div>
+        <Col xs={12} md={6}>
+          <h3>Casos de Corrupción Relacionados</h3>
+          <CorruptionCaseCardGrid info={corruptionCaseCardData} />
+        </Col>
+      </Row>
     );
   }
 }

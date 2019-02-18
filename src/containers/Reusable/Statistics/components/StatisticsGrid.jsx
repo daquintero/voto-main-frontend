@@ -18,7 +18,7 @@ class StatisticsBlockGrid extends PureComponent {
     return (
       <Row className="mx-auto">
         { statistics.map(statistic => (
-          <Col xs={4} md={2} className="p-2">
+          <Col md={2} className="p-2">
             <StatisticBlock statistic={statistic} />
           </Col>
         ))}
