@@ -1,5 +1,5 @@
+/* eslint-disable */
 import React, { PureComponent } from 'react';
-
 
 // Prop Types
 import {
@@ -10,16 +10,20 @@ import {
 // Components
 import StatisticsBlockGrid from '../../../../Statistics/components/StatisticsGrid';
 
+
+// TODO REMOVE TEST DATA
+import { statisticsData } from './SampleDataFullPage';
+
 // Declaration
 class Statistics extends PureComponent {
   static propTypes = statisticsListPropTypes;
   static defaultProps = statisticsListDefaultProps;
 
   render() {
-    const { statistics } = this.props;
+    // const { statistics } = this.props;
     return (
       <div>
-        <StatisticsBlockGrid statistics={statistics} />
+        <StatisticsBlockGrid statistics={statisticsData} />
       </div>
     );
   }

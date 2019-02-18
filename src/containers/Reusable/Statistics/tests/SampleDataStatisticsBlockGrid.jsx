@@ -56,27 +56,27 @@ const statistics = [{
   value: 10,
   icon: 'user',
 },
-  {
-    name: 'Some statistic',
-    source: 'info',
-    value: 10,
-    icon: 'user',
-  }, {
-    name: 'Some statistic',
-    source: 'info',
-    value: 10,
-    icon: 'user',
-  }, {
-    name: 'Some statistic',
-    source: 'info',
-    value: 1000,
-    icon: 'user',
-  }, {
-    name: 'Some statistic',
-    source: 'info',
-    value: 10,
-    icon: 'user',
-  }];
+{
+  name: 'Some statistic',
+  source: 'info',
+  value: 10,
+  icon: 'user',
+}, {
+  name: 'Some statistic',
+  source: 'info',
+  value: 10,
+  icon: 'user',
+}, {
+  name: 'Some statistic',
+  source: 'info',
+  value: 1000,
+  icon: 'user',
+}, {
+  name: 'Some statistic',
+  source: 'info',
+  value: 10,
+  icon: 'user',
+}];
 
 const Scratch = () => (
   <div className="layout">

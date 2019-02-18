@@ -1,3 +1,4 @@
+/* eslint-disable */
 // Libraries
 import React, { PureComponent } from 'react';
 
@@ -7,15 +8,18 @@ import { VIGalleryPropTypes, VIGalleryDefaultProps } from '../../../../Images/co
 // Components
 import VIGallery from '../../../../Images/components/VIGallery';
 
+// TODO REMOVE TEST DATA
+import { galleryData } from './SampleDataFullPage';
+
 // Declaration
 class Gallery extends PureComponent {
   static propTypes = VIGalleryPropTypes;
   static defaultProps = VIGalleryDefaultProps;
 
   render() {
-    const { data } = this.props;
+    // const { data } = this.props;
     return (
-      <VIGallery data={data} />
+      <VIGallery data={galleryData} />
     );
   }
 }

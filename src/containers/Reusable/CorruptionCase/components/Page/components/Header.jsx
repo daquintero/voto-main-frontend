@@ -11,6 +11,9 @@ import MainFinanceList from '../../../../FinanceItem/components/MainFinanceList'
 // Prop Types
 import { headerPropTypes, headerDefaultProps } from './PagePropTypes';
 
+// TODO REMOVE TEST DATA
+import { headerData } from './SampleDataFullPage';
+
 class Header extends PureComponent {
   static propTypes = headerPropTypes;
   static defaultProps = headerDefaultProps;
@@ -26,7 +29,7 @@ class Header extends PureComponent {
   render() {
     const {
       basic
-    } = this.props;
+    } = headerData;
     return (
         <Row noGutters>
           <Col xs={12}>

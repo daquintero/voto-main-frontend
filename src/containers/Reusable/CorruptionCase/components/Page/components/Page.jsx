@@ -3,7 +3,7 @@
 import React, { PureComponent } from 'react';
 import { Container, Row, Col } from 'reactstrap';
 
-// TODO Many things are incomplete
+// TODO THIS IS THE NO REDUX VERSION
 // Prop Types
 import { PageProps } from '../../CorruptionCasePropTypes';
 // TODO , DefaultPageProps
