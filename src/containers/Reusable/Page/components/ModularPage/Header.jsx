@@ -6,10 +6,10 @@ import { Row, Col, Card, Button, Modal } from 'reactstrap';
 // import { connect } from 'react-redux';
 
 // Prop Types
-import { headerPropTypes, headerDefaultProps } from './PagePropTypes';
+import { headerPropTypes, headerDefaultProps } from '../PagePropTypes';
 
 // TODO REMOVE TEST DATA
-import { headerData } from './SampleDataFullPage';
+import { headerData } from '../SampleDataFullPage';
 
 class Header extends PureComponent {
   static propTypes = headerPropTypes;

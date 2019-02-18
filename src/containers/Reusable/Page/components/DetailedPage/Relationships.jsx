@@ -11,15 +11,15 @@ import { Row, Col } from 'reactstrap';
 // import { getRelatedOrganizations } from '../../../../Organization/redux/actions';
 
 // Components
-import IndividualCardGrid from '../../../../Individual/components/CardGrid';
-import CorruptionCaseCardGrid from '../../CardGrid';
-import InformativeCardGrid from '../../../../InformativeSnippet/components/CardGrid';
+import IndividualCardGrid from '../../../Individual/components/CardGrid';
+import CorruptionCaseCardGrid from '../../../CorruptionCase/components/CardGrid';
+import InformativeCardGrid from '../../../InformativeSnippet/components/CardGrid';
 
 // Prop Types
-import { RelationshipProps } from './PagePropTypes';
+import { RelationshipProps } from '../PagePropTypes';
 
 // TODO REMOVE TEST DATA
-import {individualCardData, corruptionCaseCardData, informativeSnippetCardData } from './SampleDataFullPage';
+import {individualCardData, corruptionCaseCardData, informativeSnippetCardData } from '../SampleDataFullPage';
 
 // TODO Props validation
 class Relationships extends Component {
@@ -35,16 +35,16 @@ class Relationships extends Component {
     // const { individuals, corruptionCases, informativeSnippets } = this.props;
     return (
       <Row>
-        <Col xs={12} md={6}>
+        <Col xs={12} md={12}>
           <h3>Individuos Relacionados</h3>
           <IndividualCardGrid info={individualCardData} />
         </Col>
-        <Col xs={12} md={6}>
+        <Col xs={12} md={12}>
           <h3>Noticias Relacionadas</h3>
           <InformativeCardGrid info={informativeSnippetCardData} />
         </Col>
         {/* TODO Organization Card Grid */}
-        <Col xs={12} md={6}>
+        <Col xs={12} md={12}>
           <h3>Casos de Corrupción Relacionados</h3>
           <CorruptionCaseCardGrid info={corruptionCaseCardData} />
         </Col>

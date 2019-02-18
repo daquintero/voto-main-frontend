@@ -5,14 +5,14 @@ import React, { PureComponent } from 'react';
 import {
   statisticsListPropTypes,
   statisticsListDefaultProps,
-} from '../../../../Statistics/components/StatisticPropTypes';
+} from '../../../Statistics/components/StatisticPropTypes';
 
 // Components
-import StatisticsBlockGrid from '../../../../Statistics/components/StatisticsGrid';
+import StatisticsBlockGrid from '../../../Statistics/components/StatisticsGrid';
 
 
 // TODO REMOVE TEST DATA
-import { statisticsData } from './SampleDataFullPage';
+import { statisticsData } from '../SampleDataFullPage';
 
 // Declaration
 class Statistics extends PureComponent {

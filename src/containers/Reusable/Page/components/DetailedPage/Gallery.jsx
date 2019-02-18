@@ -3,13 +3,13 @@
 import React, { PureComponent } from 'react';
 
 // Prop Types
-import { VIGalleryPropTypes, VIGalleryDefaultProps } from '../../../../Images/components/ImagesPropTypes';
+import { VIGalleryPropTypes, VIGalleryDefaultProps } from '../../../Images/components/ImagesPropTypes';
 
 // Components
-import VIGallery from '../../../../Images/components/VIGallery';
+import VIGallery from '../../../Images/components/VIGallery';
 
 // TODO REMOVE TEST DATA
-import { galleryData } from './SampleDataFullPage';
+import { galleryData } from '../SampleDataFullPage';
 
 // Declaration
 class Gallery extends PureComponent {
