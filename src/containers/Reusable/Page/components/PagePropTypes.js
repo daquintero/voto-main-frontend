@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 
 // EXTERNAL PROP TYPES IMPORTS
 
-// TODO Refactor Page Props into each separate section
+// TODO Refactor CorruptionCase Props into each separate section
 
 // TODO do something with Statistics and Finance
 // import { mainFinanceListPropTypes } from '../../../../FinanceItem/components/FinanceItemPropTypes';
@@ -130,4 +130,4 @@ export const headerDefaultProps = {
 };
 
 
-// TODO Define Page Default Props
+// TODO Define CorruptionCase Default Props

@@ -2,17 +2,17 @@ import PropTypes from 'prop-types';
 // TODO CHANGE ALL TO CAMELCASE
 // --------------- EXTERNAL PROP TYPES IMPORTS -------------
 // Utils
-import paginationProps from '../../../utils/paginationProps';
+import paginationProps from '../../../../Reusable/utils/paginationProps';
 
 // General
-import { statisticsListPropTypes } from '../../../Statistics/components/StatisticPropTypes';
+import { statisticsListPropTypes } from '../../../../Reusable/Statistics/components/StatisticPropTypes';
 import { mainFinanceListPropTypes,
-  mainFinanceListDefaultProps } from '../../../FinanceItem/components/FinanceItemPropTypes';
+  mainFinanceListDefaultProps } from '../../../../Reusable/FinanceItem/components/FinanceItemPropTypes';
 
 // Relationships
-import { CardPropTypes as IndividualCardProps } from '../../../Individual/components/IndividualPropTypes';
-import { CardPropTypes as ISCardProps } from '../../../InformativeSnippet/components/InformativeSnippetPropTypes';
-import { CardPropTypes as CCCardProps } from '../CorruptionCasePropTypes';
+import { CardPropTypes as IndividualCardProps } from '../../../../Reusable/Individual/components/IndividualPropTypes';
+import { CardPropTypes as ISCardProps } from '../../../../Reusable/InformativeSnippet/components/InformativeSnippetPropTypes';
+import { CardPropTypes as CCCardProps } from '../../../../Reusable/CorruptionCase/components/CorruptionCasePropTypes';
 
 // ------------------ RELATIONSHIPS PROPS -------------------
 export const RelationshipProps = {
@@ -74,4 +74,4 @@ export const headerDefaultProps = {
 };
 
 
-// TODO Define Page Default Props
+// TODO Define CorruptionCase Default Props

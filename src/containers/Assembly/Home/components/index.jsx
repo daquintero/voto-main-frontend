@@ -1,4 +1,4 @@
-// General Home Page Index
+// General Home CorruptionCase Index
 import React from 'react';
 // import PropTypes from 'prop-types';
 import {

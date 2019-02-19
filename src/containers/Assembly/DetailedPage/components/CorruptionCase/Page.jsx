@@ -1,4 +1,4 @@
-// Full Page for the Corruption Page Component
+// Full CorruptionCase for the Corruption CorruptionCase Component
 // Libraries
 import React, { PureComponent } from 'react';
 import { Container, Row, Col } from 'reactstrap';
@@ -9,9 +9,7 @@ import { PageProps } from './PagePropTypes';
 // TODO , DefaultPageProps
 
 // Redux Actions
-import {
-  getDetailedCorruptionCasePage,
-} from '../../redux/actions';
+import { getDetailedPage } from '../../redux/actions';
 
 // Components
 import Header from './Header';
@@ -25,7 +23,7 @@ class Page extends PureComponent {
   //  static defaultProps = DefaultPageProps; // TODO Define defaults
 
   componentDidMount() {
-    this.props.dispatch(getDetailedCorruptionCasePage(this.props.id));
+    this.props.dispatch(getDetailedPage('political.corruptionCase', this.props.id));
   }
 
   render() {
@@ -48,6 +46,6 @@ class Page extends PureComponent {
 }
 
 export default connect(state => ({
-  // Basic Page information
+  // Basic CorruptionCase information
   basic: state.openPage.basic,
 }))(Page);

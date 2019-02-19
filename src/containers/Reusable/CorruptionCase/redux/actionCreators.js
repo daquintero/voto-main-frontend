@@ -1,10 +1,5 @@
-// ----------- PAGE -------------
-export const GET_DETAILED_CORRUPTION_CASE_PAGE = {
-  INIT: 'GET_DETAILED_CORRUPTION_CASE_PAGE_INIT',
-  REQUEST: 'GET_DETAILED_CORRUPTION_CASE_PAGE_REQUEST',
-  SUCCESS: 'GET_DETAILED_CORRUPTION_CASE_PAGE_SUCCESS',
-  ERROR: 'GET_DETAILED_CORRUPTION_CASE_PAGE_ERROR',
-};
+/* eslint-disable import/prefer-default-export */
+// TODO Fix this
 
 // ----------- RELATIONSHIPS -------------
 // Related Individuals according to parent container

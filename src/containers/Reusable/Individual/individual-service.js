@@ -7,6 +7,7 @@ const individualApiUrl = `${baseUrl}/individual/api/v1`;
 
 const urls = {
   get: {
+    // Relationships
     relatedIndividuals: `${individualApiUrl}/get_related_individuals/`,
   },
   post: {

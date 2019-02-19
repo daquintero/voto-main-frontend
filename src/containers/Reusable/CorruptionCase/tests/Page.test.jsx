@@ -3,8 +3,8 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import Page from '../../Page/components/ModularPage/Page';
 
-describe('<Page />', () => {
-  it('Full Page renders correctly without crashing', () => {
+describe('<CorruptionCase />', () => {
+  it('Full CorruptionCase renders correctly without crashing', () => {
     const tree = renderer
       .create(<Page />)
       .toJSON();

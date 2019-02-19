@@ -1,4 +1,4 @@
-// Right Side Section of the Detailed Page
+// Right Side Section of the Detailed CorruptionCase
 // Libraries
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
@@ -7,7 +7,7 @@ import { connect } from 'react-redux';
 import { headerPropTypes } from './PagePropTypes';
 
 // Components
-import MainFinancesNav from '../../../FinanceItem/components/MainFinancesNav';
+import MainFinancesNav from '../../../../Reusable/FinanceItem/components/MainFinancesNav';
 import Statistics from './Statistics';
 
 // Declaration
@@ -34,7 +34,7 @@ class RightSide extends PureComponent {
 }
 
 export default connect(state => ({
-  // Basic Page information
+  // Basic CorruptionCase information
   basic: state.openPage.basic,
 }))(RightSide);
 

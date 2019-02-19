@@ -1,19 +1,19 @@
-// Relationships Section Corruption Page
+// Relationships Section Corruption CorruptionCase
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import { Row, Col } from 'reactstrap';
 
 // Redux Actions
-import { getRelatedCorruptionCases } from '../../redux/actions';
-import { getRelatedIndividuals } from '../../../Individual/redux/actions';
-import { getRelatedInformativeSnippets } from '../../../InformativeSnippet/redux/actions';
-import { getRelatedOrganizations } from '../../../Organization/redux/actions';
+import { getRelatedCorruptionCases } from '../../../../Reusable/CorruptionCase/redux/actions';
+import { getRelatedIndividuals } from '../../../../Reusable/Individual/redux/actions';
+import { getRelatedInformativeSnippets } from '../../../../Reusable/InformativeSnippet/redux/actions';
+import { getRelatedOrganizations } from '../../../../Reusable/Organization/redux/actions';
 
 // Components
-import IndividualCardGrid from '../../../Individual/components/CardGrid';
-import CorruptionCaseCardGrid from '../../../CorruptionCase/components/CardGrid';
-import InformativeCardGrid from '../../../InformativeSnippet/components/CardGrid';
+import IndividualCardGrid from '../../../../Reusable/Individual/components/CardGrid';
+import CorruptionCaseCardGrid from '../../../../Reusable/CorruptionCase/components/CardGrid';
+import InformativeCardGrid from '../../../../Reusable/InformativeSnippet/components/CardGrid';
 
 // Prop Types
 import { RelationshipProps } from './PagePropTypes';

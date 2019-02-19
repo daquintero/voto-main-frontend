@@ -1,5 +1,5 @@
 /* eslint-disable */
-// Full Page for the Corruption Page Component
+// Full CorruptionCase for the Corruption CorruptionCase Component
 import React, { PureComponent } from 'react';
 import { Container, Row, Col } from 'reactstrap';
 

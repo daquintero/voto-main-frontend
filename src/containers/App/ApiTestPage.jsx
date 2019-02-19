@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import Page from '../Reusable/Page/components/ModularPage/Page';
 // ----- TO TEST API -----
-/* Use Corruption Page sample */
+/* Use Corruption CorruptionCase sample */
 
 class TestApi extends PureComponent {
   static propTypes = {

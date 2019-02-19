@@ -1,4 +1,4 @@
-// Page Header
+// CorruptionCase Header
 // Libraries
 import React, { PureComponent } from 'react';
 import { Col } from 'reactstrap';
@@ -27,6 +27,6 @@ class Header extends PureComponent {
 }
 
 export default connect(state => ({
-  // Basic Page information
+  // Basic CorruptionCase information
   basic: state.openPage.basic,
 }))(Header);

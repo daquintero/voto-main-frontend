@@ -7,7 +7,7 @@ import { Route, Switch } from 'react-router-dom';
 
 
 // ---------------- BASE IMPORTS ----------------------
-// Home Page
+// Home CorruptionCase
 import Home from '../Assembly/Home/components/index';
 import Layout from '../Layout/TopBar/components/index';
 
@@ -17,7 +17,7 @@ import APITestPage from './ApiTestPage';
 
 // --------------- REUSABLE IMPORTS -------------------
 // TODO FIX FOR PATH
-// import CorruptionCaseDetailedPage from '../Reusable/CorruptionCase/components/Page';
+// import CorruptionCaseDetailedPage from '../Reusable/CorruptionCase/components/CorruptionCase';
 
 // ------------------------- REUSABLE COMPONENTS ----------------------
 // TODO FIX THIS so that paths work.

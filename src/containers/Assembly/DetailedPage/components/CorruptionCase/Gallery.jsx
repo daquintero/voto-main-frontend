@@ -4,10 +4,10 @@ import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 
 // Prop Types
-import { VIGalleryPropTypes, VIGalleryDefaultProps } from '../../../Images/components/ImagesPropTypes';
+import { VIGalleryPropTypes, VIGalleryDefaultProps } from '../../../../Reusable/Images/components/ImagesPropTypes';
 
 // Components
-import VIGallery from '../../../Images/components/VIGallery';
+import VIGallery from '../../../../Reusable/Images/components/VIGallery';
 
 // Declaration
 class Gallery extends PureComponent {
@@ -23,6 +23,6 @@ class Gallery extends PureComponent {
 }
 
 export default connect(state => ({
-  // Basic Page information
+  // Basic CorruptionCase information
   data: state.openPage.images,
 }))(Gallery);

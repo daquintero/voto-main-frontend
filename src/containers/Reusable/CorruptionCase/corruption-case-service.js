@@ -7,8 +7,6 @@ const corruptionCaseApiUrl = `${baseUrl}/corruptionCase/api/v1`;
 
 const urls = {
   get: {
-    // Full Page
-    detailedCorruptionCasePage: `${corruptionCaseApiUrl}/get_detailed_corruption_case_page/`,
     // Relationships
     relatedCorruptionCases: `${corruptionCaseApiUrl}/get_related_corruption_cases/`,
   },
@@ -17,13 +15,6 @@ const urls = {
   delete: {
   },
 };
-
-// ----------- PAGE ---------------
-const detailedCorruptionCasePage = parentId =>
-  axios.get(`${urls.get.detailedCorruptionCasePage}${buildQueryString({
-    pid: parentId,
-  })}`);
-
 
 // ---------- RELATED -------------
 // Corruption Cases GET Requests
@@ -38,7 +29,6 @@ const relatedCorruptionCases = (subsetNumber, modelLabel, parentId) =>
 const corruptionCaseService = {
   get: {
     relatedCorruptionCases,
-    detailedCorruptionCasePage,
   },
   post: {},
   delete: {},

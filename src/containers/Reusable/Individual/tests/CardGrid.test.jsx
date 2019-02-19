@@ -1,4 +1,4 @@
-// Test for the Home Page Component
+// Test for the Home CorruptionCase Component
 import React from 'react';
 import renderer from 'react-test-renderer';
 import CardGrid from '../components/CardGrid';

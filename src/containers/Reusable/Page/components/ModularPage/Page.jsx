@@ -1,5 +1,5 @@
 // /* eslint-disable */
-// // Full Page for the Corruption Page Component
+// // Full CorruptionCase for the Corruption CorruptionCase Component
 // import React, { PureComponent } from 'react';
 // import { Container, Row, Col } from 'reactstrap';
 //
@@ -20,7 +20,7 @@
 // import Statistics from './Statistics';
 // import MainFinancesNav from '../../../FinanceItem/components/MainFinancesNav';
 //
-// class Page extends PureComponent {
+// class CorruptionCase extends PureComponent {
 //   // TODO Move the proptypes accordingly
 //   static propTypes = PageProps;
 //   //  static defaultProps = DefaultPageProps; // TODO Define defaults
@@ -56,4 +56,4 @@
 // }
 //
 // // TODO Refactor just to pass ACTION into props
-// export default Page;
+// export default CorruptionCase;

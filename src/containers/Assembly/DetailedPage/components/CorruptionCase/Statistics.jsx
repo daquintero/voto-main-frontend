@@ -9,7 +9,7 @@ import { connect } from 'react-redux';
 import { StatisticsProps } from './PagePropTypes';
 
 // Components
-import StatisticBlock from '../../../Statistics/components/StatisticBlock';
+import StatisticBlock from '../../../../Reusable/Statistics/components/StatisticBlock';
 
 // Declaration
 class Statistics extends PureComponent {
@@ -30,6 +30,6 @@ class Statistics extends PureComponent {
 }
 
 export default connect(state => ({
-  // Basic Page information
+  // Basic CorruptionCase information
   statistics: state.openPage.statistics,
 }))(Statistics);
