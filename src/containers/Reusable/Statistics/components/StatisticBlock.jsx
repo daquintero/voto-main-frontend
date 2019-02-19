@@ -15,7 +15,7 @@ class StatisticBlock extends PureComponent {
     const { statistic } = this.props;
     return (
       <a href={statistic.source}>
-        <Card className="small-enlarge mx-auto justify-content-center text-center">
+        <Card className="small-enlarge mx-auto justify-content-center text-center rounded-0 border-0">
           <i className={`pt-2 fal fa-${statistic.icon}`} />
           <p className="m-1 font-weight-bold">
             { typeof statistic.value === 'number' ? numeral(statistic.value).format('0,0') : statistic.value}

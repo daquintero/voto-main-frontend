@@ -23,15 +23,15 @@ class InformativeSnippetCard extends PureComponent {
     const { objIn } = this.props;
 
     const imgFalseCard = obj => (
-      <Card className="bg-white border-0 h-100">
+      <Card className="bg-light border-0 h-100 rounded-0 small-enlarge">
         <Row noGutters className="h-100">
           <Col
             xs={layoutMap[obj.size].xs.inner.imgWrapper + layoutMap[obj.size].xs.inner.contentWrapper}
             md={layoutMap[obj.size].md.inner.imgWrapper + layoutMap[obj.size].md.inner.contentWrapper}
           >
-            <CardBody className="p-2 justify-self-center h-100">
-              <h4 className="card-title mb-0">{obj.title}</h4>
-              <div className="d-flex justify-content-between emp-card-info-btm">
+            <CardBody className="p-0 justify-self-center h-100">
+              <h4 className="card-title mb-0 p-3">{obj.title}</h4>
+              <div className="d-flex justify-content-between emp-card-info-btm bg-eb">
                 <div className="p-2 text-center justify-content-center" >
                   <i className={`fal p-2 enlarge fa-${obj.statistics[0].icon}`} aria-hidden="true" />
                   <div className="justify-content-between">
@@ -51,7 +51,7 @@ class InformativeSnippetCard extends PureComponent {
     );
 
     const imgTrueCard = obj => (
-      <Card className="bg-white border-0">
+      <Card className="bg-light border-0 rounded-0 small-enlarge">
         <Row noGutters>
           <Col
             xs={layoutMap[obj.size].xs.inner.imgWrapper}
@@ -73,9 +73,9 @@ class InformativeSnippetCard extends PureComponent {
             lg={layoutMap[obj.size].lg.inner.contentWrapper}
             xl={layoutMap[obj.size].xl.inner.contentWrapper}
           >
-            <CardBody className="p-2">
-              <h4 className="card-title mb-0">{obj.title}</h4>
-              <div className="d-flex justify-content-between">
+            <CardBody className="p-0">
+              <h4 className="card-title mb-0 p-2">{obj.title}</h4>
+              <div className="d-flex justify-content-between bg-eb">
                 <div className="p-2 text-center justify-content-center">
                   <i className={`fal p-2 fa-${obj.statistics[0].icon}`} aria-hidden="true" />
                   <div className="justify-content-between">

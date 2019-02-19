@@ -35,17 +35,17 @@ class Relationships extends Component {
     // const { individuals, corruptionCases, informativeSnippets } = this.props;
     return (
       <Row>
-        <Col xs={12} md={12}>
-          <h3>Individuos Relacionados</h3>
+        <Col xs={12} md={12} className="mt-2 p-1" style={{ "background-color" : "#d5dff8"}}>
+          <h3 className="p-2">Individuos Relacionados</h3>
           <IndividualCardGrid info={individualCardData} />
         </Col>
-        <Col xs={12} md={12}>
-          <h3>Noticias Relacionadas</h3>
+        <Col xs={12} md={12} className="mt-2 p-1" style={{ "background-color" : "#f8d5df"}}>
+          <h3 className="p-2">Noticias Relacionadas</h3>
           <InformativeCardGrid info={informativeSnippetCardData} />
         </Col>
         {/* TODO Organization Card Grid */}
-        <Col xs={12} md={12}>
-          <h3>Casos de Corrupción Relacionados</h3>
+        <Col xs={12} md={12} className="mt-2 p-1" style={{ "background-color" : "#dff8d5"}}>
+          <h3 className="p-2">Casos de Corrupción Relacionados</h3>
           <CorruptionCaseCardGrid info={corruptionCaseCardData} />
         </Col>
       </Row>

@@ -10,7 +10,7 @@ import { PageProps } from '../../../CorruptionCase/components/CorruptionCaseProp
 
 // Redux Actions
 // import {
-//   getBasicCorruptionCasePage,
+//   getDetailedCorruptionCasePage,
 // } from '../../../redux/actions';
 
 // Components
@@ -27,7 +27,7 @@ class Page extends PureComponent {
   //  static defaultProps = DefaultPageProps; // TODO Define defaults
   // componentDidMount() {
   //   //   // TODO Connect to redux
-  //   //   this.props.dispatch(getBasicCorruptionCasePage(this.props.id));
+  //   //   this.props.dispatch(getDetailedCorruptionCasePage(this.props.id));
   //   // }
   render() {
     return (
@@ -41,6 +41,7 @@ class Page extends PureComponent {
             <Relationships />
           </Col>
           <Col xs={12} md={4} className="p-2">
+            <h3 className="text-center">Fianzas</h3>
             <MainFinancesNav corruptionRelatedFunds={123123123.1} nonCorruptionRelatedFunds={1231232.2} />
             <h3 className="text-center">Estadística</h3>
             <Statistics />

@@ -17,7 +17,7 @@ class IndividualCard extends PureComponent {
     const { objIn } = this.props;
 
     const imgFalseCard = obj => (
-      <Card className="bg-white border-0 h-100 p-2">
+      <Card className="border-0 rounded-0 h-100 p-2 bg-light small-enlarge">
         <Row noGutters className="h-100">
           <Col
             xs={layoutMap[obj.size].xs.inner.imgWrapper + layoutMap[obj.size].xs.inner.contentWrapper}
@@ -56,9 +56,8 @@ class IndividualCard extends PureComponent {
         </Row>
       </Card>
     );
-
     const imgTrueCard = obj => (
-      <Card className="bg-white border-0">
+      <Card className="border-0 bg-light rounded-0 small-enlarge">
         <Row noGutters>
           <Col
             xs={layoutMap[obj.size].xs.inner.imgWrapper}

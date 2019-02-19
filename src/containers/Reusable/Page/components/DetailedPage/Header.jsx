@@ -25,10 +25,10 @@ class Header extends PureComponent {
       basic
     } = headerData;
     return (
-          <Col xs={12}>
+          <Col xs={12} className="p-0 m-0">
           {/* Fill entire card container */}
-              <h2 className="p-2 pb-0">{basic.title}</h2>
-              <h4 className="p-2 text-muted">{basic.description}</h4>
+              <h2 className="pt-2 pb-0">{basic.title}</h2>
+              <h4 className="pt-2 pb-2 text-muted">{basic.description}</h4>
           </Col>
     );
   }

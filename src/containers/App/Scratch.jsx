@@ -3,7 +3,7 @@ import React from 'react';
 // import { Container, Row, Col } from 'reactstrap';
 
 // TODO FINISH PAGE TEST
-import Page from '../Reusable/Page/components/DetailedPage/Page';
+import Page from '../Reusable/CorruptionCase/components/Page/Page';
 
 // TODO REMOVE IMAGE TEST
 // const imageTest = `${process.env.PUBLIC_URL}/img-test/a.jpg`;

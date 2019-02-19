@@ -38,33 +38,33 @@ class CorruptionCaseCard extends PureComponent {
     );
 
     const imgFalseCard = obj => (
-      <Card className="bg-white border-0 h-100">
+      <Card className="bg-light border-0 h-100 rounded-0 small-enlarge">
         <Row noGutters className="h-100">
           <Col
             xs={layoutMap[obj.size].xs.inner.imgWrapper}
             md={layoutMap[obj.size].md.inner.imgWrapper}
           >
-            <CardBody className="p-2 justify-self-center h-100">
+            <CardBody className="p-2 justify-self-center">
               <h4 className="card-title mb-0">{obj.title}</h4>
-              <div className="d-flex justify-content-between">
-                {/* If there are three or more statistics,
-                only display limits of 3 or map less than that */}
-                {obj.statistics && obj.statistics[3] ?
-                  obj.statistics.slice(0, 3).map(stat => statisticsItem(stat))
-                  : obj.statistics.map(stat => statisticsItem(stat))}
-                <div className="p-2 mt-0 text-center">
-                  <i className="fal p-2 fa-calendar" />
-                  <p className="small m-0"> Actualizado { moment(obj.date).fromNow() } </p>
-                </div>
-              </div>
             </CardBody>
+            <div className="d-flex justify-content-between bg-eb">
+              {/* If there are three or more statistics,
+                only display limits of 3 or map less than that */}
+              {obj.statistics && obj.statistics[3] ?
+                obj.statistics.slice(0, 3).map(stat => statisticsItem(stat))
+                : obj.statistics.map(stat => statisticsItem(stat))}
+              <div className="p-2 mt-0 text-center">
+                <i className="fal p-2 fa-calendar" />
+                <p className="small m-0"> Actualizado { moment(obj.date).fromNow() } </p>
+              </div>
+            </div>
           </Col>
         </Row>
       </Card>
     );
 
     const imgTrueCard = obj => (
-      <Card className="bg-white border-0">
+      <Card className="bg-light border-0 rounded-0 small-enlarge">
         <Row noGutters>
           <Col
             xs={layoutMap[obj.size].xs.inner.imgWrapper}
@@ -88,18 +88,18 @@ class CorruptionCaseCard extends PureComponent {
           >
             <CardBody className="p-2">
               <h4 className="card-title mb-0">{obj.title}</h4>
-              <div className="d-flex justify-content-between">
-                {/* If there are three or more statistics,
-                only display limits of 3 or map less than that */}
-                {obj.statistics && obj.statistics[3] ?
-                  obj.statistics.slice(0, 3).map(stat => statisticsItem(stat))
-                  : obj.statistics.map(stat => statisticsItem(stat))}
-                <div className="p-2 mt-0 text-center">
-                  <i className="fal p-2 fa-calendar" />
-                  <p className="small m-0"> Actualizado { moment(obj.date).fromNow() } </p>
-                </div>
-              </div>
             </CardBody>
+            <div className="d-flex justify-content-between bg-eb rounded-0">
+              {/* If there are three or more statistics,
+                only display limits of 3 or map less than that */}
+              {obj.statistics && obj.statistics[3] ?
+                obj.statistics.slice(0, 3).map(stat => statisticsItem(stat))
+                : obj.statistics.map(stat => statisticsItem(stat))}
+              <div className="p-2 mt-0 text-center">
+                <i className="fal p-2 fa-calendar" />
+                <p className="small m-0"> Actualizado { moment(obj.date).fromNow() } </p>
+              </div>
+            </div>
           </Col>
         </Row>
       </Card>

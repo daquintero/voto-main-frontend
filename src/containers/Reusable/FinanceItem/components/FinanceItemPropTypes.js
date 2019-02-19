@@ -41,3 +41,8 @@ export const mainFinanceListPropTypes = {
   corruptionRelatedFunds: PropTypes.number,
   nonCorruptionRelatedFunds: PropTypes.number,
 };
+
+export const mainFinanceListDefaultProps = {
+  corruptionRelatedFunds: 0,
+  nonCorruptionRelatedFunds: 0,
+};

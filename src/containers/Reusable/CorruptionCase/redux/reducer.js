@@ -1,6 +1,6 @@
 import {
   GET_RELATED_CORRUPTION_CASES,
-  GET_BASIC_CORRUPTION_CASE_PAGE,
+  GET_DETAILED_CORRUPTION_CASE_PAGE,
 } from './actionCreators';
 import { initializeActions, actionResult } from '../../../App/utils';
 
@@ -10,35 +10,35 @@ const initialState = {
   basic: {},
   actions: initializeActions([
     'GET_RELATED_CORRUPTION_CASES',
-    'GET_BASIC_CORRUPTION_CASE_PAGE',
+    'GET_DETAILED_CORRUPTION_CASE_PAGE',
   ]),
 };
 
 export default function (state = initialState, action) {
   switch (action.type) {
-    case GET_BASIC_CORRUPTION_CASE_PAGE.REQUEST:
+    case GET_DETAILED_CORRUPTION_CASE_PAGE.REQUEST:
       return {
         ...state,
         actions: {
           ...state.actions,
-          ...actionResult('GET_BASIC_CORRUPTION_CASE_PAGE.REQUEST'),
+          ...actionResult('GET_DETAILED_CORRUPTION_CASE_PAGE.REQUEST'),
         },
       };
-    case GET_BASIC_CORRUPTION_CASE_PAGE.SUCCESS:
+    case GET_DETAILED_CORRUPTION_CASE_PAGE.SUCCESS:
       return {
         ...state,
-        page: action.basicCorruptionCasePage,
+        page: action.detailedCorruptionCasePage,
         actions: {
           ...state.actions,
-          ...actionResult('GET_BASIC_CORRUPTION_CASE_PAGE.SUCCESS'),
+          ...actionResult('GET_DETAILED_CORRUPTION_CASE_PAGE.SUCCESS'),
         },
       };
-    case GET_BASIC_CORRUPTION_CASE_PAGE.ERROR:
+    case GET_DETAILED_CORRUPTION_CASE_PAGE.ERROR:
       return {
         ...state,
         actions: {
           ...state.actions,
-          ...actionResult('GET_BASIC_CORRUPTION_CASE_PAGE.ERROR', { error: action.error }),
+          ...actionResult('GET_DETAILED_CORRUPTION_CASE_PAGE.ERROR', { error: action.error }),
         },
       };
 

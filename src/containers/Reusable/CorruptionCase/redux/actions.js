@@ -1,23 +1,22 @@
 import {
   GET_RELATED_CORRUPTION_CASES,
-  GET_BASIC_CORRUPTION_CASE_PAGE,
+  GET_DETAILED_CORRUPTION_CASE_PAGE,
 } from './actionCreators';
 import corruptionCaseService from '../corruption-case-service';
 
 // --------------- PAGE --------------
 // Basic Corruption Case Page detailed action that gets the basic fields for the parentID
-export const getBasicCorruptionCasePage = parentId => (dispatch) => {
+export const getDetailedCorruptionCasePage = parentId => (dispatch) => {
   dispatch({
-    type: GET_BASIC_CORRUPTION_CASE_PAGE.REQUEST,
+    type: GET_DETAILED_CORRUPTION_CASE_PAGE.REQUEST,
   });
-  // TODO FINISH WRITING
-  return corruptionCaseService.get.basicCorruptionCasePage(parentId).then(
+  return corruptionCaseService.get.detailedCorruptionCasePage(parentId).then(
     response => dispatch({
-      type: GET_BASIC_CORRUPTION_CASE_PAGE.SUCCESS,
-      basicCorruptionCasePage: response.data,
+      type: GET_DETAILED_CORRUPTION_CASE_PAGE.SUCCESS,
+      detailedCorruptionCasePage: response.data,
     }),
     error => dispatch({
-      type: GET_BASIC_CORRUPTION_CASE_PAGE.ERROR,
+      type: GET_DETAILED_CORRUPTION_CASE_PAGE.ERROR,
       error,
     }),
   );

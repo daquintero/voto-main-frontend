@@ -1,6 +1,7 @@
-/* eslint-disable */
+// Gallery
 // Libraries
 import React, { PureComponent } from 'react';
+import { connect } from 'react-redux';
 
 // Prop Types
 import { VIGalleryPropTypes, VIGalleryDefaultProps } from '../../../Images/components/ImagesPropTypes';
@@ -8,21 +9,20 @@ import { VIGalleryPropTypes, VIGalleryDefaultProps } from '../../../Images/compo
 // Components
 import VIGallery from '../../../Images/components/VIGallery';
 
-// TODO REMOVE TEST DATA
-import { galleryData } from '../SampleDataFullPage';
-
 // Declaration
 class Gallery extends PureComponent {
   static propTypes = VIGalleryPropTypes;
   static defaultProps = VIGalleryDefaultProps;
 
   render() {
-    // const { data } = this.props;
+    const { data } = this.props;
     return (
-      <VIGallery data={galleryData} />
+      <VIGallery data={data} />
     );
   }
 }
 
-// TODO State Store Connection
-export default Gallery;
+export default connect(state => ({
+  // Basic Page information
+  data: state.openPage.images,
+}))(Gallery);
