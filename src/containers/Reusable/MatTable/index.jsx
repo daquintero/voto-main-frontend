@@ -40,7 +40,7 @@ const getSorting = (order, orderBy) => (order === 'desc' ?
 
 export default class MatTable extends Component {
   static propTypes = MatTablePropTypes;
-  static defaultPropTypes = MatTableDefaultPropTypes;
+  static defaultProps = MatTableDefaultPropTypes;
   constructor(props) {
     super(props);
     this.state = {

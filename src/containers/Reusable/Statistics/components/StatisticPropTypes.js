@@ -23,3 +23,5 @@ export const statisticsListPropTypes = {
 export const statisticsListDefaultProps = {
   statistics: [],
 };
+
+// ------------- STATISTICS BLOCK LIST PROPS -----------

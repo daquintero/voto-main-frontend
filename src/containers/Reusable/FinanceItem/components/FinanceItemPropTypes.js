@@ -3,6 +3,21 @@
 // PropTypes
 import PropTypes from 'prop-types';
 
+// ----------- FINANCE ITEM PROPTYPES ----------
+export const financeItemPropTypes = {
+  title: PropTypes.string.isRequired,
+  briefDescription: PropTypes.string,
+  amount: PropTypes.number.isRequired,
+  corruptionRelated: PropTypes.bool.isRequired,
+};
+
+export const financeItemDefaultProps = {
+  title: '',
+  briefDescription: '',
+  amount: 0,
+  corruptionRelated: false,
+};
+
 // ------------ FINANCE MODAL PROPTYPES --------------
 export const financeModalPropTypes = {
   // Any custom subcomponents
@@ -24,7 +39,7 @@ export const financeModalPropTypes = {
   id: PropTypes.number.isRequired,
   modelLabel: PropTypes.string.isRequired,
 };
-
+// TODO CONNECT TO ACTION/REDUCER
 export const financeModalDefaultProps = {
   children: null,
   action: {

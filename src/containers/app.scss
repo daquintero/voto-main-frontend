@@ -1,6 +1,11 @@
 // ---------------------------- NODE MODULES STYLES --------------
 // React-Image-Gallery
 @import "../../node_modules/react-image-gallery/styles/scss/image-gallery.scss";
+// BBC FONTS
+// EXTERNAL LIBRARIES FONT
+@import '../../node_modules/gel-sass-tools/sass-tools';
+@import '../../node_modules/sass-mq/mq';
+@import '../../node_modules/gel-typography/typography';
 
 // ---------------------------- BASE -----------------------------
 @import 'App/scss/settings/variable';  //themes' colors

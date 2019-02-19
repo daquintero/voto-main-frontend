@@ -8,41 +8,60 @@ import numeral from 'numeral';
 // Props
 import { mainFinanceListPropTypes } from './FinanceItemPropTypes';
 
+// Components
+import FinanceModal from './FinanceModal';
 
 class MainFinancesNav extends PureComponent {
   static propTypes = mainFinanceListPropTypes;
-
+  constructor(props) {
+    super(props);
+    this.state = {
+      showModal: false,
+    };
+  }
+  toggleModal = () => {
+    this.setState(prevState => ({ showModal: !prevState.showModal }));
+  };
   render() {
     const { corruptionRelatedFunds, nonCorruptionRelatedFunds } = this.props;
+    const { showModal } = this.state;
     return (
       <>
         {corruptionRelatedFunds || nonCorruptionRelatedFunds ? (
-          <Nav className="mx-auto">
-            <NavItem className="list-up list-group-item m-2 rounded-0 border-0 w-100">
-              <div>
-                <h4>{numeral(corruptionRelatedFunds).format('$ 0,0.00')}</h4>
-              </div>
-              <div>
-                <h6>Dinero Relacionado a Corrupción</h6>
-              </div>
-            </NavItem>
-            <NavItem className="list-up list-group-item m-2 rounded-0 border-0 w-100">
-              <div>
-                <h4>{numeral(nonCorruptionRelatedFunds).format('$ 0,0.00')}</h4>
-              </div>
-              <div>
-                <h6>Dinero No Relacionado a Corrupción</h6>
-              </div>
-            </NavItem>
-            <NavItem className="list-up list-group-item m-2 rounded-0 border-0 w-100">
-              <div>
-                <h4>{numeral(nonCorruptionRelatedFunds + corruptionRelatedFunds).format('$ 0,0.00')}</h4>
-              </div>
-              <div>
-                <h6>Total de Dinero Manejado</h6>
-              </div>
-            </NavItem>
-          </Nav>
+          <>
+            <Nav className="mx-auto">
+              <NavItem
+                className="list-right list-group-item m-2 rounded-0 border-0 w-100"
+                onClick={this.toggleModal}
+                role="button"
+                onKeyPress={this.toggleModal}
+              >
+                <div>
+                  <h5>{numeral(corruptionRelatedFunds).format('$ 0,0.00')}</h5>
+                </div>
+                <div>
+                  <h6>Dinero Relacionado a Corrupción</h6>
+                </div>
+              </NavItem>
+              <NavItem className="list-right list-group-item m-2 rounded-0 border-0 w-100">
+                <div>
+                  <h5>{numeral(nonCorruptionRelatedFunds).format('$ 0,0.00')}</h5>
+                </div>
+                <div>
+                  <h6>Dinero No Relacionado a Corrupción</h6>
+                </div>
+              </NavItem>
+              <NavItem className="list-right list-group-item m-2 rounded-0 border-0 w-100">
+                <div>
+                  <h5>{numeral(nonCorruptionRelatedFunds + corruptionRelatedFunds).format('$ 0,0.00')}</h5>
+                </div>
+                <div>
+                  <h6>Total de Dinero Manejado</h6>
+                </div>
+              </NavItem>
+            </Nav>
+            <FinanceModal isOpen={showModal} toggle={this.toggleModal} />
+          </>
         ) : null }
       </>
     );

@@ -5,13 +5,16 @@ import { Container, Row, Col } from 'reactstrap';
 
 // TODO THIS IS THE NO REDUX VERSION
 // Prop Types
-import { PageProps } from '../../../CorruptionCase/components/CorruptionCasePropTypes';
+import { PageProps } from '../PagePropTypes';
 // TODO , DefaultPageProps
 
 // Redux Actions
 // import {
 //   getDetailedCorruptionCasePage,
 // } from '../../../redux/actions';
+
+// TODO TEST DATA
+import { lawsData } from '../SampleDataFullPage';
 
 // Components
 import Header from './Header';
@@ -20,6 +23,7 @@ import Description from './Description';
 import Relationships from './Relationships';
 import Statistics from './Statistics';
 import MainFinancesNav from '../../../FinanceItem/components/MainFinancesNav';
+import LawList from '../../../Law/components/List';
 
 class Page extends PureComponent {
   // TODO Move the proptypes accordingly
@@ -29,6 +33,8 @@ class Page extends PureComponent {
   //   //   // TODO Connect to redux
   //   //   this.props.dispatch(getDetailedCorruptionCasePage(this.props.id));
   //   // }
+
+
   render() {
     return (
       <Container>
@@ -41,10 +47,12 @@ class Page extends PureComponent {
             <Relationships />
           </Col>
           <Col xs={12} md={4} className="p-2">
-            <h3 className="text-center">Fianzas</h3>
+            <h3 className="text-center mt-3">Fianzas</h3>
             <MainFinancesNav corruptionRelatedFunds={123123123.1} nonCorruptionRelatedFunds={1231232.2} />
-            <h3 className="text-center">Estadística</h3>
+            <h3 className="text-center mt-3">Estadística</h3>
             <Statistics />
+            <h3 className="text-center mt-3"> Leyes Relacionadas </h3>
+            <LawList laws={lawsData}/>
           </Col>
         </Row>
       </Container>

@@ -1,4 +1,5 @@
 // Utils
+
 const imageTest = `${process.env.PUBLIC_URL}/img-test/a.jpg`;
 
 // ----------------- HEADER ------------------
@@ -98,6 +99,91 @@ export const statisticsData = [{
   icon: 'user',
 }];
 
+// ---------- FINANCIAL DATA --------------
+export const financialData = [
+  {
+    title: 'hello',
+    briefDescription: 'Somethign',
+    amount: 20209283,
+    corruptionRelated: true,
+  },
+  {
+    title: 'hello',
+    briefDescription: 'Somethign',
+    amount: 20209283,
+    corruptionRelated: true,
+  },
+  {
+    title: 'hello',
+    briefDescription: 'Somethign',
+    amount: 20209283,
+    corruptionRelated: true,
+  }, {
+    title: 'hello',
+    briefDescription: 'Somethign',
+    amount: 20209283,
+    corruptionRelated: true,
+  },
+  {
+    title: 'hello',
+    briefDescription: 'Somethign',
+    amount: 20209283,
+    corruptionRelated: true,
+  },
+  {
+    title: 'hello',
+    briefDescription: 'Somethign',
+    amount: 20209283,
+    corruptionRelated: true,
+  },
+  {
+    title: 'hello',
+    briefDescription: 'Somethign',
+    amount: 20209283,
+    corruptionRelated: true,
+  },
+  {
+    title: 'hello',
+    briefDescription: 'Somethign',
+    amount: 20209283,
+    corruptionRelated: true,
+  },
+  {
+    title: 'hello',
+    briefDescription: 'Somethign',
+    amount: 20209283,
+    corruptionRelated: true,
+  },
+  {
+    title: 'hello',
+    briefDescription: 'Somethign',
+    amount: 20209283,
+    corruptionRelated: true,
+  },
+];
+
+// ------------------- LAWS -------------------------
+export const lawsData = [{
+  code: 2,
+  briefDescription: 'This law talks about this issue',
+  category: 'Hello',
+  source: ' This is my source',
+}, {
+  code: 2,
+  briefDescription: 'This law talks about this issue',
+  category: 'Hello',
+  source: ' This is my source',
+}, {
+  code: 2,
+  briefDescription: 'This law talks about this issue',
+  category: 'Hello',
+  source: ' This is my source',
+}, {
+  code: 2,
+  briefDescription: 'This law talks about this issue',
+  category: 'Hello',
+  source: ' This is my source',
+}];
 
 // ------------------- RELATIONSHIPS ----------------------
 // InformativeSnippets

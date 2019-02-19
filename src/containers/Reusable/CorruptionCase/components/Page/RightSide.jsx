@@ -19,14 +19,14 @@ class RightSide extends PureComponent {
       <>
         {basic && basic.corruptionRelatedFunds ? (
             <>
-              <h3 className="text-center">Fianzas</h3>
+              <h3 className="text-center mt-2">Fianzas</h3>
               <MainFinancesNav
                 corruptionRelatedFunds={basic.corruptionRelatedFunds}
                 nonCorruptionRelatedFunds={basic.nonCorruptionRelatedFunds}
               />
             </>
         ) : null}
-        <h3 className="text-center">Estadística</h3>
+        <h3 className="text-center mt-2">Estadística</h3>
         <Statistics />
       </>
     );
