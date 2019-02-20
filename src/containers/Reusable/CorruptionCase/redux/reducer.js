@@ -6,6 +6,7 @@ import { initializeActions, actionResult } from '../../../App/utils';
 // Initial State for Corruption Cases
 const initialState = {
   relatedCorruptionCases: {},
+  subsetNumber: 0,
   actions: initializeActions([
     'GET_RELATED_CORRUPTION_CASES',
   ]),

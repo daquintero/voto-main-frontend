@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 // import { connect } from 'react-redux';
 
-import { Row, Col } from 'reactstrap';
+import { Row, Col, Button} from 'reactstrap';
 
 // Redux Actions
 // import { getRelatedCorruptionCases } from '../../../redux/actions';
@@ -38,6 +38,11 @@ class Relationships extends Component {
         <Col xs={12} md={12} className="mt-2 p-1" style={{ "background-color" : "#d5dff8"}}>
           <h3 className="p-2">Individuos Relacionados</h3>
           <IndividualCardGrid info={individualCardData} />
+          <Row className="p-2">
+            <Button className="small-enlarge rounded-0 text-center border-0 mx-auto bg-more text-dark">
+              Más Individuos
+            </Button>
+          </Row>
         </Col>
         <Col xs={12} md={12} className="mt-2 p-1" style={{ "background-color" : "#f8d5df"}}>
           <h3 className="p-2">Noticias Relacionadas</h3>

@@ -44,3 +44,13 @@ export const CardGridPropTypes = {
 
 export const CardGridDefaultPropTypes = [
   CardDefaultPropTypes, CardDefaultPropTypes, CardDefaultPropTypes];
+
+
+// --------------- DETAILED REDUX CARD GRID ---------------
+
+export const DetailedReduxCardGridPropTypes = {
+  parentId: PropTypes.number,
+  modelLabel: PropTypes.string,
+  subsetNumber: PropTypes.number,
+  relatedIndividuals: CardGridPropTypes,
+};

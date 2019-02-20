@@ -8,6 +8,7 @@ import { initializeActions, actionResult } from '../../../App/utils';
 const initialState = {
   recentInformativeSnippets: {},
   relatedInformativeSnippets: {},
+  subsetNumber: 0,
   actions: initializeActions([
     'GET_RECENT_INFORMATIVE_SNIPPETS',
     'GET_RELATED_INFORMATIVE_SNIPPETS',

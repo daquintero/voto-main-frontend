@@ -4,6 +4,7 @@ import { initializeActions, actionResult } from '../../../App/utils';
 // Initial State for snippets
 const initialState = {
   relatedIndividuals: {},
+  subsetNumber: 0,
   actions: initializeActions([
     'GET_RELATED_INDIVIDUALS',
   ]),

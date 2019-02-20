@@ -3,7 +3,7 @@ import React from 'react';
 // import { Container, Row, Col } from 'reactstrap';
 
 // TODO FINISH PAGE TEST
-import Page from '../Assembly/DetailedPage/components/Individual/Page';
+import Page from '../Assembly/DetailedPage/components/CorruptionCase/Page';
 
 const Scratch = () => (
   <div className="layout">
