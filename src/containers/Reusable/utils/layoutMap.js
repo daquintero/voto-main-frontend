@@ -1,3 +1,4 @@
+// TODO ADD LAYOUT MAP FOR OTHER COMPONENTS
 const layoutMap = {
   full: {
     xs: {

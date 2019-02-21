@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import { Card, CardHeader, CardBody } from 'reactstrap';
 
 // Prop Types
-import { CardPropTypes } from './ControversyPropTypes';
+import { CardPropTypes } from './ExperiencePropTypes';
 
 // Declaration
 class ContCard extends Component {
@@ -24,14 +24,12 @@ class ContCard extends Component {
     return (
       <Card className="bg-light border-0 rounded-0 small-enlarge" onClick={this.openMore}>
         <CardHeader className="pt-1 pb-1 ">
-          <h6 className=" p-1 mb-0"><i className="fa p-1 fa-university" />{objIn.title}</h6>
-          <p className="small">{objIn.organization}</p>
+          <h6 className=" p-1 mb-0">{objIn.title}</h6>
+          <p className="small m-0 p-1"><i className="fa p-1 fa-building" />{objIn.organization}</p>
         </CardHeader>
-        { open && objIn.description ? (
-          <CardBody className="p-2">
-            <p className="p-1 m-0">{objIn.description}</p>
-          </CardBody>
-        ) : null }
+        <CardBody className={`p-2 ${open && objIn.description ? '' : 'd-none'}`}>
+          <p className="p-1 m-0">{objIn.description}</p>
+        </CardBody>
       </Card>
     );
   }

@@ -3,33 +3,29 @@ import React from 'react';
 import { Container, Row, Col } from 'reactstrap';
 
 // TODO FINISH PAGE TEST
-import Card from '../Reusable/Individual/components/Experience/components/CardGrid';
+import Card from '../Reusable/Individual/components/Promise/components/CardGrid';
 
 // One controversy
 const controversy = [{
   size: 'full',
-  title: 'Alguna Information asdfasd ',
   type: 'Employment',
-  description: 'Descripcion',
-  organization: 'Some organization',
+  briefDescription: 'Some description',
+  source: 'https://www.google.com',
 }, {
   size: 'full',
-  title: 'Alguna Information asdfasd ',
   type: 'Employment',
-  description: 'Descripcion',
-  organization: 'Some organization',
+  briefDescription: 'Some description',
+  source: 'https://www.google.com',
 }, {
   size: 'full',
-  title: 'Alguna Information asdfasd ',
   type: 'Employment',
-  description: 'Descripcion',
-  organization: 'Some organization',
+  briefDescription: 'Some description',
+  source: 'https://www.google.com',
 }, {
   size: 'full',
-  title: 'Alguna Information asdfasd ',
   type: 'Employment',
-  description: 'Descripcion',
-  organization: 'Some organization',
+  briefDescription: 'Some description',
+  source: 'https://www.google.com',
 },
 ];
 

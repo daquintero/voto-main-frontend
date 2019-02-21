@@ -1,6 +1,7 @@
 import { GET_RELATED_INDIVIDUALS } from './actionCreators';
 import { initializeActions, actionResult } from '../../../App/utils';
 
+// TODO CONNECT THIS WITH EXPERIENCE, PROMISES, ETC.
 // Initial State for snippets
 const initialState = {
   relatedIndividuals: {},

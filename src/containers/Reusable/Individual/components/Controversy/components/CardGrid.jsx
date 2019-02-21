@@ -3,7 +3,7 @@ import { Row, Col } from 'reactstrap';
 import Card from './Card';
 import { CardGridDefaultPropTypes, CardGridPropTypes } from './ExperiencePropTypes';
 // Layout Map
-import layoutMap from '../../../styling/layoutMap';
+import layoutMap from '../../../../utils/layoutMap';
 
 /* Imperative PureFunction Grid Approach  */
 class CardGrid extends PureComponent {

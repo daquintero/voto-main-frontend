@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import numeral from 'numeral';
 import { CardPropTypes, CardDefaultPropTypes } from './IndividualPropTypes';
 // Layout Map
-import layoutMap from '../styling/layoutMap';
+import layoutMap from '../../utils/layoutMap';
 
 class IndividualCard extends PureComponent {
   static propTypes = CardPropTypes;
