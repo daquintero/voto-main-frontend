@@ -4,34 +4,20 @@ import PropTypes from 'prop-types';
 export const CardPropTypes = {
   objIn: PropTypes.shape({
     id: PropTypes.number,
-    size: PropTypes.string,
-    name: PropTypes.string,
-    alias: PropTypes.string,
-    images: PropTypes.arrayOf(PropTypes.shape({
-      image: PropTypes.string,
-    })),
-    // Corruption Index has its own equation
-    corruptionIndex: PropTypes.shape({
-      change: PropTypes.bool,
-      value: PropTypes.number,
-    }),
+    title: PropTypes.string,
+    type: PropTypes.string,
+    description: PropTypes.string,
+    organization: PropTypes.string,
   }),
 };
 
 export const CardDefaultPropTypes = {
   objIn: {
     id: 0,
-    size: 'full',
-    name: '',
-    alias: '',
-    date: new Date(),
-    images: [{
-      image: '',
-    }],
-    corruptionIndex: {
-      change: false,
-      value: '',
-    },
+    title: '',
+    type: '',
+    description: '',
+    organization: '',
   },
 };
 

@@ -3,14 +3,13 @@ import React from 'react';
 import { Container, Row, Col } from 'reactstrap';
 
 // TODO FINISH PAGE TEST
-import Card from '../Reusable/Individual/components/Experience/components/Card';
+import Card from '../components/Card';
 
-// One experience
-const experience = {
-  title: 'Alguna Information asdfasd ',
+// One controversy
+const controversy = {
   type: 'Employment',
-  description: 'Descripcion',
-  organization: 'Some organization',
+  description: 'Some description',
+  source: 'https://www.google.com',
 };
 
 const Scratch = () => (
@@ -18,7 +17,7 @@ const Scratch = () => (
     <Container>
       <Row>
         <Col md={4} >
-          <Card objIn={experience} />
+          <Card objIn={controversy} />
         </Col>
       </Row>
     </Container>

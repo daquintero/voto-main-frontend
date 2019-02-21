@@ -1,6 +1,6 @@
 // Utils
 
-const imageTest = `${process.env.PUBLIC_URL}/img-test/a.jpg`;
+export const imageTest = `${process.env.PUBLIC_URL}/img-test/a.jpg`;
 
 // ----------------- HEADER ------------------
 export const headerData = {

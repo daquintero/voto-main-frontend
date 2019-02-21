@@ -58,18 +58,28 @@ export const PageProps = {
 // ------------------------ HEADER PROP TYPES -------------------
 export const headerPropTypes = {
   basic: PropTypes.shape({
-    title: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
-    longDescription: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    briefDescription: PropTypes.string.isRequired,
+    longDescription: PropTypes.string,
+    website: PropTypes.string,
+    twitterUsername: PropTypes.string,
+    facebookUserName: PropTypes.string,
+    type: PropTypes.string,
+    email: PropTypes.string,
     mainFinanceListPropTypes,
   }),
 };
 
 export const headerDefaultProps = {
   basic: {
-    title: '',
-    description: '',
+    name: '',
+    briefDescription: '',
     longDescription: '',
+    website: '',
+    twitterUsername: '',
+    facebookUserName: '',
+    type: '',
+    email: '',
     mainFinanceListDefaultProps,
   },
 };

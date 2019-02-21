@@ -1,7 +1,7 @@
 /* eslint-disable */
 // Libraries
 import React, { PureComponent } from 'react';
-import { Row, Col, Card, Button, Modal } from 'reactstrap';
+import { Row, Col, Card, Button, Modal, CardImg } from 'reactstrap';
 // Redux
 // import { connect } from 'react-redux';
 
@@ -9,7 +9,7 @@ import { Row, Col, Card, Button, Modal } from 'reactstrap';
 import { headerPropTypes, headerDefaultProps } from '../PagePropTypes';
 
 // TODO REMOVE TEST DATA
-import { headerData } from '../SampleDataFullPage';
+import { headerData, imageTest } from '../SampleDataFullPage';
 
 class Header extends PureComponent {
   static propTypes = headerPropTypes;
@@ -25,15 +25,33 @@ class Header extends PureComponent {
       basic
     } = headerData;
     return (
-        <Row noGutters className="h-100">
-          <Col xs={12}>
-          {/* Fill entire card container */}
-            <Card className="page-header h-100">
-              <h2 className="p-4 text-center">{basic.title}</h2>
-              <h4 className="p-4 text-muted">{basic.description}</h4>
-            </Card>
+      <Card className="page-header h-100 border-0">
+        <Row noGutters>
+          <Col md={5}>
+            <CardImg className="rounded h-100 p-2" src={imageTest}/>
+          </Col>
+          <Col md={7}>
+            <h3 className="p-2 text-center">{basic.name}</h3>
           </Col>
         </Row>
+        <Row noGutters>
+          <h6 className="p-2 text-muted">{basic.briefDescription}</h6>
+        </Row>
+        <Row noGutters className="p-2 align-items-center">
+          <Col xs={3} className="px-3 mx-auto">
+            <i className="fab fa-facebook-square fa-2x" />
+          </Col>
+          <Col xs={3} className="px-3">
+            <i className="fab fa-twitter-square fa-2x" />
+          </Col>
+          <Col xs={3} className="px-3">
+            <i className="fa fa-browser fa-2x" />
+          </Col>
+          <Col xs={3} className="px-3 align-center">
+            <i className="fa fa-envelope-open fa-2x" />
+          </Col>
+        </Row>
+      </Card>
     );
   }
 }

@@ -21,14 +21,14 @@ class Relationships extends PureComponent {
     const { parentId } = this.props;
     return (
       <Row>
-        <Col xs={12} md={12} className="mt-2 p-1" style={{ 'background-color': '#d5dff8' }}>
+        <Col xs={12} md={12} className="mt-2 p-1" style={{ 'background-color': '#edf7ff' }}>
           <IndividualCardGrid modelLabel={modelLabel} parentId={parentId} />
         </Col>
-        <Col xs={12} md={12} className="mt-2 p-1" style={{ 'background-color': '#f8d5df' }}>
+        <Col xs={12} md={12} className="mt-2 p-1" style={{ 'background-color': '#fff3fa' }}>
           <InformativeCardGrid modelLabel={modelLabel} parentId={parentId} />
         </Col>
         {/* TODO Organization Card Grid */}
-        <Col xs={12} md={12} className="mt-2 p-1" style={{ 'background-color': '#dff8d5' }}>
+        <Col xs={12} md={12} className="mt-2 p-1" style={{ 'background-color': '#fafff3' }}>
           <CorruptionCaseCardGrid modelLabel={modelLabel} parentId={parentId} />
         </Col>
       </Row>
