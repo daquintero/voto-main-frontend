@@ -1,7 +1,7 @@
 import {
   GET_DETAILED_PAGE,
 } from './actionCreators';
-import { initializeActions, actionResult } from '../../../App/utils';
+import { initializeActions, actionResult } from '../../../../shared/utils/asyncHelpers';
 
 // Initial State for Detailed CorruptionCase
 const initialState = {

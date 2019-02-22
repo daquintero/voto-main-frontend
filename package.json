@@ -5,6 +5,7 @@
   "dependencies": {
     "@material-ui/core": "^3.9.2",
     "axios": "^0.18.0",
+    "deck.gl": "^6.4.5",
     "gel-typography": "^2.0.5",
     "gh-pages": "^2.0.1",
     "moment": "^2.24.0",
@@ -14,6 +15,7 @@
     "react-dom": "^16.7.0",
     "react-image-gallery": "^0.8.12",
     "react-joyride": "^2.0.5",
+    "react-map-gl": "^4.0.11",
     "react-redux": "^6.0.0",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
@@ -21,7 +23,8 @@
     "reactstrap": "^7.1.0",
     "redux": "^4.0.1",
     "redux-devtools-extension": "^2.13.8",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "require-from-url": "^3.1.2"
   },
   "scripts": {
     "start": "node scripts/start.js",
@@ -51,7 +54,6 @@
     "eslint-plugin-import": "2.14.0",
     "eslint-plugin-jsx-a11y": "6.1.1",
     "eslint-plugin-react": "7.11.1",
-    "git-scripts": "^0.2.1",
     "node-sass": "^4.10.0",
     "react-hot-loader": "^4.3.12",
     "react-test-renderer": "^16.7.0",

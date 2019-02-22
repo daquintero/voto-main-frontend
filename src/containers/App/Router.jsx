@@ -15,6 +15,8 @@ import Layout from '../Layout/TopBar/components/index';
 import Scratch from './Scratch';
 import APITestPage from './ApiTestPage';
 
+import Map from '../Reusable/Map';
+
 // --------------- REUSABLE IMPORTS -------------------
 // TODO FIX FOR PATH
 // import CorruptionCaseDetailedPage from '../Reusable/CorruptionCase/components/CorruptionCase';
@@ -36,6 +38,7 @@ const wrappedRoutes = () => (
     {/* Test Files */}
     <Route path="/a" component={Scratch} />
     <Route path="/api-test" component={APITestPage} />
+    <Route path="/map-test" component={Map} />
   </div>
 );
 

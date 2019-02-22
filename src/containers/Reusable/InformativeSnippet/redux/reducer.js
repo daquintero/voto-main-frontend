@@ -2,7 +2,7 @@ import {
   GET_RECENT_INFORMATIVE_SNIPPETS,
   GET_RELATED_INFORMATIVE_SNIPPETS,
 } from './actionCreators';
-import { initializeActions, actionResult } from '../../../App/utils';
+import { initializeActions, actionResult } from '../../../../shared/utils/asyncHelpers';
 
 // Initial State for snippets
 const initialState = {

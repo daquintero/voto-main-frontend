@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { buildQueryString } from '../../App/utils';
+import { buildQueryString } from '../../../shared/utils/utils';
 
 // Local url for the views
 const baseUrl = process.env.REACT_APP_BASE_URL;

@@ -9,6 +9,7 @@ import {
   corruptionCaseReducer,
   organizationReducer,
   financialItemReducer,
+  mapReducer,
 } from '../Reusable/reusable-redux-index';
 
 const openPage = combineReducers({
@@ -17,6 +18,7 @@ const openPage = combineReducers({
   corruptionCase: corruptionCaseReducer,
   organization: organizationReducer,
   financialItem: financialItemReducer,
+  map: mapReducer,
 });
 
 const reducer = combineReducers({

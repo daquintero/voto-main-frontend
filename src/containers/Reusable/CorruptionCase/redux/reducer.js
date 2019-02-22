@@ -1,7 +1,7 @@
 import {
   GET_RELATED_CORRUPTION_CASES,
 } from './actionCreators';
-import { initializeActions, actionResult } from '../../../App/utils';
+import { initializeActions, actionResult } from '../../../../shared/utils/asyncHelpers';
 
 // Initial State for Corruption Cases
 const initialState = {

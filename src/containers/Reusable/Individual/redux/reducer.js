@@ -1,5 +1,5 @@
 import { GET_RELATED_INDIVIDUALS } from './actionCreators';
-import { initializeActions, actionResult } from '../../../App/utils';
+import { initializeActions, actionResult } from '../../../../shared/utils/asyncHelpers';
 
 // TODO CONNECT THIS WITH EXPERIENCE, PROMISES, ETC.
 // Initial State for snippets

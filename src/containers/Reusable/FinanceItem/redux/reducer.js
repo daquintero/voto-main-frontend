@@ -1,5 +1,5 @@
 import { GET_RELATED_FINANCE_ITEMS } from './actionCreators';
-import { initializeActions, actionResult } from '../../../App/utils';
+import { initializeActions, actionResult } from '../../../../shared/utils/asyncHelpers';
 
 // Initial State for Finance Items
 const initialState = {

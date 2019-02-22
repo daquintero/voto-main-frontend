@@ -1,5 +1,5 @@
 import { GET_RELATED_STATISTICS } from './actionCreators';
-import { initializeActions, actionResult } from '../../../App/utils';
+import { initializeActions, actionResult } from '../../../../shared/utils/asyncHelpers';
 
 // Initial State for Statistics
 const initialState = {
