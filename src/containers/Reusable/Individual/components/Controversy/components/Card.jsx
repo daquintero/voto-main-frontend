@@ -4,7 +4,7 @@ import React, { PureComponent } from 'react';
 import { Card, CardHeader, CardBody } from 'reactstrap';
 
 // Prop Types
-import { CardPropTypes } from './ExperiencePropTypes';
+import { CardPropTypes } from './ControversyPropTypes';
 
 // Category Repository
 import categoryInfo from '../../../../utils/categoryInfo';

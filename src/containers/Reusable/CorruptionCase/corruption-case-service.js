@@ -18,12 +18,8 @@ const urls = {
 
 // ---------- RELATED -------------
 // Corruption Cases GET Requests
-const relatedCorruptionCases = (subsetNumber, modelLabel, parentId) =>
-  axios.get(`${urls.get.relatedCorruptionCases}${buildQueryString({
-    sn: subsetNumber,
-    pc: modelLabel, // TODO Rename to ml Model Label
-    pid: parentId,
-  })}`);
+const relatedCorruptionCases = apiQueryData =>
+  axios.get(`${urls.get.relatedCorruptionCases}${buildQueryString(apiQueryData)}`);
 
 // Exported Services
 const corruptionCaseService = {

@@ -18,7 +18,7 @@ const urls = {
 
 // ---------- RELATED -------------
 // Statistics GET Requests
-const relatedStatistics = (subsetNumber, modelLabel, parentId) =>
+const relatedStatistics = (apiQueryData) =>
   axios.get(`${urls.get.relatedStatistics}${buildQueryString({
     sn: subsetNumber,
     pc: modelLabel, // TODO Rename to ml Model Label

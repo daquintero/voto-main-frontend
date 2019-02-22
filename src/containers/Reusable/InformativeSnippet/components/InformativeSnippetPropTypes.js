@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 export const CardPropTypes = {
   objIn: PropTypes.shape({
     id: PropTypes.number,
+    type: PropTypes.string,
     size: PropTypes.string,
     title: PropTypes.string,
     // Note that this is the submission date
@@ -28,6 +29,7 @@ export const CardDefaultPropTypes = {
   objIn: {
     id: 0,
     size: 'full',
+    type: 'corruption.InformativeSnippet',
     title: '',
     date: new Date(),
     images: [{

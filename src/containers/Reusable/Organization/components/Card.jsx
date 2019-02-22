@@ -1,9 +1,9 @@
-// Generic Individual Card
+// Generic Organization Card
 import React, { PureComponent } from 'react';
 import { Card, CardBody, Row, Col } from 'reactstrap';
 // Routing for each card
 import { Link } from 'react-router-dom';
-import { CardPropTypes, CardDefaultPropTypes } from './IndividualPropTypes';
+import { CardPropTypes, CardDefaultPropTypes } from './OrganizationPropTypes';
 // Layout Map
 import layoutMap from '../../utils/layoutMap';
 
@@ -80,7 +80,7 @@ class IndividualCard extends PureComponent {
     );
 
     return (
-      <Link to={`/individuo/${objIn.id}`}>
+      <Link to={`/organizacion/${objIn.id}`}>
         { objIn.images ? imgTrueCard(objIn) : imgFalseCard(objIn) }
       </Link>
     );

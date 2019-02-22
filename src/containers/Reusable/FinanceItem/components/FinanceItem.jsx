@@ -1,15 +1,32 @@
-import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
+// Main Finance List displayed in Header about Corruption Funds
 
-class FinanceItem extends PureComponent {
-  static propTypes = {
-    hi: PropTypes.string.isRequired,
-  };
+// Libraries
+import React, { PureComponent } from 'react';
+import { ListGroupItem } from 'reactstrap';
+import numeral from 'numeral';
+
+// Props
+import { financeItemPropTypes } from './FinanceItemPropTypes';
+
+
+class MainFinanceList extends PureComponent {
+  static propTypes = financeItemPropTypes;
+
   render() {
+    const { objIn } = this.props;
     return (
-      <div>{this.props.hi}</div>
+      <a href={objIn.source} >
+        <ListGroupItem className="list-up">
+          <div>
+            <h4>{numeral(objIn.amount).format('$ 0,0.00')}</h4>
+          </div>
+          <div>
+            <h6>{objIn.title}</h6>
+          </div>
+        </ListGroupItem>
+      </a>
     );
   }
 }
 
-export default FinanceItem;
+export default MainFinanceList;

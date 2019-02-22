@@ -1,12 +1,12 @@
 import React, { PureComponent } from 'react';
 import { Row, Col } from 'reactstrap';
-import Card from './Card';
-import { CardGridDefaultPropTypes, CardGridPropTypes } from './ControversyPropTypes';
+import OrganizationCard from './Card';
+import { CardGridDefaultPropTypes, CardGridPropTypes } from './OrganizationPropTypes';
 // Layout Map
-import layoutMap from '../../../../utils/layoutMap';
+import layoutMap from '../../utils/layoutMap';
 
 /* Imperative PureFunction Grid Approach  */
-class CardGrid extends PureComponent {
+class OrganizationCardGrid extends PureComponent {
   static propTypes = CardGridPropTypes;
   static defaultProps = CardGridDefaultPropTypes;
   render() {
@@ -24,7 +24,7 @@ class CardGrid extends PureComponent {
             className="p-2"
             key={obj.id}
           >
-            <Card objIn={obj} key={obj.id} />
+            <OrganizationCard objIn={obj} key={obj.id} />
           </Col>
         ))}
       </Row>
@@ -33,4 +33,4 @@ class CardGrid extends PureComponent {
   }
 }
 
-export default CardGrid;
+export default OrganizationCardGrid;

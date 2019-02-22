@@ -3,42 +3,51 @@ import React from 'react';
 import { Container, Row, Col } from 'reactstrap';
 
 // TODO FINISH PAGE TEST
-import Card from '../Reusable/Individual/components/Experience/components/CardGrid';
+import Card from '../Reusable/Law/components/Card';
 
-// One controversy
-const controversy = [{
+const law = {
   size: 'full',
-  title: 'Alguna Information asdfasd ',
-  type: 'Employment',
-  description: 'Descripcion',
-  organization: 'Some organization',
-}, {
-  size: 'full',
-  title: 'Alguna Information asdfasd ',
-  type: 'Employment',
-  description: 'Descripcion',
-  organization: 'Some organization',
-}, {
-  size: 'full',
-  title: 'Alguna Information asdfasd ',
-  type: 'Employment',
-  description: 'Descripcion',
-  organization: 'Some organization',
-}, {
-  size: 'full',
-  title: 'Alguna Information asdfasd ',
-  type: 'Employment',
-  description: 'Descripcion',
-  organization: 'Some organization',
-},
-];
+  type: 'law',
+  code: 90,
+  briefDescription: 'A brief description about the issues that come up',
+  category: 'Employment',
+  source: 'https://www.google.com',
+};
+
+// Test Sample Data
+// const data = [{
+//   size: 'full',
+//   title: 'Alguna Information asdfasd ',
+//   type: 'Employment',
+//   description: 'Descripcion',
+//   organization: 'Some organization',
+// }, {
+//   size: 'full',
+//   title: 'Alguna Information asdfasd ',
+//   type: 'Employment',
+//   description: 'Descripcion',
+//   organization: 'Some organization',
+// }, {
+//   size: 'full',
+//   title: 'Alguna Information asdfasd ',
+//   type: 'Employment',
+//   description: 'Descripcion',
+//   organization: 'Some organization',
+// }, {
+//   size: 'full',
+//   title: 'Alguna Information asdfasd ',
+//   type: 'Employment',
+//   description: 'Descripcion',
+//   organization: 'Some organization',
+// },
+// ];
 
 const Scratch = () => (
   <div className="layout">
     <Container>
-      <Row>
-        <Col md={4} >
-          <Card info={controversy} />
+      <Row noGutters>
+        <Col xs={4}>
+          <Card law={law} />
         </Col>
       </Row>
     </Container>

@@ -6,11 +6,11 @@ import {
 import individualService from '../../../individual-service';
 
 // This function inputs the current subset and waits for the server updates prior to updating the subsets data/number
-export const getRelatedControversies = (subsetNumber, parentIndividualId) => (dispatch) => {
+export const getRelatedControversies = (apiQueryData) => (dispatch) => {
   dispatch({
     type: GET_RELATED_CONTROVERSIES.REQUEST,
   });
-  return individualService.get.relatedControversies(subsetNumber, parentIndividualId).then(
+  return individualService.get.relatedControversies(apiQueryData).then(
     response => dispatch({
       type: GET_RELATED_CONTROVERSIES.SUCCESS,
       subsetNumber: response.data.subsetNumber,

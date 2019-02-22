@@ -6,6 +6,8 @@ import PropTypes from 'prop-types';
 // ------------ LAW CARD PROPTYPES --------------
 export const lawCardPropTypes = {
   law: PropTypes.shape({
+    type: PropTypes.string,
+    size: PropTypes.string,
     code: PropTypes.number,
     briefDescription: PropTypes.string,
     category: PropTypes.string,

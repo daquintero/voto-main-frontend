@@ -24,11 +24,11 @@ export const getRecentInformativeSnippets = subsetNumber => (dispatch) => {
 
 
 // This function inputs the parent relation and the backend returns the informative snippeets
-export const getRelatedInformativeSnippets = (subsetNumber, modelLabel, parentId) => (dispatch) => {
+export const getRelatedInformativeSnippets = (apiQueryData) => (dispatch) => {
   dispatch({
     type: GET_RELATED_INFORMATIVE_SNIPPETS.REQUEST,
   });
-  return snippetService.get.relatedInformativeSnippets(subsetNumber, modelLabel, parentId).then(
+  return snippetService.get.relatedInformativeSnippets(apiQueryData).then(
     response => dispatch({
       type: GET_RELATED_INFORMATIVE_SNIPPETS.SUCCESS,
       subsetNumber: response.data.subsetNumber,

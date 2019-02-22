@@ -21,27 +21,23 @@ const urls = {
 };
 
 // Individuals GET Requests
-const relatedIndividuals = (subsetNumber, modelLabel, parentId) =>
-  axios.get(`${urls.get.relatedIndividuals}${buildQueryString({
-    sn: subsetNumber,
-    pc: modelLabel,
-    pid: parentId,
-  })}`);
+const relatedIndividuals = (apiQueryData) =>
+  axios.get(`${urls.get.relatedIndividuals}${buildQueryString(apiQueryData)}`);
 
 // Sub Related Individuals
-const relatedControversies = (subsetNumber, parentIndividualId) =>
+const relatedControversies = (apiQueryData) =>
   axios.get(`${urls.get.relatedIndividuals}${buildQueryString({
     sn: subsetNumber,
     pid: parentIndividualId,
   })}`);
 
-const relatedPromises = (subsetNumber, parentIndividualId) =>
+const relatedPromises = (apiQueryData) =>
   axios.get(`${urls.get.relatedIndividuals}${buildQueryString({
     sn: subsetNumber,
     pid: parentIndividualId,
   })}`);
 
-const relatedExperience = (subsetNumber, parentIndividualId) =>
+const relatedExperience = (apiQueryData) =>
   axios.get(`${urls.get.relatedIndividuals}${buildQueryString({
     sn: subsetNumber,
     pid: parentIndividualId,

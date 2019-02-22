@@ -2,11 +2,13 @@
 
 // Libraries
 import React, { PureComponent } from 'react';
-import { ListGroup, ListGroupItem, Col, Row } from 'reactstrap';
+import { ListGroup } from 'reactstrap';
 
 // Props
 import { lawsListPropTypes } from './LawPropTypes';
 
+// Components
+import Card from './Card';
 
 class LawsList extends PureComponent {
   static propTypes = lawsListPropTypes;
@@ -16,20 +18,8 @@ class LawsList extends PureComponent {
     return (
       <ListGroup className="p-2">
         { laws.map(law => (
-          <ListGroupItem className="list-right" tag="a" href={law.source}>
-            <Row noGutters>
-              <Col xs={2}>
-                <i className="fal fa-gavel" />
-              </Col>
-              <Col xs={2}>
-                <h4 className="p-1">{law.code}</h4>
-              </Col>
-              <Col xs={8}>
-                <p className=" small p-1">{law.briefDescription}</p>
-              </Col>
-            </Row>
-          </ListGroupItem>
-          ))}
+          <Card law={law} />
+        ))}
       </ListGroup>
     );
   }

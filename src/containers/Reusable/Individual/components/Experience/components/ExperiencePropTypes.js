@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 // ---------- CARD PROPS -----------------------
 export const CardPropTypes = {
   objIn: PropTypes.shape({
+    type: PropTypes.string,
     size: PropTypes.string,
     id: PropTypes.number,
-    type: PropTypes.string,
     briefDescription: PropTypes.string,
     source: PropTypes.string,
   }),

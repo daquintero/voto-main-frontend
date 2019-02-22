@@ -5,10 +5,10 @@ import { connect } from 'react-redux';
 import { Button, Row } from 'reactstrap';
 
 // Prop Types
-import { DetailedReduxCardGridPropTypes } from './InformativeSnippetPropTypes';
+import { DetailedReduxCardGridPropTypes } from './OrganizationPropTypes';
 
 // Redux Actions
-import { getRelatedInformativeSnippets } from '../redux/actions';
+import { getRelatedOrganizations } from '../redux/actions';
 
 // Presentational Component
 import CardGrid from './CardGrid';
@@ -17,14 +17,14 @@ import CardGrid from './CardGrid';
 class DetailedReduxCardGrid extends PureComponent {
   static propTypes = DetailedReduxCardGridPropTypes;
   componentDidMount() {
-    this.props.dispatch(getRelatedInformativeSnippets({
+    this.props.dispatch(getRelatedOrganizations({
       sn: this.props.subsetNumber,
       ml: this.props.modelLabel,
       pid: this.props.parentId,
     }));
   }
   getMore = () => {
-    this.props.dispatch(getRelatedInformativeSnippets({
+    this.props.dispatch(getRelatedOrganizations({
       sn: this.props.subsetNumber + 1,
       ml: this.props.modelLabel,
       pid: this.props.parentId,
@@ -32,18 +32,18 @@ class DetailedReduxCardGrid extends PureComponent {
   };
 
   render() {
-    const { relatedInformativeSnippets } = this.props;
+    const { relatedIndividuals } = this.props;
     return (
       <div>
-        <h3 className="p-2">Noticias Relacionados</h3>
-        <CardGrid info={relatedInformativeSnippets} />
+        <h3 className="p-2">Individuos Relacionados</h3>
+        <CardGrid info={relatedIndividuals} />
         {/* TODO Check subsets are not the same as before */}
         <Row className="p-2">
           <Button
             onClick={this.getMore}
             className="small-enlarge rounded-0 text-center border-0 mx-auto bg-more text-dark"
           >
-            Más Noticias
+            Más Individuos
           </Button>
         </Row>
       </div>
@@ -54,7 +54,7 @@ class DetailedReduxCardGrid extends PureComponent {
 // State Store Connection
 export default connect(state => ({
   // Related Actions Information
-  relatedInformativeSnippets: state.openPage.informativeSnippet.relatedInformativeSnippets,
+  relatedIndividuals: state.openPage.individual.relatedIndividuals,
   subsetNumber: state.openPage.corruptionCase.subsetNumber,
 }))(DetailedReduxCardGrid);
 

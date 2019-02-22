@@ -16,12 +16,8 @@ const urls = {
 };
 
 // Corruption Cases GET Requests
-const relatedFinanceItems = (subsetNumber, modelLabel, parentId) =>
-  axios.get(`${urls.get.relatedFinanceItems}${buildQueryString({
-    sn: subsetNumber,
-    pc: modelLabel,
-    pid: parentId,
-  })}`);
+const relatedFinanceItems = apiQueryData =>
+  axios.get(`${urls.get.relatedFinanceItems}${buildQueryString(apiQueryData)}`);
 
 // Exported Services
 const financeItemService = {

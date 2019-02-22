@@ -16,12 +16,8 @@ const urls = {
 };
 
 // Corruption Cases GET Requests
-const relatedOrganizations = (subsetNumber, modelLabel, parentId) =>
-  axios.get(`${urls.get.relatedOrganizations}${buildQueryString({
-    sn: subsetNumber,
-    pc: modelLabel,
-    pid: parentId,
-  })}`);
+const relatedOrganizations = apiQueryData =>
+  axios.get(`${urls.get.relatedOrganizations}${buildQueryString(apiQueryData)}`);
 
 // Exported Services
 const organizationService = {

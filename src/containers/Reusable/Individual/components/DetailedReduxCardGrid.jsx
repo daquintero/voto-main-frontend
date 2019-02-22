@@ -17,10 +17,18 @@ import CardGrid from './CardGrid';
 class DetailedReduxCardGrid extends PureComponent {
   static propTypes = DetailedReduxCardGridPropTypes;
   componentDidMount() {
-    this.props.dispatch(getRelatedIndividuals(this.props.subsetNumber, this.props.modelLabel, this.props.parentId));
+    this.props.dispatch(getRelatedIndividuals({
+      sn: this.props.subsetNumber,
+      ml: this.props.modelLabel,
+      pid: this.props.parentId,
+    }));
   }
   getMore = () => {
-    this.props.dispatch(getRelatedIndividuals(this.props.subsetNumber + 1, this.props.modelLabel, this.props.parentId));
+    this.props.dispatch(getRelatedIndividuals({
+      sn: this.props.subsetNumber + 1,
+      ml: this.props.modelLabel,
+      pid: this.props.parentId,
+    }));
   };
 
   render() {

@@ -5,10 +5,14 @@ import PropTypes from 'prop-types';
 
 // ----------- FINANCE ITEM PROPTYPES ----------
 export const financeItemPropTypes = {
-  title: PropTypes.string.isRequired,
-  briefDescription: PropTypes.string,
-  amount: PropTypes.number.isRequired,
-  corruptionRelated: PropTypes.bool.isRequired,
+  objIn: PropTypes.shape({
+    type: PropTypes.string,
+    size: PropTypes.string,
+    title: PropTypes.string.isRequired,
+    briefDescription: PropTypes.string,
+    amount: PropTypes.number.isRequired,
+    corruptionRelated: PropTypes.bool.isRequired,
+  }),
 };
 
 export const financeItemDefaultProps = {
