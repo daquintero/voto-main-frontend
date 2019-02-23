@@ -8,10 +8,10 @@ import {
 const defaultState = {
   viewport: {
     width: 1000,
-    height: 600,
-    latitude: 8,
+    height: 350,
+    latitude: 8.25,
     longitude: -80.1,
-    zoom: 6,
+    zoom: 6.5,
     maxZoom: 16,
     pitch: 30,
     bearing: 0,

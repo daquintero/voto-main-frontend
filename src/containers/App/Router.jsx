@@ -9,7 +9,7 @@ import { Route, Switch } from 'react-router-dom';
 // ---------------- BASE IMPORTS ----------------------
 // Home CorruptionCase
 import Home from '../Assembly/Home/components/index';
-import Layout from '../Layout/TopBar/components/index';
+// import Layout from '../Layout/TopBar/components/index';
 
 // Testing Files
 import Scratch from './Scratch';
@@ -32,7 +32,6 @@ import Map from '../Reusable/Map';
 // WrappedRoutes appends the layout navigation with the route components.
 const wrappedRoutes = () => (
   <div>
-    <Layout />
     <Route exact path="/" component={Home} />
 
     {/* Test Files */}
