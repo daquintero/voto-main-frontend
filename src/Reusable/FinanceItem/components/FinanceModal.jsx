@@ -10,7 +10,7 @@ import { financeModalPropTypes, financeModalDefaultProps } from './FinanceItemPr
 import { tableData } from '../../DEVELOPMENT-ONLY-Page/components/SampleDataFullPage';
 
 // Related Components
-import Table from '../../MatTable/';
+import Table from '../../MatTable';
 
 // TODO Get cool loader
 class FinanceModal extends PureComponent {

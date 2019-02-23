@@ -16,7 +16,7 @@ import { tableData } from '../../DEVELOPMENT-ONLY-Page/components/SampleDataFull
 // Related Components
 // TODO Reconnect
 //  TableHeader from '../../MatTable';
-import Table from '../../MatTable/';
+import Table from '../../MatTable';
 
 // TODO Get cool loader
 class FinanceModal extends PureComponent {

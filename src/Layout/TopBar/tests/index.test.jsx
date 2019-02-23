@@ -2,7 +2,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { mount } from 'enzyme';
-import TopBar from '../components/index';
+import TopBar from '../components';
 
 describe('<TopBar />', () => {
   it('TopBar renders correctly without crashing', () => {
