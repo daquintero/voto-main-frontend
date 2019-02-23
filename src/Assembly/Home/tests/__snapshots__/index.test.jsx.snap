@@ -10,7 +10,7 @@ exports[`<Home /> HomePage renders correctly without crashing 1`] = `
     <div
       className="col"
     >
-      gg
+      <div />
     </div>
   </div>
 </div>

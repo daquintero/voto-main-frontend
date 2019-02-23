@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 import { hot } from 'react-hot-loader';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux'; // redux-component
+import 'mapbox-gl/dist/mapbox-gl.css';
+import 'bootstrap/dist/css/bootstrap.css';
 import store from './store'; // redux
 import '../app.scss';
 import Router from './Router';

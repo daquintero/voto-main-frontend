@@ -22,6 +22,13 @@
 // Modal
 @import 'shared/styling/modal';
 
+// ---------------------------- LAYOUT --------------------------
+@import 'Layout/styles';
+
+// ---------------------------- HOME ----------------------------
+@import './Assembly/Home/styles';
+
+
 // ---------------------------- REUSABLE ------------------------
 // Media
 @import 'Reusable/Video/scss/video';
@@ -35,3 +42,7 @@
 // ---------------------------- UTILS ----------------------------
 // Transforms
 @import 'shared/styling/customTransform';
+
+// ---------------------------- MAP ------------------------------
+@import 'Reusable/Map/styling/map';
+
