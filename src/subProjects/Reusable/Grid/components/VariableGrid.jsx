@@ -1,7 +1,8 @@
+/* eslint-disable */
 // Grid of Variable Positions
 // Libraries
 import React, { PureComponent } from 'react';
-import { Row, Col } from 'reactstrap';
+// import { Row, Col } from 'reactstrap';
 
 // Prop Types
 import PropTypes from 'prop-types';
@@ -19,12 +20,11 @@ class VariableGrid extends PureComponent {
     return (
       <>
         {data && data[0] ? (
-          <>
-            {/* TODO FIND A WAY TO ITERATE TWO INDICES AT SAME TIME*/}
+          <div className="card-columns">
             {data.map(objIn => (
               CardSelector(objIn)
             ))}
-          </>
+          </div>
         ) : null}
       </>
     );
