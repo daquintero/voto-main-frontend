@@ -113,7 +113,7 @@ function checkValidServiceWorker(swUrl, config) {
     })
     .catch(() => {
       console.log(
-        'No internet connection found. containers is running in offline mode.'
+        'No internet connection found. subProjects is running in offline mode.'
       );
     });
 }

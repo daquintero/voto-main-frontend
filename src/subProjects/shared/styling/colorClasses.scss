@@ -1,0 +1,15 @@
+// Color Classes used as Bootstrap equivalents
+
+.bg-eb {
+  @include themify($themes) {
+    background-color: themed('baseDarkest');
+  }
+ // background-color: #f1f1f1 !important;
+}
+
+.bg-more {
+  @include themify($themes) {
+    background-color: themed('baseDarkest');
+  }
+  // background-color: #f3faff !important;
+}
