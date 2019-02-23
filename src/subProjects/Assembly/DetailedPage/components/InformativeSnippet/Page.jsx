@@ -25,7 +25,7 @@ class Page extends PureComponent {
 
   componentDidMount() {
     this.props.dispatch(getDetailedPage({
-      ml: 'political.corruptionCase',
+      ml: 'corruption.InformativeSnippet',
       id: this.props.match.params.id,
     }));
   }

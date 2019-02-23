@@ -21,7 +21,7 @@ const recentInformativeSnippets = subsetNumber =>
   axios.get(`${urls.get.recentInformativeSnippets}${buildQueryString({
     sn: subsetNumber,
   })}`);
-const relatedInformativeSnippets = (apiQueryData) =>
+const relatedInformativeSnippets = apiQueryData =>
   axios.get(`${urls.get.relatedInformativeSnippets}${buildQueryString(apiQueryData)}`);
 
 // Exported Services

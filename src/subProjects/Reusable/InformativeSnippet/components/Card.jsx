@@ -23,86 +23,89 @@ class InformativeSnippetCard extends PureComponent {
     const { objIn } = this.props;
 
     const imgFalseCard = obj => (
-      <Card className="bg-light border-0 h-100 rounded-0 small-enlarge">
-        <Row noGutters className="h-100">
-          <Col
-            xs={layoutMap[obj.size].xs.inner.imgWrapper + layoutMap[obj.size].xs.inner.contentWrapper}
-            md={layoutMap[obj.size].md.inner.imgWrapper + layoutMap[obj.size].md.inner.contentWrapper}
-          >
-            <CardBody className="p-0 justify-self-center h-100">
-              <h4 className="card-title mb-0 p-3">{obj.title}</h4>
-              <div className="d-flex justify-content-between emp-card-info-btm bg-eb">
-                <div className="p-2 text-center justify-content-center" >
-                  <i className={`fal p-2 enlarge fa-${obj.statistics[0].icon}`} aria-hidden="true" />
-                  <div className="justify-content-between">
-                    <p className="small" > {numeral(obj.statistics[0].data).format('0a')}</p>
-                    <p className="small m-0" > {obj.statistics[0].title} </p>
+      <Card className="bg-light border-0 rounded-0 small-enlarge mincontent">
+        <Link to={`/noticia/${objIn.id}`}>
+          <Row noGutters className="h-100">
+            <Col
+              xs={layoutMap[obj.size].xs.inner.imgWrapper + layoutMap[obj.size].xs.inner.contentWrapper}
+              md={layoutMap[obj.size].md.inner.imgWrapper + layoutMap[obj.size].md.inner.contentWrapper}
+            >
+              <CardBody className="p-0 justify-self-center h-100">
+                <h4 className="card-title mb-0 p-3">{obj.title}</h4>
+                <div className="d-flex justify-content-between bg-eb">
+                  <div className="p-2 text-center justify-content-center" >
+                    <i className={`fal p-2 enlarge fa-${obj.statistics[0].icon}`} aria-hidden="true" />
+                    <div className="justify-content-between">
+                      <p className="small m-0" > {numeral(obj.statistics[0].data).format('0a')}</p>
+                      <p className="small m-0" > {obj.statistics[0].title} </p>
+                    </div>
+                  </div>
+                  <div className="p-2 mt-0 text-center">
+                    <i className="fal p-2 fa-calendar" />
+                    <p className="small m-0"> Publicado { moment(obj.date).fromNow() } </p>
                   </div>
                 </div>
-                <div className="p-2 mt-0 text-center">
-                  <i className="fal p-2 fa-calendar" />
-                  <p className="small m-0"> Publicado { moment(obj.date).fromNow() } </p>
-                </div>
-              </div>
-            </CardBody>
-          </Col>
-        </Row>
+              </CardBody>
+            </Col>
+          </Row>
+        </Link>
       </Card>
     );
 
     const imgTrueCard = obj => (
-      <Card className="bg-light border-0 rounded-0 small-enlarge">
-        <Row noGutters>
-          <Col
-            xs={layoutMap[obj.size].xs.inner.imgWrapper}
-            sm={layoutMap[obj.size].sm.inner.imgWrapper}
-            md={layoutMap[obj.size].md.inner.imgWrapper}
-            lg={layoutMap[obj.size].lg.inner.imgWrapper}
-            xl={layoutMap[obj.size].xl.inner.imgWrapper}
-          >
-            <img
-              className="img-cover"
-              src={obj.images[0].image}
-              alt="Something"
-            />
-          </Col>
-          <Col
-            xs={layoutMap[obj.size].xs.inner.contentWrapper}
-            sm={layoutMap[obj.size].sm.inner.contentWrapper}
-            md={layoutMap[obj.size].md.inner.contentWrapper}
-            lg={layoutMap[obj.size].lg.inner.contentWrapper}
-            xl={layoutMap[obj.size].xl.inner.contentWrapper}
-          >
-            <CardBody className="p-0">
-              <h4 className="card-title mb-0 p-2">{obj.title}</h4>
-              <div className="d-flex justify-content-between bg-eb">
-                <div className="p-2 text-center justify-content-center">
-                  <i className={`fal p-2 fa-${obj.statistics[0].icon}`} aria-hidden="true" />
-                  <div className="justify-content-between">
-                    <p className="small" >
-                      {/* Check if number or string */}
-                      {(typeof obj.statistics[0].data === 'number') ?
+      <Card className="bg-light border-0 rounded-0 small-enlarge mincontent">
+        <Link to={`/noticia/${objIn.id}`}>
+          <Row noGutters>
+            <Col
+              xs={layoutMap[obj.size].xs.inner.imgWrapper}
+              sm={layoutMap[obj.size].sm.inner.imgWrapper}
+              md={layoutMap[obj.size].md.inner.imgWrapper}
+              lg={layoutMap[obj.size].lg.inner.imgWrapper}
+              xl={layoutMap[obj.size].xl.inner.imgWrapper}
+            >
+              <img
+                className="img-cover"
+                src={obj.images[0].image}
+                alt="Something"
+              />
+            </Col>
+            <Col
+              xs={layoutMap[obj.size].xs.inner.contentWrapper}
+              sm={layoutMap[obj.size].sm.inner.contentWrapper}
+              md={layoutMap[obj.size].md.inner.contentWrapper}
+              lg={layoutMap[obj.size].lg.inner.contentWrapper}
+              xl={layoutMap[obj.size].xl.inner.contentWrapper}
+            >
+              <CardBody className="p-0">
+                <h4 className="card-title mb-0 p-2">{obj.title}</h4>
+                <div className="d-flex justify-content-between bg-eb">
+                  <div className="p-2 text-center justify-content-center">
+                    <i className={`fal p-2 fa-${obj.statistics[0].icon}`} aria-hidden="true" />
+                    <div className="justify-content-between">
+                      <p className="small m-0" >
+                        {/* Check if number or string */}
+                        {(typeof obj.statistics[0].data === 'number') ?
                         numeral(obj.statistics[0].data).format('0a')
                         : obj.statistics[0].data}
-                    </p>
-                    <p className="small m-0" > {obj.statistics[0].title} </p>
+                      </p>
+                      <p className="small m-0" > {obj.statistics[0].title} </p>
+                    </div>
+                  </div>
+                  <div className="p-2 mt-0 text-center">
+                    <i className="fal p-2 fa-calendar" />
+                    <p className="small m-0"> Publicado { moment(obj.date).fromNow() } </p>
                   </div>
                 </div>
-                <div className="p-2 mt-0 text-center">
-                  <i className="fal p-2 fa-calendar" />
-                  <p className="small m-0"> Publicado { moment(obj.date).fromNow() } </p>
-                </div>
-              </div>
-            </CardBody>
-          </Col>
-        </Row>
+              </CardBody>
+            </Col>
+
+          </Row>
+        </Link>
       </Card>
     );
 
     return (
-      <Link to={`/noticia/${objIn.id}`}>
-        { objIn.images ? imgTrueCard(objIn) : imgFalseCard(objIn) }
-      </Link>
+      objIn.images ? imgTrueCard(objIn) : imgFalseCard(objIn)
     );
   }
 }

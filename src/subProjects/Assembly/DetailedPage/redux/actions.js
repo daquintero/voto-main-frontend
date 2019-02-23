@@ -7,11 +7,11 @@ import service from '../../service';
 
 // --------------- PAGE --------------
 // Basic Detailed CorruptionCase detailed action that gets the basic fields for the parentID
-export const getDetailedPage = (modelLabel, parentId) => (dispatch) => {
+export const getDetailedPage = apiQueryData => (dispatch) => {
   dispatch({
     type: GET_DETAILED_PAGE.REQUEST,
   });
-  return service.get.detailedPage(parentId, modelLabel).then(
+  return service.get.detailedPage(apiQueryData).then(
     response => dispatch({
       type: GET_DETAILED_PAGE.SUCCESS,
       basic: response.data,

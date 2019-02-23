@@ -1,4 +1,6 @@
 import PropTypes from 'prop-types';
+import ReactRouterPropTypes from 'react-router-prop-types';
+
 // TODO CHANGE ALL TO CAMELCASE
 // --------------- EXTERNAL PROP TYPES IMPORTS -------------
 // Utils
@@ -52,6 +54,7 @@ export const StatisticsProps = {
 
 export const PageProps = {
   dispatch: PropTypes.func.isRequired,
+  match: ReactRouterPropTypes.match.isRequired,
   id: PropTypes.number.isRequired,
 };
 

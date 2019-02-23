@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { buildQueryString } from '../shared/utils/utils';
+import { buildQueryString } from '../App/utils';
 
 // Local url for the views
 const baseUrl = process.env.REACT_APP_BASE_URL;
@@ -18,11 +18,8 @@ const urls = {
 
 // ----------- DETAILED PAGE ---------------
 // Generic Detailed CorruptionCase Action for all Components
-const detailedPage = (modelLabel, parentId) =>
-  axios.get(`${urls.get.detailedPage}${buildQueryString({
-    pid: parentId,
-    ml: modelLabel,
-  })}`);
+const detailedPage = apiQueryData =>
+  axios.get(`${urls.get.detailedPage}${buildQueryString(apiQueryData)}`);
 
 // Exported Services
 const service = {

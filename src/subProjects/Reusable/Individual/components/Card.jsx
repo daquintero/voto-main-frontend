@@ -35,7 +35,7 @@ class IndividualCard extends PureComponent {
                   className="text-center p-1"
                 >
                   <h4 className="card-title mb-0">{obj.name}</h4>
-                  <p className="font-italic mt-0">{obj.alias}</p>
+                  <p className="font-italic my-0">{obj.alias}</p>
                 </Col>
               </Row>
             </CardBody>
@@ -68,9 +68,9 @@ class IndividualCard extends PureComponent {
           >
             <CardBody className="p-2">
               <Row noGutters>
-                <Col xs={9} className="mb-2">
+                <Col xs={12} className="mb-2">
                   <h4 className="card-title mb-0 text-right">{obj.name}</h4>
-                  <p className="text-right mt-0 font-italic">{obj.alias}</p>
+                  <p className="text-right my-0 font-italic">{obj.alias}</p>
                 </Col>
               </Row>
             </CardBody>
@@ -80,9 +80,11 @@ class IndividualCard extends PureComponent {
     );
 
     return (
-      <Link to={`/individuo/${objIn.id}`}>
-        { objIn.images ? imgTrueCard(objIn) : imgFalseCard(objIn) }
-      </Link>
+      <div className="mincontent">
+        <Link to={`/individuo/${objIn.id}`}>
+          { objIn.images ? imgTrueCard(objIn) : imgFalseCard(objIn) }
+        </Link>
+      </div>
     );
   }
 }

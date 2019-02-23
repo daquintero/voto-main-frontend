@@ -24,7 +24,7 @@ export const getRecentInformativeSnippets = subsetNumber => (dispatch) => {
 
 
 // This function inputs the parent relation and the backend returns the informative snippeets
-export const getRelatedInformativeSnippets = (apiQueryData) => (dispatch) => {
+export const getRelatedInformativeSnippets = apiQueryData => (dispatch) => {
   dispatch({
     type: GET_RELATED_INFORMATIVE_SNIPPETS.REQUEST,
   });

@@ -23,7 +23,10 @@ class Page extends PureComponent {
   //  static defaultProps = DefaultPageProps; // TODO Define defaults
 
   componentDidMount() {
-    this.props.dispatch(getDetailedPage('political.corruptionCase', this.props.id));
+    this.props.dispatch(getDetailedPage({
+      ml: 'political.Individual',
+      id: this.props.match.params.id,
+    }));
   }
 
   render() {

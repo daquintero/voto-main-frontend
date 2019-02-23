@@ -7,33 +7,30 @@ import { Route, Switch } from 'react-router-dom';
 
 
 // ---------------- BASE IMPORTS ----------------------
-// Home CorruptionCase
+// Home
 import Home from '../Assembly/Home/components/index';
 import Layout from '../Layout/TopBar/components/index';
+
+// --------------- DETAIL PAGE IMPORTS -------------------
+import CorruptionCase from '../Assembly/DetailedPage/components/CorruptionCase/Page';
+import Individual from '../Assembly/DetailedPage/components/Individual/Page';
+import InformativeSnippet from '../Assembly/DetailedPage/components/InformativeSnippet/Page';
 
 // Testing Files
 import Scratch from './Scratch';
 import APITestPage from './ApiTestPage';
-
 import Map from '../Reusable/Map';
-
-// --------------- REUSABLE IMPORTS -------------------
-// TODO FIX FOR PATH
-// import CorruptionCaseDetailedPage from '../Reusable/CorruptionCase/components/CorruptionCase';
-
-// ------------------------- REUSABLE COMPONENTS ----------------------
-// TODO FIX THIS so that paths work.
-// const Reusable = () => (
-//   <>
-//     <Route path="/noticias/:id" component={CorruptionCaseDetailedPage}/>
-//   </>
-// );
 
 // WrappedRoutes appends the layout navigation with the route components.
 const wrappedRoutes = () => (
   <div>
     <Layout />
     <Route exact path="/" component={Home} />
+
+    {/* Detailed Pages */}
+    <Route path="/caso-corrupcion/:id" component={CorruptionCase} />
+    <Route path="/individuo/:id" component={Individual} />
+    <Route path="/noticia/:id" component={InformativeSnippet} />
 
     {/* Test Files */}
     <Route path="/a" component={Scratch} />

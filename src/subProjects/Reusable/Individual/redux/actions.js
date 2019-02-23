@@ -6,7 +6,7 @@ import {
 import service from '../service';
 
 // This function inputs the current subset and waits for the server updates prior to updating the subsets data/number
-export const getRelatedIndividuals = (apiQueryData) => (dispatch) => {
+export const getRelatedIndividuals = apiQueryData => (dispatch) => {
   dispatch({
     type: GET_RELATED_INDIVIDUALS.REQUEST,
   });

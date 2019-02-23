@@ -30,7 +30,9 @@ export default function (objIn) {
     case 'corruption.InformativeSnippet':
       return (<INFOCard objIn={objIn} />);
     case 'corruption.CorruptionCase':
-      return (<CORRCard objIn={objIn} />);
+      return (
+        <CORRCard objIn={objIn} />
+      );
     case 'corruption.FinancialItem':
       return (<FINCard objIn={objIn} />);
     case 'political.Individual':
