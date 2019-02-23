@@ -5,7 +5,7 @@ import { Card, CardBody, Row, Col } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { CardPropTypes, CardDefaultPropTypes } from './IndividualPropTypes';
 // Layout Map
-import layoutMap from '../../../shared/utils/layoutMap';
+import layoutMap from '../styling/layoutMap';
 
 class IndividualCard extends PureComponent {
   static propTypes = CardPropTypes;

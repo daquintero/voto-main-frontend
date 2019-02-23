@@ -2,7 +2,7 @@
 // Grid of Variable Positions
 // Libraries
 import React, { PureComponent } from 'react';
-// import { Row, Col } from 'reactstrap';
+import { Row } from 'reactstrap';
 
 // Prop Types
 import PropTypes from 'prop-types';
@@ -18,15 +18,15 @@ class VariableGrid extends PureComponent {
   render() {
     const { data } = this.props;
     return (
-      <>
+      <Row noGutters>
         {data && data[0] ? (
-          <div className="card-columns">
+          <div className="variable-grid">
             {data.map(objIn => (
               CardSelector(objIn)
             ))}
           </div>
         ) : null}
-      </>
+      </Row>
     );
   }
 }

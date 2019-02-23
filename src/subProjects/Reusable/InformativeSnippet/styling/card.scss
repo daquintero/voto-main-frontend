@@ -4,3 +4,10 @@
   right: 0;
   bottom: 0%;
 }
+
+.variable-grid {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-auto-rows: 250px 150px;
+}

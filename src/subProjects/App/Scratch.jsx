@@ -2,8 +2,11 @@
 import React from 'react';
 import { Container } from 'reactstrap';
 
-// TODO FINISH PAGE TEST
 import VariableGrid from '../Reusable/Grid/components/VariableGrid';
+
+// TODO REMOVE IMAGE TEST
+const imageTest = `${process.env.PUBLIC_URL}/img-test/a.jpg`;
+
 
 // Test Sample Data
 const data = [{
@@ -22,7 +25,7 @@ const data = [{
 }, {
   id: 6,
   type: 'corruption.InformativeSnippet',
-  size: 'full',
+  size: 'half',
   title: 'Whatsup asdn amsda jasd nas dn asnd ',
   date: new Date(),
   statistics: [{
@@ -33,17 +36,46 @@ const data = [{
     icon: 'user',
   }],
 }, {
-  size: 'full',
-  title: 'Alguna Information asdfasd ',
-  type: 'Employment',
-  description: 'Descripcion',
-  organization: 'Some organization',
+  id: 2,
+  size: 'half',
+  type: 'political.Individual',
+  name: 'Laurentino Cortizo',
+  alias: 'alias',
+  images: [{
+    image: imageTest,
+  }],
 }, {
   size: 'full',
   title: 'Alguna Information asdfasd ',
   type: 'Employment',
   description: 'Descripcion',
   organization: 'Some organization',
+},
+{
+  id: 3,
+  size: 'half',
+  type: 'political.Individual',
+  name: 'Laurentino Cortizo',
+  alias: 'alias',
+  images: [{
+    image: imageTest,
+  }],
+}, {
+  id: 6,
+  type: 'corruption.InformativeSnippet',
+  size: 'half',
+  title: 'Whatsup asdn amsda jasd nas dn asnd ',
+  date: new Date(),
+  images: [{
+    image: imageTest,
+  }],
+  statistics: [{
+    id: 3,
+    link: 'jjj',
+    title: 'informacion',
+    data: '10',
+    icon: 'user',
+  }],
 },
 ];
 
