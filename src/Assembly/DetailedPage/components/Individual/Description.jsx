@@ -1,25 +1,25 @@
 // Libraries
 import React, { PureComponent } from 'react';
-import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
-// Prop Types
-import { headerPropTypes, headerDefaultProps } from './PagePropTypes';
 
-// Declaration
 class Description extends PureComponent {
-  static propTypes = headerPropTypes;
-  static defaultProps = headerDefaultProps;
+  static propTypes = {
+    instance: PropTypes.instanceOf(Object).isRequired,
+  };
+
   render() {
-    const { basic } = this.props;
+    const {
+      instance,
+    } = this.props;
+
     return (
       <div className="m-1 p-2">
-        { basic.longDescription }
+        { /* TODO: HTML parser */ }
+        {instance.longDescription}
       </div>
     );
   }
 }
 
-export default connect(state => ({
-  // Note long description is within basic for quick rendering
-  basic: state.basic,
-}))(Description);
+export default Description;

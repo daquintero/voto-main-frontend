@@ -5,7 +5,6 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
 
-
 // TODO Get cool loader
 class InfoModal extends PureComponent {
   static propTypes = {

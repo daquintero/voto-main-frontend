@@ -25,7 +25,7 @@ class Page extends PureComponent {
   static propTypes = {
     // Redux
     dispatch: PropTypes.func.isRequired,
-    instances: PropTypes.instanceOf(Array).isRequired,
+    instance: PropTypes.instanceOf(Array).isRequired,
     actions: PropTypes.instanceOf(Array).isRequired,
 
     // Router
@@ -41,24 +41,24 @@ class Page extends PureComponent {
   }
 
   render() {
-    const { actions } = this.props;
+    const { actions, instance } = this.props;
     return actions.GET_DETAILED_PAGE.loading ? (
       <Container>
         <Row className="p-2">
           <Col xs={12} md={6}>
-            <Header />
+            <Header instance={instance} />
           </Col>
           <Col xs={12} md={6}>
-            <Gallery />
+            <Gallery instance={instance} />
           </Col>
         </Row>
         <Row className="p-2">
           <Col xs={12} md={8} className="bg-white">
-            <Description />
+            <Description instance={instance} />
             <Relationships />
           </Col>
           <Col xs={12} md={4} className="p-2">
-            <RightSide />
+            <RightSide instance={instance} />
           </Col>
         </Row>
       </Container>
