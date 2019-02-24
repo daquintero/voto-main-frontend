@@ -25,8 +25,11 @@
 // ---------------------------- LAYOUT --------------------------
 @import 'Layout/styles';
 
-// ---------------------------- HOME ----------------------------
+// ---------------------------- ASSEMBLY ----------------------------
+// HOME
 @import './Assembly/Home/styles';
+// ABOUT PAGE
+@import 'Assembly/AboutUsPage/components/Social/styles';
 
 
 // ---------------------------- REUSABLE ------------------------
@@ -37,12 +40,10 @@
 @import 'Reusable/MatTable/styling/material-table';
 //Corruption Case
 @import 'Reusable/CorruptionCase/styling/corruption-case';
-
+//MAP
+@import 'Reusable/Map/styling/map';
 
 // ---------------------------- UTILS ----------------------------
 // Transforms
 @import 'shared/styling/customTransform';
-
-// ---------------------------- MAP ------------------------------
-@import 'Reusable/Map/styling/map';
 

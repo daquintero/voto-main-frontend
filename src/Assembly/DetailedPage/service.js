@@ -1,6 +1,7 @@
 import axios from 'axios';
 import buildUrl from '../../shared/utils/buildUrl';
 
+
 // Local url for the views
 const baseUrl = process.env.REACT_APP_BASE_URL;
 const assemblyApiUrl = `${baseUrl}/assembly/api/v1`;
