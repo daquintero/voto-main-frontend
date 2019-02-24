@@ -6,7 +6,7 @@ import layoutMap from '../../../shared/utils/layoutMap';
 
 /* Imperative PureFunction Grid Approach  */
 class OrganizationCardGrid extends PureComponent {
-  static propTypes = PropTypes.arrayOf(PropTypes.instanceOf(Object)).isRequired;
+  static propTypes = {     instances: PropTypes.arrayOf(Object).isRequired   };
 
   render() {
     const { info } = this.props;

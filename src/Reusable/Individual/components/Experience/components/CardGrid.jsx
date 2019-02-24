@@ -8,14 +8,16 @@ import layoutMap from '../../../../../shared/utils/layoutMap';
 
 /* Imperative PureFunction Grid Approach  */
 class CardGrid extends PureComponent {
-  static propTypes = PropTypes.arrayOf(PropTypes.instanceOf(Object)).isRequired;
+  static propTypes = {
+    instances: PropTypes.arrayOf(Object).isRequired,
+  };
 
   render() {
-    const { info } = this.props;
+    const { instances } = this.props;
     return (
 
       <Row noGutters>
-        {info[0] && info.map(instance => (
+        {instances[0] && instances.map(instance => (
           <Col
             xs={layoutMap[instance.size].xs.outer.wrapper}
             sm={layoutMap[instance.size].sm.outer.wrapper}

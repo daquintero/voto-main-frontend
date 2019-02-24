@@ -26,7 +26,7 @@ class Page extends PureComponent {
     // Redux
     dispatch: PropTypes.func.isRequired,
     instance: PropTypes.instanceOf(Array).isRequired,
-    actions: PropTypes.instanceOf(Array).isRequired,
+    actions: PropTypes.instanceOf(Object).isRequired,
 
     // Router
     match: ReactRouterPropTypes.match.isRequired,
