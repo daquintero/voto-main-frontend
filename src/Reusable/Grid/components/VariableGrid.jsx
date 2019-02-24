@@ -21,8 +21,8 @@ class VariableGrid extends PureComponent {
       <Row noGutters>
         {data && data[0] ? (
           <div className="variable-grid">
-            {data.map(objIn => (
-              CardSelector(objIn)
+            {data.map(instance => (
+              CardSelector(instance)
             ))}
           </div>
         ) : null}

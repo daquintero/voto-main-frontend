@@ -25,30 +25,30 @@ import FINCard from '../../Reusable/FinanceItem/components/FinanceItem';
 import ORGCard from '../../Reusable/Organization/components/Card';
 
 // Selector Function
-export default function (objIn) {
-  switch (objIn.type) {
+export default function (instance) {
+  switch (instance.type) {
     case 'corruption.InformativeSnippet':
-      return (<INFOCard objIn={objIn} />);
+      return (<INFOCard instance={instance} />);
     case 'corruption.CorruptionCase':
       return (
-        <CORRCard objIn={objIn} />
+        <CORRCard instance={instance} />
       );
     case 'corruption.FinancialItem':
-      return (<FINCard objIn={objIn} />);
+      return (<FINCard instance={instance} />);
     case 'political.Individual':
-      return (<INDICard objIn={objIn} />);
+      return (<INDICard instance={instance} />);
     case 'political.Controversy':
-      return (<CONTCard objIn={objIn} />);
+      return (<CONTCard instance={instance} />);
     case 'political.Promise':
-      return (<PROMCard objIn={objIn} />);
+      return (<PROMCard instance={instance} />);
     case 'political.Experience':
-      return (<EXPCard objIn={objIn} />);
+      return (<EXPCard instance={instance} />);
     case 'political.Statistic':
-      return (<STATCard statistic={objIn} />);
+      return (<STATCard statistic={instance} />);
     case 'political.Organization':
-      return (<ORGCard objIn={objIn} />);
+      return (<ORGCard instance={instance} />);
     case 'political.Law':
-      return (<LAWCard objIn={objIn} />);
+      return (<LAWCard instance={instance} />);
     default:
       return null;
   }

@@ -23,11 +23,11 @@ import MatTableHead from './components/MatTableHead';
 import squashString from '../../shared/utils/squashString';
 
 // Util for array ordering under these
-const getNestedSorting = (obj, orderBy) => {
-  if (!obj[orderBy]) {
-    return obj.tableValues.descriptors.filter(f => f.name === orderBy)[0].value;
+const getNestedSorting = (instance, orderBy) => {
+  if (!instance[orderBy]) {
+    return instance.tableValues.descriptors.filter(f => f.name === orderBy)[0].value;
   }
-  return obj[orderBy];
+  return instance[orderBy];
 };
 
 // Array ordering function

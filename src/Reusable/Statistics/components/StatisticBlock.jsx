@@ -7,7 +7,9 @@ import { Card } from 'reactstrap';
 import numeral from 'numeral';
 
 class StatisticBlock extends PureComponent {
-  static propTypes = PropTypes.instanceOf(Object).isRequired;
+  static propTypes = {
+    instance: PropTypes.instanceOf(Object).isRequired,
+  };
 
   render() {
     const { statistic } = this.props;
