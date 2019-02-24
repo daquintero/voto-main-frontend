@@ -4,11 +4,6 @@ import React, { PureComponent } from 'react';
 import { Container, Row, Col } from 'reactstrap';
 import { connect } from 'react-redux';
 
-
-// Prop Types
-import { PageProps } from './PagePropTypes';
-// TODO , DefaultPageProps
-
 // Redux Actions
 import { getDetailedPage } from '../../redux/actions';
 
@@ -20,8 +15,7 @@ import Relationships from './Relationships';
 import RightSide from './RightSide';
 
 class Page extends PureComponent {
-  static propTypes = PageProps;
-  //  static defaultProps = DefaultPageProps; // TODO Define defaults
+  static propTypes = PropTypes.instanceOf()
 
   componentDidMount() {
     this.props.dispatch(getDetailedPage({

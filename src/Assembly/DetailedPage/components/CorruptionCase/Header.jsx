@@ -1,17 +1,17 @@
 // CorruptionCase Header
 // Libraries
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 import { Col } from 'reactstrap';
 
 // Redux
 import { connect } from 'react-redux';
 
 // Prop Types
-import { headerPropTypes, headerDefaultProps } from './PagePropTypes';
 
 class Header extends PureComponent {
-  static propTypes = headerPropTypes;
-  static defaultProps = headerDefaultProps;
+  static propTypes = PropTypes.instanceOf(Object).isRequired;
+
   render() {
     const {
       basic,
@@ -28,5 +28,5 @@ class Header extends PureComponent {
 
 export default connect(state => ({
   // Basic CorruptionCase information
-  basic: state.openPage.basic,
+  parentInstance: state.openPage.basic,
 }))(Header);
