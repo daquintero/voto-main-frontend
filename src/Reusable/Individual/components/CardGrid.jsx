@@ -1,14 +1,19 @@
+// Absolute Imports
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Row, Col } from 'reactstrap';
 import IndividualCard from './Card';
+
+// Components
+import Loader from '../../../shared/components/Loader';
 
 // Layout Map
 import layoutMap from '../styling/layoutMap';
 
 /* Imperative PureFunction Grid Approach  */
-const IndividualCardGrid = instances => (
+const IndividualCardGrid = (instances, action) => (
   <Row noGutters>
-    {instances[0] && instances.map(instance => (
+    {instances.map(instance => (
       <Col
         xs={layoutMap[instance.size].xs.outer.wrapper}
         sm={layoutMap[instance.size].sm.outer.wrapper}
@@ -19,10 +24,15 @@ const IndividualCardGrid = instances => (
         key={instance.id}
       >
         <IndividualCard instance={instance} />
+        {action.loading && <Loader elemClass="load__card" />}
       </Col>
-        ))}
+    ))}
   </Row>
-
 );
+
+IndividualCard.propTypes = {
+  instance: PropTypes.instanceOf(Object).isRequired,
+  action: PropTypes.instanceOf(Object).isRequired,
+};
 
 export default IndividualCardGrid;

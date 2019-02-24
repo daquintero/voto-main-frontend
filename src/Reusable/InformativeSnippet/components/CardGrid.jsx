@@ -25,7 +25,10 @@ class InformativeCardGrid extends PureComponent {
             className="p-2"
             key={instance.id}
           >
-            <InformativeSnippetCard instance={instance} />
+            <InformativeSnippetCard
+              instance={instance}
+              action={}
+            />
           </Col>
           ))}
       </Row>

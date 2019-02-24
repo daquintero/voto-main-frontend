@@ -8,7 +8,7 @@ import numeral from 'numeral';
 
 class StatisticBlock extends PureComponent {
   static propTypes = {
-    instance: PropTypes.instanceOf(Object).isRequired,
+    statistic: PropTypes.instanceOf(Object).isRequired,
   };
 
   render() {
