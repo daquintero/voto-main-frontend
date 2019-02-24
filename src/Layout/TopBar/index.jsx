@@ -9,6 +9,7 @@ import {
   Input,
 } from 'reactstrap';
 import { Link } from 'react-router-dom';
+import classNames from 'classnames';
 
 // Functions
 // import imageUrl from '../../shared/utils/imageUrl';
@@ -31,7 +32,58 @@ class TopBar extends Component {
     this.setState(prevState => ({ collapsed: !prevState.collapsed }));
   };
 
+  handleOnHover = (e) => {
+    e.persist();
+    const { id } = e.currentTarget.dataset;
+    this.setState({ currentTab: id });
+  };
+
+  renderSubNav = () => {
+    const { currentTab } = this.state;
+    switch (currentTab) {
+      case '1':
+        return (
+          <div className="navbar__subnav__wrapper one">
+            <Container>
+              <div className="navbar__subnav__head">
+                <h3>News</h3>
+              </div>
+            </Container>
+          </div>
+        );
+      case '2':
+        return (
+          <div className="navbar__subnav__wrapper two">
+            <Container>
+              <div className="navbar__subnav__head">
+                <h3>Corruption</h3>
+              </div>
+            </Container>
+          </div>
+        );
+      case '3':
+        return (
+          <div className="navbar__subnav__wrapper three">
+            <Container>
+              <div className="navbar__subnav__head">
+                <h3>Candidates</h3>
+              </div>
+            </Container>
+          </div>
+        );
+      default:
+        return (
+          <></>
+        );
+    }
+  };
+
   render() {
+    // State
+    const {
+      currentTab,
+    } = this.state;
+
     return (
       <>
         <Navbar light expand="md" className="navbar">
@@ -53,17 +105,40 @@ class TopBar extends Component {
                 </form>
               </div>
               <div className="navbar__nav__wrapper">
-                <div className="navbar__nav__item">
+                <div
+                  className={classNames('navbar__nav__item one', { active: currentTab === '1' })}
+                  data-id="1"
+                  onMouseEnter={this.handleOnHover}
+                >
                   <Link className="navbar__nav__link" to="/">News</Link>
                 </div>
-                <div className="navbar__nav__item">
+                <div
+                  className={classNames('navbar__nav__item two', { active: currentTab === '2' })}
+                  data-id="2"
+                  onMouseEnter={this.handleOnHover}
+                >
                   <Link className="navbar__nav__link" to="/">Corruption</Link>
                 </div>
-                <div className="navbar__nav__item">
+                <div
+                  className={classNames('navbar__nav__item three', { active: currentTab === '3' })}
+                  data-id="3"
+                  onMouseEnter={this.handleOnHover}
+                >
                   <Link className="navbar__nav__link" to="/">Candidates</Link>
                 </div>
-                <div className="navbar__nav__item">
+                <div
+                  className={classNames('navbar__nav__item four', { active: currentTab === '4' })}
+                  data-id="4"
+                  onMouseEnter={this.handleOnHover}
+                >
                   <Link className="navbar__nav__link" to="/">Explore</Link>
+                </div>
+                <div
+                  className={classNames('navbar__nav__item five end', { active: currentTab === '5' })}
+                  data-id="5"
+                  onMouseEnter={this.handleOnHover}
+                >
+                  <Link className="navbar__nav__link" to="/">About</Link>
                 </div>
               </div>
             </Collapse>
@@ -73,6 +148,7 @@ class TopBar extends Component {
             />
           </Container>
         </Navbar>
+        {this.renderSubNav()}
       </>
     );
   }

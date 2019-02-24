@@ -16,13 +16,7 @@ import CardGrid from './CardGrid';
 // Detailed DEVELOPMENT-ONLY-Page Redux Card Grid
 class DetailedReduxCardGrid extends PureComponent {
   static propTypes = DetailedReduxCardGridPropTypes;
-  componentDidMount() {
-    this.props.dispatch(getRelatedIndividuals({
-      sn: this.props.subsetNumber,
-      ml: this.props.modelLabel,
-      pid: this.props.parentId,
-    }));
-  }
+
   getMore = () => {
     this.props.dispatch(getRelatedIndividuals({
       sn: this.props.subsetNumber + 1,
@@ -53,8 +47,8 @@ class DetailedReduxCardGrid extends PureComponent {
 
 // State Store Connection
 export default connect(state => ({
-  // Related Actions Information
-  relatedIndividuals: state.openPage.individual.relatedIndividuals,
-  subsetNumber: state.openPage.corruptionCase.subsetNumber,
+  instances: state.openPage.relatedIndividuals.instances,
+  subsetNumber: state.openPage.relatedIndividuals.subsetNumber,
+  actions: state.openPage.relatedInstances.actions,
 }))(DetailedReduxCardGrid);
 

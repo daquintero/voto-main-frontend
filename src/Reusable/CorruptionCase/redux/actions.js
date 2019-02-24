@@ -12,7 +12,7 @@ export const getRelatedCorruptionCases = apiQueryData => (dispatch) => {
   dispatch({
     type: GET_RELATED_CORRUPTION_CASES.REQUEST,
   });
-  return service.get.relatedCorruptionCases(apiQueryData).then(
+  return service.get.instances(apiQueryData).then(
     response => dispatch({
       type: GET_RELATED_CORRUPTION_CASES.SUCCESS,
       subsetNumber: response.data.subsetNumber,

@@ -1,14 +1,13 @@
 import axios from 'axios';
-import { buildQueryString } from '../../App/utils';
+import buildUrl from '../../shared/utils/buildUrl';
 
 // Local url for the views
 const baseUrl = process.env.REACT_APP_BASE_URL;
-const corruptionCaseApiUrl = `${baseUrl}/corruptionCase/api/v1`;
+const reusableApiUrl = `${baseUrl}/reusable/api/v1`;
 
 const urls = {
   get: {
-    // Relationships
-    relatedCorruptionCases: `${corruptionCaseApiUrl}/get_related_corruption_cases/`,
+    instances: reusableApiUrl,
   },
   post: {
   },
@@ -18,13 +17,12 @@ const urls = {
 
 // ---------- RELATED -------------
 // Corruption Cases GET Requests
-const relatedCorruptionCases = apiQueryData =>
-  axios.get(`${urls.get.relatedCorruptionCases}${buildQueryString(apiQueryData)}`);
+const instances = apiQueryData => axios.get(buildUrl(urls.get.instances, apiQueryData));
 
 // Exported Services
 const service = {
   get: {
-    relatedCorruptionCases,
+    instances,
   },
   post: {},
   delete: {},

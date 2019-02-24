@@ -10,6 +10,7 @@ import layoutMap from '../styling/layoutMap';
 class CorruptionCaseCardGrid extends PureComponent {
   static propTypes = CardGridPropTypes;
   static defaultProps = CardGridDefaultPropTypes;
+
   render() {
     const { info } = this.props;
     return (

@@ -11,18 +11,20 @@ import {
   financialItemReducer,
   mapReducer,
 } from '../Reusable/reusableReduxIndex';
+import detailPageReducer from '../Assembly/DetailedPage/redux/reducer';
 
 const openPage = combineReducers({
-  informativeSnippet: informativeSnippetReducer,
-  individual: individualReducer,
-  corruptionCase: corruptionCaseReducer,
-  organization: organizationReducer,
-  financialItem: financialItemReducer,
-  map: mapReducer,
+  parentInstance: detailPageReducer,
+  relatedInformativeSnippets: informativeSnippetReducer,
+  relatedIndividual: individualReducer,
+  relatedCorruptionCase: corruptionCaseReducer,
+  relatedOrganization: organizationReducer,
+  relatedFinancialItem: financialItemReducer,
 });
 
 const reducer = combineReducers({
   openPage,
+  map: mapReducer,
 });
 
 const store = createStore(

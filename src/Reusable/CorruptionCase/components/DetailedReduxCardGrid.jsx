@@ -16,27 +16,28 @@ import CardGrid from './CardGrid';
 // Detailed DEVELOPMENT-ONLY-Page Redux Card Grid
 class DetailedReduxCardGrid extends PureComponent {
   static propTypes = DetailedReduxCardGridPropTypes;
-  componentDidMount() {
-    this.props.dispatch(getRelatedCorruptionCases({
-      sn: this.props.subsetNumber,
-      ml: this.props.modelLabel,
-      pid: this.props.parentId,
-    }));
-  }
+
   getMore = () => {
-    this.props.dispatch(getRelatedCorruptionCases({
-      sn: this.props.subsetNumber + 1,
-      ml: this.props.modelLabel,
-      pid: this.props.parentId,
+    const {
+      dispatch, subsetNumber, modelLabel, parentId,
+    } = this.props;
+    dispatch(getRelatedCorruptionCases({
+      sn: subsetNumber + 1,
+      ml: modelLabel,
+      pid: parentId,
+      rml: 'corruption.CorruptionCase',
     }));
   };
 
   render() {
-    const { relatedCorruptionCases } = this.props;
+    const {
+      instances,
+    } = this.props;
+
     return (
       <div>
         <h3 className="p-2">Casos de Corrupcion Relacionados</h3>
-        <CardGrid info={relatedCorruptionCases} />
+        <CardGrid info={instances} />
         {/* TODO Check subsets are not the same as before */}
         <Row className="p-2">
           <Button
@@ -53,8 +54,8 @@ class DetailedReduxCardGrid extends PureComponent {
 
 // State Store Connection
 export default connect(state => ({
-  // Related Actions Information
-  relatedCorruptionCases: state.openPage.corruptionCase.relatedCorruptionCases,
-  subsetNumber: state.openPage.corruptionCase.subsetNumber,
+  instances: state.openPage.relatedCorruptionCases.instances,
+  subsetNumber: state.openPage.relatedCorruptionCases.subsetNumber,
+  actions: state.openPage.relatedCorruptionCases.actions,
 }))(DetailedReduxCardGrid);
 

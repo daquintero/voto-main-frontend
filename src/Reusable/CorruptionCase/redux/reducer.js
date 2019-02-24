@@ -3,18 +3,18 @@ import {
 } from './actionCreators';
 import { initializeActions, actionResult } from '../../../shared/utils/asyncHelpers';
 
-// Initial State for Corruption Cases
+
 const initialState = {
-  relatedCorruptionCases: {},
+  instances: [],
   subsetNumber: 0,
   actions: initializeActions([
-    'GET_RELATED_CORRUPTION_CASES',
+    'GET_MORE_RELATED_CORRUPTION_CASES',
   ]),
 };
 
+
 export default function (state = initialState, action) {
   switch (action.type) {
-    // ------------ RELATIONSHIPS -----------------
     case GET_RELATED_CORRUPTION_CASES.REQUEST:
       return {
         ...state,
@@ -26,9 +26,8 @@ export default function (state = initialState, action) {
     case GET_RELATED_CORRUPTION_CASES.SUCCESS:
       return {
         ...state,
-        relatedCorruptionCases:
-          [...state.openPage.corruptionCase.relatedCorruptionCases, action.relatedCorruptionCases],
-        subsetNumber: action.subsetNumber,
+        instances: action.response.instances,
+        subsetNumber: action.response.subsetNumber,
         actions: {
           ...state.actions,
           ...actionResult('GET_RELATED_CORRUPTION_CASES.SUCCESS'),

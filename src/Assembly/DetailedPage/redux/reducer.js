@@ -24,7 +24,8 @@ export default function (state = initialState, action) {
     case GET_DETAILED_PAGE.SUCCESS:
       return {
         ...state,
-        basic: action.basic,
+        parentInstance: action.response.instance,
+        relatedIndividuals: action.response.relatedInstances.individuals,
         actions: {
           ...state.actions,
           ...actionResult('GET_DETAILED_PAGE.SUCCESS'),

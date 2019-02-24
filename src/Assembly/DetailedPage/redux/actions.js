@@ -3,7 +3,7 @@
 import {
   GET_DETAILED_PAGE,
 } from './actionCreators';
-import service from '../../service';
+import service from '../service';
 
 // --------------- PAGE --------------
 // Basic Detailed CorruptionCase detailed action that gets the basic fields for the parentID
