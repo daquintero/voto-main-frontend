@@ -1,17 +1,15 @@
 // Controversy Card
 // Libraries
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 import { Card, CardHeader, CardBody } from 'reactstrap';
-
-// Prop Types
-import { CardPropTypes } from './ControversyPropTypes';
 
 // Category Repository
 import categoryInfo from '../../../../../shared/utils/categoryInfo';
 
 // Declaration
 class ContCard extends PureComponent {
-  static propTypes = CardPropTypes;
+  static propTypes = PropTypes.instanceOf(Object).isRequired;
   render() {
     const { objIn } = this.props;
     return (

@@ -1,14 +1,13 @@
 import React, { PureComponent } from 'react';
 import { Row, Col } from 'reactstrap';
 import OrganizationCard from './Card';
-import { CardGridDefaultPropTypes, CardGridPropTypes } from './OrganizationPropTypes';
 // Layout Map
 import layoutMap from '../../../shared/utils/layoutMap';
 
 /* Imperative PureFunction Grid Approach  */
 class OrganizationCardGrid extends PureComponent {
-  static propTypes = CardGridPropTypes;
-  static defaultProps = CardGridDefaultPropTypes;
+  static propTypes = PropTypes.arrayOf(PropTypes.instanceOf(Object)).isRequired;
+
   render() {
     const { info } = this.props;
     return (

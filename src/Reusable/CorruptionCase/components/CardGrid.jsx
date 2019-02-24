@@ -1,15 +1,15 @@
 // TODO DESTRUCTURE PROPS IN SM, MD, LG
 import React, { PureComponent } from 'react';
 import { Row, Col } from 'reactstrap';
+import PropTypes from 'prop-types';
 import CorruptionCaseCard from './Card';
-import { CardGridDefaultPropTypes, CardGridPropTypes } from './CorruptionCasePropTypes';
+
 // Layout Map
 import layoutMap from '../styling/layoutMap';
 
 /* Imperative PureFunction Grid Approach  */
 class CorruptionCaseCardGrid extends PureComponent {
-  static propTypes = CardGridPropTypes;
-  static defaultProps = CardGridDefaultPropTypes;
+  static propTypes = PropTypes.arrayOf(PropTypes.instanceOf(Object)).isRequired;
 
   render() {
     const { info } = this.props;

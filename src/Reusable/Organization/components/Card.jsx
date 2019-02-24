@@ -1,15 +1,16 @@
 // Generic Organization Card
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 import { Card, CardBody, Row, Col } from 'reactstrap';
 // Routing for each card
 import { Link } from 'react-router-dom';
-import { CardPropTypes, CardDefaultPropTypes } from './OrganizationPropTypes';
+
 // Layout Map
 import layoutMap from '../../../shared/utils/layoutMap';
 
 class IndividualCard extends PureComponent {
-  static propTypes = CardPropTypes;
-  static defaultProps = CardDefaultPropTypes;
+  static propTypes = PropTypes.instanceOf(Object).isRequired;
+
 
   render() {
     const { objIn } = this.props;
