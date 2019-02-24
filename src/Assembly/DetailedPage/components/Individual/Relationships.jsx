@@ -8,7 +8,6 @@ import IndividualCardGrid from '../../../../Reusable/Individual/components/Detai
 import CorruptionCaseCardGrid from '../../../../Reusable/CorruptionCase/components/DetailedReduxCardGrid';
 import InformativeCardGrid from '../../../../Reusable/InformativeSnippet/components/DetailedReduxCardGrid';
 
-
 const Relationships = () => (
   <Row>
     <Col xs={12} md={12} className="mt-2 p-1" style={{ 'background-color': '#edf7ff' }}>
@@ -23,6 +22,5 @@ const Relationships = () => (
     </Col>
   </Row>
 );
-
 
 export default Relationships;

@@ -13,15 +13,15 @@ import CardSelector from '../../../shared/utils/cardSelector';
 // Declaration
 class VariableGrid extends PureComponent {
   static propTypes = {
-    data: PropTypes.instanceOf(Object).isRequired,
+    instances: PropTypes.instanceOf(Object).isRequired,
   };
   render() {
-    const { data } = this.props;
+    const { instances } = this.props;
     return (
       <Row noGutters>
-        {data && data[0] ? (
+        {instances && instances[0] ? (
           <div className="variable-grid">
-            {data.map(instance => (
+            {instances.map(instance => (
               CardSelector(instance)
             ))}
           </div>
