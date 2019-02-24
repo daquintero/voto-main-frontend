@@ -7,14 +7,17 @@ import {
   Col,
 } from 'reactstrap';
 
+
 const Home = () => (
-  <Container>
-    <Row>
-      <Col>
-        gg
-      </Col>
-    </Row>
-  </Container>
+  <Row className="home__map__wrapper mx-0">
+    <Container>
+      <Row>
+        <Col>
+          <div />
+        </Col>
+      </Row>
+    </Container>
+  </Row>
 );
 
 export default Home;

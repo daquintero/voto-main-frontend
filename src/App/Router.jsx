@@ -8,8 +8,9 @@ import { Route, Switch } from 'react-router-dom';
 
 // ---------------- BASE IMPORTS ----------------------
 // Home
-import Home from '../Assembly/Home/components';
-import Layout from '../Layout/TopBar/components';
+
+import Home from '../Assembly/Home';
+import Layout from '../Layout/TopBar';
 
 // --------------- DETAIL PAGE IMPORTS -------------------
 import CorruptionCase from '../Assembly/DetailedPage/components/CorruptionCase/Page';

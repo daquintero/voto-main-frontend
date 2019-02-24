@@ -12,8 +12,9 @@ import { mainFinanceListPropTypes,
 
 // Relationships
 import { CardPropTypes as IndividualCardProps } from '../../../../Reusable/Individual/components/IndividualPropTypes';
-import { CardPropTypes as ISCardProps } from
-  '../../../../Reusable/InformativeSnippet/components/InformativeSnippetPropTypes';
+import {
+  CardPropTypes as ISCardProps,
+} from '../../../../Reusable/InformativeSnippet/components/InformativeSnippetPropTypes';
 import { CardPropTypes as CCCardProps } from '../../../../Reusable/CorruptionCase/components/CorruptionCasePropTypes';
 
 // ------------------ RELATIONSHIPS PROPS -------------------

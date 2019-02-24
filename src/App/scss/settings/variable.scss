@@ -1,5 +1,3 @@
-// Overall Color Themes
-// Note that the colors names differ from easyDev
 $themes: (
   light: (
     baseLightest: #FCFFFF,
@@ -7,7 +5,7 @@ $themes: (
     baseMiddle: #84DAF9,
     baseDarker: #006E90,
     baseDarkest: #07415E,
-  )
+  ),
 );
 
 @mixin themify($themes) {
@@ -24,8 +22,16 @@ $themes: (
   }
 }
 
+$theme: (
+  light: #4281A4,
+  dark: #253237,
+  impact: #f2545b,
+  white: #ffffff,
+  black: #000000,
+);
+
 @function themed($key) {
-  @return map-get($theme-map, $key);
+  @return map-get($theme, $key);
 }
 
 // Variables Colors
