@@ -1,6 +1,8 @@
+// Libraries
 import React from 'react';
 import PropTypes from 'prop-types';
 
+// Declaration
 const GenericFunction = ({ section }) => ( // TODO REMOVE IF NOT NEEDED
   <>
     <div>

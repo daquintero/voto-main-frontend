@@ -17,6 +17,9 @@ import CorruptionCase from '../Assembly/DetailedPage/components/CorruptionCase/P
 import Individual from '../Assembly/DetailedPage/components/Individual/Page';
 import InformativeSnippet from '../Assembly/DetailedPage/components/InformativeSnippet/Page';
 
+// About Page
+import About from '../Assembly/AboutUsPage/components/Page';
+
 // Testing Files
 import Scratch from './Scratch';
 import APITestPage from './ApiTestPage';
@@ -27,6 +30,8 @@ const wrappedRoutes = () => (
   <div>
     <Layout />
     <Route exact path="/" component={Home} />
+    <Route path="/acerca" component={About} />
+
 
     {/* Detailed Pages */}
     <Route path="/caso-corrupcion/:id" component={CorruptionCase} />
