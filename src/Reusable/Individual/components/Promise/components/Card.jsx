@@ -11,20 +11,20 @@ import categoryInfo from '../../../../../shared/utils/categoryInfo';
 
 // Declaration
 class ContCard extends PureComponent {
-  static propTypes = PropTypes.instanceOf(Object).isRequired;
+  static propTypes = {     instance: PropTypes.instanceOf(Object).isRequired,   };
   render() {
-    const { objIn } = this.props;
+    const { instance } = this.props;
     return (
-      <a href={objIn.source}>
+      <a href={instance.source}>
         <Card className="bg-light border-0 rounded-0 small-enlarge">
-          {categoryInfo[objIn.type] ? (
+          {categoryInfo[instance.type] ? (
             <CardHeader className="pt-1 pb-1 ">
-              <i className={`float-left fa p-1 fa-${categoryInfo[objIn.type].icon}`} />
-              <h5 className="float-right mb-0">{categoryInfo[objIn.type].Spanish}</h5>
+              <i className={`float-left fa p-1 fa-${categoryInfo[instance.type].icon}`} />
+              <h5 className="float-right mb-0">{categoryInfo[instance.type].Spanish}</h5>
             </CardHeader>
           ) : null}
           <CardBody className="p-2">
-            <p className="p-1 m-0">{objIn.briefDescription}</p>
+            <p className="p-1 m-0">{instance.briefDescription}</p>
           </CardBody>
         </Card>
       </a>

@@ -8,17 +8,17 @@ import layoutMap from '../styling/layoutMap';
 /* Imperative PureFunction Grid Approach  */
 const IndividualCardGrid = instances => (
   <Row noGutters>
-    {instances[0] && instances.map(obj => (
+    {instances[0] && instances.map(instance => (
       <Col
-        xs={layoutMap[obj.size].xs.outer.wrapper}
-        sm={layoutMap[obj.size].sm.outer.wrapper}
-        md={layoutMap[obj.size].md.outer.wrapper}
-        lg={layoutMap[obj.size].lg.outer.wrapper}
-        xl={layoutMap[obj.size].xl.outer.wrapper}
+        xs={layoutMap[instance.size].xs.outer.wrapper}
+        sm={layoutMap[instance.size].sm.outer.wrapper}
+        md={layoutMap[instance.size].md.outer.wrapper}
+        lg={layoutMap[instance.size].lg.outer.wrapper}
+        xl={layoutMap[instance.size].xl.outer.wrapper}
         className="p-2"
-        key={obj.id}
+        key={instance.id}
       >
-        <IndividualCard objIn={obj} key={obj.id} />
+        <IndividualCard instance={instance} />
       </Col>
         ))}
   </Row>

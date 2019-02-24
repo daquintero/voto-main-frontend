@@ -14,15 +14,15 @@ class MainFinanceList extends PureComponent {
   static propTypes = financeItemPropTypes;
 
   render() {
-    const { objIn } = this.props;
+    const { instance } = this.props;
     return (
-      <a href={objIn.source} >
+      <a href={instance.source} >
         <ListGroupItem className="list-up">
           <div>
-            <h4>{numeral(objIn.amount).format('$ 0,0.00')}</h4>
+            <h4>{numeral(instance.amount).format('$ 0,0.00')}</h4>
           </div>
           <div>
-            <h6>{objIn.title}</h6>
+            <h6>{instance.title}</h6>
           </div>
         </ListGroupItem>
       </a>

@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 // ----------- FINANCE ITEM PROPTYPES ----------
 export const financeItemPropTypes = {
-  objIn: PropTypes.shape({
+  instance: PropTypes.shape({
     type: PropTypes.string,
     size: PropTypes.string,
     title: PropTypes.string.isRequired,

@@ -7,15 +7,8 @@ import ReactRouterPropTypes from 'react-router-prop-types';
 import paginationProps from '../../../../shared/utils/paginationProps';
 
 // General
-import { statisticsListPropTypes } from '../../../../Reusable/Statistics/components/StatisticPropTypes';
 import { mainFinanceListPropTypes,
   mainFinanceListDefaultProps } from '../../../../Reusable/FinanceItem/components/FinanceItemPropTypes';
-
-// Relationships
-import { CardPropTypes as IndividualCardProps } from '../../../../Reusable/Individual/components/IndividualPropTypes';
-import
-{ CardPropTypes as ISCardProps } from '../../../../Reusable/InformativeSnippet/components/InformativeSnippetPropTypes';
-import { CardPropTypes as CCCardProps } from '../../../../Reusable/CorruptionCase/components/CorruptionCasePropTypes';
 
 // ------------------ RELATIONSHIPS PROPS -------------------
 export const RelationshipProps = {

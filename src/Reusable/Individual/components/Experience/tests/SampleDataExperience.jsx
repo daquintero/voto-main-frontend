@@ -18,7 +18,7 @@ const Scratch = () => (
     <Container>
       <Row>
         <Col md={4} >
-          <Card objIn={experience} />
+          <Card instance={experience} />
         </Col>
       </Row>
     </Container>
