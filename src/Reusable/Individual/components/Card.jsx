@@ -3,10 +3,10 @@ import React, { PureComponent } from 'react';
 import { Card, CardBody, Row, Col } from 'reactstrap';
 // Routing for each card
 import { Link } from 'react-router-dom';
-import { CardPropTypes, CardDefaultPropTypes } from './IndividualPropTypes';
+import PropTypes from "prop-types";
 // Layout Map
 import layoutMap from '../styling/layoutMap';
-import PropTypes from "prop-types";
+
 
 class IndividualCard extends PureComponent {
   static propTypes = {
