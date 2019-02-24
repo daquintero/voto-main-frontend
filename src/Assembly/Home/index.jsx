@@ -7,16 +7,10 @@ import {
   Col,
 } from 'reactstrap';
 
-// Components
-import Map from '../../Reusable/Map';
-
 
 const Home = () => (
-  <Row className="home__map__wrapper">
+  <Row className="home__map__wrapper mx-0">
     <Container>
-      <div className="py-5">
-        <Map />
-      </div>
       <Row>
         <Col>
           <div />

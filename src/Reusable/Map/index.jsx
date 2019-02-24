@@ -4,10 +4,6 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import ReactMapGL from 'react-map-gl';
 import DeckGL, { GeoJsonLayer } from 'deck.gl';
-import {
-  Row,
-  Col,
-} from 'reactstrap';
 
 // Components
 import IndividualMarker from './components/IndividualMarker';
@@ -113,31 +109,18 @@ class Map extends Component {
     } = this.props;
 
     return (
-      <Row>
-        <Col lg={8}>
-          <ReactMapGL
-            {...map.viewport}
-            mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_API_ACCESS_TOKEN}
-            onViewportChange={this.handleOnViewportChange}
-            mapStyle={process.env.REACT_APP_MAPBOX_STYLE}
-          >
-            <DeckGL
-              {...map.viewport}
-              layers={this.renderLayers()}
-            />
-            <IndividualMarker {...individualMapLoop[index]} />
-          </ReactMapGL>
-        </Col>
-        <Col lg={4}>
-          <div>
-            <img
-              src={`${process.env.PUBLIC_URL}/img/individual.jpg`}
-              alt=""
-              className="img-fluid map__image"
-            />
-          </div>
-        </Col>
-      </Row>
+      <ReactMapGL
+        {...map.viewport}
+        mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_API_ACCESS_TOKEN}
+        onViewportChange={this.handleOnViewportChange}
+        mapStyle={process.env.REACT_APP_MAPBOX_STYLE}
+      >
+        <DeckGL
+          {...map.viewport}
+          layers={this.renderLayers()}
+        />
+        <IndividualMarker {...individualMapLoop[index]} />
+      </ReactMapGL>
     );
   }
 }

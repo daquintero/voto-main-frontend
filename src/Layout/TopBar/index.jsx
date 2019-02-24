@@ -6,12 +6,12 @@ import {
   NavbarBrand,
   NavbarToggler,
   Collapse,
-  Nav,
   Input,
 } from 'reactstrap';
+import { Link } from 'react-router-dom';
 
 // Functions
-import imageUrl from '../../shared/utils/imageUrl';
+// import imageUrl from '../../shared/utils/imageUrl';
 
 
 class TopBar extends Component {
@@ -37,11 +37,7 @@ class TopBar extends Component {
         <Navbar light expand="md" className="navbar">
           <Container className="navbar__wrapper">
             <NavbarBrand href="/" className="navbar__brand">
-              <img
-                src={imageUrl('img', 'logo.svg')}
-                alt="Banner"
-                className="navbar__logo img-fluid"
-              />
+              VI
             </NavbarBrand>
             <Collapse isOpen={!this.state.collapsed} navbar>
               <div className="navbar__search__wrapper">
@@ -56,14 +52,25 @@ class TopBar extends Component {
                   </div>
                 </form>
               </div>
-              <NavbarToggler
-                onClick={this.toggleNavbar}
-                className="mr-2"
-              />
-              <Nav className="navbar-nav-scroll justify-content-center p-1" navbar>
-                <div />
-              </Nav>
+              <div className="navbar__nav__wrapper">
+                <div className="navbar__nav__item">
+                  <Link className="navbar__nav__link" to="/">News</Link>
+                </div>
+                <div className="navbar__nav__item">
+                  <Link className="navbar__nav__link" to="/">Corruption</Link>
+                </div>
+                <div className="navbar__nav__item">
+                  <Link className="navbar__nav__link" to="/">Candidates</Link>
+                </div>
+                <div className="navbar__nav__item">
+                  <Link className="navbar__nav__link" to="/">Explore</Link>
+                </div>
+              </div>
             </Collapse>
+            <NavbarToggler
+              onClick={this.toggleNavbar}
+              className="mr-2"
+            />
           </Container>
         </Navbar>
       </>
