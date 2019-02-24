@@ -1,22 +1,24 @@
 // TODO GET THIS WORKING
-//.variable-grid {
-//  display: grid;
-//  grid-gap: 10px;
-//  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-//  grid-auto-rows: auto;
-//  grid-auto-flow: dense;
-//}
-//
-//.two-col {
-//  grid-column: span 2;
-//  grid-row: span 1;
-//}
-//
-//.mincontent {
-//  grid-column: span 1;
-//  height: min-content;
-//}
-//
-//.test {
-//  background: blue;
-//}
+.variable-grid {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(min-content, 1fr));
+  grid-template-rows: repeat(auto-fill, minmax(min-content, 1fr));
+  grid-auto-rows: minmax(50px, auto);
+  grid-auto-flow: dense;
+}
+
+.two-col {
+  grid-column: span 2;
+  grid-row: span 1;
+}
+
+.mincontent {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.test {
+  background: blue;
+}
