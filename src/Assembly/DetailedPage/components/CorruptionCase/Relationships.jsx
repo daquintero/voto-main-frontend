@@ -11,7 +11,7 @@ import InformativeCardGrid from '../../../../Reusable/InformativeSnippet/compone
 // Prop Types
 import { RelationshipProps } from './PagePropTypes';
 
-const modelLabel = 'corruption.corruptioncase';
+const modelLabel = 'corruption.corruptionCase';
 
 // TODO Props validation
 class Relationships extends PureComponent {
