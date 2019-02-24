@@ -9,7 +9,7 @@ import numeral from 'numeral';
 import moment from 'moment';
 // Date language
 import 'moment/locale/es';
-import { CardPropTypes, CardDefaultPropTypes } from './InformativeSnippetPropTypes';
+import { CardPropTypes } from './InformativeSnippetPropTypes';
 // Layout Map
 import layoutMap from '../styling/layoutMap';
 // Configure moment settings
@@ -17,7 +17,6 @@ moment.locale('es');
 
 class InformativeSnippetCard extends PureComponent {
   static propTypes = CardPropTypes;
-  static defaultProps = CardDefaultPropTypes;
 
   render() {
     const { objIn } = this.props;

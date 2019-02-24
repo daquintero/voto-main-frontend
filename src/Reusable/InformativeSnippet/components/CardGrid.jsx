@@ -1,30 +1,31 @@
 import React, { PureComponent } from 'react';
 import { Row, Col } from 'reactstrap';
 import InformativeSnippetCard from './Card';
-import { CardGridDefaultPropTypes, CardGridPropTypes } from './InformativeSnippetPropTypes';
+import { CardGridPropTypes } from './InformativeSnippetPropTypes';
+
 // Layout Map
 import layoutMap from '../styling/layoutMap';
 
-/* Imperative PureFunction Grid Approach  */
+// Functions
+import getColDims from '../../../shared/utils/getColDims';
+
+
+// Imperative PureFunction Grid Approach
 class InformativeCardGrid extends PureComponent {
   static propTypes = CardGridPropTypes;
-  static defaultProps = CardGridDefaultPropTypes;
+
   render() {
-    const { info } = this.props;
+    const { instances } = this.props;
     return (
-    // Controlled widths by the frontend design
+      // Controlled widths by the frontend design
       <Row noGutters>
-        {info[0] && info.map(obj => (
+        {instances.map(instance => (
           <Col
-            xs={layoutMap[obj.size].xs.outer.wrapper}
-            sm={layoutMap[obj.size].sm.outer.wrapper}
-            md={layoutMap[obj.size].md.outer.wrapper}
-            lg={layoutMap[obj.size].lg.outer.wrapper}
-            xl={layoutMap[obj.size].xl.outer.wrapper}
+            {...getColDims(layoutMap, instance.size)}
             className="p-2"
-            key={obj.id}
+            key={instance.id}
           >
-            <InformativeSnippetCard objIn={obj} key={obj.id} />
+            <InformativeSnippetCard instance={instance} />
           </Col>
           ))}
       </Row>

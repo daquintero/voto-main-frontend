@@ -52,10 +52,17 @@ class DetailedReduxCardGrid extends PureComponent {
   }
 }
 
-// State Store Connection
-export default connect(state => ({
-  instances: state.openPage.relatedCorruptionCases.instances,
-  subsetNumber: state.openPage.relatedCorruptionCases.subsetNumber,
-  actions: state.openPage.relatedCorruptionCases.actions,
-}))(DetailedReduxCardGrid);
+
+const mapStateToProps = (state) => {
+  const { instances, subsetNumber, actions } = state.openPage.relatedInformativeSnippets;
+
+  return {
+    instances,
+    subsetNumber,
+    actions,
+  };
+};
+
+
+export default connect(mapStateToProps)(DetailedReduxCardGrid);
 
