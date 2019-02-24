@@ -3,23 +3,11 @@ import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 // Reusable Reducer Functions
-import {
-  informativeSnippetReducer,
-  individualReducer,
-  corruptionCaseReducer,
-  organizationReducer,
-  financialItemReducer,
-  mapReducer,
-} from '../Reusable/reusableReduxIndex';
+import mapReducer from '../Reusable/Map/redux/reducer';
 import detailPageReducer from '../Assembly/DetailedPage/redux/reducer';
 
 const openPage = combineReducers({
   parentInstance: detailPageReducer,
-  relatedInformativeSnippets: informativeSnippetReducer,
-  relatedIndividual: individualReducer,
-  relatedCorruptionCase: corruptionCaseReducer,
-  relatedOrganization: organizationReducer,
-  relatedFinancialItem: financialItemReducer,
 });
 
 const reducer = combineReducers({

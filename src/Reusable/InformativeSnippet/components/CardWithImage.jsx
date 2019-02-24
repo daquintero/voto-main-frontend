@@ -3,7 +3,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Card, CardBody, Col, Row } from 'reactstrap';
 import { Link } from 'react-router-dom';
-import numeral from 'numeral';
 import moment from 'moment';
 
 // Components
@@ -13,7 +12,7 @@ import CardStatistics from '../../Statistics/components/CardStatistics';
 import layoutMap from '../styling/layoutMap';
 
 
-const CardWithImage = (instance) => {
+const CardWithImage = ({ instance }) => {
   const primaryImage = instance.images[0];
   return (
     <Card className="bg-light border-0 rounded-0 small-enlarge mincontent">
@@ -29,7 +28,7 @@ const CardWithImage = (instance) => {
             <img
               className="img-cover"
               src={primaryImage.url}
-              alt="Something"
+              alt=""
             />
           </Col>
           <Col
