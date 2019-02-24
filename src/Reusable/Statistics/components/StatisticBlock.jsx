@@ -2,14 +2,12 @@
 
 // Libraries
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 import { Card } from 'reactstrap';
 import numeral from 'numeral';
 
-// Props
-import { statisticPropTypes } from './StatisticPropTypes';
-
 class StatisticBlock extends PureComponent {
-  static propTypes = statisticPropTypes;
+  static propTypes = PropTypes.instanceOf(Object).isRequired;
 
   render() {
     const { statistic } = this.props;

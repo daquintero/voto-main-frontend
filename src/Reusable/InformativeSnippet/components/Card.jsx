@@ -1,6 +1,8 @@
 // Generic InformativeSnippet Card
 import React, { PureComponent } from 'react';
 import { Card, CardBody, Row, Col } from 'reactstrap';
+import PropTypes from 'prop-types';
+
 // Routing for each card
 import { Link } from 'react-router-dom';
 // Numerical Formatting
@@ -9,21 +11,23 @@ import numeral from 'numeral';
 import moment from 'moment';
 // Date language
 import 'moment/locale/es';
-import { CardPropTypes } from './InformativeSnippetPropTypes';
+
 // Layout Map
 import layoutMap from '../styling/layoutMap';
 // Configure moment settings
 moment.locale('es');
 
 class InformativeSnippetCard extends PureComponent {
-  static propTypes = CardPropTypes;
+  static propTypes = {
+    instance: PropTypes.instanceOf(Object).isRequired,
+  };
 
   render() {
-    const { objIn } = this.props;
+    const { instance } = this.props;
 
-    const imgFalseCard = obj => (
+    const imgFalseCard = instance => (
       <Card className="bg-light border-0 rounded-0 small-enlarge mincontent">
-        <Link to={`/noticia/${objIn.id}`}>
+        <Link to={`/noticia/${instance.id}`}>
           <Row noGutters className="h-100">
             <Col
               xs={layoutMap[obj.size].xs.inner.imgWrapper + layoutMap[obj.size].xs.inner.contentWrapper}

@@ -1,6 +1,7 @@
 // Generic Corruption Case Card
 import React, { PureComponent } from 'react';
 import { Card, CardBody, Row, Col } from 'reactstrap';
+import PropTypes from 'prop-types';
 // Routing for each card
 import { Link } from 'react-router-dom';
 // Numerical Formatting
@@ -9,15 +10,13 @@ import numeral from 'numeral';
 import moment from 'moment';
 // Date language
 import 'moment/locale/es';
-import { CardPropTypes, CardDefaultPropTypes } from './CorruptionCasePropTypes';
 // Layout Map
 import layoutMap from '../styling/layoutMap';
 // Configure moment settings
 moment.locale('es');
 
 class CorruptionCaseCard extends PureComponent {
-  static propTypes = CardPropTypes;
-  static defaultProps = CardDefaultPropTypes;
+  static propTypes = PropTypes.instanceOf(Object).isRequired;
 
   render() {
     const { objIn } = this.props;

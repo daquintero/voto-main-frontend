@@ -11,7 +11,7 @@ import categoryInfo from '../../../../../shared/utils/categoryInfo';
 
 // Declaration
 class ContCard extends PureComponent {
-  static propTypes = CardPropTypes;
+  static propTypes = PropTypes.instanceOf(Object).isRequired;
   render() {
     const { objIn } = this.props;
     return (

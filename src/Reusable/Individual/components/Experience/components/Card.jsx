@@ -8,7 +8,7 @@ import { CardPropTypes } from './ExperiencePropTypes';
 
 // Declaration
 class ContCard extends Component {
-  static propTypes = CardPropTypes;
+  static propTypes = PropTypes.instanceOf(Object).isRequired;
   constructor(props) {
     super(props);
     this.state = {

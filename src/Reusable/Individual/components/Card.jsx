@@ -8,8 +8,8 @@ import { CardPropTypes, CardDefaultPropTypes } from './IndividualPropTypes';
 import layoutMap from '../styling/layoutMap';
 
 class IndividualCard extends PureComponent {
-  static propTypes = CardPropTypes;
-  static defaultProps = CardDefaultPropTypes;
+  static propTypes = PropTypes.instanceOf(Object).isRequired;
+
 
   render() {
     const { objIn } = this.props;
