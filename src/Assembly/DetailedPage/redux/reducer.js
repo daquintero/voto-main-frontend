@@ -21,16 +21,19 @@ export default function (state = initialState, action) {
           ...actionResult('GET_DETAILED_PAGE.REQUEST'),
         },
       };
-    case GET_DETAILED_PAGE.SUCCESS:
+    case GET_DETAILED_PAGE.SUCCESS: {
       return {
         ...state,
         parentInstance: action.response.instance,
-        relatedIndividuals: action.response.relatedInstances.individuals,
+        relatedInstances: {
+          ...action.response.relatedInstances,
+        },
         actions: {
           ...state.actions,
           ...actionResult('GET_DETAILED_PAGE.SUCCESS'),
         },
       };
+    }
     case GET_DETAILED_PAGE.ERROR:
       return {
         ...state,

@@ -1,4 +1,3 @@
-// Full CorruptionCase for the Corruption CorruptionCase Component
 // Libraries
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
@@ -41,8 +40,11 @@ class Page extends PureComponent {
   }
 
   render() {
-    const { actions, instance } = this.props;
-    return actions.GET_DETAILED_PAGE.loading ? (
+    const {
+      instance, actions,
+    } = this.props;
+
+    return !actions.GET_DETAILED_PAGE.loading ? (
       <Container>
         <Row className="p-2">
           <Col xs={12} md={6}>
@@ -69,10 +71,11 @@ class Page extends PureComponent {
 }
 
 const mapStateToProps = (state) => {
-  const { parentInstance } = state.openPage.parentInstance;
+  const { parentInstance, actions } = state.openPage.parentInstance;
 
   return {
-    parentInstance,
+    instance: parentInstance,
+    actions,
   };
 };
 

@@ -6,12 +6,8 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import mapReducer from '../Reusable/Map/redux/reducer';
 import detailPageReducer from '../Assembly/DetailedPage/redux/reducer';
 
-const openPage = combineReducers({
-  parentInstance: detailPageReducer,
-});
-
 const reducer = combineReducers({
-  openPage,
+  openPage: detailPageReducer,
   map: mapReducer,
 });
 

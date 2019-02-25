@@ -3,7 +3,7 @@ import buildUrl from '../../shared/utils/buildUrl';
 
 
 // Local url for the views
-const baseUrl = process.env.REACT_APP_BASE_URL;
+const baseUrl = 'http://127.0.0.1:8080'; // process.env.REACT_APP_BASE_URL;
 const assemblyApiUrl = `${baseUrl}/assembly/api/v1`;
 
 const urls = {
