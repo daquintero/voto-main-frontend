@@ -1,28 +1,25 @@
-// Gallery
 // Libraries
 import React, { PureComponent } from 'react';
-import { connect } from 'react-redux';
-
-// Prop Types
-import { VIGalleryPropTypes, VIGalleryDefaultProps } from '../../../../Reusable/Images/components/ImagesPropTypes';
+import PropTypes from 'prop-types';
 
 // Components
 import VIGallery from '../../../../Reusable/Images/components/VIGallery';
 
-// Declaration
+
 class Gallery extends PureComponent {
-  static propTypes = VIGalleryPropTypes;
-  static defaultProps = VIGalleryDefaultProps;
+  static propTypes = {
+    instance: PropTypes.instanceOf(Object).isRequired,
+  };
 
   render() {
-    const { data } = this.props;
+    const {
+      instance,
+    } = this.props;
+
     return (
-      <VIGallery data={data} />
+      <VIGallery images={instance.images} />
     );
   }
 }
 
-export default connect(state => ({
-  // Basic CorruptionCase information
-  data: state.openPage.images,
-}))(Gallery);
+export default Gallery;
