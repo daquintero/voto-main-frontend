@@ -26,7 +26,7 @@ class Page extends PureComponent {
   static propTypes = {
     // Redux
     dispatch: PropTypes.func.isRequired,
-    instance: PropTypes.instanceOf(Array).isRequired,
+    instance: PropTypes.instanceOf(Object).isRequired,
     actions: PropTypes.instanceOf(Object).isRequired,
 
     // Router
@@ -38,6 +38,7 @@ class Page extends PureComponent {
     dispatch(getDetailedPage({
       ml: parentModelLabel,
       id: match.params.id,
+      sn: 0,
     }));
   }
 
@@ -51,6 +52,8 @@ class Page extends PureComponent {
     const {
       instance, actions,
     } = this.props;
+
+    console.log(actions.GET_DETAILED_PAGE.loaded);
 
     return actions.GET_DETAILED_PAGE.loaded ? (
       <Container>

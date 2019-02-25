@@ -18,7 +18,7 @@ class Statistics extends PureComponent {
       statistics,
     } = this.props;
 
-    return (
+    return statistics ? (
       <Row className="mx-auto">
         {statistics.map(statistic => (
           <Col md={6} className="p-2">
@@ -26,6 +26,8 @@ class Statistics extends PureComponent {
           </Col>
         ))}
       </Row>
+    ) : (
+      <p>No Statistics</p>
     );
   }
 }

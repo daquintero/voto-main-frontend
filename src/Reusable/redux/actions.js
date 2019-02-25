@@ -14,6 +14,7 @@ export const getMoreRelatedInstances = requestData => (dispatch) => { // eslint-
       dispatch({
         type: GET_MORE_RELATED_INSTANCES.SUCCESS,
         response: response.data,
+        modelLabel: requestData.ml,
       }),
     error =>
       dispatch({

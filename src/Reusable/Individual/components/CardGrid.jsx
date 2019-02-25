@@ -10,8 +10,8 @@ import Loader from '../../../shared/components/Loader';
 // Layout Map
 import layoutMap from '../styling/layoutMap';
 
-/* Imperative PureFunction Grid Approach  */
-const IndividualCardGrid = (instances, action) => (
+
+const IndividualCardGrid = ({ instances, action }) => (
   <Row noGutters>
     {instances.map(instance => (
       <Col
@@ -30,8 +30,8 @@ const IndividualCardGrid = (instances, action) => (
   </Row>
 );
 
-IndividualCard.propTypes = {
-  instance: PropTypes.instanceOf(Object).isRequired,
+IndividualCardGrid.propTypes = {
+  instances: PropTypes.instanceOf(Object).isRequired,
   action: PropTypes.instanceOf(Object).isRequired,
 };
 

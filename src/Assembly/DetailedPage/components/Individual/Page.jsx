@@ -44,7 +44,9 @@ class Page extends PureComponent {
       instance, actions,
     } = this.props;
 
-    return !actions.GET_DETAILED_PAGE.loading ? (
+    console.log(actions.GET_DETAILED_PAGE.loaded);
+
+    return actions.GET_DETAILED_PAGE.loaded ? (
       <Container>
         <Row className="p-2">
           <Col xs={12} md={6}>

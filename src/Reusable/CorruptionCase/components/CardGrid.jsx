@@ -17,7 +17,7 @@ class CorruptionCaseCardGrid extends PureComponent {
     const { instances } = this.props;
     return (
       <Row noGutters>
-        {instances[0] && instances.map(instance => (
+        {instances.map(instance => (
           <Col
             xs={layoutMap[instance.size].xs.outer.wrapper}
             sm={layoutMap[instance.size].sm.outer.wrapper}

@@ -38,7 +38,13 @@ class DetailedReduxCardGrid extends PureComponent {
   };
 
   render() {
-    const { instances, actions } = this.props;
+    const {
+      instances,
+      actions,
+    } = this.props;
+
+    console.log(instances);
+
     return (
       <div>
         <h3 className="p-2">Individuos Relacionados</h3>
@@ -61,7 +67,8 @@ class DetailedReduxCardGrid extends PureComponent {
 }
 
 const mapStateToProps = (state) => {
-  const { instances, subsetNumber, actions } = state.openPage.relatedIndividuals;
+  const { actions } = state.openPage;
+  const { instances, subsetNumber } = state.openPage.relatedInstances.individuals;
   const { modelLabel, id } = state.openPage.parentInstance;
 
   return {

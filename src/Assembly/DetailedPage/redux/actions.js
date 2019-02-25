@@ -8,13 +8,15 @@ export const getDetailedPage = apiQueryData => (dispatch) => {  // eslint-disabl
     type: GET_DETAILED_PAGE.REQUEST,
   });
   return service.get.detailedPage(apiQueryData).then(
-    response => dispatch({
-      type: GET_DETAILED_PAGE.SUCCESS,
-      response: response.data,
-    }),
-    error => dispatch({
-      type: GET_DETAILED_PAGE.ERROR,
-      error,
-    }),
+    response =>
+      dispatch({
+        type: GET_DETAILED_PAGE.SUCCESS,
+        response: response.data,
+      }),
+    error =>
+      dispatch({
+        type: GET_DETAILED_PAGE.ERROR,
+        error,
+      }),
   );
 };

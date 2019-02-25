@@ -65,7 +65,8 @@ class DetailedReduxCardGrid extends PureComponent {
 
 
 const mapStateToProps = (state) => {
-  const { instances, subsetNumber, actions } = state.openPage.relatedInformativeSnippets;
+  const { actions } = state.openPage;
+  const { instances, subsetNumber } = state.openPage.relatedInstances.informativeSnippets;
   const { modelLabel, id } = state.openPage.parentInstance;
 
   return {
