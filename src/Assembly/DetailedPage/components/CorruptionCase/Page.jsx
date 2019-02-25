@@ -1,13 +1,10 @@
 // Full CorruptionCase for the Corruption CorruptionCase Component
 // Libraries
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
+import ReactRouterPropTypes from 'react-router-prop-types';
 import { Container, Row, Col } from 'reactstrap';
 import { connect } from 'react-redux';
-
-
-// Prop Types
-import { PageProps } from './PagePropTypes';
-// TODO , DefaultPageProps
 
 // Redux Actions
 import { getDetailedPage } from '../../redux/actions';
