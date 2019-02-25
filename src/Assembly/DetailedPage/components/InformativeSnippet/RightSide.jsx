@@ -1,10 +1,6 @@
-// Right Side Section of the Detailed CorruptionCase
 // Libraries
 import React, { PureComponent } from 'react';
-import { connect } from 'react-redux';
-
-// Prop Types
-import { headerPropTypes } from './PagePropTypes';
+import PropTypes from 'prop-types';
 
 // Components
 import MainFinancesNav from '../../../../Reusable/FinanceItem/components/MainFinancesNav';
@@ -13,31 +9,34 @@ import Share from '../../../../Reusable/SocialShare/components/Card';
 
 // Declaration
 class RightSide extends PureComponent {
-  static propTypes = headerPropTypes;
+  static propTypes = {
+    instance: PropTypes.instanceOf(Object).isRequired,
+  };
+
   render() {
-    const { basic } = this.props;
+    const {
+      instance,
+    } = this.props;
+
     return (
       <>
         {/* TODO GIVE RELATIVE ROUTES */}
-        <Share title={basic.title} description={basic.description} url="https://www.votoinformado2019.com" />
-        {basic && basic.corruptionRelatedFunds ? (
+        <Share title={instance.title} description={instance.briefDescription} url="https://www.votoinformado2019.com" />
+        {instance.corruptionRelatedFunds ? (
             <>
               <h3 className="text-center mt-2">Fianzas</h3>
               <MainFinancesNav
-                corruptionRelatedFunds={basic.corruptionRelatedFunds}
-                nonCorruptionRelatedFunds={basic.nonCorruptionRelatedFunds}
+                corruptionRelatedFunds={instance.corruptionRelatedFunds}
+                nonCorruptionRelatedFunds={instance.nonCorruptionRelatedFunds}
               />
             </>
         ) : null}
         <h3 className="text-center mt-2">Estadística</h3>
-        <Statistics />
+        <Statistics statistics={instance.statistics} />
       </>
     );
   }
 }
 
-export default connect(state => ({
-  // Basic CorruptionCase information
-  basic: state.openPage.basic,
-}))(RightSide);
+export default RightSide;
 

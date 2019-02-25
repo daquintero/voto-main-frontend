@@ -1,25 +1,25 @@
-// Statistics Block Grid
-
 // Libraries
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 import { Row, Col } from 'reactstrap';
-import { connect } from 'react-redux';
-
-// Props
-import { StatisticsProps } from './PagePropTypes';
 
 // Components
 import StatisticBlock from '../../../../Reusable/Statistics/components/StatisticBlock';
 
 // Declaration
 class Statistics extends PureComponent {
-  static propTypes = StatisticsProps;
+  static propTypes = {
+    statistics: PropTypes.instanceOf(Array).isRequired,
+  };
 
   render() {
-    const { statistics } = this.props;
+    const {
+      statistics,
+    } = this.props;
+
     return (
       <Row className="mx-auto">
-        {statistics && statistics.map(statistic => (
+        {statistics.map(statistic => (
           <Col md={6} className="p-2">
             <StatisticBlock statistic={statistic} />
           </Col>
@@ -29,7 +29,4 @@ class Statistics extends PureComponent {
   }
 }
 
-export default connect(state => ({
-  // Basic CorruptionCase information
-  statistics: state.openPage.statistics,
-}))(Statistics);
+export default Statistics;

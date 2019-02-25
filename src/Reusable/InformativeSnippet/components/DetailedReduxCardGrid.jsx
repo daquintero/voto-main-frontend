@@ -10,6 +10,7 @@ import { getMoreRelatedInstances } from '../../redux/actions';
 // Presentational Component
 import CardGrid from './CardGrid';
 
+
 const relatedModelLabel = 'corruption.InformativeSnippet';
 
 
