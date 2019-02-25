@@ -32,4 +32,4 @@ class IndividualCard extends PureComponent {
   }
 }
 
-export default IndividualSnippetCard;
+export default IndividualCard;
