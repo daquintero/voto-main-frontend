@@ -21,7 +21,10 @@ class InformativeSnippetCard extends PureComponent {
   };
 
   render() {
-    const { instance } = this.props;
+    const {
+      instance,
+    } = this.props;
+
     return (
       instance.images.length ? (
         <CardWithImage instance={instance} />
