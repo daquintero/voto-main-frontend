@@ -24,7 +24,7 @@ class ContCard extends PureComponent {
             </CardHeader>
           ) : null}
           <CardBody className="p-2">
-            <p className="p-1 m-0">{instance.description}</p>
+            <p className="p-1 m-0">{instance.briefDescription}</p>
           </CardBody>
         </Card>
       </a>

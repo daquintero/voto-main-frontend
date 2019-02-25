@@ -3,6 +3,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Card, Col, CardImg } from 'reactstrap';
 
+// TODO Finish image positioning
 
 class Header extends PureComponent {
   static propTypes = {

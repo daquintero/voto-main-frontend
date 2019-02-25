@@ -22,7 +22,7 @@ class RightSide extends PureComponent {
     return (
       <>
         {/* TODO GIVE RELATIVE ROUTES */}
-        <Share title={instance.title} description={instance.description} url="https://www.votoinformado2019.com" />
+        <Share title={instance.title} description={instance.briefDescription} url="https://www.votoinformado2019.com" />
         {instance.corruptionRelatedFunds && (
           <>
             <h3 className="text-center mt-2">Fianzas</h3>

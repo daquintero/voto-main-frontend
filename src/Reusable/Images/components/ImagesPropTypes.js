@@ -9,7 +9,7 @@ export const VIGalleryPropTypes = {
     data: PropTypes.arrayOf(PropTypes.shape({
       original: PropTypes.string.isRequired,
       thumbnail: PropTypes.string.isRequired,
-      description: PropTypes.string.isRequired,
+      briefDescription: PropTypes.string.isRequired,
     })),
 };
 

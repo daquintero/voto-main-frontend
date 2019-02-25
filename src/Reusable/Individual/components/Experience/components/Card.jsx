@@ -27,7 +27,7 @@ class ContCard extends Component {
           <h6 className=" p-1 mb-0">{instance.title}</h6>
           <p className="small m-0 p-1"><i className="fa p-1 fa-building" />{instance.organization}</p>
         </CardHeader>
-        <CardBody className={`p-2 ${open && instance.description ? '' : 'd-none'}`}>
+        <CardBody className={`p-2 ${open && instance.briefDescription ? '' : 'd-none'}`}>
           <p className="p-1 m-0">{instance.description}</p>
         </CardBody>
       </Card>
