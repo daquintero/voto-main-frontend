@@ -31,9 +31,7 @@
 
   &[aria-checked="true"] {
 
-    @include themify($themes) {
-      background-color: themed('colorHover');
-    }
+    background-color: $colorHover;
 
     .material-table__checkbox span {
       color: $color-accent;
@@ -41,10 +39,7 @@
   }
 
   &:hover {
-
-    @include themify($themes) {
-      background-color: themed('colorBackgroundBody');
-    }
+    background-color: $colorBackgroundBody;
   }
 }
 
@@ -66,18 +61,12 @@
 }
 
 .material-table__cell, .material-table__sort-label, .material-table__toolbar-button {
-
-  @include themify($themes) {
-    color: themed('colorText');
-  }
+  color: $colorText;
 }
 
 .material-table__checkbox {
   transition: 0.3s;
-
-  @include themify($themes) {
-    color: themed('colorIcon');
-  }
+  color: $colorIcon;
 }
 
 .material-table__pagination {
@@ -92,10 +81,7 @@
   }
 
   span, div, svg {
-
-    @include themify($themes) {
-      color: themed('colorText');
-    }
+    color: $colorText;
   }
 }
 

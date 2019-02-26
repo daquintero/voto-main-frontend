@@ -11,11 +11,8 @@
   box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1);
   position: relative;
   padding: 50px 40px 60px 40px;
-
-  @include themify($themes) {
-    background-color: themed('colorBackground');
-    color: themed('colorText');
-  }
+  background-color: $colorBackground;
+  color: $colorText;
 }
 
 .modal__close-btn {
@@ -29,10 +26,7 @@
   padding: 0;
   border: none;
   background: transparent;
-
-  @include themify($themes) {
-    color: themed('colorIcon');
-  }
+  color: $colorIcon;
 }
 
 .modal__title-icon {

@@ -1,38 +1,29 @@
-$themes: (
-  light: (
-    baseLightest: #FCFFFF,
-    baseLighter: #EFF9FF,
-    baseMiddle: #84DAF9,
-    baseDarker: #006E90,
-    baseDarkest: #07415E,
-  ),
-);
 
-@mixin themify($themes) {
-  @each $theme, $map in $themes {
-    .theme-#{$theme} & {
-      $theme-map: () !global;
-      @each $key, $submap in $map {
-        $value: map-get(map-get($themes, $theme), '#{$key}');
-        $theme-map: map-merge($theme-map, ($key: $value)) !global;
-      }
-      @content;
-      $theme-map: null !global;
-    }
-  }
-}
+$impBlue: #4281A4;
+$impDark: #253237;
+$impRed: #f2545b;
+$impWhite: white;
+$impDlack: #000000;
+$baseLightest: #FCFFFF;
+$baseLighter: #EFF9FF;
+$baseMiddle: #84DAF9;
+$baseDarker: #006E90;
+$baseDarkest: #07415E;
+$colorBackground: white;
+$colorBackgroundBody: #f2f4f7;
+$colorText: #646777;
+$colorTextAdditional: #646777;
+$logoImg: url(../shared/img/logo/logo_light.svg);
+$colorHover: #fafbfe;
+$colorBorder: #eff1f5;
+$colorIcon: #dddddd;
+$imgInvert: invert(0%);
+$colorFieldsBorder: #f2f4f7;
+$colorBubble: rgba(242, 244, 247, 0.65);
+$colorBubbleActive: rgba(234, 238, 255, 0.6);
+$colorScrollbar: #B4BFD0;
+$colorFitness: #646777;
 
-$theme: (
-  light: #4281A4,
-  dark: #253237,
-  impact: #f2545b,
-  white: #ffffff,
-  black: #000000,
-);
-
-@function themed($key) {
-  @return map-get($theme, $key);
-}
 
 // Variables Colors
 $color-accent: #6090fd;

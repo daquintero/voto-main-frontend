@@ -1,4 +1,4 @@
-$border: 1px solid rgba(themed('dark'), 0.2);
+$border: 1px solid $impDark;
 
 .navbar {
   height: 44px;
@@ -64,7 +64,7 @@ $border: 1px solid rgba(themed('dark'), 0.2);
 
   &__top__wrapper {
     background-color: white;
-    border-bottom: 1px solid rgba(themed('dark'), 0.2);
+    border-bottom: 1px solid rgba($impDark, 0.2);
   }
 
   &__nav__wrapper {
@@ -75,17 +75,17 @@ $border: 1px solid rgba(themed('dark'), 0.2);
 
   &__nav__item {
     padding: 0 20px;
-    border-left: 1px solid rgba(themed('dark'), 0.2);
+    border-left: 1px solid rgba($impDark, 0.2);
     height: 44px;
     line-height: 44px;
     &:hover {
       cursor: pointer;
-      border-bottom: 3px solid themed('dark');
+      border-bottom: 3px solid $impDark;
     }
   }
 
   &__nav__item.end {
-    border-right: 1px solid rgba(themed('dark'), 0.2);
+    border-right: 1px solid rgba($impDark, 0.2);
   }
 
   &__nav__item.one.active {
