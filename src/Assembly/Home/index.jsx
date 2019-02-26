@@ -2,8 +2,7 @@
 // Home Page
 // Libraries
 import React, { PureComponent } from 'react';
-import { Container } from 'reactstrap';
-import ReactJoyride, { STATUS } from 'react-joyride';
+import { Container, Modal } from 'reactstrap';
 
 // Prop Types
 import PropTypes from 'prop-types';
@@ -25,50 +24,27 @@ class Home extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
-      run: false,
-      steps: [
-        {
-          content: <AboutPage />,
-          placement: 'center',
-          locale: { skip: <strong aria-label="skip">S-K-I-P</strong> },
-          target: 'body',
-        },
-      ],
+      firstVisit: false,
     };
+    this.toggle = this.toggle.bind(this);
   }
 
-  handleJoyrideCallback = data => {
-    const { status, type } = data;
+  toggle() {
+    this.setState(prevState => ({
+      modal: !prevState.modal
+    }));
+  }
 
-    if ([STATUS.FINISHED, STATUS.SKIPPED].includes(status)) {
-      this.setState({ run: false });
-    }
-
-    console.groupCollapsed(type);
-    console.log(data);
-    console.groupEnd();
-  };
 
   render() {
-    const { run, steps } = this.state;
     const { mainResults, searchResults } = this.props;
+    const { firstVisit } = this.state;
     return (
       <>
-        <ReactJoyride
-          callback={this.handleJoyrideCallback}
-          continuous
-          run={run}
-          scrollToFirstStep
-          showProgress
-          showSkipButton
-          steps={steps}
-          styles={{
-            options: {
-              zIndex: 10000,
-            },
-          }}
-        />
-        <Container fluid className="hey p-0">
+        <Modal isOpen={firstVisit} toggle={this.toggle}>
+          <AboutPage />
+        </Modal>
+        <Container fluid className="p-0">
           <TopBanner />
         </Container>
         <Container>
