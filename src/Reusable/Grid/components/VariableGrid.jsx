@@ -1,5 +1,4 @@
-/* eslint-disable */
-// Grid of Variable Positions
+// Main Grid for the important sections
 // Libraries
 import React, { PureComponent } from 'react';
 import { Row } from 'reactstrap';
@@ -19,11 +18,17 @@ class VariableGrid extends PureComponent {
     const { instances } = this.props;
     return (
       <Row noGutters>
-        {instances && instances[0] ? (
-          <div className="variable-grid">
-            {instances.map(instance => (
-              CardSelector(instance)
-            ))}
+        {instances && instances[3] ? (
+          <div className="main-grid">
+            <div className="main-1">
+              {CardSelector(instances[0])}
+            </div>
+            <div className="main-2">
+              {CardSelector(instances[1])}
+            </div>
+            <div className="main-2">
+              {CardSelector(instances[2])}
+            </div>
           </div>
         ) : null}
       </Row>

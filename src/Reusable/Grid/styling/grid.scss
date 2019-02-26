@@ -1,4 +1,4 @@
-// TODO GET THIS WORKING
+// ---------- GRID TYPES -------------
 .variable-grid {
   display: grid;
   grid-gap: 10px;
@@ -8,6 +8,8 @@
   grid-auto-flow: dense;
 }
 
+
+// ------- Componentes properties -------
 .span-2-cols {
   grid-column: span 2;
   grid-row: span 1;
