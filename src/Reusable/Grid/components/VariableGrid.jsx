@@ -1,4 +1,4 @@
-// Main Grid for the important sections
+// Grid of Variable Positions
 // Libraries
 import React, { PureComponent } from 'react';
 import { Row } from 'reactstrap';
@@ -17,18 +17,12 @@ class VariableGrid extends PureComponent {
   render() {
     const { instances } = this.props;
     return (
-      <Row noGutters>
-        {instances && instances[3] ? (
-          <div className="main-grid">
-            <div className="main-1">
-              {CardSelector(instances[0])}
-            </div>
-            <div className="main-2">
-              {CardSelector(instances[1])}
-            </div>
-            <div className="main-2">
-              {CardSelector(instances[2])}
-            </div>
+      <Row noGutters className="align-content-center">
+        {instances && instances[0] ? (
+          <div className="variable-grid">
+            {instances.map(instance => (
+              CardSelector(instance)
+            ))}
           </div>
         ) : null}
       </Row>
@@ -38,4 +32,3 @@ class VariableGrid extends PureComponent {
 
 // TODO State Store Connection
 export default VariableGrid;
-
