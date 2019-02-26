@@ -1,6 +1,7 @@
 // Main Scratch Indexing Container for all of the Routes
 //
 import React from 'react';
+import { Container } from 'reactstrap';
 
 import Home from '../Reusable/DEVELOPMENT-ONLY-Page/components/Home';
 
@@ -148,7 +149,9 @@ const data = [{
 
 const Scratch = () => (
   <div className="layout">
-    <Home mainResults={data} searchResults={data} />
+    <Container>
+      <Home mainResults={data} searchResults={data} />
+    </Container>
   </div>
 );
 
