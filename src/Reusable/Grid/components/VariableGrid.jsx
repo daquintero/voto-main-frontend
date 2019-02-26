@@ -8,7 +8,7 @@ import { Row } from 'reactstrap';
 import PropTypes from 'prop-types';
 
 // Card Selector
-import CardSelector from '../../../shared/utils/cardSelector';
+import CardSelector from '../../../shared/components/cardSelector';
 
 // Declaration
 class VariableGrid extends PureComponent {

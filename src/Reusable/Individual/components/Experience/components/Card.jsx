@@ -2,13 +2,13 @@
 // Libraries
 import React, { Component } from 'react';
 import { Card, CardHeader, CardBody } from 'reactstrap';
-
-// Prop Types
-import { CardPropTypes } from './ExperiencePropTypes';
+import PropTypes from 'prop-types';
 
 // Declaration
 class ContCard extends Component {
-  static propTypes = {     instance: PropTypes.instanceOf(Object).isRequired,   };
+  static propTypes = {
+    instance: PropTypes.instanceOf(Object).isRequired,
+  };
   constructor(props) {
     super(props);
     this.state = {

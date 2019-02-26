@@ -22,7 +22,7 @@ import STATCard from '../../Reusable/Statistics/components/StatisticBlock';
 // Financial Item TODO
 import FINCard from '../../Reusable/FinanceItem/components/FinanceItem';
 // Organization
-import ORGCard from '../../Reusable/Organization/components/Card';
+// import ORGCard from '../../Reusable/Organization/components/Card';
 
 // Selector Function
 export default function (instance) {
@@ -45,8 +45,8 @@ export default function (instance) {
       return (<EXPCard instance={instance} />);
     case 'political.Statistic':
       return (<STATCard statistic={instance} />);
-    case 'political.Organization':
-      return (<ORGCard instance={instance} />);
+    // case 'political.Organization':
+    //   return (<ORGCard instance={instance} />);
     case 'political.Law':
       return (<LAWCard instance={instance} />);
     default:

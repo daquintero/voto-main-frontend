@@ -2,16 +2,16 @@
 // Libraries
 import React, { PureComponent } from 'react';
 import { Card, CardHeader, CardBody } from 'reactstrap';
-
-// Prop Types
-import { CardPropTypes } from './PromisePropTypes';
+import PropTypes from 'prop-types';
 
 // Category Repository
 import categoryInfo from '../../../../../shared/utils/categoryInfo';
 
 // Declaration
 class ContCard extends PureComponent {
-  static propTypes = {     instance: PropTypes.instanceOf(Object).isRequired,   };
+  static propTypes = {
+    instance: PropTypes.instanceOf(Object).isRequired,
+  };
   render() {
     const { instance } = this.props;
     return (

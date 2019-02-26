@@ -2,16 +2,21 @@
 .variable-grid {
   display: grid;
   grid-gap: 10px;
-  grid-template-columns: repeat(auto-fill, minmax(min-content, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   grid-template-rows: repeat(auto-fill, minmax(min-content, 1fr));
   grid-auto-rows: minmax(50px, auto);
   grid-auto-flow: dense;
 }
 
-.two-col {
+.span-2-cols {
   grid-column: span 2;
   grid-row: span 1;
 }
+
+.span-2-rows {
+  grid-row: span 2;
+}
+
 
 .mincontent {
   width: 100%;

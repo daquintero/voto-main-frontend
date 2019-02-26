@@ -15,7 +15,7 @@ import layoutMap from '../styling/layoutMap';
 const CardWithImage = ({ instance }) => {
   const primaryImage = instance.images[0];
   return (
-    <Card className="bg-light border-0 rounded-0 small-enlarge two-col">
+    <Card className="bg-light border-0 rounded-0 small-enlarge span-2-cols">
       <Row noGutters>
         <Link to={`/corrupcion-caso/${instance.id}`}>
           <Col

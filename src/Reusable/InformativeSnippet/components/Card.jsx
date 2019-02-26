@@ -26,7 +26,7 @@ class InformativeSnippetCard extends PureComponent {
     } = this.props;
 
     return (
-      instance.images.length ? (
+      instance.images && instance.images.length ? (
         <CardWithImage instance={instance} />
       ) : (
         <CardWithoutImage instance={instance} />

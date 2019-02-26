@@ -11,6 +11,8 @@ import Router from './Router';
 
 // TODO Remove all images for frontend testing from public img
 
+// REACT_APP_BASE_URL='https://vmain-staging.herokuapp.com'
+
 class App extends Component {
   constructor() {
     super();

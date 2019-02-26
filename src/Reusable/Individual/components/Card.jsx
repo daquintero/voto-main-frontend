@@ -1,7 +1,6 @@
 // Generic InformativeSnippet Card
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-
 // Date conversion
 import moment from 'moment';
 // Date language
@@ -23,7 +22,7 @@ class IndividualCard extends PureComponent {
   render() {
     const { instance } = this.props;
     return (
-      instance.images.length ? (
+      instance.images && instance.images.length ? (
         <CardWithImage instance={instance} />
       ) : (
         <CardWithoutImage instance={instance} />
