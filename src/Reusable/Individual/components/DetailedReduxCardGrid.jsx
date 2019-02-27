@@ -9,7 +9,7 @@ import { Button, Row } from 'reactstrap';
 import { getMoreRelatedInstances } from '../../redux/actions';
 
 // Presentational Component
-import CardGrid from './CardGrid';
+import CardGrid from './BootCardGrid';
 
 const relatedModelLabel = 'political.Individual';
 

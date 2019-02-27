@@ -1,34 +1,34 @@
 // Main Scratch Indexing Container for all of the Routes
 import React from 'react';
-import { Container, Row, Col } from 'reactstrap';
+import { Container } from 'reactstrap';
 
 // TODO FINISH PAGE TEST
-import Card from '../Reusable/Individual/components/Experience/components/BootCardGrid';
+import Card from '../Reusable/Individual/components/Controversy/components/CardGrid';
 
 // One controversy
 const controversy = [{
   size: 'full',
-  title: 'Alguna Information asdfasd ',
+  title: 'Alguna Information asdfasd djkfbaksdjfhakds alsdkfjal sdkfj la sdf jalksdkjf a ',
   type: 'Employment',
-  description: 'Descripcion',
+  briefDescription: 'Descripcion',
+  organization: 'Some organization',
+}, {
+  size: 'full',
+  title: 'Alguna Information asdfasd kjhkjhkjhk',
+  type: 'Employment',
+  briefDescription: 'Descri pci onsdfgsdfgs s dfg sfd sfdg sdfg d',
   organization: 'Some organization',
 }, {
   size: 'full',
   title: 'Alguna Information asdfasd ',
   type: 'Employment',
-  description: 'Descripcion',
+  briefDescription: 'Descripcion',
   organization: 'Some organization',
 }, {
   size: 'full',
   title: 'Alguna Information asdfasd ',
   type: 'Employment',
-  description: 'Descripcion',
-  organization: 'Some organization',
-}, {
-  size: 'full',
-  title: 'Alguna Information asdfasd ',
-  type: 'Employment',
-  description: 'Descripcion',
+  briefDescription: 'Descripcion',
   organization: 'Some organization',
 },
 ];
@@ -36,11 +36,7 @@ const controversy = [{
 const Scratch = () => (
   <div className="layout">
     <Container>
-      <Row>
-        <Col md={4} >
-          <Card info={controversy} />
-        </Col>
-      </Row>
+      <Card instances={controversy} />
     </Container>
   </div>
 );

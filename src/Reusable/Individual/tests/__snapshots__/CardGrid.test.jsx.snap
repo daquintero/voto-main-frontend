@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<CardGrid /> HomePage renders correctly without crashing 1`] = `
+exports[`<BootCardGrid /> HomePage renders correctly without crashing 1`] = `
 <div>
   <div
     className="p-0 container"

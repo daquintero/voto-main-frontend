@@ -8,7 +8,13 @@ import { Link } from 'react-router-dom';
 // Prop Types
 import PropTypes from 'prop-types';
 
+// Components TODO ADD FORM
+// import CustomForm from './CustomForm';
+
 const banner = `${process.env.PUBLIC_URL}/img/banner.svg`;
+
+// Action Dispatched
+// TODO Amount of subscribers
 
 // Declaration
 class TopBanner extends PureComponent {
@@ -22,13 +28,10 @@ class TopBanner extends PureComponent {
           <img src={banner} alt="Error" />
         </Col>
         <Col sm={6} md={8} className="px-4">
-          <h3>¡Bienvenida(o) a #VotoInformado2019!</h3>
-          <p className="pr-5 m-0">
-            Somos voluntarios sin relación a partidos
-            políticos, organizaciones políticas ni candidatos
-            que buscamos rescatar y revitalizar el voto como instrumento de
-            cambio y progreso en nuestra sociedad.
-          </p>
+          <h3>¡Comprométete a un #VotoInformado2019!</h3>
+          <div>
+            Add the subscribers list here.
+          </div>
           <Link to="/acerca">
             Averigua más
           </Link>

@@ -1,7 +1,13 @@
 import React, { PureComponent } from 'react';
-import { Row } from 'reactstrap';
+import { Row, Col } from 'reactstrap';
 import PropTypes from 'prop-types';
 import Card from './Card';
+
+// Layout Map
+import layoutMap from '../styling/layoutMap';
+
+// Shared Function
+import getColDims from '../../../../../shared/utils/getColDims';
 
 /* Imperative PureFunction Grid Approach  */
 class BootCardGrid extends PureComponent {
@@ -14,11 +20,15 @@ class BootCardGrid extends PureComponent {
     return (
 
       <Row noGutters>
-        <div className="variable-grid">
-          {instances[0] && instances.map(instance => (
+        {instances[0] && instances.map(instance => (
+          <Col
+            {...getColDims(layoutMap, instance.size, 'outer', 'wrapper')}
+            className="p-2"
+            key={instance.id}
+          >
             <Card instance={instance} key={instance.id} />
-          ))}
-        </div>
+          </Col>
+        ))}
       </Row>
 
     );

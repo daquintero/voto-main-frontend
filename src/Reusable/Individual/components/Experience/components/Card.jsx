@@ -4,8 +4,12 @@ import React, { Component } from 'react';
 import { Card, CardHeader, CardBody } from 'reactstrap';
 import PropTypes from 'prop-types';
 
+// Icon selector
+
+import categoryInfo from '../../../../../shared/utils/categoryInfo';
+
 // Declaration
-class ContCard extends Component {
+class ExpCard extends Component {
   static propTypes = {
     instance: PropTypes.instanceOf(Object).isRequired,
   };
@@ -22,17 +26,20 @@ class ContCard extends Component {
     const { instance } = this.props;
     const { open } = this.state;
     return (
-      <Card className="bg-light border-0 rounded-0 small-enlarge" onClick={this.openMore}>
+      <Card className=" border-0 rounded-0 small-enlarge" onClick={this.openMore}>
         <CardHeader className="pt-1 pb-1 ">
           <h6 className=" p-1 mb-0">{instance.title}</h6>
-          <p className="small m-0 p-1"><i className="fa p-1 fa-building" />{instance.organization}</p>
+          <p className="small m-0 p-1">
+            <i className={`fa p-1 fa-${categoryInfo[instance.type].icon || 'building'}`} />
+            {instance.organization}
+          </p>
         </CardHeader>
-        <CardBody className={`p-2 ${open && instance.briefDescription ? '' : 'd-none'}`}>
-          <p className="p-1 m-0">{instance.description}</p>
+        <CardBody className={`bg-light p-2 ${open && instance.briefDescription ? '' : 'd-none'}`}>
+          <p className="p-1 m-0">{instance.briefDescription}</p>
         </CardBody>
       </Card>
     );
   }
 }
 
-export default ContCard;
+export default ExpCard;

@@ -3,7 +3,7 @@ import React from 'react';
 import { Container, Row, Col } from 'reactstrap';
 
 // TODO FINISH PAGE TEST
-import Card from '../Reusable/Individual/components/Promise/components/CardGrid';
+import Card from '../Reusable/Individual/components/Promise/components/BootCardGrid';
 
 // One controversy
 const controversy = {

@@ -11,9 +11,9 @@ import { Row, Col } from 'reactstrap';
 // import { getRelatedOrganizations } from '../../../../Organization/redux/actions';
 
 // Components
-import IndividualCardGrid from '../../../Individual/components/CardGrid';
+import IndividualCardGrid from '../../../Individual/components/BootCardGrid';
 import CorruptionCaseCardGrid from '../../../CorruptionCase/components/CardGrid';
-import InformativeCardGrid from '../../../InformativeSnippet/components/CardGrid';
+import InformativeCardGrid from '../../../InformativeSnippet/components/BootCardGrid';
 
 // Prop Types
 import { RelationshipProps } from '../PagePropTypes';

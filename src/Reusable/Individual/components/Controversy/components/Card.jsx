@@ -1,8 +1,8 @@
 // Controversy Card
 // Libraries
 import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
 import { Card, CardHeader, CardBody } from 'reactstrap';
+import PropTypes from 'prop-types';
 
 // Category Repository
 import categoryInfo from '../../../../../shared/utils/categoryInfo';

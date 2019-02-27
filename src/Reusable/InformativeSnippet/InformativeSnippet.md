@@ -14,13 +14,13 @@ the higher level components that
 use the Card such as 
 InformativeSnippetCardGrid.
 
-`CardGrid` basically works as the
+`BootCardGrid` basically works as the
 wrapper component of lower level
 `Card` Components so that the 
-props of `CardGrid` input arrays 
+props of `BootCardGrid` input arrays 
 of `InformationalSnippet` 
 model data, whilst it can handle
-pagination in the `CardGrid`
+pagination in the `BootCardGrid`
 component by itself. 
 
 

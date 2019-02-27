@@ -1,4 +1,4 @@
-// Controversy Card
+// Promise Card
 // Libraries
 import React, { PureComponent } from 'react';
 import { Card, CardHeader, CardBody } from 'reactstrap';
@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 import categoryInfo from '../../../../../shared/utils/categoryInfo';
 
 // Declaration
-class ContCard extends PureComponent {
+class PromCard extends PureComponent {
   static propTypes = {
     instance: PropTypes.instanceOf(Object).isRequired,
   };
@@ -32,4 +32,4 @@ class ContCard extends PureComponent {
   }
 }
 
-export default ContCard;
+export default PromCard;

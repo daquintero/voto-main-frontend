@@ -11,6 +11,10 @@ const categoryInfo = {
     icon: 'briefcase',
     Spanish: 'Trabajo',
   },
+  Laboral: {
+    icon: 'briefcase',
+    Spanish: 'Trabajo',
+  },
   Transport: {
     icon: 'bus-alt',
     Spanish: 'Transporte',
@@ -44,6 +48,10 @@ const categoryInfo = {
     Spanish: 'Servicios de Emergencia',
   },
   Education: {
+    icon: 'graduation-cap',
+    Spanish: 'Educación',
+  },
+  Educación: {
     icon: 'graduation-cap',
     Spanish: 'Educación',
   },

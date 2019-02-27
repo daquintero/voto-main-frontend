@@ -1,6 +1,6 @@
 // Main Scratch Indexing Container for all of the Routes
 import React from 'react';
-import CardGrid from '../components/CardGrid';
+import CardGrid from '../components/BootCardGrid';
 
 // TODO REMOVE IMAGE TEST
 const imageTest = `${process.env.PUBLIC_URL}/img-test/a.jpg`;

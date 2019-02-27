@@ -83,7 +83,7 @@ the API and Redux. For example, data arrives in the forms of arrays
 of objects, so that upon arrival the higher-level file
 must check if the required data is available before 
 rendering the nested components that use that data. 
-Another example is that a `CardGrid` checks whether there
+Another example is that a `BootCardGrid` checks whether there
 are two or more objects in the array before passing them
 into the `map` function that generates the cards.
 

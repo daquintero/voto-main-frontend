@@ -1,38 +1,28 @@
-// Absolute Imports
-import React from 'react';
+import React, { PureComponent } from 'react';
+import { Row } from 'reactstrap';
 import PropTypes from 'prop-types';
-import { Row, Col } from 'reactstrap';
-import IndividualCard from './Card';
+import Card from './Card';
 
-// Components
-import Loader from '../../../shared/components/Loader';
+/* Imperative PureFunction Grid Approach  */
+class CardGrid extends PureComponent {
+  static propTypes = {
+    instances: PropTypes.arrayOf(Object).isRequired,
+  };
 
-// Layout Map
-import layoutMap from '../styling/layoutMap';
+  render() {
+    const { instances } = this.props;
+    return (
 
+      <Row noGutters>
+        <div className="square-grid">
+          {instances[0] && instances.map(instance => (
+            <Card instance={instance} key={instance.id} />
+          ))}
+        </div>
+      </Row>
 
-const IndividualCardGrid = ({ instances, action }) => (
-  <Row noGutters>
-    {instances.map(instance => (
-      <Col
-        xs={layoutMap[instance.size].xs.outer.wrapper}
-        sm={layoutMap[instance.size].sm.outer.wrapper}
-        md={layoutMap[instance.size].md.outer.wrapper}
-        lg={layoutMap[instance.size].lg.outer.wrapper}
-        xl={layoutMap[instance.size].xl.outer.wrapper}
-        className="p-2"
-        key={instance.id}
-      >
-        <IndividualCard instance={instance} />
-        {action.loading && <Loader elemClass="load__card" />}
-      </Col>
-    ))}
-  </Row>
-);
+    );
+  }
+}
 
-IndividualCardGrid.propTypes = {
-  instances: PropTypes.instanceOf(Object).isRequired,
-  action: PropTypes.instanceOf(Object).isRequired,
-};
-
-export default IndividualCardGrid;
+export default CardGrid;

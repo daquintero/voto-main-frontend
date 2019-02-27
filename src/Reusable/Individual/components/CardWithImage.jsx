@@ -11,6 +11,9 @@ import { Link } from 'react-router-dom';
 // Styling
 import layoutMap from '../styling/layoutMap';
 
+// Shared Function
+import getColDims from '../../../shared/utils/getColDims';
+
 const CardWithImage = ({ instance }) => {
   const primaryImage = instance.images[0];
   return (
@@ -18,11 +21,7 @@ const CardWithImage = ({ instance }) => {
       <Link to={`/individuo/${instance.id}`}>
         <Row noGutters>
           <Col
-            xs={layoutMap[instance.size].xs.inner.imgWrapper}
-            sm={layoutMap[instance.size].sm.inner.imgWrapper}
-            md={layoutMap[instance.size].md.inner.imgWrapper}
-            lg={layoutMap[instance.size].lg.inner.imgWrapper}
-            xl={layoutMap[instance.size].xl.inner.imgWrapper}
+            {...getColDims(layoutMap, instance.size, 'outer', 'wrapper')}
           >
             <img
               className="img-cover"
@@ -31,11 +30,7 @@ const CardWithImage = ({ instance }) => {
             />
           </Col>
           <Col
-            xs={layoutMap[instance.size].xs.inner.contentWrapper}
-            sm={layoutMap[instance.size].sm.inner.contentWrapper}
-            md={layoutMap[instance.size].md.inner.contentWrapper}
-            lg={layoutMap[instance.size].lg.inner.contentWrapper}
-            xl={layoutMap[instance.size].xl.inner.contentWrapper}
+            {...getColDims(layoutMap, instance.size, 'inner', 'contentWrapper')}
           >
             <CardBody className="p-2">
               <Row noGutters>
