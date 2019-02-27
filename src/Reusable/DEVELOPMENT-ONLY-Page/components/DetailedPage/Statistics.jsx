@@ -5,9 +5,6 @@
 import React, { PureComponent } from 'react';
 import { Row, Col } from 'reactstrap';
 
-// Props
-import { statisticsListPropTypes } from '../../../Statistics/components/StatisticPropTypes';
-
 // Components
 import StatisticBlock from '../../../Statistics/components/StatisticBlock';
 
@@ -15,7 +12,6 @@ import StatisticBlock from '../../../Statistics/components/StatisticBlock';
 import { statisticsData } from '../SampleDataFullPage';
 
 class Statistics extends PureComponent {
-  static propTypes = statisticsListPropTypes;
 
   render() {
     // const { statistics } = this.props;

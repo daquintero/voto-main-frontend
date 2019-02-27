@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import { Row } from 'reactstrap';
 import PropTypes from 'prop-types';
-import Card from './Card';
+import Card from './CardWP';
 
 /* Imperative PureFunction Grid Approach  */
 class CardGrid extends PureComponent {

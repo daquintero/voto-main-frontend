@@ -21,22 +21,6 @@ class MainFinanceList extends PureComponent {
             <ListGroup className="d-inline justify-content-center">
               <ListGroupItem className="list-up">
                 <div>
-                  <h4>{numeral(corruptionRelatedFunds).format('$ 0,0.00')}</h4>
-                </div>
-                <div>
-                  <h6>Dinero Relacionado a Corrupción</h6>
-                </div>
-              </ListGroupItem>
-              <ListGroupItem className="list-up">
-                <div>
-                  <h4>{numeral(nonCorruptionRelatedFunds).format('$ 0,0.00')}</h4>
-                </div>
-                <div>
-                  <h6>Dinero No Relacionado a Corrupción</h6>
-                </div>
-              </ListGroupItem>
-              <ListGroupItem className="list-up">
-                <div>
                   <h4>{numeral(nonCorruptionRelatedFunds + corruptionRelatedFunds).format('$ 0,0.00')}</h4>
                 </div>
                 <div>

@@ -5,7 +5,7 @@ $border: 1px solid $impDark;
   border-bottom: $border;
 
   &__wrapper {
-    display: flex;
+    display: block;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;

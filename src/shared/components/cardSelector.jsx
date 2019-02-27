@@ -10,18 +10,18 @@ import INFOCard from '../../Reusable/InformativeSnippet/components/Card';
 // Individual
 import INDICard from '../../Reusable/Individual/components/Card';
 // Controversy
-import CONTCard from '../../Reusable/Individual/components/Controversy/components/Card';
+import CONTCard from '../../Reusable/Individual/components/Controversy/components/CardWP';
 // Promises
-import PROMCard from '../../Reusable/Individual/components/Promise/components/Card';
+import PROMCard from '../../Reusable/Individual/components/Promise/components/CardWP';
 // Experience
-import EXPCard from '../../Reusable/Individual/components/Experience/components/Card';
+import EXPCard from '../../Reusable/Individual/components/Experience/components/CardWP';
 // Law
 import LAWCard from '../../Reusable/Law/components/Card';
 // Statistics
 import STATCard from '../../Reusable/Statistics/components/StatisticBlock';
-// Financial Item TODO
-import FINCard from '../../Reusable/FinanceItem/components/FinanceItem';
-// Organization
+// Financial Item
+import FINCard from '../../Reusable/FinanceItem/components/FinanceItemWP';
+// Organization TODO
 // import ORGCard from '../../Reusable/Organization/components/Card';
 
 // Selector Function

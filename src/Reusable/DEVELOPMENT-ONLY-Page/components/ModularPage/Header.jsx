@@ -1,7 +1,8 @@
 /* eslint-disable */
 // Libraries
-import React, { PureComponent } from 'react';
+import RReact, { PureComponent } from 'react';
 import { Row, Col, Card, Button, Modal, CardImg } from 'reactstrap';
+// Reduxeact, { PureComponent } from 'react';
 // Redux
 // import { connect } from 'react-redux';
 
@@ -32,10 +33,8 @@ class Header extends PureComponent {
           </Col>
           <Col md={7}>
             <h3 className="p-2 text-center">{basic.name}</h3>
+            <h6 className="p-2 text-muted">{basic.briefDescription}</h6>
           </Col>
-        </Row>
-        <Row noGutters>
-          <h6 className="p-2 text-muted">{basic.briefDescription}</h6>
         </Row>
         <Row noGutters className="p-2 align-items-center">
           <Col xs={3} className="px-3 mx-auto">

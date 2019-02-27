@@ -37,7 +37,7 @@ class Relationships extends Component {
       <Row>
         <Col xs={12} md={12} className="mt-2 p-1" style={{ "background-color" : "#d5dff8"}}>
           <h3 className="p-2">Individuos Relacionados</h3>
-          <IndividualCardGrid info={individualCardData} />
+          <IndividualCardGrid instances={individualCardData} />
           <Row className="p-2">
             <Button className="small-enlarge rounded-0 text-center border-0 mx-auto bg-more text-dark">
               Más Individuos
@@ -46,12 +46,12 @@ class Relationships extends Component {
         </Col>
         <Col xs={12} md={12} className="mt-2 p-1" style={{ "background-color" : "#f8d5df"}}>
           <h3 className="p-2">Noticias Relacionadas</h3>
-          <InformativeCardGrid info={informativeSnippetCardData} />
+          <InformativeCardGrid instances={informativeSnippetCardData} />
         </Col>
         {/* TODO Organization Card Grid */}
         <Col xs={12} md={12} className="mt-2 p-1" style={{ "background-color" : "#dff8d5"}}>
           <h3 className="p-2">Casos de Corrupción Relacionados</h3>
-          <CorruptionCaseCardGrid info={corruptionCaseCardData} />
+          <CorruptionCaseCardGrid instances={corruptionCaseCardData} />
         </Col>
       </Row>
     );
