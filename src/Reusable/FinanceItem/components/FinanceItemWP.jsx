@@ -24,10 +24,10 @@ class MainFinanceList extends PureComponent {
           <div>
             <h6>{instance.title}</h6>
           </div>
+          {instance.individuals && instance.individuals.map(individual => (
+            <div className="text-center bg-light"><i className="fal fa-user p-2" />{individual.name}</div>
+          ))}
         </ListGroupItem>
-        {instance.individuals && instance.individuals.map(individual => (
-          <div className="text-center bg-light"><i className="fal fa-user p-2" />{individual.name}</div>
-        ))}
       </a>
     );
   }

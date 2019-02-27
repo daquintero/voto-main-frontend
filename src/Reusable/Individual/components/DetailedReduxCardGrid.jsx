@@ -1,4 +1,4 @@
-// Detailed DEVELOPMENT-ONLY-Page Redux Card Grid with Pagination
+// Detailed  Redux Card Grid with Pagination
 // Libraries
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
@@ -42,8 +42,6 @@ class DetailedReduxCardGrid extends PureComponent {
       instances,
       actions,
     } = this.props;
-
-    console.log(instances);
 
     return (
       <div>

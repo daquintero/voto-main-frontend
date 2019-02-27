@@ -89,7 +89,7 @@ class TopBar extends Component {
         <Navbar light expand="md" className="navbar">
           <Container className="navbar__wrapper">
             <NavbarBrand href="/" className="navbar__brand">
-              VI
+              #VotoInformado2019
             </NavbarBrand>
             <Collapse isOpen={!this.state.collapsed} navbar>
               <div className="navbar__search__wrapper">
@@ -110,35 +110,26 @@ class TopBar extends Component {
                   data-id="1"
                   onMouseEnter={this.handleOnHover}
                 >
-                  <Link className="navbar__nav__link" to="/">News</Link>
+                  <Link className="navbar__nav__link" to="/">Mapa</Link>
                 </div>
                 <div
                   className={classNames('navbar__nav__item two', { active: currentTab === '2' })}
                   data-id="2"
                   onMouseEnter={this.handleOnHover}
                 >
-                  <Link className="navbar__nav__link" to="/">Corruption</Link>
+                  <div className="navbar__nav__link" >
+                    {/* TODO remove coloring */}
+                    <a href="https://s3.amazonaws.com/votoinformado2019/Manual_Voto_Informado_2019.pdf">
+                      Manual
+                    </a>
+                  </div>
                 </div>
                 <div
                   className={classNames('navbar__nav__item three', { active: currentTab === '3' })}
                   data-id="3"
                   onMouseEnter={this.handleOnHover}
                 >
-                  <Link className="navbar__nav__link" to="/">Candidates</Link>
-                </div>
-                <div
-                  className={classNames('navbar__nav__item four', { active: currentTab === '4' })}
-                  data-id="4"
-                  onMouseEnter={this.handleOnHover}
-                >
-                  <Link className="navbar__nav__link" to="/">Explore</Link>
-                </div>
-                <div
-                  className={classNames('navbar__nav__item five end', { active: currentTab === '5' })}
-                  data-id="5"
-                  onMouseEnter={this.handleOnHover}
-                >
-                  <Link className="navbar__nav__link" to="/">About</Link>
+                  <Link className="navbar__nav__link" to="/">Nosotros</Link>
                 </div>
               </div>
             </Collapse>
@@ -148,7 +139,8 @@ class TopBar extends Component {
             />
           </Container>
         </Navbar>
-        {this.renderSubNav()}
+        {/* TODO ADD THIS LATER SINCE NOT MANY PAGES SO FAR */}
+        {/* {this.renderSubNav()} */}
       </>
     );
   }

@@ -1,4 +1,4 @@
-// Detailed DEVELOPMENT-ONLY-Page Redux Card Grid with Pagination
+// Detailed Redux Card Grid with Pagination
 // Libraries
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
@@ -11,8 +11,7 @@ import { getMoreRelatedInstances } from '../../redux/actions';
 // Presentational Component
 import CardGrid from './CardGrid';
 
-
-const relatedModelLabel = 'corruption.InformativeSnippet';
+const relatedModelLabel = 'corruption.CorruptionCase';
 
 
 // Detailed DEVELOPMENT-ONLY-Page Redux Card Grid
@@ -21,21 +20,21 @@ class DetailedReduxCardGrid extends PureComponent {
     // Redux
     dispatch: PropTypes.func.isRequired,
     instances: PropTypes.instanceOf(Array).isRequired,
-    actions: PropTypes.instanceOf(Object).isRequired,
     subsetNumber: PropTypes.number.isRequired,
-    modelLabel: PropTypes.string.isRequired,
+    actions: PropTypes.instanceOf(Array).isRequired,
+    parentModelLabel: PropTypes.string.isRequired,
     parentId: PropTypes.number.isRequired,
   };
 
   getMore = () => {
     const {
-      dispatch, subsetNumber, modelLabel, parentId,
+      dispatch, subsetNumber, parentModelLabel, parentId,
     } = this.props;
     dispatch(getMoreRelatedInstances({
       sn: subsetNumber + 1,
-      ml: modelLabel,
+      ml: parentModelLabel,
       pid: parentId,
-      rml: 'corruption.CorruptionCase',
+      rml: relatedModelLabel,
     }));
   };
 
@@ -46,7 +45,7 @@ class DetailedReduxCardGrid extends PureComponent {
 
     return (
       <div>
-        <h3 className="p-2">Casos de Corrupcion Relacionados</h3>
+        <h3 className="p-2">Casos de Corrupción Relacionados</h3>
         <CardGrid
           instances={instances}
           action={actions.GET_MORE_RELATED_INSTANCES[relatedModelLabel]}
@@ -72,8 +71,8 @@ const mapStateToProps = (state) => {
   const { modelLabel, id } = state.openPage.parentInstance;
 
   return {
-    modelLabel,
-    id,
+    parentModelLabel: modelLabel,
+    parentId: id,
     instances,
     subsetNumber,
     actions,
