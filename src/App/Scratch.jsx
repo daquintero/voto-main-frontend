@@ -3,16 +3,7 @@ import React from 'react';
 import { Container, Row, Col } from 'reactstrap';
 
 // TODO FINISH PAGE TEST
-import Card from '../Reusable/Individual/components/Resource/components/Card';
-
-// One controversy
-const controversy = {
-  title: 'Some description',
-  source: 'https://www.google.com',
-  individuals: [{
-    name: 'Danilo Perez',
-  }],
-};
+import Card from '../shared/components/404/Card';
 
 
 const Scratch = () => (
@@ -20,7 +11,7 @@ const Scratch = () => (
     <Container>
       <Row>
         <Col md={4} >
-          <Card instance={controversy} />
+          <Card />
         </Col>
       </Row>
     </Container>
