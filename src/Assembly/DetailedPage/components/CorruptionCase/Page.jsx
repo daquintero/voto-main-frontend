@@ -80,7 +80,6 @@ class Page extends PureComponent {
 
 const mapStateToProps = (state) => {
   const { parentInstance, actions } = state.openPage;
-
   return {
     instance: parentInstance,
     actions,
