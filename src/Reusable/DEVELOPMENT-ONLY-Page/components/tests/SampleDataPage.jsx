@@ -8,9 +8,9 @@ import Page from '../DetailedPage/Page';
 // TODO REMOVE IMAGE TEST
 // const imageTest = `${process.env.PUBLIC_URL}/img-test/a.jpg`;
 
-// One statistic
-// const statistic = {
-//   name: 'Some statistic',
+// One instance
+// const instance = {
+//   name: 'Some instance',
 //   source: 'info',
 //   value: 10,
 //   icon: 'user',
@@ -18,22 +18,22 @@ import Page from '../DetailedPage/Page';
 
 // // Each Compendium
 // const statistics = [{
-//   name: 'Some statistic',
+//   name: 'Some instance',
 //   source: 'info',
 //   value: 10,
 //   icon: 'user',
 // }, {
-//   name: 'Some statistic',
+//   name: 'Some instance',
 //   source: 'info',
 //   value: 10,
 //   icon: 'user',
 // }, {
-//   name: 'Some statistic',
+//   name: 'Some instance',
 //   source: 'info',
 //   value: 1000,
 //   icon: 'user',
 // }, {
-//   name: 'Some statistic',
+//   name: 'Some instance',
 //   source: 'info',
 //   value: 10,
 //   icon: 'user',

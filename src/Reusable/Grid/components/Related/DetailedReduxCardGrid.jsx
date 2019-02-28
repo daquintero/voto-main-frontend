@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import { Button, Row } from 'reactstrap';
 
 // Actions
-import { getMoreRelatedInstances } from '../../redux/actions';
+import { getMoreRelatedInstances } from '../../../redux/actions';
 
 // Presentational Component
 import CardGrid from './BootCardGrid';
@@ -24,6 +24,10 @@ class DetailedReduxCardGrid extends PureComponent {
     actions: PropTypes.instanceOf(Array).isRequired,
     parentModelLabel: PropTypes.string.isRequired,
     parentId: PropTypes.number.isRequired,
+
+    // Variable Props
+    relatedModelLabel: PropTypes.string.isRequired,
+    // TODO Create the variable grid
   };
 
   handleGetMore = () => {

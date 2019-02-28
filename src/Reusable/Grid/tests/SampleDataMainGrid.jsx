@@ -100,7 +100,7 @@ const data = [{
 {
   type: 'political.Statistic',
   size: 'half',
-  name: 'Some statistic',
+  name: 'Some instance',
   source: 'info',
   value: 10,
   icon: 'user',
@@ -108,7 +108,7 @@ const data = [{
 {
   type: 'political.Statistic',
   size: 'half',
-  name: 'Some statistic',
+  name: 'Some instance',
   source: 'info',
   value: 10,
   icon: 'user',
@@ -116,7 +116,7 @@ const data = [{
 {
   type: 'political.Statistic',
   size: 'half',
-  name: 'Some statistic',
+  name: 'Some instance',
   source: 'info',
   value: 10,
   icon: 'user',
@@ -124,7 +124,7 @@ const data = [{
 {
   type: 'political.Statistic',
   size: 'half',
-  name: 'Some statistic',
+  name: 'Some instance',
   source: 'info',
   value: 10,
   icon: 'user',
@@ -132,7 +132,7 @@ const data = [{
 {
   type: 'political.Statistic',
   size: 'half',
-  name: 'Some statistic',
+  name: 'Some instance',
   source: 'info',
   value: 10,
   icon: 'user',
@@ -140,7 +140,7 @@ const data = [{
 {
   type: 'political.Statistic',
   size: 'half',
-  name: 'Some statistic',
+  name: 'Some instance',
   source: 'info',
   value: 10,
   icon: 'user',

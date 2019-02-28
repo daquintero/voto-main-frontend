@@ -7,9 +7,9 @@ import StatisticBlock from '../components/StatisticBlock';
 // TODO REMOVE IMAGE TEST
 // const imageTest = `${process.env.PUBLIC_URL}/img-test/a.jpg`;
 
-// One statistic
-const statistic = {
-  name: 'Some statistic',
+// One instance
+const instance = {
+  name: 'Some instance',
   source: 'info',
   value: 10,
   icon: 'user',
@@ -17,22 +17,22 @@ const statistic = {
 
 // // Each Compendium
 const statistics = [{
-  name: 'Some statistic',
+  name: 'Some instance',
   source: 'info',
   value: 10,
   icon: 'user',
 }, {
-  name: 'Some statistic',
+  name: 'Some instance',
   source: 'info',
   value: 10,
   icon: 'user',
 }, {
-  name: 'Some statistic',
+  name: 'Some instance',
   source: 'info',
   value: 1000,
   icon: 'user',
 }, {
-  name: 'Some statistic',
+  name: 'Some instance',
   source: 'info',
   value: 10,
   icon: 'user',
@@ -43,7 +43,7 @@ const Scratch = () => (
     <Container>
       <Row>
         <Col md={4}>
-          <StatisticBlock statistic={statistic} />
+          <StatisticBlock instance={instance} />
           <StatisticsList statistics={statistics} />
         </Col>
         ajksdjkds

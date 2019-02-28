@@ -9,9 +9,9 @@ import StatisticBlock from './StatisticBlock';
 
 const StatisticsBlockGrid = statistics => (
   <Row className="mx-auto">
-    { statistics.map(statistic => (
+    { statistics.map(instance => (
       <Col md={2} className="p-2">
-        <StatisticBlock statistic={statistic} />
+        <StatisticBlock instance={instance} />
       </Col>
         ))}
   </Row>

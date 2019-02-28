@@ -1,25 +1,24 @@
-// Grid of Variable Positions
+// TODO FINISH
+// Generic Positions
 // Libraries
 import React, { PureComponent } from 'react';
 
 // Prop Types
 import PropTypes from 'prop-types';
 
-// Card Selector
-import CardSelector from '../../../shared/components/cardSelector';
-
 // Declaration
 class VariableGrid extends PureComponent {
   static propTypes = {
     instances: PropTypes.instanceOf(Object).isRequired,
+    gridClass: PropTypes.string.isRequired,
   };
   render() {
-    const { instances } = this.props;
+    const { instances, gridClass } = this.props;
     return (
       instances && instances[0] ? (
-        <div className="variable-grid">
+        <div className={gridClass}>
           {instances.map(instance => (
-            CardSelector(instance)
+           instance
           ))}
         </div>
       ) : null

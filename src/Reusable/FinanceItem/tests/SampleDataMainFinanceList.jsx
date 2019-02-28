@@ -6,9 +6,9 @@ import MainFinanceList from '../components/MainFinanceList';
 // TODO REMOVE IMAGE TEST
 // const imageTest = `${process.env.PUBLIC_URL}/img-test/a.jpg`;
 
-// One statistic
-// const statistic = {
-//   name: 'Some statistic',
+// One instance
+// const instance = {
+//   name: 'Some instance',
 //   source: 'info',
 //   value: 10,
 //   icon: 'user',
@@ -16,22 +16,22 @@ import MainFinanceList from '../components/MainFinanceList';
 
 // // Each Compendium
 // const statistics = [{
-//   name: 'Some statistic',
+//   name: 'Some instance',
 //   source: 'info',
 //   value: 10,
 //   icon: 'user',
 // }, {
-//   name: 'Some statistic',
+//   name: 'Some instance',
 //   source: 'info',
 //   value: 10,
 //   icon: 'user',
 // }, {
-//   name: 'Some statistic',
+//   name: 'Some instance',
 //   source: 'info',
 //   value: 1000,
 //   icon: 'user',
 // }, {
-//   name: 'Some statistic',
+//   name: 'Some instance',
 //   source: 'info',
 //   value: 10,
 //   icon: 'user',
