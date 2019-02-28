@@ -5,8 +5,9 @@ cache:
   directories:
     - node_modules
 script:
-  - npm test
-  - npm run build
+#  - npm test
+  - if [ $TRAVIS_BRANCH == "master" ]; then npm run build; fi
+  - if [ $TRAVIS_BRANCH == "staging" ]; then env-cmd .env.staging npm run build; fi
 deploy:
   - provider: surge
     skip_cleanup: true

@@ -22,7 +22,6 @@ import About from '../Assembly/AboutUsPage/components/Page';
 
 // Testing Files
 import Scratch from './Scratch';
-import APITestPage from './ApiTestPage';
 import Map from '../Reusable/Map';
 
 // WrappedRoutes appends the layout navigation with the route components.
@@ -40,7 +39,6 @@ const wrappedRoutes = () => (
 
     {/* Test Files */}
     <Route path="/a" component={Scratch} />
-    <Route path="/api-test" component={APITestPage} />
     <Route path="/map-test" component={Map} />
   </div>
 );
