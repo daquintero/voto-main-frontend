@@ -123,7 +123,7 @@ class TopBar extends Component {
                 >
                   <div className="navbar__nav__link" >
                     {/* TODO remove coloring */}
-                    <a href="https://s3.amazonaws.com/votoinformado2019/Manual_Voto_Informado_2019.pdf">
+                    <a target="_blank" rel="noreferrer noopener" href="https://s3.amazonaws.com/votoinformado2019/Manual_Voto_Informado_2019.pdf">
                       Manual
                     </a>
                   </div>

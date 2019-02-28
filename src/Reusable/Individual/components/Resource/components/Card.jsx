@@ -15,7 +15,7 @@ class Whatever extends PureComponent {
     const { instance } = this.props;
     return (
       <Card className="text-center">
-        <a href={instance.source}>
+        <a target="_blank" rel="noreferrer noopener" href={instance.source}>
           <i className="fal fa-link fa-2x" />
           <p className="lead"> {instance.title} </p>
         </a>

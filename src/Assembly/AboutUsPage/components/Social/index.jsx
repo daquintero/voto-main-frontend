@@ -11,14 +11,14 @@ const Index = () => (
             No olvides seguirnos en Instagram
         </p>
         <p className="text-center m-1">
-          <a className="lead" href="https://www.instagram.com/praxispty/">
+          <a target="_blank" rel="noreferrer noopener" className="lead" href="https://www.instagram.com/praxispty/">
             <span>
         @praxispty
             </span>
           </a>
         </p>
         <p className="text-center lead m-1">
-          <a href="https://www.instagram.com/escuelacallejera/">
+          <a target="_blank" rel="noreferrer noopener" href="https://www.instagram.com/escuelacallejera/">
             <span>
         @escuelacallejera
             </span>

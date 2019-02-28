@@ -28,27 +28,27 @@ class Header extends PureComponent {
             <h6 className="px-4 text-muted py-2">{instance.briefDescription}</h6>
             <Row noGutters className="p-2 justify-content-center">
               <Col xs={2} className="px-3 text-center">
-                <a href={instance.facebookUsername}>
+                <a target="_blank" rel="noreferrer noopener" href={instance.facebookUsername}>
                   <i className="fab fa-facebook-square fa-2x" />
                 </a>
               </Col>
               <Col xs={2} className="px-3 text-center">
-                <a href={instance.twitterUsername}>
+                <a target="_blank" rel="noreferrer noopener" href={instance.twitterUsername}>
                   <i className="fab fa-twitter-square fa-2x" />
                 </a>
               </Col>
               <Col xs={2} className="px-3 text-center">
-                <a href={instance.instagramUsername}>
+                <a target="_blank" rel="noreferrer noopener" href={instance.instagramUsername}>
                   <i className="fab fa-instagram fa-2x" />
                 </a>
               </Col>
               <Col xs={2} className="px-3 text-center">
-                <a href={instance.website}>
+                <a target="_blank" rel="noreferrer noopener" href={instance.website}>
                   <i className="fa fa-browser fa-2x" />
                 </a>
               </Col>
               <Col xs={2} className="px-3 text-center">
-                <a href={instance.email}>
+                <a target="_blank" rel="noreferrer noopener" href={instance.email}>
                   <i className="fa fa-envelope-open fa-2x" />
                 </a>
               </Col>

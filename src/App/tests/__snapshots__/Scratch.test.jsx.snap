@@ -117,14 +117,14 @@ exports[`Scratch renders correctly without crashing 1`] = `
                     className="MuiTableCell-root-129 MuiTableCell-body-131 MuiTableCell-alignRight-139 material-table__cell material-table__cell--mobile "
                     scope="row"
                   >
-                    <a
+                    <a target="_blank" rel="noreferrer noopener"
                       href="https://test-voto-backend.herokuapp.com/admin/calendars/event/add/"
                     >
-                       
+
                       <i
                         className="fal fa-external-link enlarge"
                       />
-                       
+
                     </a>
                   </th>
                 </tr>
@@ -150,14 +150,14 @@ exports[`Scratch renders correctly without crashing 1`] = `
                     className="MuiTableCell-root-129 MuiTableCell-body-131 MuiTableCell-alignRight-139 material-table__cell material-table__cell--mobile "
                     scope="row"
                   >
-                    <a
+                    <a target="_blank" rel="noreferrer noopener"
                       href="https://test-voto-backend.herokuapp.com/admin/calendars/event/add/"
                     >
-                       
+
                       <i
                         className="fal fa-external-link enlarge"
                       />
-                       
+
                     </a>
                   </th>
                 </tr>

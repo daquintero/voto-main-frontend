@@ -18,7 +18,7 @@ class MainFinanceList extends PureComponent {
   render() {
     const { instance } = this.props;
     return (
-      <a href={instance.source} >
+      <a target="_blank" rel="noreferrer noopener" href={instance.source} >
         <ListGroupItem className="list-up">
           <div>
             <h4>{numeral(instance.amount).format('$ 0,0.00')}</h4>

@@ -79,7 +79,13 @@ export default class MatTable extends Component {
       switch (descriptor.type) {
         case 'link':
           return (
-            <a href={descriptor.value}> <i className="fal fa-external-link enlarge" /> </a>
+            <a
+              target="_blank"
+              rel="noreferrer noopener"
+              href={descriptor.value}
+            >
+              <i className="fal fa-external-link enlarge" />
+            </a>
           );
         case 'amount':
           return (

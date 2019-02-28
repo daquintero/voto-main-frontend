@@ -25,12 +25,12 @@ exports[`<Card /> HomePage renders correctly without crashing 1`] = `
         <h4
           className="card-title mb-0"
         >
-          
+
         </h4>
         <div
           className="d-flex justify-content-between"
         >
-          <a
+          <a target="_blank" rel="noreferrer noopener"
             className="p-2 text-center justify-content-center card-link"
             href=""
           >
@@ -44,15 +44,15 @@ exports[`<Card /> HomePage renders correctly without crashing 1`] = `
               <p
                 className="small"
               >
-                 
+
                 0
               </p>
               <p
                 className="small m-0"
               >
-                 
-                
-                 
+
+
+
               </p>
             </div>
           </a>
@@ -65,9 +65,9 @@ exports[`<Card /> HomePage renders correctly without crashing 1`] = `
             <p
               className="small m-0"
             >
-               Publicado 
+               Publicado
               hace unos segundos
-               
+
             </p>
           </div>
         </div>

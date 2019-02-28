@@ -15,7 +15,7 @@ class ContCard extends PureComponent {
   render() {
     const { instance } = this.props;
     return (
-      <a href={instance.source}>
+      <a target="_blank" rel="noreferrer noopener" href={instance.source}>
         <Card className="bg-light border-0 rounded-0 small-enlarge">
           {categoryInfo[instance.type] ? (
             <CardHeader className="pt-1 pb-1 ">

@@ -5,7 +5,7 @@ exports[`<TopBar /> TopBar renders correctly without crashing 1`] = `
   <nav
     className="navbar navbar-expand-md navbar-light bg-faded"
   >
-    <a
+    <a target="_blank" rel="noreferrer noopener"
       className="navbar-brand"
       href="/"
     >
@@ -47,7 +47,7 @@ exports[`<TopBar /> TopBar renders correctly without crashing 1`] = `
         <li
           className="nav-item"
         >
-          <a
+          <a target="_blank" rel="noreferrer noopener"
             className="nav-link"
             href="/home"
             onClick={[Function]}
@@ -61,7 +61,7 @@ exports[`<TopBar /> TopBar renders correctly without crashing 1`] = `
         <li
           className="nav-item"
         >
-          <a
+          <a target="_blank" rel="noreferrer noopener"
             className="nav-link"
             href="/mapa"
             onClick={[Function]}
@@ -79,7 +79,7 @@ exports[`<TopBar /> TopBar renders correctly without crashing 1`] = `
             className="dropdown nav-item"
             onKeyDown={[Function]}
           >
-            <a
+            <a target="_blank" rel="noreferrer noopener"
               aria-expanded={false}
               aria-haspopup={true}
               className="dropdown-toggle nav-link"
@@ -104,7 +104,7 @@ exports[`<TopBar /> TopBar renders correctly without crashing 1`] = `
                 tabIndex="0"
                 type="button"
               >
-                <a
+                <a target="_blank" rel="noreferrer noopener"
                   className="nav-link"
                   href="/descubre-candidatos"
                   onClick={[Function]}
@@ -122,7 +122,7 @@ exports[`<TopBar /> TopBar renders correctly without crashing 1`] = `
                 tabIndex="0"
                 type="button"
               >
-                <a
+                <a target="_blank" rel="noreferrer noopener"
                   className="nav-link"
                   href="/compara-candidatos"
                   onClick={[Function]}
@@ -139,7 +139,7 @@ exports[`<TopBar /> TopBar renders correctly without crashing 1`] = `
         <li
           className="nav-item"
         >
-          <a
+          <a target="_blank" rel="noreferrer noopener"
             className="nav-link"
             href="/mapa"
             onClick={[Function]}

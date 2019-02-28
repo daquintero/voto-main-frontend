@@ -29,19 +29,21 @@ import Map from '../Reusable/Map';
 const wrappedRoutes = () => (
   <div>
     <Layout />
-    <Route exact path="/" component={Home} />
-    <Route path="/acerca" component={About} />
+    <div className="layout">
+      <Route exact path="/" component={Home} />
+      <Route path="/acerca" component={About} />
 
 
-    {/* Detailed Pages */}
-    <Route path="/caso-corrupcion/:id" component={CorruptionCase} />
-    <Route path="/individuo/:id" component={Individual} />
-    <Route path="/noticia/:id" component={InformativeSnippet} />
+      {/* Detailed Pages */}
+      <Route path="/caso-corrupcion/:id" component={CorruptionCase} />
+      <Route path="/individuo/:id" component={Individual} />
+      <Route path="/noticia/:id" component={InformativeSnippet} />
 
-    {/* Test Files */}
-    <Route path="/a" component={Scratch} />
-    <Route path="/api-test" component={APITestPage} />
-    <Route path="/map-test" component={Map} />
+      {/* Test Files */}
+      <Route path="/a" component={Scratch} />
+      <Route path="/api-test" component={APITestPage} />
+      <Route path="/map-test" component={Map} />
+    </div>
   </div>
 );
 

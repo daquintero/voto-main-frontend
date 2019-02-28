@@ -7,6 +7,8 @@ import {
   NavbarToggler,
   Collapse,
   Input,
+  Row,
+  Col,
 } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import classNames from 'classnames';
@@ -85,61 +87,100 @@ class TopBar extends Component {
     } = this.state;
 
     return (
-      <Container fluid className="p-0">
-        <Navbar light expand="md" className="border-0 navbar__wrapper">
-          <NavbarBrand href="/" className="navbar__brand">
-            <h4>#VotoInformado2019</h4>
-          </NavbarBrand>
-          <NavbarToggler
-            onClick={this.toggleNavbar}
-            className="mr-2"
-          />
-          <Collapse isOpen={!this.state.collapsed} navbar>
-            <div className="navbar__search__wrapper">
-              <form className="navbar__search__form">
-                <Input
-                  className="navbar__search__input"
-                  type="text"
-                  placeholder="Buscar"
-                />
-                <div className="navbar__search__icon">
-                  <i className="fal fa-search" />
-                </div>
-              </form>
-            </div>
-            <div className="navbar__nav__wrapper">
-              <div
-                className={classNames('navbar__nav__item one', { active: currentTab === '1' })}
-                data-id="1"
-                onMouseEnter={this.handleOnHover}
-              >
-                <Link className="navbar__nav__link" to="/">Mapa</Link>
-              </div>
-              <div
-                className={classNames('navbar__nav__item two', { active: currentTab === '2' })}
-                data-id="2"
-                onMouseEnter={this.handleOnHover}
-              >
-                <div className="navbar__nav__link" >
-                  {/* TODO remove coloring */}
-                  <a href="https://s3.amazonaws.com/votoinformado2019/Manual_Voto_Informado_2019.pdf">
-                      Manual
-                  </a>
-                </div>
-              </div>
-              <div
-                className={classNames('navbar__nav__item three', { active: currentTab === '3' })}
-                data-id="3"
-                onMouseEnter={this.handleOnHover}
-              >
-                <Link className="navbar__nav__link" to="/">Nosotros</Link>
-              </div>
-            </div>
-          </Collapse>
-        </Navbar>
-        {/* TODO ADD THIS LATER SINCE NOT MANY PAGES SO FAR */}
-        {/* {this.renderSubNav()} */}
-      </Container>
+      <div>
+        <Container fluid className="p-0">
+          <Row noGutters className="justify-content-center">
+            <Navbar light expand="md" className="border-0 navbar__wrapper">
+              <NavbarBrand href="/" className="navbar__brand">
+                <h3 className="m-0">#VotoInformado2019</h3>
+              </NavbarBrand>
+              <NavbarToggler
+                onClick={this.toggleNavbar}
+                className="mr-2"
+              />
+          <>
+            <Collapse isOpen={!this.state.collapsed} navbar className="justify-content-center test">
+              <Row noGutters className="bg-white mt-2 mt-md-0 pb-3 pb-md-0">
+                {/* <div className="navbar__search__wrapper mt-2 p-2 bg-white justify-content-center"> */}
+                <Col md={4} lg={6} className="p-2 pt-sm-4 pt-md-2">
+                  <form className="navbar__search__form m-0">
+                    <Input
+                      className="navbar__search__input"
+                      type="text"
+                      placeholder="Buscar"
+                    />
+                    <div className="navbar__search__icon">
+                      <i className="fal fa-search" />
+                    </div>
+                  </form>
+                </Col>
+                {/* </div> */}
+                {/* <div className="navbar__nav__wrapper p-2 mb-2 mb-md-0 bg-white justify-content-center"> */}
+                <Col
+                  xs={4}
+                  md={2}
+                  lg={2}
+                  className={classNames(
+'navbar__nav__item d-sm-flex d-md-block text-center px-3',
+                    { active: currentTab === '1' },
+)}
+                  data-id="1"
+                  onMouseEnter={this.handleOnHover}
+                >
+                  <Link className="navbar__nav__link" to="/">
+                    <i className="fal fa-map d-md-none px-2" />
+                    Mapa
+                  </Link>
+                </Col>
+                <Col
+                  xs={4}
+                  md={3}
+                  lg={2}
+                  className={classNames(
+'navbar__nav__item d-sm-flex d-md-block text-center px-3',
+                    { active: currentTab === '2' },
+)}
+                  data-id="2"
+                  onMouseEnter={this.handleOnHover}
+                >
+                  <div className="navbar__nav__link" >
+                    {/* TODO remove coloring */}
+                    <a
+                      target="_blank"
+                      rel="noreferrer noopener"
+                      href="https://s3.amazonaws.com/votoinformado2019/Manual_Voto_Informado_2019.pdf"
+                    >
+                      <i className="fal fa-book d-md-none px-2" />
+                        Manual
+                    </a>
+                  </div>
+                </Col>
+                <Col
+                  xs={4}
+                  md={3}
+                  lg={2}
+                  className={classNames(
+'navbar__nav__item w-100 d-sm-flex d-md-block text-center px-3',
+                    { active: currentTab === '3' },
+)}
+                  data-id="3"
+                  onMouseEnter={this.handleOnHover}
+                >
+                  <Link className="navbar__nav__link" to="/">
+                    <i className="fal fa-user d-md-none px-2" />
+                    Nosotros
+                  </Link>
+                </Col>
+              </Row>
+              {/* </div> */}
+            </Collapse>
+          </>
+            </Navbar>
+          </Row>
+          {/* TODO ADD THIS LATER SINCE NOT MANY PAGES SO FAR */}
+          {/* {this.renderSubNav()} */}
+        </Container>
+      </div>
     );
   }
 }

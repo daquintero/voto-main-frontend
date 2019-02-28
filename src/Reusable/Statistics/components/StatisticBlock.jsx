@@ -15,7 +15,7 @@ class StatisticBlock extends PureComponent {
     const { statistic } = this.props;
     return (
       <div className="mincontent">
-        <a href={statistic.source}>
+        <a target="_blank" rel="noreferrer noopener" href={statistic.source}>
           <Card className="small-enlarge bg-light mx-auto justify-content-center text-center rounded-0 border-0">
             <i className={`pt-2 fal fa-${statistic.icon}`} />
             <p className="m-1 font-weight-bold">

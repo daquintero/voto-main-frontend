@@ -1,8 +1,8 @@
 $border: 1px solid $impDark;
 
-//body {
-//  padding-top: 60px;
-//}
+test {
+  width: min-content !important;
+}
 
 .navbar {
   //width: 100%;
@@ -36,26 +36,27 @@ $border: 1px solid $impDark;
     flex-direction: row;
     //justify-content: center;
     flex: 1;
+    min-width: 250px;
     //margin: 0 40px;
   }
 
   &__search__form {
     display: flex;
     flex-direction: row;
-    width: 90%;
+    //width: 90%;
     height: 32px;
   }
 
   &__search__input {
     border-radius: 2px;
     width: 100%;
-    height: 32px;
+    //height: 32px;
   }
 
   &__search__icon {
     position: relative;
     background-color: darken(white, 10%);
-    height: 32px;
+    height: 38px;
     width: 58px;
     text-align: center;
     &:hover {
@@ -84,10 +85,11 @@ $border: 1px solid $impDark;
   }
 
   &__nav__item {
-    padding: 0 20px;
+    //padding: 0 20px;
     border-left: 1px solid rgba($impDark, 0.2);
-    height: 44px;
-    line-height: 44px;
+    //height: 44px;
+    //line-height: 44px;
+
     &:hover {
       cursor: pointer;
       border-bottom: 3px solid $impDark;
@@ -98,15 +100,17 @@ $border: 1px solid $impDark;
     border-right: 1px solid rgba($impDark, 0.2);
   }
 
-  &__nav__item.one.active {
-
-  }
-
   &__nav__link {
     display: block;
     text-transform: uppercase;
     color: black;
-    font-size: 0.32em;
+    font-size: 0.33em;
+
+    // Max Sm Bootstrap
+    @media (max-width: 599px) {
+      font-size: 0.5em;
+    }
+
     font-weight: normal;
     letter-spacing: 1px;
     &:hover {
