@@ -5,14 +5,20 @@ import { connect } from 'react-redux';
 import { Container, Modal } from 'reactstrap';
 
 // Components
-import MainGrid from './components/Main';
+// import MainGrid from './components/Main';
 import TopBanner from './components/TopBanner';
 import AboutPage from '../AboutUsPage/components/Page';
+import CardRow from '../../Reusable/CardRow';
+
+// Actions
+import { getHome } from './redux/actions';
 
 
 class Home extends PureComponent {
   static propTypes = {
-    mainResults: PropTypes.arrayOf(Object).isRequired,
+    // Redux
+    dispatch: PropTypes.func.isRequired,
+    informativeSnippets: PropTypes.instanceOf(Array).isRequired,
   };
 
   constructor(props) {
@@ -20,14 +26,18 @@ class Home extends PureComponent {
     this.state = {
       firstVisit: false,
     };
-    this.toggle = this.toggle.bind(this);
   }
 
-  toggle() {
+  componentDidMount() {
+    const { dispatch } = this.props;
+    dispatch(getHome());
+  }
+
+  toggle = () => {
     this.setState(prevState => ({
       modal: !prevState.modal,
     }));
-  }
+  };
 
   render() {
     // State
@@ -37,7 +47,7 @@ class Home extends PureComponent {
 
     // Props
     const {
-      mainResults,
+      informativeSnippets,
     } = this.props;
 
     return (
@@ -51,7 +61,7 @@ class Home extends PureComponent {
           </Container>
         </div>
         <Container>
-          <MainGrid instances={mainResults} />
+          <CardRow instances={informativeSnippets} />
         </Container>
       </>
     );
@@ -60,10 +70,10 @@ class Home extends PureComponent {
 
 
 const mapStateToProps = (state) => {
-  const { instances } = state.home;
+  const { informativeSnippets } = state.home.content;
 
   return {
-    instances,
+    informativeSnippets,
   };
 };
 

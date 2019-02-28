@@ -33,7 +33,7 @@ export default (state = initialState, action) => {
       return {
         ...state,
         content: {
-          ...state.content,
+          ...action.response.instances,
         },
         actions: {
           ...state.actions,

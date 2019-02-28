@@ -1,4 +1,5 @@
 import {
+  GET_HOME,
   HOME_SEARCH,
 } from './actionCreators';
 import service from '../service';
@@ -6,17 +7,17 @@ import service from '../service';
 
 export const getHome = () => (dispatch) => {
   dispatch({
-    type: HOME_SEARCH.REQUEST,
+    type: GET_HOME.REQUEST,
   });
   return service.get.home().then(
     response =>
       dispatch({
-        type: HOME_SEARCH.SUCCESS,
+        type: GET_HOME.SUCCESS,
         response: response.data,
       }),
     error =>
       dispatch({
-        type: HOME_SEARCH.ERROR,
+        type: GET_HOME.ERROR,
         error,
       }),
   );

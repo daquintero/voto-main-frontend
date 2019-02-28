@@ -11,7 +11,7 @@ import layoutMap from '../styling/layoutMap';
 
 
 const CardWithoutImage = ({ instance }) => {
-  const primaryStatistic = instance.statistics[0];
+  const primaryStatistic = instance.statistics && instance.statistics[0];
   return (
     <Card className="bg-light border-0 rounded-0 small-enlarge mincontent">
       <Link to={`/noticia/${instance.id}`}>
