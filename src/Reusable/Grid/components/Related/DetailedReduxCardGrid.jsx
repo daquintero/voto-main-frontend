@@ -9,10 +9,8 @@ import { Button, Row } from 'reactstrap';
 import { getMoreRelatedInstances } from '../../../redux/actions';
 
 // Presentational Component
-import CardGrid from './BootCardGrid';
-
-const relatedModelLabel = 'political.Individual';
-
+import CardGrid from '../Generic';
+import typeInfo from '../../../../shared/utils/typeInfo';
 
 // Detailed DEVELOPMENT-ONLY-Page Redux Card Grid
 class DetailedReduxCardGrid extends PureComponent {
@@ -27,12 +25,12 @@ class DetailedReduxCardGrid extends PureComponent {
 
     // Variable Props
     relatedModelLabel: PropTypes.string.isRequired,
-    // TODO Create the variable grid
+    gridClass: PropTypes.string.isRequired,
   };
 
   handleGetMore = () => {
     const {
-      dispatch, subsetNumber, parentModelLabel, parentId,
+      dispatch, subsetNumber, parentModelLabel, parentId, relatedModelLabel,
     } = this.props;
     dispatch(getMoreRelatedInstances({
       sn: parseInt(subsetNumber, 10) + 1,
@@ -46,14 +44,18 @@ class DetailedReduxCardGrid extends PureComponent {
     const {
       instances,
       actions,
+      relatedModelLabel,
+      gridClass,
     } = this.props;
 
     return (
       <div>
-        <h3 className="p-2">Individuos Relacionados</h3>
+        {console.log(typeInfo[relatedModelLabel].name)}
+        <h4 className="p-2">{typeInfo[relatedModelLabel].name} Relacionados</h4>
         <CardGrid
           instances={instances}
           action={actions.GET_MORE_RELATED_INSTANCES[relatedModelLabel]}
+          gridClass={gridClass}
         />
         {/* TODO Check subsets are not the same as before */}
         <Row className="p-2">
@@ -61,7 +63,7 @@ class DetailedReduxCardGrid extends PureComponent {
             onClick={this.handleGetMore}
             className="small-enlarge rounded-0 text-center border-0 mx-auto bg-white text-dark"
           >
-            Más Individuos
+            Más {typeInfo[relatedModelLabel].name.capitalize}
           </Button>
         </Row>
       </div>
@@ -71,14 +73,16 @@ class DetailedReduxCardGrid extends PureComponent {
 
 const mapStateToProps = (state) => {
   const { actions } = state.openPage;
-  const { instances, subsetNumber } = state.openPage.relatedInstances.individuals;
+  // TODO Pass through normal props
+  // const { instances, subsetNumber } = // NEXT LINE WRONG NO THIS.PROPS
+  //   state.openPage.relatedInstances.individuals;
   const { modelLabel, id } = state.openPage.parentInstance;
 
   return {
     parentModelLabel: modelLabel,
     parentId: id,
-    instances,
-    subsetNumber,
+    // instances,
+    // subsetNumber,
     actions,
   };
 };
