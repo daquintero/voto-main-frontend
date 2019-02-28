@@ -13,6 +13,7 @@ import CardGrid from './BootCardGrid';
 
 const relatedModelLabel = 'political.Individual';
 
+
 // Detailed DEVELOPMENT-ONLY-Page Redux Card Grid
 class DetailedReduxCardGrid extends PureComponent {
   static propTypes = {
@@ -30,7 +31,7 @@ class DetailedReduxCardGrid extends PureComponent {
       dispatch, subsetNumber, parentModelLabel, parentId,
     } = this.props;
     dispatch(getMoreRelatedInstances({
-      sn: subsetNumber + 1,
+      sn: parseInt(subsetNumber, 10) + 1,
       ml: parentModelLabel,
       pid: parentId,
       rml: relatedModelLabel,

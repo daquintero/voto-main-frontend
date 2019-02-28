@@ -49,6 +49,14 @@ export default function (state = initialState, action) {
         },
       };
 
+    case GET_MORE_RELATED_INSTANCES.INIT:
+      return {
+        ...state,
+        actions: {
+          ...state.actions,
+          ...actionResult('GET_MORE_RELATED_INSTANCES.INIT', { id: action.modelLabel }),
+        },
+      };
     case GET_MORE_RELATED_INSTANCES.REQUEST:
       return {
         ...state,
