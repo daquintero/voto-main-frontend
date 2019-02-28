@@ -5,8 +5,6 @@ import { connect } from 'react-redux';
 import { Container, Modal } from 'reactstrap';
 
 // Components
-// import MainGrid from './components/Main';
-import TopBanner from './components/TopBanner';
 import AboutPage from '../AboutUsPage/components/Page';
 import CardRow from '../../Reusable/CardRow';
 
@@ -19,6 +17,7 @@ class Home extends PureComponent {
     // Redux
     dispatch: PropTypes.func.isRequired,
     informativeSnippets: PropTypes.instanceOf(Array).isRequired,
+    actions: PropTypes.instanceOf(Object).isRequired,
   };
 
   constructor(props) {
@@ -47,33 +46,32 @@ class Home extends PureComponent {
 
     // Props
     const {
-      informativeSnippets,
+      informativeSnippets, actions,
     } = this.props;
 
     return (
-      <>
+      <div className="home__wrapper">
         <Modal isOpen={firstVisit} toggle={this.toggle}>
           <AboutPage />
         </Modal>
-        <div className="bg-shady-layout">
-          <Container className="p-0">
-            <TopBanner />
-          </Container>
-        </div>
         <Container>
-          <CardRow instances={informativeSnippets} />
+          {actions.GET_HOME.loaded && (
+            <CardRow instances={informativeSnippets} />
+          )}
         </Container>
-      </>
+      </div>
     );
   }
 }
 
 
 const mapStateToProps = (state) => {
+  const { actions } = state.home;
   const { informativeSnippets } = state.home.content;
 
   return {
     informativeSnippets,
+    actions,
   };
 };
 

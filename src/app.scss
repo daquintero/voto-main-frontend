@@ -1,6 +1,6 @@
 // ---------------------------- NODE MODULES STYLES --------------
 // React-Image-Gallery
-@import "../node_modules/react-image-gallery/styles/scss/image-gallery";
+@import '../node_modules/react-image-gallery/styles/scss/image-gallery';
 // BBC FONTS
 // EXTERNAL LIBRARIES FONT
 @import '../node_modules/gel-sass-tools/sass-tools';
@@ -26,6 +26,7 @@
 @import 'Layout/styles';
 
 // ---------------------------- ASSEMBLY ----------------------------
+@import 'Assembly/Home/styles';
 // ABOUT PAGE
 @import 'Assembly/AboutUsPage/components/Social/styles';
 
@@ -40,6 +41,7 @@
 @import 'Reusable/CorruptionCase/styling/corruption-case';
 //MAP
 @import 'Reusable/Map/styling/map';
+@import 'Reusable/CardRow/styles.scss';
 
 // ---------------------------- UTILS ----------------------------
 // Transforms

@@ -71,7 +71,7 @@ body {
 
   &__top__wrapper {
     background-color: white;
-    border-bottom: 1px solid rgba($impDark, 0.2);
+    border-bottom: $border;
   }
 
   &__nav__wrapper {
@@ -82,7 +82,7 @@ body {
 
   &__nav__item {
     padding: 0.24em 20px;
-    border-left: 1px solid rgba($impDark, 0.2);
+    border-left: $border;
     //height: 44px;
     line-height: 0.32em;
     &:hover {
@@ -92,7 +92,7 @@ body {
   }
 
   &__nav__item.end {
-    border-right: 1px solid rgba($impDark, 0.2);
+    border-right: $border;
   }
 
   &__nav__item.one.active {

@@ -1,1 +1,1 @@
-export default (folderName, imageName) => `${process.env.PUBLIC_URL}/${folderName}/${imageName}`;
+export default url => `${process.env.REACT_APP_MEDIA_URL}${url}`;

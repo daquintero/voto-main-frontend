@@ -4,14 +4,18 @@ import PropTypes from 'prop-types';
 import { Row, Col } from 'reactstrap';
 
 // Components
-import Card from './Card';
+import Card from './components/Card';
 
 
 const CardRow = ({ instances }) => (
-  <Row>
-    {instances.map(instance => (
-      <Col>
-        <Card instance={instance} />
+  <Row className="card-row__wrapper">
+    {instances.map((instance, index) => (
+      <Col
+        xs={index === 0 ? 12 : 6}
+        md={4}
+        lg={index === 0 ? 6 : 3}
+      >
+        <Card instance={instance} index={index} />
       </Col>
     ))}
   </Row>
