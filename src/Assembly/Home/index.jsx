@@ -44,9 +44,11 @@ class Home extends PureComponent {
         <Modal isOpen={firstVisit} toggle={this.toggle}>
           <AboutPage />
         </Modal>
-        <Container fluid className="p-0">
-          <TopBanner />
-        </Container>
+        <div className="bg-light">
+          <Container className="p-0">
+            <TopBanner />
+          </Container>
+        </div>
         <Container>
           <MainGrid instances={mainResults} />
           <Search instances={searchResults} />

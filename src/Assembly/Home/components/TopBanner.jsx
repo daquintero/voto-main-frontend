@@ -24,10 +24,10 @@ class TopBanner extends PureComponent {
   render() {
     return (
       <Row noGutters className="py-4 bg-light">
-        <Col sm={6} md={4} className="px-4 py-4 py-sm-0">
+        <Col sm={6} md={4} className="px-2 py-2 py-sm-0">
           <img src={banner} alt="Error" />
         </Col>
-        <Col sm={6} md={8} className="px-4">
+        <Col sm={6} md={8} className="text-center px-4 p-md-0">
           <h3>¡Comprométete a un #VotoInformado2019!</h3>
           <div>
             Add the subscribers list here.
