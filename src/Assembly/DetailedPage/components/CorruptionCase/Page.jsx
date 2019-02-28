@@ -57,15 +57,18 @@ class Page extends PureComponent {
 
     return actions.GET_DETAILED_PAGE.loaded ? (
       <Container>
-        <Row className="p-2">
-          <Col xs={12} md={8} className="bg-white">
+        <Row className="p-2 overflow-hidden">
+          <Col xs={12} md={8} className="bg-layout overflow-hidden">
             <Header instance={instance} />
             <Gallery instance={instance} />
             <Description instance={instance} />
             <Relationships />
           </Col>
           <Col xs={12} md={4} className="p-2">
-             <RightSide instance={instance} />
+           <RightSide
+             instance={instance}
+             url={this.props.match.url}
+           />
           </Col>
         </Row>
       </Container>

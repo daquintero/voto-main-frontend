@@ -16,9 +16,9 @@ const IndividualMarker = ({ name, centroid, statistics }) => (
   >
     {name}
     <div className="d-flex">
-      {statistics.map(statistic => (
+      {statistics.map(instance => (
         <span>
-          <i className={`fal fa-${statistic.icon}`} /> {statistic.value}
+          <i className={`fal fa-${instance.icon}`} /> {instance.value}
         </span>
       ))}
     </div>

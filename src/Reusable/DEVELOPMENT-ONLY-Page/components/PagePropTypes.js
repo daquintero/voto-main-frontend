@@ -29,7 +29,7 @@ export const RelationshipProps = {
     images: PropTypes.arrayOf(PropTypes.shape({
       image: '', // only one is needed
     })),
-    statistics: PropTypes.arrayOf(PropTypes.shape({ // We only need 3 statistic
+    statistics: PropTypes.arrayOf(PropTypes.shape({ // We only need 3 instance
       link: PropTypes.string,
       title: PropTypes.string,
       data: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
@@ -42,7 +42,7 @@ export const RelationshipProps = {
       image: PropTypes.string,
     })),
     date: PropTypes.instanceOf(Date).isRequired, // Note that this is the submission date
-    statistics: PropTypes.arrayOf(PropTypes.shape({ // We only need one statistic
+    statistics: PropTypes.arrayOf(PropTypes.shape({ // We only need one instance
       link: PropTypes.string,
       title: PropTypes.string,
       data: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
@@ -64,7 +64,7 @@ export const PageProps = {
   images: PropTypes.arrayOf(PropTypes.shape({
     image: '',
   })),
-  statistics: PropTypes.arrayOf(PropTypes.shape({ // We only need one statistic
+  statistics: PropTypes.arrayOf(PropTypes.shape({ // We only need one instance
     link: PropTypes.string,
     title: PropTypes.string,
     data: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
@@ -90,7 +90,7 @@ export const PageProps = {
     images: PropTypes.arrayOf(PropTypes.shape({
       image: '', // only one is needed
     })),
-    statistics: PropTypes.arrayOf(PropTypes.shape({ // We only need 3 statistic
+    statistics: PropTypes.arrayOf(PropTypes.shape({ // We only need 3 instance
       link: PropTypes.string,
       title: PropTypes.string,
       data: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
@@ -103,7 +103,7 @@ export const PageProps = {
       image: PropTypes.string,
     })),
     date: PropTypes.instanceOf(Date).isRequired, // Note that this is the submission date
-    statistics: PropTypes.arrayOf(PropTypes.shape({ // We only need one statistic
+    statistics: PropTypes.arrayOf(PropTypes.shape({ // We only need one instance
       link: PropTypes.string,
       title: PropTypes.string,
       data: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),

@@ -4,24 +4,30 @@ import PropTypes from 'prop-types';
 
 // Components
 import MainFinancesNav from '../../../../Reusable/FinanceItem/components/MainFinancesNav';
-import Statistics from './Statistics';
+import Statistics from '../Statistics';
 import Share from '../../../../Reusable/SocialShare/components/Card';
+
 
 // Declaration
 class RightSide extends PureComponent {
   static propTypes = {
     instance: PropTypes.instanceOf(Object).isRequired,
+    // Router
+    url: PropTypes.string.isRequired,
   };
 
   render() {
     const {
-      instance,
+      instance, url,
     } = this.props;
 
     return (
       <>
-        {/* TODO GIVE RELATIVE ROUTES */}
-        <Share title={instance.title} description={instance.briefDescription} url="https://www.votoinformado2019.com" />
+        <Share
+          title={instance.title || instance.name}
+          description={instance.briefDescription}
+          url={`https://www.votoinformado2019.com${url}`}
+        />
         {instance.corruptionRelatedFunds && (
             <>
               <h3 className="text-center mt-2">Fianzas</h3>
@@ -31,8 +37,10 @@ class RightSide extends PureComponent {
               />
             </>
         )}
-        <h3 className="text-center mt-2">Estadística</h3>
-        <Statistics statistics={instance.statistics} />
+        <Statistics
+          instances={instance.statistics}
+          type="political.Statistic"
+        />
       </>
     );
   }

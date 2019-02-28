@@ -38,62 +38,62 @@ export const galleryData = [{
 // ---------------- STATISTICS --------------------
 
 export const statisticsData = [{
-  name: 'Some statistic',
+  name: 'Some instance',
   source: 'info',
   value: 10,
   icon: 'user',
 }, {
-  name: 'Some statistic',
+  name: 'Some instance',
   source: 'info',
   value: 10,
   icon: 'user',
 }, {
-  name: 'Some statistic',
+  name: 'Some instance',
   source: 'info',
   value: 1000,
   icon: 'user',
 }, {
-  name: 'Some statistic',
+  name: 'Some instance',
   source: 'info',
   value: 10,
   icon: 'user',
 }, {
-  name: 'Some statistic',
+  name: 'Some instance',
   source: 'info',
   value: 10,
   icon: 'user',
 }, {
-  name: 'Some statistic',
+  name: 'Some instance',
   source: 'info',
   value: 10,
   icon: 'user',
 }, {
-  name: 'Some statistic',
+  name: 'Some instance',
   source: 'info',
   value: 1000,
   icon: 'user',
 }, {
-  name: 'Some statistic',
+  name: 'Some instance',
   source: 'info',
   value: 10,
   icon: 'user',
 }, {
-  name: 'Some statistic',
+  name: 'Some instance',
   source: 'info',
   value: 10,
   icon: 'user',
 }, {
-  name: 'Some statistic',
+  name: 'Some instance',
   source: 'info',
   value: 10,
   icon: 'user',
 }, {
-  name: 'Some statistic',
+  name: 'Some instance',
   source: 'info',
   value: 1000,
   icon: 'user',
 }, {
-  name: 'Some statistic',
+  name: 'Some instance',
   source: 'info',
   value: 10,
   icon: 'user',

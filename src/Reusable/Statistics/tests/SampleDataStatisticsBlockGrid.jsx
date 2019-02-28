@@ -6,9 +6,9 @@ import StatisticsBlockGrid from '../components/StatisticsGrid';
 // TODO REMOVE IMAGE TEST
 // const imageTest = `${process.env.PUBLIC_URL}/img-test/a.jpg`;
 
-// One statistic
-// const statistic = {
-//   name: 'Some statistic',
+// One instance
+// const instance = {
+//   name: 'Some instance',
 //   source: 'info',
 //   value: 10,
 //   icon: 'user',
@@ -16,63 +16,63 @@ import StatisticsBlockGrid from '../components/StatisticsGrid';
 
 // // Each Compendium
 const statistics = [{
-  name: 'Some statistic',
+  name: 'Some instance',
   source: 'info',
   value: 10,
   icon: 'user',
 }, {
-  name: 'Some statistic',
+  name: 'Some instance',
   source: 'info',
   value: 10,
   icon: 'user',
 }, {
-  name: 'Some statistic',
+  name: 'Some instance',
   source: 'info',
   value: 1000,
   icon: 'user',
 }, {
-  name: 'Some statistic',
+  name: 'Some instance',
   source: 'info',
   value: 10,
   icon: 'user',
 }, {
-  name: 'Some statistic',
+  name: 'Some instance',
   source: 'info',
   value: 10,
   icon: 'user',
 }, {
-  name: 'Some statistic',
+  name: 'Some instance',
   source: 'info',
   value: 10,
   icon: 'user',
 }, {
-  name: 'Some statistic',
+  name: 'Some instance',
   source: 'info',
   value: 1000,
   icon: 'user',
 }, {
-  name: 'Some statistic',
+  name: 'Some instance',
   source: 'info',
   value: 10,
   icon: 'user',
 },
 {
-  name: 'Some statistic',
+  name: 'Some instance',
   source: 'info',
   value: 10,
   icon: 'user',
 }, {
-  name: 'Some statistic',
+  name: 'Some instance',
   source: 'info',
   value: 10,
   icon: 'user',
 }, {
-  name: 'Some statistic',
+  name: 'Some instance',
   source: 'info',
   value: 1000,
   icon: 'user',
 }, {
-  name: 'Some statistic',
+  name: 'Some instance',
   source: 'info',
   value: 10,
   icon: 'user',

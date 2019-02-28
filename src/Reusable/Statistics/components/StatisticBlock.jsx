@@ -8,20 +8,20 @@ import numeral from 'numeral';
 
 class StatisticBlock extends PureComponent {
   static propTypes = {
-    statistic: PropTypes.instanceOf(Object).isRequired,
+    instance: PropTypes.instanceOf(Object).isRequired,
   };
 
   render() {
-    const { statistic } = this.props;
+    const { instance } = this.props;
     return (
       <div className="mincontent">
-        <a target="_blank" rel="noreferrer noopener" href={statistic.source}>
+        <a target="_blank" rel="noreferrer noopener" href={instance.source}>
           <Card className="small-enlarge bg-light mx-auto justify-content-center text-center rounded-0 border-0">
-            <i className={`pt-2 fal fa-${statistic.icon}`} />
+            <i className={`pt-2 fal fa-${instance.icon}`} />
             <p className="m-1 font-weight-bold">
-              { typeof statistic.value === 'number' ? numeral(statistic.value).format('0,0') : statistic.value}
+              { typeof instance.value === 'number' ? numeral(instance.value).format('0,0') : instance.value}
             </p>
-            <p className="mb-1 mt-0 p-1">{statistic.name}</p>
+            <p className="mb-1 mt-0 p-1">{instance.name}</p>
           </Card>
         </a>
       </div>

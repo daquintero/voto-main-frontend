@@ -44,7 +44,7 @@ export default function (instance) {
     case 'political.Experience':
       return (<EXPCard instance={instance} />);
     case 'political.Statistic':
-      return (<STATCard statistic={instance} />);
+      return (<STATCard instance={instance} />);
     // case 'political.Organization':
     //   return (<ORGCard instance={instance} />);
     case 'political.Law':
