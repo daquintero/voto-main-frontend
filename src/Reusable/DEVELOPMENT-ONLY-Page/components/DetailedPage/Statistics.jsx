@@ -17,9 +17,9 @@ class Statistics extends PureComponent {
     // const { statistics } = this.props;
     return (
       <Row className="mx-auto">
-        { statisticsData.map(statistic => (
+        { statisticsData.map(instance => (
           <Col md={6} className="p-2">
-            <StatisticBlock statistic={statistic} />
+            <StatisticBlock instance={instance} />
           </Col>
         ))}
       </Row>

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 // Components
 import MainFinancesNav from '../../../../Reusable/FinanceItem/components/MainFinancesNav';
-import Statistics from './Statistics';
+import Statistics from '../Statistics';
 import Share from '../../../../Reusable/SocialShare/components/Card';
 
 // Declaration

@@ -7,7 +7,7 @@ import { Row, Col, Input } from 'reactstrap';
 import PropTypes from 'prop-types';
 
 // Components
-import VariableGrid from '../../../Reusable/Grid/components/VariableGrid';
+import Generic from '../../../Reusable/Grid/components/Generic';
 
 // Declaration
 class Search extends PureComponent {
@@ -27,7 +27,7 @@ class Search extends PureComponent {
           </Col>
         </Row>
         <Row noGutters className="justify-content-center py-2">
-          <VariableGrid instances={instances} />
+          <Generic instances={instances} />
         </Row>
       </div>
     );

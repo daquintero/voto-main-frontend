@@ -12,14 +12,14 @@ import InformativeCardGrid from '../../../Reusable/InformativeSnippet/components
 // TODO Props validation
 const Relationships = () => (
   <Row>
-    <Col xs={12} md={12} className="mt-2 p-1" style={{ 'background-color': '#edf7ff' }}>
+    <Col xs={12} className="mt-2 p-1 bg-shady-layout">
       <IndividualCardGrid />
     </Col>
-    <Col xs={12} md={12} className="mt-2 p-1" style={{ 'background-color': '#fff3fa' }}>
+    <Col xs={12} className="p-1 bg-middle-layout">
       <InformativeCardGrid />
     </Col>
     {/* TODO Organization Card Grid */}
-    <Col xs={12} md={12} className="mt-2 p-1" style={{ 'background-color': '#fafff3' }}>
+    <Col xs={12} className="p-1 bg-shady-layout">
       <CorruptionCaseCardGrid />
     </Col>
   </Row>

@@ -16,15 +16,15 @@ class StatisticsList extends PureComponent {
     const { statistics } = this.props;
     return (
       <ListGroup>
-        { statistics.map(statistic => (
-          <ListGroupItem className="list-searching" tag="a" href={statistic.source}>
+        { statistics.map(instance => (
+          <ListGroupItem className="list-searching" tag="a" href={instance.source}>
             <span className="float-left">
-              <i className={`pt-2 p-2 fal fa-${statistic.icon}`} />
-              {statistic.name}
+              <i className={`pt-2 p-2 fal fa-${instance.icon}`} />
+              {instance.name}
             </span>
             <h4>
               <Badge className="float-right" color="light">
-                { typeof statistic.value === 'number' ? numeral(statistic.value).format('0.0a') : statistic.value}
+                { typeof instance.value === 'number' ? numeral(instance.value).format('0.0a') : instance.value}
               </Badge>
             </h4>
           </ListGroupItem>
