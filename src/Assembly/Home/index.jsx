@@ -1,26 +1,20 @@
-/* eslint-disable */
-// Home Page
-// Libraries
+// Absolute Imports
 import React, { PureComponent } from 'react';
-import { Container, Modal } from 'reactstrap';
-
-// Prop Types
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { Container, Modal } from 'reactstrap';
 
 // Components
 import MainGrid from './components/Main';
-import Search from './components/Search';
 import TopBanner from './components/TopBanner';
+import AboutPage from '../AboutUsPage/components/Page';
 
-// TODO REMOVE TEST
-import AboutPage from '../AboutUsPage/components/Page'
 
-// Declaration
 class Home extends PureComponent {
   static propTypes = {
     mainResults: PropTypes.arrayOf(Object).isRequired,
-    searchResults: PropTypes.arrayOf(Object).isRequired,
   };
+
   constructor(props) {
     super(props);
     this.state = {
@@ -31,14 +25,21 @@ class Home extends PureComponent {
 
   toggle() {
     this.setState(prevState => ({
-      modal: !prevState.modal
+      modal: !prevState.modal,
     }));
   }
 
-
   render() {
-    const { mainResults, searchResults } = this.props;
-    const { firstVisit } = this.state;
+    // State
+    const {
+      firstVisit,
+    } = this.state;
+
+    // Props
+    const {
+      mainResults,
+    } = this.props;
+
     return (
       <>
         <Modal isOpen={firstVisit} toggle={this.toggle}>
@@ -51,12 +52,19 @@ class Home extends PureComponent {
         </div>
         <Container>
           <MainGrid instances={mainResults} />
-          <Search instances={searchResults} />
         </Container>
       </>
     );
   }
 }
 
-// TODO State Store Connection
-export default Home;
+
+const mapStateToProps = (state) => {
+  const { instances } = state.home;
+
+  return {
+    instances,
+  };
+};
+
+export default connect(mapStateToProps)(Home);

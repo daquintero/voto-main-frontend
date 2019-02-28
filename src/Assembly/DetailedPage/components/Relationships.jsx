@@ -10,7 +10,7 @@ import InformativeCardGrid from '../../../Reusable/InformativeSnippet/components
 
 
 // TODO Props validation
-const Relationships = (
+const Relationships = () => (
   <Row>
     <Col xs={12} md={12} className="mt-2 p-1" style={{ 'background-color': '#edf7ff' }}>
       <IndividualCardGrid />
