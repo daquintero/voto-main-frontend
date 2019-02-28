@@ -1,16 +1,25 @@
 $border: 1px solid $impDark;
 
+//body {
+//  padding-top: 60px;
+//}
+
 .navbar {
-  height: 44px;
-  border-bottom: $border;
+  //width: 100%;
+  //position: fixed;
+  //left:0;
+  //top: 0;
+  height: 60px;
+  box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.05);
 
   &__wrapper {
-    display: block;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-
-    z-index: 2000;
+    position: relative !important;
+    //display: block;
+    //flex-direction: row;
+    //align-items: center;
+    //justify-content: space-between;
+    //
+    z-index: 100000;
     @include gel-typography('canon-bold');
     width: 100%;
   }
@@ -22,6 +31,7 @@ $border: 1px solid $impDark;
   }
 
   &__search__wrapper {
+    position: relative !important;
     display: flex;
     flex-direction: row;
     //justify-content: center;

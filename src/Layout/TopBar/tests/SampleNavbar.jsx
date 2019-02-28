@@ -85,8 +85,8 @@ class TopBar extends Component {
     } = this.state;
 
     return (
-      <Container fluid className="p-0">
-        <Navbar light expand="md" className="border-0 navbar__wrapper">
+      <Container fluid>
+        <Navbar light expand="sm" className="border-0 navbar__wrapper">
           <NavbarBrand href="/" className="navbar__brand">
             <h4>#VotoInformado2019</h4>
           </NavbarBrand>
@@ -95,44 +95,46 @@ class TopBar extends Component {
             className="mr-2"
           />
           <Collapse isOpen={!this.state.collapsed} navbar>
-            <div className="navbar__search__wrapper">
-              <form className="navbar__search__form">
-                <Input
-                  className="navbar__search__input"
-                  type="text"
-                  placeholder="Buscar"
-                />
-                <div className="navbar__search__icon">
-                  <i className="fal fa-search" />
-                </div>
-              </form>
-            </div>
-            <div className="navbar__nav__wrapper">
-              <div
-                className={classNames('navbar__nav__item one', { active: currentTab === '1' })}
-                data-id="1"
-                onMouseEnter={this.handleOnHover}
-              >
-                <Link className="navbar__nav__link" to="/">Mapa</Link>
+            <div className="d-flex">
+              <div className="navbar__search__wrapper">
+                <form className="navbar__search__form">
+                  <Input
+                    className="navbar__search__input"
+                    type="text"
+                    placeholder="Buscar"
+                  />
+                  <div className="navbar__search__icon">
+                    <i className="fal fa-search" />
+                  </div>
+                </form>
               </div>
-              <div
-                className={classNames('navbar__nav__item two', { active: currentTab === '2' })}
-                data-id="2"
-                onMouseEnter={this.handleOnHover}
-              >
-                <div className="navbar__nav__link" >
-                  {/* TODO remove coloring */}
-                  <a href="https://s3.amazonaws.com/votoinformado2019/Manual_Voto_Informado_2019.pdf">
+              <div className="navbar__nav__wrapper">
+                <div
+                  className={classNames('navbar__nav__item one', { active: currentTab === '1' })}
+                  data-id="1"
+                  onMouseEnter={this.handleOnHover}
+                >
+                  <Link className="navbar__nav__link" to="/">Mapa</Link>
+                </div>
+                <div
+                  className={classNames('navbar__nav__item two', { active: currentTab === '2' })}
+                  data-id="2"
+                  onMouseEnter={this.handleOnHover}
+                >
+                  <div className="navbar__nav__link" >
+                    {/* TODO remove coloring */}
+                    <a href="https://s3.amazonaws.com/votoinformado2019/Manual_Voto_Informado_2019.pdf">
                       Manual
-                  </a>
+                    </a>
+                  </div>
                 </div>
-              </div>
-              <div
-                className={classNames('navbar__nav__item three', { active: currentTab === '3' })}
-                data-id="3"
-                onMouseEnter={this.handleOnHover}
-              >
-                <Link className="navbar__nav__link" to="/">Nosotros</Link>
+                <div
+                  className={classNames('navbar__nav__item three', { active: currentTab === '3' })}
+                  data-id="3"
+                  onMouseEnter={this.handleOnHover}
+                >
+                  <Link className="navbar__nav__link" to="/">Nosotros</Link>
+                </div>
               </div>
             </div>
           </Collapse>

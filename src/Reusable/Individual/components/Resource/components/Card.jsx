@@ -1,5 +1,7 @@
-// TODO DESCRIPTION // Libraries
+// Resource Card
+// Libraries
 import React, { PureComponent } from 'react';
+import { Card } from 'reactstrap';
 
 // Prop Types
 import PropTypes from 'prop-types';
@@ -12,12 +14,12 @@ class Whatever extends PureComponent {
   render() {
     const { instance } = this.props;
     return (
-      <div>
-        <div className="text-center">
+      <Card className="text-center">
+        <a href={instance.source}>
           <i className="fal fa-link fa-2x" />
-        </div>
-        {instance.title}
-      </div>
+          <p className="lead"> {instance.title} </p>
+        </a>
+      </Card>
     );
   }
 }

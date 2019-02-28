@@ -1,38 +1,37 @@
-// Detailed Redux Card Grid with Pagination
+// Detailed  Redux Card Grid with Pagination
 // Libraries
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Button, Row } from 'reactstrap';
 
-// Redux Actions
-import { getMoreRelatedInstances } from '../../redux/actions';
+// Actions
+import { getMoreRelatedInstances } from '../../../../redux/actions';
 
 // Presentational Component
 import CardGrid from './CardGrid';
 
-const relatedModelLabel = 'corruption.CorruptionCase';
+const relatedModelLabel = 'political.Controversy';
 
-
-// Detailed DEVELOPMENT-ONLY-Page Redux Card Grid
+// Detailed -Page Redux Card Grid
 class DetailedReduxCardGrid extends PureComponent {
   static propTypes = {
     // Redux
     dispatch: PropTypes.func.isRequired,
     instances: PropTypes.instanceOf(Array).isRequired,
-    actions: PropTypes.instanceOf(Object).isRequired,
     subsetNumber: PropTypes.number.isRequired,
-    modelLabel: PropTypes.string.isRequired,
+    actions: PropTypes.instanceOf(Array).isRequired,
+    parentModelLabel: PropTypes.string.isRequired,
     parentId: PropTypes.number.isRequired,
   };
 
-  getMore = () => {
+  handleGetMore = () => {
     const {
-      dispatch, subsetNumber, modelLabel, parentId,
+      dispatch, subsetNumber, parentModelLabel, parentId,
     } = this.props;
     dispatch(getMoreRelatedInstances({
       sn: subsetNumber + 1,
-      ml: modelLabel,
+      ml: parentModelLabel,
       pid: parentId,
       rml: relatedModelLabel,
     }));
@@ -40,12 +39,13 @@ class DetailedReduxCardGrid extends PureComponent {
 
   render() {
     const {
-      instances, actions,
+      instances,
+      actions,
     } = this.props;
 
     return (
       <div>
-        <h3 className="p-2">Casos de Corrupcion Relacionados</h3>
+        <h3 className="p-2">Controversias</h3>
         <CardGrid
           instances={instances}
           action={actions.GET_MORE_RELATED_INSTANCES[relatedModelLabel]}
@@ -53,10 +53,10 @@ class DetailedReduxCardGrid extends PureComponent {
         {/* TODO Check subsets are not the same as before */}
         <Row className="p-2">
           <Button
-            onClick={this.getMore}
+            onClick={this.handleGetMore}
             className="small-enlarge rounded-0 text-center border-0 mx-auto bg-more text-dark"
           >
-            Más Casos de Corrupcion
+            Más Individuos
           </Button>
         </Row>
       </div>
@@ -64,19 +64,20 @@ class DetailedReduxCardGrid extends PureComponent {
   }
 }
 
-
 const mapStateToProps = (state) => {
   const { actions } = state.openPage;
-  const { instances, subsetNumber } = state.openPage.relatedInstances.corruptionCases;
+  const { instances, subsetNumber } = state.openPage.relatedInstances.individuals;
   const { modelLabel, id } = state.openPage.parentInstance;
 
   return {
-    modelLabel,
-    id,
+    parentModelLabel: modelLabel,
+    parentId: id,
     instances,
     subsetNumber,
     actions,
   };
 };
 
+// State Store Connection
 export default connect(mapStateToProps)(DetailedReduxCardGrid);
+
