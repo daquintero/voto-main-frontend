@@ -14,7 +14,7 @@ import { GET_DETAILED_PAGE } from '../../redux/actionCreators';
 import Header from './Header';
 import Gallery from './Gallery';
 import Description from './Description';
-import Relationships from './Relationships';
+import Relationships from '../Relationships';
 import RightSide from './RightSide';
 import Loader from '../../../../shared/components/Loader';
 

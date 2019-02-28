@@ -13,7 +13,7 @@ class AboutPage extends PureComponent {
   render() {
     return (
           <>
-            <Container className="text-center p-5">
+            <Container fluid className="text-center p-5 bg-shady-layout">
               <Row>
                 <Col xs={12}>
                   <h2>#VotoInformado2019</h2>

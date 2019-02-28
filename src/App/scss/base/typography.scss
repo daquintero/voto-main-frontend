@@ -1,11 +1,18 @@
 // FONTS ADDED VIA BBC GEL FRAMEWORK
 
+
+// -------- GENERIC TEXT CLASSES ------------
 a {
   color:black;
   text-decoration: none ;
 }
-a:hover
-{
+
+a:hover  {
   text-decoration:none;
   cursor:pointer;
+}
+
+// Show Link
+.sl {
+  color: $impRed !important;
 }

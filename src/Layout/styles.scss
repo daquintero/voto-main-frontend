@@ -81,9 +81,9 @@ body {
   }
 
   &__nav__item {
-    padding: 0 20px;
+    padding: 0.24em 20px;
     border-left: 1px solid rgba($impDark, 0.2);
-    height: 40px∂;
+    //height: 44px;
     line-height: 0.32em;
     &:hover {
       cursor: pointer;

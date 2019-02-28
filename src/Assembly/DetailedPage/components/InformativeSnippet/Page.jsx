@@ -12,7 +12,7 @@ import { getDetailedPage } from '../../redux/actions';
 import Header from './Header';
 import Gallery from './Gallery';
 import Description from './Description';
-import Relationships from './Relationships';
+import Relationships from '../Relationships';
 import RightSide from './RightSide';
 import Loader from '../../../../shared/components/Loader';
 

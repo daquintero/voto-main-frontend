@@ -4,11 +4,13 @@ import React from 'react';
 import { Row, Col } from 'reactstrap';
 
 // Components
-import IndividualCardGrid from '../../../../Reusable/Individual/components/DetailedReduxCardGrid';
-import CorruptionCaseCardGrid from '../../../../Reusable/CorruptionCase/components/DetailedReduxCardGrid';
-import InformativeCardGrid from '../../../../Reusable/InformativeSnippet/components/DetailedReduxCardGrid';
+import IndividualCardGrid from '../../../Reusable/Individual/components/DetailedReduxCardGrid';
+import CorruptionCaseCardGrid from '../../../Reusable/CorruptionCase/components/DetailedReduxCardGrid';
+import InformativeCardGrid from '../../../Reusable/InformativeSnippet/components/DetailedReduxCardGrid';
 
-const Relationships = () => (
+
+// TODO Props validation
+const Relationships = (
   <Row>
     <Col xs={12} md={12} className="mt-2 p-1" style={{ 'background-color': '#edf7ff' }}>
       <IndividualCardGrid />

@@ -84,7 +84,7 @@ class TopBar extends Component {
     } = this.state;
     return (
       <>
-        <Navbar light expand="md" className="navbar fixed-top p-0">
+        <Navbar light expand="md" className="navbar fixed-top p-0 bg-layout">
           <Container className="navbar__wrapper">
             <NavbarBrand href="/" className="navbar__brand d-inline align-middle pt-2">
               <h4 className="m-0 pl-xs-3 pl-md-0">#VotoInformado2019</h4>

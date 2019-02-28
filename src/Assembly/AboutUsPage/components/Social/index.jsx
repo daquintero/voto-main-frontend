@@ -10,15 +10,37 @@ const Index = () => (
         <p className="lead text-center">
             No olvides seguirnos en Instagram
         </p>
+        <p className="text-center lead m-1">
+          <a
+            target="_blank"
+            rel="noreferrer noopener"
+            href="https://www.instagram.com/votoinformado2019/"
+            className="sl"
+          >
+            <span>
+        @votoinformado2019
+            </span>
+          </a>
+        </p>
         <p className="text-center m-1">
-          <a target="_blank" rel="noreferrer noopener" className="lead" href="https://www.instagram.com/praxispty/">
+          <a
+            target="_blank"
+            rel="noreferrer noopener"
+            className="lead sl"
+            href="https://www.instagram.com/praxispty/"
+          >
             <span>
         @praxispty
             </span>
           </a>
         </p>
         <p className="text-center lead m-1">
-          <a target="_blank" rel="noreferrer noopener" href="https://www.instagram.com/escuelacallejera/">
+          <a
+            target="_blank"
+            rel="noreferrer noopener"
+            href="https://www.instagram.com/escuelacallejera/"
+            className="sl"
+          >
             <span>
         @escuelacallejera
             </span>

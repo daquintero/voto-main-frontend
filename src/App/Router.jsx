@@ -28,7 +28,7 @@ import Map from '../Reusable/Map';
 const wrappedRoutes = () => (
   <div>
     <Layout />
-    <div className="layout">
+    <div className="bg-layout">
       <Route exact path="/" component={Home} />
       <Route path="/acerca" component={About} />
 

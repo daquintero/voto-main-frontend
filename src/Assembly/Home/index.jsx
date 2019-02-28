@@ -44,7 +44,7 @@ class Home extends PureComponent {
         <Modal isOpen={firstVisit} toggle={this.toggle}>
           <AboutPage />
         </Modal>
-        <div className="bg-light">
+        <div className="bg-shady-layout">
           <Container className="p-0">
             <TopBanner />
           </Container>

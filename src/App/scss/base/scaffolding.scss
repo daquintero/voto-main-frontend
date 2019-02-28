@@ -2,8 +2,11 @@
 
 // ---------------------- CUSTOM -----------------------
 
-// TODO ADD THEMIFY
-.layout {
+.bg-layout {
   //background: #f7f7f7;
     background-color: $baseLightest;
+}
+
+.bg-shady-layout {
+    background-color: $baseLighter;
 }

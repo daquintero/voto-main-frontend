@@ -2,7 +2,9 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import ReactHtmlParser from 'html-react-parser';
+import { Container } from 'reactstrap';
 
+// TODO CUSTOMIZE IMG
 
 class Description extends PureComponent {
   static propTypes = {
@@ -15,9 +17,9 @@ class Description extends PureComponent {
     } = this.props;
 
     return (
-      <div className="m-1 p-2">
+      <Container>
         {ReactHtmlParser(instance.longDescription)}
-      </div>
+      </Container>
     );
   }
 }
