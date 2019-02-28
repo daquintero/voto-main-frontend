@@ -38,9 +38,10 @@ const wrappedRoutes = () => (
       <Route path="/individuo/:id" component={Individual} />
       <Route path="/noticia/:id" component={InformativeSnippet} />
 
-    {/* Test Files */}
-    <Route path="/a" component={Scratch} />
-    <Route path="/map-test" component={Map} />
+      {/* Test Files */}
+      <Route path="/a" component={Scratch} />
+      <Route path="/map-test" component={Map} />
+    </div>
   </div>
 );
 
