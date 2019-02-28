@@ -1,6 +1,7 @@
 // Libraries
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import ReactHtmlParser from 'html-react-parser';
 
 
 class Description extends PureComponent {
@@ -15,8 +16,7 @@ class Description extends PureComponent {
 
     return (
       <div className="m-1 p-2">
-        { /* TODO: HTML parser */ }
-        {instance.longDescription}
+        {ReactHtmlParser(instance.longDescription)}
       </div>
     );
   }

@@ -24,7 +24,7 @@ const IndividualCardGrid = ({ instances, action }) => (
         key={instance.id}
       >
         <IndividualCard instance={instance} />
-        {action.loading && <Loader elemClass="load__card" />}
+        {action && action.loading && <Loader elemClass="load__card" />}
       </Col>
     ))}
   </Row>
