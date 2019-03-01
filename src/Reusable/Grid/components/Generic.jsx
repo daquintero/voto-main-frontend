@@ -1,4 +1,3 @@
-/* eslint-disable */
 // Grid of Variable Positions
 // Libraries
 import React, { PureComponent } from 'react';
@@ -18,7 +17,6 @@ class Generic extends PureComponent {
     gridClass: PropTypes.string.isRequired,
     relatedModelLabel: PropTypes.string.isRequired,
     parentModelLabel: PropTypes.string.isRequired,
-    container: PropTypes.string.isRequired,
     light: PropTypes.bool.isRequired,
   };
   render() {
@@ -32,13 +30,14 @@ class Generic extends PureComponent {
     return (
       instances && instances[0] ? (
         <div className={gridClass}>
-          {instances.map(instance => {
+          {instances.map((instance) => {
             if (instance.modelLabel) {
               return CardSelector(instance, 'relation', light);
-            } else {
-              instance.modelLabel = relatedModelLabel;
-              return CardSelector(instance, 'relation', light);
-            }})}
+            }
+            const withLabel = instance;
+            withLabel.modelLabel = relatedModelLabel;
+            return CardSelector(withLabel, 'relation', light);
+          })}
         </div>
       ) :
         <div

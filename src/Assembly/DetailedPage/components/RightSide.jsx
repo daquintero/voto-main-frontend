@@ -1,4 +1,3 @@
-/* eslint-disable */
 // Libraries
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
@@ -19,7 +18,9 @@ import TwitterFeed from '../../../Reusable/SocialShare/components/TwitterFeed';
 class RightSide extends PureComponent {
   static propTypes = {
     instance: PropTypes.instanceOf(Object).isRequired,
-    // Router
+    actions: PropTypes.instanceOf(Object).isRequired,
+
+    // Variable
     url: PropTypes.string.isRequired,
     laws: PropTypes.instanceOf(Array).isRequired,
     resources: PropTypes.instanceOf(Array).isRequired,
@@ -33,7 +34,7 @@ class RightSide extends PureComponent {
 
   render() {
     const {
-      instance, url, laws, resources
+      instance, url, laws, resources, actions,
     } = this.props;
     const { light } = this.state;
 
@@ -46,16 +47,14 @@ class RightSide extends PureComponent {
             url={`https://www.votoinformado2019.com${url}`}
           />
         </Row>
-        {/*{instance.corruptionRelatedFunds || instance.nonCorruptionRelatedFunds ? (*/}
-          <Row noGutters className="p-2 justify-content-center">
-            <MainFinancesNav
-              corruptionRelatedFunds={instance.corruptionRelatedFunds}
-              nonCorruptionRelatedFunds={instance.nonCorruptionRelatedFunds}
-              parent={typeInfo[instance.modelLabel].singular}
-              light={light}
-            />
-          </Row>
-        {/*) : null}*/}
+        <Row noGutters className="p-2 justify-content-center">
+          <MainFinancesNav
+            corruptionRelatedFunds={instance.corruptionRelatedFunds}
+            nonCorruptionRelatedFunds={instance.nonCorruptionRelatedFunds}
+            parent={typeInfo[instance.modelLabel].singular}
+            light={light}
+          />
+        </Row>
         <Row noGutters className="p-2 justify-content-center">
           <Statistics
             instances={instance.statistics}
@@ -71,28 +70,32 @@ class RightSide extends PureComponent {
         </Row>
         <Row noGutters className="p-2 justify-content-center">
           <CardGrid
-            relatedModelLabel="political.Resource"
+            relatedModelLabel="media.Resource"
             gridClass="variable-grid"
-            instances={resources.instances}
-            subsetNumber={resources.subsetNumber}
+            instances={resources}
+            subsetNumber={0}
             light={light}
           />
         </Row>
-        <Row noGutters className="p-2 justify-content-center">
-          {/* TODO FINish making it work */}
-          <TwitterFeed user={instance.twitterUsername}/>
-        </Row>
+        {actions.GET_DETAILED_PAGE.loaded && instance.twitterUsername ? (
+          <Row noGutters className="p-2 justify-content-center">
+            {/* TODO FINish making it work */}
+            <TwitterFeed user={instance.twitterUsername} />
+          </Row>
+        ) : null}
       </Row>
     );
   }
 }
 
 const mapStateToProps = (state) => {
+  const { actions } = state.openPage;
   const { laws } = state.openPage.relatedInstances;
   const { resources } = state.openPage.parentInstance.media;
   return {
     laws,
     resources,
+    actions,
   };
 };
 

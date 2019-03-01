@@ -35,7 +35,7 @@ export default function (instance, context, light) {
   switch (instance.modelLabel) {
     case 'corruption.InformativeSnippet':
       return (<INFOCard instance={instance} />);
-    case 'corruption.NewsLike':
+    case 'corruption.CorruptionCase':
       return (
         <CORRCard instance={instance} />
       );
@@ -67,7 +67,7 @@ export default function (instance, context, light) {
     //   return (<ORGCard instance={instance} />);
     case 'political.Law':
       return (<LAWCard instance={instance} />);
-    case 'political.Resource':
+    case 'media.Resource':
       return (<RESCard instance={instance} />);
     default:
       return null;

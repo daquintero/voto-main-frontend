@@ -38,7 +38,7 @@ const typeInfo = {
     name: 'leyes',
     singular: 'ley',
   },
-  'political.Resource': {
+  'media.Resource': {
     name: 'recursos',
     singular: 'recurso',
   },
