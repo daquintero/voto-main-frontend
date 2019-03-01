@@ -32,7 +32,7 @@
     "require-from-url": "^3.1.2"
   },
   "scripts": {
-    "start": "node scripts/start.js",
+    "start": "env-cmd .env.staging node scripts/start.js",
     "build": "node scripts/build.js && cp build/index.html build/200.html",
     "test": "node scripts/test.js"
   },
@@ -47,6 +47,7 @@
     "babel-plugin-named-asset-import": "^0.2.3",
     "babel-preset-react-app": "^5.0.4",
     "babel-runtime": "6.26.0",
+    "cross-env": "^5.2.0",
     "css-loader": "1.0.0",
     "enzyme": "^3.8.0",
     "enzyme-adapter-react-16": "^1.7.1",
