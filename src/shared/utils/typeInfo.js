@@ -38,6 +38,18 @@ const typeInfo = {
     name: 'leyes',
     singular: 'ley',
   },
+  'political.Resource': {
+    name: 'recursos',
+    singular: 'recurso',
+  },
+  noneType: {
+    name: 'información',
+    singular: 'información',
+  },
+  noneParent: {
+    name: 'elementos',
+    singular: 'elemento',
+  },
 };
 
 export default typeInfo;

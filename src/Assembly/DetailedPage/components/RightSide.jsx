@@ -12,6 +12,7 @@ import Statistics from './Statistics';
 import Share from '../../../Reusable/SocialShare/components/Card';
 import LawList from '../../../Reusable/Law/components/List';
 import typeInfo from '../../../shared/utils/typeInfo';
+import CardGrid from '../../../Reusable/Grid/components/Related/DetailedReduxCardGrid';
 
 // Declaration
 class RightSide extends PureComponent {
@@ -20,11 +21,12 @@ class RightSide extends PureComponent {
     // Router
     url: PropTypes.string.isRequired,
     laws: PropTypes.instanceOf(Array).isRequired,
+    resources: PropTypes.instanceOf(Array).isRequired,
   };
 
   render() {
     const {
-      instance, url, laws,
+      instance, url, laws, resources
     } = this.props;
 
     return (
@@ -54,6 +56,14 @@ class RightSide extends PureComponent {
         <Row noGutters className="p-2 justify-content-center">
           <LawList instances={laws.instances} parent={typeInfo[instance.modelLabel].singular} />
         </Row>
+        <Row noGutters className="p-2 justify-content-center">
+          <CardGrid
+            relatedModelLabel="political.Resource"
+            gridClass="variable-grid"
+            instances={resources.instances}
+            subsetNumber={resources.subsetNumber}
+          />
+        </Row>
       </Row>
     );
   }
@@ -61,8 +71,10 @@ class RightSide extends PureComponent {
 
 const mapStateToProps = (state) => {
   const { laws } = state.openPage.relatedInstances;
+  const { resources } = state.openPage.parentInstance.media;
   return {
     laws,
+    resources,
   };
 };
 

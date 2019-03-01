@@ -55,14 +55,15 @@ class DetailedReduxCardGrid extends PureComponent {
           instances={instances}
           action={actions.GET_MORE_RELATED_INSTANCES[relatedModelLabel]}
           gridClass={gridClass}
+          relatedModelLabel={relatedModelLabel}
         />
         {/* TODO Check subsets are not the same as before */}
         <Row className="p-2">
           <Button
             onClick={this.handleGetMore}
-            className="small-enlarge rounded-0 text-center border-0 mx-auto bg-white text-dark"
+            className="small-enlarge rounded-0 text-center border-0 mx-auto bg-white text-dark rel"
           >
-            Más {typeInfo[relatedModelLabel].name.capitalize}
+            Más {typeInfo[relatedModelLabel].name}
           </Button>
         </Row>
       </div>

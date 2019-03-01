@@ -27,8 +27,10 @@ import FINCard from '../../Reusable/FinanceItem/components/FinanceItem';
 import FINCardWP from '../../Reusable/FinanceItem/components/FinanceItemWP';
 // Organization TODO
 // import ORGCard from '../../Reusable/Organization/components/Card';
+// Resource
+import RESCard from '../../Reusable/Individual/components/Resource/components/Card';
 
-// ---------- Selector Function -----------
+// ---------- FUNCTION -----------
 export default function (instance, context) {
   switch (instance.type) {
     case 'corruption.InformativeSnippet':
@@ -65,6 +67,8 @@ export default function (instance, context) {
     //   return (<ORGCard instance={instance} />);
     case 'political.Law':
       return (<LAWCard instance={instance} />);
+    case 'political.Resource':
+      return (<RESCard instance={instance} />);
     default:
       return null;
   }
