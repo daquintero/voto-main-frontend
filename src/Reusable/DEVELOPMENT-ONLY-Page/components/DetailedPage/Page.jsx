@@ -1,5 +1,5 @@
 /* eslint-disable */
-// Full CorruptionCase for the Corruption CorruptionCase Component
+// Full NewsLike for the Corruption NewsLike Component
 import React, { PureComponent } from 'react';
 import { Container, Row, Col } from 'reactstrap';
 
@@ -54,7 +54,7 @@ class Page extends PureComponent {
             <h3 className="text-center mt-3">Estadística</h3>
             <Statistics />
             <h3 className="text-center mt-3"> Leyes Relacionadas </h3>
-            <LawList laws={lawsData}/>
+            <LawList instances={lawsData}/>
           </Col>
         </Row>
       </Container>

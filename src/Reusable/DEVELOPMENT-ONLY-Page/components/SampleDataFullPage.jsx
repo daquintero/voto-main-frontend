@@ -264,22 +264,22 @@ export const financialData = [
 // ------------------- LAWS -------------------------
 export const lawsData = [{
   code: 2,
-  briefDescription: 'This law talks about this issue',
+  briefDescription: 'This instance talks about this issue',
   category: 'Hello',
   source: ' This is my source',
 }, {
   code: 2,
-  briefDescription: 'This law talks about this issue',
+  briefDescription: 'This instance talks about this issue',
   category: 'Hello',
   source: ' This is my source',
 }, {
   code: 2,
-  briefDescription: 'This law talks about this issue',
+  briefDescription: 'This instance talks about this issue',
   category: 'Hello',
   source: ' This is my source',
 }, {
   code: 2,
-  briefDescription: 'This law talks about this issue',
+  briefDescription: 'This instance talks about this issue',
   category: 'Hello',
   source: ' This is my source',
 }];

@@ -29,7 +29,7 @@ export default function (instance) {
   switch (instance.type) {
     case 'corruption.InformativeSnippet':
       return (<INFOCard instance={instance} />);
-    case 'corruption.CorruptionCase':
+    case 'corruption.NewsLike':
       return (
         <CORRCard instance={instance} />
       );

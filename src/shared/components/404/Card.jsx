@@ -1,41 +1,59 @@
 // Not Found Card
-import React from 'react';
-import { Card, Row, Col } from 'reactstrap';
+import React, { PureComponent } from 'react';
+import { Card, Row, Col, CardBody } from 'reactstrap';
 import PropTypes from 'prop-types';
+import typeInfo from '../../../shared/utils/typeInfo';
 
 // Declaration
-const NFCard = ({ type, parent }) => ( // TODO REMOVE IF NOT NEEDED
-  <Row noGutters className="justify-content-center">
-    <Col sm={12} >
-      <Card>
-        <a href="https://studio.votoinformado2019.com">
-          <p className="m-1 px-2 small text-center">
-          Ahora mismo no tenemos {type} relacionadas a este {parent}.
-          </p>
-          <div className="bg-light">
-            <p className="lead text-center m-1">
+class NFCard extends PureComponent {
+  static propTypes = {
+    type: PropTypes.string.isRequired,
+    parent: PropTypes.string.isRequired,
+  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      open: false,
+    };
+  }
+  openMore = () => {
+    this.setState(prevState => ({ open: !prevState.open }));
+  };
+  render() {
+    const { type, parent } = this.props;
+    const { open } = this.state;
+    return (
+      <Row noGutters className="justify-content-center">
+        <Col sm={12} >
+          <Card onClick={this.openMore}>
+            <p className="m-1 px-2 small text-center">
+                Ahora mismo no hay {typeInfo[type].name} para este {parent}.
+            </p>
+            <p className="lead text-center mt-1 mx-1">
               ¿Quieres contribuir?
+              <i
+                className={`fal ${open ? 'fa-caret-up text-info' : 'fa-caret-down text-primary'} px-2`}
+              />
             </p>
-            <p className="m-0 p-1 text-center">
-              <i className="fal fa-search px-2" /> Investiga y anota fuentes creibles que encuentres.
-            </p>
-            <p className="m-0 p-1 text-center">
-              <i className="fal fa-sign-in-alt px-2" /> Entra a VotoStudio al tocarme.
-            </p>
-            <p className="m-0 p-1 text-center">
-              <i className="fal fa-check-square px-2" /> Y lo verificaremos contra el fake news.
-            </p>
-          </div>
-        </a>
-      </Card>
-    </Col>
-  </Row>
-);
-
-NFCard.propTypes = {
-  type: PropTypes.string.isRequired,
-  parent: PropTypes.string.isRequired,
-};
+            <CardBody className={`bg-light p-2 ${open ? '' : 'd-none'}`}>
+              <a href="https://studio.votoinformado2019.com" className="sl">
+                <p className="m-0 p-1 text-center">
+                  <i className="fal fa-search px-2" /> Investiga y anota fuentes creíbles que encuentres.
+                </p>
+                <p className="m-0 p-1 text-center">
+                  <i className="fal fa-sign-in-alt px-2" /> ¡Entra a VotoStudio tocándome y contribuye!
+                </p>
+                <p className="m-0 p-1 text-center">
+                  <i className="fal fa-check-square px-2" /> Y lo verifícaremos contra el fake news.
+                </p>
+              </a>
+            </CardBody>
+          </Card>
+        </Col>
+      </Row>
+    );
+  }
+}
 
 // TODO State Store Connection
 export default NFCard;

@@ -1,22 +1,27 @@
 const typeInfo = {
   'corruption.InformativeSnippet': {
     name: 'noticias',
+    singular: 'noticia',
     reduxState: 'informativeSnippets',
   },
   'corruption.CorruptionCase': {
     name: 'casos de corrupcion',
+    singular: 'caso de corrupcion',
     reduxState: 'corruptionCases',
   },
   'corruption.FinancialItem': {
     name: 'finanzas',
+    singular: 'finanza',
     reduxState: 'financialItems',
   },
   'political.Individual': {
     name: 'individuos',
+    singular: 'individuo',
     reduxState: 'individuals',
   },
   'political.Controversy': {
     name: 'controversias',
+    singular: 'controversia',
     reduxState: 'controversies',
   },
   'political.Promise': {
@@ -26,10 +31,12 @@ const typeInfo = {
     name: 'experiencia',
   },
   'political.Statistic': {
-    name: 'estadistica',
+    name: 'estadísticas',
+    singular: 'estadística',
   },
   'political.Law': {
     name: 'leyes',
+    singular: 'ley',
   },
 };
 

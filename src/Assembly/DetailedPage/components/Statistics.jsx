@@ -6,31 +6,31 @@ import typeInfo from '../../../shared/utils/typeInfo';
 
 // Components
 import StatisticBlock from '../../../Reusable/Statistics/components/StatisticBlock';
-// TODO import NFCard from '../../../shared/components/404/Card';
+import NFCard from '../../../shared/components/404/Card';
 
 // Declaration
 class Statistics extends PureComponent {
   static propTypes = {
     instances: PropTypes.instanceOf(Array).isRequired,
-    type: PropTypes.string.isRequired,
+    parent: PropTypes.string.isRequired,
   };
 
   render() {
     const {
       instances,
-      type,
+      parent,
     } = this.props;
 
     return (
       <>
-        <h4 className="text-center mt-2">{typeInfo[type].name.capitalize}</h4>
+        <h4 className="text-center mt-2 rel">{typeInfo['political.Statistic'].name}</h4>
         <Row className="mx-auto">
           {instances ? (instances.map(instance => (
             <Col xs={6} className="p-2">
               <StatisticBlock instance={instance} />
             </Col>
           ))) : (
-            null
+            <NFCard parent={typeInfo[parent].singular} type="political.Statistic" />
           )}
         </Row>
       </>

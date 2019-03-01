@@ -1,5 +1,5 @@
 /* eslint-disable */
-// Full CorruptionCase for the Corruption CorruptionCase Component
+// Full NewsLike for the Corruption NewsLike Component
 import React, { PureComponent } from 'react';
 import { Container, Row, Col } from 'reactstrap';
 

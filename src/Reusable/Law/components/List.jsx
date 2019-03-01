@@ -2,17 +2,31 @@
 
 // Libraries
 import React from 'react';
-import { ListGroup } from 'reactstrap';
+import PropTypes from 'prop-types';
+import { ListGroup, Row } from 'reactstrap';
 
 // Components
 import Card from './Card';
+import NFCard from '../../../shared/components/404/Card';
 
-const LawsList = laws => (
-  <ListGroup className="p-2">
-    { laws.map(law => (
-      <Card law={law} />
+const LawsList = ({ instances, parent }) => (
+  <Row className="mx-auto justify-content-center">
+    <h4 className="text-center mt-2 rel">Leyes Relacionadas</h4>
+    {instances ? (
+      <ListGroup className="p-2">
+        { instances.map(instance => (
+          <Card instance={instance} />
         ))}
-  </ListGroup>
+      </ListGroup>
+    ) : (
+      <NFCard type="political.Law" parent={parent} />
+    )}
+  </Row>
 );
+
+LawsList.propTypes = {
+  instances: PropTypes.instanceOf(Array).isRequired,
+  parent: PropTypes.instanceOf(Object).isRequired,
+};
 
 export default LawsList;

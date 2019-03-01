@@ -5,9 +5,9 @@ import { Container, Row, Col } from 'reactstrap';
 // TODO FINISH PAGE TEST
 import Card from '../Reusable/Law/components/Card';
 
-const law = {
+const instance = {
   size: 'full',
-  type: 'law',
+  type: 'instance',
   code: 90,
   briefDescription: 'A brief description about the issues that come up',
   category: 'Employment',
@@ -47,7 +47,7 @@ const Scratch = () => (
     <Container>
       <Row noGutters>
         <Col xs={4}>
-          <Card law={law} />
+          <Card instance={instance} />
         </Col>
       </Row>
     </Container>

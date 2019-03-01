@@ -5,24 +5,24 @@ import { Container, Row, Col } from 'reactstrap';
 import LawsList from '../Reusable/Law/components/List';
 
 // // Each Compendium
-const laws = [{
+const instances = [{
   code: 2,
-  briefDescription: 'This law talks about this issue',
+  briefDescription: 'This instance talks about this issue',
   category: 'Hello',
   source: ' This is my source',
 }, {
   code: 2,
-  briefDescription: 'This law talks about this issue',
+  briefDescription: 'This instance talks about this issue',
   category: 'Hello',
   source: ' This is my source',
 }, {
   code: 2,
-  briefDescription: 'This law talks about this issue',
+  briefDescription: 'This instance talks about this issue',
   category: 'Hello',
   source: ' This is my source',
 }, {
   code: 2,
-  briefDescription: 'This law talks about this issue',
+  briefDescription: 'This instance talks about this issue',
   category: 'Hello',
   source: ' This is my source',
 }];
@@ -32,7 +32,7 @@ const Scratch = () => (
     <Container>
       <Row>
         <Col md={4}>
-          <LawsList laws={laws} />
+          <LawsList instances={instances} />
         </Col>
       </Row>
     </Container>

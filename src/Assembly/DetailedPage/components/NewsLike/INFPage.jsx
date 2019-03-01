@@ -1,3 +1,4 @@
+/* eslint-disable */
 // Libraries
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
@@ -11,17 +12,17 @@ import { GET_DETAILED_PAGE } from '../../redux/actionCreators';
 
 // Components
 import Header from './Header';
-// import Gallery from './Gallery';
+import Gallery from './Gallery';
 import Description from '../Description';
 import Relationships from '../Relationships';
 import RightSide from '../RightSide';
 import Loader from '../../../../shared/components/Loader';
 
 
-const parentModelLabel = 'political.Individual';
+const parentModelLabel = 'political.InformativeSnippet';
 
 
-class Page extends PureComponent {
+class CCPage extends PureComponent {
   static propTypes = {
     // Redux
     dispatch: PropTypes.func.isRequired,
@@ -60,15 +61,15 @@ class Page extends PureComponent {
         <Row className="p-2 overflow-hidden">
           <Col xs={12} md={8} className="bg-layout overflow-hidden">
             <Header instance={instance} />
-            {/* <Gallery instance={instance} /> */}
+            {/*<Gallery instance={instance} />*/}
             <Description instance={instance} />
             <Relationships />
           </Col>
           <Col xs={12} md={4} className="p-2">
-            <RightSide
-              instance={instance}
-              url={this.props.match.url}
-            />
+           <RightSide
+             instance={instance}
+             url={this.props.match.url}
+           />
           </Col>
         </Row>
       </Container>
@@ -86,4 +87,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(Page);
+export default connect(mapStateToProps)(CCPage);

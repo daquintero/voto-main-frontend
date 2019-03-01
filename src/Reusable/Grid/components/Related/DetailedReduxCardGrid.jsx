@@ -50,8 +50,7 @@ class DetailedReduxCardGrid extends PureComponent {
 
     return (
       <div>
-        {console.log(typeInfo[relatedModelLabel].name)}
-        <h4 className="p-2">{typeInfo[relatedModelLabel].name} Relacionados</h4>
+        <h4 className="p-2 rel">{typeInfo[relatedModelLabel].name} Relacionados</h4>
         <CardGrid
           instances={instances}
           action={actions.GET_MORE_RELATED_INSTANCES[relatedModelLabel]}

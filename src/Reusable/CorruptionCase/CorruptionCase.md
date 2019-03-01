@@ -2,9 +2,9 @@
 
 The corruption case component
 displays the different forms of 
-CorruptionCase Card and Page.
+CorruptionCase Card and CCPage.
 
-The Full Page is the compendium 
+The Full CCPage is the compendium 
 of information related to that
 specific Corruption Case model. 
 

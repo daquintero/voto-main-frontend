@@ -2,8 +2,11 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
+// Components
+import VIGallery from '../../../../Reusable/Images/components/VIGallery';
 
-class Description extends PureComponent {
+
+class Gallery extends PureComponent {
   static propTypes = {
     instance: PropTypes.instanceOf(Object).isRequired,
   };
@@ -14,12 +17,9 @@ class Description extends PureComponent {
     } = this.props;
 
     return (
-      <div className="m-1 p-2">
-        { /* TODO: HTML parser */ }
-        {instance.longDescription}
-      </div>
+      <VIGallery images={instance.media.images} />
     );
   }
 }
 
-export default Description;
+export default Gallery;
