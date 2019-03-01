@@ -17,7 +17,7 @@ class Relationships extends PureComponent {
     const { individuals, corruptionCases, informativeSnippets } = this.props;
     return (
       <Row>
-        <Col xs={12} className="mt-2 p-1 bg-shady-layout">
+        <Col xs={12} className="mt-2 p-1 bg-layout">
           <CardGrid
             relatedModelLabel="political.Individual"
             gridClass="variable-grid"
@@ -25,7 +25,7 @@ class Relationships extends PureComponent {
             subsetNumber={individuals.subsetNumber}
           />
         </Col>
-        <Col xs={12} className="p-1 bg-middle-layout">
+        <Col xs={12} className="p-1 bg-layout">
           <CardGrid
             relatedModelLabel="corruption.CorruptionCase"
             gridClass="variable-grid"
@@ -34,7 +34,7 @@ class Relationships extends PureComponent {
           />
         </Col>
         {/* TODO Organization Card Grid */}
-        <Col xs={12} className="p-1 bg-shady-layout">
+        <Col xs={12} className="p-1 bg-layout">
           <CardGrid
             relatedModelLabel="corruption.InformativeSnippet"
             gridClass="variable-grid"

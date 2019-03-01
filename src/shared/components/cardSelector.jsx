@@ -32,7 +32,7 @@ import RESCard from '../../Reusable/Individual/components/Resource/components/Ca
 
 // ---------- FUNCTION -----------
 export default function (instance, context) {
-  switch (instance.type) {
+  switch (instance.modelLabel) {
     case 'corruption.InformativeSnippet':
       return (<INFOCard instance={instance} />);
     case 'corruption.NewsLike':

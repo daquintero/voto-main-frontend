@@ -26,6 +26,7 @@ class DetailedReduxCardGrid extends PureComponent {
     // Variable Props
     relatedModelLabel: PropTypes.string.isRequired,
     gridClass: PropTypes.string.isRequired,
+    light: PropTypes.bool.isRequired,
   };
 
   handleGetMore = () => {
@@ -46,22 +47,25 @@ class DetailedReduxCardGrid extends PureComponent {
       actions,
       relatedModelLabel,
       gridClass,
+      light,
     } = this.props;
 
     return (
-      <div>
+      <div className="p-2">
         <h4 className="p-2 rel">{typeInfo[relatedModelLabel].name} Relacionados</h4>
         <CardGrid
           instances={instances}
           action={actions.GET_MORE_RELATED_INSTANCES[relatedModelLabel]}
           gridClass={gridClass}
           relatedModelLabel={relatedModelLabel}
+          light={light}
         />
         {/* TODO Check subsets are not the same as before */}
-        <Row className="p-2">
+        <Row noGutters className="p-2">
           <Button
             onClick={this.handleGetMore}
-            className="small-enlarge rounded-0 text-center border-0 mx-auto bg-white text-dark rel"
+            className={`${light ? 'bg-layout' : 'bg-shady-layout'}
+            small-enlarge rounded-0 text-center border-0 mx-auto more text-dark`}
           >
             Más {typeInfo[relatedModelLabel].name}
           </Button>

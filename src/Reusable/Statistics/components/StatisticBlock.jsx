@@ -15,13 +15,15 @@ class StatisticBlock extends PureComponent {
     const { instance } = this.props;
     return (
       <div className="mincontent">
-        <a target="_blank" rel="noreferrer noopener" href={instance.source}>
-          <Card className="small-enlarge bg-light mx-auto justify-content-center text-center rounded-0 border-0">
-            <i className={`pt-2 fal fa-${instance.icon}`} />
-            <p className="m-1 font-weight-bold">
+        <a className="sl" target="_blank" rel="noreferrer noopener" href={instance.source}>
+          <Card
+            className="small-enlarge bg-layout mx-auto justify-content-center text-center rounded-0 border-0"
+          >
+            <h5 className="m-1 font-weight-bold">
+              <i className={`p-2 fal fa-${instance.icon}`} />
               { typeof instance.value === 'number' ? numeral(instance.value).format('0,0') : instance.value}
-            </p>
-            <p className="mb-1 mt-0 p-1">{instance.name}</p>
+            </h5>
+            <p className="mb-1 mt-0 p-1 small">{instance.name}</p>
           </Card>
         </a>
       </div>

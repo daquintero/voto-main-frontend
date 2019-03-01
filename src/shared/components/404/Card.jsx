@@ -9,6 +9,7 @@ class NFCard extends PureComponent {
   static propTypes = {
     type: PropTypes.string.isRequired,
     parent: PropTypes.string.isRequired,
+    light: PropTypes.bool.isRequired,
   };
   constructor(props) {
     super(props);
@@ -20,14 +21,13 @@ class NFCard extends PureComponent {
     this.setState(prevState => ({ open: !prevState.open }));
   };
   render() {
-    const { type, parent } = this.props;
+    const { type, parent, light } = this.props;
     const { open } = this.state;
     return (
-      <Row noGutters className="justify-content-center">
+      <Row noGutters className="justify-content-center align-content-center span-all border-0 rounded-0">
         <Col sm={12} >
-          <Card onClick={this.openMore}>
+          <Card onClick={this.openMore} className={`border-0 ${light ? 'bg-layout' : 'bg-shady-layout'}`}>
             <p className="m-1 px-2 small text-center">
-              {console.log(type)}
                 Ahora mismo no hay {typeInfo[type].name} con relación a este {parent}.
             </p>
             <p className="lead text-center mt-1 mx-1">

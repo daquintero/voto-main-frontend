@@ -19,6 +19,7 @@ class MainFinancesNav extends PureComponent {
     corruptionRelatedFunds: PropTypes.number.isRequired,
     nonCorruptionRelatedFunds: PropTypes.number.isRequired,
     parent: PropTypes.string.isRequired,
+    light: PropTypes.bool.isRequired,
   };
   constructor(props) {
     super(props);
@@ -32,7 +33,12 @@ class MainFinancesNav extends PureComponent {
   };
 
   render() {
-    const { corruptionRelatedFunds, nonCorruptionRelatedFunds, parent } = this.props;
+    const {
+      corruptionRelatedFunds,
+      nonCorruptionRelatedFunds,
+      parent,
+      light,
+    } = this.props;
     const { showModal } = this.state;
     return (
       <div className="justify-content-center">
@@ -55,7 +61,11 @@ class MainFinancesNav extends PureComponent {
             <FinanceModal isOpen={showModal} toggle={this.toggleModal} />
           </>
         ) : (
-          <NFCard type="corruption.FinancialItem" parent={parent} />
+          <NFCard
+            type="corruption.FinancialItem"
+            parent={parent}
+            light={light}
+          />
         ) }
       </div>
     );

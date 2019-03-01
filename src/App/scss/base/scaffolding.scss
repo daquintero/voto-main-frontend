@@ -3,14 +3,23 @@
 // ---------------------- CUSTOM -----------------------
 
 .bg-layout {
-  //background: #f7f7f7;
     background-color: $baseLightest;
 }
+
 
 .bg-shady-layout {
     background-color: $baseLighter;
 }
+// TODO Improve buttons
+//button > .bg-shady-layout:hover {
+//    background-color: $baseLightest !important;
+//}
+
 
 .bg-middle-layout {
     background-color: $baseMiddle;
+}
+
+bg-above-background {
+    background-color: $aboveLayout;
 }

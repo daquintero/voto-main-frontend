@@ -13,6 +13,7 @@ import Share from '../../../Reusable/SocialShare/components/Card';
 import LawList from '../../../Reusable/Law/components/List';
 import typeInfo from '../../../shared/utils/typeInfo';
 import CardGrid from '../../../Reusable/Grid/components/Related/DetailedReduxCardGrid';
+import TwitterFeed from '../../../Reusable/SocialShare/components/TwitterFeed';
 
 // Declaration
 class RightSide extends PureComponent {
@@ -23,11 +24,18 @@ class RightSide extends PureComponent {
     laws: PropTypes.instanceOf(Array).isRequired,
     resources: PropTypes.instanceOf(Array).isRequired,
   };
+  constructor(props) {
+    super(props);
+    this.state = {
+      light: true,
+    };
+  }
 
   render() {
     const {
       instance, url, laws, resources
     } = this.props;
+    const { light } = this.state;
 
     return (
       <Row noGutters>
@@ -44,6 +52,7 @@ class RightSide extends PureComponent {
               corruptionRelatedFunds={instance.corruptionRelatedFunds}
               nonCorruptionRelatedFunds={instance.nonCorruptionRelatedFunds}
               parent={typeInfo[instance.modelLabel].singular}
+              light={light}
             />
           </Row>
         {/*) : null}*/}
@@ -54,7 +63,11 @@ class RightSide extends PureComponent {
           />
         </Row>
         <Row noGutters className="p-2 justify-content-center">
-          <LawList instances={laws.instances} parent={typeInfo[instance.modelLabel].singular} />
+          <LawList
+            instances={laws.instances}
+            parent={typeInfo[instance.modelLabel].singular}
+            light={light}
+          />
         </Row>
         <Row noGutters className="p-2 justify-content-center">
           <CardGrid
@@ -62,7 +75,12 @@ class RightSide extends PureComponent {
             gridClass="variable-grid"
             instances={resources.instances}
             subsetNumber={resources.subsetNumber}
+            light={light}
           />
+        </Row>
+        <Row noGutters className="p-2 justify-content-center">
+          {/* TODO FINish making it work */}
+          <TwitterFeed user={instance.twitterUsername}/>
         </Row>
       </Row>
     );

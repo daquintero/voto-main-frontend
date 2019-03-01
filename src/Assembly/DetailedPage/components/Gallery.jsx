@@ -10,17 +10,31 @@ class Gallery extends PureComponent {
   static propTypes = {
     instance: PropTypes.instanceOf(Object).isRequired,
   };
+  constructor(props) {
+    super(props);
+    this.state = {
+      imagesArray: [],
+    };
+  }
+  componentDidMount() {
+    this.parseImages();
+  }
+
+  parseImages = () => {
+    const { images } = this.props.instance.media;
+    const parsedImages = images.slice(2).map(image => image.galleryObj);
+    this.setState(({ imagesArray: parsedImages }));
+  };
 
   render() {
     const {
-      instance,
-    } = this.props;
+      imagesArray,
+    } = this.state;
 
     return (
-      <>
-        {console.log(instance)}
-        <VIGallery instances={instance.media.images} />
-      </>
+      <div className="p-4">
+        <VIGallery instances={imagesArray} />
+      </div>
     );
   }
 }

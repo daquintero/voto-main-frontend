@@ -61,7 +61,7 @@ class CCPage extends PureComponent {
         <Row className="p-2 overflow-hidden">
           <Col xs={12} md={8} className="bg-layout overflow-hidden">
             <Header instance={instance} />
-            {/*<Gallery instance={instance} />*/}
+            <Gallery instance={instance} />
             <Description instance={instance} />
             <Relationships />
           </Col>

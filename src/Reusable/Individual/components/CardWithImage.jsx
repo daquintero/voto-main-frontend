@@ -15,7 +15,7 @@ import layoutMap from '../styling/layoutMap';
 import getColDims from '../../../shared/utils/getColDims';
 
 const CardWithImage = ({ instance }) => {
-  const primaryImage = instance.images[0];
+  const primaryImage = instance.media.images[0];
   return (
     <Card className="border-0 bg-light rounded-0 small-enlarge span-2-rows">
       <Link to={`/individuo/${instance.id}`}>
@@ -24,14 +24,12 @@ const CardWithImage = ({ instance }) => {
             {...getColDims(layoutMap, instance.size, 'outer', 'wrapper')}
           >
             <img
-              className="img-cover"
+              className="img-full"
               src={primaryImage.url}
               alt="Something"
             />
           </Col>
-          <Col
-            {...getColDims(layoutMap, instance.size, 'inner', 'contentWrapper')}
-          >
+          <Col >
             <CardBody className="p-2">
               <Row noGutters>
                 <Col xs={12} className="mb-2">

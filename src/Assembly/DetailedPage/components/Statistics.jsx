@@ -1,3 +1,4 @@
+/* eslint-disable */
 // Libraries
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
@@ -26,9 +27,9 @@ class Statistics extends PureComponent {
         <h4 className="text-center mt-2 rel">{typeInfo['political.Statistic'].name}</h4>
         <Row className="mx-auto">
           {instances ? (instances.map(instance => (
-            <Col xs={6} className="p-2">
+            <div className="p-2 variable-grid">
               <StatisticBlock instance={instance} />
-            </Col>
+            </div>
           ))) : (
             <NFCard parent={typeInfo[parent].singular} type="political.Statistic" />
           )}

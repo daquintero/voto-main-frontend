@@ -12,12 +12,12 @@ import { GET_DETAILED_PAGE } from '../../redux/actionCreators';
 
 // Components
 import Header from './Header';
-// import Gallery from '../Gallery';
+import Gallery from '../Gallery';
 import Description from '../Description';
 import Relationships from '../Relationships';
 import RightSide from '../RightSide';
 import Loader from '../../../../shared/components/Loader';
-import History from './History';
+// import History from './History';
 
 const parentModelLabel = 'political.Individual';
 
@@ -59,15 +59,15 @@ class Page extends PureComponent {
     return actions.GET_DETAILED_PAGE.loaded ? (
       <Container>
         <Row className="p-2 overflow-hidden">
-          <Col xs={12} md={8} className="bg-layout overflow-hidden">
+          <Col xs={12} md={8} className="bg-layout overflow-hidden p-0">
             <Header instance={instance} />
-            {/* <Gallery instance={instance} /> */}
             <Description instance={instance} />
+            <Gallery instance={instance} />
             {/*TODO Finish connecting */}
             {/* <History /> */}
             <Relationships />
           </Col>
-          <Col xs={12} md={4} className="p-2">
+          <Col xs={12} md={4} className="p-2 bg-shady-layout">
             <RightSide
               instance={instance}
               url={this.props.match.url}

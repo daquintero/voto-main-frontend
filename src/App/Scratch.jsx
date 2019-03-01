@@ -2,16 +2,15 @@
 import React from 'react';
 import { Container, Row, Col } from 'reactstrap';
 
-// TODO FINISH PAGE TEST
-import Card from '../shared/components/404/Card';
-
 
 const Scratch = () => (
   <div className="layout">
     <Container>
       <Row>
-        <Col md={4} >
-          <Card />
+        <Col xs={3}>
+          <a className="twitter-timeline" href="https://twitter.com/NitoCortizo?ref_src=twsrc%5Etfw">Tweets by
+            NitoCortizo
+          </a>
         </Col>
       </Row>
     </Container>

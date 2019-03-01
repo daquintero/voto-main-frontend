@@ -16,6 +16,11 @@
 .span-2-rows {
   grid-row: span 2;
 }
+.span-all {
+  grid-column: 1/-1;
+  max-width: 400px;
+  justify-self: center;
+}
 
 
 .mincontent {

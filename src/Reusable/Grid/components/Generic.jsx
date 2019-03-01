@@ -2,7 +2,6 @@
 // Grid of Variable Positions
 // Libraries
 import React, { PureComponent } from 'react';
-import { Col } from 'reactstrap';
 // Prop Types
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -11,7 +10,6 @@ import { connect } from 'react-redux';
 import CardSelector from '../../../shared/components/cardSelector';
 import NFCard from '../../../shared/components/404/Card';
 import typeInfo from '../../../shared/utils/typeInfo';
-import gridLayout from '../styling/gridLayouts';
 
 // Declaration
 class Generic extends PureComponent {
@@ -21,6 +19,7 @@ class Generic extends PureComponent {
     relatedModelLabel: PropTypes.string.isRequired,
     parentModelLabel: PropTypes.string.isRequired,
     container: PropTypes.string.isRequired,
+    light: PropTypes.bool.isRequired,
   };
   render() {
     const {
@@ -28,11 +27,12 @@ class Generic extends PureComponent {
       gridClass,
       relatedModelLabel,
       parentModelLabel,
-      container,
+      light,
     } = this.props;
     return (
       instances && instances[0] ? (
         <div className={gridClass}>
+          {console.log(instances)}
           {instances.map(instance => (
             CardSelector(instance)
           ))}
@@ -42,7 +42,11 @@ class Generic extends PureComponent {
           className={`mx-auto justify-content-center align-items-center ${gridClass}`}
         >
           {/* TODO PASS THIS BY PROPS */}
-          <NFCard type={relatedModelLabel} parent={typeInfo[parentModelLabel].singular} />
+          <NFCard
+            type={relatedModelLabel}
+            parent={typeInfo[parentModelLabel].singular}
+            light={light}
+          />
         </div>
     );
   }
