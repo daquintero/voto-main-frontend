@@ -6,6 +6,7 @@ import { initializeActions, actionResult } from '../../../shared/utils/asyncHelp
 
 
 const initialState = {
+  firstVisit: true,
   search: {
     instances: [],
   },
@@ -21,6 +22,11 @@ const initialState = {
 
 export default (state = initialState, action) => {
   switch (action.type) {
+    case 'FIRST_VISIT':
+      return {
+        ...state,
+        firstVisit: false,
+      };
     case GET_HOME.REQUEST:
       return {
         ...state,

@@ -4,7 +4,14 @@ import {
 } from './actionCreators';
 import service from '../service';
 
+// ------- FIRST VISIT --------
+export const openFirstVisit = () => (dispatch) => {
+  dispatch({
+    type: 'FIRST_VISIT',
+  });
+};
 
+// ------ HOME SERVICES -------
 export const getHome = () => (dispatch) => {
   dispatch({
     type: GET_HOME.REQUEST,
