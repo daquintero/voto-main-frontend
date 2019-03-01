@@ -1,62 +1,92 @@
-/* eslint-disable */
-// Home Page
-// Libraries
+// Absolute Imports
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import { Container, Modal } from 'reactstrap';
 
-// Prop Types
-import PropTypes from 'prop-types';
-
 // Components
-import MainGrid from './components/Main';
-import Search from './components/Search';
+import AboutPage from '../AboutUsPage/components/Page';
+import CardRow from '../../Reusable/CardRow';
 import TopBanner from './components/TopBanner';
+import Map from '../../Reusable/Map';
 
-// TODO REMOVE TEST
-import AboutPage from '../AboutUsPage/components/Page'
+// Actions
+import { getHome } from './redux/actions';
 
-// Declaration
+
 class Home extends PureComponent {
   static propTypes = {
-    mainResults: PropTypes.arrayOf(Object).isRequired,
-    searchResults: PropTypes.arrayOf(Object).isRequired,
+    // Redux
+    dispatch: PropTypes.func.isRequired,
+    informativeSnippets: PropTypes.instanceOf(Array).isRequired,
+    actions: PropTypes.instanceOf(Object).isRequired,
   };
+
   constructor(props) {
     super(props);
     this.state = {
       firstVisit: false,
     };
-    this.toggle = this.toggle.bind(this);
   }
 
-  toggle() {
+  componentDidMount() {
+    const { dispatch } = this.props;
+    dispatch(getHome());
+  }
+
+  toggle = () => {
     this.setState(prevState => ({
-      modal: !prevState.modal
+      modal: !prevState.modal,
     }));
-  }
-
+  };
 
   render() {
-    const { mainResults, searchResults } = this.props;
-    const { firstVisit } = this.state;
+    // State
+    const {
+      firstVisit,
+    } = this.state;
+
+    // Props
+    const {
+      informativeSnippets, actions,
+    } = this.props;
+
     return (
-      <>
+      <div className="home__wrapper">
         <Modal isOpen={firstVisit} toggle={this.toggle}>
           <AboutPage />
         </Modal>
-        <div className="bg-shady-layout">
-          <Container className="p-0">
+        <div className="home__top-banner__wrapper">
+          <Container>
             <TopBanner />
           </Container>
         </div>
-        <Container>
-          <MainGrid instances={mainResults} />
-          <Search instances={searchResults} />
-        </Container>
-      </>
+        <div className="home__news__wrapper py-5">
+          <Container>
+            {actions.GET_HOME.loaded && (
+              <CardRow instances={informativeSnippets} />
+            )}
+          </Container>
+        </div>
+        <div className="home__map__wrapper">
+          <Container className="py-5">
+            <Map />
+          </Container>
+        </div>
+      </div>
     );
   }
 }
 
-// TODO State Store Connection
-export default Home;
+
+const mapStateToProps = (state) => {
+  const { actions } = state.home;
+  const { informativeSnippets } = state.home.content;
+
+  return {
+    informativeSnippets,
+    actions,
+  };
+};
+
+export default connect(mapStateToProps)(Home);

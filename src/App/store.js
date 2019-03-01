@@ -4,11 +4,13 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 
 import mapReducer from '../Reusable/Map/redux/reducer';
 import detailPageReducer from '../Assembly/DetailedPage/redux/reducer';
+import homeReducer from '../Assembly/Home/redux/reducer';
 
 
 const reducer = combineReducers({
   openPage: detailPageReducer,
   map: mapReducer,
+  home: homeReducer,
 });
 
 

@@ -9,13 +9,14 @@ import numeral from 'numeral';
 // Styling
 import layoutMap from '../styling/layoutMap';
 
+
 class CardWithoutImage extends PureComponent {
   static propTypes = {
     instance: PropTypes.instanceOf(Object).isRequired,
   };
   render() {
     const { instance } = this.props;
-    const primaryStatistic = instance.statistics ? instance.statistics[0] : null;
+    const primaryStatistic = instance.statistics && instance.statistics[0];
     return (
       <Card className="bg-light border-0 rounded-0 small-enlarge mincontent">
         <Link to={`/noticia/${instance.id}`}>
