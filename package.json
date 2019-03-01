@@ -32,8 +32,9 @@
     "require-from-url": "^3.1.2"
   },
   "scripts": {
-    "start": "env-cmd .env.staging node scripts/start.js",
+    "start": "scripts/start.js",
     "build": "node scripts/build.js && cp build/index.html build/200.html",
+    "build:staging": "env-cmd .env.staging npm run build",
     "test": "node scripts/test.js"
   },
   "devDependencies": {
