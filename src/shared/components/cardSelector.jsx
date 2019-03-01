@@ -31,7 +31,7 @@ import FINCardWP from '../../Reusable/FinanceItem/components/FinanceItemWP';
 import RESCard from '../../Reusable/Individual/components/Resource/components/Card';
 
 // ---------- FUNCTION -----------
-export default function (instance, context) {
+export default function (instance, context, light) {
   switch (instance.modelLabel) {
     case 'corruption.InformativeSnippet':
       return (<INFOCard instance={instance} />);
@@ -45,7 +45,7 @@ export default function (instance, context) {
       }
       return (<FINCardWP instance={instance} />);
     case 'political.Individual':
-      return (<INDICard instance={instance} />);
+      return (<INDICard instance={instance} light={light} />);
     case 'political.Controversy':
       if (context === 'relation') {
         return (<CONTCard instance={instance} />);

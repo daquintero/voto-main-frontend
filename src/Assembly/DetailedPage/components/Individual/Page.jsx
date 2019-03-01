@@ -17,7 +17,7 @@ import Description from '../Description';
 import Relationships from '../Relationships';
 import RightSide from '../RightSide';
 import Loader from '../../../../shared/components/Loader';
-// import History from './History';
+import History from './History';
 
 const parentModelLabel = 'political.Individual';
 
@@ -64,7 +64,7 @@ class Page extends PureComponent {
             <Description instance={instance} />
             <Gallery instance={instance} />
             {/*TODO Finish connecting */}
-            {/* <History /> */}
+            <History />
             <Relationships />
           </Col>
           <Col xs={12} md={4} className="p-2 bg-shady-layout">

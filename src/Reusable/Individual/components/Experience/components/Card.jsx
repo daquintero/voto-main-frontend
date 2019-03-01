@@ -1,8 +1,9 @@
 // Experience Card
 // Libraries
 import React, { Component } from 'react';
-import { Card, CardHeader, CardBody } from 'reactstrap';
+import { Card, CardHeader } from 'reactstrap';
 import PropTypes from 'prop-types';
+import ReactHtmlParser from 'html-react-parser';
 
 // Icon selector
 
@@ -34,9 +35,11 @@ class ExpCard extends Component {
             {instance.organization}
           </p>
         </CardHeader>
-        <CardBody className={`bg-light p-2 ${open && instance.briefDescription ? '' : 'd-none'}`}>
-          <p className="p-1 m-0">{instance.briefDescription}</p>
-        </CardBody>
+        <div className={`bg-light w-100 p-2 ${open && instance.description ? '' : 'd-none'}`}>
+          <p className="p-1 m-0">
+            {ReactHtmlParser(instance.description)}
+          </p>
+        </div>
       </Card>
     );
   }

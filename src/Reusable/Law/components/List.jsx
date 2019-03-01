@@ -15,7 +15,6 @@ const LawsList = ({ instances, parent, light }) => (
     <Row noGutters className="text-center justify-content-center">
       {instances[0] ? (
         <ListGroup className="p-2">
-          {console.table('shit')}
           { instances.map(instance => (
             <Card instance={instance} />
         ))}

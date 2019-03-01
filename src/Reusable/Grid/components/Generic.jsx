@@ -32,10 +32,13 @@ class Generic extends PureComponent {
     return (
       instances && instances[0] ? (
         <div className={gridClass}>
-          {console.log(instances)}
-          {instances.map(instance => (
-            CardSelector(instance)
-          ))}
+          {instances.map(instance => {
+            if (instance.modelLabel) {
+              return CardSelector(instance, 'relation', light);
+            } else {
+              instance.modelLabel = relatedModelLabel;
+              return CardSelector(instance, 'relation', light);
+            }})}
         </div>
       ) :
         <div

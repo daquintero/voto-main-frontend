@@ -16,7 +16,7 @@ class Relationships extends PureComponent {
   render() {
     const { individuals, corruptionCases, informativeSnippets } = this.props;
     return (
-      <Row>
+      <Row className="overflow-hidden">
         <Col xs={12} className="mt-2 p-1 bg-layout">
           <CardGrid
             relatedModelLabel="political.Individual"

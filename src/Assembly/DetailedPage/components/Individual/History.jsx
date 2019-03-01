@@ -9,19 +9,41 @@ import CardGrid from '../../../../Reusable/Grid/components/Related/DetailedRedux
 
 class Relationships extends PureComponent {
   static propTypes = {
-    experience: PropTypes.instanceOf(Object).isRequired,
+    experience: PropTypes.instanceOf(Array).isRequired,
   };
   render() {
     const { experience } = this.props;
     return (
       <Row>
-        <Col xs={12} className="mt-2 p-1 bg-shady-layout">
-          <CardGrid
-            relatedModelLabel="political.Experience"
-            gridClass="variable-grid"
-            instances={experience.instances}
-            subsetNumber={experience.subsetNumber}
-          />
+        <Col xs={12} className="mt-2 p-1 bg-layout">
+          <Row noGutters>
+            <CardGrid
+              relatedModelLabel="political.Experience"
+              gridClass="variable-grid"
+              instances={experience}
+              subsetNumber={experience}
+            />
+          </Row>
+        </Col>
+        <Col xs={6} className="mt-2 p-1 bg-layout">
+          <Row noGutters>
+            <CardGrid
+              relatedModelLabel="political.Experience"
+              gridClass="variable-grid"
+              instances={experience}
+              subsetNumber={experience}
+            />
+          </Row>
+        </Col>
+        <Col xs={6} className="mt-2 p-1 bg-layout">
+          <Row noGutters>
+            <CardGrid
+              relatedModelLabel="political.Experience"
+              gridClass="variable-grid"
+              instances={experience}
+              subsetNumber={experience}
+            />
+          </Row>
         </Col>
       </Row>
     );
