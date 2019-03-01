@@ -1,5 +1,21 @@
 .home {
   &__wrapper {
+
+  }
+
+  &__top-banner__wrapper {
+    background-color: white;
+
+    img {
+      height: 100px;
+    }
+  }
+
+  &__map__wrapper {
     background-color: $colorBackgroundBody;
+  }
+
+  &__news__wrapper {
+    background-color: darken($colorBackgroundBody, 2%);
   }
 }

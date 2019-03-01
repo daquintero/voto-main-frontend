@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import ReactMapGL from 'react-map-gl';
 import DeckGL, { GeoJsonLayer } from 'deck.gl';
+import { Row, Col } from 'reactstrap';
 
 // Components
 import IndividualMarker from './components/IndividualMarker';
@@ -14,6 +15,7 @@ import { GET_MAP_DATA } from './redux/actionCreators';
 
 // Data
 import individualMapLoop from './data/individuals-map-loop.json';
+import IndividualCard from '../Individual/components/Card';
 
 
 class Map extends Component {
@@ -34,6 +36,8 @@ class Map extends Component {
       dispatch,
     } = this.props;
 
+    window.addEventListener('resize', this.handleResizeViewport);
+
     dispatch(getMapData())
       .then((action) => {
         if (action.type === GET_MAP_DATA.SUCCESS) {
@@ -45,8 +49,17 @@ class Map extends Component {
   }
 
   componentWillUnmount() {
+    window.removeEventListener('resize', this.handleResizeViewport);
     clearInterval(this.state.interval);
   }
+
+  handleResizeViewport = () => {
+    const { dispatch, map } = this.props;
+    dispatch(changeMapViewport({
+      ...map.viewport,
+      width: '100%',
+    }));
+  };
 
   handleRotateElements = () => {
     const { index } = this.state;
@@ -73,9 +86,18 @@ class Map extends Component {
     const { index } = this.state;
     const locationId = individualMapLoop[index].location_id;
     if (locationId === f.properties.CIRCUITO) {
-      return [255, 255, 255];
+      return [232, 241, 242];
     }
-    return [0, 0, 0];
+    return [23, 55, 83];
+  };
+
+  handleGetElevation = (f) => {
+    const { index } = this.state;
+    const locationId = individualMapLoop[index].location_id;
+    if (locationId === f.properties.CIRCUITO) {
+      return 20000;
+    }
+    return 0;
   };
 
   renderLayers = () => {
@@ -91,8 +113,10 @@ class Map extends Component {
       extruded: true,
       getLineColor: () => [255, 255, 255],
       getFillColor: f => this.handleGetFillColor(f),
+      getElevation: f => this.handleGetElevation(f),
       updateTriggers: {
         getFillColor: f => this.handleGetFillColor(f),
+        getElevation: f => this.handleGetElevation(f),
       },
     });
   };
@@ -109,22 +133,37 @@ class Map extends Component {
     } = this.props;
 
     return (
-      <ReactMapGL
-        {...map.viewport}
-        mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_API_ACCESS_TOKEN}
-        onViewportChange={this.handleOnViewportChange}
-        mapStyle={process.env.REACT_APP_MAPBOX_STYLE}
-      >
-        <DeckGL
-          {...map.viewport}
-          layers={this.renderLayers()}
-        />
-        <IndividualMarker {...individualMapLoop[index]} />
-      </ReactMapGL>
+      <Row>
+        <Col
+          xs={12}
+          md={6}
+          lg={8}
+        >
+          <ReactMapGL
+            {...map.viewport}
+            mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_API_ACCESS_TOKEN}
+            onViewportChange={this.handleOnViewportChange}
+            mapStyle={process.env.REACT_APP_MAPBOX_STYLE}
+          >
+            <DeckGL
+              {...map.viewport}
+              layers={this.renderLayers()}
+            />
+            <IndividualMarker {...individualMapLoop[index]} />
+          </ReactMapGL>
+        </Col>
+        <Col
+          xs={12}
+          mg={6}
+          lg={4}
+        >
+          <IndividualCard instance={individualMapLoop[index]} />
+        </Col>
+      </Row>
     );
   }
 }
 
 export default connect(state => ({
-  map: state.openPage.map,
+  map: state.map,
 }))(Map);

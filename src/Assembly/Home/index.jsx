@@ -7,6 +7,8 @@ import { Container, Modal } from 'reactstrap';
 // Components
 import AboutPage from '../AboutUsPage/components/Page';
 import CardRow from '../../Reusable/CardRow';
+import TopBanner from './components/TopBanner';
+import Map from '../../Reusable/Map';
 
 // Actions
 import { getHome } from './redux/actions';
@@ -54,11 +56,23 @@ class Home extends PureComponent {
         <Modal isOpen={firstVisit} toggle={this.toggle}>
           <AboutPage />
         </Modal>
-        <Container>
-          {actions.GET_HOME.loaded && (
-            <CardRow instances={informativeSnippets} />
-          )}
-        </Container>
+        <div className="home__top-banner__wrapper">
+          <Container>
+            <TopBanner />
+          </Container>
+        </div>
+        <div className="home__news__wrapper py-5">
+          <Container>
+            {actions.GET_HOME.loaded && (
+              <CardRow instances={informativeSnippets} />
+            )}
+          </Container>
+        </div>
+        <div className="home__map__wrapper">
+          <Container className="py-5">
+            <Map />
+          </Container>
+        </div>
       </div>
     );
   }
