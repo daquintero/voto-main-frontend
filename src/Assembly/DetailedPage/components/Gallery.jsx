@@ -3,7 +3,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
 // Components
-import VIGallery from '../../../../Reusable/Images/components/VIGallery';
+import VIGallery from '../../../Reusable/Images/components/VIGallery';
 
 
 class Gallery extends PureComponent {
@@ -17,7 +17,10 @@ class Gallery extends PureComponent {
     } = this.props;
 
     return (
-      <VIGallery images={instance.media.images} />
+      <>
+        {console.log(instance)}
+        <VIGallery instances={instance.media.images} />
+      </>
     );
   }
 }

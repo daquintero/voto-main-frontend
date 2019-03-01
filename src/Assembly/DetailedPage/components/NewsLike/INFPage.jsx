@@ -12,7 +12,7 @@ import { GET_DETAILED_PAGE } from '../../redux/actionCreators';
 
 // Components
 import Header from './Header';
-import Gallery from './Gallery';
+import Gallery from '../Gallery';
 import Description from '../Description';
 import Relationships from '../Relationships';
 import RightSide from '../RightSide';

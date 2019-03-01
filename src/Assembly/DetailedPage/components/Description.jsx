@@ -17,7 +17,7 @@ class Description extends PureComponent {
     } = this.props;
 
     return (
-      <Container className="overflow-hidden">
+      <Container className="overflow-hidden py-4">
         {ReactHtmlParser(instance.longDescription)}
       </Container>
     );

@@ -22,7 +22,7 @@ class Statistics extends PureComponent {
     } = this.props;
 
     return (
-      <>
+      <div className="justify-content-center">
         <h4 className="text-center mt-2 rel">{typeInfo['political.Statistic'].name}</h4>
         <Row className="mx-auto">
           {instances ? (instances.map(instance => (
@@ -33,7 +33,7 @@ class Statistics extends PureComponent {
             <NFCard parent={typeInfo[parent].singular} type="political.Statistic" />
           )}
         </Row>
-      </>
+      </div>
     );
   }
 }

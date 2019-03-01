@@ -1,3 +1,4 @@
+/* eslint-disable */
 // Libraries
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
@@ -35,15 +36,15 @@ class RightSide extends PureComponent {
             url={`https://www.votoinformado2019.com${url}`}
           />
         </Row>
-        {instance.corruptionRelatedFunds && (
-            <>
-              <h3 className="text-center mt-2">Fianzas</h3>
-              <MainFinancesNav
-                corruptionRelatedFunds={instance.corruptionRelatedFunds}
-                nonCorruptionRelatedFunds={instance.nonCorruptionRelatedFunds}
-              />
-            </>
-        )}
+        {/*{instance.corruptionRelatedFunds || instance.nonCorruptionRelatedFunds ? (*/}
+          <Row noGutters className="p-2 justify-content-center">
+            <MainFinancesNav
+              corruptionRelatedFunds={instance.corruptionRelatedFunds}
+              nonCorruptionRelatedFunds={instance.nonCorruptionRelatedFunds}
+              parent={typeInfo[instance.modelLabel].singular}
+            />
+          </Row>
+        {/*) : null}*/}
         <Row noGutters className="p-2 justify-content-center">
           <Statistics
             instances={instance.statistics}
@@ -51,7 +52,7 @@ class RightSide extends PureComponent {
           />
         </Row>
         <Row noGutters className="p-2 justify-content-center">
-          <LawList instances={laws} parent={typeInfo[instance.modelLabel].singular} />
+          <LawList instances={laws.instances} parent={typeInfo[instance.modelLabel].singular} />
         </Row>
       </Row>
     );
