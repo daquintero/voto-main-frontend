@@ -11,6 +11,14 @@ class Header extends PureComponent {
     instance: PropTypes.instanceOf(Object).isRequired,
   };
 
+  hasSocials = instance => (
+    instance.website
+    || instance.instagramUsername
+    || instance.twitterUsername
+    || instance.twitterUsername
+    || instance.facebookUsername
+  );
+
   render() {
     const {
       instance,
@@ -32,47 +40,41 @@ class Header extends PureComponent {
             <p className="lead m-0 pb-3 text-center">{instance.alias}</p>
             <Row noGutters className="p-2 pb-4 justify-content-center align-items-baseline">
               {instance.facebookUsername && (
-              <Col className="px-1 text-center">
-                <a target="_blank" rel="noreferrer noopener" href={instance.facebookUsername}>
-                  <i className="fab fa-facebook-square fa-2x" />
-                </a>
-              </Col>
+                <Col className="px-1 text-center">
+                  <a target="_blank" rel="noreferrer noopener" href={instance.facebookUsername}>
+                    <i className="fab fa-facebook-square fa-2x" />
+                  </a>
+                </Col>
               )}
               {instance.twitterUsername && (
-              <Col className="px-1 text-center">
-                <a target="_blank" rel="noreferrer noopener" href={instance.twitterUsername}>
-                  <i className="fab fa-twitter-square fa-2x" />
-                </a>
-              </Col>
+                <Col className="px-1 text-center">
+                  <a target="_blank" rel="noreferrer noopener" href={instance.twitterUsername}>
+                    <i className="fab fa-twitter-square fa-2x" />
+                  </a>
+                </Col>
               )}
               {instance.instagramUsername && (
-              <Col className="px-1 text-center">
-                <a target="_blank" rel="noreferrer sl noopener" href={instance.instagramUsername}>
-                  <i className="fab fa-instagram fa-2x" />
-                </a>
-              </Col>
+                <Col className="px-1 text-center">
+                  <a target="_blank" rel="noreferrer sl noopener" href={instance.instagramUsername}>
+                    <i className="fab fa-instagram fa-2x" />
+                  </a>
+                </Col>
               )}
               {instance.website && (
-              <Col className="px-1 text-center">
-                <a target="_blank" rel="noreferrer noopener" href={instance.website}>
-                  <i className="fa fa-browser fa-2x" />
-                </a>
-              </Col>
+                <Col className="px-1 text-center">
+                  <a target="_blank" rel="noreferrer noopener" href={instance.website}>
+                    <i className="fa fa-browser fa-2x" />
+                  </a>
+                </Col>
               )}
               {instance.email && (
-              <Col className="px-1 text-center">
-                <a target="_blank" rel="noreferrer noopener" href={instance.email}>
-                  <i className="fa fa-envelope-open fa-2x" />
-                </a>
-              </Col>
+                <Col className="px-1 text-center">
+                  <a target="_blank" rel="noreferrer noopener" href={instance.email}>
+                    <i className="fa fa-envelope-open fa-2x" />
+                  </a>
+                </Col>
               )}
-              {!instance.email
-              && !instance.website
-              && !instance.instagramUsername
-              && !instance.twitterUsername
-              && !instance.twitterUsername
-              && !instance.facebookUsername &&
-              (
+              {!this.hasSocials(instance) && (
                 <p className="m-0">
                   No tenemos las redes sociales de esta persona. ¿Te las sabes?
                   ¡Añádelas en&nbsp;
@@ -80,8 +82,7 @@ class Header extends PureComponent {
                   VotoStudio
                   </a>!
                 </p>
-              )
-              }
+              )}
             </Row>
           </Col>
         </Row>
