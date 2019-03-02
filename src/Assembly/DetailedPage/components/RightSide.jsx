@@ -75,12 +75,6 @@ class RightSide extends PureComponent {
             light={light}
           />
         </Row>
-        {instance.twitterUsername && false ? (
-          <Row noGutters className="p-2 justify-content-center right-side__row">
-            {/* TODO FINish making it work */}
-            {/* <TwitterFeed user={instance.twitterUsername} /> */}
-          </Row>
-        ) : null}
       </Row>
     );
   }
