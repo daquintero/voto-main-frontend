@@ -28,7 +28,7 @@ class TopBanner extends PureComponent { // eslint-disable-line
 
   render() {
     return (
-      <Row noGutters className="py-4">
+      <Row noGutters className="py-1">
         <Col sm={6} md={8} className="px-4 py-4 p-md-2 my-auto">
           <h4>¡Comprométete a un #VotoInformado2019!</h4>
           <div>

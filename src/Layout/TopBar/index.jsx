@@ -21,6 +21,7 @@ class TopBar extends Component {
     super(props);
     this.state = {
       collapsed: true,
+      currentTab: '1',
     };
   }
 
@@ -39,10 +40,26 @@ class TopBar extends Component {
     this.setState({ currentTab: id });
   };
 
+  handleOnMouseLeave = () => {
+    this.setState({
+      currentTab: '1',
+    });
+  };
+
   renderSubNav = () => {
     const { currentTab } = this.state;
     switch (currentTab) {
       case '1':
+        return (
+          <div className="navbar__subnav__wrapper one">
+            <Container>
+              <div className="navbar__subnav__head">
+                <h3>Hi</h3>
+              </div>
+            </Container>
+          </div>
+        );
+      case '2':
         return (
           <div className="navbar__subnav__wrapper one">
             <Container>
@@ -52,7 +69,7 @@ class TopBar extends Component {
             </Container>
           </div>
         );
-      case '2':
+      case '3':
         return (
           <div className="navbar__subnav__wrapper two">
             <Container>
@@ -62,7 +79,7 @@ class TopBar extends Component {
             </Container>
           </div>
         );
-      case '3':
+      case '4':
         return (
           <div className="navbar__subnav__wrapper three">
             <Container>
@@ -107,17 +124,20 @@ class TopBar extends Component {
                   </div>
                 </form>
               </div>
-              <div className="navbar__nav__wrapper bg-white justify-content-center">
+              <div
+                className="navbar__nav__wrapper bg-white justify-content-center"
+                onMouseLeave={this.handleOnMouseLeave}
+              >
                 <div
-                  className={classNames('navbar__nav__item one', { active: currentTab === '1' })}
-                  data-id="1"
+                  className={classNames('navbar__nav__item one', { active: currentTab === '2' })}
+                  data-id="2"
                   onMouseEnter={this.handleOnHover}
                 >
                   <Link className="navbar__nav__link" to="/">Mapa</Link>
                 </div>
                 <div
-                  className={classNames('navbar__nav__item two', { active: currentTab === '2' })}
-                  data-id="2"
+                  className={classNames('navbar__nav__item two', { active: currentTab === '3' })}
+                  data-id="3"
                   onMouseEnter={this.handleOnHover}
                 >
                   <div className="navbar__nav__link" >
@@ -132,15 +152,15 @@ class TopBar extends Component {
                   </div>
                 </div>
                 <div
-                  className={classNames('navbar__nav__item three', { active: currentTab === '3' })}
-                  data-id="3"
+                  className={classNames('navbar__nav__item three', { active: currentTab === '4' })}
+                  data-id="4"
                   onMouseEnter={this.handleOnHover}
                 >
                   <Link className="navbar__nav__link" to="/acerca">Nosotros</Link>
                 </div>
                 <div
-                  className={classNames('navbar__nav__item end three', { active: currentTab === '3' })}
-                  data-id="3"
+                  className={classNames('navbar__nav__item end three', { active: currentTab === '5' })}
+                  data-id="5"
                   onMouseEnter={this.handleOnHover}
                 >
                   <Link className="navbar__nav__link" to="/">

@@ -26,6 +26,7 @@ class DetailedReduxCardGrid extends PureComponent {
     // Variable Props
     relatedModelLabel: PropTypes.string.isRequired,
     gridClass: PropTypes.string.isRequired,
+
     light: PropTypes.bool.isRequired,
   };
 

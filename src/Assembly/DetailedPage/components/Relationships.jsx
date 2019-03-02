@@ -14,6 +14,7 @@ class Relationships extends PureComponent {
     informativeSnippets: PropTypes.instanceOf(Object).isRequired,
     organizations: PropTypes.instanceOf(Object).isRequired,
   };
+
   render() {
     const {
       individuals, corruptionCases, informativeSnippets, organizations,

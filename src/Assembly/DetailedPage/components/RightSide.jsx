@@ -17,7 +17,6 @@ import CardGrid from '../../../Reusable/Grid/components/DetailedReduxCardGrid';
 class RightSide extends PureComponent {
   static propTypes = {
     instance: PropTypes.instanceOf(Object).isRequired,
-    actions: PropTypes.instanceOf(Object).isRequired,
 
     // Variable
     url: PropTypes.string.isRequired,
@@ -33,20 +32,20 @@ class RightSide extends PureComponent {
 
   render() {
     const {
-      instance, url, laws, resources, actions,
+      instance, url, laws, resources,
     } = this.props;
     const { light } = this.state;
 
     return (
       <Row noGutters>
-        <Row noGutters className="pt-5">
+        <Row noGutters className="p-3 right-side__row share justify-content-center">
           <Share
             title={instance.title || instance.name}
             description={instance.briefDescription}
             url={`https://www.votoinformado2019.com${url}`}
           />
         </Row>
-        <Row noGutters className="px-2 py-4 justify-content-center">
+        <Row noGutters className="px-2 py-4 justify-content-center right-side__row">
           <MainFinancesNav
             corruptionRelatedFunds={instance.corruptionRelatedFunds}
             nonCorruptionRelatedFunds={instance.nonCorruptionRelatedFunds}
@@ -54,20 +53,20 @@ class RightSide extends PureComponent {
             light={light}
           />
         </Row>
-        <Row noGutters className="px-2 py-4 justify-content-center">
+        <Row noGutters className="px-2 py-4 justify-content-center right-side__row">
           <Statistics
             instances={instance.statistics}
             parent={instance.modelLabel}
           />
         </Row>
-        <Row noGutters className="px-2 py-4 justify-content-center">
+        <Row noGutters className="px-2 py-4 justify-content-center right-side__row">
           <LawList
             instances={laws.instances}
             parent={instance.modelLabel}
             light={light}
           />
         </Row>
-        <Row noGutters className="px-2 py-4 justify-content-center">
+        <Row noGutters className="px-2 py-4 justify-content-center right-side__row">
           <CardGrid
             relatedModelLabel="media.Resource"
             gridClass="variable-grid"
@@ -76,25 +75,17 @@ class RightSide extends PureComponent {
             light={light}
           />
         </Row>
-        {actions.GET_DETAILED_PAGE.loaded && instance.twitterUsername ? (
-          <Row noGutters className="p-2 justify-content-center">
-            {/* TODO FINish making it work */}
-            {/* <TwitterFeed user={instance.twitterUsername} /> */}
-          </Row>
-        ) : null}
       </Row>
     );
   }
 }
 
 const mapStateToProps = (state) => {
-  const { actions } = state.openPage;
   const { laws } = state.openPage.relatedInstances;
   const { resources } = state.openPage.parentInstance.media;
   return {
     laws,
     resources,
-    actions,
   };
 };
 

@@ -28,15 +28,15 @@ const CardWithImage = ({ instance, light }) => {
             <img
               className="img-full"
               src={primaryImage.url}
-              alt="Something"
+              alt=""
             />
           </Col>
           <Col >
             <CardBody className="p-2">
               <Row noGutters>
                 <Col xs={12} className="mb-2">
-                  <h5 className="card-title mb-0 text-right">{instance.name}</h5>
-                  <p className="text-right my-0 font-italic">{instance.alias}</p>
+                  <h5 className="card-title mb-0">{instance.name}</h5>
+                  <p className="text-black-50 my-0 font-italic">{instance.alias}</p>
                 </Col>
               </Row>
             </CardBody>
