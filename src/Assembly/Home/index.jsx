@@ -7,7 +7,7 @@ import { Container, Modal } from 'reactstrap';
 // Components
 import AboutPage from '../AboutUsPage/components/Page';
 import CardRow from '../../Reusable/CardRow';
-import TopBanner from './components/TopBanner';
+import TopBanner from '../TopBanner';
 import Map from '../../Reusable/Map';
 import Search from './components/Search';
 import Discover from './components/Discover';
@@ -63,11 +63,7 @@ class Home extends PureComponent {
         <Modal isOpen={modal} toggle={this.toggle}>
           <AboutPage />
         </Modal>
-        <div className="home__top-banner__wrapper">
-          <Container>
-            <TopBanner />
-          </Container>
-        </div>
+        <TopBanner light />
         <div className="home__news__wrapper py-5">
           <Container>
             {actions.GET_HOME.loaded && (
@@ -75,7 +71,7 @@ class Home extends PureComponent {
          )}
           </Container>
         </div>
-        <div className="home__news__wrapper py-5">
+        <div className="bg-white py-5">
           <Container>
             {actions.GET_HOME.loaded && (
               <Discover individuals={individuals} organizations={organizations} />

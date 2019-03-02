@@ -31,7 +31,7 @@ class ShareCard extends PureComponent {
   render() {
     const { url, title, description } = this.props;
     return (
-      <Row noGutters className="px-4">
+      <Row noGutters className="px-2">
         {/* TODO HAVE Horizontal Alignment */}
         <Col xs={12}>
           <h5 className="text-center pb-2">¡Compárte!</h5>

@@ -17,7 +17,7 @@ import Relationships from '../Relationships';
 import RightSide from '../RightSide';
 import Loader from '../../../../shared/components/Loader';
 import History from './History';
-import TopBanner from '../../../Home/components/TopBanner';
+import TopBanner from '../../../TopBanner';
 
 
 const parentModelLabel = 'political.Individual';
@@ -57,13 +57,9 @@ class Page extends PureComponent {
 
     return actions.GET_DETAILED_PAGE.loaded ? (
       <>
-        <div className="">
-          <Container>
-            <TopBanner />
-          </Container>
-        </div>
+        <TopBanner />
         <Container>
-          <Row className="p-2 overflow-hidden column-primary">
+          <Row className="p-2 pt-4 overflow-hidden column-primary">
             <Col xs={12} md={8} className="overflow-hidden p-0">
               <Header instance={instance} />
               <hr />
