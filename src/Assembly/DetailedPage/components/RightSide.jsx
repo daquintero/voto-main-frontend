@@ -10,7 +10,7 @@ import MainFinancesNav from '../../../Reusable/FinanceItem/components/MainFinanc
 import Statistics from './Statistics';
 import Share from '../../../Reusable/SocialShare/components/Card';
 import LawList from '../../../Reusable/Law/components/List';
-import CardGrid from '../../../Reusable/Grid/components/Related/DetailedReduxCardGrid';
+import CardGrid from '../../../Reusable/Grid/components/DetailedReduxCardGrid';
 // import TwitterFeed from '../../../Reusable/SocialShare/components/TwitterFeed';
 
 // Declaration
@@ -39,14 +39,14 @@ class RightSide extends PureComponent {
 
     return (
       <Row noGutters>
-        <Row noGutters className="py-2">
+        <Row noGutters className="pt-5">
           <Share
             title={instance.title || instance.name}
             description={instance.briefDescription}
             url={`https://www.votoinformado2019.com${url}`}
           />
         </Row>
-        <Row noGutters className="p-2 justify-content-center">
+        <Row noGutters className="px-2 py-4 justify-content-center">
           <MainFinancesNav
             corruptionRelatedFunds={instance.corruptionRelatedFunds}
             nonCorruptionRelatedFunds={instance.nonCorruptionRelatedFunds}
@@ -54,20 +54,20 @@ class RightSide extends PureComponent {
             light={light}
           />
         </Row>
-        <Row noGutters className="p-2 justify-content-center">
+        <Row noGutters className="px-2 py-4 justify-content-center">
           <Statistics
             instances={instance.statistics}
             parent={instance.modelLabel}
           />
         </Row>
-        <Row noGutters className="p-2 justify-content-center">
+        <Row noGutters className="px-2 py-4 justify-content-center">
           <LawList
             instances={laws.instances}
             parent={instance.modelLabel}
             light={light}
           />
         </Row>
-        <Row noGutters className="p-2 justify-content-center">
+        <Row noGutters className="px-2 py-4 justify-content-center">
           <CardGrid
             relatedModelLabel="media.Resource"
             gridClass="variable-grid"

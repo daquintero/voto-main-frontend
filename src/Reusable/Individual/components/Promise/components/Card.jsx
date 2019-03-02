@@ -11,12 +11,13 @@ import categoryInfo from '../../../../../shared/utils/categoryInfo';
 class PromCard extends PureComponent {
   static propTypes = {
     instance: PropTypes.instanceOf(Object).isRequired,
+    light: PropTypes.bool.isRequired,
   };
   render() {
-    const { instance } = this.props;
+    const { instance, light } = this.props;
     return (
       <a target="_blank" rel="noreferrer noopener" href={instance.source}>
-        <Card className="bg-light border-0 rounded-0 small-enlarge">
+        <Card className={`${light ? 'bg-layout' : 'bg-shady-layout'} border-0 rounded-0 small-enlarge`}>
           {categoryInfo[instance.type] ? (
             <CardHeader className="pt-1 pb-1 ">
               <i className={`float-left fa p-1 fa-${categoryInfo[instance.type].icon}`} />

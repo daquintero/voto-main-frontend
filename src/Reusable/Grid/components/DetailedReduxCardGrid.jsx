@@ -6,11 +6,11 @@ import { connect } from 'react-redux';
 import { Button, Row } from 'reactstrap';
 
 // Actions
-import { getMoreRelatedInstances } from '../../../redux/actions';
+import { getMoreRelatedInstances } from '../../redux/actions';
 
 // Presentational Component
-import CardGrid from '../Generic';
-import typeInfo from '../../../../shared/utils/typeInfo';
+import CardGrid from './Generic';
+import typeInfo from '../../../shared/utils/typeInfo';
 
 // Detailed DEVELOPMENT-ONLY-Page Redux Card Grid
 class DetailedReduxCardGrid extends PureComponent {
@@ -52,7 +52,7 @@ class DetailedReduxCardGrid extends PureComponent {
 
     return (
       <div>
-        <h4 className="p-2 rel text-center">{typeInfo[relatedModelLabel].name}</h4>
+        <h4 className="p-2 rel text-center">{typeInfo[relatedModelLabel].title}</h4>
         <CardGrid
           instances={instances}
           action={actions.GET_MORE_RELATED_INSTANCES[relatedModelLabel]}
@@ -67,7 +67,7 @@ class DetailedReduxCardGrid extends PureComponent {
             className={`${light ? 'bg-layout' : 'bg-shady-layout'}
             small-enlarge rounded-0 text-center border-0 mx-auto more text-dark`}
           >
-            Más {typeInfo[relatedModelLabel].name}
+            Más {typeInfo[relatedModelLabel].title}
           </Button>
         </Row>
       </div>

@@ -25,8 +25,8 @@ import STATCard from '../../Reusable/Statistics/components/StatisticBlock';
 // Financial Item
 import FINCard from '../../Reusable/FinanceItem/components/FinanceItem';
 import FINCardWP from '../../Reusable/FinanceItem/components/FinanceItemWP';
-// Organization TODO
-// import ORGCard from '../../Reusable/Organization/components/Card';
+// Organization
+import ORGCard from '../../Reusable/Organization/components/Card';
 // Resource
 import RESCard from '../../Reusable/Individual/components/Resource/components/Card';
 
@@ -54,18 +54,23 @@ export default function (instance, context, light) {
       return (<CONTCardWP instance={instance} />);
     case 'political.Promise':
       if (context === 'relation') {
-        return (<PROMCard instance={instance} />);
+        return (<PROMCard instance={instance} light={light} />);
+      }
+      return (<PROMCardWP instance={instance} />);
+    case 'political.Achievement':
+      if (context === 'relation') {
+        return (<PROMCard instance={instance} light={light} />);
       }
       return (<PROMCardWP instance={instance} />);
     case 'political.Experience':
       if (context === 'relation') {
-        return (<EXPCard instance={instance} />);
+        return (<EXPCard instance={instance} light={light} />);
       }
       return (<EXPCardWP instance={instance} />);
     case 'political.Statistic':
       return (<STATCard instance={instance} />);
-    // case 'political.Organization':
-    //   return (<ORGCard instance={instance} />);
+    case 'political.Organization':
+      return (<ORGCard instance={instance} light={light} />);
     case 'political.Law':
       return (<LAWCard instance={instance} />);
     case 'media.Resource':
