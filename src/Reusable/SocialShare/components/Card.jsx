@@ -34,7 +34,7 @@ class ShareCard extends PureComponent {
       <Row noGutters className="px-4">
         {/* TODO HAVE Horizontal Alignment */}
         <Col xs={12}>
-          <h5>¡Compárte!</h5>
+          <h5 className="text-center pb-2">¡Compárte!</h5>
         </Col>
         <Col>
           <FacebookShareButton

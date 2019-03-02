@@ -17,7 +17,7 @@ class StatisticBlock extends PureComponent {
       <div className="mincontent">
         <a className="sl" target="_blank" rel="noreferrer noopener" href={instance.source}>
           <Card
-            className="small-enlarge bg-layout mx-auto justify-content-center text-center rounded-0 border-0"
+            className="small-enlarge bg-layout mx-auto justify-content-center text-center rounded-0 border-0 w-100"
           >
             <h5 className="m-1 font-weight-bold">
               <i className={`p-2 fal fa-${instance.icon}`} />
