@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { Card, CardBody, Col, Row } from 'reactstrap';
 
 const CardWithoutImage = ({ instance, light }) => (
-  <Card className={`border-0 rounded-0 h-100 p-2 ${light ? 'bg-layout' : 'bg-above-background'}  small-enlarge`}>
+  <Card className={`border-0 rounded-0 h-100 p-2 ${light ? 'bg-layout' : 'bg-shady-layout'} shadow small-enlarge`}>
     <Row noGutters className="h-100">
       <Col
         xs={12}

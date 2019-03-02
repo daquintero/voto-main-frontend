@@ -5,7 +5,7 @@ import { Card, CardBody, Col, Row } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
 const CardWithoutImage = ({ instance, light }) => (
-  <Card className={`border-0 rounded-0 h-100 p-2 ${light ? 'bg-layout' : 'bg-above-background'}  small-enlarge`}>
+  <Card className={`border-0 rounded-0 h-100 p-2 ${light ? 'bg-layout' : 'bg-shady-layout'}  small-enlarge`}>
     <Link to={`/organization/${instance.id}`}>
       <Row noGutters className="h-100">
         <Col

@@ -26,7 +26,7 @@ class Relationships extends PureComponent {
           <div className="subsection-grid">
             {/* Bit hacky grid arrangement approach */}
             <div
-              className={`mt-2 p-1 bg-shady-layout
+              className={`mt-2 p-1 bg-above-background
            ${experience && experience[0] ?
               (experience.length < 3 ? '' : 'span-5-rows') : ''}`}
             >
@@ -72,7 +72,7 @@ class Relationships extends PureComponent {
               </Row>
             </div>
             <div
-              className={`mt-2 p-1 bg-layout
+              className={`mt-2 p-1
             ${achievement.instances[0] ? (achievement.instances.length < 3 ? '' : 'span-5-rows') : ''}`}
               style={{ background: '#effff5' }}
             >

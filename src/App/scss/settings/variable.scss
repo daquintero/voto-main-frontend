@@ -4,15 +4,17 @@ $impDark: #253237;
 $impRed: #f2545b;
 $impWhite: white;
 $impDlack: #000000;
-$baseLightest: lighten(#f7f7f7, 2.5%);
+$baseLightest: white;
 $aboveBackground: #f4fcfe;
-$baseLighter: #EFF9FF;
+$baseLighter: #F7F7F7;
 $aboveLayout: #e8ffff;
 $baseMiddle: #84DAF9;
 $baseDarker: #006E90;
 $baseDarkest: #07415E;
+$colorBackgroundBody: #F7F7F7;
+
+// -------------- ESLINT
 $colorBackground: white;
-$colorBackgroundBody: #f2f4f7;
 $colorText: #646777;
 $colorTextAdditional: #646777;
 $logoImg: url(../shared/img/logo/logo_light.svg);

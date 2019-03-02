@@ -91,7 +91,7 @@ class Search extends PureComponent {
               />
             </Col>
           )}
-          <Col xs={12} className="py-4 mt-4 bg-above-background justify-content-center text-center">
+          <Col xs={12} className="py-4 mt-4 bg-shady-layour justify-content-center text-center">
             <Row noGutters>
               <Col xs={12} md={6} className="p-2 my-auto">
                 <img src={banner} alt="Error" />

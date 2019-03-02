@@ -18,7 +18,7 @@ const CardWithImage = ({ instance, light }) => {
   const primaryImage = instance.media.images[0];
   return (
     <Card
-      className={`border-0 ${light ? 'bg-layout' : 'bg-above-background'} rounded-0 small-enlarge span-2-rows shadow`}
+      className={`border-0 ${light ? 'bg-layout' : 'bg-shady-layout'} rounded-0 small-enlarge span-2-rows shadow`}
     >
       <Link to={`/organization/${instance.id}`}>
         <Row noGutters>
