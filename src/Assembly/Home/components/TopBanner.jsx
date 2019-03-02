@@ -1,9 +1,10 @@
 // Top Banner
 // Libraries
 import React, { PureComponent } from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { Col, Row } from 'reactstrap';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 import moment from 'moment';
 
@@ -11,12 +12,20 @@ import moment from 'moment';
 // Components TODO ADD FORM
 // import CustomForm from './CustomForm';
 
+import { mailchimp } from '../redux/actions';
 
 // TODO Amount of subscribers
 
 
 class TopBanner extends PureComponent { // eslint-disable-line
-  static propTypes = {};
+  static propTypes = {
+    dispatch: PropTypes.func.isRequired,
+  };
+
+  componentDidMount() {
+    this.props.dispatch(mailchimp());
+  }
+
   render() {
     return (
       <Row noGutters className="py-4">
@@ -42,5 +51,5 @@ class TopBanner extends PureComponent { // eslint-disable-line
 }
 
 // TODO State Store Connection
-export default TopBanner;
+export default connect()(TopBanner);
 
