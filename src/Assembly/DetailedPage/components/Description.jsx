@@ -18,7 +18,15 @@ class Description extends PureComponent {
 
     return (
       <Container className="overflow-hidden py-4">
-        {ReactHtmlParser(instance.longDescription)}
+        {console.log(instance.longDescription.length)}
+        {instance.longDescription.length === 8 ?
+          <p className="m-0 lead text-center">
+          Este individuo no tiene descripción. ¡Propóne una en&nbsp;
+            <a href="https://studio.votoinformado2019.com" className="sl text-danger">
+              VotoStudio
+            </a>!
+          </p>
+          : (ReactHtmlParser(instance.longDescription))}
       </Container>
     );
   }

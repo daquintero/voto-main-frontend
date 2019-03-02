@@ -1,10 +1,22 @@
 // ---------- VARIABLE GRID -------------
+
 .variable-grid {
   display: grid;
   grid-gap: 10px;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   grid-template-rows: repeat(auto-fill, minmax(min-content, 1fr));
   grid-auto-rows: minmax(50px, auto);
+  grid-auto-flow: dense;
+
+  padding: 2%
+}
+
+.variable-related-grid {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  grid-template-rows: repeat(auto-fit, minmax(0px, 1fr));
+  grid-auto-rows: minmax(0px, auto);
   grid-auto-flow: dense;
 
   padding: 2%
@@ -41,6 +53,9 @@
   object-fit: cover;
 }
 
+.flex-grow {
+  flex: 1 0 auto;
+}
 
 // -------------- MAIN GRID ----------------
 
@@ -103,4 +118,8 @@
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   grid-template-rows: repeat(auto-fill, minmax(min-content, 1fr));
   grid-auto-flow: dense;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
 }

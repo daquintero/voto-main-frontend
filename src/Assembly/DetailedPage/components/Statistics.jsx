@@ -31,7 +31,7 @@ class Statistics extends PureComponent {
               <StatisticBlock instance={instance} />
             </div>
           ))) : (
-            <NFCard parent={parent} type="political.Statistic" />
+            <NFCard parent={parent} type="political.Statistic" light />
           )}
         </Row>
       </div>

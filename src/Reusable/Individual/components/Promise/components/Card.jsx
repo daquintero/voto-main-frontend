@@ -16,19 +16,21 @@ class PromCard extends PureComponent {
   render() {
     const { instance, light } = this.props;
     return (
-      <a target="_blank" rel="noreferrer noopener" href={instance.source}>
-        <Card className={`${light ? 'bg-layout' : 'bg-shady-layout'} border-0 rounded-0 small-enlarge`}>
-          {categoryInfo[instance.type] ? (
-            <CardHeader className="pt-1 pb-1 ">
-              <i className={`float-left fa p-1 fa-${categoryInfo[instance.type].icon}`} />
-              <h5 className="float-right mb-0">{categoryInfo[instance.type].Spanish}</h5>
-            </CardHeader>
-          ) : null}
-          <CardBody className="p-2">
-            <p className="p-1 m-0">{instance.briefDescription}</p>
-          </CardBody>
-        </Card>
-      </a>
+      <div className="span-5-rows">
+        <a target="_blank" rel="noreferrer noopener" href={instance.source}>
+          <Card className={`${light ? 'bg-layout' : 'bg-shady-layout'} border-0 rounded-0 small-enlarge`}>
+            {categoryInfo[instance.type] ? (
+              <CardHeader className="pt-1 pb-1 ">
+                <i className={`float-left fa p-1 fa-${categoryInfo[instance.type].icon}`} />
+                <h5 className="float-right mb-0">{categoryInfo[instance.type].Spanish}</h5>
+              </CardHeader>
+            ) : null}
+            <CardBody className="p-2 flex-fill">
+              <p className="p-1 m-0">{instance.briefDescription}</p>
+            </CardBody>
+          </Card>
+        </a>
+      </div>
     );
   }
 }

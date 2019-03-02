@@ -38,7 +38,7 @@ class NFCard extends PureComponent {
               />
             </p>
             <CardBody className={`bg-light p-2 ${open ? '' : 'd-none'}`}>
-              <a href="https://studio.votoinformado2019.com" className="sl">
+              <a target="_blank" rel="noreferrer noopener" href="https://studio.votoinformado2019.com" className="sl">
                 <p className="m-0 p-1 text-center">
                   <i className="fal fa-search px-2" /> Investiga y anota fuentes creíbles que encuentres.
                 </p>

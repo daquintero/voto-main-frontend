@@ -23,7 +23,7 @@ class IndividualCard extends PureComponent {
   render() {
     const { instance, light } = this.props;
     return (
-      instance.media.images && instance.media.images.length ? (
+      instance.media && instance.media.images && instance.media.images.length ? (
         <CardWithImage instance={instance} light={light} />
       ) : (
         <CardWithoutImage instance={instance} light={light} />

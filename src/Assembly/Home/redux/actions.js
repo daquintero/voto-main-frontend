@@ -1,6 +1,7 @@
 import {
   GET_HOME,
   HOME_SEARCH,
+  GET_SUBSCRIBERS,
 } from './actionCreators';
 import service from '../service';
 
@@ -44,6 +45,25 @@ export const homeSearch = searchData => (dispatch) => {
     error =>
       dispatch({
         type: HOME_SEARCH.ERROR,
+        error,
+      }),
+  );
+};
+
+// TODO Finish
+export const getSubscribers = () => (dispatch) => {
+  dispatch({
+    type: GET_SUBSCRIBERS.REQUEST,
+  });
+  return service.subscribers.home().then(
+    response =>
+      dispatch({
+        type: GET_SUBSCRIBERS.SUCCESS,
+        response: response.data,
+      }),
+    error =>
+      dispatch({
+        type: GET_SUBSCRIBERS.ERROR,
         error,
       }),
   );

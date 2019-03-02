@@ -20,7 +20,7 @@ class TopBanner extends PureComponent { // eslint-disable-line
   render() {
     return (
       <Row noGutters className="py-4">
-        <Col sm={6} md={8} className="px-4 p-md-0">
+        <Col sm={6} md={8} className="px-4 py-4 p-md-2 my-auto">
           <h4>¡Comprométete a un #VotoInformado2019!</h4>
           <div>
             Aquí irá la cantidad de subscriptores al form.
@@ -29,7 +29,7 @@ class TopBanner extends PureComponent { // eslint-disable-line
             Averigua más
           </Link>
         </Col>
-        <Col>
+        <Col className="text-center my-auto">
           <h3>
             <i className="fal fa-clock" />{' '}
             {moment('2019-05-05').diff(moment(), 'days')}
