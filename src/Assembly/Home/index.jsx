@@ -10,6 +10,7 @@ import CardRow from '../../Reusable/CardRow';
 import TopBanner from '../TopBanner';
 import Map from '../../Reusable/Map';
 import Search from './components/Search';
+import Discover from './components/Discover';
 
 // Actions
 import { getHome, openFirstVisit } from './redux/actions';
@@ -20,6 +21,8 @@ class Home extends PureComponent {
     // Redux
     dispatch: PropTypes.func.isRequired,
     informativeSnippets: PropTypes.instanceOf(Array).isRequired,
+    individuals: PropTypes.instanceOf(Array).isRequired,
+    organizations: PropTypes.instanceOf(Array).isRequired,
     actions: PropTypes.instanceOf(Object).isRequired,
     firstVisit: PropTypes.bool.isRequired,
   };
@@ -51,7 +54,7 @@ class Home extends PureComponent {
   render() {
     // Props
     const {
-      informativeSnippets, actions,
+      informativeSnippets, actions, organizations, individuals,
     } = this.props;
     const { modal } = this.state;
 
@@ -66,6 +69,13 @@ class Home extends PureComponent {
             {actions.GET_HOME.loaded && (
             <CardRow instances={informativeSnippets} />
          )}
+          </Container>
+        </div>
+        <div className="bg-white py-5">
+          <Container>
+            {actions.GET_HOME.loaded && (
+              <Discover individuals={individuals} organizations={organizations} />
+            )}
           </Container>
         </div>
         <div className="home__map__wrapper">
@@ -86,10 +96,12 @@ class Home extends PureComponent {
 
 const mapStateToProps = (state) => {
   const { actions, firstVisit } = state.home;
-  const { informativeSnippets } = state.home.content;
+  const { informativeSnippets, individuals, organizations } = state.home.content;
 
   return {
     informativeSnippets,
+    individuals,
+    organizations,
     firstVisit,
     actions,
   };

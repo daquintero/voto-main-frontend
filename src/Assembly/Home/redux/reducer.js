@@ -1,7 +1,7 @@
 import {
   GET_HOME,
   HOME_SEARCH,
-  GET_SUBSCRIBERS,
+  MAILCHIMP,
 } from './actionCreators';
 import { initializeActions, actionResult } from '../../../shared/utils/asyncHelpers';
 
@@ -18,7 +18,7 @@ const initialState = {
   actions: initializeActions([
     'GET_HOME',
     'HOME_SEARCH',
-    'GET_SUBSCRIBERS',
+    'MAILCHIMP',
   ]),
 };
 
@@ -86,15 +86,15 @@ export default (state = initialState, action) => {
           ...actionResult('HOME_SEARCH.ERROR'),
         },
       };
-    case GET_SUBSCRIBERS.REQUEST:
+    case MAILCHIMP.REQUEST:
       return {
         ...state,
         actions: {
           ...state.actions,
-          ...actionResult('GET_SUBSCRIBERS.REQUEST'),
+          ...actionResult('MAILCHIMP.REQUEST'),
         },
       };
-    case GET_SUBSCRIBERS.SUCCESS:
+    case MAILCHIMP.SUCCESS:
       return {
         ...state,
         search: {
@@ -103,15 +103,15 @@ export default (state = initialState, action) => {
         },
         actions: {
           ...state.actions,
-          ...actionResult('GET_SUBSCRIBERS.SUCCESS'),
+          ...actionResult('MAILCHIMP.SUCCESS'),
         },
       };
-    case GET_SUBSCRIBERS.ERROR:
+    case MAILCHIMP.ERROR:
       return {
         ...state,
         actions: {
           ...state.actions,
-          ...actionResult('GET_SUBSCRIBERS.ERROR'),
+          ...actionResult('MAILCHIMP.ERROR'),
         },
       };
     default:

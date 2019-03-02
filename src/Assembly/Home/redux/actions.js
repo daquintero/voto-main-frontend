@@ -1,7 +1,7 @@
 import {
   GET_HOME,
   HOME_SEARCH,
-  GET_SUBSCRIBERS,
+  MAILCHIMP,
 } from './actionCreators';
 import service from '../service';
 
@@ -50,20 +50,19 @@ export const homeSearch = searchData => (dispatch) => {
   );
 };
 
-// TODO Finish
-export const getSubscribers = () => (dispatch) => {
+export const mailchimp = () => (dispatch) => {
   dispatch({
-    type: GET_SUBSCRIBERS.REQUEST,
+    type: MAILCHIMP.REQUEST,
   });
-  return service.subscribers.home().then(
+  return service.get.mailchimp().then(
     response =>
       dispatch({
-        type: GET_SUBSCRIBERS.SUCCESS,
+        type: MAILCHIMP.SUCCESS,
         response: response.data,
       }),
     error =>
       dispatch({
-        type: GET_SUBSCRIBERS.ERROR,
+        type: MAILCHIMP.ERROR,
         error,
       }),
   );
