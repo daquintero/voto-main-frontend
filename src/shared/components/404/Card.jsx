@@ -28,7 +28,7 @@ class NFCard extends PureComponent {
         <Col sm={12} >
           <Card onClick={this.openMore} className={`border-0 ${light ? 'bg-layout' : 'bg-shady-layout'}`}>
             <p className="m-1 px-2 small text-center">
-                Ahora mismo no hay {typeInfo[type].name} con relación a este {parent}.
+                Ahora mismo no hay {typeInfo[type].name} {typeInfo[parent].singular}.
             </p>
             <p className="lead text-center mt-1 mx-1">
               ¿Quieres contribuir?

@@ -1,28 +1,23 @@
 const typeInfo = {
   'corruption.InformativeSnippet': {
-    name: 'noticias',
-    singular: 'noticia',
-    reduxState: 'informativeSnippets',
+    name: 'noticias relacionadas',
+    singular: 'a esta noticia',
   },
   'corruption.CorruptionCase': {
-    name: 'casos de corrupcion',
-    singular: 'caso de corrupcion',
-    reduxState: 'corruptionCases',
+    name: 'casos de corrupcion relacionados',
+    singular: 'a este caso de corrupcion',
   },
   'corruption.FinancialItem': {
-    name: 'finanzas',
-    singular: 'finanza',
-    reduxState: 'financialItems',
+    name: 'finanzas relacionadas',
+    singular: 'a esta finanza',
   },
   'political.Individual': {
-    name: 'individuos',
-    singular: 'individuo',
-    reduxState: 'individuals',
+    name: 'individuos relacionados',
+    singular: 'a este individuo',
   },
   'political.Controversy': {
-    name: 'controversias',
-    singular: 'controversia',
-    reduxState: 'controversies',
+    name: 'controversias relacionadas',
+    singular: 'a esta controversia',
   },
   'political.Promise': {
     name: 'promesas',
@@ -31,24 +26,24 @@ const typeInfo = {
     name: 'experiencia',
   },
   'political.Statistic': {
-    name: 'estadísticas',
-    singular: 'estadística',
+    name: 'estadísticas relacionadas',
+    singular: 'a esta estadística',
   },
   'political.Law': {
-    name: 'leyes',
-    singular: 'ley',
+    name: 'leyes relacionadas',
+    singular: 'a esta ley',
   },
   'media.Resource': {
-    name: 'recursos',
-    singular: 'recurso',
+    name: 'recursos relacionados',
+    singular: 'a este recurso',
   },
   noneType: {
-    name: 'información',
-    singular: 'información',
+    name: 'información relacionada',
+    singular: 'a esta información.',
   },
   noneParent: {
-    name: 'elementos',
-    singular: 'elemento',
+    name: 'esto relacionado',
+    singular: 'a esto todavía',
   },
 };
 

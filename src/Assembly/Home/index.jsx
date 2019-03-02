@@ -8,7 +8,8 @@ import { Container, Modal } from 'reactstrap';
 import AboutPage from '../AboutUsPage/components/Page';
 import CardRow from '../../Reusable/CardRow';
 import TopBanner from './components/TopBanner';
-// import Map from '../../Reusable/Map';
+import Map from '../../Reusable/Map';
+import Search from './components/Search';
 
 // Actions
 import { getHome, openFirstVisit } from './redux/actions';
@@ -73,7 +74,12 @@ class Home extends PureComponent {
         </div>
         <div className="home__map__wrapper">
           <Container className="py-5">
-            {/* <Map /> */}
+            <Map />
+          </Container>
+        </div>
+        <div>
+          <Container className="py-2">
+            <Search />
           </Container>
         </div>
       </div>

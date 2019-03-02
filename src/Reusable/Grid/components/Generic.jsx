@@ -8,7 +8,6 @@ import { connect } from 'react-redux';
 // Card Selector
 import CardSelector from '../../../shared/components/cardSelector';
 import NFCard from '../../../shared/components/404/Card';
-import typeInfo from '../../../shared/utils/typeInfo';
 
 // Declaration
 class Generic extends PureComponent {
@@ -46,7 +45,7 @@ class Generic extends PureComponent {
           {/* TODO PASS THIS BY PROPS */}
           <NFCard
             type={relatedModelLabel}
-            parent={typeInfo[parentModelLabel].singular}
+            parent={parentModelLabel || 'noneParent'}
             light={light}
           />
         </div>
