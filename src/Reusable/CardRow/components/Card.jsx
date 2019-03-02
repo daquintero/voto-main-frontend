@@ -13,7 +13,7 @@ const Card = ({ instance, index }) => {
   const image = instance.media.images[0];
   const primary = index === 0;
   return (
-    <Link to="/" className="card-row__card">
+    <Link to={`/noticia/${instance.id}`} className="card-row__card">
       <img
         src={imageUrl(image.url)}
         alt={image.title}
