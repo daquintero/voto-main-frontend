@@ -6,10 +6,10 @@ class Whatever extends Component {
     hi: PropTypes.string.isRequired,
   };
   constructor(props) {
-    super(props);
-    this.state = {
-      test: false,
-    };
+      super(props);
+      this.state = {
+        test: false,
+      };
   }
   onClick = () => { // TODO REMOVE IF NOT NEEDED
     this.setState(prevState => ({ test: !prevState.test }));

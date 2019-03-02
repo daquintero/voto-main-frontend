@@ -7,29 +7,19 @@ import { Marker } from 'react-map-gl';
 // } from 'reactstrap';
 
 
-const IndividualMarker = ({ name, centroid, statistics }) => (
+const IndividualMarker = ({ centroid }) => (
   <Marker
     longitude={centroid[0][0]}
     latitude={centroid[0][1]}
-    className="map__marker__wrapper"
-    offsetTop={-100}
+    offsetTop={-75}
+    offsetLeft={-15}
   >
-    {name}
-    <div className="d-flex">
-      {statistics.map(instance => (
-        <span>
-          <i className={`fal fa-${instance.icon}`} /> {instance.value}
-        </span>
-      ))}
-    </div>
-    <div className="map__marker__pointer" />
+    <i className="fal fa-3x fa-map-marker-alt text-white text-center" />
   </Marker>
 );
 
 IndividualMarker.propTypes = {
-  name: PropTypes.string.isRequired,
   centroid: PropTypes.instanceOf(Array).isRequired,
-  statistics: PropTypes.instanceOf(Object).isRequired,
 };
 
 export default IndividualMarker;

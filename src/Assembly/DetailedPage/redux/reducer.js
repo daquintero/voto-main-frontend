@@ -7,7 +7,7 @@ import {
 
 import { initializeActions, actionResult } from '../../../shared/utils/asyncHelpers';
 
-// Initial State for Detailed CorruptionCase
+// Initial State for Detailed NewsLike
 const initialState = {
   parentInstance: {},
   relatedInstances: {},

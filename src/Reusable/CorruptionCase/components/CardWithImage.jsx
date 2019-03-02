@@ -13,9 +13,9 @@ import layoutMap from '../styling/layoutMap';
 
 
 const CardWithImage = ({ instance }) => {
-  const primaryImage = instance.images[0];
+  const primaryImage = instance.media.images[0];
   return (
-    <Card className="bg-light border-0 rounded-0 small-enlarge span-2-cols">
+    <Card className="bg-light border-0 rounded-0 small-enlarge span-2-cols span-2-rows">
       <Row noGutters>
         <Link to={`/corrupcion-caso/${instance.id}`}>
           <Col
@@ -44,7 +44,7 @@ const CardWithImage = ({ instance }) => {
             <div className="d-flex justify-content-between bg-eb rounded-0">
               {/* If there are three or more statistics,
                 only display limits of 3 or map less than that */}
-              {instance.statistics.slice(0, 3).map(statistic => (
+              { instance.statistics && instance.statistics.slice(0, 3).map(statistic => (
                 <StatisticsItem instance={statistic} />
               ))}
               <div className="p-2 mt-0 text-center">

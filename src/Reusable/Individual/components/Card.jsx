@@ -17,15 +17,16 @@ moment.locale('es');
 class IndividualCard extends PureComponent {
   static propTypes = {
     instance: PropTypes.instanceOf(Object).isRequired,
+    light: PropTypes.bool.isRequired,
   };
 
   render() {
-    const { instance } = this.props;
+    const { instance, light } = this.props;
     return (
-      instance.images && instance.images.length ? (
-        <CardWithImage instance={instance} />
+      instance.media && instance.media.images && instance.media.images.length ? (
+        <CardWithImage instance={instance} light={light} />
       ) : (
-        <CardWithoutImage instance={instance} />
+        <CardWithoutImage instance={instance} light={light} />
       )
     );
   }

@@ -13,9 +13,10 @@ import Home from '../Assembly/Home';
 import Layout from '../Layout/TopBar';
 
 // --------------- DETAIL PAGE IMPORTS -------------------
-import CorruptionCase from '../Assembly/DetailedPage/components/CorruptionCase/Page';
+import CORPage from '../Assembly/DetailedPage/components/NewsLike/CCPage';
+import INFPage from '../Assembly/DetailedPage/components/NewsLike/INFPage';
 import Individual from '../Assembly/DetailedPage/components/Individual/Page';
-import InformativeSnippet from '../Assembly/DetailedPage/components/InformativeSnippet/Page';
+import Organization from '../Assembly/DetailedPage/components/Organization/Page';
 
 // About Page
 import About from '../Assembly/AboutUsPage/components/Page';
@@ -34,9 +35,10 @@ const wrappedRoutes = () => (
 
 
       {/* Detailed Pages */}
-      <Route path="/caso-corrupcion/:id" component={CorruptionCase} />
+      <Route path="/caso-corrupcion/:id" component={CORPage} />
       <Route path="/individuo/:id" component={Individual} />
-      <Route path="/noticia/:id" component={InformativeSnippet} />
+      <Route path="/organizacion/:id" component={Organization} />
+      <Route path="/noticia/:id" component={INFPage} />
 
       {/* Test Files */}
       <Route path="/a" component={Scratch} />

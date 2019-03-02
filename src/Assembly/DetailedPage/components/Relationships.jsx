@@ -1,31 +1,27 @@
-// Relationships Section Corruption CorruptionCase
+// Relationships Section Corruption NewsLike
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Row, Col } from 'reactstrap';
 import { connect } from 'react-redux';
 
 // Components
-import CardGrid from '../../../Reusable/Grid/components/Related/DetailedReduxCardGrid';
+import CardGrid from '../../../Reusable/Grid/components/DetailedReduxCardGrid';
 
 class Relationships extends PureComponent {
   static propTypes = {
     individuals: PropTypes.instanceOf(Object).isRequired,
     corruptionCases: PropTypes.instanceOf(Object).isRequired,
     informativeSnippets: PropTypes.instanceOf(Object).isRequired,
+    organizations: PropTypes.instanceOf(Object).isRequired,
   };
+
   render() {
-    const { individuals, corruptionCases, informativeSnippets } = this.props;
+    const {
+      individuals, corruptionCases, informativeSnippets, organizations,
+    } = this.props;
     return (
-      <Row>
-        <Col xs={12} className="mt-2 p-1 bg-shady-layout">
-          <CardGrid
-            relatedModelLabel="political.Individual"
-            gridClass="variable-grid"
-            instances={individuals.instances}
-            subsetNumber={individuals.subsetNumber}
-          />
-        </Col>
-        <Col xs={12} className="p-1 bg-middle-layout">
+      <Row className="overflow-hidden">
+        <Col xs={12} className="p-1 bg-layout">
           <CardGrid
             relatedModelLabel="corruption.CorruptionCase"
             gridClass="variable-grid"
@@ -33,8 +29,23 @@ class Relationships extends PureComponent {
             subsetNumber={corruptionCases.subsetNumber}
           />
         </Col>
-        {/* TODO Organization Card Grid */}
-        <Col xs={12} className="p-1 bg-shady-layout">
+        <Col xs={12} className="p-1 bg-layout">
+          <CardGrid
+            relatedModelLabel="political.Organization"
+            gridClass="variable-grid"
+            instances={organizations.instances}
+            subsetNumber={organizations.subsetNumber}
+          />
+        </Col>
+        <Col xs={12} className="mt-2 p-1 bg-layout">
+          <CardGrid
+            relatedModelLabel="political.Individual"
+            gridClass="variable-grid"
+            instances={individuals.instances}
+            subsetNumber={individuals.subsetNumber}
+          />
+        </Col>
+        <Col xs={12} className="p-1 bg-layout">
           <CardGrid
             relatedModelLabel="corruption.InformativeSnippet"
             gridClass="variable-grid"
@@ -42,58 +53,25 @@ class Relationships extends PureComponent {
             subsetNumber={informativeSnippets.subsetNumber}
           />
         </Col>
+        {/* TODO Organization Card Grid */}
       </Row>
     );
   }
 }
 
 const mapStateToProps = (state) => {
-  const { individuals, corruptionCases, informativeSnippets } = state.relatedInstances;
+  const {
+    individuals,
+    corruptionCases,
+    informativeSnippets,
+    organizations,
+  } = state.openPage.relatedInstances;
   return {
     individuals,
     corruptionCases,
     informativeSnippets,
+    organizations,
   };
 };
 
 export default connect(mapStateToProps)(Relationships);
-
-
-// // TODO Props validation
-// const Relationships = ({ individuals, corruptionCases, informativeSnippets }) => (
-//   <Row>
-//     <Col xs={12} className="mt-2 p-1 bg-shady-layout">
-//       <CardGrid
-//         relatedModelLabel="political.Individual"
-//         gridClass="variable-grid"
-//         instances={individuals.instances}
-//         subsetNumber={individuals.subsetNumber}
-//       />
-//     </Col>
-//     <Col xs={12} className="p-1 bg-middle-layout">
-//       <CardGrid
-//         relatedModelLabel="corruption.CorruptionCase"
-//         gridClass="variable-grid"
-//         instances={corruptionCases.instances}
-//         subsetNumber={corruptionCases.subsetNumber}
-//       />
-//     </Col>
-//     {/* TODO Organization Card Grid */}
-//     <Col xs={12} className="p-1 bg-shady-layout">
-//       <CardGrid
-//         relatedModelLabel="corruption.InformativeSnippet"
-//         gridClass="variable-grid"
-//         instances={informativeSnippets.instances}
-//         subsetNumber={informativeSnippets.subsetNumber}
-//       />
-//     </Col>
-//   </Row>
-// );
-//
-// Relationships.propTypes = {
-//   individuals: PropTypes.instanceOf(Object).isRequired,
-//   corruptionCases: PropTypes.instanceOf(Object).isRequired,
-//   informativeSnippets: PropTypes.instanceOf(Object).isRequired,
-// };
-
-// export default Relationships;

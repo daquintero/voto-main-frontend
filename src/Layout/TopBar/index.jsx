@@ -14,6 +14,7 @@ import classNames from 'classnames';
 // Functions
 // import imageUrl from '../../shared/utils/imageUrl';
 
+import logo from './favicon.ico';
 
 class TopBar extends Component {
   constructor(props) {
@@ -84,10 +85,10 @@ class TopBar extends Component {
     } = this.state;
     return (
       <>
-        <Navbar light expand="md" className="navbar fixed-top p-0 bg-layout">
+        <Navbar light expand="md" className="navbar fixed-top p-0">
           <Container className="navbar__wrapper">
-            <NavbarBrand href="/" className="navbar__brand d-inline align-middle pt-2">
-              <h4 className="m-0 pl-xs-3 pl-md-0">#VotoInformado2019</h4>
+            <NavbarBrand href="/" className="navbar__brand d-inline">
+              <img className="img-fluid" src={logo} alt="" />
             </NavbarBrand>
             <NavbarToggler
               onClick={this.toggleNavbar}
@@ -121,7 +122,11 @@ class TopBar extends Component {
                 >
                   <div className="navbar__nav__link" >
                     {/* TODO remove coloring */}
-                    <a href="https://s3.amazonaws.com/votoinformado2019/Manual_Voto_Informado_2019.pdf">
+                    <a
+                      target="_blank"
+                      rel="noreferrer noopener"
+                      href="https://s3.amazonaws.com/votoinformado2019/Manual_Voto_Informado_2019.pdf"
+                    >
                       Manual
                     </a>
                   </div>
@@ -133,9 +138,17 @@ class TopBar extends Component {
                 >
                   <Link className="navbar__nav__link" to="/">Nosotros</Link>
                 </div>
+                <div
+                  className={classNames('navbar__nav__item end three', { active: currentTab === '3' })}
+                  data-id="3"
+                  onMouseEnter={this.handleOnHover}
+                >
+                  <Link className="navbar__nav__link" to="/">
+                    <i className="fal fa-user-circle" />
+                  </Link>
+                </div>
               </div>
             </Collapse>
-
           </Container>
         </Navbar>
         {/* TODO ADD THIS LATER SINCE NOT MANY PAGES SO FAR */}

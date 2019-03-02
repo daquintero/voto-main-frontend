@@ -12,17 +12,17 @@ import { GET_DETAILED_PAGE } from '../../redux/actionCreators';
 
 // Components
 import Header from './Header';
-import Gallery from './Gallery';
-import Description from './Description';
+import Gallery from '../Gallery';
+import Description from '../Description';
 import Relationships from '../Relationships';
-import RightSide from './RightSide';
+import RightSide from '../RightSide';
 import Loader from '../../../../shared/components/Loader';
 
 
-const parentModelLabel = 'political.CorruptionCase';
+const parentModelLabel = 'political.InformativeSnippet';
 
 
-class Page extends PureComponent {
+class CCPage extends PureComponent {
   static propTypes = {
     // Redux
     dispatch: PropTypes.func.isRequired,
@@ -43,6 +43,7 @@ class Page extends PureComponent {
   }
 
   componentWillUnmount() {
+    const { dispatch } = this.props;
     dispatch({
       type: GET_DETAILED_PAGE.INIT,
     });
@@ -86,4 +87,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(Page);
+export default connect(mapStateToProps)(CCPage);

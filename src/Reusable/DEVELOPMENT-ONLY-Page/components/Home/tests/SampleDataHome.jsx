@@ -12,7 +12,7 @@ const imageTest = `${process.env.PUBLIC_URL}/img-test/a.jpg`;
 // Test Sample Data
 const data = [{
   id: 2,
-  type: 'corruption.CorruptionCase',
+  type: 'corruption.NewsLike',
   size: 'full',
   title: 'Whatsup asfffszdn amsda jasd nas dn asnd ',
   date: new Date(),
@@ -25,7 +25,7 @@ const data = [{
   }],
 }, {
   id: 3,
-  type: 'corruption.CorruptionCase',
+  type: 'corruption.NewsLike',
   size: 'full',
   title: 'Whatsup asddddn amsda jasd nas dn asnd ',
   date: new Date(),

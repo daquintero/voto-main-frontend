@@ -10,9 +10,18 @@ a {
 a:hover  {
   text-decoration:none;
   cursor:pointer;
+  color: $impRed !important;
 }
 
 // Show Link
-.sl {
+.sl:hover {
   color: $impRed !important;
+}
+
+.rel {
+    text-transform:capitalize;
+}
+
+.notice {
+  color: $color-green !important;
 }

@@ -1,26 +1,35 @@
 import {
   GET_HOME,
   HOME_SEARCH,
+  GET_SUBSCRIBERS,
 } from './actionCreators';
 import { initializeActions, actionResult } from '../../../shared/utils/asyncHelpers';
 
 
 const initialState = {
+  firstVisit: true,
   search: {
     instances: [],
   },
   content: {
     informativeSnippets: [],
   },
+  mailchimp: {},
   actions: initializeActions([
     'GET_HOME',
     'HOME_SEARCH',
+    'GET_SUBSCRIBERS',
   ]),
 };
 
 
 export default (state = initialState, action) => {
   switch (action.type) {
+    case 'FIRST_VISIT':
+      return {
+        ...state,
+        firstVisit: false,
+      };
     case GET_HOME.REQUEST:
       return {
         ...state,
@@ -33,7 +42,7 @@ export default (state = initialState, action) => {
       return {
         ...state,
         content: {
-          ...state.content,
+          ...action.response.instances,
         },
         actions: {
           ...state.actions,
@@ -75,6 +84,34 @@ export default (state = initialState, action) => {
         actions: {
           ...state.actions,
           ...actionResult('HOME_SEARCH.ERROR'),
+        },
+      };
+    case GET_SUBSCRIBERS.REQUEST:
+      return {
+        ...state,
+        actions: {
+          ...state.actions,
+          ...actionResult('GET_SUBSCRIBERS.REQUEST'),
+        },
+      };
+    case GET_SUBSCRIBERS.SUCCESS:
+      return {
+        ...state,
+        search: {
+          ...state,
+          mailchimp: action.response,
+        },
+        actions: {
+          ...state.actions,
+          ...actionResult('GET_SUBSCRIBERS.SUCCESS'),
+        },
+      };
+    case GET_SUBSCRIBERS.ERROR:
+      return {
+        ...state,
+        actions: {
+          ...state.actions,
+          ...actionResult('GET_SUBSCRIBERS.ERROR'),
         },
       };
     default:

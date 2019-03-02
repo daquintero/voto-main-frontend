@@ -8,7 +8,7 @@ const assemblyApiUrl = `${baseUrl}/assembly/api/v1`;
 
 const urls = {
   get: {
-    // Full CorruptionCase
+    // Full NewsLike
     detailedPage: `${assemblyApiUrl}/`,
   },
   post: {
@@ -18,7 +18,7 @@ const urls = {
 };
 
 // ----------- DETAILED PAGE ---------------
-// Generic Detailed CorruptionCase Action for all Components
+// Generic Detailed NewsLike Action for all Components
 const detailedPage = apiQueryData => axios.get(buildUrl(urls.get.detailedPage, apiQueryData));
 
 // Exported Services

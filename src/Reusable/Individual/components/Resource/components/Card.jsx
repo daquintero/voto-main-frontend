@@ -7,17 +7,16 @@ import { Card } from 'reactstrap';
 import PropTypes from 'prop-types';
 
 // Declaration
-class Whatever extends PureComponent {
+class Resource extends PureComponent {
   static propTypes = {
     instance: PropTypes.instanceOf(Object).isRequired,
   };
   render() {
     const { instance } = this.props;
     return (
-      <Card className="text-center">
+      <Card className="text-center p-2">
         <a target="_blank" rel="noreferrer noopener" href={instance.source}>
-          <i className="fal fa-link fa-2x" />
-          <p className="lead"> {instance.title} </p>
+          <h5 className="lead m-0"><i className="fal fa-link" /> {instance.title} </h5>
         </a>
       </Card>
     );
@@ -25,4 +24,4 @@ class Whatever extends PureComponent {
 }
 
 // TODO State Store Connection
-export default Whatever;
+export default Resource;

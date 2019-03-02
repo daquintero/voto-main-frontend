@@ -37,7 +37,7 @@ class Header extends PureComponent {
 export default Header;
 // // TODO Reconnect to Redux
 // export default connect(state => ({
-//   // Basic CorruptionCase information
+//   // Basic NewsLike information
 //   title: state.openPage.basic.title,
 //   description: state.openPage.basic.description,
 //   longDescription: state.openPage.basic.longDescription,
