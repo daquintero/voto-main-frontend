@@ -1,3 +1,4 @@
+/* eslint-disable */
 // Grid of Variable Positions
 // Libraries
 import React, { PureComponent } from 'react';
@@ -42,7 +43,6 @@ class Generic extends PureComponent {
         <div
           className={`mx-auto justify-content-center align-items-center ${gridClass}`}
         >
-          {/* TODO PASS THIS BY PROPS */}
           <NFCard
             type={relatedModelLabel}
             parent={parentModelLabel || 'noneParent'}

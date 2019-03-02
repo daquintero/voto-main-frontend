@@ -54,8 +54,6 @@ class Page extends PureComponent {
       instance, actions,
     } = this.props;
 
-    console.log(actions.GET_DETAILED_PAGE.loaded);
-
     return actions.GET_DETAILED_PAGE.loaded ? (
       <Container>
         <Row className="p-2 overflow-hidden">
@@ -63,7 +61,7 @@ class Page extends PureComponent {
             <Header instance={instance} />
             <Description instance={instance} />
             <Gallery instance={instance} />
-            {/*TODO Finish connecting */}
+            {/* TODO Finish connecting */}
             <History />
             <Relationships />
           </Col>

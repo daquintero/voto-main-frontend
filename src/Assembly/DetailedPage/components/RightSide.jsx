@@ -10,9 +10,8 @@ import MainFinancesNav from '../../../Reusable/FinanceItem/components/MainFinanc
 import Statistics from './Statistics';
 import Share from '../../../Reusable/SocialShare/components/Card';
 import LawList from '../../../Reusable/Law/components/List';
-import typeInfo from '../../../shared/utils/typeInfo';
 import CardGrid from '../../../Reusable/Grid/components/Related/DetailedReduxCardGrid';
-import TwitterFeed from '../../../Reusable/SocialShare/components/TwitterFeed';
+// import TwitterFeed from '../../../Reusable/SocialShare/components/TwitterFeed';
 
 // Declaration
 class RightSide extends PureComponent {
@@ -51,7 +50,7 @@ class RightSide extends PureComponent {
           <MainFinancesNav
             corruptionRelatedFunds={instance.corruptionRelatedFunds}
             nonCorruptionRelatedFunds={instance.nonCorruptionRelatedFunds}
-            parent={typeInfo[instance.modelLabel].singular}
+            parent={instance.modelLabel}
             light={light}
           />
         </Row>
@@ -64,7 +63,7 @@ class RightSide extends PureComponent {
         <Row noGutters className="p-2 justify-content-center">
           <LawList
             instances={laws.instances}
-            parent={typeInfo[instance.modelLabel].singular}
+            parent={instance.modelLabel}
             light={light}
           />
         </Row>
@@ -80,7 +79,7 @@ class RightSide extends PureComponent {
         {actions.GET_DETAILED_PAGE.loaded && instance.twitterUsername ? (
           <Row noGutters className="p-2 justify-content-center">
             {/* TODO FINish making it work */}
-            <TwitterFeed user={instance.twitterUsername} />
+            {/* <TwitterFeed user={instance.twitterUsername} /> */}
           </Row>
         ) : null}
       </Row>

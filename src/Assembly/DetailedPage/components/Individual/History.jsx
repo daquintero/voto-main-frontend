@@ -10,13 +10,15 @@ import CardGrid from '../../../../Reusable/Grid/components/Related/DetailedRedux
 class Relationships extends PureComponent {
   static propTypes = {
     experience: PropTypes.instanceOf(Array).isRequired,
+    promise: PropTypes.instanceOf(Object).isRequired,
+    controversy: PropTypes.instanceOf(Object).isRequired,
   };
   render() {
-    const { experience } = this.props;
+    const { experience, promise, controversy } = this.props;
     return (
       <Row>
-        <Col xs={12} className="mt-2 p-1 bg-layout">
-          <Row noGutters>
+        <Col xs={6} className="mt-2 p-1 bg-layout">
+          <Row noGutters className="justify-content-center p-0">
             <CardGrid
               relatedModelLabel="political.Experience"
               gridClass="variable-grid"
@@ -28,20 +30,30 @@ class Relationships extends PureComponent {
         <Col xs={6} className="mt-2 p-1 bg-layout">
           <Row noGutters>
             <CardGrid
-              relatedModelLabel="political.Experience"
+              relatedModelLabel="political.Controversy"
               gridClass="variable-grid"
-              instances={experience}
-              subsetNumber={experience}
+              instances={controversy}
+              subsetNumber={controversy}
             />
           </Row>
         </Col>
         <Col xs={6} className="mt-2 p-1 bg-layout">
           <Row noGutters>
             <CardGrid
-              relatedModelLabel="political.Experience"
+              relatedModelLabel="political.Promise"
               gridClass="variable-grid"
-              instances={experience}
-              subsetNumber={experience}
+              instances={promise}
+              subsetNumber={promise}
+            />
+          </Row>
+        </Col>
+        <Col xs={6} className="mt-2 p-1 bg-layout">
+          <Row noGutters>
+            <CardGrid
+              relatedModelLabel="political.Promise"
+              gridClass="variable-grid"
+              instances={promise}
+              subsetNumber={promise}
             />
           </Row>
         </Col>
@@ -52,8 +64,11 @@ class Relationships extends PureComponent {
 
 const mapStateToProps = (state) => {
   const { experience } = state.openPage.parentInstance;
+  const { promise, controversy } = state.openPage.relatedInstances;
   return {
     experience,
+    promise,
+    controversy,
   };
 };
 

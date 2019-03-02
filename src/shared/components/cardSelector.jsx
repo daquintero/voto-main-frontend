@@ -32,6 +32,7 @@ import RESCard from '../../Reusable/Individual/components/Resource/components/Ca
 
 // ---------- FUNCTION -----------
 export default function (instance, context, light) {
+  // console.log(instance);
   switch (instance.modelLabel) {
     case 'corruption.InformativeSnippet':
       return (<INFOCard instance={instance} />);

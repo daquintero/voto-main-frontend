@@ -17,6 +17,14 @@ class Relationships extends PureComponent {
     const { individuals, corruptionCases, informativeSnippets } = this.props;
     return (
       <Row className="overflow-hidden">
+        <Col xs={12} className="p-1 bg-layout">
+          <CardGrid
+            relatedModelLabel="corruption.InformativeSnippet"
+            gridClass="variable-grid"
+            instances={informativeSnippets.instances}
+            subsetNumber={informativeSnippets.subsetNumber}
+          />
+        </Col>
         <Col xs={12} className="mt-2 p-1 bg-layout">
           <CardGrid
             relatedModelLabel="political.Individual"
@@ -34,14 +42,6 @@ class Relationships extends PureComponent {
           />
         </Col>
         {/* TODO Organization Card Grid */}
-        <Col xs={12} className="p-1 bg-layout">
-          <CardGrid
-            relatedModelLabel="corruption.InformativeSnippet"
-            gridClass="variable-grid"
-            instances={informativeSnippets.instances}
-            subsetNumber={informativeSnippets.subsetNumber}
-          />
-        </Col>
       </Row>
     );
   }
