@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 // Components
-import CardGrid from '../index';
+import CardGrid from '../../../Reusable/Grid/components/DetailedReduxCardGrid';
 
 
 // Declaration
