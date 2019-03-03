@@ -14,9 +14,7 @@ class Subscribe extends PureComponent {
   static propTypes = {
     mailchimpSubscribed: PropTypes.number.isRequired,
   };
-  submit = () => {
-    console.table();
-  };
+  submit = () => null;
   render() {
     const { mailchimpSubscribed } = this.props;
     return (
