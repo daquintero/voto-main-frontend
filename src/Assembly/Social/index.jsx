@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { Container, Modal } from 'reactstrap';
 
 // Components
-import AboutPage from '../AboutUsPage/components/Page';
+import AboutPage from '../AboutUsPage';
 import CardRow from '../../Reusable/CardRow';
 import TopBanner from '../TopBanner';
 import Map from '../../Reusable/Map';
