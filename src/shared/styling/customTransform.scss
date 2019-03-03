@@ -21,3 +21,12 @@
   box-shadow: -5px 17px 30px -30px rgba(0,0,0,0.33);
 }
 
+.send:hover {
+  transform: translate(45%) rotate(-25deg);
+  transition-duration: 100ms;
+}
+
+.spin-clock:hover {
+  transform: rotate(50deg);
+  transition-duration: 500ms;
+}

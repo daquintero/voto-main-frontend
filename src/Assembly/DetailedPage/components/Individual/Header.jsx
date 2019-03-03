@@ -43,7 +43,11 @@ class Header extends PureComponent {
             <Row noGutters className="p-2 pb-4 justify-content-center align-items-baseline">
               {instance.facebookUsername && (
                 <Col className="px-0 text-center">
-                  <a target="_blank" rel="noreferrer noopener" href={instance.facebookUsername}>
+                  <a
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    href={`https://www.facebook.com/${instance.facebookUsername}`}
+                  >
                     <i
                       className="fab fa-facebook-square fa-2x"
                       style={{ color: '#3B5998' }}
@@ -53,7 +57,11 @@ class Header extends PureComponent {
               )}
               {instance.twitterUsername && (
                 <Col className="px-0 text-center">
-                  <a target="_blank" rel="noreferrer noopener" href={instance.twitterUsername}>
+                  <a
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    href={`https://www.twitter.com/${instance.twitterUsername}`}
+                  >
                     <i
                       className="fab fa-twitter-square fa-2x"
                       style={{ color: '#1DA1F2' }}
@@ -63,7 +71,11 @@ class Header extends PureComponent {
               )}
               {instance.instagramUsername && (
                 <Col className="px-0 text-center">
-                  <a target="_blank" rel="noreferrer sl noopener" href={instance.instagramUsername}>
+                  <a
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    href={`https://www.instagram.com/${instance.instagramUsername}`}
+                  >
                     <i
                       className="fab fa-instagram fa-2x"
                       style={{ color: '#FB3958' }}
@@ -73,7 +85,11 @@ class Header extends PureComponent {
               )}
               {instance.website && (
                 <Col className="px-0 text-center">
-                  <a target="_blank" rel="noreferrer noopener" href={instance.website}>
+                  <a
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    href={instance.website}
+                  >
                     <i
                       className="fa fa-browser fa-2x"
                       style={{ color: '#094074' }}
@@ -83,6 +99,7 @@ class Header extends PureComponent {
               )}
               {instance.email && (
                 <Col className="px-0 text-center">
+                  {/* TODO FIX email link */}
                   <a target="_blank" rel="noreferrer noopener" href={instance.email}>
                     <i
                       className="fa fa-envelope-open fa-2x"

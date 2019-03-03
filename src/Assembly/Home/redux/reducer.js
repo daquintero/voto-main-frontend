@@ -1,7 +1,7 @@
 import {
   GET_HOME,
   HOME_SEARCH,
-  MAILCHIMP,
+  SUBSCRIBED,
 } from './actionCreators';
 import { initializeActions, actionResult } from '../../../shared/utils/asyncHelpers';
 
@@ -14,11 +14,14 @@ const initialState = {
   content: {
     informativeSnippets: [],
   },
-  mailchimp: {},
+  subscribed: {
+    mailchimpSubscribed: 0,
+    studioUsers: 0,
+  },
   actions: initializeActions([
     'GET_HOME',
     'HOME_SEARCH',
-    'MAILCHIMP',
+    'SUBSCRIBED',
   ]),
 };
 
@@ -86,32 +89,32 @@ export default (state = initialState, action) => {
           ...actionResult('HOME_SEARCH.ERROR'),
         },
       };
-    case MAILCHIMP.REQUEST:
+    case SUBSCRIBED.REQUEST:
       return {
         ...state,
         actions: {
           ...state.actions,
-          ...actionResult('MAILCHIMP.REQUEST'),
+          ...actionResult('SUBSCRIBED.REQUEST'),
         },
       };
-    case MAILCHIMP.SUCCESS:
+    case SUBSCRIBED.SUCCESS:
       return {
         ...state,
         search: {
           ...state,
-          mailchimp: action.response,
+          subscribed: action.response,
         },
         actions: {
           ...state.actions,
-          ...actionResult('MAILCHIMP.SUCCESS'),
+          ...actionResult('SUBSCRIBED.SUCCESS'),
         },
       };
-    case MAILCHIMP.ERROR:
+    case SUBSCRIBED.ERROR:
       return {
         ...state,
         actions: {
           ...state.actions,
-          ...actionResult('MAILCHIMP.ERROR'),
+          ...actionResult('SUBSCRIBED.ERROR'),
         },
       };
     default:

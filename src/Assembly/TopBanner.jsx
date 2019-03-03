@@ -3,13 +3,12 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Col, Container, Row } from 'reactstrap';
-import { Link } from 'react-router-dom';
 
 import moment from 'moment';
 
 
 // Components TODO ADD FORM
-// import CustomForm from './CustomForm';
+import MailchimpForm from '../Reusable/SocialShare/components/MailchimpForm';
 
 
 // TODO Amount of subscribers
@@ -25,18 +24,12 @@ class TopBanner extends PureComponent { // eslint-disable-line
       <div className={light ? 'bg-layout' : 'bg-shady-layout'}>
         <Container>
           <Row noGutters className="py-1">
-            <Col sm={6} md={8} className="px-4 py-4 p-md-2 my-auto">
-              <h4>¡Comprométete a un #VotoInformado2019!</h4>
-              <div>
-            Aquí irá la cantidad de subscriptores al form.
-              </div>
-              <Link to="/acerca" className="sl">
-            Averigua más
-              </Link>
+            <Col sm={6} md={6} className="px-4 py-4 p-md-2 my-auto">
+              <MailchimpForm />
             </Col>
             <Col className="text-center my-auto">
               <h3>
-                <i className="fal fa-clock" />{' '}
+                <i className="fal fa-clock spin-clock" />{' '}
                 {moment('2019-05-05').diff(moment(), 'days')}
               </h3>
               <p>Dias Hasta las Elecciones</p>

@@ -1,16 +1,14 @@
 // Main Scratch Indexing Container for all of the Routes
 import React from 'react';
 import { Container, Row, Col } from 'reactstrap';
-
+import Form from '../Reusable/SocialShare/components/MailchimpForm';
 
 const Scratch = () => (
   <div className="layout">
     <Container>
       <Row>
-        <Col xs={3}>
-          <a className="twitter-timeline" href="https://twitter.com/NitoCortizo?ref_src=twsrc%5Etfw">Tweets by
-            NitoCortizo
-          </a>
+        <Col xs={12}>
+          <Form subscribedNumber={12} />
         </Col>
       </Row>
     </Container>

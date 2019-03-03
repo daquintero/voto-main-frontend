@@ -22,6 +22,7 @@ a:hover  {
     text-transform:capitalize;
 }
 
-.notice {
-  color: $color-green !important;
+.notice:hover {
+  color: $color-blue !important;
+  cursor: pointer;
 }
