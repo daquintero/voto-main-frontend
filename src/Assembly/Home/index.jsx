@@ -23,7 +23,12 @@ class Home extends PureComponent {
               asdf
             </Col>
             <Col md={6} className="text-center">
-              <h4 className="p-2 m-0">¡Descarga el Manual!</h4>
+              <a href="https://s3.amazonaws.com/votoinformado2019/Manual_Voto_Informado_2019.pdf">
+                <h4 className="p-2 m-0">
+                  <i className="fal fa-book-heart p-2" />
+                  ¡Descarga el Manual!
+                </h4>
+              </a>
               <PDF />
             </Col>
           </Row>
