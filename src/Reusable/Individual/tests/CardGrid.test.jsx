@@ -1,4 +1,4 @@
-// Test for the Home NewsLike Component
+// Test for the Social NewsLike Component
 import React from 'react';
 import renderer from 'react-test-renderer';
 import CardGrid from '../components/BootCardGrid';

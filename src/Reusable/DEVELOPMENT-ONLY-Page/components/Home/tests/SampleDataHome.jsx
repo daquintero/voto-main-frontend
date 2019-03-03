@@ -3,7 +3,7 @@
 import React from 'react';
 import { Container } from 'reactstrap';
 
-import Home from '../Reusable/DEVELOPMENT-ONLY-Page/components/Home';
+import Home from '../Reusable/DEVELOPMENT-ONLY-Page/components/Social';
 
 // TODO REMOVE IMAGE TEST
 const imageTest = `${process.env.PUBLIC_URL}/img-test/a.jpg`;

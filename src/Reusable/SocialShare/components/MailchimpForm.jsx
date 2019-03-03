@@ -6,7 +6,9 @@ import { Row, Col, Modal } from 'reactstrap';
 // Prop Types
 import PropTypes from 'prop-types';
 
-import { subscribed } from '../../../Assembly/Home/redux/actions';
+// Components
+import Subscribe from './Subscribe';
+import { subscribed } from '../../../Assembly/Social/redux/actions';
 
 // Declaration
 class MailchimpForm extends PureComponent {
@@ -16,17 +18,31 @@ class MailchimpForm extends PureComponent {
     studioUsers: PropTypes.number.isRequired,
   };
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      modal: false,
+    };
+  }
+
   componentDidMount() {
     this.props.dispatch(subscribed());
   }
 
+  toggle = () => {
+    this.setState(prevState => ({
+      modal: !prevState.modal,
+    }));
+  };
+
   render() {
     const { mailchimpSubscribed, studioUsers } = this.props;
+    const { modal } = this.state;
     return (
       <>
         <h4>¡Comprométete a un #VotoInformado2019!</h4>
         <Row noGutters>
-          <Col xs={6} className="p-2 my-auto text-center notice small-enlarge">
+          <Col xs={6} className="p-2 my-auto text-center notice small-enlarge" onClick={this.toggle}>
             <h5 className="py-1 m-0 text-center">
               {mailchimpSubscribed || 0} &nbsp;<i className="fal px-2 fa-envelope send" />
             </h5>
@@ -45,8 +61,8 @@ class MailchimpForm extends PureComponent {
             </a>
           </Col>
         </Row>
-        <Modal>
-          asdfasd
+        <Modal isOpen={modal} toggle={this.toggle}>
+          <Subscribe />
         </Modal>
       </>
 

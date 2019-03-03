@@ -1,4 +1,4 @@
-// Home Page
+// Social Page
 // Libraries
 import React, { PureComponent } from 'react';
 import { Col, Container, Row } from 'reactstrap';
