@@ -9,7 +9,7 @@ import moment from 'moment';
 
 
 // Components TODO ADD FORM
-import Subscribe from '../../../Reusable/SocialShare/components/Subscribe';
+import Subscribe from '../../../Reusable/SocialShare/components/ConnectedSubscribe';
 
 
 // TODO Amount of subscribers

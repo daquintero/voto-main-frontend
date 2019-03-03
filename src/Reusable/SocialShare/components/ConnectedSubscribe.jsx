@@ -1,3 +1,4 @@
+/* eslint-disable */
 // TODO DESCRIPTION // Libraries
 import React, { PureComponent } from 'react';
 import MailchimpSubscribe from 'react-mailchimp-subscribe';
@@ -14,11 +15,7 @@ const url =
 
 // Declaration
 class ConnectedSubscribe extends PureComponent {
-  static propTypes = {
-    instance: PropTypes.instanceOf(Object).isRequired,
-  };
   render() {
-    const { instance } = this.props;
     return (
       <>
         <MailchimpSubscribe
