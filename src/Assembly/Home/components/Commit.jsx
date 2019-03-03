@@ -23,7 +23,7 @@ class TopBanner extends PureComponent { // eslint-disable-line
     return (
       <div className={light ? 'bg-layout' : 'bg-shady-layout'}>
         <Container>
-          <Row noGutters className="py-1">
+          <Row noGutters className="py-3">
             <Col sm={6} md={6} className="px-4 py-4 p-md-2 my-auto">
               <Subscribe />
             </Col>
@@ -33,6 +33,12 @@ class TopBanner extends PureComponent { // eslint-disable-line
                 {moment('2019-05-05').diff(moment(), 'days')}
               </h3>
               <p>Dias Hasta las Elecciones</p>
+              <div className="bg-above-background py-4 small-enlarge">
+                <h4>
+                  <i className="fal fa-vote-yea p-2" />
+                  ¡Encuentra tu centro de votación!
+                </h4>
+              </div>
             </Col>
           </Row>
         </Container>

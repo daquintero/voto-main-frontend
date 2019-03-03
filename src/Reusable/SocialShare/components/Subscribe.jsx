@@ -19,18 +19,18 @@ class Subscribe extends PureComponent {
     const { mailchimpSubscribed } = this.props;
     return (
       <Row noGutters>
+        <Col xs={8} className="p-2">
+          <h5 className="p-2 m-0 notice">Compromėtete a un &nbsp;
+            <span className="sl">#VotoInformado2019</span>
+          </h5>
+        </Col>
         <Col xs={4} className="p-2 my-auto text-center notice small-enlarge">
           <h5 className="py-1 m-0 text-center">
             {mailchimpSubscribed || 0} &nbsp;<i className="fal px-2 fa-envelope send" />
           </h5>
           <h6 className="m-0">
-            Subcritos
+            Subscríbete
           </h6>
-        </Col>
-        <Col xs={8} className="p-2">
-          <h5 className="p-2 m-0 notice">Compromėtete a un &nbsp;
-            <span className="sl">#VotoInformado2019</span>
-          </h5>
         </Col>
         <Col xs={12} >
           <form onSubmit={this.submit}>

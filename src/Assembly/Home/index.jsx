@@ -7,6 +7,7 @@ import { Container, Row, Col } from 'reactstrap';
 import Video from '../Video';
 import Commit from './components/Commit';
 import PDF from './components/pdfPreviewer';
+import Candidates from './components/CandidateDiscovery';
 
 // Declaration
 class Home extends PureComponent {
@@ -17,10 +18,10 @@ class Home extends PureComponent {
           <Video />
         </Container>
         <Commit light />
-        <Container>
+        <Container className="bg-shady-layout py-4">
           <Row noGutters>
-            <Col md={6}>
-              asdf
+            <Col md={6} className="text-center">
+              <Candidates />
             </Col>
             <Col md={6} className="text-center">
               <a
