@@ -7,9 +7,9 @@ import { Route, Switch } from 'react-router-dom';
 
 
 // ---------------- BASE IMPORTS ----------------------
-// Home
-
+// Social
 import Home from '../Assembly/Home';
+import Social from '../Assembly/Social';
 import Layout from '../Layout/TopBar';
 
 // --------------- DETAIL PAGE IMPORTS -------------------
@@ -30,7 +30,8 @@ const wrappedRoutes = () => (
   <div>
     <Layout />
     <div className="bg-layout">
-      <Route exact path="/" component={Home} />
+      <Route exact path="/informate" component={Home} />
+      <Route path="/informate" component={Social} />
       <Route path="/acerca" component={About} />
 
 

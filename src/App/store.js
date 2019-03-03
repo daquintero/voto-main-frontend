@@ -8,9 +8,10 @@ import { reducer as formReducer } from 'redux-form';
 
 import mapReducer from '../Reusable/Map/redux/reducer';
 import detailPageReducer from '../Assembly/DetailedPage/redux/reducer';
-import homeReducer from '../Assembly/Home/redux/reducer';
+import homeReducer from '../Assembly/Social/redux/reducer';
 
 // Local Storage
+// TODO RECONNECT ONCE NO MORE CHANGES IN HOME STATE
 import { loadState, saveState } from './localStorage';
 
 const reducer = combineReducers({
@@ -20,11 +21,11 @@ const reducer = combineReducers({
   form: formReducer,
 });
 
-// const storedState = loadState();
+const storedState = loadState();
 
 const store = createStore(
   reducer,
-  // storedState,
+  storedState,
   composeWithDevTools(applyMiddleware(thunk)),
 );
 
