@@ -1,3 +1,4 @@
+/* eslint-disable */
 // Reducer Libraries
 import { combineReducers, createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
@@ -19,11 +20,11 @@ const reducer = combineReducers({
   form: formReducer,
 });
 
-const storedState = loadState();
+// const storedState = loadState();
 
 const store = createStore(
   reducer,
-  storedState,
+  // storedState,
   composeWithDevTools(applyMiddleware(thunk)),
 );
 
