@@ -8,16 +8,17 @@ import { reducer as formReducer } from 'redux-form';
 
 import mapReducer from '../Reusable/Map/redux/reducer';
 import detailPageReducer from '../Assembly/DetailedPage/redux/reducer';
-import homeReducer from '../Assembly/Social/redux/reducer';
+// TODO ADD LATER
+// import homeReducer from '../Assembly/Social/redux/reducer';
+import basicHomeReducer from '../Assembly/Home/redux/reducer';
 
 // Local Storage
-// TODO RECONNECT ONCE NO MORE CHANGES IN HOME STATE
 import { loadState, saveState } from './localStorage';
 
 const reducer = combineReducers({
   openPage: detailPageReducer,
   map: mapReducer,
-  home: homeReducer,
+  home: basicHomeReducer,
   form: formReducer,
 });
 

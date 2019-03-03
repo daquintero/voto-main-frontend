@@ -22,7 +22,9 @@ class Candidate extends PureComponent {
         </h4>
         <CardGrid
           parentModelLabel="political.Individual"
+          relatedModelLabel="noneType"
           subsetNumber={0}
+          light
           instances={candidates}
           gridClass="variable-grid"
         />

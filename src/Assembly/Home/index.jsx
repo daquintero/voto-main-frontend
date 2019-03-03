@@ -2,6 +2,8 @@
 // Libraries
 import React, { PureComponent } from 'react';
 import { Container, Row, Col } from 'reactstrap';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
 // Components
 import Video from '../Video';
@@ -9,8 +11,20 @@ import Commit from './components/Commit';
 import PDF from './components/pdfPreviewer';
 import Candidates from './components/CandidateDiscovery';
 
+// Actions
+import { getHome } from './redux/actions';
+
 // Declaration
 class Home extends PureComponent {
+  static propTypes = {
+    // Redux
+    dispatch: PropTypes.func.isRequired,
+  };
+
+  componentDidMount() {
+    const { dispatch } = this.props;
+    dispatch(getHome());
+  }
   render() {
     return (
       <>
@@ -44,4 +58,4 @@ class Home extends PureComponent {
 }
 
 // TODO State Store Connection
-export default Home;
+export default connect()(Home);

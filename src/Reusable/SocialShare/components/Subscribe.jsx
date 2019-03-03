@@ -8,13 +8,44 @@ import PropTypes from 'prop-types';
 import { Col, Row } from 'reactstrap';
 import { connect } from 'react-redux';
 
+const alphaNumeric = value =>
+  (value && /[^a-zA-Z0-9 ]/i.test(value)
+    ? 'Only alphanumeric characters'
+    : undefined);
+
+const email = value =>
+  (value && !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value)
+    ? 'Invalid email address'
+    : undefined);
 
 // Declaration
 class Subscribe extends PureComponent {
   static propTypes = {
     mailchimpSubscribed: PropTypes.number.isRequired,
+    status: PropTypes.string.isRequired,
+    onValidated: PropTypes.func.isRequired,
   };
-  submit = () => null;
+  submit = () => {
+    const { onValidated, mailchimpSubscribed } = this.props;
+    onValidated({
+      EMAIL: mailchimpSubscribed.email,
+      FNAME: mailchimpSubscribed.nombre,
+      PROV: mailchimpSubscribed.provincia,
+    });
+  };
+  renderField = ({
+    input,
+    label,
+    type,
+    meta: { touched, error, warning },
+  }) => (
+    <>
+      <input className="form-control" {...input} placeholder={label} type={type} />
+      {touched &&
+      ((error && <div>{error}</div>) ||
+        (warning && <div>{warning}</div>))}
+    </>
+  );
   render() {
     const { mailchimpSubscribed } = this.props;
     return (
@@ -43,10 +74,10 @@ class Subscribe extends PureComponent {
                 </div>
                 <Field
                   name="nombre"
-                  component="input"
+                  component={this.renderField}
                   type="text"
                   placeholder="Mi compa"
-                  className="form-control"
+                  validate={alphaNumeric}
                 />
               </div>
             </div>
@@ -56,10 +87,10 @@ class Subscribe extends PureComponent {
               </div>
               <Field
                 name="email"
-                component="input"
+                component={this.renderField}
                 type="email"
+                validate={email}
                 placeholder="Email"
-                className="form-control"
               />
             </div>
             <div className="input-group mt-3">

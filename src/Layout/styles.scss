@@ -168,21 +168,32 @@ body {
 .customPrevBtn {
   cursor: pointer;
   display: flex;
+  text-align: center;
   float: left;
   margin: 0;
   color: transparent;
   width: 50%;
   height: 100%;
 }
+.customPrevBtn  > a {
+  color: transparent;
+  display: none;
+}
 
 .customNextBtn {
   cursor: pointer;
   color: transparent;
   display: flex;
+  text-align: center;
   margin: 0;
   float: right;
   width: 50%;
   height: 100%;
+}
+
+.customNextBtn  > a {
+  color: transparent;
+  display: none;
 }
 .customPages {
   display: none;
