@@ -154,3 +154,44 @@ body {
 .nav-link {
   font-size: 0.3em;
 }
+
+
+// TODO MOVE PDF Previewer
+.customViewer {
+  display: flex;
+  justify-content: center;
+}
+.customViewer > canvas {
+  grid-area: pdf;
+  width: 100%;
+}
+.customPrevBtn {
+  cursor: pointer;
+  display: flex;
+  float: left;
+  margin: 0;
+  color: transparent;
+  width: 50%;
+  height: 100%;
+}
+
+.customNextBtn {
+  cursor: pointer;
+  color: transparent;
+  display: flex;
+  margin: 0;
+  float: right;
+  width: 50%;
+  height: 100%;
+}
+.customPages {
+  display: none;
+  visibility: hidden;
+  width: calc(100% - 2 * 50px);
+}
+.customWrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  font-size: 24px;
+}

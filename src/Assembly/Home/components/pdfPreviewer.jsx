@@ -7,6 +7,15 @@ const PDF = () => (
   <PDFViewer
     document={{ url: manual }}
     scale={1}
+    css="customViewer"
+    navigation={{
+      css: {
+        previousPageBtn: 'customPrevBtn',
+        nextPageBtn: 'customNextBtn',
+        pages: 'customPages',
+        wrapper: 'customWrapper',
+      },
+    }}
   />
 );
 
