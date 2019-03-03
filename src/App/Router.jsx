@@ -19,7 +19,7 @@ import Individual from '../Assembly/DetailedPage/components/Individual/Page';
 import Organization from '../Assembly/DetailedPage/components/Organization/Page';
 
 // About Page
-import About from '../Assembly/AboutUsPage/components/Page';
+import About from '../Assembly/AboutUsPage';
 
 // Testing Files
 import Scratch from './Scratch';
@@ -30,7 +30,7 @@ const wrappedRoutes = () => (
   <div>
     <Layout />
     <div className="bg-layout">
-      <Route exact path="/informate" component={Home} />
+      <Route exact path="/" component={Home} />
       <Route path="/informate" component={Social} />
       <Route path="/acerca" component={About} />
 

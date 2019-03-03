@@ -4,9 +4,9 @@ import React, { PureComponent } from 'react';
 import { Container, Row, Col } from 'reactstrap';
 
 // Components
-import Video from './Video';
-import Social from './Social';
-import Who from './Who';
+import Video from '../Video';
+import Social from './components/Social';
+import Who from './components/Who';
 
 // Declaration
 class AboutPage extends PureComponent {

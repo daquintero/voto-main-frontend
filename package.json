@@ -13,6 +13,7 @@
     "html-react-parser": "^0.6.1",
     "lodash": "^4.17.11",
     "mapbox-gl": "^0.53.0",
+    "mgr-pdf-viewer-react": "^1.0.1",
     "moment": "^2.24.0",
     "numeral": "^2.0.6",
     "prop-types": "^15.6.2",
