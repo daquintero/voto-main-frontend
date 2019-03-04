@@ -18,9 +18,9 @@ const initialState = {
     mailchimpSubscribed: 0,
     studioUsers: 0,
   },
-  presidential: {},
+  presidential: [],
   discover: {
-    candidates: {},
+    candidates: [],
     gid: '8_0',
   },
   subscriptionForm: {},

@@ -23,7 +23,7 @@ const urls = {
 // GET
 const getHome = () => axios.get(urls.get.home);
 const subscribedStats = () => axios.get(urls.get.subscribedStats);
-const discoverCandidates = gid => axios.get(buildUrl(urls.get.subscribedStats, gid));
+const discoverCandidates = gid => axios.get(buildUrl(urls.get.discoverCandidates, { gid }));
 
 // Search
 const homeSearch = searchData => axios.get(buildUrl(urls.search.home, searchData));

@@ -1,4 +1,3 @@
-/* eslint-disable */
 // Subcribe to Mailchimp /
 // Libraries
 import React, { PureComponent } from 'react';
@@ -8,15 +7,16 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Col, Row } from 'reactstrap';
 
-const alphaNumeric = value =>
-  (value && /[^a-zA-Z0-9 ]/i.test(value)
-    ? 'Only alphanumeric characters'
-    : undefined);
-
-const email = value =>
-  (value && !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value)
-    ? 'Invalid email address'
-    : undefined);
+// TODO Test
+// const alphaNumeric = value =>
+//   (value && /[^a-zA-Z0-9 ]/i.test(value)
+//     ? 'Only alphanumeric characters'
+//     : undefined);
+//
+// const email = value =>
+//   (value && !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value)
+//     ? 'Invalid email address'
+//     : undefined);
 
 // Declaration
 class Subscribe extends PureComponent {
@@ -43,21 +43,21 @@ class Subscribe extends PureComponent {
 
   handleNameChange(event) {
     event.persist();
-    this.setState({name: event.target.value});
-  };
+    this.setState({ name: event.target.value });
+  }
 
   handleEmailChange(event) {
     event.persist();
-    this.setState({email: event.target.value});
-  };
+    this.setState({ email: event.target.value });
+  }
 
   handleProvinceChange(event) {
     event.persist();
-    this.setState({province: event.target.value});
-  };
+    this.setState({ province: event.target.value });
+  }
 
   handleIncomplete = () => {
-    this.setState(() => ({incomplete: true}));
+    this.setState(() => ({ incomplete: true }));
   };
 
   handleSubmit = () => {
@@ -91,7 +91,7 @@ class Subscribe extends PureComponent {
           onClick={this.handleSubmit}
         >
           <h5 className="py-1 m-0 text-center">
-            {mailchimpSubscribed || 0} &nbsp;<i className="fal px-2 fa-envelope send"/>
+            {mailchimpSubscribed || 0} &nbsp;<i className="fal px-2 fa-envelope send" />
           </h5>
           <h6 className="m-0">
             Subscríbete
@@ -101,9 +101,9 @@ class Subscribe extends PureComponent {
           <div>
             <div className="input-group mb-3">
               <div className="input-group-prepend">
-                  <span className="input-group-text" id="inputGroup-sizing-sm">
+                <span className="input-group-text" id="inputGroup-sizing-sm">
                 Nombre
-                  </span>
+                </span>
               </div>
               <input
                 name="nombre"
@@ -111,7 +111,7 @@ class Subscribe extends PureComponent {
                 onChange={this.handleNameChange}
                 type="text"
                 placeholder="Mi compa"
-                class="form-control"
+                className="form-control"
               />
             </div>
           </div>
@@ -124,7 +124,7 @@ class Subscribe extends PureComponent {
               onChange={this.handleEmailChange}
               type="email"
               placeholder="Email"
-              class="form-control"
+              className="form-control"
             />
           </div>
           <div className="input-group mt-3">
@@ -184,10 +184,9 @@ class Subscribe extends PureComponent {
           </div>
         )}
       </Row>
-    )
+    );
   }
 }
-
 
 
 const mapStateToProps = (state) => {

@@ -10,7 +10,7 @@ import CardGrid from '../../../Reusable/Grid/components/DetailedReduxCardGrid';
 // Declaration
 class Presidential extends PureComponent {
   static propTypes = {
-    presidential: PropTypes.instanceOf(Object).isRequired,
+    presidential: PropTypes.instanceOf(Array).isRequired,
   };
   render() {
     const { presidential } = this.props;
