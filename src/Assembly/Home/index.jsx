@@ -34,10 +34,10 @@ class Home extends PureComponent {
         <Commit light />
         <Container className="bg-shady-layout py-4">
           <Row noGutters>
-            <Col md={6} className="text-center">
+            <Col md={6} className="text-center p-2">
               <Candidates />
             </Col>
-            <Col md={6} className="text-center">
+            <Col md={6} className="text-center p-2">
               <a
                 target="_blank"
                 rel="noreferrer noopener"

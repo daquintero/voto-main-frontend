@@ -20,9 +20,10 @@ class ConnectedSubscribe extends PureComponent {
       <>
         <MailchimpSubscribe
           url={url}
-          render={({ subscribe, status }) => (
+          render={({ subscribe, status, message }) => (
             <Subscribe
               status={status}
+              message={message}
               onValidated={formData => subscribe(formData)}
             />
           )}

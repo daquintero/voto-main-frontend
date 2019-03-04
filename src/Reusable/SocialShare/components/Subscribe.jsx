@@ -1,7 +1,7 @@
-// Subcribe to Mailchimp // overcompicated form yes?
+/* eslint-disable */
+// Subcribe to Mailchimp /
 // Libraries
 import React, { PureComponent } from 'react';
-import { Field, reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
 
 // Prop Types
@@ -21,59 +21,63 @@ const email = value =>
 // Declaration
 class Subscribe extends PureComponent {
   static propTypes = {
-    mailchimpSubscribed: PropTypes.number.isRequired,
-    subscribed: PropTypes.instanceOf(Object).isRequired,
     status: PropTypes.string.isRequired,
+    message: PropTypes.string.isRequired,
     onValidated: PropTypes.func.isRequired,
-    dispatch: PropTypes.func.isRequired,
+    mailchimpSubscribed: PropTypes.number.isRequired,
   };
+
   constructor(props) {
     super(props);
     this.state = {
-      submit: false,
+      name: '',
+      email: '',
+      province: '',
+      incomplete: false,
     };
+
+    this.handleEmailChange = this.handleEmailChange.bind(this);
+    this.handleNameChange = this.handleNameChange.bind(this);
+    this.handleProvinceChange = this.handleProvinceChange.bind(this);
   }
-  registerSubmission = () => {
-    const { onValidated, subscribed } = this.props;
-    const { submit } = this.state;
-    if (subscribed.syncErrors) {
-      return null;
-    } else if (
-      subscribed.values
-      && subscribed.values.email
-      && subscribed.values.nombre
-      && subscribed.values.provincia
-      && submit
-    ) {
-      console.log('gotber');
-      onValidated({
-        EMAIL: subscribed.values.email,
-        FNAME: subscribed.values.nombre,
-        PROV: subscribed.values.provincia,
-      });
-      this.submit();
-    }
-    console.log('shit');
-    return null;
+
+  handleNameChange(event) {
+    event.persist();
+    this.setState({name: event.target.value});
   };
-  submit = () => {
-    this.setState(prevState => ({ submit: !prevState.submit }));
+
+  handleEmailChange(event) {
+    event.persist();
+    this.setState({email: event.target.value});
   };
-  renderField = ({
-    input,
-    label,
-    type,
-    meta: { touched, error, warning },
-  }) => (
-    <>
-      <input className="form-control" {...input} placeholder={label} type={type} />
-      {touched &&
-      ((error && <div>{error}</div>) ||
-        (warning && <div>{warning}</div>))}
-    </>
-  );
+
+  handleProvinceChange(event) {
+    event.persist();
+    this.setState({province: event.target.value});
+  };
+
+  handleIncomplete = () => {
+    this.setState(() => ({incomplete: true}));
+  };
+
+  handleSubmit = () => {
+    const fName = this.state.name ? this.state.name : '';
+    const fEmail = this.state.email ? this.state.email : '';
+    const fProv = this.state.province ? this.state.province : '';
+    return (
+      <>
+        {fName && fEmail ? (
+          this.props.onValidated({
+            EMAIL: fEmail,
+            FNAME: fName,
+            PROV: fProv,
+          })) : (this.handleIncomplete())}
+      </>
+    );
+  };
+
   render() {
-    const { mailchimpSubscribed } = this.props;
+    const { status, message, mailchimpSubscribed } = this.props;
     return (
       <Row noGutters>
         <Col xs={8} className="p-2">
@@ -81,81 +85,115 @@ class Subscribe extends PureComponent {
             <span className="sl">#VotoInformado2019</span>
           </h5>
         </Col>
-        <Col xs={4} className="p-2 my-auto text-center notice small-enlarge" onClick={this.submit}>
+        <Col
+          xs={4}
+          className="p-2 my-auto text-center notice small-enlarge"
+          onClick={this.handleSubmit}
+        >
           <h5 className="py-1 m-0 text-center">
-            {mailchimpSubscribed || 0} &nbsp;<i className="fal px-2 fa-envelope send" />
+            {mailchimpSubscribed || 0} &nbsp;<i className="fal px-2 fa-envelope send"/>
           </h5>
           <h6 className="m-0">
             Subscríbete
           </h6>
         </Col>
-        <Col xs={12} >
-          <form onChange={this.registerSubmission}>
-            <div>
-              <div className="input-group mb-3">
-                <div className="input-group-prepend">
+        <Col xs={12}>
+          <div>
+            <div className="input-group mb-3">
+              <div className="input-group-prepend">
                   <span className="input-group-text" id="inputGroup-sizing-sm">
                 Nombre
                   </span>
-                </div>
-                <Field
-                  name="nombre"
-                  component={this.renderField}
-                  type="text"
-                  placeholder="Mi compa"
-                  validate={alphaNumeric}
-                />
               </div>
-            </div>
-            <div className="input-group flex-nowrap">
-              <div className="input-group-prepend">
-                <span className="input-group-text" id="addon-wrapping">@</span>
-              </div>
-              <Field
-                name="email"
-                component={this.renderField}
-                type="email"
-                validate={email}
-                placeholder="Email"
+              <input
+                name="nombre"
+                value={this.state.name}
+                onChange={this.handleNameChange}
+                type="text"
+                placeholder="Mi compa"
+                class="form-control"
               />
             </div>
-            <div className="input-group mt-3">
-              <div className="input-group-prepend">
-                <div className="input-group-text">Options</div>
-              </div>
-              <Field className="custom-select" name="provincia" component="select">
-                <option value="Provincia">Provincia</option>
-                <option value="Panamá">Panamá</option>
-                <option value="Bocas Del Toro">Bocas Del Toro</option>
-                <option value="Chiriquí">Chiriquí</option>
-                <option value="Colón">Colón</option>
-                <option value="Coclé">Coclé</option>
-                <option value="Darién">Darién</option>
-                <option value="Herrera">Herrera</option>
-                <option value="Los Santos">Los Santos</option>
-                <option value="Panamá Oeste">Panamá Oeste</option>
-                <option value="Veraguas">Veraguas</option>
-                <option value="Comarcas">Comarcas</option>
-              </Field>
+          </div>
+          <div className="input-group flex-nowrap">
+            <div className="input-group-prepend">
+              <span className="input-group-text" id="addon-wrapping">@</span>
             </div>
-          </form>
+            <input
+              value={this.state.email}
+              onChange={this.handleEmailChange}
+              type="email"
+              placeholder="Email"
+              class="form-control"
+            />
+          </div>
+          <div className="input-group mt-3">
+            <div className="input-group-prepend">
+              <div className="input-group-text">Options</div>
+            </div>
+            <select
+              className="custom-select"
+              value={this.state.province}
+              onChange={this.handleProvinceChange}
+            >
+              <option value="Provincia">Provincia</option>
+              <option value="Panamá">Panamá</option>
+              <option value="Bocas Del Toro">Bocas Del Toro</option>
+              <option value="Chiriquí">Chiriquí</option>
+              <option value="Colón">Colón</option>
+              <option value="Coclé">Coclé</option>
+              <option value="Darién">Darién</option>
+              <option value="Herrera">Herrera</option>
+              <option value="Los Santos">Los Santos</option>
+              <option value="Panamá Oeste">Panamá Oeste</option>
+              <option value="Veraguas">Veraguas</option>
+              <option value="Comarcas">Comarcas</option>
+            </select>
+          </div>
         </Col>
+        {status === 'sending' &&
+        <div
+          className="status"
+          style={{ background: 'orange' }}
+        >
+          Enviando...
+        </div>}
+        {this.state.incomplete ? (
+          <div
+            className="status"
+            style={{ background: 'orange' }}
+          >
+            ¿Seguro que añadiste tu nombre y email?
+          </div>
+        ) : null}
+        {status === 'error' && (
+          <div
+            className="status"
+            style={{ background: 'red' }}
+          >
+            El siguiente error pasó: <br /> {message} <br />
+            ¡Se saló el sistema, ups!.
+          </div>
+        )}
+        {status === 'success' && (
+          <div
+            className="status"
+            style={{ background: 'green' }}
+          >
+            Prepárate para informarte!
+          </div>
+        )}
       </Row>
-    );
+    )
   }
 }
 
 
+
 const mapStateToProps = (state) => {
-  const { subscribed } = state.form;
   const { mailchimpSubscribed } = state.home.subscribedStats;
   return {
-    subscribed,
     mailchimpSubscribed,
   };
 };
-
-
-export default connect(mapStateToProps)(reduxForm({
-  form: 'subscribed',
-})(Subscribe));
+export default connect(mapStateToProps)(Subscribe);
