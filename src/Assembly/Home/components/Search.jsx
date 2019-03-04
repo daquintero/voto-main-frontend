@@ -55,7 +55,9 @@ class Search extends PureComponent {
     if (search.syncErrors) {
       return null;
     } else if (search.values && search.values.query) {
-      dispatch(homeSearch(search.values.query));
+      dispatch(homeSearch({
+        search: search.values.query,
+      }));
     }
     return null;
   };
