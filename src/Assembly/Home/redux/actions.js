@@ -1,6 +1,6 @@
 import {
   GET_HOME,
-  HOME_SEARCH,
+  DISCOVER_CANDIDATES,
   SUBSCRIBED_STATS,
 } from './actionCreators';
 import service from '../service';
@@ -31,24 +31,24 @@ export const getHome = () => (dispatch) => {
   );
 };
 
-
-export const homeSearch = searchData => (dispatch) => {
-  dispatch({
-    type: HOME_SEARCH.REQUEST,
-  });
-  return service.search.home(searchData).then(
-    response =>
-      dispatch({
-        type: HOME_SEARCH.SUCCESS,
-        response: response.data,
-      }),
-    error =>
-      dispatch({
-        type: HOME_SEARCH.ERROR,
-        error,
-      }),
-  );
-};
+// TODO NOT HAPPENING
+// export const homeSearch = searchData => (dispatch) => {
+//   dispatch({
+//     type: HOME_SEARCH.REQUEST,
+//   });
+//   return service.search.home(searchData).then(
+//     response =>
+//       dispatch({
+//         type: HOME_SEARCH.SUCCESS,
+//         response: response.data,
+//       }),
+//     error =>
+//       dispatch({
+//         type: HOME_SEARCH.ERROR,
+//         error,
+//       }),
+//   );
+// };
 
 export const subscribedStats = () => (dispatch) => {
   dispatch({
@@ -67,3 +67,22 @@ export const subscribedStats = () => (dispatch) => {
       }),
   );
 };
+
+export const discoverCandidates = gid => (dispatch) => {
+  dispatch({
+    type: DISCOVER_CANDIDATES.REQUEST,
+  });
+  return service.get.discoverCandidates(gid).then(
+    response =>
+      dispatch({
+        type: DISCOVER_CANDIDATES.SUCCESS,
+        response: response.data,
+      }),
+    error =>
+      dispatch({
+        type: DISCOVER_CANDIDATES.ERROR,
+        error,
+      }),
+  );
+};
+

@@ -9,10 +9,11 @@ import { connect } from 'react-redux';
 import Video from '../Video';
 import Commit from './components/Commit';
 import PDF from './components/pdfPreviewer';
-import Candidates from './components/CandidateDiscovery';
+import Candidates from './components/Presidential';
 
 // Actions
 import { getHome } from './redux/actions';
+import Discovery from './components/Discovery';
 
 // Declaration
 class Home extends PureComponent {
@@ -52,6 +53,7 @@ class Home extends PureComponent {
             </Col>
           </Row>
         </Container>
+        <Discovery />
       </>
     );
   }
