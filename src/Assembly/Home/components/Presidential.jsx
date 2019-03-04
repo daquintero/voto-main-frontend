@@ -1,4 +1,4 @@
-// Candidate Discovery
+// Presidential Discovery
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -8,24 +8,24 @@ import CardGrid from '../../../Reusable/Grid/components/DetailedReduxCardGrid';
 
 
 // Declaration
-class Candidate extends PureComponent {
+class Presidential extends PureComponent {
   static propTypes = {
-    candidates: PropTypes.instanceOf(Object).isRequired,
+    presidential: PropTypes.instanceOf(Object).isRequired,
   };
   render() {
-    const { candidates } = this.props;
+    const { presidential } = this.props;
     return (
       <div>
         <h4 className="p-2 m-0">
           <i className="fal fa-podium-star p-2" />
-          ¡Descúbre tus candidatos!
+              ¡Candidatos Presidenciales!
         </h4>
         <CardGrid
           parentModelLabel="political.Individual"
           relatedModelLabel="noneType"
           subsetNumber={0}
           light
-          instances={candidates}
+          instances={presidential}
           gridClass="variable-grid"
         />
       </div>
@@ -34,12 +34,12 @@ class Candidate extends PureComponent {
 }
 
 const mapStateToProps = (state) => {
-  const { candidates } = state.home;
+  const { presidential } = state.home;
 
   return {
-    candidates,
+    presidential,
   };
 };
 
 // TODO State Store Connection
-export default connect(mapStateToProps)(Candidate);
+export default connect(mapStateToProps)(Presidential);

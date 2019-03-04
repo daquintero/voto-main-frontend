@@ -34,12 +34,14 @@ class TopBanner extends PureComponent { // eslint-disable-line
                 {moment('2019-05-05').diff(moment(), 'days')}
               </h3>
               <p>Dias Hasta las Elecciones</p>
-              <div className="bg-above-background py-4 small-enlarge">
-                <h4>
-                  <i className="fal fa-vote-yea p-2" />
-                  ¡Encuentra tu centro de votación!
-                </h4>
-              </div>
+              <a target="_blank" rel="noreferrer noopener" href="http://verificate.pa/">
+                <div className="bg-above-background py-4 small-enlarge">
+                  <h4>
+                    <i className="fal fa-vote-yea p-2" />
+                    ¡Encuentra tu centro de votación!
+                  </h4>
+                </div>
+              </a>
             </Col>
           </Row>
         </Container>
