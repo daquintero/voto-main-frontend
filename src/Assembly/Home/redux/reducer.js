@@ -18,6 +18,7 @@ const initialState = {
     mailchimpSubscribed: 0,
     studioUsers: 0,
   },
+  subscriptionForm: {},
   actions: initializeActions([
     'GET_HOME',
     'HOME_SEARCH',

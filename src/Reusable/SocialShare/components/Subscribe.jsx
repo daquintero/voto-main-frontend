@@ -1,12 +1,12 @@
-// Subcribe to Mailchimp
+// Subcribe to Mailchimp // overcompicated form yes?
 // Libraries
 import React, { PureComponent } from 'react';
 import { Field, reduxForm } from 'redux-form';
+import { connect } from 'react-redux';
 
 // Prop Types
 import PropTypes from 'prop-types';
 import { Col, Row } from 'reactstrap';
-import { connect } from 'react-redux';
 
 const alphaNumeric = value =>
   (value && /[^a-zA-Z0-9 ]/i.test(value)
@@ -22,16 +22,42 @@ const email = value =>
 class Subscribe extends PureComponent {
   static propTypes = {
     mailchimpSubscribed: PropTypes.number.isRequired,
+    subscribed: PropTypes.instanceOf(Object).isRequired,
     status: PropTypes.string.isRequired,
     onValidated: PropTypes.func.isRequired,
+    dispatch: PropTypes.func.isRequired,
+  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      submit: false,
+    };
+  }
+  registerSubmission = () => {
+    const { onValidated, subscribed } = this.props;
+    const { submit } = this.state;
+    if (subscribed.syncErrors) {
+      return null;
+    } else if (
+      subscribed.values
+      && subscribed.values.email
+      && subscribed.values.nombre
+      && subscribed.values.provincia
+      && submit
+    ) {
+      console.log('gotber');
+      onValidated({
+        EMAIL: subscribed.values.email,
+        FNAME: subscribed.values.nombre,
+        PROV: subscribed.values.provincia,
+      });
+      this.submit();
+    }
+    console.log('shit');
+    return null;
   };
   submit = () => {
-    const { onValidated, mailchimpSubscribed } = this.props;
-    onValidated({
-      EMAIL: mailchimpSubscribed.email,
-      FNAME: mailchimpSubscribed.nombre,
-      PROV: mailchimpSubscribed.provincia,
-    });
+    this.setState(prevState => ({ submit: !prevState.submit }));
   };
   renderField = ({
     input,
@@ -55,7 +81,7 @@ class Subscribe extends PureComponent {
             <span className="sl">#VotoInformado2019</span>
           </h5>
         </Col>
-        <Col xs={4} className="p-2 my-auto text-center notice small-enlarge">
+        <Col xs={4} className="p-2 my-auto text-center notice small-enlarge" onClick={this.submit}>
           <h5 className="py-1 m-0 text-center">
             {mailchimpSubscribed || 0} &nbsp;<i className="fal px-2 fa-envelope send" />
           </h5>
@@ -64,7 +90,7 @@ class Subscribe extends PureComponent {
           </h6>
         </Col>
         <Col xs={12} >
-          <form onSubmit={this.submit}>
+          <form onChange={this.registerSubmission}>
             <div>
               <div className="input-group mb-3">
                 <div className="input-group-prepend">
@@ -121,13 +147,15 @@ class Subscribe extends PureComponent {
 
 
 const mapStateToProps = (state) => {
-  const { mailchimpSubscribed } = state.home.subscribed;
+  const { subscribed } = state.form;
+  const { mailchimpSubscribed } = state.home.subscribedStats;
   return {
+    subscribed,
     mailchimpSubscribed,
   };
 };
 
 
 export default connect(mapStateToProps)(reduxForm({
-  form: 'subscribe',
+  form: 'subscribed',
 })(Subscribe));
