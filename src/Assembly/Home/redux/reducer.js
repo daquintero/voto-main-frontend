@@ -1,7 +1,8 @@
 import {
   GET_HOME,
-  HOME_SEARCH,
+  DISCOVER_CANDIDATES,
   SUBSCRIBED_STATS,
+  HOME_SEARCH,
 } from './actionCreators';
 import { initializeActions, actionResult } from '../../../shared/utils/asyncHelpers';
 
@@ -18,9 +19,16 @@ const initialState = {
     mailchimpSubscribed: 0,
     studioUsers: 0,
   },
+  presidential: [],
+  discover: {
+    candidates: [],
+    gid: '8_0',
+  },
+  subscriptionForm: {},
   actions: initializeActions([
     'GET_HOME',
     'HOME_SEARCH',
+    'DISCOVER_CANDIDATES',
     'SUBSCRIBED_STATS',
   ]),
 };
@@ -60,7 +68,6 @@ export default (state = initialState, action) => {
           ...actionResult('GET_HOME.ERROR'),
         },
       };
-
     case HOME_SEARCH.REQUEST:
       return {
         ...state,
@@ -87,6 +94,35 @@ export default (state = initialState, action) => {
         actions: {
           ...state.actions,
           ...actionResult('HOME_SEARCH.ERROR'),
+        },
+      };
+
+    case DISCOVER_CANDIDATES.REQUEST:
+      return {
+        ...state,
+        actions: {
+          ...state.actions,
+          ...actionResult('DISCOVER_CANDIDATES.REQUEST'),
+        },
+      };
+    case DISCOVER_CANDIDATES.SUCCESS:
+      return {
+        ...state,
+        search: {
+          ...state.search,
+          instances: action.response.instances,
+        },
+        actions: {
+          ...state.actions,
+          ...actionResult('DISCOVER_CANDIDATES.SUCCESS'),
+        },
+      };
+    case DISCOVER_CANDIDATES.ERROR:
+      return {
+        ...state,
+        actions: {
+          ...state.actions,
+          ...actionResult('DISCOVER_CANDIDATES.ERROR'),
         },
       };
     case SUBSCRIBED_STATS.REQUEST:

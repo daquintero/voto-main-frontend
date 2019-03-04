@@ -54,8 +54,6 @@ class CCPage extends PureComponent {
       instance, actions,
     } = this.props;
 
-    console.log(actions.GET_DETAILED_PAGE.loaded);
-
     return actions.GET_DETAILED_PAGE.loaded ? (
       <Container>
         <Row className="p-2 overflow-hidden">

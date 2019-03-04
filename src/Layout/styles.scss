@@ -2,12 +2,24 @@ $border: 1px solid rgba($impDark, 0.2);
 
 body {
   padding-top: 44px;
+  @media screen and (max-width: 768px) {
+    body { padding-top: 0px; }
+  }
 }
 
 .navbar {
   height: 44px;
+  padding: 10%;
   border-bottom: $border;
   background-color: white;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  overflow-y: visible;
+  z-index: 10000;
+
+
 
   &__wrapper {
     display: block;
@@ -85,6 +97,17 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
+
+    @media (max-width: 768px) {
+      padding: 2%;
+      position: fixed;
+      top: 43px;
+      left: 0px;
+      right: 0px;
+
+      transform: translateY(30px);
+      transition: height;
+    }
   }
 
   &__nav__item {
@@ -96,6 +119,10 @@ body {
       cursor: pointer;
       border-bottom: 3px solid $impDark;
     }
+    @media (max-width: 768px) {
+      font-size: 45px;
+    }
+
   }
 
   &__nav__item.end {
@@ -206,3 +233,4 @@ body {
   height: 100%;
   font-size: 24px;
 }
+

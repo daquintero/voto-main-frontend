@@ -1,16 +1,18 @@
 import {
   GET_HOME,
-  HOME_SEARCH,
+  DISCOVER_CANDIDATES,
   SUBSCRIBED_STATS,
+  HOME_SEARCH,
 } from './actionCreators';
 import service from '../service';
 
 // ------- FIRST VISIT --------
-export const openFirstVisit = () => (dispatch) => {
-  dispatch({
-    type: 'FIRST_VISIT',
-  });
-};
+// TODO NOT HAPPENING
+// export const openFirstVisit = () => (dispatch) => {
+//   dispatch({
+//     type: 'FIRST_VISIT',
+//   });
+// };
 
 // ------ HOME SERVICES -------
 export const getHome = () => (dispatch) => {
@@ -30,7 +32,6 @@ export const getHome = () => (dispatch) => {
       }),
   );
 };
-
 
 export const homeSearch = searchData => (dispatch) => {
   dispatch({
@@ -67,3 +68,22 @@ export const subscribedStats = () => (dispatch) => {
       }),
   );
 };
+
+export const discoverCandidates = gid => (dispatch) => {
+  dispatch({
+    type: DISCOVER_CANDIDATES.REQUEST,
+  });
+  return service.get.discoverCandidates(gid).then(
+    response =>
+      dispatch({
+        type: DISCOVER_CANDIDATES.SUCCESS,
+        response: response.data,
+      }),
+    error =>
+      dispatch({
+        type: DISCOVER_CANDIDATES.ERROR,
+        error,
+      }),
+  );
+};
+

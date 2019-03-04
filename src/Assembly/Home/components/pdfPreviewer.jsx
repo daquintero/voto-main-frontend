@@ -6,7 +6,7 @@ const manual = `${process.env.PUBLIC_URL}/Manual_Voto_Informado_2019.pdf`;
 const PDF = () => (
   <PDFViewer
     document={{ url: manual }}
-    scale={1}
+    scale={0.9}
     css="customViewer"
     navigation={{
       css: {

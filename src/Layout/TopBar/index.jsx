@@ -6,7 +6,6 @@ import {
   NavbarBrand,
   NavbarToggler,
   Collapse,
-  Input,
 } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import classNames from 'classnames';
@@ -102,28 +101,16 @@ class TopBar extends Component {
     } = this.state;
     return (
       <>
-        <Navbar light expand="md" className="navbar fixed-top p-0">
-          <Container className="navbar__wrapper">
+        <Navbar light expand="md" className="navbar p-0">
+          <Container className="navbar__wrapper bg-white">
             <NavbarBrand href="/" className="navbar__brand d-inline">
-              <img className="img-fluid" src={logo} alt="" />
+              <h4 className="p-1 m-0"><img className="img-fluid px-2" src={logo} alt="" />#VotoInformado2019</h4>
             </NavbarBrand>
             <NavbarToggler
               onClick={this.toggleNavbar}
               className="mr-4"
             />
-            <Collapse isOpen={!this.state.collapsed} navbar>
-              <div className="navbar__search__wrapper bg-white justify-content-center align-middle py-1">
-                <form className="navbar__search__form">
-                  <Input
-                    className="navbar__search__input"
-                    type="text"
-                    placeholder="Buscar"
-                  />
-                  <div className="navbar__search__icon">
-                    <i className="fal fa-search" />
-                  </div>
-                </form>
-              </div>
+            <Collapse isOpen={!this.state.collapsed} navbar className="justify-content-center">
               <div
                 className="navbar__nav__wrapper bg-white justify-content-center"
                 onMouseLeave={this.handleOnMouseLeave}
@@ -163,9 +150,9 @@ class TopBar extends Component {
                   data-id="5"
                   onMouseEnter={this.handleOnHover}
                 >
-                  <Link className="navbar__nav__link" to="/">
+                  <a className="navbar__nav__link" href="https://studio.votoinformado2019.com">
                     <i className="fal fa-user-circle" />
-                  </Link>
+                  </a>
                 </div>
               </div>
             </Collapse>

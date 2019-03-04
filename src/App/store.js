@@ -13,7 +13,7 @@ import detailPageReducer from '../Assembly/DetailedPage/redux/reducer';
 import basicHomeReducer from '../Assembly/Home/redux/reducer';
 
 // Local Storage
-import { loadState, saveState } from './localStorage';
+// import { loadState, saveState } from './localStorage';
 
 const reducer = combineReducers({
   openPage: detailPageReducer,
@@ -22,18 +22,18 @@ const reducer = combineReducers({
   form: formReducer,
 });
 
-const storedState = loadState();
+// const storedState = loadState();
 
 const store = createStore(
   reducer,
-  storedState,
+  // storedState,
   composeWithDevTools(applyMiddleware(thunk)),
 );
 
-store.subscribe(throttle(() => {
-  saveState({
-    home: store.getState().home,
-  });
-}, 3000));
+// store.subscribe(throttle(() => {
+//   saveState({
+//     home: store.getState().home,
+//   });
+// }, 3000));
 
 export default store;
