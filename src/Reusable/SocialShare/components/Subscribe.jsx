@@ -7,22 +7,34 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Col, Row } from 'reactstrap';
 
+const iconBehavior = {
+  error: {
+    icon: 'fa-envelope text-danger',
+  },
+  sending: {
+    icon: 'fa-spin fa-envelope',
+  },
+  success: {
+    icon: 'fa-envelope text-success send',
+  },
+};
+
+
 // TODO Test
-// const alphaNumeric = value =>
-//   (value && /[^a-zA-Z0-9 ]/i.test(value)
-//     ? 'Only alphanumeric characters'
-//     : undefined);
-//
-// const email = value =>
-//   (value && !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value)
-//     ? 'Invalid email address'
-//     : undefined);
+const alphaNumeric = value =>
+  (value && /[^a-zA-Z0-9 ]/i.test(value)
+    ? 'Solo carácteres alfanuméricos'
+    : undefined);
+
+const emailV = value =>
+  (value && !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value)
+    ? 'Email inválido'
+    : undefined);
 
 // Declaration
 class Subscribe extends PureComponent {
   static propTypes = {
     status: PropTypes.string.isRequired,
-    message: PropTypes.string.isRequired,
     onValidated: PropTypes.func.isRequired,
     mailchimpSubscribed: PropTypes.number.isRequired,
   };
@@ -66,7 +78,7 @@ class Subscribe extends PureComponent {
     const fProv = this.state.province ? this.state.province : '';
     return (
       <>
-        {fName && fEmail ? (
+        {alphaNumeric(fName) && emailV(fEmail) ? (
           this.props.onValidated({
             EMAIL: fEmail,
             FNAME: fName,
@@ -77,7 +89,8 @@ class Subscribe extends PureComponent {
   };
 
   render() {
-    const { status, message, mailchimpSubscribed } = this.props;
+    const { status, mailchimpSubscribed } = this.props;
+    const { name, email } = this.state;
     return (
       <Row noGutters>
         <Col xs={12} md={8} className="p-2 text-center m-md-0">
@@ -92,15 +105,18 @@ class Subscribe extends PureComponent {
           onClick={this.handleSubmit}
         >
           <h5 className="py-1 m-0 text-center">
-            {mailchimpSubscribed || 0} &nbsp;<i className="fal px-2 fa-envelope send" />
+            {mailchimpSubscribed || 0} &nbsp;<i className={`fal px-2 ${iconBehavior[status] ?
+            iconBehavior[status].icon :
+            'fa-envelope'}`}
+            />
           </h5>
           <h6 className="m-0">
             Subscríbete
           </h6>
         </Col>
         <Col xs={12}>
-          <div>
-            <div className="input-group mb-3">
+          <div className="mb-3">
+            <div className="input-group">
               <div className="input-group-prepend">
                 <span className="input-group-text" id="inputGroup-sizing-sm">
                 Nombre
@@ -108,27 +124,33 @@ class Subscribe extends PureComponent {
               </div>
               <input
                 name="nombre"
-                value={this.state.name}
+                value={name}
                 onChange={this.handleNameChange}
                 type="text"
                 placeholder="Mi compa"
                 className="form-control"
               />
             </div>
+            <div className="text-danger text-center">{alphaNumeric(name)}</div>
           </div>
-          <div className="input-group flex-nowrap">
-            <div className="input-group-prepend">
-              <span className="input-group-text" id="addon-wrapping">@</span>
+          <div className=" mb-3">
+            <div className="input-group">
+              <div className="input-group flex-nowrap">
+                <div className="input-group-prepend">
+                  <span className="input-group-text" id="addon-wrapping">@</span>
+                </div>
+                <input
+                  value={email}
+                  onChange={this.handleEmailChange}
+                  type="email"
+                  placeholder="Email"
+                  className="form-control"
+                />
+              </div>
             </div>
-            <input
-              value={this.state.email}
-              onChange={this.handleEmailChange}
-              type="email"
-              placeholder="Email"
-              className="form-control"
-            />
+            <div className="text-danger text-center">{emailV(email)}</div>
           </div>
-          <div className="input-group mt-3">
+          <div className="input-group">
             <div className="input-group-prepend">
               <div className="input-group-text">Options</div>
             </div>
@@ -152,36 +174,13 @@ class Subscribe extends PureComponent {
             </select>
           </div>
         </Col>
-        {status === 'sending' &&
-        <div
-          className=" p-2 text-center "
-        >
-          <i className="fa fa-spinner fa-pulse fa-3x fa-fw" />
-        </div>}
         {this.state.incomplete ? (
           <div
-            className="status"
-            style={{ background: 'orange' }}
+            className="p-2 text-center small text-danger"
           >
-            ¿Seguro que añadiste tu nombre y email?
+            Hubo un error. Trata denuevo o nos puedes escribir a votoinformado2019@gmail.com
           </div>
         ) : null}
-        {status === 'error' && (
-          <div
-            className="status"
-          >
-            El siguiente error pasó: <br /> {message} <br />
-            ¡Se saló el sistema, ups!.
-          </div>
-        )}
-        {status === 'success' && (
-          <div
-            className="status"
-            style={{ background: 'green' }}
-          >
-            Prepárate para informarte!
-          </div>
-        )}
       </Row>
     );
   }
