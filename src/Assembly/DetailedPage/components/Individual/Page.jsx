@@ -33,12 +33,42 @@ class Page extends PureComponent {
     // Router
     match: ReactRouterPropTypes.match.isRequired,
   };
+  constructor(props) {
+    super();
+    this.state = {
+      currentID: props.match.params.id,
+      currentPath: props.match.params.path,
+    };
+  }
+
+  static getDerivedStateFromProps(nextProps, prevState) {
+    const { match, dispatch } = nextProps;
+    if (match.params.id !== prevState.currentID) {
+      if (match.params.path === prevState.currentPath) {
+        dispatch(getDetailedPage({
+          ml: parentModelLabel,
+          id: match.params.id,
+          sn: 0,
+        }));
+        return {
+          currentId: match.params.id,
+          currentPath: match.params.currentPath,
+        };
+      }
+      return {
+        currentId: match.params.id,
+        currentPath: match.params.currentPath,
+      };
+    }
+    return null;
+  }
 
   componentDidMount() {
-    const { dispatch, match } = this.props;
+    const { dispatch } = this.props;
+    const { currentID } = this.state;
     dispatch(getDetailedPage({
       ml: parentModelLabel,
-      id: match.params.id,
+      id: currentID,
       sn: 0,
     }));
   }
@@ -62,7 +92,6 @@ class Page extends PureComponent {
           <Row className="p-2 pt-4 overflow-hidden column-primary">
             <Col xs={12} md={8} className="overflow-hidden p-0">
               <Header instance={instance} />
-              <hr />
               <Description instance={instance} />
               <Gallery instance={instance} />
               <History />
@@ -92,3 +121,21 @@ const mapStateToProps = (state) => {
 };
 
 export default connect(mapStateToProps)(Page);
+
+
+// constructor(props) {
+//   super();
+//   this.state = {
+//     currentID: props.match.params.id,
+//   };
+// }
+//
+// static getDerivedStateFromProps(nextProps, prevState) {
+//   if (nextProps.match.params.id !== prevState.currentID) {
+//     nextProps.dispatch(getDetailedPage({
+//       ml: parentModelLabel,
+//       id: this.props.match.params.id,
+//       sn: 0,
+//     }));
+//   }
+// }

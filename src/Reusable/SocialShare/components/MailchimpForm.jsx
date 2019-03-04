@@ -71,7 +71,7 @@ class MailchimpForm extends PureComponent {
 }
 
 const mapStateToProps = (state) => {
-  const { mailchimpSubscribed, studioUsers } = state.home.subscribed;
+  const { mailchimpSubscribed, studioUsers } = state.home.subscribedStats;
   return {
     mailchimpSubscribed,
     studioUsers,
