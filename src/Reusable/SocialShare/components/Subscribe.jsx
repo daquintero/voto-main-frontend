@@ -80,13 +80,14 @@ class Subscribe extends PureComponent {
     const { status, message, mailchimpSubscribed } = this.props;
     return (
       <Row noGutters>
-        <Col xs={8} className="p-2">
+        <Col xs={12} md={8} className="p-2 text-center m-md-0">
           <h5 className="p-2 m-0 notice">Compromėtete a un &nbsp;
             <span className="sl">#VotoInformado2019</span>
           </h5>
         </Col>
         <Col
-          xs={4}
+          xs={12}
+          md={4}
           className="p-2 my-auto text-center notice small-enlarge"
           onClick={this.handleSubmit}
         >
@@ -153,10 +154,9 @@ class Subscribe extends PureComponent {
         </Col>
         {status === 'sending' &&
         <div
-          className="status"
-          style={{ background: 'orange' }}
+          className=" p-2 text-center "
         >
-          Enviando...
+          <i className="fa fa-spinner fa-pulse fa-3x fa-fw" />
         </div>}
         {this.state.incomplete ? (
           <div
@@ -169,7 +169,6 @@ class Subscribe extends PureComponent {
         {status === 'error' && (
           <div
             className="status"
-            style={{ background: 'red' }}
           >
             El siguiente error pasó: <br /> {message} <br />
             ¡Se saló el sistema, ups!.

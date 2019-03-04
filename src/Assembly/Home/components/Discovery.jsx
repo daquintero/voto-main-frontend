@@ -26,7 +26,7 @@ class Discover extends PureComponent {
     const { candidates } = this.props;
     return (
       <Container>
-        <Row noGutters>
+        <Row noGutters className="m-4">
           <Col md={4} className="text-center py-4">
             {/* Add some sort of control for map location */}
             <h4 className="p-2 m-0">

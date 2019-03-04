@@ -14,7 +14,7 @@ const LawsList = ({ instance }) => (
         <h5 className="p-1 m-0 lead">{instance.code}</h5>
       </Col>
       <Col xs={12} className="pl-3 ">
-        <p className="small text-left m-0">{instance.longDescription}</p>
+        <p className="small text-left m-0">{instance.briefDescription}</p>
       </Col>
     </Row>
   </ListGroupItem>
