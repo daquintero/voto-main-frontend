@@ -56,6 +56,7 @@ class Page extends PureComponent {
         };
       }
       return {
+
         currentID: match.params.id,
         currentPath: match.params.currentPath,
       };
