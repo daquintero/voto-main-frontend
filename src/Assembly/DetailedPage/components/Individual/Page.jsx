@@ -51,12 +51,12 @@ class Page extends PureComponent {
           sn: 0,
         }));
         return {
-          currentId: match.params.id,
+          currentID: match.params.id,
           currentPath: match.params.currentPath,
         };
       }
       return {
-        currentId: match.params.id,
+        currentID: match.params.id,
         currentPath: match.params.currentPath,
       };
     }
