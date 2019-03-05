@@ -50,13 +50,13 @@ class Search extends PureComponent {
     search: PropTypes.instanceOf(Object).isRequired,
   };
 
-  submitSearch = () => {
+  submitSearch = (e) => {
     const { dispatch, search } = this.props;
     if (search.syncErrors) {
       return null;
     } else if (search.values && search.values.query) {
       dispatch(homeSearch({
-        search: search.values.query,
+        search: e.target.value,
       }));
     }
     return null;
@@ -73,13 +73,14 @@ class Search extends PureComponent {
             <h4>¡Investiga!</h4>
           </Col>
           <Col md={12} className="align-content-center justify-content-center px-4 pb-4 mx-auto">
-            <form onChange={this.submitSearch}>
+            <form>
               <Field
                 name="query"
                 type="text"
                 component={renderField}
                 label="Cualquier cosa"
                 validate={alphaNumeric}
+                onChange={this.submitSearch}
               />
             </form>
           </Col>
