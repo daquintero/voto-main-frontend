@@ -5,14 +5,12 @@ import buildUrl from '../../shared/utils/buildUrl';
 const baseUrl = process.env.REACT_APP_BASE_URL;
 const homeApiUrl = `${baseUrl}/home/api/v1/`;
 const searchApiUrl = `${baseUrl}/search/api/v1/`;
-const subscribedStatsApiUrl = `${baseUrl}/home/api/v1/subscribedStats/`;
-const discoverCandidatesApiUrl = `${baseUrl}/home/api/v1/discoverCandidates/`;
 
 const urls = {
   get: {
     home: homeApiUrl,
-    subscribedStats: subscribedStatsApiUrl,
-    discoverCandidates: discoverCandidatesApiUrl,
+    subscribedStats: `${baseUrl}/home/api/v1/get_subscribed_stats/`,
+    discoverCandidates: `${baseUrl}/home/api/v1/discover_candidates/`,
   },
   search: {
     home: searchApiUrl,

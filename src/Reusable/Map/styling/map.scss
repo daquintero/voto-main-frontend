@@ -7,23 +7,36 @@ $pointer-height: 10px;
     object-fit: cover;
   }
 
-  &__marker__wrapper {
-    position: relative;
-    background-color: white;
-    padding: 20px;
-    z-index: 1;
+  &__marker {
+    &__wrapper {
+      position: relative;
+      background-color: white;
+      padding: 20px;
+      z-index: 1;
+    }
+
+    &__pointer {
+      position: absolute;
+      left: -20px;
+      bottom: -20px;
+      transform: rotate(45deg);
+      z-index: -1;
+      width: $pointer-width;
+      height: $pointer-height;
+      border-top: solid $pointer-height white;
+      border-left: solid $pointer-height transparent;
+      border-right: solid $pointer-height transparent;
+    }
   }
 
-  &__marker__pointer {
-    position: absolute;
-    left: -20px;
-    bottom: -20px;
-    transform: rotate(45deg);
-    z-index: -1;
-    width: $pointer-width;
-    height: $pointer-height;
-    border-top: solid $pointer-height white;
-    border-left: solid $pointer-height transparent;
-    border-right: solid $pointer-height transparent;
+  &__tooltip {
+    &__wrapper {
+      background-color: white;
+      padding: 10px 10px 0 10px;
+    }
   }
+}
+
+.mapboxgl-canvas {
+  position: relative !important;
 }

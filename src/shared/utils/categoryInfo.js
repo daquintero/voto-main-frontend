@@ -1,8 +1,8 @@
 // TODO BE CAREFUL ON CHANGING THIS ON SERVER
 const categoryInfo = {
   0: {
-    icon: '',
-    Spanish: '',
+    icon: 'question-square',
+    Spanish: 'Controversia',
   },
   1: {
     icon: 'money-bill-alt',
@@ -64,9 +64,13 @@ const categoryInfo = {
     icon: 'industry',
     Spanish: 'Industria',
   },
-  17: {
+  16: {
     icon: 'film',
     Spanish: 'Arte y Cultura',
+  },
+  17: {
+    icon: 'question-square',
+    Spanish: 'Controversia',
   },
   Laboral: {
     icon: 'briefcase',

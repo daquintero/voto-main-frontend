@@ -1,6 +1,5 @@
-/* eslint-disable */
 // Map candidates Discovery
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Container, Row, Col } from 'reactstrap';
@@ -9,45 +8,55 @@ import { Container, Row, Col } from 'reactstrap';
 import CardGrid from '../../../Reusable/Grid/components/DetailedReduxCardGrid';
 
 import { discoverCandidates } from '../redux/actions';
+import Map from '../../../Reusable/Map';
+
 
 // Declaration
-class Discover extends PureComponent {
+class Discover extends Component {
   static propTypes = {
     candidates: PropTypes.instanceOf(Object).isRequired,
     dispatch: PropTypes.func.isRequired,
   };
 
-  changeLocation = (gid) => {
+  handleOnClick = (e) => {
     const { dispatch } = this.props;
+    const [gid] = e.object.properties.GID_1.split('.').slice(-1);
     dispatch(discoverCandidates(gid));
   };
 
   render() {
-    const { candidates } = this.props;
+    // Props
+    const {
+      candidates,
+    } = this.props;
+
     return (
       <Container>
-        <Row noGutters>
-          <Col md={4} className="text-center py-4">
-            {/* Add some sort of control for map location */}
+        <Row noGutters className="m-4">
+          <Col md={12} className="text-center py-4">
             <h4 className="p-2 m-0">
               <i className="fal fa-podium-star p-2" />
               ¡Descúbre tus Candidatos!
             </h4>
+            <Map
+              onClick={this.handleOnClick}
+            />
+            {/* Add some sort of control for map location */}
             <CardGrid
               parentModelLabel="political.Individual"
               relatedModelLabel="noneType"
               subsetNumber={0}
               light
               instances={candidates}
-              gridClass="variable-grid"
+              gridClass="candidates-grid"
             />
           </Col>
-          {/* Add map here */}
         </Row>
       </Container>
     );
   }
 }
+
 
 const mapStateToProps = (state) => {
   const { candidates } = state.home.discover;
@@ -57,5 +66,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-// TODO State Store Connection
 export default connect(mapStateToProps)(Discover);

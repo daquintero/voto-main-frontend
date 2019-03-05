@@ -23,15 +23,18 @@
 @import 'shared/styling/modal';
 
 // ---------------------------- LAYOUT --------------------------
-@import 'Layout/styles';
+@import 'Layout/TopBar/styles';
+@import 'Layout/Footer/styles';
 
 // ---------------------------- ASSEMBLY ----------------------------
-@import 'Assembly/Social/styles';
+//@import 'Assembly/Social/styles';
 // ABOUT PAGE
-@import 'Assembly/AboutUsPage/components/Social/styles';
+@import 'Assembly/AboutUsPage/styles';
 @import 'Assembly/DetailedPage/components/Individual/styling';
 @import 'Assembly/DetailedPage/components/styling';
 
+// Home
+@import 'Assembly/Home/styling/styling';
 
 // ---------------------------- REUSABLE ------------------------
 // Media

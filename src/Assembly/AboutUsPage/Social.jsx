@@ -3,7 +3,7 @@ import React from 'react';
 import { Col } from 'reactstrap';
 
 // Declaration
-const Index = () => (
+const Social = () => (
     <>
       {/* FOLLOW US TEXT */}
       <Col>
@@ -66,4 +66,4 @@ const Index = () => (
       </Col>
     </>
 );
-export default Index;
+export default Social;

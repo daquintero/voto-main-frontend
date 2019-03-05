@@ -1,4 +1,4 @@
-// The Variable Material MatTable Component Index, used for several models.
+// The Variable Material MatTable Component Social, used for several models.
 // ----------------- ABSOLUTE IMPORTS -------------------------
 import React, { Component } from 'react';
 

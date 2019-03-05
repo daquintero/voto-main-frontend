@@ -12,10 +12,10 @@ import StatisticsItem from './StatisticsItem';
 import layoutMap from '../styling/layoutMap';
 
 
-const CardWithImage = ({ instance }) => {
+const CardWithImage = ({ instance, light }) => {
   const primaryImage = instance.media.images[0];
   return (
-    <Card className="bg-light border-0 rounded-0 small-enlarge span-2-cols span-2-rows">
+    <Card className={`${light ? 'bg-layout' : 'bg-shady-layout'} border-0 rounded-0 small-enlarge span-6-cols shadow`}>
       <Row noGutters>
         <Link to={`/corrupcion-caso/${instance.id}`}>
           <Col
@@ -61,6 +61,7 @@ const CardWithImage = ({ instance }) => {
 
 CardWithImage.propTypes = {
   instance: PropTypes.instanceOf(Object).isRequired,
+  light: PropTypes.bool.isRequired,
 };
 
 export default CardWithImage;

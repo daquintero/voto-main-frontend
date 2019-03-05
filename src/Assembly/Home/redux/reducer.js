@@ -2,6 +2,7 @@ import {
   GET_HOME,
   DISCOVER_CANDIDATES,
   SUBSCRIBED_STATS,
+  HOME_SEARCH,
 } from './actionCreators';
 import { initializeActions, actionResult } from '../../../shared/utils/asyncHelpers';
 
@@ -26,6 +27,7 @@ const initialState = {
   subscriptionForm: {},
   actions: initializeActions([
     'GET_HOME',
+    'HOME_SEARCH',
     'DISCOVER_CANDIDATES',
     'SUBSCRIBED_STATS',
   ]),
@@ -50,9 +52,7 @@ export default (state = initialState, action) => {
     case GET_HOME.SUCCESS:
       return {
         ...state,
-        content: {
-          ...action.response.instances,
-        },
+        presidential: action.response.instances.individuals,
         actions: {
           ...state.actions,
           ...actionResult('GET_HOME.SUCCESS'),
@@ -64,6 +64,34 @@ export default (state = initialState, action) => {
         actions: {
           ...state.actions,
           ...actionResult('GET_HOME.ERROR'),
+        },
+      };
+    case HOME_SEARCH.REQUEST:
+      return {
+        ...state,
+        actions: {
+          ...state.actions,
+          ...actionResult('HOME_SEARCH.REQUEST'),
+        },
+      };
+    case HOME_SEARCH.SUCCESS:
+      return {
+        ...state,
+        search: {
+          ...state.search,
+          instances: action.response.instances,
+        },
+        actions: {
+          ...state.actions,
+          ...actionResult('HOME_SEARCH.SUCCESS'),
+        },
+      };
+    case HOME_SEARCH.ERROR:
+      return {
+        ...state,
+        actions: {
+          ...state.actions,
+          ...actionResult('HOME_SEARCH.ERROR'),
         },
       };
 
@@ -78,9 +106,9 @@ export default (state = initialState, action) => {
     case DISCOVER_CANDIDATES.SUCCESS:
       return {
         ...state,
-        search: {
-          ...state.search,
-          instances: action.response.instances,
+        discover: {
+          ...state.discover,
+          candidates: action.response.instances.individuals,
         },
         actions: {
           ...state.actions,

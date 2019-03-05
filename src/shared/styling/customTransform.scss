@@ -21,9 +21,9 @@
   box-shadow: -5px 17px 30px -30px rgba(0,0,0,0.33);
 }
 
-.send:hover {
-  transform: translate(45%) rotate(-25deg);
-  transition-duration: 100ms;
+.send {
+  transform: translateX(80%) translateY(-60%) rotate(-45deg);
+  transition-duration: 200ms;
 }
 
 .spin-clock:hover {

@@ -18,18 +18,20 @@ moment.locale('es');
 class CorruptionCaseCard extends PureComponent {
   static propTypes = {
     instance: PropTypes.instanceOf(Object).isRequired,
+    light: PropTypes.bool.isRequired,
   };
 
   render() {
     const {
       instance,
+      light,
     } = this.props;
 
     return (
       instance.media.images && instance.media.images.length ? (
-        <CardWithImage instance={instance} />
+        <CardWithImage instance={instance} light={light} />
       ) : (
-        <CardWithoutImage instance={instance} />
+        <CardWithoutImage instance={instance} light={light} />
       )
     );
   }
