@@ -9,7 +9,7 @@ import { Route, Switch } from 'react-router-dom';
 // ---------------- BASE IMPORTS ----------------------
 // Social
 import Home from '../Assembly/Home';
-import Social from '../Assembly/Social';
+// import Social from '../Assembly/Social';
 import Layout from '../Layout/TopBar';
 import TermsAndConditions from '../Assembly/Legal';
 
@@ -32,7 +32,7 @@ const wrappedRoutes = () => (
     <Layout />
     <div className="bg-layout">
       <Route exact path="/" component={Home} />
-      <Route path="/informate" component={Social} />
+      {/* <Route path="/informate" component={Social} /> */}
       <Route path="/acerca" component={About} />
       <Route path="/legal" component={TermsAndConditions} />
 
