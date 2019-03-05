@@ -36,3 +36,7 @@ $pointer-height: 10px;
     }
   }
 }
+
+.mapboxgl-canvas {
+  position: relative !important;
+}

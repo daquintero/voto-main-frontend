@@ -17,6 +17,7 @@ import { getHome } from './redux/actions';
 import Discovery from './components/Discovery';
 import StudioProm from './components/StudioProm';
 
+
 // Declaration
 class Home extends PureComponent {
   static propTypes = {

@@ -63,16 +63,17 @@ class DetailedReduxCardGrid extends PureComponent {
           light={light}
           typeContext={typeContext}
         />
-        {/* TODO Check subsets are not the same as before */}
-        <Row noGutters className="p-2">
-          <Button
-            onClick={this.handleGetMore}
-            className={`${light ? 'bg-layout' : 'bg-shady-layout'}
+        {(instances.length !== 0 && instances.length % 10 === 0) && (
+          <Row noGutters className="p-2">
+            <Button
+              onClick={this.handleGetMore}
+              className={`${light ? 'bg-layout' : 'bg-shady-layout'}
             small-enlarge rounded-0 text-center border-0 mx-auto more text-dark`}
-          >
-            Más {typeInfo[relatedModelLabel].title}
-          </Button>
-        </Row>
+            >
+              Más {typeInfo[relatedModelLabel].title}
+            </Button>
+          </Row>
+        )}
       </div>
     );
   }

@@ -13,7 +13,11 @@ class Presidential extends PureComponent {
     presidential: PropTypes.instanceOf(Array).isRequired,
   };
   render() {
-    const { presidential } = this.props;
+    // Props
+    const {
+      presidential,
+    } = this.props;
+
     return (
       <div>
         <h4 className="p-2 m-0">
@@ -33,6 +37,7 @@ class Presidential extends PureComponent {
   }
 }
 
+
 const mapStateToProps = (state) => {
   const { presidential } = state.home;
 
@@ -41,5 +46,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-// TODO State Store Connection
 export default connect(mapStateToProps)(Presidential);

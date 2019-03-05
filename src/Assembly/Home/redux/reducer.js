@@ -52,9 +52,7 @@ export default (state = initialState, action) => {
     case GET_HOME.SUCCESS:
       return {
         ...state,
-        content: {
-          ...action.response.instances,
-        },
+        presidential: action.response.instances.individuals,
         actions: {
           ...state.actions,
           ...actionResult('GET_HOME.SUCCESS'),
@@ -108,9 +106,9 @@ export default (state = initialState, action) => {
     case DISCOVER_CANDIDATES.SUCCESS:
       return {
         ...state,
-        search: {
-          ...state.search,
-          instances: action.response.instances,
+        discover: {
+          ...state.discover,
+          candidates: action.response.instances.individuals,
         },
         actions: {
           ...state.actions,
