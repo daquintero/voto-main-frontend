@@ -2,10 +2,8 @@
 // Libraries
 import React, { PureComponent } from 'react';
 // import { connect } from 'react-redux';
-
-// Prop Types
 import PropTypes from 'prop-types';
-import { Col, Row } from 'reactstrap';
+import { Col, Row, Button } from 'reactstrap';
 
 const iconBehavior = {
   error: {
@@ -47,32 +45,29 @@ class Subscribe extends PureComponent {
       province: '',
       incomplete: false,
     };
-
-    this.handleEmailChange = this.handleEmailChange.bind(this);
-    this.handleNameChange = this.handleNameChange.bind(this);
-    this.handleProvinceChange = this.handleProvinceChange.bind(this);
   }
 
-  handleNameChange(event) {
+  handleNameChange = (event) => {
     event.persist();
     this.setState({ name: event.target.value });
-  }
+  };
 
-  handleEmailChange(event) {
+  handleEmailChange = (event) => {
     event.persist();
     this.setState({ email: event.target.value });
-  }
+  };
 
-  handleProvinceChange(event) {
+  handleProvinceChange = (event) => {
     event.persist();
     this.setState({ province: event.target.value });
-  }
+  };
 
   handleIncomplete = () => {
     this.setState(() => ({ incomplete: true }));
   };
 
-  handleSubmit = () => {
+  handleSubmit = (e) => {
+    e.preventDefault();
     const fName = this.state.name ? this.state.name : '';
     const fEmail = this.state.email ? this.state.email : '';
     const fProv = this.state.province ? this.state.province : '';
@@ -89,90 +84,80 @@ class Subscribe extends PureComponent {
   };
 
   render() {
-    const { status } = this.props;
-    const { name, email } = this.state;
+    // State
+    const {
+      name, email,
+    } = this.state;
+
+    // Props
+    const {
+      status,
+    } = this.props;
+
     return (
       <Row noGutters>
-        <Col xs={12} md={8} className="p-2 text-center m-md-0">
-          <h5 className="p-2 m-0 notice">Compromėtete a un &nbsp;
+        <Col className="pb-2 text-center m-md-0">
+          <h5 className="pb-2 m-0 notice">Compromėtete a un &nbsp;
             <span className="sl">#VotoInformado2019</span>
           </h5>
         </Col>
-        <Col
-          xs={12}
-          md={4}
-          className="p-2 my-auto text-center notice small-enlarge"
-          onClick={this.handleSubmit}
-        >
-          <h5 className="py-1 m-0 text-center">
-            <i className={`fal px-2 ${iconBehavior[status] ?
-            iconBehavior[status].icon :
-            'fa-envelope'}`}
-            />
-          </h5>
-          <h6 className="m-0">
-            Subscríbete
-          </h6>
-        </Col>
         <Col xs={12}>
-          <div className="mb-3">
-            <div className="input-group">
-              <div className="input-group-prepend">
-                <span className="input-group-text" id="inputGroup-sizing-sm">
-                Nombre
-                </span>
-              </div>
-              <input
-                name="nombre"
-                value={name}
-                onChange={this.handleNameChange}
-                type="text"
-                placeholder="Mi compa"
-                className="form-control"
-              />
-            </div>
-            <div className="text-danger text-center">{alphaNumeric(name)}</div>
-          </div>
-          <div className=" mb-3">
-            <div className="input-group">
-              <div className="input-group flex-nowrap">
-                <div className="input-group-prepend">
-                  <span className="input-group-text" id="addon-wrapping">@</span>
-                </div>
+          <form className="home__subscribe__form">
+            <div className="mb-3">
+              <div className="input-group">
                 <input
-                  value={email}
-                  onChange={this.handleEmailChange}
-                  type="email"
-                  placeholder="Email"
+                  name="nombre"
+                  value={name}
+                  onChange={this.handleNameChange}
+                  type="text"
+                  placeholder="Mi compa"
                   className="form-control"
                 />
               </div>
+              <div className="text-danger text-center">{alphaNumeric(name)}</div>
             </div>
-            <div className="text-danger text-center">{emailV(email)}</div>
-          </div>
-          <div className="input-group">
-            <div className="input-group-prepend">
-              <div className="input-group-text">Options</div>
+            <div className=" mb-3">
+              <div className="input-group">
+                <div className="input-group flex-nowrap">
+                  <input
+                    value={email}
+                    onChange={this.handleEmailChange}
+                    type="email"
+                    placeholder="Email"
+                    className="form-control"
+                  />
+                </div>
+              </div>
+              <div className="text-danger text-center">{emailV(email)}</div>
             </div>
-            <select
-              className="custom-select"
-              value={this.state.province}
-              onChange={this.handleProvinceChange}
-            >
-              <option value="Provincia">Provincia</option>
-              <option value="Panamá">Panamá</option>
-              <option value="Bocas Del Toro">Bocas Del Toro</option>
-              <option value="Chiriquí">Chiriquí</option>
-              <option value="Colón">Colón</option>
-              <option value="Coclé">Coclé</option>
-              <option value="Darién">Darién</option>
-              <option value="Herrera">Herrera</option>
-              <option value="Los Santos">Los Santos</option>
-              <option value="Panamá Oeste">Panamá Oeste</option>
-              <option value="Veraguas">Veraguas</option>
-              <option value="Comarcas">Comarcas</option>
-            </select>
-          </div>
+            <div className="input-group">
+              <select
+                className="custom-select"
+                value={this.state.province}
+                onChange={this.handleProvinceChange}
+              >
+                <option value="Provincia">Provincia</option>
+                <option value="Panamá">Panamá</option>
+                <option value="Bocas Del Toro">Bocas Del Toro</option>
+                <option value="Chiriquí">Chiriquí</option>
+                <option value="Colón">Colón</option>
+                <option value="Coclé">Coclé</option>
+                <option value="Darién">Darién</option>
+                <option value="Herrera">Herrera</option>
+                <option value="Los Santos">Los Santos</option>
+                <option value="Panamá Oeste">Panamá Oeste</option>
+                <option value="Veraguas">Veraguas</option>
+                <option value="Comarcas">Comarcas</option>
+              </select>
+            </div>
+            <Button onClick={this.handleSubmit}>
+              <i className={`fal px-2 ${iconBehavior[status] ?
+              iconBehavior[status].icon :
+              'fa-envelope'}`}
+              />
+              Subscríbete
+            </Button>
+          </form>
         </Col>
         {this.state.incomplete ? (
           <div

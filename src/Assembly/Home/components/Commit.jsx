@@ -23,28 +23,11 @@ class TopBanner extends PureComponent { // eslint-disable-line
     const { light } = this.props;
     return (
       <div className={light ? 'bg-layout' : 'bg-shady-layout'}>
-        <Container>
-          <Row noGutters className="py-3">
-            <Col md={6} className="px-4 py-4 p-md-2 my-auto">
-              <Subscribe />
-            </Col>
-            <Col className="text-center my-auto">
-              <h3>
-                <i className="fal fa-clock spin-clock" />{' '}
-                {moment('2019-05-05').diff(moment(), 'days')}
-              </h3>
-              <p>Dias Hasta las Elecciones</p>
-              <a target="_blank" rel="noreferrer noopener" href="http://verificate.pa/">
-                <div className="bg-above-background py-4 small-enlarge">
-                  <h4>
-                    <i className="fal fa-vote-yea p-2" />
-                    ¡Encuentra tu centro de votación!
-                  </h4>
-                </div>
-              </a>
-            </Col>
-          </Row>
-        </Container>
+        <Row noGutters className="pb-3">
+          <Col md={12} className="px-4 p-md-2 my-auto">
+            <Subscribe />
+          </Col>
+        </Row>
       </div>
     );
   }

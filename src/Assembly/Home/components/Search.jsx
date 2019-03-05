@@ -67,16 +67,13 @@ class Search extends PureComponent {
       <div className="py-2 my-2 bg-shady-layout">
         <Container>
           <Row noGutters className="justify-content-center p-4">
-            <Col md={12} className="text-center">
-              <h4>¡Investiga!</h4>
-            </Col>
             <Col md={12} className="align-content-center justify-content-center px-4  mx-auto">
               <form className="home__search__form">
                 <Field
                   name="query"
                   type="text"
                   component={renderField}
-                  label="Cualquier cosa"
+                  label="¡Investiga!"
                   validate={alphaNumeric}
                   onChange={this.submitSearch}
                 />

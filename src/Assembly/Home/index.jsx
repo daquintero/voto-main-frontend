@@ -4,6 +4,7 @@ import React, { PureComponent } from 'react';
 import { Container, Row, Col } from 'reactstrap';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+// import moment from 'moment';
 
 // Components
 import Video from '../Video';
@@ -32,11 +33,28 @@ class Home extends PureComponent {
   render() {
     return (
       <>
-        <Container className="p-0 mt-5">
-          <Video />
+        <Container className="p-0 my-5">
+          <Row>
+            <Col xl={8}>
+              <Video />
+            </Col>
+            <Col>
+              <Commit light />
+              <Col className="text-center w-100">
+                <a target="_blank" rel="noreferrer noopener" href="http://verificate.pa/">
+                  <div className="py-4 small-enlarge shadow w-100">
+                    <h4>
+                      <i className="fal fa-vote-yea p-2" />
+                      ¡Encuentra tu centro de votación!
+                    </h4>
+                  </div>
+                </a>
+              </Col>
+            </Col>
+          </Row>
         </Container>
         <Search />
-        <Commit light />
+        <Discovery />
         <div className="bg-shady-layout">
           <Container className="bg-shady-layout py-4">
             <Row noGutters>
@@ -59,7 +77,6 @@ class Home extends PureComponent {
             </Row>
           </Container>
         </div>
-        <Discovery />
         <StudioProm />
       </>
     );
