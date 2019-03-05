@@ -6,27 +6,54 @@ import {
   NavbarBrand,
   NavbarToggler,
   Collapse,
+  Modal,
+  Row,
+  Col,
+  Button,
 } from 'reactstrap';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import classNames from 'classnames';
 
-// Functions
-// import imageUrl from '../../shared/utils/imageUrl';
+// Actions
+import { openFirstVisit } from './redux/actions';
 
 import logo from './favicon.ico';
 
 class TopBar extends Component {
+  static propTypes = {
+    dispatch: PropTypes.func.isRequired,
+    firstVisit: PropTypes.bool.isRequired,
+  };
   constructor(props) {
     super(props);
     this.state = {
       collapsed: true,
       currentTab: '1',
+      privacySeen: false,
     };
   }
+  componentDidMount() {
+    const { firstVisit } = this.props;
 
-  onClick = () => {
-    this.setState(prevState =>
-      ({ test: !prevState.test }));
+    if (firstVisit === true) {
+      this.openFirstVisit();
+    }
+  }
+
+  closePrivacy = () => {
+    const { dispatch } = this.props;
+    dispatch(openFirstVisit());
+    this.setState(({
+      privacySeen: false,
+    }));
+  };
+
+  openFirstVisit = () => {
+    this.setState(({
+      privacySeen: true,
+    }));
   };
 
   toggleNavbar = () => {
@@ -97,10 +124,29 @@ class TopBar extends Component {
   render() {
     // State
     const {
-      currentTab,
+      currentTab, privacySeen,
     } = this.state;
     return (
       <>
+        <Modal isOpen={privacySeen} className="p-4">
+          <Row noGutters>
+            <Col>
+              Bienvenido a&nbsp;
+              <span>#VotoInformado2019</span>.
+              Si continúa navegando y utilizando este sitio web,
+              acepta cumplir y estar sujeto a los&nbsp;
+              <Link to="/legal" onClick={this.closePrivacy}>
+                términos y condiciones
+              </Link>&nbsp;
+              de uso.
+            </Col>
+          </Row>
+          <Row noGutters className="p-2 justify-content-center">
+            <Button onClick={this.closePrivacy}>
+              Acepto
+            </Button>
+          </Row>
+        </Modal>
         <Navbar light expand="md" className="navbar p-0">
           <Container className="navbar__wrapper bg-white">
             <NavbarBrand href="/" className="navbar__brand d-inline">
@@ -164,4 +210,4 @@ class TopBar extends Component {
     );
   }
 }
-export default TopBar;
+export default connect()(TopBar);

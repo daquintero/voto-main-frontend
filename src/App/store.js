@@ -11,29 +11,31 @@ import detailPageReducer from '../Assembly/DetailedPage/redux/reducer';
 // TODO ADD LATER
 // import homeReducer from '../Assembly/Social/redux/reducer';
 import basicHomeReducer from '../Assembly/Home/redux/reducer';
+import welcomeReducer from '../Layout/TopBar/redux/reducer';
 
 // Local Storage
-// import { loadState, saveState } from './localStorage';
+import { loadState, saveState } from './localStorage';
 
 const reducer = combineReducers({
   openPage: detailPageReducer,
   map: mapReducer,
   home: basicHomeReducer,
   form: formReducer,
+  welcome: welcomeReducer,
 });
 
-// const storedState = loadState();
+const storedState = loadState();
 
 const store = createStore(
   reducer,
-  // storedState,
+  storedState,
   composeWithDevTools(applyMiddleware(thunk)),
 );
 
-// store.subscribe(throttle(() => {
-//   saveState({
-//     home: store.getState().home,
-//   });
-// }, 3000));
+store.subscribe(throttle(() => {
+  saveState({
+    welcome: store.getState().welcome,
+  });
+}, 3000));
 
 export default store;

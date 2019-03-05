@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import { Row } from 'reactstrap';
 
 // Components
-// import MainFinancesNav from '../../../Reusable/FinanceItem/components/MainFinancesNav';
+import MainFinancesNav from '../../../Reusable/FinanceItem/components/MainFinancesNav';
 import Statistics from './Statistics';
 import Share from '../../../Reusable/SocialShare/components/Card';
 import LawList from '../../../Reusable/Law/components/List';
@@ -46,14 +46,14 @@ class RightSide extends PureComponent {
           />
         </Row>
         {/* TODO REMOVE SINCE NO TIME */}
-        {/* <Row noGutters className="px-2 py-4 justify-content-center right-side__row"> */}
-        {/* <MainFinancesNav */}
-        {/* corruptionRelatedFunds={instance.corruptionRelatedFunds} */}
-        {/* nonCorruptionRelatedFunds={instance.nonCorruptionRelatedFunds} */}
-        {/* parent={instance.modelLabel} */}
-        {/* light={light} */}
-        {/* /> */}
-        {/* </Row> */}
+        <Row noGutters className="px-2 py-4 justify-content-center right-side__row">
+          <MainFinancesNav
+            corruptionRelatedFunds={instance.corruptionRelatedFunds}
+            nonCorruptionRelatedFunds={instance.nonCorruptionRelatedFunds}
+            parent={instance.modelLabel}
+            light={light}
+          />
+        </Row>
         <Row noGutters className="px-2 py-4 justify-content-center right-side__row">
           <Statistics
             instances={instance.statistics}

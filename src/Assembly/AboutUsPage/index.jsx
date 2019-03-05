@@ -1,40 +1,26 @@
 // About Us Page Compendium
 // Libraries
-import React, { PureComponent } from 'react';
+import React from 'react';
 import { Container, Row, Col } from 'reactstrap';
 
 // Components
-import Video from '../Video';
-import Social from './components/Social';
-import Who from './components/Who';
+import Social from './Social';
+import Who from './Who';
+import Thanks from './Thanks';
 
 // Declaration
-class AboutPage extends PureComponent {
-  render() {
-    return (
-          <>
-            <Container fluid className="text-center p-5 bg-shady-layout">
-              <Row>
-                <Col xs={12}>
-                  <h2>#VotoInformado2019</h2>
-                </Col>
-              </Row>
-            </Container>
-            <Container fluid className="p-0">
-              <Video />
-            </Container>
-            <Container>
-              <Row noGutters className="my-5">
-                <Who />
-              </Row>
-            </Container>
-            <Container className="p-0">
-              <Social />
-            </Container>
-          </>
-    );
-  }
-}
+const AboutPage = () => (
+  <Container fluid className="text-center p-5 bg-shady-layout">
+    <Row>
+      <Col xs={12}>
+        <h2>#VotoInformado2019</h2>
+      </Col>
+    </Row>
+    <Who />
+    <Thanks />
+    <Social />
+  </Container>
+);
 
 // TODO State Store Connection
 export default AboutPage;

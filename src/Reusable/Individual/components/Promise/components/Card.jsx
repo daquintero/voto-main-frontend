@@ -16,7 +16,7 @@ class PromCard extends PureComponent {
   render() {
     const { instance, light } = this.props;
     return (
-      <div className="span-5-rows">
+      <div className={`${light ? 'bg-layout' : 'bg-shady-layout'} span-5-rows`}>
         <a target="_blank" rel="noreferrer noopener" href={instance.source}>
           <Card className={`${light ? 'bg-layout' : 'bg-shady-layout'} border-0 rounded-0 small-enlarge`}>
             {categoryInfo[instance.type] ? (

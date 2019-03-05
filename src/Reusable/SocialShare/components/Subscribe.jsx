@@ -1,7 +1,7 @@
 // Subcribe to Mailchimp /
 // Libraries
 import React, { PureComponent } from 'react';
-import { connect } from 'react-redux';
+// import { connect } from 'react-redux';
 
 // Prop Types
 import PropTypes from 'prop-types';
@@ -36,7 +36,7 @@ class Subscribe extends PureComponent {
   static propTypes = {
     status: PropTypes.string.isRequired,
     onValidated: PropTypes.func.isRequired,
-    mailchimpSubscribed: PropTypes.number.isRequired,
+    // mailchimpSubscribed: PropTypes.number.isRequired,
   };
 
   constructor(props) {
@@ -89,7 +89,7 @@ class Subscribe extends PureComponent {
   };
 
   render() {
-    const { status, mailchimpSubscribed } = this.props;
+    const { status } = this.props;
     const { name, email } = this.state;
     return (
       <Row noGutters>
@@ -105,7 +105,7 @@ class Subscribe extends PureComponent {
           onClick={this.handleSubmit}
         >
           <h5 className="py-1 m-0 text-center">
-            {mailchimpSubscribed || 0} &nbsp;<i className={`fal px-2 ${iconBehavior[status] ?
+            <i className={`fal px-2 ${iconBehavior[status] ?
             iconBehavior[status].icon :
             'fa-envelope'}`}
             />
@@ -186,11 +186,11 @@ class Subscribe extends PureComponent {
   }
 }
 
-
-const mapStateToProps = (state) => {
-  const { mailchimpSubscribed } = state.home.subscribedStats;
-  return {
-    mailchimpSubscribed,
-  };
-};
-export default connect(mapStateToProps)(Subscribe);
+export default Subscribe;
+// const mapStateToProps = (state) => {
+//   const { mailchimpSubscribed } = state.home.subscribedStats;
+//   return {
+//     mailchimpSubscribed,
+//   };
+// };
+// export default connect(mapStateToProps)(Subscribe);

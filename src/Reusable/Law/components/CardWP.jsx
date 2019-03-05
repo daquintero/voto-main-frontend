@@ -6,9 +6,9 @@ import PropTypes from 'prop-types';
 import { ListGroupItem, Col, Row } from 'reactstrap';
 
 
-const LawCard = ({ instance, typeContext }) => (
+const LawCardWP = ({ instance, typeContext }) => (
   <ListGroupItem
-    className={`${typeContext === 'relation' ? 'list-right' : 'small-enlarge'} span-4-cols`}
+    className={`${typeContext === 'relation' ? 'list-right' : 'small-enlarge'} shadow span-4-cols border-0 rounded-0`}
     tag="a"
     href={instance.source}
   >
@@ -24,10 +24,10 @@ const LawCard = ({ instance, typeContext }) => (
   </ListGroupItem>
 );
 
-LawCard.propTypes = {
+LawCardWP.propTypes = {
   instance: PropTypes.instanceOf(Object).isRequired,
   typeContext: PropTypes.string.isRequired,
 };
 
 
-export default LawCard;
+export default LawCardWP;
