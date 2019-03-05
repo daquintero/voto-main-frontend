@@ -26,7 +26,7 @@ class DetailedReduxCardGrid extends PureComponent {
     // Variable Props
     relatedModelLabel: PropTypes.string.isRequired,
     gridClass: PropTypes.string.isRequired,
-
+    typeContext: PropTypes.string.isRequired,
     light: PropTypes.bool.isRequired,
   };
 
@@ -49,6 +49,7 @@ class DetailedReduxCardGrid extends PureComponent {
       relatedModelLabel,
       gridClass,
       light,
+      typeContext,
     } = this.props;
 
     return (
@@ -60,6 +61,7 @@ class DetailedReduxCardGrid extends PureComponent {
           gridClass={gridClass}
           relatedModelLabel={relatedModelLabel}
           light={light}
+          typeContext={typeContext}
         />
         {/* TODO Check subsets are not the same as before */}
         <Row noGutters className="p-2">

@@ -18,6 +18,7 @@ class Generic extends PureComponent {
     relatedModelLabel: PropTypes.string.isRequired,
     parentModelLabel: PropTypes.string.isRequired,
     light: PropTypes.bool.isRequired,
+    typeContext: PropTypes.string.isRequired,
   };
   render() {
     const {
@@ -26,17 +27,18 @@ class Generic extends PureComponent {
       relatedModelLabel,
       parentModelLabel,
       light,
+      typeContext,
     } = this.props;
     return (
       instances && instances[0] ? (
         <div className={gridClass}>
           {instances.map((instance) => {
             if (instance.modelLabel) {
-              return CardSelector(instance, 'relation', light);
+              return CardSelector(instance, typeContext ||'relation', light);
             }
             const withLabel = instance;
             withLabel.modelLabel = relatedModelLabel;
-            return CardSelector(withLabel, 'relation', light);
+            return CardSelector(withLabel, typeContext || 'relation', light);
           })}
         </div>
       ) :

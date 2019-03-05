@@ -11,7 +11,7 @@ import PropTypes from 'prop-types';
 import { homeSearch } from '../redux/actions';
 
 // Components
-import Generic from '../../../Reusable/Grid/components/Generic';
+import Generic from '../../../Reusable/Grid/components/DetailedReduxCardGrid';
 
 const banner = `${process.env.PUBLIC_URL}/img/banner.svg`;
 
@@ -89,8 +89,9 @@ class Search extends PureComponent {
               <Generic
                 instances={instances}
                 light
-                gridClass="variable-grid"
+                gridClass="variable-new-grid"
                 relatedModelLabel="noneType"
+                typeContext="public"
               />
             </Col>
           )}

@@ -86,7 +86,7 @@ class Search extends PureComponent {
               <Generic
                 instances={instances}
                 light={false}
-                gridClass="variable-grid"
+                gridClass="variable-new-grid"
                 relatedModelLabel="noneType"
               />
             </Col>

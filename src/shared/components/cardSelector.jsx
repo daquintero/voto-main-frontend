@@ -20,6 +20,7 @@ import EXPCard from '../../Reusable/Individual/components/Experience/components/
 import EXPCardWP from '../../Reusable/Individual/components/Experience/components/CardWP';
 // Law
 import LAWCard from '../../Reusable/Law/components/Card';
+import LAWCardWP from '../../Reusable/Law/components/CardWP';
 // Statistics
 import STATCard from '../../Reusable/Statistics/components/StatisticBlock';
 // Financial Item
@@ -32,7 +33,6 @@ import RESCard from '../../Reusable/Individual/components/Resource/components/Ca
 
 // ---------- FUNCTION -----------
 export default function (instance, context, light) {
-  // console.log(instance);
   switch (instance.modelLabel) {
     case 'corruption.InformativeSnippet':
       return (<INFOCard instance={instance} />);
@@ -49,9 +49,9 @@ export default function (instance, context, light) {
       return (<INDICard instance={instance} light={light} />);
     case 'political.Controversy':
       if (context === 'relation') {
-        return (<CONTCard instance={instance} />);
+        return (<CONTCard instance={instance} light={light} />);
       }
-      return (<CONTCardWP instance={instance} />);
+      return (<CONTCardWP instance={instance} light={light} />);
     case 'political.Promise':
       if (context === 'relation') {
         return (<PROMCard instance={instance} light={light} />);
@@ -72,7 +72,10 @@ export default function (instance, context, light) {
     case 'political.Organization':
       return (<ORGCard instance={instance} light={light} />);
     case 'political.Law':
-      return (<LAWCard instance={instance} />);
+      if (context === 'relation') {
+        return (<LAWCard instance={instance} typeContext={context} />);
+      }
+      return (<LAWCardWP instance={instance} typeContext={context} />);
     case 'media.Resource':
       return (<RESCard instance={instance} />);
     default:
