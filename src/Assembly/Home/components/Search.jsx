@@ -71,7 +71,7 @@ class Search extends PureComponent {
               <h4>¡Investiga!</h4>
             </Col>
             <Col md={12} className="align-content-center justify-content-center px-4  mx-auto">
-              <form>
+              <form className="home__search__form">
                 <Field
                   name="query"
                   type="text"
@@ -80,6 +80,7 @@ class Search extends PureComponent {
                   validate={alphaNumeric}
                   onChange={this.submitSearch}
                 />
+                <i className="fal fa-search" />
               </form>
             </Col>
             {search && (search.active || search.anyTouched) && (

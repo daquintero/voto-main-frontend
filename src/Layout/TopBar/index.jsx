@@ -21,6 +21,7 @@ import { openFirstVisit } from './redux/actions';
 
 import logo from './favicon.ico';
 
+
 class TopBar extends Component {
   static propTypes = {
     dispatch: PropTypes.func.isRequired,
@@ -148,15 +149,17 @@ class TopBar extends Component {
           </Row>
         </Modal>
         <Navbar light expand="md" className="navbar p-0">
-          <Container className="navbar__wrapper bg-white">
+          <Container className="navbar__wrapper bg-white px-0">
             <NavbarBrand href="/" className="navbar__brand d-inline">
-              <h4 className="p-1 m-0"><img className="img-fluid px-2" src={logo} alt="" />#VotoInformado2019</h4>
+              <h4 className="p-1 m-0">
+                <img className="img-fluid pr-2" src={logo} alt="" />#VotoInformado2019
+              </h4>
             </NavbarBrand>
             <NavbarToggler
               onClick={this.toggleNavbar}
               className="mr-4"
             />
-            <Collapse isOpen={!this.state.collapsed} navbar className="justify-content-center">
+            <Collapse isOpen={!this.state.collapsed} navbar className="justify-content-end">
               <div
                 className="navbar__nav__wrapper bg-white justify-content-center"
                 onMouseLeave={this.handleOnMouseLeave}

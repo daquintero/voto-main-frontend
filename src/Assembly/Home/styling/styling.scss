@@ -1,0 +1,31 @@
+.home {
+  &__search {
+    &__form {
+      position: relative;
+      width: 70%;
+      margin: 0 auto;
+
+      input {
+        border-radius: 0;
+        border: none;
+        box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+        height: 50px;
+        max-width: none !important;
+        font-size: 1.25em;
+        &:focus {
+          border: none;
+          border-color: transparent;
+        }
+      };
+
+      i {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 1.75em;
+        color: rgba(black, 0.5)
+      }
+    }
+  }
+}

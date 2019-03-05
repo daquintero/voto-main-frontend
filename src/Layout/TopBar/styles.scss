@@ -3,21 +3,22 @@ $border: 1px solid rgba($impDark, 0.2);
 body {
   padding-top: 44px;
   @media screen and (max-width: 768px) {
-    body { padding-top: 0px; }
+    body { padding-top: 0; }
   }
 }
 
 .navbar {
   height: 45px;
   padding: 10%;
-  border-bottom: $border;
+  //border-bottom: $border;
   background-color: white;
   position: fixed;
-  top: 0px;
-  left: 0px;
-  right: 0px;
+  top: 0;
+  left: 0;
+  right: 0;
   overflow-y: visible;
   z-index: 10000;
+  box-shadow: 1px 0 10px rgba(0, 0, 0, 0.1);
 
 
 
@@ -102,8 +103,8 @@ body {
       padding: 2%;
       position: fixed;
       top: 43px;
-      left: 0px;
-      right: 0px;
+      left: 0;
+      right: 0;
 
       transform: translateY(30px);
       transition: height;

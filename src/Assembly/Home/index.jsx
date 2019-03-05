@@ -35,6 +35,7 @@ class Home extends PureComponent {
         <Container className="p-0 mt-5">
           <Video />
         </Container>
+        <Search />
         <Commit light />
         <div className="bg-shady-layout">
           <Container className="bg-shady-layout py-4">
@@ -50,7 +51,7 @@ class Home extends PureComponent {
                 >
                   <h4 className="p-2 m-0">
                     <i className="fal fa-book-heart p-2" />
-                  ¡Descarga el Manual!
+                    ¡Descarga el Manual!
                   </h4>
                 </a>
                 <PDF />
@@ -59,12 +60,10 @@ class Home extends PureComponent {
           </Container>
         </div>
         <Discovery />
-        <Search />
         <StudioProm />
       </>
     );
   }
 }
 
-// TODO State Store Connection
 export default connect()(Home);
