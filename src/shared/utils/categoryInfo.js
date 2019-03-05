@@ -80,6 +80,18 @@ const categoryInfo = {
     icon: 'graduation-cap',
     Spanish: 'Educación',
   },
+  individuals: {
+    icon: 'user',
+    link: 'individuo',
+  },
+  organizations: {
+    icon: 'building',
+    link: 'organizacion',
+  },
+  corruptionCases: {
+    icon: 'briefcase',
+    link: 'caso-corrupcion',
+  },
 };
 
 export default categoryInfo;
