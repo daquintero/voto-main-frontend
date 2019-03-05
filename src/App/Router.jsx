@@ -12,6 +12,7 @@ import Home from '../Assembly/Home';
 // import Social from '../Assembly/Social';
 import Layout from '../Layout/TopBar';
 import TermsAndConditions from '../Assembly/Legal';
+import NotFound404 from '../shared/components/404/Page';
 
 // --------------- DETAIL PAGE IMPORTS -------------------
 import CORPage from '../Assembly/DetailedPage/components/NewsLike/CCPage';
@@ -26,26 +27,29 @@ import About from '../Assembly/AboutUsPage';
 import Scratch from './Scratch';
 import Map from '../Reusable/Map';
 
+
 // WrappedRoutes appends the layout navigation with the route components.
 const wrappedRoutes = () => (
   <div>
     <Layout />
     <div className="bg-layout">
-      <Route exact path="/" component={Home} />
-      {/* <Route path="/informate" component={Social} /> */}
-      <Route path="/acerca" component={About} />
-      <Route path="/legal" component={TermsAndConditions} />
+      <Switch>
+        <Route path="/acerca" component={About} />
+        <Route path="/legal" component={TermsAndConditions} />
 
 
-      {/* Detailed Pages */}
-      <Route path="/caso-corrupcion/:id" component={CORPage} />
-      <Route path="/individuo/:id" component={Individual} />
-      <Route path="/organizacion/:id" component={Organization} />
-      <Route path="/noticia/:id" component={INFPage} />
+        {/* Detailed Pages */}
+        <Route path="/caso-corrupcion/:id" component={CORPage} />
+        <Route path="/individuo/:id" component={Individual} />
+        <Route path="/organizacion/:id" component={Organization} />
+        <Route path="/noticia/:id" component={INFPage} />
 
-      {/* Test Files */}
-      <Route path="/a" component={Scratch} />
-      <Route path="/map-test" component={Map} />
+        {/* Test Files */}
+        <Route path="/a" component={Scratch} />
+        <Route path="/map-test" component={Map} />
+        <Route exact path="/" component={Home} />
+        <Route component={NotFound404} />
+      </Switch>
     </div>
   </div>
 );

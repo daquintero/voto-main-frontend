@@ -1,10 +1,10 @@
 // Main Scratch Indexing Container for all of the Routes
 import React from 'react';
-import TermsAndConditions from '../Assembly/Legal';
+import Page404 from '../shared/components/404/Page';
 
 const Scratch = () => (
   <div className="layout">
-    <TermsAndConditions />
+    <Page404 />
   </div>
 );
 

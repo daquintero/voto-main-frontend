@@ -7,6 +7,7 @@ import { Container, Row, Col } from 'reactstrap';
 import Social from './Social';
 import Who from './Who';
 import Thanks from './Thanks';
+import Members from './Members';
 
 // Declaration
 const AboutPage = () => (
@@ -18,6 +19,7 @@ const AboutPage = () => (
     </Row>
     <Who />
     <Thanks />
+    <Members />
     <Social />
   </Container>
 );

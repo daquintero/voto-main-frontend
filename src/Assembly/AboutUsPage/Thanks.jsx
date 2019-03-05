@@ -8,12 +8,9 @@ const logo = `${process.env.PUBLIC_URL}/img/conteo.png`;
 // Declaration
 const Thanks = () => (
   <Row noGutters className="my-5">
-    <Col md={5} className="p-4">
-      <img src={logo} alt="Error" className="img-full" />
-    </Col>
     <Col md={7} className="p-4">
       <h5 className="py-2">Agradecimientos</h5>
-      <p style={{ 'letter-spacing': '0.02em', 'font-size': '1.1rem' }}>
+      <p style={{ 'letter-spacing': '0.02em' }}>
         Queremos darles un agradecimiento especial a todas
          las personas que participarton en la creación
          de esta campaña, en la página web, en el Manual
@@ -23,7 +20,7 @@ const Thanks = () => (
         y en la visualización de la información, y en
         todo lo que compone Voto Informado 2019.
       </p>
-      <p style={{ 'letter-spacing': '0.02em', 'font-size': '1.1rem' }}>
+      <p style={{ 'letter-spacing': '0.02em' }}>
          Apreciamos mucho el apoyo y tiempo de todos,
          en especial a: los participantes del Investigatón 2018,
          los participantes de Panamá-Hackea 2018, a los desarrolladores
@@ -32,6 +29,9 @@ const Thanks = () => (
          James Williams, Ruberto Zubieta, Kevin Kantule, Leopoldo Alfaro,
          Emmanuel Lobo, Cynthia Paolini y a David Chumpitaz.
       </p>
+    </Col>
+    <Col md={5} className="p-4">
+      <img src={logo} alt="Error" className="img-cover" />
     </Col>
   </Row>
 );
