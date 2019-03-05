@@ -30,7 +30,7 @@ class Home extends PureComponent {
   render() {
     return (
       <>
-        <Container fluid className="p-0">
+        <Container className="p-0 mt-5">
           <Video />
         </Container>
         <Commit light />
