@@ -48,7 +48,7 @@ class Discover extends Component {
               subsetNumber={0}
               light
               instances={candidates}
-              gridClass="variable-new-grid"
+              gridClass="candidates-grid"
             />
           </Col>
         </Row>

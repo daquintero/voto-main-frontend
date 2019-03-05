@@ -24,7 +24,6 @@ class Relationships extends PureComponent {
       <Row noGutters className="pb-5 pt-2">
         <Col className="p-2">
           <div className="subsection-grid">
-            {/* Bit hacky grid arrangement approach */}
             <div
               className={`mt-2 p-1 bg-above-background
            ${experience && experience[0] ?

@@ -7,7 +7,7 @@ import { Col, Row } from 'reactstrap';
 
 // Declaration
 const Who = () => (
-  <Row noGutters className="my-5">
+  <Row noGutters className="my-5 bg-layout">
     <Col md={5} className="p-4">
         ghgj
     </Col>
