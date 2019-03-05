@@ -8,7 +8,7 @@ import { ListGroupItem, Col, Row } from 'reactstrap';
 
 const LawCardWP = ({ instance, typeContext }) => (
   <ListGroupItem
-    className={`${typeContext === 'relation' ? 'list-right' : 'small-enlarge'} shadow span-4-cols`}
+    className={`${typeContext === 'relation' ? 'list-right' : 'small-enlarge'} shadow span-4-cols border-0 rounded-0`}
     tag="a"
     href={instance.source}
   >

@@ -15,6 +15,7 @@ import Search from './components/Search';
 // Actions
 import { getHome } from './redux/actions';
 import Discovery from './components/Discovery';
+import StudioProm from './components/StudioProm';
 
 // Declaration
 class Home extends PureComponent {
@@ -30,7 +31,7 @@ class Home extends PureComponent {
   render() {
     return (
       <>
-        <Container fluid className="p-0">
+        <Container className="p-0">
           <Video />
         </Container>
         <Commit light />
@@ -58,6 +59,7 @@ class Home extends PureComponent {
         </div>
         <Discovery />
         <Search />
+        <StudioProm />
       </>
     );
   }

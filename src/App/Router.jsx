@@ -11,6 +11,7 @@ import { Route, Switch } from 'react-router-dom';
 import Home from '../Assembly/Home';
 import Social from '../Assembly/Social';
 import Layout from '../Layout/TopBar';
+import TermsAndConditions from '../Assembly/Legal';
 
 // --------------- DETAIL PAGE IMPORTS -------------------
 import CORPage from '../Assembly/DetailedPage/components/NewsLike/CCPage';
@@ -33,6 +34,7 @@ const wrappedRoutes = () => (
       <Route exact path="/" component={Home} />
       <Route path="/informate" component={Social} />
       <Route path="/acerca" component={About} />
+      <Route path="/legal" component={TermsAndConditions} />
 
 
       {/* Detailed Pages */}
