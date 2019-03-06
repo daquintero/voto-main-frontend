@@ -17,7 +17,7 @@ import { connect } from 'react-redux';
 import classNames from 'classnames';
 
 // Actions
-import { openFirstVisit } from './redux/actions';
+import { finishedFirstVisit } from './redux/actions';
 
 import logo from './favicon.ico';
 
@@ -25,7 +25,7 @@ import logo from './favicon.ico';
 class TopBar extends Component {
   static propTypes = {
     dispatch: PropTypes.func.isRequired,
-    firstVisit: PropTypes.bool.isRequired,
+    visited: PropTypes.bool.isRequired,
   };
   constructor(props) {
     super(props);
@@ -36,16 +36,16 @@ class TopBar extends Component {
     };
   }
   componentDidMount() {
-    const { firstVisit } = this.props;
+    const { visited } = this.props;
 
-    if (firstVisit === true) {
+    if (visited === false) {
       this.openFirstVisit();
     }
   }
 
   closePrivacy = () => {
     const { dispatch } = this.props;
-    dispatch(openFirstVisit());
+    dispatch(finishedFirstVisit());
     this.setState(({
       privacySeen: false,
     }));
@@ -164,13 +164,13 @@ class TopBar extends Component {
                 className="navbar__nav__wrapper bg-white justify-content-center"
                 onMouseLeave={this.handleOnMouseLeave}
               >
-                <div
-                  className={classNames('navbar__nav__item one', { active: currentTab === '2' })}
-                  data-id="2"
-                  onMouseEnter={this.handleOnHover}
-                >
-                  <Link className="navbar__nav__link" to="/">Mapa</Link>
-                </div>
+                {/* <div */}
+                {/* className={classNames('navbar__nav__item one', { active: currentTab === '2' })} */}
+                {/* data-id="2" */}
+                {/* onMouseEnter={this.handleOnHover} */}
+                {/* > */}
+                {/* <Link className="navbar__nav__link" to="/mapa">Mapa</Link> */}
+                {/* </div> */}
                 <div
                   className={classNames('navbar__nav__item two', { active: currentTab === '3' })}
                   data-id="3"

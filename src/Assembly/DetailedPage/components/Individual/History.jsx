@@ -12,13 +12,13 @@ import CardGrid from '../../../../Reusable/Grid/components/DetailedReduxCardGrid
 class Relationships extends PureComponent {
   static propTypes = {
     experience: PropTypes.instanceOf(Array).isRequired,
-    promise: PropTypes.instanceOf(Object).isRequired,
-    controversy: PropTypes.instanceOf(Object).isRequired,
-    achievement: PropTypes.instanceOf(Object).isRequired,
+    promises: PropTypes.instanceOf(Object).isRequired,
+    controversies: PropTypes.instanceOf(Object).isRequired,
+    achievements: PropTypes.instanceOf(Object).isRequired,
   };
   render() {
     const {
-      experience, promise, controversy, achievement,
+      experience, promises, controversies, achievements,
     } = this.props;
     return (
       <Row noGutters className="pb-5 pt-2">
@@ -41,46 +41,46 @@ class Relationships extends PureComponent {
             </div>
             <div
               className={`mt-2 p-1
-           ${controversy.instances[0] ?
-              (controversy.instances.length < 3 ? '' : 'span-5-rows') : ''}`}
+           ${controversies.instances[0] ?
+              (controversies.instances.length < 3 ? '' : 'span-5-rows') : ''}`}
               style={{ background: '#ffeff9' }}
             >
               <Row noGutters>
                 <CardGrid
                   relatedModelLabel="political.Controversy"
                   gridClass="variable-grid"
-                  instances={controversy}
-                  subsetNumber={controversy}
+                  instances={controversies.instances}
+                  subsetNumber={controversies.subsetNumber}
                   light
                 />
               </Row>
             </div>
             <div
               className={`mt-2 p-1
-            ${promise.instances[0] ? (promise.instances.length < 3 ? '' : 'span-5-rows') : ''}`}
+            ${promises.instances[0] ? (promises.instances.length < 3 ? '' : 'span-5-rows') : ''}`}
               style={{ background: '#fff5ef' }}
             >
               <Row noGutters>
                 <CardGrid
                   relatedModelLabel="political.Promise"
                   gridClass="variable-related-grid"
-                  instances={promise.instances}
-                  subsetNumber={promise.subsetNumber}
+                  instances={promises.instances}
+                  subsetNumber={promises.subsetNumber}
                   light
                 />
               </Row>
             </div>
             <div
               className={`mt-2 p-1
-            ${achievement.instances[0] ? (achievement.instances.length < 3 ? '' : 'span-5-rows') : ''}`}
+            ${achievements.instances[0] ? (achievements.instances.length < 3 ? '' : 'span-5-rows') : ''}`}
               style={{ background: '#effff5' }}
             >
               <Row noGutters>
                 <CardGrid
                   relatedModelLabel="political.Achievement"
                   gridClass="variable-related-grid"
-                  instances={achievement.instances}
-                  subsetNumber={achievement.subsetNumber}
+                  instances={achievements.instances}
+                  subsetNumber={achievements.subsetNumber}
                   light
                 />
               </Row>
@@ -94,12 +94,12 @@ class Relationships extends PureComponent {
 
 const mapStateToProps = (state) => {
   const { experience } = state.openPage.parentInstance;
-  const { promise, controversy, achievement } = state.openPage.relatedInstances;
+  const { promises, controversies, achievements } = state.openPage.relatedInstances;
   return {
     experience,
-    promise,
-    controversy,
-    achievement,
+    promises,
+    controversies,
+    achievements,
   };
 };
 

@@ -30,7 +30,7 @@ class Presidential extends PureComponent {
           subsetNumber={0}
           light
           instances={presidential}
-          gridClass="variable-grid"
+          gridClass="presidential-grid"
         />
       </div>
     );

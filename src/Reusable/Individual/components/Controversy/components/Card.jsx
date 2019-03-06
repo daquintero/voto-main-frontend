@@ -18,7 +18,7 @@ class ContCard extends PureComponent {
     return (
       <div className={`${light ? 'bg-layout' : 'bg-shady-layout'} shadow small-enlarge`}>
         <a target="_blank" rel="noreferrer noopener" href={instance.source}>
-          <Card className="bg-light border-0 rounded-0">
+          <Card className="border-0 rounded-0">
             {categoryInfo[instance.type] ? (
               <CardHeader className="pt-1 pb-1 ">
                 <i className={`float-left fa p-1 fa-${categoryInfo[instance.type].icon}`} />

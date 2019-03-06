@@ -46,11 +46,15 @@ class Home extends PureComponent {
                     <span className="sl">#VotoInformado2019</span>
                   </h5>
                 </Col>
-                <Col md={12}>
+                <Col md={12} className="pb-4">
                   <Commit light />
                 </Col>
-                <Col className="text-center w-100" md={12}>
-                  <div className="mb-3 w-100 h-100">
+                <Col
+                  className="text-center w-100 border-dark border-top"
+                  style={{ 'border-top': '10px !important' }}
+                  md={12}
+                >
+                  <div className="my-3 w-100 h-100">
                     <a target="_blank" rel="noreferrer noopener" href="http://verificate.pa/">
                       <h5>
                         <i className="fal fa-vote-yea p-2" />
