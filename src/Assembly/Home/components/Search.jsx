@@ -73,7 +73,7 @@ class Search extends PureComponent {
                   name="query"
                   type="text"
                   component={renderField}
-                  label="¡Investiga!"
+                  label="¡Investiga! ej. PAN"
                   validate={alphaNumeric}
                   onChange={this.submitSearch}
                 />

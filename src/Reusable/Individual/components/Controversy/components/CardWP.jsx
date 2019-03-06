@@ -3,6 +3,7 @@
 import React, { PureComponent } from 'react';
 import { Card, CardHeader, CardBody } from 'reactstrap';
 import PropTypes from 'prop-types';
+// import { Link } from 'react-router-dom';
 
 // Category Repository
 import categoryInfo from '../../../../../shared/utils/categoryInfo';
@@ -17,6 +18,9 @@ class ContCard extends PureComponent {
     const { instance, light } = this.props;
     return (
       <div className={`span-6-cols ${light ? 'bg-layout' : 'bg-shady-layout'} shadow small-enlarge`}>
+        {/* <Link to={`/individuo/${1}`}> */}
+        {/* df */}
+        {/* </Link> */}
         <a target="_blank" rel="noreferrer noopener" href={instance.source}>
           <Card className="border-0 rounded-0">
             {categoryInfo[instance.type] ? (
