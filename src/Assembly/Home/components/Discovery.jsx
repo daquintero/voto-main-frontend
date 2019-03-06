@@ -120,6 +120,8 @@ class Discover extends Component {
                 >
                   <div className="map__scale__wrapper">
                     <div className="map__scale__strip" />
+                    <span className="many">100%</span>
+                    <span className="few">0%</span>
                   </div>
                 </Map>
                 <div className="map__control-panel__wrapper">
