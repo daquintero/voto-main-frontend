@@ -1,5 +1,5 @@
 const initialState = {
-  firstVisit: true,
+  visited: false,
 };
 
 
@@ -8,7 +8,7 @@ export default (state = initialState, action) => {
     case 'FIRST_VISIT':
       return {
         ...state,
-        firstVisit: false,
+        visited: true,
       };
     default:
       return state;

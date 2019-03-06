@@ -1,6 +1,6 @@
 /* eslint-disable */
 // ------- FIRST VISIT --------
-export const openFirstVisit = () => (dispatch) => {
+export const finishedFirstVisit = () => (dispatch) => {
   dispatch({
     type: 'FIRST_VISIT',
   });
