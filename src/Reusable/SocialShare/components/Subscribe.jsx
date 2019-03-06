@@ -96,11 +96,6 @@ class Subscribe extends PureComponent {
 
     return (
       <Row noGutters>
-        <Col className="pb-2 text-center m-md-0">
-          <h5 className="pb-2 m-0 notice">Compromėtete a un &nbsp;
-            <span className="sl">#VotoInformado2019</span>
-          </h5>
-        </Col>
         <Col xs={12}>
           <form className="home__subscribe__form">
             <div className="mb-3">
@@ -110,7 +105,7 @@ class Subscribe extends PureComponent {
                   value={name}
                   onChange={this.handleNameChange}
                   type="text"
-                  placeholder="Mi compa"
+                  placeholder="Nombre"
                   className="form-control"
                 />
               </div>

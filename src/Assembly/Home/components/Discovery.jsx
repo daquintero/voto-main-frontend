@@ -33,11 +33,14 @@ class Discover extends Component {
     return (
       <Container>
         <Row noGutters className="m-4">
-          <Col md={12} className="text-center py-4">
-            <h4 className="p-2 m-0">
-              <i className="fal fa-podium-star p-2" />
+          <Col md={12}>
+            <div className="text-center py-4">
+              <h4>
+                <i className="fal fa-podium-star p-2" />
               ¡Descúbre tus Candidatos!
-            </h4>
+              </h4>
+              <p>Toca el mapa para ver los politicos relacionados a cada circuito electoral.</p>
+            </div>
             <Map
               onClick={this.handleOnClick}
             />
