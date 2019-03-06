@@ -39,14 +39,62 @@ $pointer-height: 10px;
   &__control-panel {
     &__wrapper {
       display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
 
       input,
       select {
         display: inline;
         border-radius: 0;
         border: none;
-        margin: 0 10px;
+        width: 100%;
         box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+      }
+    }
+
+    &__select {
+      &__wrapper {
+        width: 49%;
+      }
+    }
+  }
+
+  &__scale {
+    &__wrapper {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      background: white;
+      box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    &__strip {
+    }
+  }
+
+  &__tab-panel {
+    &__wrapper {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    &__item {
+      color: rgba(black, 0.5);
+      width: 49%;
+      box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+
+      &:hover {
+        box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+      }
+
+      &.active {
+        color: black;
+        box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
       }
     }
   }
