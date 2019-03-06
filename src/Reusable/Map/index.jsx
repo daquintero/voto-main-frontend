@@ -15,6 +15,7 @@ class Map extends Component {
     layerData: PropTypes.instanceOf(Object),
     type: PropTypes.string,
     layerFilters: PropTypes.instanceOf(Object),
+    selector: PropTypes.bool,
 
     // Redux
     map: PropTypes.instanceOf(Object).isRequired,
@@ -28,6 +29,7 @@ class Map extends Component {
     layerData: {},
     type: '',
     layerFilters: {},
+    selector: false,
 
     // Callbacks
     onClick: () => {},
@@ -67,7 +69,7 @@ class Map extends Component {
   handleGetScaledValue = (f) => {
     const { layerData, layerFilters } = this.props;
 
-    if (layerFilters !== {} && f) {
+    if (Object.keys(layerFilters).length !== 0 && f) {
       const { party, year } = layerFilters;
 
       const values = layerData[parseInt(year, 10)]
@@ -85,13 +87,18 @@ class Map extends Component {
 
   handleGetFillColor = (f) => {
     const { locationId, hover } = this.state;
-    const { type } = this.props;
+    const { type, selector } = this.props;
 
     if (f && locationId === f.properties[type] && hover) {
       return [255, 255, 255];
     }
 
-    const colorNum = 255 - this.handleGetScaledValue(f);
+    let colorNum;
+    if (selector) {
+      colorNum = this.handleGetScaledValue(f);
+    } else {
+      colorNum = 255 - this.handleGetScaledValue(f);
+    }
     return [colorNum, colorNum, colorNum];
   };
 
@@ -146,7 +153,10 @@ class Map extends Component {
   // };
 
   renderLayers = () => {
-    const { onClick, data, type } = this.props;
+    const {
+      onClick, data, type, selector,
+    } = this.props;
+
     return new GeoJsonLayer({
       data,
       opacity: 2,
@@ -156,7 +166,7 @@ class Map extends Component {
       pickable: true,
       onHover: e => this.handleOnHover(e),
       onClick: e => onClick(e, type),
-      getLineColor: [100, 100, 100],
+      getLineColor: selector ? [155, 155, 155] : [100, 100, 100],
       getFillColor: f => this.handleGetFillColor(f),
       getElevation: f => this.handleGetElevation(f),
       updateTriggers: {

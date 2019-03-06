@@ -39,7 +39,7 @@ class Home extends PureComponent {
               <Video />
             </Col>
             <Col xl={6}>
-              <Row noGutters className="pt-5 pb-2 justify-content-center">
+              <Row noGutters className="pt-2 pb-2 justify-content-center">
                 <Col xs={12} noGutters className="pb-2 text-center m-md-0">
                   <h5 className="pb-4 m-0 notice">Compromėtete a un &nbsp;
                     <span className="sl">#VotoInformado2019</span>

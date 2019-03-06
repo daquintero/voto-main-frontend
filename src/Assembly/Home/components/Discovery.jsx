@@ -98,6 +98,7 @@ class Discover extends Component {
                   data={mapData}
                   type="GID_1"
                   onClick={this.handleOnClick}
+                  selector
                 />
                 <CardGrid
                   parentModelLabel="political.Individual"
