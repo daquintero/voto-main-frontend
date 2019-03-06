@@ -26,7 +26,20 @@
   transition-duration: 200ms;
 }
 
+.spin-clock {
+  transform: rotate(25deg);
+  transition-duration: 100ms;
+}
+
 .spin-clock:hover {
-  transform: rotate(50deg);
-  transition-duration: 500ms;
+  transform: rotate(0deg) translateY(5px)  translateX(-5px);
+}
+
+.inv-spin {
+  transform: rotate(0deg);
+  transition-duration: 100ms;
+}
+
+.inv-spin:hover {
+  transform: rotate(25deg) translateY(-5px);
 }
