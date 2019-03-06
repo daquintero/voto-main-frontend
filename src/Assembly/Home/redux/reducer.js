@@ -8,7 +8,7 @@ import { initializeActions, actionResult } from '../../../shared/utils/asyncHelp
 
 
 const initialState = {
-  firstVisit: true,
+  visited: true,
   search: {
     instances: [],
   },
@@ -39,7 +39,7 @@ export default (state = initialState, action) => {
     case 'FIRST_VISIT':
       return {
         ...state,
-        firstVisit: false,
+        visited: false,
       };
     case GET_HOME.REQUEST:
       return {

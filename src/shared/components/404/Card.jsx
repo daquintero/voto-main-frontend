@@ -1,4 +1,3 @@
-/* eslint-disable */
 // Not Found Card
 import React, { PureComponent } from 'react';
 import { Card, Row, Col, CardBody } from 'reactstrap';
@@ -25,7 +24,10 @@ class NFCard extends PureComponent {
     const { type, parent, light } = this.props;
     const { open } = this.state;
     return (
-      <Row noGutters className="justify-content-center align-content-center span-all border-0 rounded-0">
+      <Row
+        noGutters
+        className="justify-content-center align-content-center span-all border-0 rounded-0 four-o-four__card"
+      >
         <Col sm={12} >
           <Card onClick={this.openMore} className={`border-0 ${light ? 'bg-layout' : 'bg-shady-layout'}`}>
             <p className="m-1 px-2 small text-center">
@@ -33,6 +35,7 @@ class NFCard extends PureComponent {
             </p>
             <p className="lead text-center mt-1 mx-1">
               ¿Quieres contribuir?
+              <p className="small m-0"> A la información del sitio</p>
               <i
                 className={`fal ${open ? 'fa-caret-up text-info' : 'fa-caret-down text-primary'} px-2`}
               />
@@ -57,5 +60,4 @@ class NFCard extends PureComponent {
   }
 }
 
-// TODO State Store Connection
 export default NFCard;

@@ -10,7 +10,8 @@ import { Route, Switch } from 'react-router-dom';
 // Social
 import Home from '../Assembly/Home';
 // import Social from '../Assembly/Social';
-import Layout from '../Layout/TopBar';
+import TopBar from '../Layout/TopBar';
+import Footer from '../Layout/Footer';
 import TermsAndConditions from '../Assembly/Legal';
 import NotFound404 from '../shared/components/404/Page';
 
@@ -31,11 +32,12 @@ import Map from '../Reusable/Map';
 // WrappedRoutes appends the layout navigation with the route components.
 const wrappedRoutes = () => (
   <div>
-    <Layout />
+    <TopBar />
     <div className="bg-layout">
       <Switch>
         <Route path="/acerca" component={About} />
         <Route path="/legal" component={TermsAndConditions} />
+        <Route path="/mapa" component={Map} />
 
 
         {/* Detailed Pages */}
@@ -51,6 +53,7 @@ const wrappedRoutes = () => (
         <Route component={NotFound404} />
       </Switch>
     </div>
+    <Footer />
   </div>
 );
 

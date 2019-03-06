@@ -3,10 +3,10 @@
 import React, { PureComponent } from 'react';
 import { Card, CardHeader, CardBody } from 'reactstrap';
 import PropTypes from 'prop-types';
-// import { Link } from 'react-router-dom';
 
 // Category Repository
 import categoryInfo from '../../../../../shared/utils/categoryInfo';
+import relTopCreator from '../../relTopCreator';
 
 // Declaration
 class ContCard extends PureComponent {
@@ -18,9 +18,7 @@ class ContCard extends PureComponent {
     const { instance, light } = this.props;
     return (
       <div className={`span-6-cols ${light ? 'bg-layout' : 'bg-shady-layout'} shadow small-enlarge`}>
-        {/* <Link to={`/individuo/${1}`}> */}
-        {/* df */}
-        {/* </Link> */}
+        {relTopCreator(instance)}
         <a target="_blank" rel="noreferrer noopener" href={instance.source}>
           <Card className="border-0 rounded-0">
             {categoryInfo[instance.type] ? (
@@ -31,8 +29,6 @@ class ContCard extends PureComponent {
             ) : null}
             <CardBody className="p-2">
               <p className="p-1 m-0 small">{instance.briefDescription}</p>
-              {/* TODO ADD PARENT INDIVIDUAL */}
-              <div className="text-center"><i className="fal fa-user p-2" />{instance.individual}</div>
             </CardBody>
           </Card>
         </a>

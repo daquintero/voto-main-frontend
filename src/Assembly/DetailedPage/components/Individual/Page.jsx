@@ -17,7 +17,7 @@ import Relationships from '../Relationships';
 import RightSide from '../RightSide';
 import Loader from '../../../../shared/components/Loader';
 import History from './History';
-import TopBanner from '../../../TopBanner';
+// import TopBanner from '../../../TopBanner';
 
 
 const parentModelLabel = 'political.Individual';
@@ -88,7 +88,8 @@ class Page extends PureComponent {
 
     return actions.GET_DETAILED_PAGE.loaded ? (
       <>
-        <TopBanner />
+        {/* TODO READD */}
+        {/* TopBanner /> */}
         <Container>
           <Row className="p-2 pt-4 overflow-hidden column-primary">
             <Col xs={12} md={8} className="overflow-hidden p-0">
@@ -108,7 +109,7 @@ class Page extends PureComponent {
         </Container>
       </>
     ) : (
-      <Loader elemClass="load__card" />
+      <Loader elemClass="load__page" />
     );
   }
 }

@@ -49,6 +49,15 @@
 @import 'Reusable/CardRow/styles.scss';
 @import 'Reusable/SocialShare/styles/social';
 
+// 404
+@import 'shared/components/404/styling';
+
+// BackToTop
+@import 'shared/components/BackToTop/styling';
+
+// Loader
+@import 'shared/components/Loader/styling';
+
 // ---------------------------- UTILS ----------------------------
 // Transforms
 @import 'shared/styling/customTransform';

@@ -12,7 +12,6 @@ class CardGrid extends PureComponent {
   render() {
     const { instances } = this.props;
     return (
-
       <Row noGutters>
         <div className="square-grid">
           {instances[0] && instances.map(instance => (
@@ -20,7 +19,6 @@ class CardGrid extends PureComponent {
           ))}
         </div>
       </Row>
-
     );
   }
 }
