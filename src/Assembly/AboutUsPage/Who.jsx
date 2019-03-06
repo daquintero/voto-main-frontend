@@ -3,13 +3,13 @@ import React from 'react';
 import { Col, Row } from 'reactstrap';
 
 // Images
-// const logo = `${process.env.PUBLIC_URL}/img/About/team.svg`;
+const logo = `${process.env.PUBLIC_URL}/img/team.jpeg`;
 
 // Declaration
 const Who = () => (
   <Row noGutters className="my-5 bg-layout">
     <Col md={5} className="p-4">
-        ghgj
+      <img src={logo} alt="" className="w-100" />
     </Col>
     <Col md={7} className="p-4">
       <h5 className="py-2">Acerca de Nosotros </h5>
