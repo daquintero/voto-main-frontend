@@ -77,7 +77,7 @@ class Search extends PureComponent {
                   name="query"
                   type="text"
                   component={renderField}
-                  label="Escribe por ejemplo: Asamblea, Planilla 080 o delitos"
+                  label="Asamblea, Planilla 080 o delitos"
                   validate={alphaNumeric}
                   onChange={this.submitSearch}
                 />
