@@ -35,36 +35,34 @@ class Home extends PureComponent {
       <>
         <Container className="p-0 my-5">
           <Row>
-            <Col xl={6}>
+            <Col xl={7}>
               <Video />
             </Col>
-            <Col xl={6}>
+            <Col xl={5}>
               <Row noGutters className="pt-2 pb-2 justify-content-center">
                 <Col xs={12} noGutters className="pb-2 text-center m-md-0">
                   <h5 className="pb-4 m-0 notice">Compromėtete a un &nbsp;
                     <span className="sl">#VotoInformado2019</span>
                   </h5>
                 </Col>
-                <Col md={6}>
+                <Col md={12}>
                   <Commit light />
                 </Col>
-                <Col className="text-center w-100" md={6}>
-                  <a target="_blank" rel="noreferrer noopener" href="http://verificate.pa/">
-                    <div className="py-4 mb-3 small-enlarge shadow w-100">
+                <Col className="text-center w-100" md={12}>
+                  <div className="mb-3 w-100 h-100">
+                    <a target="_blank" rel="noreferrer noopener" href="http://verificate.pa/">
                       <h5>
                         <i className="fal fa-vote-yea p-2" />
                       ¡Encuentra tu centro de votación!
                       </h5>
-                    </div>
-                  </a>
-                  <a target="_blank" rel="noreferrer noopener" href="https://www.holapraxis.com/voluntarios">
-                    <div className="py-4 my-4 small-enlarge shadow w-100">
+                    </a>
+                    <a target="_blank" rel="noreferrer noopener" href="https://www.holapraxis.com/voluntarios">
                       <h5>
                         <i className="fal fa-bolt p-2" />
-                      ¡Voluntariado con Praxis!
+                        ¡Voluntariado con Praxis!
                       </h5>
-                    </div>
-                  </a>
+                    </a>
+                  </div>
                 </Col>
               </Row>
             </Col>
