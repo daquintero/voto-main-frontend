@@ -4,6 +4,7 @@ import { Col, Row } from 'reactstrap';
 
 // Images
 const praxis = `${process.env.PUBLIC_URL}/img/praxis.jpeg`;
+const ec = `${process.env.PUBLIC_URL}/img/ec.svg`;
 
 // Declaration
 const Members = () => (
@@ -11,7 +12,7 @@ const Members = () => (
     <h5 className="py-4">Conocías a Praxis y Escuela Callejera?</h5>
     <Row noGutters>
       <Col md={4} className="p-2">
-        <img src={praxis} alt="Error" className="w-50" />
+        <img src={praxis} alt="Error" className="w-50 p-2" />
       </Col>
       <Col md={8} className="p-2 align-middle my-auto">
         <p>
@@ -23,8 +24,8 @@ const Members = () => (
       </Col>
     </Row>
     <Row noGutters>
-      <Col md={4} className="p-2">
-        <img src={praxis} alt="Error" className="w-50" />
+      <Col md={4} className="p-0">
+        <img src={ec} alt="Error" className="w-50" />
       </Col>
       <Col md={8} className="p-2 my-auto">
         <p>

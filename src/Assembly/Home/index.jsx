@@ -99,11 +99,13 @@ class Home extends PureComponent {
                   target="_blank"
                   rel="noreferrer noopener"
                   href="https://s3.amazonaws.com/votoinformado2019/Manual_Voto_Informado_2019.pdf"
+                  className="p-2 "
                 >
-                  <h4 className="p-2 m-0">
+                  <h4 className="m-0">
                     <i className="fal fa-book-heart p-2" />
                     ¡Descarga el Manual!
                   </h4>
+                  <p className="m-0">O tócame abajo</p>
                 </a>
                 <PDF />
               </Col>
