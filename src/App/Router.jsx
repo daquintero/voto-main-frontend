@@ -36,6 +36,7 @@ const wrappedRoutes = () => (
       <Switch>
         <Route path="/acerca" component={About} />
         <Route path="/legal" component={TermsAndConditions} />
+        <Route path="/mapa" component={Map} />
 
 
         {/* Detailed Pages */}
