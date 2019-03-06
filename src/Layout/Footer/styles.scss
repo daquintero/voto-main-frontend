@@ -1,0 +1,22 @@
+.footer {
+  &__wrapper {
+    margin-top: 50px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    background-color: $baseDarkest;
+    color: white;
+
+    ul {
+      list-style: none;
+    }
+
+    li {
+      margin-bottom: 5px;
+      text-align: center;
+    }
+
+    a {
+      color: white;
+    }
+  }
+}

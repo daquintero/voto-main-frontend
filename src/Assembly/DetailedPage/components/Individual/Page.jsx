@@ -109,7 +109,7 @@ class Page extends PureComponent {
         </Container>
       </>
     ) : (
-      <Loader elemClass="load__card" />
+      <Loader elemClass="load__page" />
     );
   }
 }
