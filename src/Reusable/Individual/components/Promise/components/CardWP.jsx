@@ -2,10 +2,12 @@
 import React, { PureComponent } from 'react';
 import { Card, CardHeader, CardBody } from 'reactstrap';
 import PropTypes from 'prop-types';
+import relTopCreator from '../../relTopCreator';
 
 // Category Repository
 import categoryInfo from '../../../../../shared/utils/categoryInfo';
-// TODO Add the parent relationship
+
+
 // Declaration
 class PromWPCard extends PureComponent {
   static propTypes = {
@@ -15,7 +17,8 @@ class PromWPCard extends PureComponent {
   render() {
     const { instance, light } = this.props;
     return (
-      <div className={`${light ? 'bg-layout' : 'bg-shady-layout'} shadow`}>
+      <div className={`${light ? 'bg-layout' : 'bg-shady-layout'} shadow span-4-cols`}>
+        {relTopCreator(instance)}
         <a target="_blank" rel="noreferrer noopener" href={instance.source}>
           <Card className="bg-light border-0 rounded-0 small-enlarge">
             {categoryInfo[instance.type] ? (

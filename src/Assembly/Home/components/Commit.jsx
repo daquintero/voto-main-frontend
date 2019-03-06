@@ -24,7 +24,7 @@ class TopBanner extends PureComponent { // eslint-disable-line
     return (
       <div className={light ? 'bg-layout' : 'bg-shady-layout'}>
         <Row noGutters className="pb-3">
-          <Col md={12} className="px-4 p-md-2 my-auto">
+          <Col md={12} className="px-4">
             <Subscribe />
           </Col>
         </Row>

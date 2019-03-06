@@ -35,6 +35,7 @@ class NFCard extends PureComponent {
             </p>
             <p className="lead text-center mt-1 mx-1">
               ¿Quieres contribuir?
+
               <i
                 className={`fal ${open ? 'fa-caret-up text-info' : 'fa-caret-down text-primary'} px-2`}
               />
