@@ -15,7 +15,7 @@ import Generic from '../../../Reusable/Grid/components/DetailedReduxCardGrid';
 
 // Validation
 const alphaNumeric = value =>
-  (value && /[^a-zA-Z0-9áéíóú]/i.test(value)
+  (value && /[^a-zA-Z0-9áéíóú ]/i.test(value)
     ? 'Por favor solo caracteres alfanuméricos'
     : undefined);
 
