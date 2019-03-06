@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import ReactMapGL from 'react-map-gl';
 import DeckGL, { GeoJsonLayer } from 'deck.gl';
+import { Input } from 'reactstrap';
 
 // Components
 // import IndividualMarker from './components/IndividualMarker';
@@ -12,7 +13,8 @@ import DeckGL, { GeoJsonLayer } from 'deck.gl';
 import { changeMapViewport } from './redux/actions';
 
 // Data
-import mapData from './data/mapDatav4.json';
+import mapData from './data/ELECTORAL_CIRCUITS_V3.json';
+// import voteData from './data/data.json';
 
 
 class Map extends Component {
@@ -31,8 +33,8 @@ class Map extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      type: 'GID_1',
-      party: 'totalValidVotes',
+      type: 'CIRCUITO',
+      party: 'OBJECT_ID',
     };
   }
 
@@ -77,7 +79,7 @@ class Map extends Component {
       return [255, 255, 255];
     }
     const colorNum = Math
-      .min(255, Math.floor((f.properties.electoralData['2014'].Presidente.totalValidVotes / 1854202) * 511));
+      .min(255, Math.floor((f.properties[type] / 12) * 511));
     return [colorNum, colorNum, colorNum];
   };
 
@@ -117,7 +119,7 @@ class Map extends Component {
           position: 'absolute', zIndex: 1, pointerEvents: 'none', left: x, top: y - 80,
         }}
       >
-        <p>{mapData.features.filter(f => f.properties[type] === locationId)[0].properties.NAME_1}</p>
+        <p>{mapData.features.filter(f => f.properties[type] === locationId)[0].properties.DIST_NOM}</p>
       </div>
     );
   };
@@ -156,20 +158,30 @@ class Map extends Component {
     } = this.props;
 
     return (
-      <ReactMapGL
-        {...map.viewport}
-        mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_API_ACCESS_TOKEN}
-        onViewportChange={this.handleOnViewportChange}
-        mapStyle={process.env.REACT_APP_MAPBOX_STYLE}
-      >
-        <DeckGL
+      <>
+        <ReactMapGL
           {...map.viewport}
-          layers={this.renderLayers()}
-          getCursor={this.handleGetCursor}
+          mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_API_ACCESS_TOKEN}
+          onViewportChange={this.handleOnViewportChange}
+          mapStyle={process.env.REACT_APP_MAPBOX_STYLE}
         >
-          {this.renderTooltip()}
-        </DeckGL>
-      </ReactMapGL>
+          <DeckGL
+            {...map.viewport}
+            layers={this.renderLayers()}
+            getCursor={this.handleGetCursor}
+          >
+            {this.renderTooltip()}
+          </DeckGL>
+        </ReactMapGL>
+        <div className="map__control-panel__wrapper">
+          <Input type="select">
+            <option>1</option>
+          </Input>
+          <Input type="select">
+            <option>1</option>
+          </Input>
+        </div>
+      </>
     );
   }
 }

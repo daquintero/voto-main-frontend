@@ -20,7 +20,7 @@ class Discover extends Component {
 
   handleOnClick = (e) => {
     const { dispatch } = this.props;
-    const [gid] = e.object.properties.GID_1.split('.').slice(-1);
+    const gid = e.object.properties.CIRCUITO;
     dispatch(discoverCandidates(gid));
   };
 

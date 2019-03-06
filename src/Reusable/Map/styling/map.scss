@@ -35,6 +35,21 @@ $pointer-height: 10px;
       padding: 10px 10px 0 10px;
     }
   }
+
+  &__control-panel {
+    &__wrapper {
+      display: flex;
+
+      input,
+      select {
+        display: inline;
+        border-radius: 0;
+        border: none;
+        margin: 0 10px;
+        box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+      }
+    }
+  }
 }
 
 .mapboxgl-canvas {
