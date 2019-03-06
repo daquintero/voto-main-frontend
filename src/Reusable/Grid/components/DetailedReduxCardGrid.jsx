@@ -63,7 +63,7 @@ class DetailedReduxCardGrid extends PureComponent {
           light={light}
           typeContext={typeContext}
         />
-        {(instances.length !== 0 && instances.length % 10 === 0) && (
+        {(instances && instances.length !== 0 && instances.length % 10 === 0) && (
           <Row noGutters className="p-2">
             <Button
               onClick={this.handleGetMore}
