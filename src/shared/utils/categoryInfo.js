@@ -1,76 +1,72 @@
 // TODO BE CAREFUL ON CHANGING THIS ON SERVER
 const categoryInfo = {
-  0: {
+  None: {
     icon: 'question-square',
     Spanish: 'Controversia',
   },
-  1: {
+  Economy: {
     icon: 'money-bill-alt',
     Spanish: 'Economía',
   },
-  2: {
+  Agriculture: {
     icon: 'cow',
-    Spanish: 'Agricultura',
+    Spanish: 'Agrícultura',
   },
-  3: {
+  Employment: {
     icon: 'briefcase',
     Spanish: 'Trabajo',
   },
-  4: {
+  Transport: {
     icon: 'bus-alt',
     Spanish: 'Transporte',
   },
-  5: {
+  Energy: {
     icon: 'solar-panel',
     Spanish: 'Energía',
   },
-  6: {
+  'Waste Management': {
     icon: 'trash-alt',
     Spanish: 'Aseo, Basura y Reciclaje',
   },
-  7: {
+  'Indigenous Relations': {
     icon: '',
     Spanish: 'Relaciones Indígenas',
   },
-  8: {
+  'Health Services': {
     icon: 'briefcase-medical',
     Spanish: 'Salud',
   },
-  9: {
+  Pensions: {
     icon: 'blind',
     Spanish: 'Pensiones',
   },
-  10: {
+  Security: {
     icon: 'lock',
     Spanish: 'Seguridad',
   },
-  11: {
+  'Emergency Services': {
     icon: 'ambulance',
     Spanish: 'Servicios de Emergencia',
   },
-  12: {
+  Education: {
     icon: 'graduation-cap',
     Spanish: 'Educación',
   },
-  13: {
+  Poverty: {
     icon: 'hands-helping',
     Spanish: 'Pobreza',
   },
-  14: {
+  Business: {
     icon: 'user-tie',
     Spanish: 'Emprendimiento',
   },
-  15: {
+  Industry: {
     icon: 'industry',
     Spanish: 'Industria',
   },
-  16: {
+  Entertainment: {
     icon: 'film',
     Spanish: 'Arte y Cultura',
-  },
-  17: {
-    icon: 'question-square',
-    Spanish: 'Controversia',
   },
   Laboral: {
     icon: 'briefcase',

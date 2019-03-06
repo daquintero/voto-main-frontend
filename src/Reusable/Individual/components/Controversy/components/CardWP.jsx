@@ -1,23 +1,33 @@
 // Controversy Card
 // Libraries
 import React, { PureComponent } from 'react';
-import { Card, CardHeader, CardBody } from 'reactstrap';
+import { Card, CardHeader, CardBody, Row, Col } from 'reactstrap';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 // Category Repository
 import categoryInfo from '../../../../../shared/utils/categoryInfo';
 
-const relTopCreator = (instance, selection) => (
-  instance.relsDict[selection].rels && instance.relsDict[selection].rels[0] ? (
-    instance.relsDict[selection].rels.map(rel => (
-      <Link to={`/${categoryInfo[selection].link}/${rel}`} className="notice">
-        <div className={`text-center ${categoryInfo[selection].color}`}>
-          <h5 className="m-0">
-            <i className={`fal fa-${categoryInfo[selection].icon} p-2`} />
-            {rel.name || rel.title || rel}
-          </h5>
-        </div>
+const relTopCreator = instance => (
+  instance.individuals && instance.individuals[0] ? (
+    instance.individuals.map(individual => (
+      <Link to={`/individuo/${individual.id}`} className="notice">
+        <Row noGutters className="align-content-center my-auto">
+          <Col xs={2}>
+            {individual.primaryImageUrl ? (
+              <img src={individual.primaryImageUrl} alt="" className="p-2 rounded-circle h-25" />
+            ) : (
+              <i className="fal fa-user p-2 px-4" />
+            ) }
+          </Col>
+          <Col xs={10} className="p-2">
+            <div className="text-center">
+              <h5 className="m-0">
+                {individual.name}
+              </h5>
+            </div>
+          </Col>
+        </Row>
       </Link>
     )))
     : null
@@ -33,20 +43,7 @@ class ContCard extends PureComponent {
     const { instance, light } = this.props;
     return (
       <div className={`span-6-cols ${light ? 'bg-layout' : 'bg-shady-layout'} shadow small-enlarge`}>
-
-        {relTopCreator(instance, 'individuals')}
-        {instance.relsDict.corruptionCases.rels && instance.relsDict.corruptionCases.rels[0] ? (
-            instance.relsDict.corruptionCases.rels.map(rel => (
-              <Link to={`/individuo/${rel.id}`} className="notice">
-                <div className="text-center">
-                  <h5>
-                    <i className="fal fa-briefcase p-2" />
-                    {rel.name}
-                  </h5>
-                </div>
-              </Link>
-            )))
-          : null}
+        {relTopCreator(instance)}
         <a target="_blank" rel="noreferrer noopener" href={instance.source}>
           <Card className="border-0 rounded-0">
             {categoryInfo[instance.type] ? (
