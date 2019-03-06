@@ -12,6 +12,7 @@ import Commit from './components/Commit';
 import PDF from './components/pdfPreviewer';
 import Candidates from './components/Presidential';
 import Search from './components/Search';
+import ErrorBoundary from '../../shared/components/ErrorBoundary';
 
 // Actions
 import { getHome } from './redux/actions';
@@ -84,7 +85,9 @@ class Home extends PureComponent {
           </Row>
         </Container>
         <Search />
-        <Discovery />
+        <ErrorBoundary>
+          <Discovery />
+        </ErrorBoundary>
         <div className="bg-shady-layout">
           <Container className="bg-shady-layout py-4">
             <Row noGutters>

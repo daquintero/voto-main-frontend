@@ -13,8 +13,7 @@ import Map from '../../../Reusable/Map';
 
 
 // Data
-import mapData from '../data/mapDatav4.json';
-import voteData from '../data/ELECTORAL_CIRCUITS_V3.json';
+import mapData from '../data/ELECTORAL_CIRCUITS_V3.json';
 import layerData from '../data/data.json';
 
 
@@ -96,7 +95,7 @@ class Discover extends Component {
               <div className="map__tab__wrapper">
                 <Map
                   data={mapData}
-                  type="GID_1"
+                  type="CIRCUITO"
                   onClick={this.handleOnClick}
                   selector
                 />
@@ -113,7 +112,7 @@ class Discover extends Component {
             {currentTab === '2' && (
               <div className="map__tab__wrapper">
                 <Map
-                  data={voteData}
+                  data={mapData}
                   layerData={layerData}
                   type="CIRCUITO"
                   layerFilters={{ party, year }}
