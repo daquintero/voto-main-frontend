@@ -17,7 +17,7 @@ class DetailedReduxCardGrid extends PureComponent {
   static propTypes = {
     // Redux
     dispatch: PropTypes.func.isRequired,
-    instances: PropTypes.instanceOf(Array).isRequired,
+    instances: PropTypes.instanceOf(Array),
     subsetNumber: PropTypes.number.isRequired,
     actions: PropTypes.instanceOf(Array).isRequired,
     parentModelLabel: PropTypes.string.isRequired,
@@ -28,6 +28,10 @@ class DetailedReduxCardGrid extends PureComponent {
     gridClass: PropTypes.string.isRequired,
     typeContext: PropTypes.string.isRequired,
     light: PropTypes.bool.isRequired,
+  };
+
+  static defaultProps = {
+    instances: [],
   };
 
   handleGetMore = () => {
