@@ -1,31 +1,12 @@
+/* eslint-disable */
 // Pdf Renderer
 import React, { PureComponent } from 'react';
-import axios from 'axios';
 import PDFViewer from 'mgr-pdf-viewer-react';
 
 const manual = 'https://s3.amazonaws.com/votoinformado2019/Manual_Voto_Informado_2019.pdf';
 
 // Declaration
-class Whatever extends PureComponent {
-  componentDidMount() {
-    this.getPDF();
-  }
-
-  getPDF = () => {
-    axios.get('https://s3.amazonaws.com/votoinformado2019/Manual_Voto_Informado_2019.pdf')
-      .then((response) => {
-        // handle success
-        console.log(response);
-      })
-      .catch((error) => {
-        // handle error
-        console.log(error);
-      })
-      .then(() => {
-        // always executed
-      });
-  };
-
+class pdfPreviwer extends PureComponent {
   render() {
     return (
       <div>
@@ -48,4 +29,4 @@ class Whatever extends PureComponent {
 }
 
 // TODO State Store Connection
-export default Whatever;
+export default pdfPreviwer;
