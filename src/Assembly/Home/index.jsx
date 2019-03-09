@@ -75,7 +75,7 @@ class Home extends PureComponent {
                     >
                       <h5>
                         <i className="fal fa-bolt p-2 spin-clock" />
-                        ¡Voluntariado con Praxis!
+                        ¿Quiéres ser voluntario?
                       </h5>
                     </a>
                   </div>

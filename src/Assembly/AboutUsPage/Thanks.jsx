@@ -24,9 +24,9 @@ const Thanks = () => (
          Apreciamos mucho el apoyo y tiempo de todos,
          en especial a: los participantes del Investigatón 2018,
          los participantes de Panamá-Hackea 2018, a los desarrolladores
-         de la plataforma, a Alfonso Grimaldo, Melida Botacio, Camila Adames,
-         Felipe Henao, Angel Corro, Augusto Revello, Franz Delgado, Dario Quintero,
-         James Williams, Ruberto Zubieta, Kevin Kantule, Leopoldo Alfaro,
+         de la plataforma, a Melida Botacio, Angel Corro,
+        Augusto Revello, Franz Delgado, Dario Quintero,
+         James Williams, Leopoldo Alfaro,
          Emmanuel Lobo, Cynthia Paolini y a David Chumpitaz.
       </p>
     </Col>

@@ -69,7 +69,7 @@ class Search extends PureComponent {
           <Row noGutters className="justify-content-center p-4">
             <div className="p-4 text-center">
               <h4>¡Infórmate e Investiga!</h4>
-              <p>Mira todas las controversias, promesas y perfiles políticos que hemos recopilado.</p>
+              <p>Descubre todas las controversias, promesas y perfiles políticos que hemos recopilado.</p>
             </div>
             <Col md={12} className="align-content-center justify-content-center px-4  mx-auto">
               <form className="home__search__form">
@@ -77,7 +77,7 @@ class Search extends PureComponent {
                   name="query"
                   type="text"
                   component={renderField}
-                  label="Asamblea, Planilla 080 o delitos"
+                  label="ej. Asamblea 080"
                   validate={alphaNumeric}
                   onChange={this.submitSearch}
                 />

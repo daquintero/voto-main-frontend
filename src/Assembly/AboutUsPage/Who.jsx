@@ -3,7 +3,7 @@ import React from 'react';
 import { Col, Row } from 'reactstrap';
 
 // Images
-const logo = `${process.env.PUBLIC_URL}/img/team.jpeg`;
+const logo = 'https://s3.amazonaws.com/votoinformado2019/about/team.jpeg';
 
 // Declaration
 const Who = () => (
