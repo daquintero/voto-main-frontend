@@ -1,32 +1,22 @@
-/* eslint-disable */
-// Pdf Renderer
-import React, { PureComponent } from 'react';
+import React from 'react';
 import PDFViewer from 'mgr-pdf-viewer-react';
 
-const manual = 'https://s3.amazonaws.com/votoinformado2019/Manual_Voto_Informado_2019.pdf';
+const manual = `${process.env.PUBLIC_URL}/Manual_Voto_Informado_2019.pdf`;
 
-// Declaration
-class pdfPreviwer extends PureComponent {
-  render() {
-    return (
-      <div>
-        <PDFViewer
-          document={{ url: manual }}
-          scale={0.9}
-          css="customViewer"
-          navigation={{
-            css: {
-              previousPageBtn: 'customPrevBtn',
-              nextPageBtn: 'customNextBtn',
-              pages: 'customPages',
-              wrapper: 'customWrapper',
-            },
-          }}
-        />
-      </div>
-    );
-  }
-}
+const PDF = () => (
+  <PDFViewer
+    document={{ url: manual }}
+    scale={0.9}
+    css="customViewer"
+    navigation={{
+      css: {
+        previousPageBtn: 'customPrevBtn',
+        nextPageBtn: 'customNextBtn',
+        pages: 'customPages',
+        wrapper: 'customWrapper',
+      },
+    }}
+  />
+);
 
-// TODO State Store Connection
-export default pdfPreviwer;
+export default PDF;
