@@ -3,7 +3,7 @@
 import React, { PureComponent } from 'react';
 import PDFViewer from 'mgr-pdf-viewer-react';
 
-const manual = `${process.env.PUBLIC_URL}/Manual_Voto_Informado_2019.pdf`;
+const manual = 'https://s3.amazonaws.com/votoinformado2019/Manual_Voto_Informado_2019.pdf';
 
 // Declaration
 class pdfPreviwer extends PureComponent {
