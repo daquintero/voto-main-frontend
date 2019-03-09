@@ -60,10 +60,6 @@ const Social = () => (
           />
         </div>
       </div>
-      <Col>
-        <p className="text-center">Voto Informado 2019</p>
-        <p className="text-center"> © Praxis Comunicaciones S.A. & © Escuela Callejera 2016</p>
-      </Col>
     </>
 );
 export default Social;

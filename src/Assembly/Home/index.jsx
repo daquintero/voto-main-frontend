@@ -13,11 +13,11 @@ import PDF from './components/pdfPreviewer';
 import Candidates from './components/Presidential';
 import Search from './components/Search';
 import ErrorBoundary from '../../shared/components/ErrorBoundary';
+import BackToTop from '../../shared/components/BackToTop';
 
 // Actions
 import { getHome } from './redux/actions';
 import Discovery from './components/Discovery';
-import StudioProm from './components/StudioProm';
 
 
 // Declaration
@@ -34,6 +34,7 @@ class Home extends PureComponent {
   render() {
     return (
       <>
+        <BackToTop />
         <Container className="p-0 my-5">
           <Row>
             <Col xl={7}>
@@ -112,7 +113,6 @@ class Home extends PureComponent {
             </Row>
           </Container>
         </div>
-        <StudioProm />
       </>
     );
   }

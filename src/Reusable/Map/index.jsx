@@ -135,22 +135,25 @@ class Map extends Component {
 
   handleGetCursor = () => (this.state.hover ? 'pointer' : 'move');
 
-  // renderTooltip = () => {
-  //   const {
-  //     object, x, y, hover, locationId, type,
-  //   } = this.state;
-  //
-  //   return (object && hover) && (
-  //     <div
-  //       className="map__tooltip__wrapper shadow"
-  //       style={{
-  //         position: 'absolute', zIndex: 1, pointerEvents: 'none', left: x, top: y - 80,
-  //       }}
-  //     >
-  //       <p>{mapData.features.filter(f => f.properties[type] === locationId)[0].properties.DIST_NOM}</p>
-  //     </div>
-  //   );
-  // };
+  renderTooltip = () => {
+    const {
+      data, type,
+    } = this.props;
+    const {
+      object, x, y, hover, locationId,
+    } = this.state;
+
+    return (object && hover) && (
+      <div
+        className="map__tooltip__wrapper shadow"
+        style={{
+          position: 'absolute', zIndex: 1, pointerEvents: 'none', left: x, top: y - 80,
+        }}
+      >
+        <p>{data.features.filter(f => f.properties[type] === locationId)[0].properties.DIST_NOM}</p>
+      </div>
+    );
+  };
 
   renderLayers = () => {
     const {
@@ -204,7 +207,9 @@ class Map extends Component {
             {...map.viewport}
             layers={this.renderLayers()}
             getCursor={this.handleGetCursor}
-          />
+          >
+            {this.renderTooltip()}
+          </DeckGL>
           {children}
         </ReactMapGL>
       </>

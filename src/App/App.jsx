@@ -10,6 +10,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import store from './store'; // redux
 import '../app.scss';
 import Router from './Router';
+import ScrollToTop from './ScrollToTop';
 
 // TODO Remove all images for frontend testing from public img
 
@@ -23,11 +24,13 @@ class App extends Component {
     return (
       <Provider store={store}>
         <BrowserRouter>
-          <div>
+          <ScrollToTop>
             <div>
-              <Router />
+              <div>
+                <Router />
+              </div>
             </div>
-          </div>
+          </ScrollToTop>
         </BrowserRouter>
       </Provider>
     );
