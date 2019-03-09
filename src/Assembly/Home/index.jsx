@@ -104,9 +104,8 @@ class Home extends PureComponent {
                 >
                   <h4 className="m-0">
                     <i className="fal fa-book-heart p-2" />
-                    ¡Descarga el Manual!
+                    ¡Descarga el Manual de Cívica Electoral Gratis!
                   </h4>
-                  <p className="m-0">O tócame abajo</p>
                 </a>
                 <PDF />
               </Col>
