@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import ReactMapGL from 'react-map-gl';
-import DeckGL, { GeoJsonLayer } from 'deck.gl';
+import DeckGL from 'deck.gl';
 
 // Actions
 import { changeMapViewport } from './redux/actions';
@@ -22,6 +22,9 @@ class Map extends Component {
 
     // Callbacks
     onClick: PropTypes.func,
+    onHover: PropTypes.func,
+    renderLayers: PropTypes.func,
+    getCursor: PropTypes.func,
   };
 
   static defaultProps = {
@@ -33,6 +36,9 @@ class Map extends Component {
 
     // Callbacks
     onClick: () => {},
+    onHover: () => {},
+    renderLayers: () => {},
+    getCursor: () => {},
   };
 
   constructor(props) {
@@ -55,72 +61,27 @@ class Map extends Component {
     dispatch(changeMapViewport(newMapViewport));
   };
 
-  handleResizeViewport = () => {
+  handleResizeViewport = (e) => {
     const { dispatch, map } = this.props;
+
+    let height;
+    if (e.srcElement.innerWidth > 796) {
+      height = 350;
+    } else {
+      height = 200;
+    }
 
     dispatch(changeMapViewport({
       ...map.viewport,
       width: '100%',
+      height,
     }));
   };
 
   handleRotateElements = () => {};
 
-  handleGetScaledValue = (f) => {
-    const { layerData, layerFilters } = this.props;
-
-    if (Object.keys(layerFilters).length !== 0 && f) {
-      const { party, year } = layerFilters;
-
-      const values = layerData[parseInt(year, 10)]
-        .slice(1)
-        .map(g => g[party]);
-
-      const value = layerData[parseInt(year, 10)]
-        .slice(1)
-        .filter(g => g.GID === f.properties.CIRCUITO)[0][layerFilters.party];
-
-      return Math.min(255, Math.floor(((5 * 255 * value) / Math.max(...values))));
-    }
-    return 0;
-  };
-
-  handleGetFillColor = (f) => {
-    const { locationId, hover } = this.state;
-    const { type, selector } = this.props;
-
-    if (f && locationId === f.properties[type] && hover) {
-      return [255, 255, 255];
-    }
-
-    let colorNum;
-    if (selector) {
-      colorNum = this.handleGetScaledValue(f);
-    } else {
-      colorNum = 255 - this.handleGetScaledValue(f);
-    }
-    return [colorNum, colorNum, colorNum];
-  };
-
   handleGetElevation = (f) => { // eslint-disable-line
     return this.handleGetScaledValue(f) * 350;
-  };
-
-  handleOnHover = (e) => {
-    if (e.object) {
-      this.setState((prevState, prevProps) => ({
-        locationId: e.object.properties[prevProps.type],
-        hover: true,
-        object: e.object,
-        x: e.x,
-        y: e.y,
-        lngLat: e.lngLat,
-      }));
-    } else {
-      this.setState({
-        hover: false,
-      });
-    }
   };
 
   handleGetFillColorTransitionDuration = (f) => {
@@ -150,50 +111,16 @@ class Map extends Component {
           position: 'absolute', zIndex: 1, pointerEvents: 'none', left: x, top: y - 80,
         }}
       >
-        <p>{data.features.filter(f => f.properties[type] === locationId)[0].properties.DIST_NOM}</p>
+        <p>{data.features.filter(f => f.properties[type] === locationId)[0].properties.CIRCUITO}</p>
       </div>
     );
-  };
-
-  renderLayers = () => {
-    const {
-      onClick, data, type, selector,
-    } = this.props;
-
-    return new GeoJsonLayer({
-      data,
-      opacity: 2,
-      filled: true,
-      wireframe: true,
-      extruded: true,
-      pickable: true,
-      onHover: e => this.handleOnHover(e),
-      onClick: e => onClick(e, type),
-      getLineColor: selector ? [155, 155, 155] : [100, 100, 100],
-      getFillColor: f => this.handleGetFillColor(f),
-      getElevation: f => this.handleGetElevation(f),
-      updateTriggers: {
-        getFillColor: f => this.handleGetFillColor(f),
-        getElevation: f => this.handleGetElevation(f),
-      },
-      transitions: {
-        getFillColor: {
-          duration: f => this.handleGetFillColorTransitionDuration(f),
-        },
-        getElevation: {
-          duration: 500,
-        },
-      },
-    });
   };
 
   render() {
     // Props
     const {
-      map, children,
+      map, children, renderLayers, getCursor,
     } = this.props;
-
-    this.handleGetFillColor();
 
     return (
       <>
@@ -205,8 +132,8 @@ class Map extends Component {
         >
           <DeckGL
             {...map.viewport}
-            layers={this.renderLayers()}
-            getCursor={this.handleGetCursor}
+            layers={renderLayers()}
+            getCursor={getCursor}
           >
             {this.renderTooltip()}
           </DeckGL>

@@ -33,6 +33,24 @@ $pointer-height: 10px;
     &__wrapper {
       background-color: white;
       padding: 10px 10px 0 10px;
+      box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+    }
+  }
+
+  &__info-panel {
+    &__wrapper {
+      position: relative;
+      z-index: 1001;
+      opacity: 0.8;
+      background-color: white;
+      height: 100%;
+      padding: 20px;
+      pointer-events: none;
+
+      @media (max-width: 796px) {
+        width: 100px;
+      }
+      width: 200px;
     }
   }
 

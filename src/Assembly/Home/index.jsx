@@ -85,7 +85,9 @@ class Home extends PureComponent {
             </Col>
           </Row>
         </Container>
-        <Search />
+        <ErrorBoundary>
+          <Search />
+        </ErrorBoundary>
         <ErrorBoundary>
           <Discovery />
         </ErrorBoundary>

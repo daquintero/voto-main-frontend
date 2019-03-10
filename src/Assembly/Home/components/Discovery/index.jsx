@@ -6,20 +6,19 @@ import { Container, Row, Col, Input } from 'reactstrap';
 import classNames from 'classnames';
 
 // Components
-import CardGrid from '../../../Reusable/Grid/components/DetailedReduxCardGrid';
+import DiscoverCandidates from './components/DiscoverCandidates';
 
-import { discoverCandidates } from '../redux/actions';
-import Map from '../../../Reusable/Map';
+import { discoverCandidates } from '../../redux/actions';
+import Map from '../../../../Reusable/Map';
 
 
 // Data
-import mapData from '../data/ELECTORAL_CIRCUITS_V3.json';
-import layerData from '../data/data.json';
+import layerData from '../../data/data.json';
+import hexData from '../../data/hex.json';
 
 
 class Discover extends Component {
   static propTypes = {
-    candidates: PropTypes.instanceOf(Object).isRequired,
     dispatch: PropTypes.func.isRequired,
   };
 
@@ -52,16 +51,15 @@ class Discover extends Component {
     dispatch(discoverCandidates(gid));
   };
 
+  handleOnHover = () => {
+    // Pass
+  };
+
   render() {
     // State
     const {
       currentTab, party, year,
     } = this.state;
-
-    // Props
-    const {
-      candidates,
-    } = this.props;
 
     return (
       <Container>
@@ -74,10 +72,10 @@ class Discover extends Component {
                 onClick={this.handleOnChangeTab}
                 data-tab="1"
               >
-                <h4 className="py-2 m-0 text-center">
-                  <i className="fal fa-podium-star" />
-                  {' '}¡Descúbre tus Candidatos!
-                </h4>
+                <h5 className="py-2 m-0 text-center">
+                  <i className="fal fa-podium" />
+                  {' '}Descúbre tus Candidatos
+                </h5>
               </div>
               <div
                 className={classNames('map__tab-panel__item', { active: currentTab === '2' })}
@@ -85,38 +83,22 @@ class Discover extends Component {
                 onClick={this.handleOnChangeTab}
                 data-tab="2"
               >
-                <h4 className="py-2 m-0 text-center">
+                <h5 className="py-2 m-0 text-center">
                   <i className="fal fa-vote-yea" />
                   {' '}Votos Históricos - Presidente
-                </h4>
+                </h5>
               </div>
             </div>
             {currentTab === '1' && (
-              <div className="map__tab__wrapper">
-                <Map
-                  data={mapData}
-                  type="CIRCUITO"
-                  onClick={this.handleOnClick}
-                  selector
-                />
-                <CardGrid
-                  parentModelLabel="political.Individual"
-                  relatedModelLabel="noneType"
-                  subsetNumber={0}
-                  light
-                  instances={candidates}
-                  gridClass="candidates-grid"
-                />
-              </div>
+              <DiscoverCandidates />
             )}
             {currentTab === '2' && (
               <div className="map__tab__wrapper">
                 <Map
-                  data={mapData}
+                  data={hexData}
                   layerData={layerData}
                   type="CIRCUITO"
                   layerFilters={{ party, year }}
-                  onClick={this.handleOnClick}
                 >
                   <div className="map__scale__wrapper">
                     <div className="map__scale__strip" />
@@ -166,12 +148,6 @@ class Discover extends Component {
 }
 
 
-const mapStateToProps = (state) => {
-  const { candidates } = state.home.discover;
-
-  return {
-    candidates,
-  };
-};
+const mapStateToProps = () => {};
 
 export default connect(mapStateToProps)(Discover);
