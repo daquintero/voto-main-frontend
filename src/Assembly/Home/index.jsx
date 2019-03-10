@@ -51,34 +51,37 @@ class Home extends PureComponent {
                   <Commit light />
                 </Col>
                 <Col
-                  className="text-center w-100 justify-content-center bg-above-background"
+                  className="my-auto bg-above-background"
                   md={6}
                   xl={12}
                 >
                   {/* hr className="w-75 m-2" style={{ color: rgba(black, 0.5) }} /> */}
-                  <div className="my-3 w-100 h-100 align-content-center my-auto mincontent">
-                    <a
-                      target="_blank"
-                      rel="noreferrer noopener"
-                      href="http://verificate.pa/"
-                      className="my-auto align-content-center"
-                    >
-                      <h5>
+                  <div
+                    className="align-content-center
+                    text-center w-100  justify-content-center"
+                  >
+                    <h5>
+                      <a
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        href="http://verificate.pa/"
+                        className="my-auto align-content-center"
+                      >
                         <i className="fal fa-vote-yea p-2 inv-spin" />
                       ¡Encuentra tu centro de votación!
-                      </h5>
-                    </a>
-                    <a
-                      target="_blank"
-                      rel="noreferrer noopener"
-                      href="https://www.holapraxis.com/voluntarios"
-                      className="my-auto"
-                    >
-                      <h5>
+                      </a>
+                    </h5>
+                    <h5>
+                      <a
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        href="https://www.holapraxis.com/voluntarios"
+                        className="my-auto"
+                      >
                         <i className="fal fa-bolt p-2 spin-clock" />
-                        ¡Voluntariado con Praxis!
-                      </h5>
-                    </a>
+                        ¿Quiéres ser voluntario?
+                      </a>
+                    </h5>
                   </div>
                 </Col>
               </Row>
@@ -98,18 +101,17 @@ class Home extends PureComponent {
                 <Candidates />
               </Col>
               <Col md={6} className="text-center p-2">
-                <a
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  href="https://s3.amazonaws.com/votoinformado2019/Manual_Voto_Informado_2019.pdf"
-                  className="p-2 "
-                >
-                  <h4 className="m-0">
+                <h4 className="m-0 p-2">
+                  <a
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    href="https://s3.amazonaws.com/votoinformado2019/Manual_Voto_Informado_2019.pdf"
+                    className="p-2"
+                  >
                     <i className="fal fa-book-heart p-2" />
-                    ¡Descarga el Manual!
-                  </h4>
-                  <p className="m-0">O tócame abajo</p>
-                </a>
+                    ¡Descarga el Manual de Cívica Electoral Gratis!
+                  </a>
+                </h4>
                 <PDF />
               </Col>
             </Row>

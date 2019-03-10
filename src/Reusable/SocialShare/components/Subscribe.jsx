@@ -150,7 +150,7 @@ class Subscribe extends PureComponent {
               iconBehavior[status].icon :
               'fa-envelope'}`}
               />
-              Subscríbete
+              Me comprometo a votar informado
             </Button>
           </form>
         </Col>

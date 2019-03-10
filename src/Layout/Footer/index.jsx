@@ -14,7 +14,7 @@ const Footer = () => (
           sm={12}
         >
           <ul>
-            <li><a href="/">Back to top</a></li>
+            <li><a href="/">Regresa Arriba</a></li>
             <li><a href="/legal">Legal</a></li>
             <li><a href="https://s3.amazonaws.com/votoinformado2019/Manual_Voto_Informado_2019.pdf">Manual</a></li>
             <li><a href="acerca">Nosotros</a></li>
@@ -43,13 +43,13 @@ const Footer = () => (
           </p>
           <a href="https://studio.votoinformado2019.com" className="sl">
             <p className="m-0 p-1 text-center">
-              <i className="fal fa-search px-2" /> Investiga y anota fuentes creíbles que encuentres.
+              <i className="fal fa-search px-2" /> Investiga y anota fuentes fiables que encuentres.
             </p>
             <p className="m-0 p-1 text-center">
-              <i className="fal fa-sign-in-alt px-2" /> ¡Entra a VotoStudio tocándome y contribuye!
+              <i className="fal fa-sign-in-alt px-2" /> ¡Entra a VotoStudio haciendo click aquí y contribuye!
             </p>
             <p className="m-0 p-1 text-center">
-              <i className="fal fa-check-square px-2" /> Y lo verifícaremos contra el fake news.
+              <i className="fal fa-check-square px-2" /> Y lo verifícaremos contra los fake news.
             </p>
           </a>
         </Col>

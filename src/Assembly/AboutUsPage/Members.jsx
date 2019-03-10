@@ -3,13 +3,13 @@ import React from 'react';
 import { Col, Row } from 'reactstrap';
 
 // Images
-const praxis = `${process.env.PUBLIC_URL}/img/praxis.jpeg`;
+const praxis = 'https://s3.amazonaws.com/votoinformado2019/about/praxis.jpeg';
 const ec = `${process.env.PUBLIC_URL}/img/ec.svg`;
 
 // Declaration
 const Members = () => (
   <Row noGutters className="my-5 p-4 text-center justify-content-center bg-layout">
-    <h5 className="py-4">Conocías a Praxis y Escuela Callejera?</h5>
+    <h5 className="py-4">¿Conocías a Praxis y Escuela Callejera?</h5>
     <Row noGutters>
       <Col md={4} className="p-2">
         <img src={praxis} alt="Error" className="w-50 p-2" />
@@ -29,8 +29,8 @@ const Members = () => (
       </Col>
       <Col md={8} className="p-2 my-auto">
         <p>
-          Escuela callejera es un colectivo que busca crea
-          cultura a traves de la educación. Estudiamos temas
+          Escuela callejera es un colectivo que busca crear
+          cultura a través de la educación. Estudiamos temas
           contemporáneos y buscamos como explicarlos de forma simple.
         </p>
       </Col>

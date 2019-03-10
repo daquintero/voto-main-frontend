@@ -34,8 +34,7 @@ class NFCard extends PureComponent {
                  Ahora mismo no hay {typeInfo[type].name} {typeInfo[parent].singular}.
             </p>
             <p className="lead text-center mt-1 mx-1">
-              ¿Quieres contribuir?
-              <p className="small m-0"> A la información del sitio</p>
+              ¿Quieres contribuir a la información del sitio?
               <i
                 className={`fal ${open ? 'fa-caret-up text-info' : 'fa-caret-down text-primary'} px-2`}
               />
@@ -43,13 +42,13 @@ class NFCard extends PureComponent {
             <CardBody className={`bg-light p-2 ${open ? '' : 'd-none'}`}>
               <a target="_blank" rel="noreferrer noopener" href="https://studio.votoinformado2019.com" className="sl">
                 <p className="m-0 p-1 text-center">
-                  <i className="fal fa-search px-2" /> Investiga y anota fuentes creíbles que encuentres.
+                  <i className="fal fa-search px-2" /> Investiga y anota fuentes fiables que encuentres.
                 </p>
                 <p className="m-0 p-1 text-center">
-                  <i className="fal fa-sign-in-alt px-2" /> ¡Entra a VotoStudio tocándome y contribuye!
+                  <i className="fal fa-sign-in-alt px-2" /> ¡Entra a VotoStudio haciendo click aquí y contribuye!
                 </p>
                 <p className="m-0 p-1 text-center">
-                  <i className="fal fa-check-square px-2" /> Y lo verifícaremos contra el fake news.
+                  <i className="fal fa-check-square px-2" /> Y lo verifícaremos contra los fake news.
                 </p>
               </a>
             </CardBody>
