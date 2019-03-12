@@ -8,6 +8,7 @@ const knowledgeBaseApi = `${baseUrl}/knowledge_base/api/v1`;
 const urls = {
   get: {
     knowledgeBaseFeed: `${knowledgeBaseApi}/feed/`,
+    detail: `${knowledgeBaseApi}/detail/`,
   },
   search: {
     knowledgeBase: `${knowledgeBaseApi}/search/`,
@@ -19,6 +20,10 @@ const urls = {
 const getKnowledgeBaseFeed = () => axios.get(urls.get.knowledgeBaseFeed);
 
 
+const getKnowledgeBaseDetail = ({ modelLabel, id }) =>
+  axios.get(buildUrl(urls.get.detail, { ml: modelLabel, id }));
+
+
 // Search requests
 const searchKnowledgeBase = requestData => axios.get(buildUrl(urls.search.knowledgeBase, requestData));
 
@@ -26,6 +31,7 @@ const searchKnowledgeBase = requestData => axios.get(buildUrl(urls.search.knowle
 const service = {
   get: {
     knowledgeBaseFeed: getKnowledgeBaseFeed,
+    detail: getKnowledgeBaseDetail,
   },
   search: {
     knowledgeBase: searchKnowledgeBase,

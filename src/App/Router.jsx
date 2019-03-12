@@ -26,7 +26,7 @@ import About from '../Assembly/AboutUsPage';
 
 // KnowledgeBase
 import KnowledgeBase from '../Assembly/KnowledgeBase';
-import KnowledgeBaseFeed from '../Assembly/KnowledgeBase/components/Feed';
+import KnowledgeBaseTutorial from '../Assembly/KnowledgeBase/components/Tutorial';
 
 // Testing Files
 import Scratch from './Scratch';
@@ -52,7 +52,7 @@ const wrappedRoutes = () => (
 
         {/* Knowledge Base */}
         <Route exact path="/conocimiento" component={KnowledgeBase} />
-        <Route exact path="/conocimiento/feed" component={KnowledgeBaseFeed} />
+        <Route exact path="/conocimiento/tutorial/:id" component={KnowledgeBaseTutorial} />
 
         {/* Test Files */}
         <Route path="/a" component={Scratch} />

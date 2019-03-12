@@ -172,6 +172,13 @@ class TopBar extends Component {
                 {/* <Link className="navbar__nav__link" to="/mapa">Mapa</Link> */}
                 {/* </div> */}
                 <div
+                  className={classNames('navbar__nav__item three', { active: currentTab === '4' })}
+                  data-id="4"
+                  onMouseEnter={this.handleOnHover}
+                >
+                  <Link className="navbar__nav__link" to="/conocimiento">Conocimiento</Link>
+                </div>
+                <div
                   className={classNames('navbar__nav__item two', { active: currentTab === '3' })}
                   data-id="3"
                   onMouseEnter={this.handleOnHover}

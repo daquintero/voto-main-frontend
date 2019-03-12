@@ -2,6 +2,7 @@ import { initializeActions, actionResult } from '../../../shared/utils/asyncHelp
 import {
   GET_KNOWLEDGE_BASE_FEED,
   SEARCH_KNOWLEDGE_BASE,
+  GET_KNOWLEDGE_BASE_DETAIL,
 } from './actionCreators';
 
 
@@ -9,8 +10,13 @@ const initialState = {
   feed: {
     instances: [],
   },
+  detail: {
+    instance: {},
+  },
   actions: initializeActions([
     'GET_KNOWLEDGE_BASE_FEED',
+    'SEARCH_KNOWLEDGE_BASE',
+    'GET_KNOWLEDGE_BASE_DETAIL',
   ]),
 };
 
@@ -89,6 +95,44 @@ export default (state = initialState, action) => {
         actions: {
           ...state.actions,
           ...actionResult('SEARCH_KNOWLEDGE_BASE.ERROR'),
+        },
+      };
+
+    // GET_KNOWLEDGE_BASE_DETAIL reducer
+    case GET_KNOWLEDGE_BASE_DETAIL.INIT:
+      return {
+        ...state,
+        actions: {
+          ...state.actions,
+          ...initializeActions(['GET_KNOWLEDGE_BASE_DETAIL']),
+        },
+      };
+    case GET_KNOWLEDGE_BASE_DETAIL.REQUEST:
+      return {
+        ...state,
+        actions: {
+          ...state.actions,
+          ...actionResult('GET_KNOWLEDGE_BASE_DETAIL.REQUEST'),
+        },
+      };
+    case GET_KNOWLEDGE_BASE_DETAIL.SUCCESS:
+      return {
+        ...state,
+        detail: {
+          ...state.detail,
+          ...action.response,
+        },
+        actions: {
+          ...state.actions,
+          ...actionResult('GET_KNOWLEDGE_BASE_DETAIL.SUCCESS'),
+        },
+      };
+    case GET_KNOWLEDGE_BASE_DETAIL.ERROR:
+      return {
+        ...state,
+        actions: {
+          ...state.actions,
+          ...actionResult('GET_KNOWLEDGE_BASE_DETAIL.ERROR'),
         },
       };
     default:

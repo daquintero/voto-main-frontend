@@ -5,8 +5,14 @@ import PropTypes from 'prop-types';
 
 class FeedSearch extends Component {
   static propTypes = {
+    placeholder: PropTypes.string,
+
     // Callbacks
     search: PropTypes.func.isRequired,
+  };
+
+  static defaultProps = {
+    placeholder: '',
   };
 
   constructor(props) {
@@ -38,12 +44,18 @@ class FeedSearch extends Component {
       query,
     } = this.state;
 
+    // Props
+    const {
+      placeholder,
+    } = this.props;
+
     return (
       <input
         name="query"
         value={query}
         onChange={this.handleOnChange}
         type="text"
+        placeholder={placeholder}
       />
     );
   }

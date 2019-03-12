@@ -1,13 +1,17 @@
 // Absolute Imports
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 // Functions
 import imageUrl from '../../../shared/utils/imageUrl';
 
 
 const TutorialCard = ({ instance }) => (
-  <div className="knowledge-base__tutorial-card__wrapper">
+  <Link
+    to={`/conocimiento/tutorial/${instance.id}/`}
+    className="knowledge-base__tutorial-card__wrapper"
+  >
     {instance.media.images.length !== 0 && (
       <img
         className="knowledge-base__tutorial-card__img"
@@ -15,15 +19,15 @@ const TutorialCard = ({ instance }) => (
         alt=""
       />
     )}
-    <h2 className="knowledge-base__tutorial-card__title">
-      {instance.title}
-    </h2>
-    <p
-      className="knowledge-base__tutorial-card__summary"
-    >
-      {instance.summary}
-    </p>
-  </div>
+    <div className="knowledge-base__tutorial-card__text">
+      <h2>
+        {instance.title}
+      </h2>
+      <p>
+        {instance.summary}
+      </p>
+    </div>
+  </Link>
 );
 
 TutorialCard.propTypes = {

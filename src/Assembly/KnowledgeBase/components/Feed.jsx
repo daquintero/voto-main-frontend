@@ -47,16 +47,18 @@ class Feed extends PureComponent {
     } = this.props;
 
     return (
-      <Container>
-        <div className="knowledge-base__feed__wrapper">
+      <div className="knowledge-base__feed__wrapper">
+        <Container>
           <div className="knowledge-base__feed__search">
             <FeedSearch
               // Callbacks
               search={this.handleSearch}
+              placeholder="Search"
             />
+            <i className="fal fa-search" />
           </div>
           <div className="knowledge-base__feed">
-            {GET_KNOWLEDGE_BASE_FEED.loading ? (
+            {!GET_KNOWLEDGE_BASE_FEED.loaded ? (
               <Loader elemClass="load__page" />
             ) : instances.map(instance => (
               <TutorialCard
@@ -65,8 +67,8 @@ class Feed extends PureComponent {
               />
             ))}
           </div>
-        </div>
-      </Container>
+        </Container>
+      </div>
     );
   }
 }
