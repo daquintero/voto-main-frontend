@@ -22,21 +22,28 @@ class ShareCard extends PureComponent {
     url: PropTypes.string,
     title: PropTypes.string,
     description: PropTypes.string,
+    hasHeader: PropTypes.bool,
   };
   static defaultProps = {
     title: 'Voto Informado 2019',
     url: 'www.votoinformado2019.com',
     description: 'Debate, Infórmate, Vota.',
+    hasHeader: true,
   };
   render() {
-    const { url, title, description } = this.props;
+    const {
+      url, title, description, hasHeader,
+    } = this.props;
+
     return (
       <Row noGutters className="px-2">
         {/* TODO HAVE Horizontal Alignment */}
-        <Col xs={12}>
-          <h5 className="text-center pb-2">¡Compárte!</h5>
-        </Col>
-        <Col>
+        {hasHeader && (
+          <Col xs={12}>
+            <h5 className="text-center pb-2">¡Compárte!</h5>
+          </Col>
+        )}
+        <Col className="mx-2">
           <FacebookShareButton
             url={url}
             hashtag="#votoinformado2019"
@@ -45,7 +52,7 @@ class ShareCard extends PureComponent {
             <FacebookIcon round size={40} />
           </FacebookShareButton>
         </Col>
-        <Col>
+        <Col className="mx-2">
           <TwitterShareButton
             title={title}
             hashtags={['#votoinformado2019']}
@@ -54,7 +61,7 @@ class ShareCard extends PureComponent {
             <TwitterIcon round size={40} />
           </TwitterShareButton>
         </Col>
-        <Col>
+        <Col className="mx-2">
           <WhatsappShareButton
             url={url}
             title={title}
@@ -62,7 +69,7 @@ class ShareCard extends PureComponent {
             <WhatsappIcon round size={40} />
           </WhatsappShareButton>
         </Col>
-        <Col>
+        <Col className="mx-2">
           <EmailShareButton
             subject={title}
             body={description}

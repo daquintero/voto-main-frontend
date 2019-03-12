@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { GeoJsonLayer } from 'deck.gl';
 
 // Components
+import Loader from '../../../../../shared/components/Loader';
 import Map from '../../../../../Reusable/Map';
 import CardGrid from '../../../../../Reusable/Grid/components/DetailedReduxCardGrid';
 
@@ -18,6 +19,7 @@ import mapData from '../../../data/ELECTORAL_CIRCUITS_V3.json';
 class DiscoverCandidates extends PureComponent {
   static propTypes = {
     // Redux
+    actions: PropTypes.instanceOf(Object).isRequired,
     dispatch: PropTypes.func.isRequired,
     candidates: PropTypes.instanceOf(Array),
   };
@@ -36,8 +38,17 @@ class DiscoverCandidates extends PureComponent {
       selectedObject: {
         properties: {},
       },
+      hasSelected: false,
     };
   }
+
+  getNameList = (gid) => {
+    const { type } = this.state;
+
+    return mapData.features
+      .filter(obj => obj.properties[type] === gid)
+      .map(obj => obj.DIST_NOM);
+  };
 
   handleOnClick = ({ object }) => {
     const { type } = this.state;
@@ -48,6 +59,7 @@ class DiscoverCandidates extends PureComponent {
     this.setState({
       locationId: gid,
       selectedObject: object,
+      hasSelected: true,
     });
   };
 
@@ -117,6 +129,7 @@ class DiscoverCandidates extends PureComponent {
         opacity: 2,
         filled: true,
         wireframe: true,
+        stroked: true,
         extruded: true,
         pickable: true,
         onClick: e => this.handleOnClick(e),
@@ -133,25 +146,27 @@ class DiscoverCandidates extends PureComponent {
   };
 
   renderChild = () => {
-    const { hover, hoveredObject, selectedObject } = this.state;
+    const {
+      hover, hoveredObject, selectedObject, hasSelected,
+    } = this.state;
     const obj = hover ? hoveredObject : selectedObject;
 
-    return (hover || obj) && (
+    return (hover || hasSelected) && (
       <div className="map__info-panel__wrapper">
         <h3 className="text-center">{obj.properties.CIRCUITO}</h3>
-        <p className="text-center">{obj.properties.DIST_NOM}</p>
+        <p className="text-center">{this.getNameList(obj.properties.CIRCUITO)}</p>
       </div>
     );
   };
 
   render() {
     const {
-      selectedObject: { properties },
+      hasSelected, selectedObject: { properties },
     } = this.state;
 
     // Props
     const {
-      candidates,
+      candidates, actions: { DISCOVER_CANDIDATES },
     } = this.props;
 
     return (
@@ -162,16 +177,22 @@ class DiscoverCandidates extends PureComponent {
         >
           {this.renderChild()}
         </Map>
-        <h5 className="text-black-50 mt-3">Candidates running in {properties.CIRCUITO} ({properties.DIST_NOM}) </h5>
+        {hasSelected ? (
+          <h5 className="text-black-50 mt-3">Políticos Circuito {properties.CIRCUITO}</h5>
+        ) : (
+          <h5 className="text-black-50 mt-3">Haz click en los circuitos del mapa para ver sus politicos.</h5>
+        )}
         <hr />
-        <CardGrid
-          parentModelLabel="political.Individual"
-          relatedModelLabel="noneType"
-          subsetNumber={0}
-          light
-          instances={candidates}
-          gridClass="candidates-grid"
-        />
+        {DISCOVER_CANDIDATES.loaded ? (
+          <CardGrid
+            parentModelLabel="political.Individual"
+            relatedModelLabel="noneType"
+            subsetNumber={0}
+            light
+            instances={candidates}
+            gridClass="candidates-grid"
+          />
+        ) : !DISCOVER_CANDIDATES.init && <Loader elemClass="load__page" />}
       </div>
     );
   }
@@ -179,9 +200,11 @@ class DiscoverCandidates extends PureComponent {
 
 
 const mapStateToProps = (state) => {
+  const { actions } = state.home;
   const { candidates } = state.home.discover;
 
   return {
+    actions,
     candidates,
   };
 };

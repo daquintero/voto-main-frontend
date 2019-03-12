@@ -1,4 +1,3 @@
-/* eslint-disable */
 // Reducer Libraries
 import { combineReducers, createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
@@ -12,9 +11,11 @@ import detailPageReducer from '../Assembly/DetailedPage/redux/reducer';
 // import homeReducer from '../Assembly/Social/redux/reducer';
 import basicHomeReducer from '../Assembly/Home/redux/reducer';
 import welcomeReducer from '../Layout/TopBar/redux/reducer';
+import knowledgeBaseReducer from '../Assembly/KnowledgeBase/redux/reducer';
 
 // Local Storage
 import { loadState, saveState } from './localStorage';
+
 
 const reducer = combineReducers({
   openPage: detailPageReducer,
@@ -22,9 +23,12 @@ const reducer = combineReducers({
   home: basicHomeReducer,
   form: formReducer,
   welcome: welcomeReducer,
+  knowledgeBase: knowledgeBaseReducer,
 });
 
+
 const storedState = loadState();
+
 
 const store = createStore(
   reducer,

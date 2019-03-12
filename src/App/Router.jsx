@@ -24,6 +24,10 @@ import Organization from '../Assembly/DetailedPage/components/Organization/Page'
 // About Page
 import About from '../Assembly/AboutUsPage';
 
+// KnowledgeBase
+import KnowledgeBase from '../Assembly/KnowledgeBase';
+import KnowledgeBaseTutorial from '../Assembly/KnowledgeBase/components/Tutorial';
+
 // Testing Files
 import Scratch from './Scratch';
 import Map from '../Reusable/Map';
@@ -45,6 +49,10 @@ const wrappedRoutes = () => (
         <Route path="/individuo/:id" component={Individual} />
         <Route path="/organizacion/:id" component={Organization} />
         <Route path="/noticia/:id" component={INFPage} />
+
+        {/* Knowledge Base */}
+        <Route exact path="/conocimiento" component={KnowledgeBase} />
+        <Route exact path="/conocimiento/tutorial/:id" component={KnowledgeBaseTutorial} />
 
         {/* Test Files */}
         <Route path="/a" component={Scratch} />
