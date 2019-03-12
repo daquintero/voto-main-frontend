@@ -2,9 +2,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import moment from 'moment';
+import { Row, Col } from 'reactstrap';
 
 // Functions
 import imageUrl from '../../../shared/utils/imageUrl';
+
+
+const getDaysAgo = (dateCreated) => {
+  const daysAgo = moment().diff(dateCreated, 'days');
+  switch (daysAgo) {
+    case 0:
+      return 'Posted today';
+    case 1:
+      return 'Posted yesterday';
+    default:
+      return `Posted ${daysAgo} days ago`;
+  }
+};
 
 
 const TutorialCard = ({ instance }) => (
@@ -19,14 +34,25 @@ const TutorialCard = ({ instance }) => (
         alt=""
       />
     )}
-    <div className="knowledge-base__tutorial-card__text">
-      <h2>
-        {instance.title}
-      </h2>
-      <p>
-        {instance.summary}
-      </p>
-    </div>
+    <Row className="knowledge-base__tutorial-card__text">
+      <Col
+        xs={8}
+        sm={9}
+        md={9}
+        lg={12}
+        xl={12}
+      >
+        <h2>
+          {instance.title}
+        </h2>
+        <p>
+          {instance.summary}
+        </p>
+      </Col>
+      <Col>
+        <small className="text-black-50">{getDaysAgo(instance.dateCreated)}</small>
+      </Col>
+    </Row>
   </Link>
 );
 

@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { GeoJsonLayer } from 'deck.gl';
 
 // Components
+import Loader from '../../../../../shared/components/Loader';
 import Map from '../../../../../Reusable/Map';
 import CardGrid from '../../../../../Reusable/Grid/components/DetailedReduxCardGrid';
 
@@ -12,12 +13,13 @@ import CardGrid from '../../../../../Reusable/Grid/components/DetailedReduxCardG
 import { discoverCandidates } from '../../../redux/actions';
 
 // Data
-import mapData from '../../../data/circuito.json';
+import mapData from '../../../data/ELECTORAL_CIRCUITS_V3.json';
 
 
 class DiscoverCandidates extends PureComponent {
   static propTypes = {
     // Redux
+    actions: PropTypes.instanceOf(Object).isRequired,
     dispatch: PropTypes.func.isRequired,
     candidates: PropTypes.instanceOf(Array),
   };
@@ -164,7 +166,7 @@ class DiscoverCandidates extends PureComponent {
 
     // Props
     const {
-      candidates,
+      candidates, actions: { DISCOVER_CANDIDATES },
     } = this.props;
 
     return (
@@ -181,14 +183,16 @@ class DiscoverCandidates extends PureComponent {
           <h5 className="text-black-50 mt-3">Haz click en los circuitos del mapa para ver sus politicos.</h5>
         )}
         <hr />
-        <CardGrid
-          parentModelLabel="political.Individual"
-          relatedModelLabel="noneType"
-          subsetNumber={0}
-          light
-          instances={candidates}
-          gridClass="candidates-grid"
-        />
+        {DISCOVER_CANDIDATES.loaded ? (
+          <CardGrid
+            parentModelLabel="political.Individual"
+            relatedModelLabel="noneType"
+            subsetNumber={0}
+            light
+            instances={candidates}
+            gridClass="candidates-grid"
+          />
+        ) : !DISCOVER_CANDIDATES.init && <Loader elemClass="load__page" />}
       </div>
     );
   }
@@ -196,9 +200,11 @@ class DiscoverCandidates extends PureComponent {
 
 
 const mapStateToProps = (state) => {
+  const { actions } = state.home;
   const { candidates } = state.home.discover;
 
   return {
+    actions,
     candidates,
   };
 };

@@ -150,10 +150,12 @@ class TopBar extends Component {
         </Modal>
         <Navbar light expand="md" className="navbar p-0">
           <Container className="navbar__wrapper bg-white px-0">
-            <NavbarBrand href="/" className="navbar__brand d-inline">
-              <h4 className="p-1 m-0">
-                <img className="img-fluid pr-2" src={logo} alt="" />#VotoInformado2019
-              </h4>
+            <NavbarBrand className="navbar__brand d-inline">
+              <Link to="/">
+                <h4 className="p-1 m-0">
+                  <img className="img-fluid pr-2" src={logo} alt="" />#VotoInformado2019
+                </h4>
+              </Link>
             </NavbarBrand>
             <NavbarToggler
               onClick={this.toggleNavbar}

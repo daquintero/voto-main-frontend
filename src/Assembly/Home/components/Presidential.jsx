@@ -22,7 +22,7 @@ class Presidential extends PureComponent {
       <div>
         <h4 className="p-2 m-0">
           <i className="fal fa-podium-star p-2" />
-              ¡Candidatos Presidenciales!
+          Candidatos Presidenciales
         </h4>
         <CardGrid
           parentModelLabel="political.Individual"
