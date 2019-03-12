@@ -47,7 +47,7 @@ class DiscoverCandidates extends PureComponent {
 
     return mapData.features
       .filter(obj => obj.properties[type] === gid)
-      .map(obj => obj.DIST_NOM);
+      .map(obj => obj.properties.DIST_NOM);
   };
 
   handleOnClick = ({ object }) => {
@@ -147,14 +147,16 @@ class DiscoverCandidates extends PureComponent {
 
   renderChild = () => {
     const {
-      hover, hoveredObject, selectedObject, hasSelected,
+      hover, hoveredObject, selectedObject, hasSelected, type,
     } = this.state;
-    const obj = hover ? hoveredObject : selectedObject;
+    const { properties } = hover ? hoveredObject : selectedObject;
 
     return (hover || hasSelected) && (
       <div className="map__info-panel__wrapper">
-        <h3 className="text-center">{obj.properties.CIRCUITO}</h3>
-        <p className="text-center">{this.getNameList(obj.properties.CIRCUITO)}</p>
+        <h3 className="text-center">{properties.CIRCUITO}</h3>
+        {this.getNameList(properties[type]).map(name => (
+          <p className="text-center">{name}</p>
+        ))}
       </div>
     );
   };
