@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<IndividualPage />  renders correctly without crashing 1`] = `
+<div
+  className="load__page"
+>
+  <div
+    className="load__icon-wrap"
+  >
+    <div
+      className="load__icon load__page lds-ellipsis"
+    >
+      <div />
+      <div />
+      <div />
+      <div />
+    </div>
+  </div>
+</div>
+`;
