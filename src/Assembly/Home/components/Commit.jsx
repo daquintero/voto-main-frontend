@@ -1,11 +1,8 @@
-/* eslint-disable */
 // Top Banner
 // Libraries
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { Col, Container, Row } from 'reactstrap';
-
-import moment from 'moment';
+import { Col, Row } from 'reactstrap';
 
 
 // Components TODO ADD FORM
@@ -13,12 +10,15 @@ import Subscribe from '../../../Reusable/SocialShare/components/ConnectedSubscri
 
 
 // TODO Amount of subscribers
-
-
 class TopBanner extends PureComponent { // eslint-disable-line
   static propTypes = {
-    light: PropTypes.bool.isRequired,
+    light: PropTypes.bool,
   };
+
+  static defaultProps = {
+    light: false,
+  };
+
   render() {
     const { light } = this.props;
     return (
@@ -33,5 +33,4 @@ class TopBanner extends PureComponent { // eslint-disable-line
   }
 }
 
-// TODO State Store Connection
 export default TopBanner;

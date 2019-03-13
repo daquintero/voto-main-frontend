@@ -1,7 +1,7 @@
 // Search Component
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Row, Col } from 'reactstrap';
+import { Container, Row, Col } from 'reactstrap';
 import { connect } from 'react-redux';
 import { reduxForm } from 'redux-form';
 
@@ -60,6 +60,12 @@ class Search extends Component {
     });
   };
 
+  handleOnSubmit = (e) => {
+    // Simply stop the default behaviour
+    // if a user presses the enter key.
+    e.preventDefault();
+  };
+
   renderField = ({
     input,
     label,
@@ -101,7 +107,7 @@ class Search extends Component {
           <i className="fal fa-vote-nay home__search__background-icon two" />
           <h4>¡Infórmate e Investiga!</h4>
           <Col md={12} className="align-content-center justify-content-center px-4 mt-3 mx-auto">
-            <form className="home__search__form">
+            <form className="home__search__form" onSubmit={this.handleOnSubmit}>
               <input
                 name="query"
                 type="text"
@@ -119,17 +125,19 @@ class Search extends Component {
           </Col>
         </Row>
         <div className="home__search__results__wrapper">
-          {(query.length !== 0 && this.validateQuery(query).valid) && (
-            <Col xs={12} className="justify-content-center mx-auto py-2 mb-2">
-              <Generic
-                instances={instances}
-                light
-                gridClass="variable-new-grid"
-                relatedModelLabel="noneType"
-                typeContext="public"
-              />
-            </Col>
-          )}
+          <Container>
+            {(query.length !== 0 && this.validateQuery(query).valid) && (
+              <Col xs={12} className="justify-content-center mx-auto py-2 mb-2">
+                <Generic
+                  instances={instances}
+                  light
+                  gridClass="variable-new-grid"
+                  relatedModelLabel="noneType"
+                  typeContext="public"
+                />
+              </Col>
+            )}
+          </Container>
         </div>
       </div>
     );

@@ -36,53 +36,14 @@ class Home extends PureComponent {
         <ErrorBoundary>
           <Search />
         </ErrorBoundary>
-        <Container className="p-0">
-          <Row className="py-5 my-5">
-            <Col xl={7}>
-              <Video />
-            </Col>
-            <Col xl={5}>
-              <Row noGutters className="pt-2 pb-2 justify-content-center">
-                <Col xs={12} noGutters className="pb-2 text-center m-md-0">
-                  <h5 className="pb-2 m-0 notice">Compromėtete a un &nbsp;
-                    <span className="sl">#VotoInformado2019</span>
-                  </h5>
-                </Col>
-                <Col md={6} xl={12} className="pb-0">
-                  <Commit light />
-                </Col>
-                <hr className="w-75 pt-0 pb-2" style={{ borderColor: 'rgba(black, 0.5)' }} />
-                <div
-                  className="align-content-center
-                  text-center w-100  justify-content-center"
-                >
-                  <h5>
-                    <a
-                      target="_blank"
-                      rel="noreferrer noopener"
-                      href="http://verificate.pa/"
-                      className="my-auto align-content-center"
-                    >
-                      <i className="fal fa-vote-yea p-2 inv-spin" />
-                    ¡Encuentra tu centro de votación!
-                    </a>
-                  </h5>
-                  <h5>
-                    <a
-                      target="_blank"
-                      rel="noreferrer noopener"
-                      href="https://www.holapraxis.com/voluntarios"
-                      className="my-auto"
-                    >
-                      <i className="fal fa-bolt p-2 spin-clock" />
-                      ¿Quiéres ser voluntario?
-                    </a>
-                  </h5>
-                </div>
-              </Row>
-            </Col>
-          </Row>
+        <Container className="py-5">
+          <Video />
         </Container>
+        <div className="bg-shady-layout py-5">
+          <Container>
+            <Candidates />
+          </Container>
+        </div>
         <div className="py-5">
           <ErrorBoundary>
             <Discovery />
@@ -91,8 +52,44 @@ class Home extends PureComponent {
         <div className="bg-shady-layout">
           <Container className="bg-shady-layout py-4">
             <Row noGutters>
-              <Col md={6} className="text-center p-2">
-                <Candidates />
+              <Col md={6} className="text-center p-2 mt-1">
+                <Row noGutters className="pt-2 pb-2 justify-content-center">
+                  <Col xs={12} noGutters className="pb-2 text-center m-md-0">
+                    <h4 className="pb-2 m-0 notice">Compromėtete a un &nbsp;
+                      <span className="sl">#VotoInformado2019</span>
+                    </h4>
+                  </Col>
+                  <Col md={6} xl={12} className="pb-0">
+                    <Commit />
+                  </Col>
+                  <hr className="w-75 pt-0 pb-2" style={{ borderColor: 'rgba(black, 0.5)' }} />
+                  <div
+                    className="align-content-center text-center w-100  justify-content-center"
+                  >
+                    <h5>
+                      <a
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        href="http://verificate.pa/"
+                        className="my-auto align-content-center"
+                      >
+                        <i className="fal fa-vote-yea p-2 inv-spin" />
+                        ¡Encuentra tu centro de votación!
+                      </a>
+                    </h5>
+                    <h5>
+                      <a
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        href="https://www.holapraxis.com/voluntarios"
+                        className="my-auto"
+                      >
+                        <i className="fal fa-bolt p-2 spin-clock" />
+                        ¿Quiéres ser voluntario?
+                      </a>
+                    </h5>
+                  </div>
+                </Row>
               </Col>
               <Col md={6} className="text-center p-2">
                 <h4 className="m-0 p-2">
@@ -102,7 +99,6 @@ class Home extends PureComponent {
                     href="https://s3.amazonaws.com/votoinformado2019/Manual_Voto_Informado_2019.pdf"
                     className="p-2"
                   >
-                    <i className="fal fa-book-heart p-2" />
                     ¡Descarga el Manual de Cívica Electoral Gratis!
                   </a>
                 </h4>
