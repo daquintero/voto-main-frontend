@@ -1,0 +1,220 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<AboutPage />  renders correctly without crashing 1`] = `
+<div
+  className="text-center p-5 bg-shady-layout container-fluid"
+>
+  <div
+    className="row"
+  >
+    <div
+      className="col-12"
+    >
+      <h2>
+        #VotoInformado2019
+      </h2>
+    </div>
+  </div>
+  <div
+    className="my-5 bg-layout no-gutters row"
+  >
+    <div
+      className="p-4 col-md-5"
+    >
+      <img
+        alt=""
+        className="w-100"
+        src="https://s3.amazonaws.com/votoinformado2019/about/team.jpeg"
+      />
+    </div>
+    <div
+      className="p-4 col-md-7"
+    >
+      <h5
+        className="py-2"
+      >
+        Acerca de Nosotros 
+      </h5>
+      <p
+        style={
+          Object {
+            "letter-spacing": "0.02em",
+          }
+        }
+      >
+        Esta campaña fue creada por el equipo de Praxis, Escuela Callejera y un grupo de ciudadanos, para ciudadanos. El objetivo es hacer docencia para informar y empoderar a los ciudadanos para las elecciones en mayo de 2019.
+      </p>
+      <p
+        style={
+          Object {
+            "letter-spacing": "0.02em",
+          }
+        }
+      >
+        Somos un grupo de jóvenes preocupados por el rumbo en el que va nuestro país. Vale dejar claro que esta es una campaña 
+        <strong>
+          apartidista
+        </strong>
+          y fue desarrollada pro-bono por todos los participantes.
+      </p>
+    </div>
+  </div>
+  <div
+    className="my-5 no-gutters row"
+  >
+    <div
+      className="p-4 col-md-7"
+    >
+      <h5
+        className="py-2"
+      >
+        Agradecimientos
+      </h5>
+      <p
+        style={
+          Object {
+            "letter-spacing": "0.02em",
+          }
+        }
+      >
+        Queremos darles un agradecimiento especial a todas las personas que participarton en la creación de esta campaña, en la página web, en el Manual de Cívica Electoral, en el Chatbot, las investigaciones y la creación de los perfiles de los candidatos, en los videos, en el diseño y en la visualización de la información, y en todo lo que compone Voto Informado 2019.
+      </p>
+      <p
+        style={
+          Object {
+            "letter-spacing": "0.02em",
+          }
+        }
+      >
+        Apreciamos mucho el apoyo y tiempo de todos, en especial a: los participantes del Investigatón 2018, los participantes de Panamá-Hackea 2018, a los desarrolladores de la plataforma, a Melida Botacio, Angel Corro, Augusto Revello, Franz Delgado, Dario Quintero, James Williams, Leopoldo Alfaro, Emmanuel Lobo, Cynthia Paolini y a David Chumpitaz.
+      </p>
+    </div>
+    <div
+      className="p-4 col-md-5"
+    >
+      <img
+        alt="Error"
+        className="img-cover"
+        src="/img/conteo.png"
+      />
+    </div>
+  </div>
+  <div
+    className="my-5 p-4 text-center justify-content-center bg-layout no-gutters row"
+  >
+    <h5
+      className="py-4"
+    >
+      ¿Conocías a Praxis y Escuela Callejera?
+    </h5>
+    <div
+      className="no-gutters row"
+    >
+      <div
+        className="p-2 col-md-4"
+      >
+        <img
+          alt="Error"
+          className="w-50 p-2"
+          src="https://s3.amazonaws.com/votoinformado2019/about/praxis.jpeg"
+        />
+      </div>
+      <div
+        className="p-2 align-middle my-auto col-md-8"
+      >
+        <p>
+          Praxis es un emprendimiento social que busca empoderar a la ciudadanía panameña por medio de la información. Explicamos lo que pasa en Panamá y en el mundo de formas innovadoras de contar la historia.
+        </p>
+      </div>
+    </div>
+    <div
+      className="no-gutters row"
+    >
+      <div
+        className="p-0 col-md-4"
+      >
+        <img
+          alt="Error"
+          className="w-50"
+          src="/img/ec.svg"
+        />
+      </div>
+      <div
+        className="p-2 my-auto col-md-8"
+      >
+        <p>
+          Escuela callejera es un colectivo que busca crear cultura a través de la educación. Estudiamos temas contemporáneos y buscamos como explicarlos de forma simple.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div
+    className="col"
+  >
+    <p
+      className="lead text-center"
+    >
+      No olvides seguirnos en Instagram
+    </p>
+    <p
+      className="text-center lead m-1"
+    >
+      <a
+        className="sl"
+        href="https://www.instagram.com/votoinformado2019/"
+        rel="noreferrer noopener"
+        target="_blank"
+      >
+        <span>
+          @votoinformado2019
+        </span>
+      </a>
+    </p>
+    <p
+      className="text-center m-1"
+    >
+      <a
+        className="lead sl"
+        href="https://www.instagram.com/praxispty/"
+        rel="noreferrer noopener"
+        target="_blank"
+      >
+        <span>
+          @praxispty
+        </span>
+      </a>
+    </p>
+    <p
+      className="text-center lead m-1"
+    >
+      <a
+        className="sl"
+        href="https://www.instagram.com/escuelacallejera/"
+        rel="noreferrer noopener"
+        target="_blank"
+      >
+        <span>
+          @escuelacallejera
+        </span>
+      </a>
+    </p>
+  </div>
+  <div
+    className="insta-grid"
+  >
+    <script
+      src="https://cdn.lightwidget.com/widgets/lightwidget.js"
+    />
+    <div
+      className="photos-container"
+    >
+      <iframe
+        className="lightwidget-widget"
+        scrolling="no"
+        src="//lightwidget.com/widgets/554828df384f55d5b8ad277da18957ec.html"
+        title="instagram"
+      />
+    </div>
+  </div>
+</div>
+`;

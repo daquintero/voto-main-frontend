@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<InformativeSnippetPage />  renders correctly without crashing 1`] = `
+<div
+  className="load__card"
+>
+  <div
+    className="load__icon-wrap"
+  >
+    <div
+      className="load__icon load__card lds-ellipsis"
+    >
+      <div />
+      <div />
+      <div />
+      <div />
+    </div>
+  </div>
+</div>
+`;
