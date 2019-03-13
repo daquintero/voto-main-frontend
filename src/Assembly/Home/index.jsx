@@ -37,18 +37,18 @@ class Home extends PureComponent {
           <Search />
         </ErrorBoundary>
         <Container className="p-0">
-          <Row className="py-5 my-5">
-            <Col xl={7}>
+          <Row className="pt-5 mt-5 pb-3 mb-3">
+            <Col lg={7}>
               <Video />
             </Col>
-            <Col xl={5}>
+            <Col lg={5} className="mt-5 pt-2 mt-lg-0 pt-lg-0">
               <Row noGutters className="pt-2 pb-2 justify-content-center">
                 <Col xs={12} noGutters className="pb-2 text-center m-md-0">
                   <h5 className="pb-2 m-0 notice">Compromėtete a un &nbsp;
                     <span className="sl">#VotoInformado2019</span>
                   </h5>
                 </Col>
-                <Col md={6} xl={12} className="pb-0">
+                <Col md={6} lg={12} className="pb-0">
                   <Commit light />
                 </Col>
                 <hr className="w-75 pt-0 pb-2" style={{ borderColor: 'rgba(black, 0.5)' }} />
@@ -83,7 +83,7 @@ class Home extends PureComponent {
             </Col>
           </Row>
         </Container>
-        <div className="py-5">
+        <div className="py-3">
           <ErrorBoundary>
             <Discovery />
           </ErrorBoundary>

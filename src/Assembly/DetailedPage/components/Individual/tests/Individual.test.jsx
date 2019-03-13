@@ -7,7 +7,7 @@ import store from '../../../../../App/store';
 
 describe('<IndividualPage />', () => {
   const initialState = store;
-  const match = { params: { id: 1 } } ;
+  const match = { params: { id: 1  }, path: '/'  };
 
   it(' renders correctly without crashing', () => {
     const tree = renderer
