@@ -59,7 +59,7 @@ class Home extends PureComponent {
                       <span className="sl">#VotoInformado2019</span>
                     </h4>
                   </Col>
-                  <Col md={6} xl={12} className="pb-0">
+                  <Col md={12} xl={12} className="pb-0">
                     <Commit />
                   </Col>
                   <hr className="w-75 pt-0 pb-2" style={{ borderColor: 'rgba(black, 0.5)' }} />
