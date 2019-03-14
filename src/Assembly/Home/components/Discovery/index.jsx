@@ -1,16 +1,12 @@
 // Map candidates Discovery
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
 import { Container, Row, Col, Input } from 'reactstrap';
 import classNames from 'classnames';
 
 // Components
 import DiscoverCandidates from './components/DiscoverCandidates';
 
-import { discoverCandidates } from '../../redux/actions';
 import Map from '../../../../Reusable/Map';
-
 
 // Data
 import layerData from '../../data/data.json';
@@ -18,10 +14,6 @@ import hexData from '../../data/hex.json';
 
 
 class Discover extends Component {
-  static propTypes = {
-    dispatch: PropTypes.func.isRequired,
-  };
-
   constructor(props) {
     super(props);
     this.state = {
@@ -43,16 +35,6 @@ class Discover extends Component {
     this.setState({
       currentTab: tab,
     });
-  };
-
-  handleOnClick = (e, type) => {
-    const { dispatch } = this.props;
-    const gid = e.object.properties[type];
-    dispatch(discoverCandidates(gid));
-  };
-
-  handleOnHover = () => {
-    // Pass
   };
 
   render() {
@@ -147,7 +129,4 @@ class Discover extends Component {
   }
 }
 
-
-const mapStateToProps = () => {};
-
-export default connect(mapStateToProps)(Discover);
+export default Discover;

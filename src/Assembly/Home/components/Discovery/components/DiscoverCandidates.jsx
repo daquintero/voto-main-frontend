@@ -13,7 +13,6 @@ import CardGrid from '../../../../../Reusable/Grid/components/DetailedReduxCardG
 import { discoverCandidates } from '../../../redux/actions';
 
 // Data
-// import mapData from '../../../data/ELECTORAL_CIRCUITS_V3.json';
 import mapData from '../../../data/circuito.json';
 
 
