@@ -16,6 +16,42 @@ import Map from '../../../../Reusable/Map';
 import layerData from '../../data/data.json';
 import hexData from '../../data/hex.json';
 
+const selectPartyPerYear = {
+  1994: [
+    { ValidVotes: 'Total' },
+    { Arnulfista: 'Mireya  Moscoso - Partido Arnulfista' },
+    { PRD: 'Ernesto Pérez Balladares - PRD' },
+    { Y: 'Ruben Carles - Partido Y' },
+    { MPE: 'Ruben Blades -MPE' },
+    { Solidaridad: 'Samuel Galindo - Solidaridad' },
+    { PDC: 'Eduardo Vallarino- PDC' },
+    { PPD: 'Jose Muñoz - PPD' },
+  ],
+  2004: [
+    { ValidVotes: 'Total' },
+    { Arnulfista: 'Jose Miguel Alemán-Arnulfista' },
+    { PRD: 'Martin Torrijos-PRD' },
+    { Solidaridad: 'Guillermo Endara-Solidaridad' },
+    { CD: 'Ricardo Martinelli - CD' },
+  ],
+  2009: [
+    { ValidVotes: 'Total' },
+    { PRD: 'Balbina Herrera-PRD' },
+    { VMP: 'Guillermo Endara-Vanguardia Moral de la Patria' },
+    { CD: 'Ricardo Martinelli - CD' },
+  ],
+  2014: [
+    { ValidVotes: 'Total' },
+    { PRD: 'Juan Carlos Navarro- PRD' },
+    { Arnulfista: 'Juan Carlos Varela - Panameñismo' },
+    { FAD: 'Genaro López - FAD' },
+    { CD: 'José Domingo Arias- CD' },
+    { Celeste: 'Esteban Rodríguez- Celeste' },
+    { Verde: 'Gerardo Barroso- Verde' },
+    { Chocolate: 'Juan Jované- Chocolate' },
+    { Chocolate: 'Juan Jované- Chocolate' },
+  ],
+};
 
 class Discover extends Component {
   static propTypes = {
@@ -113,14 +149,11 @@ class Discover extends Component {
                       type="select"
                       onChange={this.handleOnChange}
                     >
-                      <option value="ValidVotes">Total</option>
-                      <option value="Arnulfista">Arnulfista</option>
-                      <option value="Y">Y</option>
-                      <option value="Solidaridad">Solidaridad</option>
-                      <option value="PRD">PRD</option>
-                      <option value="PDC">PDC</option>
-                      <option value="PPD">PPD</option>
-                      <option value="MPE">MPE</option>
+                      {selectPartyPerYear[year].map(partyObj => (
+                        <option value={Object.keys(partyObj)[0]}>
+                          {partyObj[Object.keys(partyObj)[0]]}
+                        </option>
+                      ))}
                     </Input>
                     <span>Partido</span>
                   </div>
