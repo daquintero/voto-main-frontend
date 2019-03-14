@@ -24,21 +24,23 @@ class Relationships extends PureComponent {
       <Row noGutters className="pb-5 pt-2">
         <Col className="p-2">
           <div className="subsection-grid">
-            <div
-              className={`mt-2 p-1 bg-above-background
-           ${experience && experience[0] ?
-              (experience.length < 3 ? '' : 'span-5-rows') : ''}`}
-            >
-              <Row noGutters className="justify-content-center p-0">
-                <CardGrid
-                  relatedModelLabel="political.Experience"
-                  gridClass="variable-grid"
-                  instances={experience}
-                  subsetNumber={experience}
-                  light
-                />
-              </Row>
-            </div>
+            {experience && experience[0] ? (
+              <div
+                className={`mt-2 p-1 bg-above-background
+                ${experience && experience[0] ?
+                  (experience.length < 3 ? '' : 'span-5-rows') : ''}`}
+              >
+                <Row noGutters className="justify-content-center p-0">
+                  <CardGrid
+                    relatedModelLabel="political.Experience"
+                    gridClass="variable-grid"
+                    instances={experience}
+                    subsetNumber={experience}
+                    light
+                  />
+                </Row>
+              </div>
+            ) : null}
             <div
               className={`mt-2 p-1
            ${controversies.instances[0] ?

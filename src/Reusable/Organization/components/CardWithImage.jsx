@@ -20,7 +20,7 @@ const CardWithImage = ({ instance, light }) => {
     <Card
       className={`border-0 ${light ? 'bg-layout' : 'bg-shady-layout'} rounded-0 small-enlarge span-3-cols shadow`}
     >
-      <Link to={`/organization/${instance.id}`}>
+      <Link to={`/organizacion/${instance.id}`}>
         <Row noGutters>
           <Col
             {...getColDims(layoutMap, instance.size, 'outer', 'wrapper')}

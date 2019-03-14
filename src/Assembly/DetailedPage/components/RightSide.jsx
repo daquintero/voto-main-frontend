@@ -62,7 +62,7 @@ class RightSide extends PureComponent {
         </Row>
         <Row noGutters className="px-2 py-4 justify-content-center right-side__row">
           <LawList
-            instances={laws.instances}
+            instances={laws}
             parent={instance.modelLabel}
             light={light}
           />
