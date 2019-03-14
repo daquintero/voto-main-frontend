@@ -27,7 +27,7 @@ class Statistics extends PureComponent {
         <h4 className="text-center mt-2 rel">{typeInfo['political.Statistic'].name}</h4>
         <Row className="mx-auto">
           {instances ? (instances.map(instance => (
-            <div className="p-2 variable-grid">
+            <div className="p-2 variable-grid" key={instance.id}>
               <StatisticBlock instance={instance} />
             </div>
           ))) : (
