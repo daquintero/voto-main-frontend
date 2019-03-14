@@ -1,16 +1,11 @@
-// Map candidates Discovery
+// Absolute Imports
 import React, { Component } from 'react';
-import { Container, Row, Col, Input } from 'reactstrap';
+import { Container, Row, Col } from 'reactstrap';
 import classNames from 'classnames';
 
 // Components
 import DiscoverCandidates from './components/DiscoverCandidates';
-
-import Map from '../../../../Reusable/Map';
-
-// Data
-import layerData from '../../data/data.json';
-import hexData from '../../data/hex.json';
+import DataVisualization from './components/DataVisualization';
 
 
 class Discover extends Component {
@@ -18,8 +13,6 @@ class Discover extends Component {
     super(props);
     this.state = {
       currentTab: '1',
-      party: 'ValidVotes',
-      year: '2014',
     };
   }
 
@@ -40,12 +33,12 @@ class Discover extends Component {
   render() {
     // State
     const {
-      currentTab, party, year,
+      currentTab,
     } = this.state;
 
     return (
       <Container>
-        <Row noGutters className="m-4">
+        <Row noGutters className="m-0 m-md-4">
           <Col md={12} className="py-4">
             <div className="map__tab-panel__wrapper">
               <div
@@ -75,52 +68,7 @@ class Discover extends Component {
               <DiscoverCandidates />
             )}
             {currentTab === '2' && (
-              <div className="map__tab__wrapper">
-                <Map
-                  data={hexData}
-                  layerData={layerData}
-                  type="CIRCUITO"
-                  layerFilters={{ party, year }}
-                >
-                  <div className="map__scale__wrapper">
-                    <div className="map__scale__strip" />
-                    <span className="many">100%</span>
-                    <span className="few">0%</span>
-                  </div>
-                </Map>
-                <div className="map__control-panel__wrapper">
-                  <div className="map__control-panel__select__wrapper">
-                    <Input
-                      name="party"
-                      type="select"
-                      onChange={this.handleOnChange}
-                    >
-                      <option value="ValidVotes">Total</option>
-                      <option value="Arnulfista">Arnulfista</option>
-                      <option value="Y">Y</option>
-                      <option value="Solidaridad">Solidaridad</option>
-                      <option value="PRD">PRD</option>
-                      <option value="PDC">PDC</option>
-                      <option value="PPD">PPD</option>
-                      <option value="MPE">MPE</option>
-                    </Input>
-                    <span>Partido</span>
-                  </div>
-                  <div className="map__control-panel__select__wrapper">
-                    <Input
-                      name="year"
-                      type="select"
-                      onChange={this.handleOnChange}
-                    >
-                      <option value="2014">2014</option>
-                      <option value="2009">2009</option>
-                      <option value="2004">2004</option>
-                      <option value="1994">1994</option>
-                    </Input>
-                    <span>Año</span>
-                  </div>
-                </div>
-              </div>
+              <DataVisualization />
             )}
           </Col>
         </Row>

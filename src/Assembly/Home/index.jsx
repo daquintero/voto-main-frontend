@@ -1,10 +1,8 @@
-// Home Page According to their wishes
-// Libraries
+// Absolute Imports
 import React, { PureComponent } from 'react';
-import { Container, Row, Col } from 'reactstrap';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-// import moment from 'moment';
+import { Container, Row, Col } from 'reactstrap';
 
 // Components
 import Video from '../Video';
@@ -20,17 +18,19 @@ import Discovery from './components/Discovery';
 
 const sep = `${process.env.PUBLIC_URL}/img/star-separator.svg`;
 
-// Declaration
+
 class Home extends PureComponent {
   static propTypes = {
     // Redux
     dispatch: PropTypes.func.isRequired,
   };
+
   // TODO ADD WHATSAPP
   componentDidMount() {
     const { dispatch } = this.props;
     dispatch(getHome());
   }
+
   render() {
     return (
       <>

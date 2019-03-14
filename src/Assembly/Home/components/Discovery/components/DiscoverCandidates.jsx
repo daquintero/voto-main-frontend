@@ -100,7 +100,6 @@ class DiscoverCandidates extends PureComponent {
     }
 
     return colorRange[0].map(num => num + (polygonObject.properties.index * 2));
-    // return colorRange[polygonObject.properties.random];
   };
 
   renderLayers = () => {
@@ -128,7 +127,6 @@ class DiscoverCandidates extends PureComponent {
         lightSettings,
         colorRange,
         opacity: 2,
-        // filled: true,
         wireframe: true,
         stroked: true,
         extruded: true,
