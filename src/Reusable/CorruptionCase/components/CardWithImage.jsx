@@ -45,7 +45,7 @@ const CardWithImage = ({ instance, light }) => {
               {/* If there are three or more statistics,
                 only display limits of 3 or map less than that */}
               { instance.statistics && instance.statistics.slice(0, 3).map(statistic => (
-                <StatisticsItem instance={statistic} />
+                <StatisticsItem instance={statistic} key={statistic.id} />
               ))}
               <div className="p-2 mt-0 text-center">
                 <i className="fal p-2 fa-calendar" />

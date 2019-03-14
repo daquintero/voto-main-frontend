@@ -1,4 +1,3 @@
-/* eslint-disable */
 // Libraries
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
@@ -18,8 +17,10 @@ import Relationships from '../Relationships';
 import RightSide from '../RightSide';
 import Loader from '../../../../shared/components/Loader';
 import History from './History';
+// import TopBanner from '../../../TopBanner';
 
-const parentModelLabel = 'political.Individual';
+
+const parentModelLabel = 'political.Organization';
 
 
 class Page extends PureComponent {
@@ -32,12 +33,43 @@ class Page extends PureComponent {
     // Router
     match: ReactRouterPropTypes.match.isRequired,
   };
+  constructor(props) {
+    super();
+    this.state = {
+      currentID: props.match.params.id,
+      currentPath: props.match.params.path,
+    };
+  }
+
+  static getDerivedStateFromProps(nextProps, prevState) {
+    const { match, dispatch } = nextProps;
+    if (match.params.id !== prevState.currentID) {
+      if (match.params.path === prevState.currentPath) {
+        dispatch(getDetailedPage({
+          ml: parentModelLabel,
+          id: match.params.id,
+          sn: 0,
+        }));
+        return {
+          currentID: match.params.id,
+          currentPath: match.params.currentPath,
+        };
+      }
+      return {
+
+        currentID: match.params.id,
+        currentPath: match.params.currentPath,
+      };
+    }
+    return null;
+  }
 
   componentDidMount() {
-    const { dispatch, match } = this.props;
+    const { dispatch } = this.props;
+    const { currentID } = this.state;
     dispatch(getDetailedPage({
       ml: parentModelLabel,
-      id: match.params.id,
+      id: currentID,
       sn: 0,
     }));
   }
@@ -55,26 +87,29 @@ class Page extends PureComponent {
     } = this.props;
 
     return actions.GET_DETAILED_PAGE.loaded ? (
-      <Container>
-        <Row className="p-2 overflow-hidden">
-          <Col xs={12} md={8} className="bg-layout overflow-hidden p-0">
-            <Header instance={instance} />
-            <Description instance={instance} />
-            <Gallery instance={instance} />
-            {/* TODO Finish connecting */}
-            <History />
-            <Relationships />
-          </Col>
-          <Col xs={12} md={4} className="p-2 bg-shady-layout">
-            <RightSide
-              instance={instance}
-              url={this.props.match.url}
-            />
-          </Col>
-        </Row>
-      </Container>
+      <>
+        {/* TODO READD */}
+        {/* TopBanner /> */}
+        <Container>
+          <Row className="p-2 pt-4 overflow-hidden column-primary">
+            <Col xs={12} md={8} className="overflow-hidden p-0">
+              <Header instance={instance} />
+              <Description instance={instance} />
+              <Gallery instance={instance} />
+              <History />
+              <Relationships />
+            </Col>
+            <Col xs={12} md={4} className="p-2 mt-0 column-secondary">
+              <RightSide
+                instance={instance}
+                url={this.props.match.url}
+              />
+            </Col>
+          </Row>
+        </Container>
+      </>
     ) : (
-      <Loader elemClass="load__card" />
+      <Loader elemClass="load__page" />
     );
   }
 }

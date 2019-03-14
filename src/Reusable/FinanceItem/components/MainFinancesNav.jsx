@@ -73,20 +73,3 @@ class MainFinancesNav extends PureComponent {
 }
 
 export default connect()(MainFinancesNav);
-
-
-// TODO Decide to remove or not
-// { /* <Nav className="mx-auto"> */ }
-// { /* <NavItem */ }
-// { /* className="list-right list-group-item m-0 rounded-0 border-0 w-100" */ }
-// { /* > */ }
-// { /* <div> */ }
-// { /* <h6 className="notice text-center m-0 p-1">$$$ Investiga y contribuye en VotoStudio!</h6> */ }
-// { /* </div> */ }
-// { /* <div> */ }
-// { /* <h6 className="small text-center m-0"> */ }
-// { /* Aquí tendremos todas las finanzas relacionadas a esta persona y las fuentes de esta información. */ }
-// { /* </h6> */ }
-// { /* </div> */ }
-// { /* </NavItem> */ }
-// { /* </Nav> */ }

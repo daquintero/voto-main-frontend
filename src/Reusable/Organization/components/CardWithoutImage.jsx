@@ -8,7 +8,7 @@ const CardWithoutImage = ({ instance, light }) => (
   <Card className={`border-0 rounded-0 h-100 p-2 ${light ? 'bg-layout' : 'bg-shady-layout'}
   shadow span-4-cols small-enlarge`}
   >
-    <Link to={`/organization/${instance.id}`}>
+    <Link to={`/organizacion/${instance.id}`}>
       <Row noGutters className="h-100">
         <Col
           xs={12}

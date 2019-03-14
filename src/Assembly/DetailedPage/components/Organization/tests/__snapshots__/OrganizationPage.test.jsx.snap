@@ -2,13 +2,13 @@
 
 exports[`<OrganizationPage />  renders correctly without crashing 1`] = `
 <div
-  className="load__card"
+  className="load__page"
 >
   <div
     className="load__icon-wrap"
   >
     <div
-      className="load__icon load__card lds-ellipsis"
+      className="load__icon load__page lds-ellipsis"
     >
       <div />
       <div />

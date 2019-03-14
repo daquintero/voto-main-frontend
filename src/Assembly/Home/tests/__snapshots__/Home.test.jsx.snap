@@ -22,6 +22,7 @@ Array [
       >
         <form
           className="home__search__form"
+          onSubmit={[Function]}
         >
           <input
             name="query"
@@ -49,248 +50,130 @@ Array [
     </div>
     <div
       className="home__search__results__wrapper"
-    />
-  </div>,
-  <div
-    className="p-0 container"
-  >
-    <div
-      className="pt-5 mt-5 pb-3 mb-3 row"
     >
       <div
-        className="col-lg-7"
-      >
-        <div
-          className="featured-video"
-        >
-          <div
-            className="video"
-          >
-            <iframe
-              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen={true}
-              frameBorder="0"
-              src="https://www.youtube.com/embed/1cJ2yb3RJw8"
-              title="Bienvenido a Voto Informado"
-            />
-          </div>
-        </div>
-      </div>
+        className="container"
+      />
+    </div>
+  </div>,
+  <img
+    alt=""
+    className="sep"
+    src="/img/star-separator.svg"
+  />,
+  <div
+    className="py-5 container"
+  >
+    <div
+      className="featured-video"
+    >
       <div
-        className="mt-5 pt-2 mt-lg-0 pt-lg-0 col-lg-5"
+        className="video"
       >
-        <div
-          className="pt-2 pb-2 justify-content-center no-gutters row"
+        <iframe
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen={true}
+          frameBorder="0"
+          src="https://www.youtube.com/embed/1cJ2yb3RJw8"
+          title="Bienvenido a Voto Informado"
+        />
+      </div>
+    </div>
+  </div>,
+  <div
+    className="bg-shady-layout py-5"
+  >
+    <div
+      className="container"
+    >
+      <div>
+        <h4
+          className="p-2 m-0"
         >
+          <i
+            className="fal fa-podium-star p-2"
+          />
+          Candidatos Presidenciales
+        </h4>
+        <div>
+          <h4
+            className="p-2 rel text-center"
+          />
           <div
-            className="pb-2 text-center m-md-0 col-12"
-            noGutters={true}
-          >
-            <h5
-              className="pb-2 m-0 notice"
-            >
-              Compromėtete a un  
-              <span
-                className="sl"
-              >
-                #VotoInformado2019
-              </span>
-            </h5>
-          </div>
-          <div
-            className="pb-0 col-md-6 col-lg-12"
+            className="mx-auto justify-content-center align-items-center presidential-grid"
           >
             <div
-              className="bg-layout"
+              className="justify-content-center align-content-center span-all border-0 rounded-0 four-o-four__card no-gutters row"
             >
               <div
-                className="pb-3 no-gutters row"
+                className="col-sm-12"
               >
                 <div
-                  className="px-4 col-md-12"
+                  className="border-0 bg-layout card"
+                  onClick={[Function]}
                 >
-                  <div
-                    className="no-gutters row"
+                  <p
+                    className="m-1 px-2 small text-center"
                   >
-                    <div
-                      className="col-12"
+                    Ahora mismo no hay 
+                    información relacionada
+                     
+                    a esto todavía
+                    .
+                  </p>
+                  <p
+                    className="lead text-center mt-1 mx-1"
+                  >
+                    ¿Quieres contribuir a la información del sitio?
+                    <i
+                      className="fal fa-caret-down text-primary px-2"
+                    />
+                  </p>
+                  <div
+                    className="bg-light p-2 d-none card-body"
+                  >
+                    <a
+                      className="sl"
+                      href="https://studio.votoinformado2019.com"
+                      rel="noreferrer noopener"
+                      target="_blank"
                     >
-                      <form
-                        className="home__subscribe__form"
+                      <p
+                        className="m-0 p-1 text-center"
                       >
-                        <div
-                          className="mb-3"
-                        >
-                          <div
-                            className="input-group"
-                          >
-                            <input
-                              className="form-control"
-                              name="nombre"
-                              onChange={[Function]}
-                              placeholder="Nombre"
-                              type="text"
-                              value=""
-                            />
-                          </div>
-                          <div
-                            className="text-danger text-center"
-                          />
-                        </div>
-                        <div
-                          className=" mb-3"
-                        >
-                          <div
-                            className="input-group"
-                          >
-                            <div
-                              className="input-group flex-nowrap"
-                            >
-                              <input
-                                className="form-control"
-                                onChange={[Function]}
-                                placeholder="Email"
-                                type="email"
-                                value=""
-                              />
-                            </div>
-                          </div>
-                          <div
-                            className="text-danger text-center"
-                          />
-                        </div>
-                        <div
-                          className="input-group"
-                        >
-                          <select
-                            className="custom-select"
-                            onChange={[Function]}
-                            value=""
-                          >
-                            <option
-                              value="Provincia"
-                            >
-                              Provincia
-                            </option>
-                            <option
-                              value="Panamá"
-                            >
-                              Panamá
-                            </option>
-                            <option
-                              value="Bocas Del Toro"
-                            >
-                              Bocas Del Toro
-                            </option>
-                            <option
-                              value="Chiriquí"
-                            >
-                              Chiriquí
-                            </option>
-                            <option
-                              value="Colón"
-                            >
-                              Colón
-                            </option>
-                            <option
-                              value="Coclé"
-                            >
-                              Coclé
-                            </option>
-                            <option
-                              value="Darién"
-                            >
-                              Darién
-                            </option>
-                            <option
-                              value="Herrera"
-                            >
-                              Herrera
-                            </option>
-                            <option
-                              value="Los Santos"
-                            >
-                              Los Santos
-                            </option>
-                            <option
-                              value="Panamá Oeste"
-                            >
-                              Panamá Oeste
-                            </option>
-                            <option
-                              value="Veraguas"
-                            >
-                              Veraguas
-                            </option>
-                            <option
-                              value="Comarcas"
-                            >
-                              Comarcas
-                            </option>
-                          </select>
-                        </div>
-                        <button
-                          aria-label={null}
-                          className="btn btn-secondary"
-                          onClick={[Function]}
-                          type="button"
-                        >
-                          <i
-                            className="fal px-2 fa-envelope"
-                          />
-                          Me comprometo a votar informado
-                        </button>
-                      </form>
-                    </div>
+                        <i
+                          className="fal fa-search px-2"
+                        />
+                         Investiga y anota fuentes fiables que encuentres.
+                      </p>
+                      <p
+                        className="m-0 p-1 text-center"
+                      >
+                        <i
+                          className="fal fa-sign-in-alt px-2"
+                        />
+                         ¡Entra a VotoStudio haciendo click aquí y contribuye!
+                      </p>
+                      <p
+                        className="m-0 p-1 text-center"
+                      >
+                        <i
+                          className="fal fa-check-square px-2"
+                        />
+                         Y lo verifícaremos contra los fake news.
+                      </p>
+                    </a>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          <hr
-            className="w-75 pt-0 pb-2"
-            style={
-              Object {
-                "borderColor": "rgba(black, 0.5)",
-              }
-            }
-          />
-          <div
-            className="align-content-center text-center w-100  justify-content-center"
-          >
-            <h5>
-              <a
-                className="my-auto align-content-center"
-                href="http://verificate.pa/"
-                rel="noreferrer noopener"
-                target="_blank"
-              >
-                <i
-                  className="fal fa-vote-yea p-2 inv-spin"
-                />
-                ¡Encuentra tu centro de votación!
-              </a>
-            </h5>
-            <h5>
-              <a
-                className="my-auto"
-                href="https://www.holapraxis.com/voluntarios"
-                rel="noreferrer noopener"
-                target="_blank"
-              >
-                <i
-                  className="fal fa-bolt p-2 spin-clock"
-                />
-                ¿Quiéres ser voluntario?
-              </a>
-            </h5>
           </div>
         </div>
       </div>
     </div>
   </div>,
   <div
-    className="py-3"
+    className="py-5"
   >
     <div
       className="container"
@@ -403,90 +286,213 @@ Array [
         className="no-gutters row"
       >
         <div
-          className="text-center p-2 col-md-6"
+          className="text-center p-2 mt-1 col-md-6"
         >
-          <div>
-            <h4
-              className="p-2 m-0"
+          <div
+            className="pt-2 pb-2 justify-content-center no-gutters row"
+          >
+            <div
+              className="pb-2 text-center m-md-0 col-12"
+              noGutters={true}
             >
-              <i
-                className="fal fa-podium-star p-2"
-              />
-              Candidatos Presidenciales
-            </h4>
-            <div>
               <h4
-                className="p-2 rel text-center"
-              />
+                className="pb-2 m-0 notice"
+              >
+                Compromėtete a un  
+                <span
+                  className="sl"
+                >
+                  #VotoInformado2019
+                </span>
+              </h4>
+            </div>
+            <div
+              className="pb-0 col-md-12 col-xl-12"
+            >
               <div
-                className="mx-auto justify-content-center align-items-center presidential-grid"
+                className="bg-shady-layout"
               >
                 <div
-                  className="justify-content-center align-content-center span-all border-0 rounded-0 four-o-four__card no-gutters row"
+                  className="pb-3 no-gutters row"
                 >
                   <div
-                    className="col-sm-12"
+                    className="px-4 col-md-12"
                   >
                     <div
-                      className="border-0 bg-layout card"
-                      onClick={[Function]}
+                      className="no-gutters row"
                     >
-                      <p
-                        className="m-1 px-2 small text-center"
-                      >
-                        Ahora mismo no hay 
-                        información relacionada
-                         
-                        a esto todavía
-                        .
-                      </p>
-                      <p
-                        className="lead text-center mt-1 mx-1"
-                      >
-                        ¿Quieres contribuir a la información del sitio?
-                        <i
-                          className="fal fa-caret-down text-primary px-2"
-                        />
-                      </p>
                       <div
-                        className="bg-light p-2 d-none card-body"
+                        className="col-12"
                       >
-                        <a
-                          className="sl"
-                          href="https://studio.votoinformado2019.com"
-                          rel="noreferrer noopener"
-                          target="_blank"
+                        <form
+                          className="home__subscribe__form"
                         >
-                          <p
-                            className="m-0 p-1 text-center"
+                          <div
+                            className="mb-3"
+                          >
+                            <div
+                              className="input-group"
+                            >
+                              <input
+                                className="form-control"
+                                name="nombre"
+                                onChange={[Function]}
+                                placeholder="Nombre"
+                                type="text"
+                                value=""
+                              />
+                            </div>
+                            <div
+                              className="text-danger text-center"
+                            />
+                          </div>
+                          <div
+                            className=" mb-3"
+                          >
+                            <div
+                              className="input-group"
+                            >
+                              <div
+                                className="input-group flex-nowrap"
+                              >
+                                <input
+                                  className="form-control"
+                                  onChange={[Function]}
+                                  placeholder="Email"
+                                  type="email"
+                                  value=""
+                                />
+                              </div>
+                            </div>
+                            <div
+                              className="text-danger text-center"
+                            />
+                          </div>
+                          <div
+                            className="input-group"
+                          >
+                            <select
+                              className="custom-select"
+                              onChange={[Function]}
+                              value=""
+                            >
+                              <option
+                                value="Provincia"
+                              >
+                                Provincia
+                              </option>
+                              <option
+                                value="Panamá"
+                              >
+                                Panamá
+                              </option>
+                              <option
+                                value="Bocas Del Toro"
+                              >
+                                Bocas Del Toro
+                              </option>
+                              <option
+                                value="Chiriquí"
+                              >
+                                Chiriquí
+                              </option>
+                              <option
+                                value="Colón"
+                              >
+                                Colón
+                              </option>
+                              <option
+                                value="Coclé"
+                              >
+                                Coclé
+                              </option>
+                              <option
+                                value="Darién"
+                              >
+                                Darién
+                              </option>
+                              <option
+                                value="Herrera"
+                              >
+                                Herrera
+                              </option>
+                              <option
+                                value="Los Santos"
+                              >
+                                Los Santos
+                              </option>
+                              <option
+                                value="Panamá Oeste"
+                              >
+                                Panamá Oeste
+                              </option>
+                              <option
+                                value="Veraguas"
+                              >
+                                Veraguas
+                              </option>
+                              <option
+                                value="Comarcas"
+                              >
+                                Comarcas
+                              </option>
+                            </select>
+                          </div>
+                          <button
+                            aria-label={null}
+                            className="btn btn-secondary"
+                            onClick={[Function]}
+                            type="button"
                           >
                             <i
-                              className="fal fa-search px-2"
+                              className="fal px-2 fa-envelope"
                             />
-                             Investiga y anota fuentes fiables que encuentres.
-                          </p>
-                          <p
-                            className="m-0 p-1 text-center"
-                          >
-                            <i
-                              className="fal fa-sign-in-alt px-2"
-                            />
-                             ¡Entra a VotoStudio haciendo click aquí y contribuye!
-                          </p>
-                          <p
-                            className="m-0 p-1 text-center"
-                          >
-                            <i
-                              className="fal fa-check-square px-2"
-                            />
-                             Y lo verifícaremos contra los fake news.
-                          </p>
-                        </a>
+                            Me comprometo a votar informado
+                          </button>
+                        </form>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
+            </div>
+            <hr
+              className="w-75 pt-0 pb-2"
+              style={
+                Object {
+                  "borderColor": "rgba(black, 0.5)",
+                }
+              }
+            />
+            <div
+              className="align-content-center text-center w-100  justify-content-center"
+            >
+              <h5>
+                <a
+                  className="my-auto align-content-center"
+                  href="http://verificate.pa/"
+                  rel="noreferrer noopener"
+                  target="_blank"
+                >
+                  <i
+                    className="fal fa-vote-yea p-2 inv-spin"
+                  />
+                  ¡Encuentra tu centro de votación!
+                </a>
+              </h5>
+              <h5>
+                <a
+                  className="my-auto"
+                  href="https://www.holapraxis.com/voluntarios"
+                  rel="noreferrer noopener"
+                  target="_blank"
+                >
+                  <i
+                    className="fal fa-bolt p-2 spin-clock"
+                  />
+                  ¿Quiéres ser voluntario?
+                </a>
+              </h5>
             </div>
           </div>
         </div>
@@ -502,9 +508,6 @@ Array [
               rel="noreferrer noopener"
               target="_blank"
             >
-              <i
-                className="fal fa-book-heart p-2"
-              />
               ¡Descarga el Manual de Cívica Electoral Gratis!
             </a>
           </h4>

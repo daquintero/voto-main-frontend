@@ -17,7 +17,7 @@ class StatisticsList extends PureComponent {
     return (
       <ListGroup>
         { statistics.map(instance => (
-          <ListGroupItem className="list-searching" tag="a" href={instance.source}>
+          <ListGroupItem className="list-searching" tag="a" href={instance.source} key={instance.id}>
             <span className="float-left">
               <i className={`pt-2 p-2 fal fa-${instance.icon}`} />
               {instance.name}
