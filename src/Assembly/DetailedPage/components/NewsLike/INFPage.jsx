@@ -32,12 +32,43 @@ class CCPage extends PureComponent {
     // Router
     match: ReactRouterPropTypes.match.isRequired,
   };
+  constructor(props) {
+    super();
+    this.state = {
+      currentID: props.match.params.id,
+      currentPath: props.match.params.path,
+    };
+  }
+
+  static getDerivedStateFromProps(nextProps, prevState) {
+    const { match, dispatch } = nextProps;
+    if (match.params.id !== prevState.currentID) {
+      if (match.params.path === prevState.currentPath) {
+        dispatch(getDetailedPage({
+          ml: parentModelLabel,
+          id: match.params.id,
+          sn: 0,
+        }));
+        return {
+          currentID: match.params.id,
+          currentPath: match.params.currentPath,
+        };
+      }
+      return {
+
+        currentID: match.params.id,
+        currentPath: match.params.currentPath,
+      };
+    }
+    return null;
+  }
 
   componentDidMount() {
-    const { dispatch, match } = this.props;
+    const { dispatch } = this.props;
+    const { currentID } = this.state;
     dispatch(getDetailedPage({
       ml: parentModelLabel,
-      id: match.params.id,
+      id: currentID,
       sn: 0,
     }));
   }
