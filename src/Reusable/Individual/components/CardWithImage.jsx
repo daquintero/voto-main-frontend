@@ -39,6 +39,15 @@ const CardWithImage = ({ instance, light }) => {
                   <p className="text-black-50 my-0 font-italic">{instance.alias}</p>
                 </Col>
               </Row>
+              <Row noGutters className="py-2">
+                <Col>
+                  <h6 className="float-right mb-0">jhlka sdjflka lsd jdfsiog jdsgjs∂</h6>
+                  <p className="mb-0">
+                    <i className="float-left fa p-1 fa-podium" />
+                    Busca Reelección
+                  </p>
+                </Col>
+              </Row>
             </CardBody>
           </Col>
         </Row>

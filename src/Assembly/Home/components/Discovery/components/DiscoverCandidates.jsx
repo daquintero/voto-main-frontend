@@ -157,7 +157,7 @@ class DiscoverCandidates extends PureComponent {
       <div className="map__info-panel__wrapper">
         <h3 className="text-center">{properties.CIRCUITO}</h3>
         {this.getNameList(properties[type]).map(name => (
-          <p className="text-center" key={name.id}>{name}</p>
+          <p className="text-center">{name}</p>
         ))}
       </div>
     );

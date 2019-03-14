@@ -45,7 +45,6 @@ class RightSide extends PureComponent {
             url={`https://www.votoinformado2019.com${url}`}
           />
         </Row>
-        {/* TODO REMOVE SINCE NO TIME */}
         <Row noGutters className="px-2 py-4 justify-content-center right-side__row">
           <MainFinancesNav
             corruptionRelatedFunds={instance.corruptionRelatedFunds}
@@ -54,12 +53,14 @@ class RightSide extends PureComponent {
             light={light}
           />
         </Row>
-        <Row noGutters className="px-2 py-4 justify-content-center right-side__row">
-          <Statistics
-            instances={instance.statistics}
-            parent={instance.modelLabel}
-          />
-        </Row>
+        {instance.statistics && instance.statistics[0] ? (
+          <Row noGutters className="px-2 py-4 justify-content-center right-side__row">
+            <Statistics
+              instances={instance.statistics}
+              parent={instance.modelLabel}
+            />
+          </Row>
+        ) : null}
         <Row noGutters className="px-2 py-4 justify-content-center right-side__row">
           <LawList
             instances={laws}
