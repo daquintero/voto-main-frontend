@@ -41,9 +41,9 @@ const CardWithImage = ({ instance, light }) => {
               </Row>
               <Row noGutters className="py-2">
                 <Col>
-                  <h6 className="float-right mb-0">jhlka sdjflka lsd jdfsiog jdsgjs∂</h6>
+                  <h6 className="mb-0 p-1">jhlka sdjflka lsd jdfsiog jdsgjs∂</h6>
                   <p className="mb-0">
-                    <i className="float-left fa p-1 fa-podium" />
+                    <i className="fa p-1 fa-podium" />
                     Busca Reelección
                   </p>
                 </Col>

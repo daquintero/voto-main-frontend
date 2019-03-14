@@ -100,7 +100,7 @@ class Header extends PureComponent {
               {instance.email && (
                 <Col className="px-0 text-center">
                   {/* TODO FIX email link */}
-                  <a target="_blank" rel="noreferrer noopener" href={instance.email}>
+                  <a target="_blank" rel="noreferrer noopener" href={`mailto:${instance.email}`}>
                     <i
                       className="fa fa-envelope-open fa-2x"
                       style={{ color: '#5ADBFF' }}
@@ -117,6 +117,9 @@ class Header extends PureComponent {
                   </a>!
                 </p>
               )}
+            </Row>
+            <Row noGutters className="bg-white">
+              <h6 className="px-4 text-muted py-2 lead">sdfgsd</h6>
             </Row>
           </Col>
         </Row>
