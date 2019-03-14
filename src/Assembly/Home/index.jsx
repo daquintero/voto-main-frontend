@@ -18,6 +18,7 @@ import ErrorBoundary from '../../shared/components/ErrorBoundary';
 import { getHome } from './redux/actions';
 import Discovery from './components/Discovery';
 
+const sep = `${process.env.PUBLIC_URL}/img/star-separator.svg`;
 
 // Declaration
 class Home extends PureComponent {
@@ -36,6 +37,7 @@ class Home extends PureComponent {
         <ErrorBoundary>
           <Search />
         </ErrorBoundary>
+        <img src={sep} alt="" className="sep" />
         <Container className="py-5">
           <Video />
         </Container>

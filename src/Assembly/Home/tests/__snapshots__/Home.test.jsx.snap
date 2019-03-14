@@ -56,6 +56,11 @@ Array [
       />
     </div>
   </div>,
+  <img
+    alt=""
+    className="sep"
+    src="/img/star-separator.svg"
+  />,
   <div
     className="py-5 container"
   >
