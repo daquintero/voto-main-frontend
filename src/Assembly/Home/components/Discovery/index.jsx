@@ -49,7 +49,6 @@ const selectPartyPerYear = {
     { Celeste: 'Esteban Rodríguez- Celeste' },
     { Verde: 'Gerardo Barroso- Verde' },
     { Chocolate: 'Juan Jované- Chocolate' },
-    { Chocolate: 'Juan Jované- Chocolate' },
   ],
 };
 
@@ -150,7 +149,7 @@ class Discover extends Component {
                       onChange={this.handleOnChange}
                     >
                       {selectPartyPerYear[year].map(partyObj => (
-                        <option value={Object.keys(partyObj)[0]}>
+                        <option value={Object.keys(partyObj)[0]} key={Object.keys(partyObj)[0]}>
                           {partyObj[Object.keys(partyObj)[0]]}
                         </option>
                       ))}

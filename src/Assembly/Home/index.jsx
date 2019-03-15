@@ -46,11 +46,6 @@ class Home extends PureComponent {
             <Candidates />
           </Container>
         </div>
-        <div className="py-5">
-          <ErrorBoundary>
-            <Discovery />
-          </ErrorBoundary>
-        </div>
         <div className="bg-shady-layout">
           <Container className="bg-shady-layout py-4">
             <Row noGutters>
@@ -108,6 +103,11 @@ class Home extends PureComponent {
               </Col>
             </Row>
           </Container>
+        </div>
+        <div className="py-5">
+          <ErrorBoundary>
+            <Discovery />
+          </ErrorBoundary>
         </div>
       </>
     );
