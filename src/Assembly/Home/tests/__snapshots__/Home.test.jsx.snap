@@ -173,110 +173,6 @@ Array [
     </div>
   </div>,
   <div
-    className="py-5"
-  >
-    <div
-      className="container"
-    >
-      <div
-        className="m-4 no-gutters row"
-      >
-        <div
-          className="py-4 col-md-12"
-        >
-          <div
-            className="map__tab-panel__wrapper"
-          >
-            <div
-              className="map__tab-panel__item active"
-              data-tab="1"
-              onClick={[Function]}
-              role="presentation"
-            >
-              <h5
-                className="py-2 m-0 text-center"
-              >
-                <i
-                  className="fal fa-podium"
-                />
-                 
-                Descúbre tus Candidatos
-              </h5>
-            </div>
-            <div
-              className="map__tab-panel__item"
-              data-tab="2"
-              onClick={[Function]}
-              role="presentation"
-            >
-              <h5
-                className="py-2 m-0 text-center"
-              >
-                <i
-                  className="fal fa-vote-yea"
-                />
-                 
-                Votos Históricos - Presidente
-              </h5>
-            </div>
-          </div>
-          <div
-            className="map__tab__wrapper"
-          >
-            <div
-              style={
-                Object {
-                  "cursor": "grab",
-                  "height": 0,
-                  "position": "relative",
-                  "width": 0,
-                }
-              }
-            >
-              <div
-                style={
-                  Object {
-                    "height": "100%",
-                    "position": "relative",
-                    "width": "100%",
-                  }
-                }
-              >
-                <div
-                  className=""
-                  style={
-                    Object {
-                      "height": "100%",
-                      "overflow": "hidden",
-                      "position": "absolute",
-                      "visibility": "inherit",
-                      "width": "100%",
-                    }
-                  }
-                />
-                <div
-                  style={
-                    Object {
-                      "height": 0,
-                      "overflow": "visible",
-                      "width": 0,
-                    }
-                  }
-                />
-              </div>
-            </div>
-            <h5
-              className="text-black-50 mt-3"
-            >
-              Haz click en los circuitos del mapa para ver sus politicos.
-            </h5>
-            <hr />
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>,
-  <div
     className="bg-shady-layout"
   >
     <div
@@ -522,6 +418,110 @@ Array [
             <div>
               Loading PDF...
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>,
+  <div
+    className="py-5"
+  >
+    <div
+      className="container"
+    >
+      <div
+        className="m-4 no-gutters row"
+      >
+        <div
+          className="py-4 col-md-12"
+        >
+          <div
+            className="map__tab-panel__wrapper"
+          >
+            <div
+              className="map__tab-panel__item active"
+              data-tab="1"
+              onClick={[Function]}
+              role="presentation"
+            >
+              <h5
+                className="py-2 m-0 text-center"
+              >
+                <i
+                  className="fal fa-podium"
+                />
+                 
+                Descúbre tus Candidatos
+              </h5>
+            </div>
+            <div
+              className="map__tab-panel__item"
+              data-tab="2"
+              onClick={[Function]}
+              role="presentation"
+            >
+              <h5
+                className="py-2 m-0 text-center"
+              >
+                <i
+                  className="fal fa-vote-yea"
+                />
+                 
+                Votos Históricos - Presidente
+              </h5>
+            </div>
+          </div>
+          <div
+            className="map__tab__wrapper"
+          >
+            <div
+              style={
+                Object {
+                  "cursor": "grab",
+                  "height": 0,
+                  "position": "relative",
+                  "width": 0,
+                }
+              }
+            >
+              <div
+                style={
+                  Object {
+                    "height": "100%",
+                    "position": "relative",
+                    "width": "100%",
+                  }
+                }
+              >
+                <div
+                  className=""
+                  style={
+                    Object {
+                      "height": "100%",
+                      "overflow": "hidden",
+                      "position": "absolute",
+                      "visibility": "inherit",
+                      "width": "100%",
+                    }
+                  }
+                />
+                <div
+                  style={
+                    Object {
+                      "height": 0,
+                      "overflow": "visible",
+                      "width": 0,
+                    }
+                  }
+                />
+              </div>
+            </div>
+            <h5
+              className="text-black-50 mt-3"
+            >
+              Haz click en los circuitos del mapa para ver sus politicos.
+            </h5>
+            <hr />
           </div>
         </div>
       </div>
