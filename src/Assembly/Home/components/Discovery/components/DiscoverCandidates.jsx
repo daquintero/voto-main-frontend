@@ -50,19 +50,6 @@ class DiscoverCandidates extends PureComponent {
       .map(obj => obj.properties.DIST_NOM);
   };
 
-  handleOnClick = ({ object }) => {
-    const { type } = this.state;
-    const { dispatch } = this.props;
-
-    const gid = object.properties[type];
-    dispatch(discoverCandidates(gid));
-    this.setState({
-      locationId: gid,
-      selectedObject: object,
-      hasSelected: true,
-    });
-  };
-
   handleOnHover = ({
     object, x, y, lngLat,
   }) => {
@@ -80,6 +67,19 @@ class DiscoverCandidates extends PureComponent {
         hover: false,
       });
     }
+  };
+
+  handleOnClick = ({ object }) => {
+    const { type } = this.state;
+    const { dispatch } = this.props;
+
+    const gid = object.properties[type];
+    dispatch(discoverCandidates(gid));
+    this.setState({
+      locationId: gid,
+      selectedObject: object,
+      hasSelected: true,
+    });
   };
 
   handleGetCursor = () => (this.state.hover ? 'pointer' : null);

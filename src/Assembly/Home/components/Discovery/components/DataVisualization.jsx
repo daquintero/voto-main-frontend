@@ -9,7 +9,54 @@ import Map from '../../../../../Reusable/Map';
 
 // Date
 import mapData from '../../../data/ELECTORAL_CIRCUITS_V3.json';
-// import layerData from '../../../data/data.json';
+import layerData from '../../../data/data.json';
+
+
+const options = {
+  1994: [
+    { value: 'ValidVotes', label: 'Total' },
+    { value: 'Arnulfista', label: 'Mireya  Moscoso - Partido Arnulfista' },
+    { value: 'PRD', label: 'Ernesto Pérez Balladares - PRD' },
+    { value: 'Y', label: 'Ruben Carles - Partido Y' },
+    { value: 'MPE', label: 'Ruben Blades -MPE' },
+    { value: 'Solidaridad', label: 'Samuel Galindo - Solidaridad' },
+    { value: 'PDC', label: 'Eduardo Vallarino- PDC' },
+    { value: 'PPD', label: 'Jose Muñoz - PPD' },
+  ],
+  2004: [
+    { value: 'ValidVotes', label: 'Total' },
+    { value: 'Arnulfista', label: 'Jose Miguel Alemán-Arnulfista' },
+    { value: 'PRD', label: 'Martin Torrijos-PRD' },
+    { value: 'Solidaridad', label: 'Guillermo Endara-Solidaridad' },
+    { value: 'CD', label: 'Ricardo Martinelli - CD' },
+  ],
+  2009: [
+    { value: 'ValidVotes', label: 'Total' },
+    { value: 'PRD', label: 'Balbina Herrera-PRD' },
+    { value: 'VMP', label: 'Guillermo Endara-Vanguardia Moral de la Patria' },
+    { value: 'CD', label: 'Ricardo Martinelli - CD' },
+  ],
+  2014: [
+    { value: 'ValidVotes', label: 'Total' },
+    { value: 'PRD', label: 'Juan Carlos Navarro- PRD' },
+    { value: 'Arnulfista', label: 'Juan Carlos Varela - Panameñismo' },
+    { value: 'FAD', label: 'Genaro López - FAD' },
+    { value: 'CD', label: 'José Domingo Arias- CD' },
+    { value: 'Celeste', label: 'Esteban Rodríguez- Celeste' },
+    { value: 'Verde', label: 'Gerardo Barroso- Verde' },
+    { value: 'Chocolate', label: 'Juan Jované- Chocolate' },
+  ],
+};
+
+
+const colorRange = [
+  [78, 211, 255],
+  [59, 206, 255],
+  [20, 196, 255],
+  [0, 147, 196],
+  [0, 103, 137],
+  [0, 44, 59],
+];
 
 
 class DataVisualization extends Component {
@@ -18,12 +65,97 @@ class DataVisualization extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      year: '',
-      party: '',
+      locationId: '',
+      type: 'CIRCUITO',
+      year: 1994,
+      party: 'ValidVotes',
+      selectedObject: {
+        properties: {},
+      },
+      hasSelected: false,
     };
   }
 
-  handleGetFillColor = (polygonObject, colorRange) => {
+  getProperty = (obj, property) => {
+    let ret;
+    ret = obj[property];
+    if (ret === undefined) {
+      ret = obj[property.toUpperCase()];
+    }
+
+    return ret;
+  };
+
+  getNameList = (gid) => {
+    const { type } = this.state;
+
+    return mapData.features
+      .filter(obj => obj.properties[type] === gid)
+      .map(obj => obj.properties.DIST_NOM);
+  };
+
+  getValue = (locationIdName, locationId) => {
+    const { year, party } = this.state;
+
+    try {
+      return layerData[year.toString()]
+        .slice(1)
+        .filter(f => this.getProperty(f, locationIdName) === locationId)[0][party];
+    } catch {
+      return 10;
+    }
+  };
+
+  getScaledValue = (locationIdName, locationId) => {
+    const { year, party } = this.state;
+
+    const rawValue = this.getValue(locationIdName, locationId);
+    const maxValue = Math.max(...layerData[year.toString()]
+      .slice(1)
+      .map(f => f[party]));
+
+    return rawValue / maxValue;
+  };
+
+  handleOnChange = ({ target: { name, value } }) => {
+    this.setState({
+      [name]: value,
+    });
+  };
+
+  handleOnHover = ({
+    object, x, y, lngLat,
+  }) => {
+    if (object) {
+      this.setState(prevState => ({
+        locationId: object.properties[prevState.type],
+        hover: true,
+        hoveredObject: object,
+        x,
+        y,
+        lngLat,
+      }));
+    } else {
+      this.setState({
+        hover: false,
+      });
+    }
+  };
+
+  handleOnClick = ({ object }) => {
+    const { type } = this.state;
+
+    const gid = object.properties[type];
+    this.setState({
+      locationId: gid,
+      selectedObject: object,
+      hasSelected: true,
+    });
+  };
+
+  handleGetCursor = () => (this.state.hover ? 'pointer' : null);
+
+  handleGetFillColor = (polygonObject) => {
     const {
       locationId, type, hover, selectedObject,
     } = this.state;
@@ -38,7 +170,25 @@ class DataVisualization extends Component {
       return [215, 215, 215];
     }
 
-    return colorRange[0].map(num => num + (polygonObject.properties.index * 2));
+    return colorRange[0]
+      .map(num =>
+        (num - (10 * 255 * this.getScaledValue('GID', this.getProperty(polygonObject.properties, type)))));
+  };
+
+  handleGetElevation = (polygonObject) => {
+    const { type } = this.state;
+
+    if (!polygonObject) return null;
+
+    return this.getValue('GID', this.getProperty(polygonObject.properties, type));
+  };
+
+  handleGetLineColor = (polygonObject) => {
+    const { type } = this.state;
+
+    const colorNum = 15 * 255 * this.getScaledValue('GID', this.getProperty(polygonObject.properties, type));
+
+    return Array(3).fill(colorNum);
   };
 
   renderLayers = () => {
@@ -51,15 +201,6 @@ class DataVisualization extends Component {
       numberOfLights: 2,
     };
 
-    const colorRange = [
-      [78, 211, 255],
-      [59, 206, 255],
-      [20, 196, 255],
-      [0, 147, 196],
-      [0, 103, 137],
-      [0, 44, 59],
-    ];
-
     return [
       new GeoJsonLayer({
         data: mapData,
@@ -70,15 +211,56 @@ class DataVisualization extends Component {
         stroked: true,
         extruded: true,
         pickable: true,
-        onHover: e => this.handleGetFillColor(e),
+        onHover: e => this.handleOnHover(e),
+        onClick: e => this.handleOnClick(e),
+        getFillColor: polygonObject => this.handleGetFillColor(polygonObject),
+        getElevation: polygonObject => this.handleGetElevation(polygonObject),
+        getLineColor: polygonObject => this.handleGetLineColor(polygonObject),
         updateTriggers: {
-          getFillColor: e => this.handleGetFillColor(e),
+          getFillColor: polygonObject => this.handleGetFillColor(polygonObject),
+          getElevation: polygonObject => this.handleGetElevation(polygonObject),
+          getLineColor: polygonObject => this.handleGetLineColor(polygonObject),
         },
         transitions: {
           getFillColor: 25,
+          getElevation: 200,
+          getLineColor: 200,
         },
       }),
     ];
+  };
+
+  renderTooltip = () => {
+    const {
+      hoveredObject, x, y, hover, type,
+    } = this.state;
+
+    return (hoveredObject && hover) && (
+      <div
+        className="shadow"
+        style={{
+          position: 'absolute', zIndex: 1, pointerEvents: 'none', left: x, top: y,
+        }}
+      >
+        <p>{this.getProperty(hoveredObject.properties, type)}</p>
+      </div>
+    );
+  };
+
+  renderChild = () => {
+    const {
+      hover, hoveredObject, selectedObject, hasSelected, type,
+    } = this.state;
+    const { properties } = hover ? hoveredObject : selectedObject;
+
+    return (hover || hasSelected) && (
+      <div className="map__info-panel__wrapper">
+        <h3 className="text-center">{properties.CIRCUITO}</h3>
+        {this.getNameList(properties[type]).map(name => (
+          <p className="text-center">{name}</p>
+        ))}
+      </div>
+    );
   };
 
   render() {
@@ -89,32 +271,22 @@ class DataVisualization extends Component {
 
     return (
       <div className="map__tab__wrapper">
-        <Map>
+        <Map
+          getCursor={this.handleGetCursor}
+          renderTooltip={this.renderTooltip}
+          renderLayers={this.renderLayers}
+        >
+          {this.renderChild()}
           <div className="map__scale__wrapper">
-            <div className="map__scale__strip" />
-            <span className="many">100%</span>
-            <span className="few">0%</span>
+            <div
+              className="map__scale__strip"
+              style={{ background: `linear-gradient(180deg, rgb(${colorRange[0].join(', ')}), white)` }}
+            />
+            <span className="many">Alto</span>
+            <span className="few">Bajo</span>
           </div>
         </Map>
         <div className="map__control-panel__wrapper">
-          <div className="map__control-panel__select__wrapper">
-            <Input
-              name="party"
-              type="select"
-              value={party}
-              onChange={this.handleOnChange}
-            >
-              <option value="ValidVotes">Total</option>
-              <option value="Arnulfista">Arnulfista</option>
-              <option value="Y">Y</option>
-              <option value="Solidaridad">Solidaridad</option>
-              <option value="PRD">PRD</option>
-              <option value="PDC">PDC</option>
-              <option value="PPD">PPD</option>
-              <option value="MPE">MPE</option>
-            </Input>
-            <span>Partido</span>
-          </div>
           <div className="map__control-panel__select__wrapper">
             <Input
               name="year"
@@ -128,6 +300,20 @@ class DataVisualization extends Component {
               <option value="1994">1994</option>
             </Input>
             <span>Año</span>
+          </div>
+          <div className="map__control-panel__select__wrapper">
+            <Input
+              name="party"
+              type="select"
+              value={party}
+              onChange={this.handleOnChange}
+            >
+              {options[parseInt(year, 10)]
+                .map(({ value, label }) => (
+                  <option key={value} value={value}>{label}</option>
+              ))}
+            </Input>
+            <span>Partido</span>
           </div>
         </div>
       </div>
