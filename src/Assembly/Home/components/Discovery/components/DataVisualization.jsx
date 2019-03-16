@@ -67,7 +67,7 @@ class DataVisualization extends Component {
     this.state = {
       locationId: '',
       type: 'CIRCUITO',
-      year: 1994,
+      year: 2014,
       party: 'ValidVotes',
       selectedObject: {
         properties: {},
@@ -253,13 +253,28 @@ class DataVisualization extends Component {
     } = this.state;
     const { properties } = hover ? hoveredObject : selectedObject;
 
-    return (hover || hasSelected) && (
-      <div className="map__info-panel__wrapper">
-        <h3 className="text-center">{properties.CIRCUITO}</h3>
-        {this.getNameList(properties[type]).map(name => (
-          <p className="text-center">{name}</p>
-        ))}
-      </div>
+    // TODO: Use the min and max values to dynamically set the scale.
+
+    return (
+      <>
+        {(hover || hasSelected) && (
+          <div className="map__info-panel__wrapper">
+            <h3 className="text-center">{properties.CIRCUITO}</h3>
+            <p className="text-center mb-4">Votes: {this.getValue('GID', this.getProperty(properties, type))}</p>
+            {this.getNameList(properties[type]).map(name => (
+              <p className="text-center text-black-50">{name}</p>
+            ))}
+          </div>
+        )}
+        <div className="map__scale__wrapper">
+          <div
+            className="map__scale__strip"
+            style={{ background: `linear-gradient(180deg, rgb(${colorRange[0].join(', ')}), white)` }}
+          />
+          <span className="many">Alto</span>
+          <span className="few">Bajo</span>
+        </div>
+      </>
     );
   };
 
@@ -277,14 +292,6 @@ class DataVisualization extends Component {
           renderLayers={this.renderLayers}
         >
           {this.renderChild()}
-          <div className="map__scale__wrapper">
-            <div
-              className="map__scale__strip"
-              style={{ background: `linear-gradient(180deg, rgb(${colorRange[0].join(', ')}), white)` }}
-            />
-            <span className="many">Alto</span>
-            <span className="few">Bajo</span>
-          </div>
         </Map>
         <div className="map__control-panel__wrapper">
           <div className="map__control-panel__select__wrapper">
