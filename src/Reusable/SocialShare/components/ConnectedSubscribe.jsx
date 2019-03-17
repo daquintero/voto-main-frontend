@@ -12,6 +12,7 @@ import Subscribe from './Subscribe';
 const url =
   'https://votoinformado2019.us20.list-manage.com/subscribe/post?u=2bcf604066a7f8a7207e19d86&amp;id=932613c9a8';
 
+// TODO ADD WHATSAPP
 
 // Declaration
 class ConnectedSubscribe extends PureComponent {

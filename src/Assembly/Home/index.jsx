@@ -16,6 +16,7 @@ import ErrorBoundary from '../../shared/components/ErrorBoundary';
 import { getHome } from './redux/actions';
 import Discovery from './components/Discovery';
 
+
 const sep = `${process.env.PUBLIC_URL}/img/star-separator.svg`;
 
 
@@ -25,7 +26,6 @@ class Home extends PureComponent {
     dispatch: PropTypes.func.isRequired,
   };
 
-  // TODO ADD WHATSAPP
   componentDidMount() {
     const { dispatch } = this.props;
     dispatch(getHome());
@@ -34,23 +34,34 @@ class Home extends PureComponent {
   render() {
     return (
       <>
+        {/* Search */}
         <ErrorBoundary>
           <Search />
         </ErrorBoundary>
+
+        {/* Separator */}
         <img src={sep} alt="" className="sep" />
+
+        {/* Video */}
         <Container className="py-5">
           <Video />
         </Container>
+
+        {/* Candidates */}
         <div className="bg-shady-layout py-5">
           <Container>
             <Candidates />
           </Container>
         </div>
+
+        {/* Discovery */}
         <div className="py-5">
           <ErrorBoundary>
             <Discovery />
           </ErrorBoundary>
         </div>
+
+        {/* Info */}
         <div className="bg-shady-layout">
           <Container className="bg-shady-layout py-4">
             <Row noGutters>
