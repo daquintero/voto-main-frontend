@@ -88,6 +88,11 @@ const categoryInfo = {
     icon: 'briefcase',
     link: 'caso-corrupcion',
   },
+  Politician: {
+    icon: 'podium-star',
+    link: 'Diputado',
+    // TODO change this
+  },
 };
 
 export default categoryInfo;

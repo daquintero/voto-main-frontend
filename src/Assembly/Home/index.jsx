@@ -120,6 +120,11 @@ class Home extends PureComponent {
             </Row>
           </Container>
         </div>
+        <div className="py-5">
+          <ErrorBoundary>
+            <Discovery />
+          </ErrorBoundary>
+        </div>
       </>
     );
   }

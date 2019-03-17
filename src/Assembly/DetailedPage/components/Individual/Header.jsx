@@ -2,6 +2,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { CardImg, Card, Col, Row } from 'reactstrap';
+import categoryInfo from '../../../../shared/utils/categoryInfo';
 
 const profile = `${process.env.PUBLIC_URL}/img/user.svg`;
 // TODO Finish image rounded-circle
@@ -100,7 +101,7 @@ class Header extends PureComponent {
               {instance.email && (
                 <Col className="px-0 text-center">
                   {/* TODO FIX email link */}
-                  <a target="_blank" rel="noreferrer noopener" href={instance.email}>
+                  <a target="_blank" rel="noreferrer noopener" href={`mailto:${instance.email}`}>
                     <i
                       className="fa fa-envelope-open fa-2x"
                       style={{ color: '#5ADBFF' }}
@@ -121,6 +122,19 @@ class Header extends PureComponent {
           </Col>
         </Row>
         <Row noGutters className="bg-white">
+          {instance.campaigns && instance.campaigns[0] ? (
+            instance.campaigns.map(campaign => (
+              <Col className="text-center">
+                <h5 className="mb-0 p-1 text-muted">{categoryInfo[campaign.type].link}</h5>
+                {campaign.reelection && (
+                <p className="mb-0">
+                  <i className="fa p-1 fa-podium" />
+                      Busca Reelección
+                </p>
+                  )}
+              </Col>
+            ))
+          ) : null}
           <h6 className="px-4 text-muted py-2 lead">{instance.briefDescription}</h6>
         </Row>
       </Card>
