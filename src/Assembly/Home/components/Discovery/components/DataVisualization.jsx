@@ -7,7 +7,7 @@ import { GeoJsonLayer } from 'deck.gl';
 // Components
 import Map from '../../../../../Reusable/Map';
 
-// Date
+// Data
 import mapData from '../../../data/ELECTORAL_CIRCUITS_V3.json';
 import layerData from '../../../data/data.json';
 
