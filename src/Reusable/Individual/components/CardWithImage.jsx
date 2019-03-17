@@ -13,6 +13,7 @@ import layoutMap from '../styling/layoutMap';
 
 // Shared Function
 import getColDims from '../../../shared/utils/getColDims';
+import categoryInfo from '../../../shared/utils/categoryInfo';
 
 const CardWithImage = ({ instance, light }) => {
   const primaryImage = instance.media.images[0];
@@ -39,15 +40,21 @@ const CardWithImage = ({ instance, light }) => {
                   <p className="text-black-50 my-0 font-italic">{instance.alias}</p>
                 </Col>
               </Row>
-              <Row noGutters className="py-2">
-                <Col>
-                  <h6 className="float-right mb-0">jhlka sdjflka lsd jdfsiog jdsgjs∂</h6>
-                  <p className="mb-0">
-                    <i className="float-left fa p-1 fa-podium" />
-                    Busca Reelección
-                  </p>
-                </Col>
-              </Row>
+              {instance.campaigns && instance.campaigns[0] ? (
+                instance.campaigns.map(campaign => (
+                  <Row noGutters className="py-2">
+                    <Col>
+                      <h6 className="mb-0 p-1">{categoryInfo[campaign.type]}</h6>
+                      {campaign.reelection && (
+                        <p className="mb-0">
+                          <i className="fa p-1 fa-podium" />
+                          Busca Reelección
+                        </p>
+                      )}
+                    </Col>
+                  </Row>
+                ))
+              ) : null}
             </CardBody>
           </Col>
         </Row>

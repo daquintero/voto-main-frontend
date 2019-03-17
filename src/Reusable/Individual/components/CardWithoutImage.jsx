@@ -3,6 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Card, CardBody, Col, Row } from 'reactstrap';
 import { Link } from 'react-router-dom';
+import categoryInfo from '../../../shared/utils/categoryInfo';
 
 const CardWithoutImage = ({ instance, light }) => (
   <Card
@@ -24,15 +25,21 @@ const CardWithoutImage = ({ instance, light }) => (
                 <p className="font-italic my-0">{instance.alias}</p>
               </Col>
             </Row>
-            <Row noGutters className="py-2">
-              <Col>
-                <h6 className="float-right mb-0">jhlka sdjflka lsd jdfsiog jdsgjs∂</h6>
-                <p className="mb-0">
-                  <i className="float-left fa p-1 fa-podium" />
-                  Busca Reelección
-                </p>
-              </Col>
-            </Row>
+            {instance.campaigns && instance.campaigns[0] ? (
+              instance.campaigns.map(campaign => (
+                <Row noGutters className="py-1">
+                  <Col>
+                    <h6 className="mb-0 p-1">{categoryInfo[campaign.type].link}</h6>
+                    {campaign.reelection && (
+                      <p className="mb-0">
+                        <i className="fa p-1 fa-podium" />
+                        Busca Reelección
+                      </p>
+                    )}
+                  </Col>
+                </Row>
+              ))
+            ) : null}
           </CardBody>
         </Col>
       </Row>

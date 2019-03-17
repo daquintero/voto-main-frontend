@@ -7,6 +7,41 @@ import classNames from 'classnames';
 import DiscoverCandidates from './components/DiscoverCandidates';
 import DataVisualization from './components/DataVisualization';
 
+const selectPartyPerYear = {
+  1994: [
+    { ValidVotes: 'Total' },
+    { Arnulfista: 'Mireya  Moscoso - Partido Arnulfista' },
+    { PRD: 'Ernesto Pérez Balladares - PRD' },
+    { Y: 'Ruben Carles - Partido Y' },
+    { MPE: 'Ruben Blades -MPE' },
+    { Solidaridad: 'Samuel Galindo - Solidaridad' },
+    { PDC: 'Eduardo Vallarino- PDC' },
+    { PPD: 'Jose Muñoz - PPD' },
+  ],
+  2004: [
+    { ValidVotes: 'Total' },
+    { Arnulfista: 'Jose Miguel Alemán-Arnulfista' },
+    { PRD: 'Martin Torrijos-PRD' },
+    { Solidaridad: 'Guillermo Endara-Solidaridad' },
+    { CD: 'Ricardo Martinelli - CD' },
+  ],
+  2009: [
+    { ValidVotes: 'Total' },
+    { PRD: 'Balbina Herrera-PRD' },
+    { VMP: 'Guillermo Endara-Vanguardia Moral de la Patria' },
+    { CD: 'Ricardo Martinelli - CD' },
+  ],
+  2014: [
+    { ValidVotes: 'Total' },
+    { PRD: 'Juan Carlos Navarro- PRD' },
+    { Arnulfista: 'Juan Carlos Varela - Panameñismo' },
+    { FAD: 'Genaro López - FAD' },
+    { CD: 'José Domingo Arias- CD' },
+    { Celeste: 'Esteban Rodríguez- Celeste' },
+    { Verde: 'Gerardo Barroso- Verde' },
+    { Chocolate: 'Juan Jované- Chocolate' },
+  ],
+};
 
 class Discover extends Component {
   constructor(props) {
