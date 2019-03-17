@@ -1,68 +1,18 @@
-// Map candidates Discovery
+// Absolute Imports
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { Container, Row, Col, Input } from 'reactstrap';
+import { Container, Row, Col } from 'reactstrap';
 import classNames from 'classnames';
 
 // Components
 import DiscoverCandidates from './components/DiscoverCandidates';
+import DataVisualization from './components/DataVisualization';
 
-import { discoverCandidates } from '../../redux/actions';
-import Map from '../../../../Reusable/Map';
-
-
-// Data
-import layerData from '../../data/data.json';
-import hexData from '../../data/hex.json';
-
-const selectPartyPerYear = {
-  1994: [
-    { ValidVotes: 'Total' },
-    { Arnulfista: 'Mireya  Moscoso - Partido Arnulfista' },
-    { PRD: 'Ernesto Pérez Balladares - PRD' },
-    { Y: 'Ruben Carles - Partido Y' },
-    { MPE: 'Ruben Blades -MPE' },
-    { Solidaridad: 'Samuel Galindo - Solidaridad' },
-    { PDC: 'Eduardo Vallarino- PDC' },
-    { PPD: 'Jose Muñoz - PPD' },
-  ],
-  2004: [
-    { ValidVotes: 'Total' },
-    { Arnulfista: 'Jose Miguel Alemán-Arnulfista' },
-    { PRD: 'Martin Torrijos-PRD' },
-    { Solidaridad: 'Guillermo Endara-Solidaridad' },
-    { CD: 'Ricardo Martinelli - CD' },
-  ],
-  2009: [
-    { ValidVotes: 'Total' },
-    { PRD: 'Balbina Herrera-PRD' },
-    { VMP: 'Guillermo Endara-Vanguardia Moral de la Patria' },
-    { CD: 'Ricardo Martinelli - CD' },
-  ],
-  2014: [
-    { ValidVotes: 'Total' },
-    { PRD: 'Juan Carlos Navarro- PRD' },
-    { Arnulfista: 'Juan Carlos Varela - Panameñismo' },
-    { FAD: 'Genaro López - FAD' },
-    { CD: 'José Domingo Arias- CD' },
-    { Celeste: 'Esteban Rodríguez- Celeste' },
-    { Verde: 'Gerardo Barroso- Verde' },
-    { Chocolate: 'Juan Jované- Chocolate' },
-  ],
-};
 
 class Discover extends Component {
-  static propTypes = {
-    dispatch: PropTypes.func.isRequired,
-  };
-
   constructor(props) {
     super(props);
     this.state = {
       currentTab: '1',
-      party: 'ValidVotes',
-      year: '2014',
     };
   }
 
@@ -80,25 +30,15 @@ class Discover extends Component {
     });
   };
 
-  handleOnClick = (e, type) => {
-    const { dispatch } = this.props;
-    const gid = e.object.properties[type];
-    dispatch(discoverCandidates(gid));
-  };
-
-  handleOnHover = () => {
-    // Pass
-  };
-
   render() {
     // State
     const {
-      currentTab, party, year,
+      currentTab,
     } = this.state;
 
     return (
       <Container>
-        <Row noGutters className="m-4">
+        <Row noGutters className="m-0 m-md-4">
           <Col md={12} className="py-4">
             <div className="map__tab-panel__wrapper">
               <div
@@ -128,49 +68,7 @@ class Discover extends Component {
               <DiscoverCandidates />
             )}
             {currentTab === '2' && (
-              <div className="map__tab__wrapper">
-                <Map
-                  data={hexData}
-                  layerData={layerData}
-                  type="CIRCUITO"
-                  layerFilters={{ party, year }}
-                >
-                  <div className="map__scale__wrapper">
-                    <div className="map__scale__strip" />
-                    <span className="many">100%</span>
-                    <span className="few">0%</span>
-                  </div>
-                </Map>
-                <div className="map__control-panel__wrapper">
-                  <div className="map__control-panel__select__wrapper">
-                    <Input
-                      name="party"
-                      type="select"
-                      onChange={this.handleOnChange}
-                    >
-                      {selectPartyPerYear[year].map(partyObj => (
-                        <option value={Object.keys(partyObj)[0]} key={Object.keys(partyObj)[0]}>
-                          {partyObj[Object.keys(partyObj)[0]]}
-                        </option>
-                      ))}
-                    </Input>
-                    <span>Partido</span>
-                  </div>
-                  <div className="map__control-panel__select__wrapper">
-                    <Input
-                      name="year"
-                      type="select"
-                      onChange={this.handleOnChange}
-                    >
-                      <option value="2014">2014</option>
-                      <option value="2009">2009</option>
-                      <option value="2004">2004</option>
-                      <option value="1994">1994</option>
-                    </Input>
-                    <span>Año</span>
-                  </div>
-                </div>
-              </div>
+              <DataVisualization />
             )}
           </Col>
         </Row>
@@ -179,7 +77,4 @@ class Discover extends Component {
   }
 }
 
-
-const mapStateToProps = () => {};
-
-export default connect(mapStateToProps)(Discover);
+export default Discover;

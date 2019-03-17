@@ -8,37 +8,26 @@ import DeckGL from 'deck.gl';
 // Actions
 import { changeMapViewport } from './redux/actions';
 
+// Functions
+import breakpoints from '../../shared/utils/breakpoints';
+
 
 class Map extends Component {
   static propTypes = {
-    data: PropTypes.instanceOf(Object),
-    layerData: PropTypes.instanceOf(Object),
-    type: PropTypes.string,
-    layerFilters: PropTypes.instanceOf(Object),
-    selector: PropTypes.bool,
-
     // Redux
     map: PropTypes.instanceOf(Object).isRequired,
 
     // Callbacks
-    onClick: PropTypes.func,
-    onHover: PropTypes.func,
-    renderLayers: PropTypes.func,
     getCursor: PropTypes.func,
+    renderLayers: PropTypes.func,
+    renderTooltip: PropTypes.func,
   };
 
   static defaultProps = {
-    data: {},
-    layerData: {},
-    type: '',
-    layerFilters: {},
-    selector: false,
-
     // Callbacks
-    onClick: () => {},
-    onHover: () => {},
-    renderLayers: () => {},
     getCursor: () => {},
+    renderLayers: () => {},
+    renderTooltip: () => {},
   };
 
   constructor(props) {
@@ -62,64 +51,60 @@ class Map extends Component {
   };
 
   handleResizeViewport = (e) => {
+    if (!e) return null;
+    const { innerWidth } = e.srcElement;
     const { dispatch, map } = this.props;
 
-    let height;
-    if (e.srcElement.innerWidth > 796) {
-      height = 350;
-    } else {
-      height = 200;
+    // Map size strategy:
+    // xs -> 500 taller map for phones;
+    // sm -> 350 medium height for small tablets;
+    // md -> 300 medium height for larger tablets;
+    // lg -> 350 medium height for small desktop screens;
+    // xl -> 400 map is now much wider than tall for large screens;
+    let newViewport;
+    if (breakpoints(innerWidth).xs) {
+      newViewport = {
+        ...map.viewport,
+        height: 500,
+      };
+    }
+    if (breakpoints(innerWidth).sm) {
+      newViewport = {
+        ...map.viewport,
+        height: 350,
+      };
+    }
+    if (breakpoints(innerWidth).md) {
+      newViewport = {
+        ...map.viewport,
+        height: 300,
+      };
+    }
+    if (breakpoints(innerWidth).lg) {
+      newViewport = {
+        ...map.viewport,
+        height: 350,
+      };
+    }
+    if (breakpoints(innerWidth).xl) {
+      newViewport = {
+        ...map.viewport,
+        height: 400,
+      };
     }
 
     dispatch(changeMapViewport({
-      ...map.viewport,
+      ...newViewport,
       width: '100%',
-      height,
     }));
-  };
 
-  handleRotateElements = () => {};
-
-  handleGetElevation = (f) => { // eslint-disable-line
-    return this.handleGetScaledValue(f) * 350;
-  };
-
-  handleGetFillColorTransitionDuration = (f) => {
-    const { locationId, hover } = this.state;
-    const { type } = this.props;
-
-    if (f && locationId === f.properties[type] && hover) {
-      return 0;
-    }
-    return 500;
-  };
-
-  handleGetCursor = () => (this.state.hover ? 'pointer' : 'move');
-
-  renderTooltip = () => {
-    const {
-      data, type,
-    } = this.props;
-    const {
-      object, x, y, hover, locationId,
-    } = this.state;
-
-    return (object && hover) && (
-      <div
-        className="map__tooltip__wrapper shadow"
-        style={{
-          position: 'absolute', zIndex: 1, pointerEvents: 'none', left: x, top: y - 80,
-        }}
-      >
-        <p>{data.features.filter(f => f.properties[type] === locationId)[0].properties.CIRCUITO}</p>
-      </div>
-    );
+    return null;
   };
 
   render() {
     // Props
     const {
-      map, children, renderLayers, getCursor,
+      map, children, renderLayers, getCursor, renderTooltip,
     } = this.props;
 
     return (
@@ -135,7 +120,7 @@ class Map extends Component {
             layers={renderLayers()}
             getCursor={getCursor}
           >
-            {this.renderTooltip()}
+            {renderTooltip()}
           </DeckGL>
           {children}
         </ReactMapGL>
@@ -144,6 +129,13 @@ class Map extends Component {
   }
 }
 
-export default connect(state => ({
-  map: state.map,
-}))(Map);
+
+const mapStateToProps = (state) => {
+  const { map } = state;
+
+  return {
+    map,
+  };
+};
+
+export default connect(mapStateToProps)(Map);
