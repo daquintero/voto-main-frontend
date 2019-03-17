@@ -13,7 +13,6 @@ import CardGrid from '../../../../../Reusable/Grid/components/DetailedReduxCardG
 import { discoverCandidates } from '../../../redux/actions';
 
 // Data
-// import mapData from '../../../data/ELECTORAL_CIRCUITS_V3.json';
 import mapData from '../../../data/circuito.json';
 
 
@@ -51,19 +50,6 @@ class DiscoverCandidates extends PureComponent {
       .map(obj => obj.properties.DIST_NOM);
   };
 
-  handleOnClick = ({ object }) => {
-    const { type } = this.state;
-    const { dispatch } = this.props;
-
-    const gid = object.properties[type];
-    dispatch(discoverCandidates(gid));
-    this.setState({
-      locationId: gid,
-      selectedObject: object,
-      hasSelected: true,
-    });
-  };
-
   handleOnHover = ({
     object, x, y, lngLat,
   }) => {
@@ -81,6 +67,19 @@ class DiscoverCandidates extends PureComponent {
         hover: false,
       });
     }
+  };
+
+  handleOnClick = ({ object }) => {
+    const { type } = this.state;
+    const { dispatch } = this.props;
+
+    const gid = object.properties[type];
+    dispatch(discoverCandidates(gid));
+    this.setState({
+      locationId: gid,
+      selectedObject: object,
+      hasSelected: true,
+    });
   };
 
   handleGetCursor = () => (this.state.hover ? 'pointer' : null);
@@ -101,7 +100,6 @@ class DiscoverCandidates extends PureComponent {
     }
 
     return colorRange[0].map(num => num + (polygonObject.properties.index * 2));
-    // return colorRange[polygonObject.properties.random];
   };
 
   renderLayers = () => {
@@ -129,7 +127,6 @@ class DiscoverCandidates extends PureComponent {
         lightSettings,
         colorRange,
         opacity: 2,
-        // filled: true,
         wireframe: true,
         stroked: true,
         extruded: true,
