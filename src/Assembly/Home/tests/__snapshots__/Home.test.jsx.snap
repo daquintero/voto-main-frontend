@@ -430,7 +430,11 @@ Array [
       className="container"
     >
       <div
+<<<<<<< HEAD
         className="m-0 m-md-4 no-gutters row"
+=======
+        className="m-4 no-gutters row"
+>>>>>>> 6d3cacaa3a0448929c872f38721c054a8716f573
       >
         <div
           className="py-4 col-md-12"
