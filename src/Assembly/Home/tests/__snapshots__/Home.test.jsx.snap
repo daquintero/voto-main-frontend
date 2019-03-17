@@ -1,0 +1,531 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Home />  renders correctly without crashing 1`] = `
+Array [
+  <div
+    className="home__search__wrapper"
+  >
+    <div
+      className="home__search__form__wrapper justify-content-center bg-shady-layout no-gutters row"
+    >
+      <i
+        className="fal fa-vote-yea home__search__background-icon one"
+      />
+      <i
+        className="fal fa-vote-nay home__search__background-icon two"
+      />
+      <h4>
+        ¡Infórmate e Investiga!
+      </h4>
+      <div
+        className="align-content-center justify-content-center px-4 mt-3 mx-auto col-md-12"
+      >
+        <form
+          className="home__search__form"
+          onSubmit={[Function]}
+        >
+          <input
+            name="query"
+            onKeyUp={[Function]}
+            placeholder="ej. Asamblea 080"
+            type="text"
+          />
+          <i
+            className="fal fa-search"
+          />
+        </form>
+        <div
+          className="mt-2 text-danger text-center"
+        >
+          <p />
+        </div>
+        <div
+          className="mt-2 text-center"
+        >
+          <p>
+            Descubre todas las controversias, promesas y perfiles políticos que hemos recopilado.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      className="home__search__results__wrapper"
+    >
+      <div
+        className="container"
+      />
+    </div>
+  </div>,
+  <img
+    alt=""
+    className="sep"
+    src="/img/star-separator.svg"
+  />,
+  <div
+    className="py-5 container"
+  >
+    <div
+      className="featured-video"
+    >
+      <div
+        className="video"
+      >
+        <iframe
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen={true}
+          frameBorder="0"
+          src="https://www.youtube.com/embed/1cJ2yb3RJw8"
+          title="Bienvenido a Voto Informado"
+        />
+      </div>
+    </div>
+  </div>,
+  <div
+    className="bg-shady-layout py-5"
+  >
+    <div
+      className="container"
+    >
+      <div>
+        <h4
+          className="p-2 m-0"
+        >
+          <i
+            className="fal fa-podium-star p-2"
+          />
+          Candidatos Presidenciales
+        </h4>
+        <div>
+          <h4
+            className="p-2 rel text-center"
+          />
+          <div
+            className="mx-auto justify-content-center align-items-center presidential-grid"
+          >
+            <div
+              className="justify-content-center align-content-center span-all border-0 rounded-0 four-o-four__card no-gutters row"
+            >
+              <div
+                className="col-sm-12"
+              >
+                <div
+                  className="border-0 bg-layout card"
+                  onClick={[Function]}
+                >
+                  <p
+                    className="m-1 px-2 small text-center"
+                  >
+                    Ahora mismo no hay 
+                    información relacionada
+                     
+                    a esto todavía
+                    .
+                  </p>
+                  <p
+                    className="lead text-center mt-1 mx-1"
+                  >
+                    ¿Quieres contribuir a la información del sitio?
+                    <i
+                      className="fal fa-caret-down text-primary px-2"
+                    />
+                  </p>
+                  <div
+                    className="bg-light p-2 d-none card-body"
+                  >
+                    <a
+                      className="sl"
+                      href="https://studio.votoinformado2019.com"
+                      rel="noreferrer noopener"
+                      target="_blank"
+                    >
+                      <p
+                        className="m-0 p-1 text-center"
+                      >
+                        <i
+                          className="fal fa-search px-2"
+                        />
+                         Investiga y anota fuentes fiables que encuentres.
+                      </p>
+                      <p
+                        className="m-0 p-1 text-center"
+                      >
+                        <i
+                          className="fal fa-sign-in-alt px-2"
+                        />
+                         ¡Entra a VotoStudio haciendo click aquí y contribuye!
+                      </p>
+                      <p
+                        className="m-0 p-1 text-center"
+                      >
+                        <i
+                          className="fal fa-check-square px-2"
+                        />
+                         Y lo verifícaremos contra los fake news.
+                      </p>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>,
+  <div
+    className="bg-shady-layout"
+  >
+    <div
+      className="bg-shady-layout py-4 container"
+    >
+      <div
+        className="no-gutters row"
+      >
+        <div
+          className="text-center p-2 mt-1 col-md-6"
+        >
+          <div
+            className="pt-2 pb-2 justify-content-center no-gutters row"
+          >
+            <div
+              className="pb-2 text-center m-md-0 col-12"
+              noGutters={true}
+            >
+              <h4
+                className="pb-2 m-0 notice"
+              >
+                Compromėtete a un  
+                <span
+                  className="sl"
+                >
+                  #VotoInformado2019
+                </span>
+              </h4>
+            </div>
+            <div
+              className="pb-0 col-md-12 col-xl-12"
+            >
+              <div
+                className="bg-shady-layout"
+              >
+                <div
+                  className="pb-3 no-gutters row"
+                >
+                  <div
+                    className="px-4 col-md-12"
+                  >
+                    <div
+                      className="no-gutters row"
+                    >
+                      <div
+                        className="col-12"
+                      >
+                        <form
+                          className="home__subscribe__form"
+                        >
+                          <div
+                            className="mb-3"
+                          >
+                            <div
+                              className="input-group"
+                            >
+                              <input
+                                className="form-control"
+                                name="nombre"
+                                onChange={[Function]}
+                                placeholder="Nombre"
+                                type="text"
+                                value=""
+                              />
+                            </div>
+                            <div
+                              className="text-danger text-center"
+                            />
+                          </div>
+                          <div
+                            className=" mb-3"
+                          >
+                            <div
+                              className="input-group"
+                            >
+                              <div
+                                className="input-group flex-nowrap"
+                              >
+                                <input
+                                  className="form-control"
+                                  onChange={[Function]}
+                                  placeholder="Email"
+                                  type="email"
+                                  value=""
+                                />
+                              </div>
+                            </div>
+                            <div
+                              className="text-danger text-center"
+                            />
+                          </div>
+                          <div
+                            className="input-group"
+                          >
+                            <select
+                              className="custom-select"
+                              onChange={[Function]}
+                              value=""
+                            >
+                              <option
+                                value="Provincia"
+                              >
+                                Provincia
+                              </option>
+                              <option
+                                value="Panamá"
+                              >
+                                Panamá
+                              </option>
+                              <option
+                                value="Bocas Del Toro"
+                              >
+                                Bocas Del Toro
+                              </option>
+                              <option
+                                value="Chiriquí"
+                              >
+                                Chiriquí
+                              </option>
+                              <option
+                                value="Colón"
+                              >
+                                Colón
+                              </option>
+                              <option
+                                value="Coclé"
+                              >
+                                Coclé
+                              </option>
+                              <option
+                                value="Darién"
+                              >
+                                Darién
+                              </option>
+                              <option
+                                value="Herrera"
+                              >
+                                Herrera
+                              </option>
+                              <option
+                                value="Los Santos"
+                              >
+                                Los Santos
+                              </option>
+                              <option
+                                value="Panamá Oeste"
+                              >
+                                Panamá Oeste
+                              </option>
+                              <option
+                                value="Veraguas"
+                              >
+                                Veraguas
+                              </option>
+                              <option
+                                value="Comarcas"
+                              >
+                                Comarcas
+                              </option>
+                            </select>
+                          </div>
+                          <button
+                            aria-label={null}
+                            className="btn btn-secondary"
+                            onClick={[Function]}
+                            type="button"
+                          >
+                            <i
+                              className="fal px-2 fa-envelope"
+                            />
+                            Me comprometo a votar informado
+                          </button>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <hr
+              className="w-75 pt-0 pb-2"
+              style={
+                Object {
+                  "borderColor": "rgba(black, 0.5)",
+                }
+              }
+            />
+            <div
+              className="align-content-center text-center w-100  justify-content-center"
+            >
+              <h5>
+                <a
+                  className="my-auto align-content-center"
+                  href="http://verificate.pa/"
+                  rel="noreferrer noopener"
+                  target="_blank"
+                >
+                  <i
+                    className="fal fa-vote-yea p-2 inv-spin"
+                  />
+                  ¡Encuentra tu centro de votación!
+                </a>
+              </h5>
+              <h5>
+                <a
+                  className="my-auto"
+                  href="https://www.holapraxis.com/voluntarios"
+                  rel="noreferrer noopener"
+                  target="_blank"
+                >
+                  <i
+                    className="fal fa-bolt p-2 spin-clock"
+                  />
+                  ¿Quiéres ser voluntario?
+                </a>
+              </h5>
+            </div>
+          </div>
+        </div>
+        <div
+          className="text-center p-2 col-md-6"
+        >
+          <h4
+            className="m-0 p-2"
+          >
+            <a
+              className="p-2"
+              href="https://s3.amazonaws.com/votoinformado2019/Manual_Voto_Informado_2019.pdf"
+              rel="noreferrer noopener"
+              target="_blank"
+            >
+              ¡Descarga el Manual de Cívica Electoral Gratis!
+            </a>
+          </h4>
+          <div
+            className="customViewer"
+            style={
+              Object {
+                "textAlign": "center",
+              }
+            }
+          >
+            <div>
+              Loading PDF...
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>,
+  <div
+    className="py-5"
+  >
+    <div
+      className="container"
+    >
+      <div
+        className="m-0 m-md-4 no-gutters row"
+      >
+        <div
+          className="py-4 col-md-12"
+        >
+          <div
+            className="map__tab-panel__wrapper"
+          >
+            <div
+              className="map__tab-panel__item active"
+              data-tab="1"
+              onClick={[Function]}
+              role="presentation"
+            >
+              <h5
+                className="py-2 m-0 text-center"
+              >
+                <i
+                  className="fal fa-podium"
+                />
+                 
+                Descúbre tus Candidatos
+              </h5>
+            </div>
+            <div
+              className="map__tab-panel__item"
+              data-tab="2"
+              onClick={[Function]}
+              role="presentation"
+            >
+              <h5
+                className="py-2 m-0 text-center"
+              >
+                <i
+                  className="fal fa-vote-yea"
+                />
+                 
+                Votos Históricos - Presidente
+              </h5>
+            </div>
+          </div>
+          <div
+            className="map__tab__wrapper"
+          >
+            <div
+              style={
+                Object {
+                  "cursor": "grab",
+                  "height": 0,
+                  "position": "relative",
+                  "width": 0,
+                }
+              }
+            >
+              <div
+                style={
+                  Object {
+                    "height": "100%",
+                    "position": "relative",
+                    "width": "100%",
+                  }
+                }
+              >
+                <div
+                  className=""
+                  style={
+                    Object {
+                      "height": "100%",
+                      "overflow": "hidden",
+                      "position": "absolute",
+                      "visibility": "inherit",
+                      "width": "100%",
+                    }
+                  }
+                />
+                <div
+                  style={
+                    Object {
+                      "height": 0,
+                      "overflow": "visible",
+                      "width": 0,
+                    }
+                  }
+                />
+              </div>
+            </div>
+            <h5
+              className="text-black-50 mt-3"
+            >
+              Haz click en los circuitos del mapa para ver sus politicos.
+            </h5>
+            <hr />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>,
+]
+`;
