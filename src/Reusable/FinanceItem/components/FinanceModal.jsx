@@ -25,7 +25,7 @@ class FinanceModal extends PureComponent {
         className="modal-dialog--success"
       >
         <h5>Información Financiera Detallada</h5>
-        <Table field={instances} />
+        <Table instances={instances} />
       </Modal>
     );
   }
