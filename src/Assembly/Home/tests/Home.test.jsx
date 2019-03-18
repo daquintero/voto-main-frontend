@@ -14,7 +14,7 @@ describe('<Home />', () => {
         <Provider store={initialState}>
           <Home />
         </Provider>
-        </>)
+      </>)
       .toJSON();
     expect(tree)
       .toMatchSnapshot();

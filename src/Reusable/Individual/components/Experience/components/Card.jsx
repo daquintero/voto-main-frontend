@@ -32,7 +32,7 @@ class ExpCard extends Component {
         className={`border-0 rounded-0 small-enlarge w-100 ${light ? 'bg-layout' : 'bg-shady-layout'}`}
         onClick={this.openMore}
       >
-        <CardHeader className={`pt-1 pb-1 ${light ? 'bg-layout' : 'bg-shady-layout'}`}>
+        <CardHeader className={`pt-1 pb-1 border-0 ${light ? 'bg-layout' : 'bg-shady-layout'}`}>
           <h6 className=" p-1 mb-0">{instance.title}</h6>
           <p className="small m-0 p-1">
             <i className={`fa p-1 fa-${categoryInfo[instance.type].icon || 'building'}`} />
