@@ -45,14 +45,6 @@ class RightSide extends PureComponent {
             url={`https://www.votoinformado2019.com${url}`}
           />
         </Row>
-        <Row noGutters className="px-2 py-4 justify-content-center right-side__row">
-          <MainFinancesNav
-            corruptionRelatedFunds={instance.corruptionRelatedFunds}
-            nonCorruptionRelatedFunds={instance.nonCorruptionRelatedFunds}
-            parent={instance.modelLabel}
-            light={light}
-          />
-        </Row>
         {instance.statistics && instance.statistics[0] ? (
           <Row noGutters className="px-2 py-4 justify-content-center right-side__row">
             <Statistics
@@ -62,8 +54,9 @@ class RightSide extends PureComponent {
           </Row>
         ) : null}
         <Row noGutters className="px-2 py-4 justify-content-center right-side__row">
-          <LawList
-            instances={laws}
+          <MainFinancesNav
+            corruptionRelatedFunds={instance.corruptionRelatedFunds}
+            nonCorruptionRelatedFunds={instance.nonCorruptionRelatedFunds}
             parent={instance.modelLabel}
             light={light}
           />
@@ -74,6 +67,13 @@ class RightSide extends PureComponent {
             gridClass="variable-grid"
             instances={resources}
             subsetNumber={0}
+            light={light}
+          />
+        </Row>
+        <Row noGutters className="px-2 py-4 justify-content-center right-side__row">
+          <LawList
+            instances={laws}
+            parent={instance.modelLabel}
             light={light}
           />
         </Row>
