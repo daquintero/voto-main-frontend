@@ -7,6 +7,7 @@ import { reduxForm } from 'redux-form';
 
 // Actions
 import { homeSearch } from '../redux/actions';
+import { HOME_SEARCH, INCREMENT_HOME_SEARCH_PAGE } from '../redux/actionCreators';
 
 // Components
 import Generic from '../../../Reusable/Grid/components/DetailedReduxCardGrid';
@@ -17,11 +18,7 @@ class Search extends Component {
     // Redux
     instances: PropTypes.arrayOf(Object).isRequired,
     dispatch: PropTypes.func.isRequired,
-    search: PropTypes.instanceOf(Object),
-  };
-
-  static defaultProps = {
-    search: '',
+    currentPage: PropTypes.number.isRequired,
   };
 
   constructor(props) {
@@ -36,27 +33,35 @@ class Search extends Component {
     ? { message: 'Por favor solo caracteres alfanuméricos', valid: false }
     : { message: null, valid: true });
 
-  handleSearch = (query) => {
+  handleSearch = (query, page) => {
     const { dispatch } = this.props;
 
     if (query.length && this.validateQuery(query).valid) {
-      dispatch(homeSearch({
+      return dispatch(homeSearch({
         search: query,
+        page,
       }));
     }
+
+    return null;
   };
 
   handleOnKeyUp = ({ target: { name, value } }) => {
     const { timeout } = this.state;
+    const { dispatch } = this.props;
     if (timeout) {
       clearTimeout(timeout);
     }
 
     this.setState({
       timeout: setTimeout(() => {
-        this.handleSearch(value);
+        this.handleSearch(value, 0);
       }, 500),
       [name]: value,
+    });
+
+    dispatch({
+      type: HOME_SEARCH.INIT,
     });
   };
 
@@ -66,25 +71,18 @@ class Search extends Component {
     e.preventDefault();
   };
 
-  renderField = ({
-    input,
-    label,
-    type,
-    meta: { touched, error, warning },
-  }) => (
-    <div>
-      <input
-        {...input}
-        placeholder={label}
-        type={type}
-        className="mx-auto form-control"
-        style={{ 'max-width': '500px' }}
-      />
-      {touched &&
-      ((error && <div className="text-danger text-center">{error}</div>) ||
-        (warning && <span>{warning}</span>))}
-    </div>
-  );
+  handleGetMore = () => {
+    const { query } = this.state;
+    const { currentPage, dispatch } = this.props;
+    this.handleSearch(query, currentPage)
+      .then((action) => {
+        if (action.type === HOME_SEARCH.SUCCESS) {
+          dispatch({
+            type: INCREMENT_HOME_SEARCH_PAGE,
+          });
+        }
+      });
+  };
 
   render() {
     // State
@@ -134,6 +132,7 @@ class Search extends Component {
                   gridClass="variable-new-grid"
                   relatedModelLabel="noneType"
                   typeContext="public"
+                  getMore={this.handleGetMore}
                 />
               </Col>
             )}
@@ -146,11 +145,12 @@ class Search extends Component {
 
 
 const mapStateToProps = (state) => {
-  const { instances } = state.home.search;
+  const { instances, currentPage } = state.home.search;
   const { search } = state.form;
 
   return {
     instances,
+    currentPage,
     search,
   };
 };

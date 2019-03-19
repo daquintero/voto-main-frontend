@@ -3,6 +3,7 @@ import {
   DISCOVER_CANDIDATES,
   SUBSCRIBED_STATS,
   HOME_SEARCH,
+  INCREMENT_HOME_SEARCH_PAGE,
 } from './actionCreators';
 import { initializeActions, actionResult } from '../../../shared/utils/asyncHelpers';
 
@@ -11,6 +12,7 @@ const initialState = {
   visited: true,
   search: {
     instances: [],
+    currentPage: 0,
   },
   content: {
     informativeSnippets: [],
@@ -66,6 +68,15 @@ export default (state = initialState, action) => {
           ...actionResult('GET_HOME.ERROR'),
         },
       };
+
+    case HOME_SEARCH.INIT:
+      return {
+        ...state,
+        search: {
+          ...state.search,
+          currentPage: 0,
+        },
+      };
     case HOME_SEARCH.REQUEST:
       return {
         ...state,
@@ -74,24 +85,46 @@ export default (state = initialState, action) => {
           ...actionResult('HOME_SEARCH.REQUEST'),
         },
       };
-    case HOME_SEARCH.SUCCESS:
+    case HOME_SEARCH.SUCCESS: {
+      if (state.search.currentPage === 0) {
+        return {
+          ...state,
+          search: {
+            ...state.search,
+            instances: action.response.instances,
+          },
+        };
+      }
       return {
         ...state,
         search: {
           ...state.search,
-          instances: action.response.instances,
+          instances: [
+            ...state.search.instances,
+            ...action.response.instances,
+          ],
         },
         actions: {
           ...state.actions,
           ...actionResult('HOME_SEARCH.SUCCESS'),
         },
       };
+    }
     case HOME_SEARCH.ERROR:
       return {
         ...state,
         actions: {
           ...state.actions,
           ...actionResult('HOME_SEARCH.ERROR'),
+        },
+      };
+
+    case INCREMENT_HOME_SEARCH_PAGE:
+      return {
+        ...state,
+        search: {
+          ...state.search,
+          currentPage: state.search.currentPage + 1,
         },
       };
 
