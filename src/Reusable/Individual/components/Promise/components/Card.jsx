@@ -3,6 +3,7 @@
 import React, { PureComponent } from 'react';
 import { Card, CardHeader, CardBody } from 'reactstrap';
 import PropTypes from 'prop-types';
+import ReactHtmlParser from 'html-react-parser';
 
 // Declaration
 class PromCard extends PureComponent {
@@ -20,7 +21,7 @@ class PromCard extends PureComponent {
               <h5 className="float-right mb-0">{instance.title}</h5>
             </CardHeader>
             <CardBody className="p-2 flex-fill">
-              <p className="p-1 m-0">{instance.longDescription}</p>
+              <p className="p-1 m-0">{ReactHtmlParser(instance.longDescription)}</p>
             </CardBody>
           </Card>
         </a>
