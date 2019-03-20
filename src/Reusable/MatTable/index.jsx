@@ -94,7 +94,7 @@ export default class MatTable extends Component {
     // TODO RENAME CASES TO FINAL SPANISH DESCRIPTORS
     const specialStyling = (descriptor) => {
       switch (descriptor.name) {
-        case 'link':
+        case 'source':
           return (
             <a
               target="_blank"
@@ -111,7 +111,7 @@ export default class MatTable extends Component {
         case 'corruption_related':
           return null;
         default:
-          return (squashString(descriptor.value, 20, '$ 0.0a'));
+          return (squashString(descriptor.value, 30, '$ 0.0a'));
       }
     };
 
