@@ -129,7 +129,6 @@ export default class MatTable extends Component {
                   onRequestSort={this.handleRequestSort}
                 />
                 <TableBody>
-                  {console.log(instances)}
                   { instances
                 .sort(getSorting(order, orderBy))
                 .slice(page * rowsPerPage, (page * rowsPerPage) + rowsPerPage)
