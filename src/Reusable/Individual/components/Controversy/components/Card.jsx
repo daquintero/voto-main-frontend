@@ -22,7 +22,7 @@ class ContCard extends PureComponent {
             {categoryInfo[instance.type] ? (
               <CardHeader className="pt-1 pb-1 ">
                 <i className={`float-left fa p-1 fa-${categoryInfo[instance.type].icon}`} />
-                <h5 className="float-right mb-0">{categoryInfo[instance.type].Spanish}</h5>
+                <p className="small float-right mb-0">{categoryInfo[instance.type].Spanish}</p>
               </CardHeader>
           ) : null}
             <CardBody className="p-2">

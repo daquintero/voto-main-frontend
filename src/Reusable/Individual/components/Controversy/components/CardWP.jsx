@@ -23,8 +23,8 @@ class ContCard extends PureComponent {
           <Card className="border-0 rounded-0">
             {categoryInfo[instance.type] ? (
               <CardHeader className="pt-1 pb-1 ">
-                <i className={`float-left fa p-1 fa-${categoryInfo[instance.type].icon}`} />
-                <h5 className="float-right mb-0">{categoryInfo[instance.type].Spanish}</h5>
+                <i className={`float-left fal text-black-50 p-2 fa-${categoryInfo[instance.type].icon}`} />
+                <p className="float-right small mb-0">{categoryInfo[instance.type].Spanish}</p>
               </CardHeader>
             ) : null}
             <CardBody className="p-2">

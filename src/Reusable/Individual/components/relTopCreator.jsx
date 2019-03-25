@@ -12,14 +12,14 @@ const relTopCreator = instance => (
             {individual.primaryImageUrl ? (
               <img src={individual.primaryImageUrl} alt="" className="p-2 mx-3 small-img" />
               ) : (
-                <i className="fal fa-user p-2 px-4" />
+                <i className="fal fa-user ml-3 py-2" />
               ) }
           </Col>
           <Col xs={10} className="p-2 my-auto">
-            <div className="text-center">
-              <h5 className="m-0">
+            <div>
+              <p className="m-0">
                 {individual.name}
-              </h5>
+              </p>
             </div>
           </Col>
         </Row>

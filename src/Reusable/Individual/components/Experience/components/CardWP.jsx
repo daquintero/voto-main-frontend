@@ -29,8 +29,8 @@ class ExpCard extends Component {
       <Card className=" border-0 rounded-0 small-enlarge" onClick={this.openMore}>
         <CardHeader className="pt-1 pb-1 ">
           <h6 className=" p-1 mb-0">{instance.title}</h6>
-          <p className="small m-0 p-1">
-            <i className={`fa p-1 fa-${categoryInfo[instance.type].icon || 'building'}`} />
+          <p className="small text-black-50 m-0 p-1">
+            <i className={`fal p-1 fa-${categoryInfo[instance.type].icon || 'building'}`} />
             {instance.organization}
           </p>
         </CardHeader>
