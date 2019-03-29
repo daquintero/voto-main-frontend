@@ -24,7 +24,9 @@ class ContCard extends PureComponent {
             </CardBody>
             {categoryInfo[instance.type] ? (
               <CardHeader className="pt-1 pb-1 ">
-                <i className={`float-left fa p-1 fa-${categoryInfo[instance.type].icon}`} />
+                {categoryInfo[instance.type] !== 'None' && (
+                <i className={`float-left fal text-black-50 p-2 fa-${categoryInfo[instance.type].icon}`} />
+                )}
                 <p className="small float-right mb-0">{categoryInfo[instance.type].Spanish}</p>
               </CardHeader>
             ) : null}

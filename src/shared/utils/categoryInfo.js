@@ -1,7 +1,7 @@
 // TODO BE CAREFUL ON CHANGING THIS ON SERVER
 const categoryInfo = {
   None: {
-    icon: 'question-square',
+    icon: '',
     Spanish: 'Controversia',
   },
   Economy: {
