@@ -39,7 +39,7 @@ const Footer = () => (
         >
           <h5> INFÓRMATE ● DEBATE ● VOTA</h5>
           <p className="lead text-center mb-1 mt-1 mx-1">
-            ¿Quieres contribuir?
+            ¿Quieres contribuir a la información del sitio?
           </p>
           <a href="https://studio.votoinformado2019.com" className="sl">
             <p className="m-0 p-1 text-center">
@@ -54,6 +54,7 @@ const Footer = () => (
           </a>
         </Col>
       </Row>
+      <p className="text-center"> Dínos que piensas en votoinformado2019@gmail.com </p>
       <p className="text-center"> © Praxis Comunicaciones S.A. & © Escuela Callejera 2016</p>
       <p className="text-center">Voto Informado 2019</p>
     </Container>

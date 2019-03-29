@@ -36,6 +36,28 @@ const getSorting = (order, orderBy) => (order === 'desc' ?
   :
   (a, b) => getNestedSorting(a, orderBy) - getNestedSorting(b, orderBy));
 
+const tableHeads = [
+  {
+    id: 'title',
+    numeric: false,
+    disablePadding: false,
+    label: 'Título',
+  },
+  {
+    id: 'amount',
+    numeric: true,
+    disablePadding: false,
+    label: 'Fondos',
+  },
+  {
+    id: 'source',
+    numeric: false,
+    disablePadding: false,
+    label: 'Fuente',
+  },
+];
+
+
 // ----------------- CLASS -------------------
 
 export default class MatTable extends Component {
@@ -67,17 +89,12 @@ export default class MatTable extends Component {
       order, orderBy, page, rowsPerPage,
     } = this.state;
     // Props
-    // Contains all data
-    const { field } = this.props;
-    // Headers and Inner request data
-    // const { relatedInstances } = field;
-    // Extraction of data
-    const { instances, tableHeads } = field;
+    const { instances } = this.props;
 
     // TODO RENAME CASES TO FINAL SPANISH DESCRIPTORS
     const specialStyling = (descriptor) => {
-      switch (descriptor.type) {
-        case 'link':
+      switch (descriptor.name) {
+        case 'source':
           return (
             <a
               target="_blank"
@@ -91,8 +108,10 @@ export default class MatTable extends Component {
           return (
             <p className=""> {squashString(descriptor.value, 0, '0.0a')} </p>
           );
+        case 'corruption_related':
+          return null;
         default:
-          return (squashString(descriptor.value, 20, '$ 0.0a'));
+          return (squashString(descriptor.value, 30, '$ 0.0a'));
       }
     };
 

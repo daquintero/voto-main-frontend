@@ -24,12 +24,14 @@ class PromWPCard extends PureComponent {
             {categoryInfo[instance.type] ? (
               <CardHeader className="pt-1 pb-1 ">
                 <i className={`float-left fa p-1 fa-${categoryInfo[instance.type].icon}`} />
-                <h5 className="float-right mb-0">{categoryInfo[instance.type].Spanish}</h5>
+                <p className="float-right small mb-0">{categoryInfo[instance.type].Spanish}</p>
               </CardHeader>
           ) : null}
             <CardBody className="p-2">
               <p className="p-1 m-0 small">{instance.briefDescription}</p>
-              <div className="text-center"><i className="fal fa-user p-2" />{instance.individual}</div>
+              {instance.individuals && (
+                <div className="text-center"><i className="fal fa-user p-2" />{instance.individuals}</div>
+              )}
             </CardBody>
           </Card>
         </a>
