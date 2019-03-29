@@ -23,6 +23,7 @@ class DetailedReduxCardGrid extends PureComponent {
     gridClass: PropTypes.string.isRequired,
     typeContext: PropTypes.string.isRequired,
     light: PropTypes.bool.isRequired,
+    getMoreEnabled: PropTypes.bool.isRequired,
 
     // Callbacks
     getMore: PropTypes.func,
@@ -50,6 +51,7 @@ class DetailedReduxCardGrid extends PureComponent {
       light,
       typeContext,
       getMore,
+      getMoreEnabled,
     } = this.props;
 
     return (
@@ -63,7 +65,7 @@ class DetailedReduxCardGrid extends PureComponent {
           light={light}
           typeContext={typeContext}
         />
-        {(instances && instances.length !== 0 && instances.length % 10 === 0) && (
+        {getMoreEnabled && (
           <Row noGutters className="p-2">
             <Button
               onClick={getMore}

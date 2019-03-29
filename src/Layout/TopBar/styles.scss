@@ -3,7 +3,9 @@ $border: 1px solid rgba($impDark, 0.2);
 body {
   padding-top: 44px;
   @media screen and (max-width: 768px) {
-    body { padding-top: 0; }
+    body {
+      padding-top: 0;
+    }
   }
 }
 
@@ -102,7 +104,7 @@ body {
     @media (max-width: 768px) {
       padding: 2%;
       position: fixed;
-      top: 43px;
+      top: 16px;
       left: 0;
       right: 0;
 

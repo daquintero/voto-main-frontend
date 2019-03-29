@@ -13,6 +13,7 @@ const initialState = {
   search: {
     instances: [],
     currentPage: 0,
+    done: false,
   },
   content: {
     informativeSnippets: [],
@@ -86,12 +87,13 @@ export default (state = initialState, action) => {
         },
       };
     case HOME_SEARCH.SUCCESS: {
-      if (state.search.currentPage === 0) {
+      if (action.currentPage === 0) {
         return {
           ...state,
           search: {
             ...state.search,
             instances: action.response.instances,
+            done: action.response.done,
           },
         };
       }
@@ -103,6 +105,7 @@ export default (state = initialState, action) => {
             ...state.search.instances,
             ...action.response.instances,
           ],
+          done: action.response.done,
         },
         actions: {
           ...state.actions,

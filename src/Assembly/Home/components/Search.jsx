@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Container, Row, Col } from 'reactstrap';
 import { connect } from 'react-redux';
-import { reduxForm } from 'redux-form';
 
 // Actions
 import { homeSearch } from '../redux/actions';
@@ -19,6 +18,7 @@ class Search extends Component {
     instances: PropTypes.arrayOf(Object).isRequired,
     dispatch: PropTypes.func.isRequired,
     currentPage: PropTypes.number.isRequired,
+    done: PropTypes.bool.isRequired,
   };
 
   constructor(props) {
@@ -74,7 +74,8 @@ class Search extends Component {
   handleGetMore = () => {
     const { query } = this.state;
     const { currentPage, dispatch } = this.props;
-    this.handleSearch(query, currentPage)
+
+    this.handleSearch(query, currentPage + 1)
       .then((action) => {
         if (action.type === HOME_SEARCH.SUCCESS) {
           dispatch({
@@ -93,6 +94,7 @@ class Search extends Component {
     // Props
     const {
       instances,
+      done,
     } = this.props;
 
     return (
@@ -133,6 +135,7 @@ class Search extends Component {
                   relatedModelLabel="noneType"
                   typeContext="public"
                   getMore={this.handleGetMore}
+                  getMoreEnabled={!done}
                 />
               </Col>
             )}
@@ -145,17 +148,14 @@ class Search extends Component {
 
 
 const mapStateToProps = (state) => {
-  const { instances, currentPage } = state.home.search;
-  const { search } = state.form;
+  const { instances, currentPage, done } = state.home.search;
 
   return {
     instances,
     currentPage,
-    search,
+    done,
   };
 };
 
-export default connect(mapStateToProps)(reduxForm({
-  form: 'search',
-})(Search));
+export default connect(mapStateToProps)(Search);
 

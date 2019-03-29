@@ -113,9 +113,12 @@ $pointer-height: 10px;
 
   &__tab-panel {
     &__wrapper {
-      display: flex;
       justify-content: space-between;
       margin-bottom: 20px;
+
+      @media (min-width: 768px) {
+        display: flex;
+      }
 
       &:hover {
         cursor: pointer;
@@ -124,8 +127,13 @@ $pointer-height: 10px;
 
     &__item {
       color: rgba(black, 0.5);
-      width: 49%;
       box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+      width: 49%;
+
+      @media (max-width: 768px) {
+        width: 100%;
+        margin-bottom: 10px;
+      }
 
       &:hover {
         box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
