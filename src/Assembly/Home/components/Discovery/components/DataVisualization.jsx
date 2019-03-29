@@ -117,6 +117,10 @@ class DataVisualization extends Component {
     return rawValue / maxValue;
   };
 
+  getHighestValue = () => {
+    this.setState({});
+  };
+
   handleOnChange = ({ target: { name, value } }) => {
     this.setState({
       [name]: value,
@@ -269,10 +273,10 @@ class DataVisualization extends Component {
         <div className="map__scale__wrapper">
           <div
             className="map__scale__strip"
-            style={{ background: `linear-gradient(180deg, rgb(${colorRange[0].join(', ')}), white)` }}
+            style={{ background: 'linear-gradient(180deg, black, white)' }}
           />
-          <span className="many">Alto</span>
-          <span className="few">Bajo</span>
+          <span className="many">Mas</span>
+          <span className="few">Menos</span>
         </div>
       </>
     );
@@ -306,7 +310,7 @@ class DataVisualization extends Component {
               <option value="2004">2004</option>
               <option value="1994">1994</option>
             </Input>
-            <span>Año</span>
+            <span className="text-black-50">Año</span>
           </div>
           <div className="map__control-panel__select__wrapper">
             <Input
@@ -320,7 +324,7 @@ class DataVisualization extends Component {
                   <option key={value} value={value}>{label}</option>
               ))}
             </Input>
-            <span>Partido</span>
+            <span className="text-black-50">Partido</span>
           </div>
         </div>
       </div>
