@@ -127,7 +127,7 @@ class Search extends Component {
         <div className="home__search__results__wrapper">
           <Container>
             {(query.length !== 0 && this.validateQuery(query).valid) && (
-              <Col xs={12} className="justify-content-center mx-auto py-2 mb-2">
+              <Col xs={12} className="justify-content-center mx-auto py-2 mb-0 mb-lg-2">
                 <Generic
                   instances={instances}
                   light
