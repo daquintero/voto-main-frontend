@@ -113,6 +113,8 @@ class Home extends PureComponent {
             </Row>
           </Container>
         </div>
+
+        {/* Discovery */}
         <div className="py-5">
           <ErrorBoundary>
             <Discovery />

@@ -13,7 +13,7 @@ const Footer = () => (
           md
           sm={12}
         >
-          <ul>
+          <ul className="p-0">
             <li><a href="/">Regresa Arriba</a></li>
             <li><a href="/legal">Legal</a></li>
             <li><a href="https://s3.amazonaws.com/votoinformado2019/Manual_Voto_Informado_2019.pdf">Manual</a></li>
