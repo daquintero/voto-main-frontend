@@ -81,6 +81,7 @@ class DetailedReduxCardGrid extends PureComponent {
   }
 }
 
+
 const mapStateToProps = (state) => {
   const { actions } = state.openPage;
 

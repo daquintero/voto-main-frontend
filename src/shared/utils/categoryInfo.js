@@ -2,79 +2,79 @@
 const categoryInfo = {
   None: {
     icon: '',
-    Spanish: 'Controversia',
+    spanish: 'Controversia',
   },
   Economy: {
     icon: 'money-bill-alt',
-    Spanish: 'Economía',
+    spanish: 'Economía',
   },
   Agriculture: {
     icon: 'cow',
-    Spanish: 'Agrícultura',
+    spanish: 'Agrícultura',
   },
   Employment: {
     icon: 'briefcase',
-    Spanish: 'Trabajo',
+    spanish: 'Trabajo',
   },
   Transport: {
     icon: 'bus-alt',
-    Spanish: 'Transporte',
+    spanish: 'Transporte',
   },
   Energy: {
     icon: 'solar-panel',
-    Spanish: 'Energía',
+    spanish: 'Energía',
   },
   'Waste Management': {
     icon: 'trash-alt',
-    Spanish: 'Aseo, Basura y Reciclaje',
+    spanish: 'Aseo, Basura y Reciclaje',
   },
   'Indigenous Relations': {
     icon: '',
-    Spanish: 'Relaciones Indígenas',
+    spanish: 'Relaciones Indígenas',
   },
   'Health Services': {
     icon: 'briefcase-medical',
-    Spanish: 'Salud',
+    spanish: 'Salud',
   },
   Pensions: {
     icon: 'blind',
-    Spanish: 'Pensiones',
+    spanish: 'Pensiones',
   },
   Security: {
     icon: 'lock',
-    Spanish: 'Seguridad',
+    spanish: 'Seguridad',
   },
   'Emergency Services': {
     icon: 'ambulance',
-    Spanish: 'Servicios de Emergencia',
+    spanish: 'Servicios de Emergencia',
   },
   Education: {
     icon: 'graduation-cap',
-    Spanish: 'Educación',
+    spanish: 'Educación',
   },
   Poverty: {
     icon: 'hands-helping',
-    Spanish: 'Pobreza',
+    spanish: 'Pobreza',
   },
   Business: {
     icon: 'user-tie',
-    Spanish: 'Emprendimiento',
+    spanish: 'Emprendimiento',
   },
   Industry: {
     icon: 'industry',
-    Spanish: 'Industria',
+    spanish: 'Industria',
   },
   Entertainment: {
     icon: 'film',
-    Spanish: 'Arte y Cultura',
+    spanish: 'Arte y Cultura',
   },
   Laboral: {
     icon: 'briefcase',
-    Spanish: 'Trabajo',
+    spanish: 'Trabajo',
   },
   Educación: {
     icon: 'graduation-cap',
-    Spanish: 'Educación',
+    spanish: 'Educación',
   },
   individuals: {
     icon: 'user',

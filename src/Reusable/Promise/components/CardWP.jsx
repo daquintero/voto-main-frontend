@@ -2,18 +2,23 @@
 import React, { PureComponent } from 'react';
 import { Card, CardHeader, CardBody } from 'reactstrap';
 import PropTypes from 'prop-types';
-import relTopCreator from '../../relTopCreator';
+import relTopCreator from '../../Individual/components/relTopCreator';
 
 // Category Repository
-import categoryInfo from '../../../../../shared/utils/categoryInfo';
+import categoryInfo from '../../../shared/utils/categoryInfo';
 
 
 // Declaration
 class PromWPCard extends PureComponent {
   static propTypes = {
     instance: PropTypes.instanceOf(Object).isRequired,
-    light: PropTypes.bool.isRequired,
+    light: PropTypes.bool,
   };
+
+  static defaultProps = {
+    light: false,
+  };
+
   render() {
     const { instance, light } = this.props;
     return (
@@ -24,7 +29,7 @@ class PromWPCard extends PureComponent {
             {categoryInfo[instance.type] ? (
               <CardHeader className="pt-1 pb-1 ">
                 <i className={`float-left fa p-1 fa-${categoryInfo[instance.type].icon}`} />
-                <p className="float-right small mb-0">{categoryInfo[instance.type].Spanish}</p>
+                <p className="float-right small mb-0">{categoryInfo[instance.type].spanish}</p>
               </CardHeader>
           ) : null}
             <CardBody className="p-2">
