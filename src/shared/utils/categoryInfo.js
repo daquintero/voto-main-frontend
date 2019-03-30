@@ -1,7 +1,7 @@
 // TODO BE CAREFUL ON CHANGING THIS ON SERVER
 const categoryInfo = {
   None: {
-    icon: 'question-square',
+    icon: '',
     Spanish: 'Controversia',
   },
   Economy: {
@@ -89,10 +89,10 @@ const categoryInfo = {
     link: 'caso-corrupcion',
   },
   Politician: {
-    icon: 'podium-star',
-    link: 'Diputado',
+    t: 'Diputado',
     // TODO change this
   },
+  // TODO ADD MISSING INDIVIDUALS CATEGORIES
 };
 
 export default categoryInfo;

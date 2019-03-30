@@ -21,15 +21,17 @@ class ContCard extends PureComponent {
         {relTopCreator(instance)}
         <a target="_blank" rel="noreferrer noopener" href={instance.source}>
           <Card className="border-0 rounded-0">
-            {categoryInfo[instance.type] ? (
-              <CardHeader className="pt-1 pb-1 ">
-                <i className={`float-left fal text-black-50 p-2 fa-${categoryInfo[instance.type].icon}`} />
-                <p className="float-right small mb-0">{categoryInfo[instance.type].Spanish}</p>
-              </CardHeader>
-            ) : null}
             <CardBody className="p-2">
               <p className="p-1 m-0 small">{instance.briefDescription}</p>
             </CardBody>
+            {categoryInfo[instance.type] ? (
+              <CardHeader className="pt-1 pb-1 ">
+                {categoryInfo[instance.type] !== 'None' && (
+                <i className={`float-left fal text-black-50 p-2 fa-${categoryInfo[instance.type].icon}`} />
+                )}
+                <p className="float-right small mb-0 text-black-50">{categoryInfo[instance.type].Spanish}</p>
+              </CardHeader>
+            ) : null}
           </Card>
         </a>
       </div>

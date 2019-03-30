@@ -42,6 +42,7 @@ export const homeSearch = searchData => (dispatch) => {
       dispatch({
         type: HOME_SEARCH.SUCCESS,
         response: response.data,
+        currentPage: searchData.page,
       }),
     error =>
       dispatch({
