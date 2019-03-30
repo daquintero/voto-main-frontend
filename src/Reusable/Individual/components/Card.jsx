@@ -8,7 +8,6 @@ import 'moment/locale/es';
 
 // Components
 import CardWithImage from './CardWithImage';
-import CardWithoutImage from './CardWithoutImage';
 
 // Configure moment settings
 moment.locale('es');
@@ -23,11 +22,7 @@ class IndividualCard extends PureComponent {
   render() {
     const { instance, light } = this.props;
     return (
-      instance.media && instance.media.images && instance.media.images.length ? (
-        <CardWithImage instance={instance} light={light} />
-      ) : (
-        <CardWithoutImage instance={instance} light={light} />
-      )
+      <CardWithImage instance={instance} light={light} />
     );
   }
 }

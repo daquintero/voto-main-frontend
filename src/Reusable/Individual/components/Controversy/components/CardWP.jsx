@@ -29,7 +29,7 @@ class ContCard extends PureComponent {
                 {categoryInfo[instance.type] !== 'None' && (
                 <i className={`float-left fal text-black-50 p-2 fa-${categoryInfo[instance.type].icon}`} />
                 )}
-                <p className="float-right small mb-0">{categoryInfo[instance.type].Spanish}</p>
+                <p className="float-right small mb-0 text-black-50">{categoryInfo[instance.type].Spanish}</p>
               </CardHeader>
             ) : null}
           </Card>
