@@ -89,10 +89,10 @@ const categoryInfo = {
     link: 'caso-corrupcion',
   },
   Politician: {
-    icon: 'podium-star',
-    link: 'Diputado',
+    t: 'Diputado',
     // TODO change this
   },
+  // TODO ADD MISSING INDIVIDUALS CATEGORIES
 };
 
 export default categoryInfo;

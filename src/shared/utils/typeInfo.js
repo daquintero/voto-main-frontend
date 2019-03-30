@@ -10,9 +10,9 @@ const typeInfo = {
     singular: 'a este caso de corrupcion',
   },
   'corruption.FinancialItem': {
-    title: 'finanzas',
-    name: 'finanzas relacionadas',
-    singular: 'a esta finanza',
+    title: 'donaciones',
+    name: 'donaciones relacionadas',
+    singular: 'a esta donación',
   },
   'political.Individual': {
     title: 'individuos',

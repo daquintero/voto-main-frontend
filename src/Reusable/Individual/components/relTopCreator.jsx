@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Col, Row } from 'reactstrap';
+import { Row } from 'reactstrap';
 
 const profile = `${process.env.PUBLIC_URL}/img/user.svg`;
 
@@ -9,20 +9,21 @@ const relTopCreator = instance => (
     instance.individuals.map(individual => (
       <Link to={`/individuo/${individual.id}`} key={individual.id} className="notice">
         <Row noGutters className="align-content-center my-auto">
-          <Col xs={2} className="p-2 small-img">
-            {individual.primaryImageUrl ? (
-              <img src={individual.primaryImageUrl} alt="" className="mx-3" />
-              ) : (
-                <img className="img-full mx-3" src={profile} alt="" />
-              ) }
-          </Col>
-          <Col xs={10} className="p-2 px-4 my-auto">
+          <div className="d-flex pt-2">
             <div>
-              <p className="m-0">
+              {individual.primaryImageUrl ? (
+                <img src={individual.primaryImageUrl} alt="" className="ml-3 top-img" />
+              ) : (
+                <img className="img-full ml-3 top-img" src={profile} alt="" />
+              )}
+            </div>
+            <hr style={{ borderColor: 'rgba(0, 0, 0, 0.5)' }} />
+            <div>
+              <p className="m-0 small text-black-50 ml-2 mt-1">
                 {individual.name}
               </p>
             </div>
-          </Col>
+          </div>
         </Row>
       </Link>
     )))

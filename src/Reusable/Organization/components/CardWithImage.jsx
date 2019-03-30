@@ -13,6 +13,9 @@ import layoutMap from '../styling/layoutMap';
 
 // Shared Function
 import getColDims from '../../../shared/utils/getColDims';
+import typeBanner from '../../typeBanner';
+
+const building = `${process.env.PUBLIC_URL}/img/building.png`;
 
 const CardWithImage = ({ instance, light }) => {
   const primaryImage = instance.media.images[0];
@@ -26,9 +29,9 @@ const CardWithImage = ({ instance, light }) => {
             {...getColDims(layoutMap, instance.size, 'outer', 'wrapper')}
           >
             <img
-              className="img-full"
-              src={primaryImage.url}
-              alt="Something"
+              className="img-full p-3"
+              src={primaryImage ? primaryImage.url : building}
+              alt=""
             />
           </Col>
           <Col >
@@ -42,6 +45,7 @@ const CardWithImage = ({ instance, light }) => {
             </CardBody>
           </Col>
         </Row>
+        {typeBanner('Organización')}
       </Link>
     </Card>
   );
