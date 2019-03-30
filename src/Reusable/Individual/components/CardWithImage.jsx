@@ -15,6 +15,7 @@ import layoutMap from '../styling/layoutMap';
 import getColDims from '../../../shared/utils/getColDims';
 
 import typeBanner from '../../typeBanner';
+import categoryInfo from '../../../shared/utils/categoryInfo';
 
 const profile = `${process.env.PUBLIC_URL}/img/user.svg`;
 
@@ -47,7 +48,7 @@ const CardWithImage = ({ instance, light }) => {
                 instance.campaigns.map(campaign => (
                   <Row noGutters className="py-2">
                     <Col>
-                      <h6 className="mb-0 p-1">{campaign.type}</h6>
+                      <h6 className="mb-0 p-1">{categoryInfo[campaign.type].t || campaign.type}</h6>
                       {campaign.reelection && (
                         <p className="mb-0">
                           <i className="fa p-1 fa-podium" />
