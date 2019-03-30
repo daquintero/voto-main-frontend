@@ -234,23 +234,6 @@ class DataVisualization extends Component {
     ];
   };
 
-  renderTooltip = () => {
-    const {
-      hoveredObject, x, y, hover, type,
-    } = this.state;
-
-    return (hoveredObject && hover) && (
-      <div
-        className="shadow"
-        style={{
-          position: 'absolute', zIndex: 1, pointerEvents: 'none', left: x, top: y,
-        }}
-      >
-        <p>{this.getProperty(hoveredObject.properties, type)}</p>
-      </div>
-    );
-  };
-
   renderChild = () => {
     const {
       hover, hoveredObject, selectedObject, hasSelected, type,
@@ -292,7 +275,6 @@ class DataVisualization extends Component {
       <div className="map__tab__wrapper">
         <Map
           getCursor={this.handleGetCursor}
-          renderTooltip={this.renderTooltip}
           renderLayers={this.renderLayers}
         >
           {this.renderChild()}

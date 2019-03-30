@@ -2,19 +2,24 @@
 import React, { PureComponent } from 'react';
 import { Card, CardHeader, CardBody } from 'reactstrap';
 import PropTypes from 'prop-types';
-import relTopCreator from '../../relTopCreator';
+import relTopCreator from '../../Individual/components/relTopCreator';
 
 // Category Repository
-import categoryInfo from '../../../../../shared/utils/categoryInfo';
-import typeBanner from '../../../../typeBanner';
+import categoryInfo from '../../../shared/utils/categoryInfo';
+import typeBanner from '../../typeBanner';
 
 
 // Declaration
 class PromWPCard extends PureComponent {
   static propTypes = {
     instance: PropTypes.instanceOf(Object).isRequired,
-    light: PropTypes.bool.isRequired,
+    light: PropTypes.bool,
   };
+
+  static defaultProps = {
+    light: false,
+  };
+
   render() {
     const { instance, light } = this.props;
     return (

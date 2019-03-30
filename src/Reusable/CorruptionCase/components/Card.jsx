@@ -18,7 +18,11 @@ moment.locale('es');
 class CorruptionCaseCard extends PureComponent {
   static propTypes = {
     instance: PropTypes.instanceOf(Object).isRequired,
-    light: PropTypes.bool.isRequired,
+    light: PropTypes.bool,
+  };
+
+  static defaultProps = {
+    light: false,
   };
 
   render() {
