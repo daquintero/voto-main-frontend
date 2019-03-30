@@ -44,7 +44,7 @@ class MainFinancesNav extends PureComponent {
     const { showModal } = this.state;
     return (
       <div className="justify-content-center">
-        <h4 className="text-center mt-2">Finanzas</h4>
+        <h4 className="text-center mt-2">Donaciones</h4>
         {corruptionRelatedFunds || nonCorruptionRelatedFunds || instances[0] ? (
           <>
             <NavItem
