@@ -13,6 +13,9 @@ import relTopCreator from '../../Individual/components/relTopCreator';
 import squashString from '../../../shared/utils/squashString';
 import wrapper from '../../../shared/utils/wrapper';
 
+// Actions
+import { INSTANCE_DETAIL, TOGGLE_INSTANCE_DETAIL_MODAL } from '../../redux/actionCreators';
+
 
 class CardWithParent extends PureComponent {
   static propTypes = {
@@ -24,8 +27,14 @@ class CardWithParent extends PureComponent {
   };
 
   handleOnClick = () => {
-    const { dispatch } = this.props;
-    dispatch({});
+    const { dispatch, instance } = this.props;
+    dispatch({
+      type: INSTANCE_DETAIL,
+      instance,
+    });
+    dispatch({
+      type: TOGGLE_INSTANCE_DETAIL_MODAL,
+    });
   };
 
   render() {

@@ -1,5 +1,5 @@
 // Absolute Imports
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 // import { connect } from 'react-redux';
 import {
@@ -9,18 +9,13 @@ import {
 } from 'reactstrap';
 
 
-class LocationPickerModal extends Component {
+class LocationPickerModal extends PureComponent {
   static propTypes = {
     isOpen: PropTypes.bool.isRequired,
 
     // Callbacks
     toggle: PropTypes.func.isRequired,
   };
-
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
 
   render() {
     // Props
@@ -33,7 +28,6 @@ class LocationPickerModal extends Component {
         isOpen={isOpen}
         toggle={toggle}
         size="lg"
-        onOpened={this.handleOnOpened}
       >
         <div className="modal__header">
           <button className="lnr lnr-cross modal__close-btn" onClick={toggle} />

@@ -1,6 +1,6 @@
 // Grid of Variable Positions
 // Libraries
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
@@ -14,49 +14,50 @@ import NotFoundCard from '../../../shared/components/404/Card';
 // Functions
 import wrapper from '../../../shared/utils/wrapper';
 
+// Actions
+import { TOGGLE_INSTANCE_DETAIL_MODAL } from '../../redux/actionCreators';
+
 
 // Declaration
-class Generic extends Component {
+class Generic extends PureComponent {
   static propTypes = {
     instances: PropTypes.instanceOf(Object),
     gridClass: PropTypes.string.isRequired,
     relatedModelLabel: PropTypes.string.isRequired,
-    parentModelLabel: PropTypes.string.isRequired,
     light: PropTypes.bool.isRequired,
     typeContext: PropTypes.string.isRequired,
+
+    // Redux
+    dispatch: PropTypes.func.isRequired,
+    parentModelLabel: PropTypes.string.isRequired,
+    openInstance: PropTypes.instanceOf(Object).isRequired,
+    instanceModalOpen: PropTypes.bool.isRequired,
   };
 
   static defaultProps = {
     instances: [],
   };
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      detailModalOpen: false,
-    };
-  }
-
   handleToggleDetailModal = () => {
-    this.setState(prevState => ({
-      detailModalOpen: !prevState.detailModalOpen,
-    }));
+    const { dispatch } = this.props;
+    dispatch({
+      type: TOGGLE_INSTANCE_DETAIL_MODAL,
+    });
   };
 
   render() {
-    // State
-    const {
-      detailModelOpen,
-    } = this.state;
-
     // Props
     const {
       instances,
       gridClass,
       relatedModelLabel,
-      parentModelLabel,
       light,
       typeContext,
+
+      // Redux
+      parentModelLabel,
+      openInstance,
+      instanceModalOpen,
     } = this.props;
 
     return (
@@ -77,7 +78,8 @@ class Generic extends Component {
 
           {/* Detail Modal */}
           <DetailModal
-            isOpen={detailModelOpen}
+            isOpen={instanceModalOpen}
+            instance={openInstance}
 
             // Callbacks
             toggle={this.handleToggleDetailModal}
