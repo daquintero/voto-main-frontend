@@ -5,7 +5,7 @@ import { Row, Col } from 'reactstrap';
 import { connect } from 'react-redux';
 
 // Components
-import GenericWrapper from '../../../Reusable/Grid/components/GenericWrapper';
+import GenericGridWrapper from '../../../Reusable/Grid/components/GenericWrapper';
 
 class Relationships extends PureComponent {
   static propTypes = {
@@ -21,7 +21,7 @@ class Relationships extends PureComponent {
     return (
       <Row className="overflow-hidden">
         <Col xs={12} className="p-1 bg-layout">
-          <GenericWrapper
+          <GenericGridWrapper
             relatedModelLabel="political.Organization"
             gridClass="relationships-grid"
             instances={organizations.instances}
@@ -29,7 +29,7 @@ class Relationships extends PureComponent {
           />
         </Col>
         <Col xs={12} className="mt-2 p-1 bg-layout">
-          <GenericWrapper
+          <GenericGridWrapper
             relatedModelLabel="political.Individual"
             gridClass="relationships-grid"
             instances={individuals.instances}
@@ -37,7 +37,7 @@ class Relationships extends PureComponent {
           />
         </Col>
         <Col xs={12} className="p-1 bg-layout">
-          <GenericWrapper
+          <GenericGridWrapper
             relatedModelLabel="corruption.InformativeSnippet"
             gridClass="relationships-grid"
             instances={informativeSnippets.instances}

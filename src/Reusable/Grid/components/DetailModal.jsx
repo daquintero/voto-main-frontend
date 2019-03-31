@@ -43,7 +43,7 @@ class DetailModal extends PureComponent {
           {instance.briefDescription}
         </div>
         <ButtonToolbar className="modal__footer">
-          <Button onClick={toggle}>Ropa</Button>
+          <Button onClick={toggle}>Cerrar</Button>
         </ButtonToolbar>
       </Modal>
     );
