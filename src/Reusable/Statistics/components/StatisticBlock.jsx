@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 // Block Statistic
 
 // Libraries
@@ -22,7 +23,9 @@ class StatisticBlock extends PureComponent {
             >
               <h5 className="m-1 font-weight-bold">
                 <i className={`p-2 fal fa-${instance.icon}`} />
-                {typeof instance.value === 'number' ? numeral(instance.value).format('0,0') : instance.value}
+                {typeof instance.value === 'number' ? (
+                    instance.name === 'Asistencia' ? (numeral(instance.value * 100).format('0,0')) :
+                      (numeral(instance.value).format('0,0'))) : instance.value}
               </h5>
               <p className="mb-1 mt-0 p-1 small">{instance.name}</p>
             </Card>
@@ -33,7 +36,7 @@ class StatisticBlock extends PureComponent {
           >
             <h5 className="m-1 font-weight-bold">
               <i className={`p-2 fal fa-${instance.icon}`} />
-              {typeof instance.value === 'number' ? numeral(instance.value).format('0,0') : instance.value}
+              {instance.name === 'Asistencia' ? (numeral(instance.value * 100).format('0.0')) : instance.value}
             </h5>
             <p className="mb-1 mt-0 p-1 small">{instance.name}</p>
           </Card>

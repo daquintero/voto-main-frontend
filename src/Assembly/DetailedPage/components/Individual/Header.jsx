@@ -42,6 +42,11 @@ class Header extends PureComponent {
             <h4 className="pt-3 px-3 pb-1 text-left m-0">{instance.name}</h4>
             <p className="lead m-0 pb-3 px-3 text-left">{instance.alias}</p>
             <Row noGutters className="p-2 pb-4 justify-content-center align-items-baseline">
+              {this.hasSocials(instance) && (
+              <Col xs={12} className="m-0 ml-3">
+                   Redes Sociales
+              </Col>
+              )}
               {instance.facebookUsername && (
                 <Col className="px-0 text-center">
                   <a

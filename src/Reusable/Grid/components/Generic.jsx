@@ -2,6 +2,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { Row } from 'reactstrap';
 
 // Components
 import NotFoundCard from '../../../shared/components/404/Card';
@@ -63,12 +64,12 @@ class Generic extends PureComponent {
     return (
       instances !== null && instances.length > 0 ? (
         <>
-          <div className={`${gridClass} justify-content-center`}>
+          <div className={`${gridClass} justify-content-center w-100`}>
             {instances.map((instance) => {
               if (instance.modelLabel) {
                 return cardSelector({
                   instance,
-                  typeContext: typeContext || 'relation',
+                  typeContext: typeContext || '',
                   light,
                   location,
 
@@ -83,7 +84,7 @@ class Generic extends PureComponent {
                   ...instance,
                   modelLabel: relatedModelLabel,
                 },
-                typeContext: typeContext || 'relation',
+                typeContext: typeContext || '',
                 light,
                 location,
 
@@ -94,15 +95,17 @@ class Generic extends PureComponent {
           </div>
         </>
       ) : (
-        <div
-          className={`mx-auto justify-content-center align-items-center ${gridClass}`}
-        >
-          <NotFoundCard
-            type={relatedModelLabel}
-            parent={parentModelLabel || 'noneParent'}
-            light={light}
-          />
-        </div>
+        <Row noGutters>
+          <div
+            className={`mx-auto justify-content-center align-items-center ${gridClass}`}
+          >
+            <NotFoundCard
+              type={relatedModelLabel}
+              parent={parentModelLabel || 'noneParent'}
+              light={light}
+            />
+          </div>
+        </Row>
       )
     );
   }

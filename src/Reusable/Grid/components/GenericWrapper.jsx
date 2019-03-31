@@ -60,7 +60,9 @@ class GenericWrapper extends PureComponent {
 
     return (
       <>
-        <h4 className="p-2 rel text-center">{typeInfo[relatedModelLabel].title}</h4>
+        <Row noGutters className="w-100 pl-4 justify-content-center">
+          <h4 className="p-2 rel text-center">{typeInfo[relatedModelLabel].title}</h4>
+        </Row>
         <GenericGrid
           instances={instances}
           action={actions.GET_MORE_RELATED_INSTANCES[relatedModelLabel]}

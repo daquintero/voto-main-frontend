@@ -55,8 +55,7 @@ class RightSide extends PureComponent {
         ) : null}
         <Row noGutters className="px-2 py-4 justify-content-center right-side__row">
           <MainFinancesNav
-            corruptionRelatedFunds={instance.corruptionRelatedFunds}
-            nonCorruptionRelatedFunds={instance.nonCorruptionRelatedFunds}
+            relatedFunds={instance.relatedFunds}
             parent={instance.modelLabel}
             light={light}
           />
