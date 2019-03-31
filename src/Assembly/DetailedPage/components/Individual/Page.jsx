@@ -123,21 +123,3 @@ const mapStateToProps = (state) => {
 };
 
 export default connect(mapStateToProps)(Page);
-
-
-// constructor(props) {
-//   super();
-//   this.state = {
-//     currentID: props.match.params.id,
-//   };
-// }
-//
-// static getDerivedStateFromProps(nextProps, prevState) {
-//   if (nextProps.match.params.id !== prevState.currentID) {
-//     nextProps.dispatch(getDetailedPage({
-//       ml: parentModelLabel,
-//       id: this.props.match.params.id,
-//       sn: 0,
-//     }));
-//   }
-// }

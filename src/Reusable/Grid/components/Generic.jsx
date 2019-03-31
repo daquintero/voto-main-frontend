@@ -3,6 +3,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { Row } from 'reactstrap';
 
 // Card Selector
 import cardSelector from '../../../shared/components/cardSelector';
@@ -63,7 +64,7 @@ class Generic extends PureComponent {
     return (
       instances !== null && instances.length > 0 ? (
         <>
-          <div className={`${gridClass} justify-content-center`}>
+          <div className={`${gridClass} justify-content-center w-100`}>
             {instances.map((instance) => {
               if (instance.modelLabel) {
                 return cardSelector({
@@ -95,15 +96,17 @@ class Generic extends PureComponent {
           />
         </>
       ) : (
-        <div
-          className={`mx-auto justify-content-center align-items-center ${gridClass}`}
-        >
-          <NotFoundCard
-            type={relatedModelLabel}
-            parent={parentModelLabel || 'noneParent'}
-            light={light}
-          />
-        </div>
+        <Row noGutters>
+          <div
+            className={`mx-auto justify-content-center align-items-center ${gridClass}`}
+          >
+            <NotFoundCard
+              type={relatedModelLabel}
+              parent={parentModelLabel || 'noneParent'}
+              light={light}
+            />
+          </div>
+        </Row>
       )
     );
   }

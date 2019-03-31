@@ -1,6 +1,6 @@
 // Card with Parent for the Promise
 import React, { PureComponent } from 'react';
-import { Card, CardBody } from 'reactstrap';
+import { Card, CardHeader, CardBody } from 'reactstrap';
 import PropTypes from 'prop-types';
 import relTopCreator from '../../Individual/components/relTopCreator';
 
@@ -10,7 +10,7 @@ import typeBanner from '../../typeBanner';
 
 
 // Declaration
-class PromWPCard extends PureComponent {
+class AchievementCardWithParent extends PureComponent {
   static propTypes = {
     instance: PropTypes.instanceOf(Object).isRequired,
     light: PropTypes.bool,
@@ -28,17 +28,20 @@ class PromWPCard extends PureComponent {
         <a target="_blank" rel="noreferrer noopener" href={instance.source}>
           <Card className="bg-light border-0 rounded-0">
             <CardBody className="p-2 pb-4">
-              {categoryInfo[instance.type] &&
-               (<i className={`float-left fa p-2 fa-${categoryInfo[instance.type].icon}`} />)
-              }
               <p className="p-1 m-0 small">{instance.briefDescription}</p>
             </CardBody>
+            {categoryInfo[instance.type] ? (
+              <CardHeader className="pt-1 pb-4">
+                <i className={`float-left fa p-1 fa-${categoryInfo[instance.type].icon}`} />
+                <p className="float-right small mb-0 pb-2">{categoryInfo[instance.type].Spanish}</p>
+              </CardHeader>
+            ) : null}
           </Card>
         </a>
-        {typeBanner('Promesa')}
+        {typeBanner('Logro')}
       </div>
     );
   }
 }
 
-export default PromWPCard;
+export default AchievementCardWithParent;

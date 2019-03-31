@@ -14,8 +14,8 @@ import ControversyCardWithParent from '../../Reusable/Controversy/components/Car
 // Promises
 /* eslint-disable import/no-duplicates */
 import PromiseCardWithParent from '../../Reusable/Promise/components/CardWP';
-// Promises
-import AchievementCardWithParent from '../../Reusable/Promise/components/CardWP';
+// Achievement
+import AchievementCardWithParent from '../../Reusable/Achievement/components/CardWP';
 // Experience
 import ExperienceCardWithParent from '../../Reusable/Individual/components/Experience/components/CardWP';
 // Law

@@ -32,7 +32,7 @@ class Relationships extends PureComponent {
               <Row noGutters className="justify-content-center p-0">
                 <GenericGridWrapper
                   relatedModelLabel="political.Experience"
-                  gridClass="variable-grid"
+                  gridClass="experiences-grid"
                   instances={experience}
                   subsetNumber={experience}
                   light
@@ -63,7 +63,7 @@ class Relationships extends PureComponent {
               <Row noGutters className="justify-content-center p-0">
                 <GenericGridWrapper
                   relatedModelLabel="political.Promise"
-                  gridClass="variable-related-grid"
+                  gridClass="promises-grid"
                   instances={promises.instances}
                   subsetNumber={promises.subsetNumber}
                   light
@@ -78,7 +78,7 @@ class Relationships extends PureComponent {
               <Row noGutters className="justify-content-center p-0">
                 <GenericGridWrapper
                   relatedModelLabel="political.Achievement"
-                  gridClass="variable-related-grid"
+                  gridClass="achievements-grid"
                   instances={achievements.instances}
                   subsetNumber={achievements.subsetNumber}
                   light
