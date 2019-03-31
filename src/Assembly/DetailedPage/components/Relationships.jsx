@@ -10,25 +10,16 @@ import CardGrid from '../../../Reusable/Grid/components/DetailedReduxCardGrid';
 class Relationships extends PureComponent {
   static propTypes = {
     individuals: PropTypes.instanceOf(Object).isRequired,
-    corruptionCases: PropTypes.instanceOf(Object).isRequired,
     informativeSnippets: PropTypes.instanceOf(Object).isRequired,
     organizations: PropTypes.instanceOf(Object).isRequired,
   };
 
   render() {
     const {
-      individuals, corruptionCases, informativeSnippets, organizations,
+      individuals, informativeSnippets, organizations,
     } = this.props;
     return (
       <Row className="overflow-hidden">
-        <Col xs={12} className="p-1 bg-layout">
-          <CardGrid
-            relatedModelLabel="corruption.CorruptionCase"
-            gridClass="variable-grid"
-            instances={corruptionCases.instances}
-            subsetNumber={corruptionCases.subsetNumber}
-          />
-        </Col>
         <Col xs={12} className="p-1 bg-layout">
           <CardGrid
             relatedModelLabel="political.Organization"
