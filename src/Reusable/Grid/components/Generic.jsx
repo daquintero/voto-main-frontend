@@ -74,7 +74,7 @@ class Generic extends PureComponent {
     return (
       instances !== null && instances.length > 0 ? (
         <>
-          <div className={gridClass}>
+          <div className={`${gridClass} justify-content-center`}>
             {instances.map((instance) => {
               if (instance.modelLabel) {
                 return cardSelector({
