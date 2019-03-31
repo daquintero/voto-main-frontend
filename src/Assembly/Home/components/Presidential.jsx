@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 // Components
-import CardGrid from '../../../Reusable/Grid/components/DetailedReduxCardGrid';
+import GenericWrapper from '../../../Reusable/Grid/components/GenericWrapper';
 
 
 // Declaration
@@ -24,7 +24,7 @@ class Presidential extends PureComponent {
           <i className="fal fa-podium-star p-2" />
           Candidatos Presidenciales
         </h4>
-        <CardGrid
+        <GenericWrapper
           parentModelLabel="political.Individual"
           relatedModelLabel="noneType"
           subsetNumber={0}

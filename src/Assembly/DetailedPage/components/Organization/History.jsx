@@ -7,7 +7,7 @@ import { Row, Col } from 'reactstrap';
 import { connect } from 'react-redux';
 
 // Components
-import CardGrid from '../../../../Reusable/Grid/components/DetailedReduxCardGrid';
+import GenericWrapper from '../../../../Reusable/Grid/components/GenericWrapper';
 
 class Relationships extends PureComponent {
   static propTypes = {
@@ -31,7 +31,7 @@ class Relationships extends PureComponent {
                   (experience.length < 3 ? '' : 'span-5-rows') : ''}`}
               >
                 <Row noGutters className="justify-content-center p-0">
-                  <CardGrid
+                  <GenericWrapper
                     relatedModelLabel="political.Experience"
                     gridClass="variable-grid"
                     instances={experience}
@@ -48,7 +48,7 @@ class Relationships extends PureComponent {
               style={{ background: '#ffeff9' }}
             >
               <Row noGutters>
-                <CardGrid
+                <GenericWrapper
                   relatedModelLabel="political.Controversy"
                   gridClass="variable-grid"
                   instances={controversies.instances}
@@ -63,7 +63,7 @@ class Relationships extends PureComponent {
               style={{ background: '#fff5ef' }}
             >
               <Row noGutters>
-                <CardGrid
+                <GenericWrapper
                   relatedModelLabel="political.Promise"
                   gridClass="variable-related-grid"
                   instances={promises.instances}
@@ -78,7 +78,7 @@ class Relationships extends PureComponent {
               style={{ background: '#effff5' }}
             >
               <Row noGutters>
-                <CardGrid
+                <GenericWrapper
                   relatedModelLabel="political.Achievement"
                   gridClass="variable-related-grid"
                   instances={achievements.instances}

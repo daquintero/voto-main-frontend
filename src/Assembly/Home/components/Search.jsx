@@ -9,7 +9,7 @@ import { homeSearch } from '../redux/actions';
 import { HOME_SEARCH, INCREMENT_HOME_SEARCH_PAGE } from '../redux/actionCreators';
 
 // Components
-import GenericGridWrapper from '../../../Reusable/Grid/components/DetailedReduxCardGrid';
+import GenericGridWrapper from '../../../Reusable/Grid/components/GenericWrapper';
 
 
 class Search extends Component {

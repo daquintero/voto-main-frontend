@@ -12,7 +12,7 @@ import GenericGrid from './Generic';
 import typeInfo from '../../../shared/utils/typeInfo';
 
 
-class DetailedReduxCardGrid extends PureComponent {
+class GenericWrapper extends PureComponent {
   static propTypes = {
     // Redux
     instances: PropTypes.instanceOf(Array),
@@ -96,5 +96,5 @@ const mapStateToProps = (state) => {
 };
 
 // State Store Connection
-export default connect(mapStateToProps)(DetailedReduxCardGrid);
+export default connect(mapStateToProps)(GenericWrapper);
 
