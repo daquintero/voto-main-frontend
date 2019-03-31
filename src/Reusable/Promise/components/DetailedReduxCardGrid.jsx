@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import { Button, Row } from 'reactstrap';
 
 // Actions
-import { getMoreRelatedInstances } from '../../../../redux/actions';
+import { getMoreRelatedInstances } from '../../redux/actions';
 
 // Presentational Component
 import CardGrid from './CardGrid';

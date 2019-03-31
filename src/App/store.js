@@ -12,6 +12,7 @@ import detailPageReducer from '../Assembly/DetailedPage/redux/reducer';
 import basicHomeReducer from '../Assembly/Home/redux/reducer';
 import welcomeReducer from '../Layout/TopBar/redux/reducer';
 import knowledgeBaseReducer from '../Assembly/KnowledgeBase/redux/reducer';
+import reusableReducer from '../Reusable/redux/reducer';
 
 // Local Storage
 import { loadState, saveState } from './localStorage';
@@ -24,6 +25,7 @@ const reducer = combineReducers({
   form: formReducer,
   welcome: welcomeReducer,
   knowledgeBase: knowledgeBaseReducer,
+  reusable: reusableReducer,
 });
 
 

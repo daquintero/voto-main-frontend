@@ -7,20 +7,20 @@ import Card from './Card';
 import layoutMap from '../styling/layoutMap';
 
 // Shared Function
-import getColDims from '../../../../../shared/utils/getColDims';
+import getColDims from '../../../shared/utils/getColDims';
 
 /* Imperative PureFunction Grid Approach  */
 class BootCardGrid extends PureComponent {
   static propTypes = {
-    instances: PropTypes.arrayOf(Object).isRequired
+    instances: PropTypes.arrayOf(Object).isRequired,
   };
 
   render() {
-    const { info } = this.props;
+    const { instances } = this.props;
     return (
 
       <Row noGutters>
-        {info[0] && info.map(instance => (
+        {instances[0] && instances.map(instance => (
           <Col
             {...getColDims(layoutMap, instance.size, 'outer', 'wrapper')}
             className="p-2"

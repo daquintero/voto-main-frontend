@@ -5,7 +5,7 @@ import { Card, CardHeader, CardBody } from 'reactstrap';
 import PropTypes from 'prop-types';
 
 // Category Repository
-import categoryInfo from '../../../../../shared/utils/categoryInfo';
+import categoryInfo from '../../../shared/utils/categoryInfo';
 
 // Declaration
 class ContCard extends PureComponent {
@@ -27,7 +27,7 @@ class ContCard extends PureComponent {
                 {categoryInfo[instance.type] !== 'None' && (
                 <i className={`float-left fal text-black-50 p-2 fa-${categoryInfo[instance.type].icon}`} />
                 )}
-                <p className="small float-right mb-0">{categoryInfo[instance.type].Spanish}</p>
+                <p className="small float-right mb-0">{categoryInfo[instance.type].spanish}</p>
               </CardHeader>
             ) : null}
           </Card>

@@ -45,7 +45,7 @@ class Relationships extends PureComponent {
               (controversies.instances.length < 3 ? '' : 'span-5-rows') : ''}`}
               style={{ background: '#ffeff9' }}
             >
-              <Row noGutters>
+              <Row noGutters className="justify-content-center p-0">
                 <CardGrid
                   relatedModelLabel="political.Controversy"
                   gridClass="variable-grid"
@@ -60,7 +60,7 @@ class Relationships extends PureComponent {
             ${promises.instances[0] ? (promises.instances.length < 3 ? '' : 'span-5-rows') : ''}`}
               style={{ background: '#fff5ef' }}
             >
-              <Row noGutters>
+              <Row noGutters className="justify-content-center p-0">
                 <CardGrid
                   relatedModelLabel="political.Promise"
                   gridClass="variable-related-grid"
@@ -75,7 +75,7 @@ class Relationships extends PureComponent {
             ${achievements.instances[0] ? (achievements.instances.length < 3 ? '' : 'span-5-rows') : ''}`}
               style={{ background: '#effff5' }}
             >
-              <Row noGutters>
+              <Row noGutters className="justify-content-center p-0">
                 <CardGrid
                   relatedModelLabel="political.Achievement"
                   gridClass="variable-related-grid"
