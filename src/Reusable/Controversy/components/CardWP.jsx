@@ -2,11 +2,8 @@
 // Libraries
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
-import { Card, CardHeader, CardBody } from 'reactstrap';
+import { Card, CardBody } from 'reactstrap';
 import PropTypes from 'prop-types';
-
-// Category Repository
-import categoryInfo from '../../../shared/utils/categoryInfo';
 
 // Functions
 import relTopCreator from '../../Individual/components/relTopCreator';
@@ -15,6 +12,7 @@ import wrapper from '../../../shared/utils/wrapper';
 
 // Actions
 import { INSTANCE_DETAIL, TOGGLE_INSTANCE_DETAIL_MODAL } from '../../redux/actionCreators';
+import typeBanner from '../../typeBanner';
 
 
 class CardWithParent extends PureComponent {
@@ -44,28 +42,19 @@ class CardWithParent extends PureComponent {
     } = this.props;
 
     return (
-      <div className={`span-6-cols ${light ? 'bg-layout' : 'bg-shady-layout'} shadow small-enlarge`}>
+      <div className={`span-6-cols ${light ? 'bg-layout' : 'bg-shady-layout'} shadow small-enlarge p-rel`}>
         {relTopCreator(instance)}
-        <div>
+        <a target="_blank" rel="noreferrer noopener" href={instance.source}>
           <Card className="border-0 rounded-0">
-            <CardBody onClick={this.handleOnClick} className="p-2">
+            <CardBody onClick={this.handleOnClick} className="p-2 pb-4">
               <p className="p-1 m-0 small">
                 {squashString(instance.briefDescription, 140)}
                 <span className="text-black-50"> {instance.briefDescription.length > 140 && 'averigua mas'}</span>
               </p>
             </CardBody>
-            {categoryInfo[instance.type] && (
-              <CardHeader className="pt-1 pb-1 ">
-                {categoryInfo[instance.type] !== 'None' && (
-                  <i className={`float-left fal text-black-50 p-2 fa-${categoryInfo[instance.type].icon}`} />
-                )}
-                <p className="float-right small mb-0 text-black-50 text-uppercase small">
-                  {categoryInfo[instance.type].spanish}
-                </p>
-              </CardHeader>
-            )}
           </Card>
-        </div>
+        </a>
+        {typeBanner('Controversia')}
       </div>
     );
   }
