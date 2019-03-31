@@ -7,7 +7,7 @@ import { Row, Col } from 'reactstrap';
 import { connect } from 'react-redux';
 
 // Components
-import CardGrid from '../../../../Reusable/Grid/components/DetailedReduxCardGrid';
+import CardGrid from '../../../../Reusable/Grid/components/GenericWrapper';
 
 class Relationships extends PureComponent {
   static propTypes = {
@@ -48,7 +48,7 @@ class Relationships extends PureComponent {
               <Row noGutters className="justify-content-center p-0">
                 <CardGrid
                   relatedModelLabel="political.Controversy"
-                  gridClass="variable-grid"
+                  gridClass="controversies-grid"
                   instances={controversies.instances}
                   subsetNumber={controversies.subsetNumber}
                   light

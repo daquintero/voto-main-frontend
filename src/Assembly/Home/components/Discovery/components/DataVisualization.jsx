@@ -247,7 +247,7 @@ class DataVisualization extends Component {
         {(hover || hasSelected) && (
           <div className="map__info-panel__wrapper">
             <h3 className="text-center">{properties.CIRCUITO}</h3>
-            <p className="text-center mb-4">Votes: {this.getValue('GID', this.getProperty(properties, type))}</p>
+            <p className="text-center mb-4">Votos: {this.getValue('GID', this.getProperty(properties, type))}</p>
             {this.getNameList(properties[type]).map(name => (
               <p className="text-center text-black-50">{name}</p>
             ))}

@@ -6,13 +6,13 @@ import { connect } from 'react-redux';
 import { Button, Row } from 'reactstrap';
 
 // Presentational Component
-import CardGrid from './Generic';
+import Generic from './Generic';
 
 // Misc
 import typeInfo from '../../../shared/utils/typeInfo';
 
 
-class DetailedReduxCardGrid extends PureComponent {
+class GenericWrapper extends PureComponent {
   static propTypes = {
     // Redux
     instances: PropTypes.instanceOf(Array),
@@ -55,9 +55,9 @@ class DetailedReduxCardGrid extends PureComponent {
     } = this.props;
 
     return (
-      <div>
+      <>
         <h4 className="p-2 rel text-center">{typeInfo[relatedModelLabel].title}</h4>
-        <CardGrid
+        <Generic
           instances={instances}
           action={actions.GET_MORE_RELATED_INSTANCES[relatedModelLabel]}
           gridClass={gridClass}
@@ -76,7 +76,7 @@ class DetailedReduxCardGrid extends PureComponent {
             </Button>
           </Row>
         )}
-      </div>
+      </>
     );
   }
 }
@@ -91,5 +91,5 @@ const mapStateToProps = (state) => {
 };
 
 // State Store Connection
-export default connect(mapStateToProps)(DetailedReduxCardGrid);
+export default connect(mapStateToProps)(GenericWrapper);
 
