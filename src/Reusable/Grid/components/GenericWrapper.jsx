@@ -56,7 +56,7 @@ class GenericWrapper extends PureComponent {
 
     return (
       <>
-        <Row noGutters className="w-100">
+        <Row noGutters className="w-100 pl-4 justify-content-center">
           <h4 className="p-2 rel text-center">{typeInfo[relatedModelLabel].title}</h4>
         </Row>
         <Generic

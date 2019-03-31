@@ -9,33 +9,31 @@ import { Link } from 'react-router-dom';
 // import CardStatistics from '../../Statistics/components/CardStatistics';
 
 // Styling
-import layoutMap from '../styling/layoutMap';
-
 // Shared Function
-import getColDims from '../../../shared/utils/getColDims';
 import typeBanner from '../../typeBanner';
 
-const building = `${process.env.PUBLIC_URL}/img/building.png`;
+const profile = `${process.env.PUBLIC_URL}/img/user.svg`;
 
-const CardWithImage = ({ instance, light }) => {
+const CardLong = ({ instance, light }) => {
   const primaryImage = instance.media.images[0];
   return (
     <Card
-      className={`border-0 ${light ? 'bg-layout' : 'bg-shady-layout'} rounded-0 small-enlarge span-3-cols shadow`}
+      className={`border-0 ${light ? 'bg-layout' : 'bg-shady-layout'} rounded-0 small-enlarge shadow`}
     >
-      <Link to={`/organizacion/${instance.id}`}>
+      <Link to={`/individuo/${instance.id}`}>
         <Row noGutters>
           <Col
-            {...getColDims(layoutMap, instance.size, 'outer', 'wrapper')}
+            xs={4}
+            className=" mb-4"
           >
             <img
-              className="img-full p-3"
-              src={primaryImage ? primaryImage.url : building}
+              className="img-full p-2"
+              src={primaryImage ? primaryImage.url : profile}
               alt=""
             />
           </Col>
           <Col
-            {...getColDims(layoutMap, instance.size, 'outer', 'wrapper')}
+            xs={8}
           >
             <CardBody className="p-2 pb-4">
               <Row noGutters>
@@ -47,15 +45,15 @@ const CardWithImage = ({ instance, light }) => {
             </CardBody>
           </Col>
         </Row>
-        {typeBanner('Organización')}
+        {typeBanner('Individuo')}
       </Link>
     </Card>
   );
 };
 
-CardWithImage.propTypes = {
+CardLong.propTypes = {
   instance: PropTypes.instanceOf(Object).isRequired,
   light: PropTypes.bool.isRequired,
 };
 
-export default CardWithImage;
+export default CardLong;

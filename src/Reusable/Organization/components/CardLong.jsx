@@ -9,33 +9,31 @@ import { Link } from 'react-router-dom';
 // import CardStatistics from '../../Statistics/components/CardStatistics';
 
 // Styling
-import layoutMap from '../styling/layoutMap';
-
 // Shared Function
-import getColDims from '../../../shared/utils/getColDims';
 import typeBanner from '../../typeBanner';
 
 const building = `${process.env.PUBLIC_URL}/img/building.png`;
 
-const CardWithImage = ({ instance, light }) => {
+const CardLong = ({ instance, light }) => {
   const primaryImage = instance.media.images[0];
   return (
     <Card
-      className={`border-0 ${light ? 'bg-layout' : 'bg-shady-layout'} rounded-0 small-enlarge span-3-cols shadow`}
+      className={`border-0 ${light ? 'bg-layout' : 'bg-shady-layout'} rounded-0 small-enlarge shadow`}
     >
       <Link to={`/organizacion/${instance.id}`}>
         <Row noGutters>
           <Col
-            {...getColDims(layoutMap, instance.size, 'outer', 'wrapper')}
+            xs={4}
+            className=" mb-4"
           >
             <img
-              className="img-full p-3"
+              className="img-full"
               src={primaryImage ? primaryImage.url : building}
               alt=""
             />
           </Col>
           <Col
-            {...getColDims(layoutMap, instance.size, 'outer', 'wrapper')}
+            xs={8}
           >
             <CardBody className="p-2 pb-4">
               <Row noGutters>
@@ -53,9 +51,9 @@ const CardWithImage = ({ instance, light }) => {
   );
 };
 
-CardWithImage.propTypes = {
+CardLong.propTypes = {
   instance: PropTypes.instanceOf(Object).isRequired,
   light: PropTypes.bool.isRequired,
 };
 
-export default CardWithImage;
+export default CardLong;

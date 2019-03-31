@@ -26,6 +26,7 @@ class Relationships extends PureComponent {
             gridClass="relationships-grid"
             instances={organizations.instances}
             subsetNumber={organizations.subsetNumber}
+            typeContext="detailed"
           />
         </Col>
         <Col xs={12} className="mt-2 p-1 bg-layout">
@@ -34,14 +35,16 @@ class Relationships extends PureComponent {
             gridClass="relationships-grid"
             instances={individuals.instances}
             subsetNumber={individuals.subsetNumber}
+            typeContext="detailed"
           />
         </Col>
         <Col xs={12} className="p-1 bg-layout">
           <GenericGridWrapper
             relatedModelLabel="corruption.InformativeSnippet"
-            gridClass="relationships-grid"
+            gridClass="variable-new-grid"
             instances={informativeSnippets.instances}
             subsetNumber={informativeSnippets.subsetNumber}
+            typeContext="detailed"
           />
         </Col>
         {/* TODO Organization Card Grid */}

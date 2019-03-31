@@ -9,10 +9,10 @@ import CorruptionCaseCard from '../../Reusable/CorruptionCase/components/Card';
 import InformativeSnippetCard from '../../Reusable/InformativeSnippet/components/Card';
 // Individual
 import IndividualCard from '../../Reusable/Individual/components/Card';
+import IndividualLongCard from '../../Reusable/Individual/components/CardLong';
 // Controversy
 import ControversyCardWithParent from '../../Reusable/Controversy/components/CardWP';
 // Promises
-/* eslint-disable import/no-duplicates */
 import PromiseCardWithParent from '../../Reusable/Promise/components/CardWP';
 // Achievement
 import AchievementCardWithParent from '../../Reusable/Achievement/components/CardWP';
@@ -26,12 +26,13 @@ import StatisticCard from '../../Reusable/Statistics/components/StatisticBlock';
 import FinancialItemCardWithParent from '../../Reusable/FinanceItem/components/FinanceItemWP';
 // Organization
 import OrganisationCard from '../../Reusable/Organization/components/Card';
+import OrganizationLongCard from '../../Reusable/Organization/components/CardLong';
 // Resource
 import ResourceCard from '../../Reusable/Resource/components/Card';
 
 
 export default ({
-  instance, context, light, ...rest
+  instance, typeContext, light, ...rest
 }) => {
   switch (instance.modelLabel) {
     case 'corruption.InformativeSnippet':
@@ -59,6 +60,15 @@ export default ({
       );
 
     case 'political.Individual':
+      if (typeContext === 'detailed') {
+        return (
+          <IndividualLongCard
+            instance={instance}
+            light={light}
+            {...rest}
+          />
+        );
+      }
       return (
         <IndividualCard
           instance={instance}
@@ -109,6 +119,15 @@ export default ({
       );
 
     case 'political.Organization':
+      if (typeContext === 'detailed') {
+        return (
+          <OrganizationLongCard
+            instance={instance}
+            light={light}
+            {...rest}
+          />
+        );
+      }
       return (
         <OrganisationCard
           instance={instance}
@@ -117,11 +136,12 @@ export default ({
         />
       );
 
+
     case 'political.Law':
       return (
         <LawCardWithParent
           instance={instance}
-          typeContext={context}
+          typeContext={typeContext}
           {...rest}
         />
       );

@@ -17,8 +17,7 @@ import FinanceModal from './FinanceModal';
 class MainFinancesNav extends PureComponent {
   static propTypes = {
     instances: PropTypes.instanceOf(Object).isRequired,
-    corruptionRelatedFunds: PropTypes.number.isRequired,
-    nonCorruptionRelatedFunds: PropTypes.number.isRequired,
+    relatedFunds: PropTypes.number.isRequired,
     parent: PropTypes.string.isRequired,
     light: PropTypes.bool.isRequired,
   };
@@ -35,8 +34,7 @@ class MainFinancesNav extends PureComponent {
 
   render() {
     const {
-      corruptionRelatedFunds,
-      nonCorruptionRelatedFunds,
+      relatedFunds,
       parent,
       light,
       instances,
@@ -45,14 +43,14 @@ class MainFinancesNav extends PureComponent {
     return (
       <div className="justify-content-center">
         <h4 className="text-center mt-2">Donaciones</h4>
-        {corruptionRelatedFunds || nonCorruptionRelatedFunds || instances[0] ? (
+        {relatedFunds || instances[0] ? (
           <>
             <NavItem
               className="list-group-item small-enlarge m-2 rounded-0 border-0 w-100"
               onClick={this.toggleModal}
             >
               <div>
-                <h5>{numeral(nonCorruptionRelatedFunds + corruptionRelatedFunds).format('$ 0,0.00')}</h5>
+                <h5>{numeral(relatedFunds).format('$ 0,0.00')}</h5>
               </div>
               <div>
                 <h6>Total de Donaciones Manejado</h6>

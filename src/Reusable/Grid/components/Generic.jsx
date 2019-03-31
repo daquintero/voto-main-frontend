@@ -69,7 +69,7 @@ class Generic extends PureComponent {
               if (instance.modelLabel) {
                 return cardSelector({
                   instance,
-                  typeContext: typeContext || 'relation',
+                  typeContext: typeContext || '',
                   light,
                 });
               }
@@ -80,7 +80,7 @@ class Generic extends PureComponent {
                   ...instance,
                   modelLabel: relatedModelLabel,
                 },
-                typeContext: typeContext || 'relation',
+                typeContext: typeContext || '',
                 light,
               });
             })}
