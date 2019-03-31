@@ -5,8 +5,8 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Button, Row } from 'reactstrap';
 
-// Presentational Component
-import CardGrid from './Generic';
+// Components
+import GenericGrid from './Generic';
 
 // Misc
 import typeInfo from '../../../shared/utils/typeInfo';
@@ -24,6 +24,7 @@ class DetailedReduxCardGrid extends PureComponent {
     typeContext: PropTypes.string.isRequired,
     light: PropTypes.bool.isRequired,
     getMoreEnabled: PropTypes.bool.isRequired,
+    location: PropTypes.string.isRequired,
 
     // Callbacks
     getMore: PropTypes.func,
@@ -45,25 +46,29 @@ class DetailedReduxCardGrid extends PureComponent {
   render() {
     const {
       instances,
-      actions,
       relatedModelLabel,
       gridClass,
       light,
       typeContext,
       getMore,
       getMoreEnabled,
+      location,
+
+      // Redux
+      actions,
     } = this.props;
 
     return (
-      <div>
+      <>
         <h4 className="p-2 rel text-center">{typeInfo[relatedModelLabel].title}</h4>
-        <CardGrid
+        <GenericGrid
           instances={instances}
           action={actions.GET_MORE_RELATED_INSTANCES[relatedModelLabel]}
           gridClass={gridClass}
           relatedModelLabel={relatedModelLabel}
           light={light}
           typeContext={typeContext}
+          location={location}
         />
         {getMoreEnabled && (
           <Row noGutters className="p-2">
@@ -76,7 +81,7 @@ class DetailedReduxCardGrid extends PureComponent {
             </Button>
           </Row>
         )}
-      </div>
+      </>
     );
   }
 }

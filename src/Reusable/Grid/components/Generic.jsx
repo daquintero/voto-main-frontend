@@ -1,24 +1,20 @@
-// Grid of Variable Positions
-// Libraries
+// Absolute Imports
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-
-// Card Selector
-import cardSelector from '../../../shared/components/cardSelector';
 
 // Components
 import DetailModal from './DetailModal';
 import NotFoundCard from '../../../shared/components/404/Card';
 
 // Functions
+import cardSelector from '../../../shared/components/cardSelector';
 import wrapper from '../../../shared/utils/wrapper';
 
 // Actions
-import { TOGGLE_INSTANCE_DETAIL_MODAL } from '../../redux/actionCreators';
+import { INSTANCE_DETAIL, TOGGLE_INSTANCE_DETAIL_MODAL } from '../../redux/actionCreators';
 
 
-// Declaration
 class Generic extends PureComponent {
   static propTypes = {
     instances: PropTypes.instanceOf(Object),
@@ -26,6 +22,7 @@ class Generic extends PureComponent {
     relatedModelLabel: PropTypes.string.isRequired,
     light: PropTypes.bool.isRequired,
     typeContext: PropTypes.string.isRequired,
+    location: PropTypes.string.isRequired,
 
     // Redux
     dispatch: PropTypes.func.isRequired,
@@ -40,9 +37,22 @@ class Generic extends PureComponent {
 
   handleToggleDetailModal = () => {
     const { dispatch } = this.props;
+
     dispatch({
       type: TOGGLE_INSTANCE_DETAIL_MODAL,
     });
+  };
+
+  handleOnClick = (e) => {
+    e.preventDefault();
+    const { dispatch } = this.props;
+    const { instance } = e.currentTarget.dataset;
+
+    dispatch({
+      type: INSTANCE_DETAIL,
+      instance: JSON.parse(instance),
+    });
+    this.handleToggleDetailModal();
   };
 
   render() {
@@ -53,6 +63,7 @@ class Generic extends PureComponent {
       relatedModelLabel,
       light,
       typeContext,
+      location,
 
       // Redux
       parentModelLabel,
@@ -70,6 +81,10 @@ class Generic extends PureComponent {
                   instance,
                   typeContext: typeContext || 'relation',
                   light,
+                  location,
+
+                  // Callbacks
+                  onClick: this.handleOnClick,
                 });
               }
 
@@ -81,6 +96,10 @@ class Generic extends PureComponent {
                 },
                 typeContext: typeContext || 'relation',
                 light,
+                location,
+
+                // Callbacks
+                onClick: this.handleOnClick,
               });
             })}
           </div>

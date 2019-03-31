@@ -9,7 +9,7 @@ import { homeSearch } from '../redux/actions';
 import { HOME_SEARCH, INCREMENT_HOME_SEARCH_PAGE } from '../redux/actionCreators';
 
 // Components
-import Generic from '../../../Reusable/Grid/components/DetailedReduxCardGrid';
+import GenericGridWrapper from '../../../Reusable/Grid/components/DetailedReduxCardGrid';
 
 
 class Search extends Component {
@@ -128,7 +128,7 @@ class Search extends Component {
           <Container>
             {(query.length !== 0 && this.validateQuery(query).valid) && (
               <Col xs={12} className="justify-content-center mx-auto py-2 mb-0 mb-lg-2">
-                <Generic
+                <GenericGridWrapper
                   instances={instances}
                   light
                   gridClass="variable-new-grid"
@@ -136,6 +136,7 @@ class Search extends Component {
                   typeContext="public"
                   getMore={this.handleGetMore}
                   getMoreEnabled={!done}
+                  location="search"
                 />
               </Col>
             )}
