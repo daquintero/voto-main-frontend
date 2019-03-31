@@ -30,66 +30,108 @@ import OrganisationCard from '../../Reusable/Organization/components/Card';
 import ResourceCard from '../../Reusable/Resource/components/Card';
 
 
-export default (instance, context, light) => {
+export default ({
+  instance, context, light, ...rest
+}) => {
   switch (instance.modelLabel) {
     case 'corruption.InformativeSnippet':
       return (
-        <InformativeSnippetCard instance={instance} />
+        <InformativeSnippetCard
+          instance={instance}
+          {...rest}
+        />
       );
 
     case 'corruption.CorruptionCase':
       return (
-        <CorruptionCaseCard instance={instance} />
+        <CorruptionCaseCard
+          instance={instance}
+          {...rest}
+        />
       );
 
     case 'corruption.FinancialItem':
       return (
-        <FinancialItemCardWithParent instance={instance} />
+        <FinancialItemCardWithParent
+          instance={instance}
+          {...rest}
+        />
       );
 
     case 'political.Individual':
       return (
-        <IndividualCard instance={instance} light={light} />
+        <IndividualCard
+          instance={instance}
+          light={light}
+          {...rest}
+        />
       );
 
     case 'political.Controversy':
       return (
-        <ControversyCardWithParent instance={instance} light={light} />
+        <ControversyCardWithParent
+          instance={instance}
+          light={light}
+          {...rest}
+        />
       );
 
     case 'political.Promise':
       return (
-        <PromiseCardWithParent instance={instance} />
+        <PromiseCardWithParent
+          instance={instance}
+          {...rest}
+        />
       );
 
     case 'political.Achievement':
       return (
-        <AchievementCardWithParent instance={instance} />
+        <AchievementCardWithParent
+          instance={instance}
+          {...rest}
+        />
       );
 
     case 'political.Experience':
       return (
-        <ExperienceCardWithParent instance={instance} />
+        <ExperienceCardWithParent
+          instance={instance}
+          {...rest}
+        />
       );
 
     case 'political.Statistic':
       return (
-        <StatisticCard instance={instance} />
+        <StatisticCard
+          instance={instance}
+          {...rest}
+        />
       );
 
     case 'political.Organization':
       return (
-        <OrganisationCard instance={instance} light={light} />
+        <OrganisationCard
+          instance={instance}
+          light={light}
+          {...rest}
+        />
       );
 
     case 'political.Law':
       return (
-        <LawCardWithParent instance={instance} typeContext={context} />
+        <LawCardWithParent
+          instance={instance}
+          typeContext={context}
+          {...rest}
+        />
       );
 
     case 'media.Resource':
       return (
-        <ResourceCard instance={instance} />
+        <ResourceCard
+          instance={instance}
+          {...rest}
+        />
       );
 
     default:

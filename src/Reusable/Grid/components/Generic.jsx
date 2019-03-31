@@ -31,7 +31,7 @@ class Generic extends PureComponent {
     dispatch: PropTypes.func.isRequired,
     parentModelLabel: PropTypes.string.isRequired,
     openInstance: PropTypes.instanceOf(Object).isRequired,
-    instanceModalOpen: PropTypes.bool.isRequired,
+    openInstanceModal: PropTypes.bool.isRequired,
   };
 
   static defaultProps = {
@@ -57,7 +57,7 @@ class Generic extends PureComponent {
       // Redux
       parentModelLabel,
       openInstance,
-      instanceModalOpen,
+      openInstanceModal,
     } = this.props;
 
     return (
@@ -66,19 +66,28 @@ class Generic extends PureComponent {
           <div className={gridClass}>
             {instances.map((instance) => {
               if (instance.modelLabel) {
-                return cardSelector(instance, typeContext || 'relation', light);
+                return cardSelector({
+                  instance,
+                  typeContext: typeContext || 'relation',
+                  light,
+                });
               }
 
-              // Copy instance
-              const instanceWithLabel = { ...instance };
-              instanceWithLabel.modelLabel = relatedModelLabel;
-              return cardSelector(instanceWithLabel, typeContext || 'relation', light);
+              // Copy instance and add ``modelLabel``.
+              return cardSelector({
+                instance: {
+                  ...instance,
+                  modelLabel: relatedModelLabel,
+                },
+                typeContext: typeContext || 'relation',
+                light,
+              });
             })}
           </div>
 
           {/* Detail Modal */}
           <DetailModal
-            isOpen={instanceModalOpen}
+            isOpen={openInstanceModal}
             instance={openInstance}
 
             // Callbacks
@@ -103,9 +112,12 @@ class Generic extends PureComponent {
 
 const mapStateToProps = (state) => {
   const { modelLabel } = state.openPage.parentInstance;
+  const { openInstance, openInstanceModal } = state.reusable;
 
   return {
     parentModelLabel: modelLabel,
+    openInstance,
+    openInstanceModal,
   };
 };
 
