@@ -10,7 +10,7 @@ import InformativeSnippetCard from '../../Reusable/InformativeSnippet/components
 // Individual
 import IndividualCard from '../../Reusable/Individual/components/Card';
 // Controversy
-import ControversyCardWithParent from '../../Reusable/Controversy/components/CardWP';
+import ControversyCardWithParent from '../../Reusable/Controversy/components/CardWithParent';
 // Promises
 /* eslint-disable import/no-duplicates */
 import PromiseCardWithParent from '../../Reusable/Promise/components/CardWP';

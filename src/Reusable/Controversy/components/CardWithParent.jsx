@@ -23,7 +23,7 @@ class CardWithParent extends PureComponent {
 
   renderCardBody = ({ briefDescription }, maxLength) => (
     <CardBody className="p-2 pb-4">
-      <p className="p-1 pb-3 m-0 small">
+      <p className="p-1 pb-4 m-0 small">
         {squashString(briefDescription, maxLength)}
         <span className="text-black-50"> {briefDescription.length > maxLength && 'averigua mas'}</span>
       </p>
@@ -41,7 +41,7 @@ class CardWithParent extends PureComponent {
       onClick,
     } = this.props;
 
-    const maxLength = location === 'search' ? 1000 : 140;
+    const maxLength = location === 'search' ? 512 : 140;
 
     return (
       <div className={`span-6-cols ${light ? 'bg-layout' : 'bg-shady-layout'} shadow small-enlarge p-rel`}>

@@ -9,8 +9,7 @@ import categoryInfo from '../../../shared/utils/categoryInfo';
 import typeBanner from '../../typeBanner';
 
 
-// Declaration
-class PromWPCard extends PureComponent {
+class PromiseCardWithParent extends PureComponent {
   static propTypes = {
     instance: PropTypes.instanceOf(Object).isRequired,
     light: PropTypes.bool,
@@ -21,7 +20,11 @@ class PromWPCard extends PureComponent {
   };
 
   render() {
-    const { instance, light } = this.props;
+    // Props
+    const {
+      instance, light,
+    } = this.props;
+
     return (
       <div className={`${light ? 'bg-layout' : 'bg-shady-layout'} shadow span-4-cols p-rel`}>
         {relTopCreator(instance)}
@@ -30,12 +33,12 @@ class PromWPCard extends PureComponent {
             <CardBody className="p-2">
               <p className="p-1 m-0 small">{instance.briefDescription}</p>
             </CardBody>
-            {categoryInfo[instance.type] ? (
+            {categoryInfo[instance.type] && (
               <CardHeader className="pt-1 pb-4">
                 <i className={`float-left fa p-1 fa-${categoryInfo[instance.type].icon}`} />
-                <p className="float-right small mb-0 pb-2">{categoryInfo[instance.type].Spanish}</p>
+                <p className="float-right small mb-0 pb-2">{categoryInfo[instance.type].spanish}</p>
               </CardHeader>
-            ) : null}
+            )}
           </Card>
         </a>
         {typeBanner('Promesa')}
@@ -44,4 +47,4 @@ class PromWPCard extends PureComponent {
   }
 }
 
-export default PromWPCard;
+export default PromiseCardWithParent;

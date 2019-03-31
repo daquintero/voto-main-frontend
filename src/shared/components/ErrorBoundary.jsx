@@ -54,7 +54,7 @@ class ErrorBoundary extends Component {
 
     if (hasError) {
       return sentry ? (
-        <butoon onClick={() => Sentry.showReportDialog()}>Report feedback</butoon>
+        <button onClick={() => Sentry.showReportDialog()}>Report feedback</button>
       ) : (
         <p className="text-center">Something went wrong</p>
       );

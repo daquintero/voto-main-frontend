@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 // Components
-import DetailModal from './DetailModal';
 import NotFoundCard from '../../../shared/components/404/Card';
 
 // Functions
@@ -27,20 +26,10 @@ class Generic extends PureComponent {
     // Redux
     dispatch: PropTypes.func.isRequired,
     parentModelLabel: PropTypes.string.isRequired,
-    openInstance: PropTypes.instanceOf(Object).isRequired,
-    openInstanceModal: PropTypes.bool.isRequired,
   };
 
   static defaultProps = {
     instances: [],
-  };
-
-  handleToggleDetailModal = () => {
-    const { dispatch } = this.props;
-
-    dispatch({
-      type: TOGGLE_INSTANCE_DETAIL_MODAL,
-    });
   };
 
   handleOnClick = (e) => {
@@ -52,7 +41,9 @@ class Generic extends PureComponent {
       type: INSTANCE_DETAIL,
       instance: JSON.parse(instance),
     });
-    this.handleToggleDetailModal();
+    dispatch({
+      type: TOGGLE_INSTANCE_DETAIL_MODAL,
+    });
   };
 
   render() {
@@ -67,8 +58,6 @@ class Generic extends PureComponent {
 
       // Redux
       parentModelLabel,
-      openInstance,
-      openInstanceModal,
     } = this.props;
 
     return (
@@ -103,15 +92,6 @@ class Generic extends PureComponent {
               });
             })}
           </div>
-
-          {/* Detail Modal */}
-          <DetailModal
-            isOpen={openInstanceModal}
-            instance={openInstance}
-
-            // Callbacks
-            toggle={this.handleToggleDetailModal}
-          />
         </>
       ) : (
         <div
@@ -131,12 +111,9 @@ class Generic extends PureComponent {
 
 const mapStateToProps = (state) => {
   const { modelLabel } = state.openPage.parentInstance;
-  const { openInstance, openInstanceModal } = state.reusable;
 
   return {
     parentModelLabel: modelLabel,
-    openInstance,
-    openInstanceModal,
   };
 };
 

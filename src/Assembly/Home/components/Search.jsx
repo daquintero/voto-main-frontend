@@ -10,6 +10,8 @@ import { HOME_SEARCH, INCREMENT_HOME_SEARCH_PAGE } from '../redux/actionCreators
 
 // Components
 import GenericGridWrapper from '../../../Reusable/Grid/components/GenericWrapper';
+import DetailModal from '../../../Reusable/Grid/components/DetailModal';
+import toggleDetailModal from '../../../shared/utils/toggleDetailModal';
 
 
 class Search extends Component {
@@ -19,6 +21,8 @@ class Search extends Component {
     dispatch: PropTypes.func.isRequired,
     currentPage: PropTypes.number.isRequired,
     done: PropTypes.bool.isRequired,
+    openInstance: PropTypes.instanceOf(Object).isRequired,
+    openInstanceModal: PropTypes.bool.isRequired,
   };
 
   constructor(props) {
@@ -95,54 +99,70 @@ class Search extends Component {
     const {
       instances,
       done,
+
+      // Redux
+      openInstance,
+      openInstanceModal,
+      dispatch,
     } = this.props;
 
     return (
-      <div className="home__search__wrapper">
-        <Row
-          noGutters
-          className="home__search__form__wrapper justify-content-center bg-shady-layout"
-        >
-          <i className="fal fa-vote-yea home__search__background-icon one" />
-          <i className="fal fa-vote-nay home__search__background-icon two" />
-          <h4>¡Infórmate e Investiga!</h4>
-          <Col md={12} className="align-content-center justify-content-center px-4 mt-3 mx-auto">
-            <form className="home__search__form" onSubmit={this.handleOnSubmit}>
-              <input
-                name="query"
-                type="text"
-                placeholder="ej. Asamblea 080"
-                onKeyUp={this.handleOnKeyUp}
-              />
-              <i className="fal fa-search" />
-            </form>
-            <div className="mt-2 text-danger text-center">
-              <p>{this.validateQuery(query).message}</p>
-            </div>
-            <div className="mt-2 text-center">
-              <p>Descubre todas las controversias, promesas y perfiles políticos que hemos recopilado.</p>
-            </div>
-          </Col>
-        </Row>
-        <div className="home__search__results__wrapper">
-          <Container>
-            {(query.length !== 0 && this.validateQuery(query).valid) && (
-              <Col xs={12} className="justify-content-center mx-auto py-2 mb-0 mb-lg-2">
-                <GenericGridWrapper
-                  instances={instances}
-                  light
-                  gridClass="variable-new-grid"
-                  relatedModelLabel="noneType"
-                  typeContext="public"
-                  getMore={this.handleGetMore}
-                  getMoreEnabled={!done}
-                  location="search"
+      <>
+        {/* Instance Detail Modal */}
+        <DetailModal
+          instance={openInstance}
+          isOpen={openInstanceModal}
+
+          // Callbacks
+          toggle={toggleDetailModal(dispatch)}
+        />
+
+        <div className="home__search__wrapper">
+          <Row
+            noGutters
+            className="home__search__form__wrapper justify-content-center bg-shady-layout"
+          >
+            <i className="fal fa-vote-yea home__search__background-icon one" />
+            <i className="fal fa-vote-nay home__search__background-icon two" />
+            <h4>¡Infórmate e Investiga!</h4>
+            <Col md={12} className="align-content-center justify-content-center px-4 mt-3 mx-auto">
+              <form className="home__search__form" onSubmit={this.handleOnSubmit}>
+                <input
+                  name="query"
+                  type="text"
+                  placeholder="ej. Asamblea 080"
+                  onKeyUp={this.handleOnKeyUp}
                 />
-              </Col>
-            )}
-          </Container>
+                <i className="fal fa-search" />
+              </form>
+              <div className="mt-2 text-danger text-center">
+                <p>{this.validateQuery(query).message}</p>
+              </div>
+              <div className="mt-2 text-center">
+                <p>Descubre todas las controversias, promesas y perfiles políticos que hemos recopilado.</p>
+              </div>
+            </Col>
+          </Row>
+          <div className="home__search__results__wrapper">
+            <Container>
+              {(query.length !== 0 && this.validateQuery(query).valid) && (
+                <Col xs={12} className="justify-content-center mx-auto py-2 mb-0 mb-lg-2">
+                  <GenericGridWrapper
+                    instances={instances}
+                    light
+                    gridClass="variable-new-grid"
+                    relatedModelLabel="noneType"
+                    typeContext="public"
+                    getMore={this.handleGetMore}
+                    getMoreEnabled={!done}
+                    location="search"
+                  />
+                </Col>
+              )}
+            </Container>
+          </div>
         </div>
-      </div>
+      </>
     );
   }
 }
@@ -150,11 +170,17 @@ class Search extends Component {
 
 const mapStateToProps = (state) => {
   const { instances, currentPage, done } = state.home.search;
+  const { openInstance, openInstanceModal } = state.reusable;
 
   return {
+    // Search
     instances,
     currentPage,
     done,
+
+    // Reusable
+    openInstance,
+    openInstanceModal,
   };
 };
 
