@@ -26,6 +26,8 @@ class FinanceModal extends PureComponent {
         isOpen={isOpen}
         toggle={toggle}
         className="modal-dialog--success"
+        centered
+        size="lg"
       >
         <h5>Donaciones Detalladas</h5>
         <Table instances={instances} />
