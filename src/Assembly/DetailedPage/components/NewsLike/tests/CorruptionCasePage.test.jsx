@@ -2,9 +2,10 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { Provider } from 'react-redux';
+import { StaticRouter } from 'react-router';
 import CorruptionCasePage from '../CCPage';
 import store from '../../../../../App/store';
-import { StaticRouter } from 'react-router';
+
 
 describe('<CorruptionCasePage />', () => {
   const initialState = store;

@@ -45,7 +45,7 @@ const CardLong = ({ instance, light }) => {
             </CardBody>
           </Col>
         </Row>
-        {typeBanner('Individuo')}
+        {typeBanner('Individuo', '#fbffff')}
       </Link>
     </Card>
   );

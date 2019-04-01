@@ -2,9 +2,9 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { Provider } from 'react-redux';
+import { StaticRouter } from 'react-router';
 import Home from '../index';
 import store from '../../../App/store';
-import { StaticRouter } from 'react-router';
 
 describe('<Home />', () => {
   const initialState = store;

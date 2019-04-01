@@ -47,7 +47,7 @@ class CardWithoutImage extends PureComponent {
             </Col>
           </Row>
         </Link>
-        {typeBanner('Noticia')}
+        {typeBanner('Noticia', '#fffbfb')}
       </Card>
     );
   }
