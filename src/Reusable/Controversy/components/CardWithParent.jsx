@@ -58,7 +58,7 @@ class CardWithParent extends PureComponent {
             </a>
           </Card>
         )}
-        {typeBanner('Controversia')}
+        {typeBanner('Controversia', '#fffbff')}
       </div>
     );
   }

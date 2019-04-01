@@ -17,7 +17,7 @@ import { getHome } from './redux/actions';
 import Discovery from './components/Discovery';
 
 
-const sep = `${process.env.PUBLIC_URL}/img/star-separator.svg`;
+// const sep = `${process.env.PUBLIC_URL}/img/star-separator.svg`;
 
 
 class Home extends PureComponent {
@@ -35,12 +35,10 @@ class Home extends PureComponent {
     return (
       <>
         {/* Search */}
-        <ErrorBoundary>
-          <Search />
-        </ErrorBoundary>
+        <Search />
 
         {/* Separator */}
-        <img src={sep} alt="" className="sep" />
+        {/* <img src={sep} alt="" className="sep" /> */}
 
         {/* Video */}
         <Container className="py-5">

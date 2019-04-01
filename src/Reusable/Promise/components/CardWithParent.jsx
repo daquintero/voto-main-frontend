@@ -2,6 +2,7 @@
 import React, { PureComponent } from 'react';
 import { Card, CardBody } from 'reactstrap';
 import PropTypes from 'prop-types';
+
 import relTopCreator from '../../Individual/components/relTopCreator';
 
 // Category Repository
@@ -34,7 +35,7 @@ class PromiseCardWithParent extends PureComponent {
               {categoryInfo[instance.type] &&
                (<i className={`float-left fa p-2 fa-${categoryInfo[instance.type].icon}`} />)
               }
-              <p className="p-1 m-0 small">{instance.briefDescription}</p>
+              <p className="p-1 m-0 small">{instance.title}</p>
             </CardBody>
           </Card>
         </a>

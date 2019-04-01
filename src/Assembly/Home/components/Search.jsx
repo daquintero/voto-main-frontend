@@ -120,7 +120,7 @@ class Search extends Component {
         <div className="home__search__wrapper">
           <Row
             noGutters
-            className="home__search__form__wrapper justify-content-center bg-shady-layout"
+            className="home__search__form__wrapper justify-content-center"
           >
             <i className="fal fa-vote-yea home__search__background-icon one" />
             <i className="fal fa-vote-nay home__search__background-icon two" />
