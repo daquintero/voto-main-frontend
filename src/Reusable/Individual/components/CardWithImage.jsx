@@ -37,7 +37,7 @@ const CardWithImage = ({ instance, light }) => {
             />
           </Col>
           <Col >
-            <CardBody className="p-2">
+            <CardBody className="p-2 pb-4">
               <Row noGutters>
                 <Col xs={12} className="mb-2">
                   <h5 className="card-title mb-0">{instance.name}</h5>
@@ -62,8 +62,8 @@ const CardWithImage = ({ instance, light }) => {
             </CardBody>
           </Col>
         </Row>
-        {typeBanner('Individuo')}
       </Link>
+      {typeBanner('Individuo')}
     </Card>
   );
 };

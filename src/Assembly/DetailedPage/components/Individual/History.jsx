@@ -7,7 +7,7 @@ import { Row, Col } from 'reactstrap';
 import { connect } from 'react-redux';
 
 // Components
-import CardGrid from '../../../../Reusable/Grid/components/DetailedReduxCardGrid';
+import GenericGridWrapper from '../../../../Reusable/Grid/components/GenericWrapper';
 
 class Relationships extends PureComponent {
   static propTypes = {
@@ -30,9 +30,9 @@ class Relationships extends PureComponent {
                   (experience.length < 3 ? '' : 'span-5-rows') : ''}`}
             >
               <Row noGutters className="justify-content-center p-0">
-                <CardGrid
+                <GenericGridWrapper
                   relatedModelLabel="political.Experience"
-                  gridClass="variable-grid"
+                  gridClass="experiences-grid"
                   instances={experience}
                   subsetNumber={experience}
                   light
@@ -46,9 +46,9 @@ class Relationships extends PureComponent {
               style={{ background: '#ffeff9' }}
             >
               <Row noGutters className="justify-content-center p-0">
-                <CardGrid
+                <GenericGridWrapper
                   relatedModelLabel="political.Controversy"
-                  gridClass="variable-grid"
+                  gridClass="controversies-grid"
                   instances={controversies.instances}
                   subsetNumber={controversies.subsetNumber}
                   light
@@ -61,9 +61,9 @@ class Relationships extends PureComponent {
               style={{ background: '#fff5ef' }}
             >
               <Row noGutters className="justify-content-center p-0">
-                <CardGrid
+                <GenericGridWrapper
                   relatedModelLabel="political.Promise"
-                  gridClass="variable-related-grid"
+                  gridClass="promises-grid"
                   instances={promises.instances}
                   subsetNumber={promises.subsetNumber}
                   light
@@ -76,9 +76,9 @@ class Relationships extends PureComponent {
               style={{ background: '#effff5' }}
             >
               <Row noGutters className="justify-content-center p-0">
-                <CardGrid
+                <GenericGridWrapper
                   relatedModelLabel="political.Achievement"
-                  gridClass="variable-related-grid"
+                  gridClass="achievements-grid"
                   instances={achievements.instances}
                   subsetNumber={achievements.subsetNumber}
                   light

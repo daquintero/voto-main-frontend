@@ -1,24 +1,20 @@
-// Grid of Variable Positions
-// Libraries
+// Absolute Imports
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-
-// Card Selector
-import cardSelector from '../../../shared/components/cardSelector';
+import { Row } from 'reactstrap';
 
 // Components
-import DetailModal from './DetailModal';
 import NotFoundCard from '../../../shared/components/404/Card';
 
 // Functions
+import cardSelector from '../../../shared/components/cardSelector';
 import wrapper from '../../../shared/utils/wrapper';
 
 // Actions
-import { TOGGLE_INSTANCE_DETAIL_MODAL } from '../../redux/actionCreators';
+import { INSTANCE_DETAIL, TOGGLE_INSTANCE_DETAIL_MODAL } from '../../redux/actionCreators';
 
 
-// Declaration
 class Generic extends PureComponent {
   static propTypes = {
     instances: PropTypes.instanceOf(Object),
@@ -26,20 +22,26 @@ class Generic extends PureComponent {
     relatedModelLabel: PropTypes.string.isRequired,
     light: PropTypes.bool.isRequired,
     typeContext: PropTypes.string.isRequired,
+    location: PropTypes.string.isRequired,
 
     // Redux
     dispatch: PropTypes.func.isRequired,
     parentModelLabel: PropTypes.string.isRequired,
-    openInstance: PropTypes.instanceOf(Object).isRequired,
-    instanceModalOpen: PropTypes.bool.isRequired,
   };
 
   static defaultProps = {
     instances: [],
   };
 
-  handleToggleDetailModal = () => {
+  handleOnClick = (e) => {
+    e.preventDefault();
     const { dispatch } = this.props;
+    const { instance } = e.currentTarget.dataset;
+
+    dispatch({
+      type: INSTANCE_DETAIL,
+      instance: JSON.parse(instance),
+    });
     dispatch({
       type: TOGGLE_INSTANCE_DETAIL_MODAL,
     });
@@ -53,48 +55,57 @@ class Generic extends PureComponent {
       relatedModelLabel,
       light,
       typeContext,
+      location,
 
       // Redux
       parentModelLabel,
-      openInstance,
-      instanceModalOpen,
     } = this.props;
 
     return (
       instances !== null && instances.length > 0 ? (
         <>
-          <div className={gridClass}>
+          <div className={`${gridClass} justify-content-center w-100`}>
             {instances.map((instance) => {
               if (instance.modelLabel) {
-                return cardSelector(instance, typeContext || 'relation', light);
+                return cardSelector({
+                  instance,
+                  typeContext: typeContext || '',
+                  light,
+                  location,
+
+                  // Callbacks
+                  onClick: this.handleOnClick,
+                });
               }
 
-              // Copy instance
-              const instanceWithLabel = { ...instance };
-              instanceWithLabel.modelLabel = relatedModelLabel;
-              return cardSelector(instanceWithLabel, typeContext || 'relation', light);
+              // Copy instance and add ``modelLabel``.
+              return cardSelector({
+                instance: {
+                  ...instance,
+                  modelLabel: relatedModelLabel,
+                },
+                typeContext: typeContext || '',
+                light,
+                location,
+
+                // Callbacks
+                onClick: this.handleOnClick,
+              });
             })}
           </div>
-
-          {/* Detail Modal */}
-          <DetailModal
-            isOpen={instanceModalOpen}
-            instance={openInstance}
-
-            // Callbacks
-            toggle={this.handleToggleDetailModal}
-          />
         </>
       ) : (
-        <div
-          className={`mx-auto justify-content-center align-items-center ${gridClass}`}
-        >
-          <NotFoundCard
-            type={relatedModelLabel}
-            parent={parentModelLabel || 'noneParent'}
-            light={light}
-          />
-        </div>
+        <Row noGutters>
+          <div
+            className={`mx-auto justify-content-center align-items-center ${gridClass}`}
+          >
+            <NotFoundCard
+              type={relatedModelLabel}
+              parent={parentModelLabel || 'noneParent'}
+              light={light}
+            />
+          </div>
+        </Row>
       )
     );
   }

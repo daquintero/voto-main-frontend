@@ -10,7 +10,7 @@ import typeBanner from '../../typeBanner';
 
 
 // Declaration
-class PromWPCard extends PureComponent {
+class AchievementCardWithParent extends PureComponent {
   static propTypes = {
     instance: PropTypes.instanceOf(Object).isRequired,
     light: PropTypes.bool,
@@ -27,7 +27,7 @@ class PromWPCard extends PureComponent {
         {relTopCreator(instance)}
         <a target="_blank" rel="noreferrer noopener" href={instance.source}>
           <Card className="bg-light border-0 rounded-0">
-            <CardBody className="p-2">
+            <CardBody className="p-2 pb-4">
               <p className="p-1 m-0 small">{instance.briefDescription}</p>
             </CardBody>
             {categoryInfo[instance.type] ? (
@@ -38,10 +38,10 @@ class PromWPCard extends PureComponent {
             ) : null}
           </Card>
         </a>
-        {typeBanner('Promesa')}
+        {typeBanner('Logro')}
       </div>
     );
   }
 }
 
-export default PromWPCard;
+export default AchievementCardWithParent;

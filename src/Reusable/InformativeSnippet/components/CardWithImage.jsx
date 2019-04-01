@@ -10,13 +10,14 @@ import CardStatistics from '../../Statistics/components/CardStatistics';
 
 // Styling
 import layoutMap from '../styling/layoutMap';
+import typeBanner from '../../typeBanner';
 
 
 const CardWithImage = ({ instance, light }) => {
   const primaryImage = instance.media.images[0];
   return (
     <div className={`span-4-cols shadow ${light ? 'bg-layout' : 'bg-shady-layout'}`}>
-      <Card className="bg-light border-0 rounded-0 small-enlarge">
+      <Card className="bg-light border-0 rounded-0 small-enlarge pb-4">
         <Link to={`/noticia/${instance.id}`}>
           <Row noGutters>
             <Col
@@ -40,14 +41,14 @@ const CardWithImage = ({ instance, light }) => {
               xl={layoutMap[instance.size].xl.inner.contentWrapper}
             >
               <CardBody className="p-0">
-                <h4 className="card-title mb-0 p-2">{instance.title}</h4>
-                <div className="d-flex justify-content-between bg-eb">
+                <h5 className="card-title mb-0 p-2">{instance.title}</h5>
+                <div className="d-flex justify-content-center bg-eb">
                   <div className="p-2 text-center justify-content-center">
                     <CardStatistics statistics={instance.statistics} />
                   </div>
                   <div className="p-2 mt-0 text-center">
                     <i className="fal p-2 fa-calendar" />
-                    <p className="small m-0"> Publicado { moment(instance.date).fromNow() } </p>
+                    <p className="small m-0"> Publicado {moment(instance.dateCreated).fromNow()} </p>
                   </div>
                 </div>
               </CardBody>
@@ -55,6 +56,7 @@ const CardWithImage = ({ instance, light }) => {
           </Row>
         </Link>
       </Card>
+      {typeBanner('Noticia')}
     </div>
   );
 };

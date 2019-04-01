@@ -7,7 +7,7 @@ import { GeoJsonLayer } from 'deck.gl';
 // Components
 import Loader from '../../../../../shared/components/Loader';
 import Map from '../../../../../Reusable/Map';
-import CardGrid from '../../../../../Reusable/Grid/components/DetailedReduxCardGrid';
+import GenericWrapper from '../../../../../Reusable/Grid/components/GenericWrapper';
 
 // Actions
 import { discoverCandidates } from '../../../redux/actions';
@@ -185,7 +185,7 @@ class DiscoverCandidates extends PureComponent {
         )}
         <hr />
         {DISCOVER_CANDIDATES.loaded ? (
-          <CardGrid
+          <GenericWrapper
             parentModelLabel="political.Individual"
             relatedModelLabel="noneType"
             subsetNumber={0}

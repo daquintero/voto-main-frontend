@@ -5,7 +5,7 @@ import { Row, Col } from 'reactstrap';
 import { connect } from 'react-redux';
 
 // Components
-import CardGrid from '../../../Reusable/Grid/components/DetailedReduxCardGrid';
+import GenericGridWrapper from '../../../Reusable/Grid/components/GenericWrapper';
 
 class Relationships extends PureComponent {
   static propTypes = {
@@ -21,27 +21,30 @@ class Relationships extends PureComponent {
     return (
       <Row className="overflow-hidden">
         <Col xs={12} className="p-1 bg-layout">
-          <CardGrid
+          <GenericGridWrapper
             relatedModelLabel="political.Organization"
-            gridClass="variable-grid"
+            gridClass="relationships-grid"
             instances={organizations.instances}
             subsetNumber={organizations.subsetNumber}
+            typeContext="detailed"
           />
         </Col>
         <Col xs={12} className="mt-2 p-1 bg-layout">
-          <CardGrid
+          <GenericGridWrapper
             relatedModelLabel="political.Individual"
-            gridClass="variable-grid"
+            gridClass="relationships-grid"
             instances={individuals.instances}
             subsetNumber={individuals.subsetNumber}
+            typeContext="detailed"
           />
         </Col>
         <Col xs={12} className="p-1 bg-layout">
-          <CardGrid
+          <GenericGridWrapper
             relatedModelLabel="corruption.InformativeSnippet"
-            gridClass="variable-grid"
+            gridClass="variable-new-grid"
             instances={informativeSnippets.instances}
             subsetNumber={informativeSnippets.subsetNumber}
+            typeContext="detailed"
           />
         </Col>
         {/* TODO Organization Card Grid */}

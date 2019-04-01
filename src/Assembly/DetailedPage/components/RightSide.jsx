@@ -10,7 +10,7 @@ import MainFinancesNav from '../../../Reusable/FinanceItem/components/MainFinanc
 import Statistics from './Statistics';
 import Share from '../../../Reusable/SocialShare/components/Card';
 import LawList from '../../../Reusable/Law/components/List';
-import CardGrid from '../../../Reusable/Grid/components/DetailedReduxCardGrid';
+import GenericGridWrapper from '../../../Reusable/Grid/components/GenericWrapper';
 // import TwitterFeed from '../../../Reusable/SocialShare/components/TwitterFeed';
 
 // Declaration
@@ -55,14 +55,13 @@ class RightSide extends PureComponent {
         ) : null}
         <Row noGutters className="px-2 py-4 justify-content-center right-side__row">
           <MainFinancesNav
-            corruptionRelatedFunds={instance.corruptionRelatedFunds}
-            nonCorruptionRelatedFunds={instance.nonCorruptionRelatedFunds}
+            relatedFunds={instance.relatedFunds}
             parent={instance.modelLabel}
             light={light}
           />
         </Row>
         <Row noGutters className="px-2 py-4 justify-content-center right-side__row">
-          <CardGrid
+          <GenericGridWrapper
             relatedModelLabel="media.Resource"
             gridClass="variable-grid"
             instances={resources}

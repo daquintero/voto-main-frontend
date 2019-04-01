@@ -9,9 +9,10 @@ import {
 } from 'reactstrap';
 
 
-class LocationPickerModal extends PureComponent {
+class DetailModal extends PureComponent {
   static propTypes = {
     isOpen: PropTypes.bool.isRequired,
+    instance: PropTypes.instanceOf(Object).isRequired,
 
     // Callbacks
     toggle: PropTypes.func.isRequired,
@@ -20,7 +21,7 @@ class LocationPickerModal extends PureComponent {
   render() {
     // Props
     const {
-      isOpen, toggle,
+      isOpen, toggle, instance,
     } = this.props;
 
     return (
@@ -28,23 +29,25 @@ class LocationPickerModal extends PureComponent {
         isOpen={isOpen}
         toggle={toggle}
         size="lg"
+        centered
+        className="modal-dialog--success"
       >
         <div className="modal__header">
-          <button className="lnr lnr-cross modal__close-btn" onClick={toggle} />
+          <button className="fal fa-times modal__close-btn" onClick={toggle} />
           <h3 className="page-title">{}</h3>
           <h3 className="page-subhead subhead">
-            {}
+            {instance.title}
           </h3>
         </div>
         <div className="modal__body">
-          {}
+          {instance.briefDescription}
         </div>
         <ButtonToolbar className="modal__footer">
-          <Button onClick={toggle}>{}</Button>
+          <Button onClick={toggle}>Cerrar</Button>
         </ButtonToolbar>
       </Modal>
     );
   }
 }
 
-export default LocationPickerModal;
+export default DetailModal;
