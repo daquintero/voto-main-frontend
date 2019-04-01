@@ -179,9 +179,9 @@ class DiscoverCandidates extends PureComponent {
           {this.renderChild()}
         </Map>
         {hasSelected ? (
-          <h5 className="text-black-50 mt-3">Políticos Circuito {properties.CIRCUITO}</h5>
+          <h5 className="text-black-50 mt-3">Candidatos Circuito {properties.CIRCUITO}</h5>
         ) : (
-          <h5 className="text-black-50 mt-3">Haz click en los circuitos del mapa para ver sus politicos.</h5>
+          <h5 className="text-black-50 mt-3">Haz click en los circuitos del mapa para ver tus candidatos.</h5>
         )}
         <hr />
         {DISCOVER_CANDIDATES.loaded ? (
