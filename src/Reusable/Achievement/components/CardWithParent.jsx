@@ -28,14 +28,11 @@ class AchievementCardWithParent extends PureComponent {
         <a target="_blank" rel="noreferrer noopener" href={instance.source}>
           <Card className="bg-light border-0 rounded-0">
             <CardBody className="p-2 pb-4">
-              <p className="p-1 m-0 small">{instance.briefDescription}</p>
+              {categoryInfo[instance.type] &&
+              (<i className={`float-left fa p-2 fa-${categoryInfo[instance.type].icon}`} />)
+              }
+              <p className="p-1 m-0 small">{instance.title}</p>
             </CardBody>
-            {categoryInfo[instance.type] ? (
-              <CardHeader className="pt-1 pb-4">
-                <i className={`float-left fa p-1 fa-${categoryInfo[instance.type].icon}`} />
-                <p className="float-right small mb-0 pb-2">{categoryInfo[instance.type].Spanish}</p>
-              </CardHeader>
-            ) : null}
           </Card>
         </a>
         {typeBanner('Logro')}

@@ -2,9 +2,9 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { Provider } from 'react-redux';
+import { StaticRouter } from 'react-router';
 import OrganizationPage from '../Page';
 import store from '../../../../../App/store';
-import { StaticRouter } from 'react-router';
 
 describe('<OrganizationPage />', () => {
   const initialState = store;
