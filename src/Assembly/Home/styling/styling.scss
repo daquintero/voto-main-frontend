@@ -35,7 +35,7 @@
           left: 0;
           width: 100%;
           height: 100%;
-          //background-image: url('/img/pan.jpg');
+          background-image: url('/img/pan.jpg');
           background-size: 100%;
           background-repeat: no-repeat;
           opacity: 0.13;
@@ -48,6 +48,7 @@
 
       @media (max-width: 768px) {
         width: 100%;
+        background: white;
       }
 
       @media (max-width: 992px) {
