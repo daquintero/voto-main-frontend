@@ -6,7 +6,7 @@ Array [
     className="home__search__wrapper"
   >
     <div
-      className="home__search__form__wrapper justify-content-center bg-shady-layout no-gutters row"
+      className="home__search__form__wrapper justify-content-center no-gutters row"
     >
       <i
         className="fal fa-vote-yea home__search__background-icon one"
@@ -56,11 +56,6 @@ Array [
       />
     </div>
   </div>,
-  <img
-    alt=""
-    className="sep"
-    src="/img/star-separator.svg"
-  />,
   <div
     className="py-5 container"
   >
