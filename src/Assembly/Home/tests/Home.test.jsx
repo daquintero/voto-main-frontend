@@ -4,6 +4,7 @@ import renderer from 'react-test-renderer';
 import { Provider } from 'react-redux';
 import Home from '../index';
 import store from '../../../App/store';
+import { StaticRouter } from 'react-router';
 
 describe('<Home />', () => {
   const initialState = store;
@@ -11,9 +12,11 @@ describe('<Home />', () => {
   it(' renders correctly without crashing', () => {
     const tree = renderer
       .create(<>
-        <Provider store={initialState}>
-          <Home />
-        </Provider>
+        <StaticRouter>
+          <Provider store={initialState}>
+            <Home />
+          </Provider>
+        </StaticRouter>
       </>)
       .toJSON();
     expect(tree)
