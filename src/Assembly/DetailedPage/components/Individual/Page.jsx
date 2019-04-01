@@ -154,7 +154,7 @@ const mapStateToProps = (state) => {
 export default wrapper({
   component: Page,
   wrappers: [
-    connect(mapStateToProps),
     withRouter,
+    connect(mapStateToProps),
   ],
 });
