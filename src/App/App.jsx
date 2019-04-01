@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { hot } from 'react-hot-loader';
 import { BrowserRouter } from 'react-router-dom';
@@ -14,27 +14,19 @@ import ScrollToTop from './ScrollToTop';
 
 // TODO Remove all images for frontend testing from public img
 
-class App extends Component {
-  constructor() {
-    super();
-    this.state = {};
-  }
 
-  render() {
-    return (
-      <Provider store={store}>
-        <BrowserRouter>
-          <ScrollToTop>
-            <div>
-              <div>
-                <Router />
-              </div>
-            </div>
-          </ScrollToTop>
-        </BrowserRouter>
-      </Provider>
-    );
-  }
-}
+const App = () => (
+  <Provider store={store}>
+    <BrowserRouter>
+      <ScrollToTop>
+        <div>
+          <div>
+            <Router />
+          </div>
+        </div>
+      </ScrollToTop>
+    </BrowserRouter>
+  </Provider>
+);
 
 export default hot(module)(App);
