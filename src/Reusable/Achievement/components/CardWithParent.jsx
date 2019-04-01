@@ -35,7 +35,7 @@ class AchievementCardWithParent extends PureComponent {
             </CardBody>
           </Card>
         </a>
-        {typeBanner('Logro')}
+        {typeBanner('Logro', '#fbfffb')}
       </div>
     );
   }
