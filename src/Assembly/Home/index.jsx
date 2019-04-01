@@ -35,9 +35,7 @@ class Home extends PureComponent {
     return (
       <>
         {/* Search */}
-        <ErrorBoundary>
-          <Search />
-        </ErrorBoundary>
+        <Search />
 
         {/* Separator */}
         <img src={sep} alt="" className="sep" />
