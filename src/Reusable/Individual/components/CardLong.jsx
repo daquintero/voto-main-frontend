@@ -18,7 +18,7 @@ const CardLong = ({ instance, light }) => {
   const primaryImage = instance.media.images[0];
   return (
     <Card
-      className={`border-0 ${light ? 'bg-layout' : 'bg-shady-layout'} rounded-0 small-enlarge shadow`}
+      className={`border-0 ${light ? 'bg-layout' : 'bg-shady-layout'} rounded-0 m-2 small-enlarge shadow`}
     >
       <Link to={`/individuo/${instance.id}`}>
         <Row noGutters>
