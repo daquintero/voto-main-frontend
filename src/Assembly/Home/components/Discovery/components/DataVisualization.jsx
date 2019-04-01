@@ -117,6 +117,10 @@ class DataVisualization extends Component {
     return rawValue / maxValue;
   };
 
+  getHighestValue = () => {
+    this.setState({});
+  };
+
   handleOnChange = ({ target: { name, value } }) => {
     this.setState({
       [name]: value,
@@ -230,23 +234,6 @@ class DataVisualization extends Component {
     ];
   };
 
-  renderTooltip = () => {
-    const {
-      hoveredObject, x, y, hover, type,
-    } = this.state;
-
-    return (hoveredObject && hover) && (
-      <div
-        className="shadow"
-        style={{
-          position: 'absolute', zIndex: 1, pointerEvents: 'none', left: x, top: y,
-        }}
-      >
-        <p>{this.getProperty(hoveredObject.properties, type)}</p>
-      </div>
-    );
-  };
-
   renderChild = () => {
     const {
       hover, hoveredObject, selectedObject, hasSelected, type,
@@ -260,7 +247,7 @@ class DataVisualization extends Component {
         {(hover || hasSelected) && (
           <div className="map__info-panel__wrapper">
             <h3 className="text-center">{properties.CIRCUITO}</h3>
-            <p className="text-center mb-4">Votes: {this.getValue('GID', this.getProperty(properties, type))}</p>
+            <p className="text-center mb-4">Votos: {this.getValue('GID', this.getProperty(properties, type))}</p>
             {this.getNameList(properties[type]).map(name => (
               <p className="text-center text-black-50">{name}</p>
             ))}
@@ -269,10 +256,10 @@ class DataVisualization extends Component {
         <div className="map__scale__wrapper">
           <div
             className="map__scale__strip"
-            style={{ background: `linear-gradient(180deg, rgb(${colorRange[0].join(', ')}), white)` }}
+            style={{ background: 'linear-gradient(180deg, black, white)' }}
           />
-          <span className="many">Alto</span>
-          <span className="few">Bajo</span>
+          <span className="many">Mas</span>
+          <span className="few">Menos</span>
         </div>
       </>
     );
@@ -288,7 +275,6 @@ class DataVisualization extends Component {
       <div className="map__tab__wrapper">
         <Map
           getCursor={this.handleGetCursor}
-          renderTooltip={this.renderTooltip}
           renderLayers={this.renderLayers}
         >
           {this.renderChild()}
@@ -306,7 +292,7 @@ class DataVisualization extends Component {
               <option value="2004">2004</option>
               <option value="1994">1994</option>
             </Input>
-            <span>Año</span>
+            <span className="text-black-50">Año</span>
           </div>
           <div className="map__control-panel__select__wrapper">
             <Input
@@ -320,7 +306,7 @@ class DataVisualization extends Component {
                   <option key={value} value={value}>{label}</option>
               ))}
             </Input>
-            <span>Partido</span>
+            <span className="text-black-50">Partido</span>
           </div>
         </div>
       </div>

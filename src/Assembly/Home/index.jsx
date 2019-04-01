@@ -35,9 +35,7 @@ class Home extends PureComponent {
     return (
       <>
         {/* Search */}
-        <ErrorBoundary>
-          <Search />
-        </ErrorBoundary>
+        <Search />
 
         {/* Separator */}
         <img src={sep} alt="" className="sep" />
@@ -113,6 +111,8 @@ class Home extends PureComponent {
             </Row>
           </Container>
         </div>
+
+        {/* Discovery */}
         <div className="py-5">
           <ErrorBoundary>
             <Discovery />

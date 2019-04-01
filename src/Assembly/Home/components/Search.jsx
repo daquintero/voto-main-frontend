@@ -3,13 +3,15 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Container, Row, Col } from 'reactstrap';
 import { connect } from 'react-redux';
-import { reduxForm } from 'redux-form';
 
 // Actions
 import { homeSearch } from '../redux/actions';
+import { HOME_SEARCH, INCREMENT_HOME_SEARCH_PAGE } from '../redux/actionCreators';
 
 // Components
-import Generic from '../../../Reusable/Grid/components/DetailedReduxCardGrid';
+import GenericGridWrapper from '../../../Reusable/Grid/components/GenericWrapper';
+import DetailModal from '../../../Reusable/Grid/components/DetailModal';
+import toggleDetailModal from '../../../shared/utils/toggleDetailModal';
 
 
 class Search extends Component {
@@ -17,11 +19,10 @@ class Search extends Component {
     // Redux
     instances: PropTypes.arrayOf(Object).isRequired,
     dispatch: PropTypes.func.isRequired,
-    search: PropTypes.instanceOf(Object),
-  };
-
-  static defaultProps = {
-    search: '',
+    currentPage: PropTypes.number.isRequired,
+    done: PropTypes.bool.isRequired,
+    openInstance: PropTypes.instanceOf(Object).isRequired,
+    openInstanceModal: PropTypes.bool.isRequired,
   };
 
   constructor(props) {
@@ -36,27 +37,35 @@ class Search extends Component {
     ? { message: 'Por favor solo caracteres alfanuméricos', valid: false }
     : { message: null, valid: true });
 
-  handleSearch = (query) => {
+  handleSearch = (query, page) => {
     const { dispatch } = this.props;
 
     if (query.length && this.validateQuery(query).valid) {
-      dispatch(homeSearch({
+      return dispatch(homeSearch({
         search: query,
+        page,
       }));
     }
+
+    return null;
   };
 
   handleOnKeyUp = ({ target: { name, value } }) => {
     const { timeout } = this.state;
+    const { dispatch } = this.props;
     if (timeout) {
       clearTimeout(timeout);
     }
 
     this.setState({
       timeout: setTimeout(() => {
-        this.handleSearch(value);
+        this.handleSearch(value, 0);
       }, 500),
       [name]: value,
+    });
+
+    dispatch({
+      type: HOME_SEARCH.INIT,
     });
   };
 
@@ -66,25 +75,19 @@ class Search extends Component {
     e.preventDefault();
   };
 
-  renderField = ({
-    input,
-    label,
-    type,
-    meta: { touched, error, warning },
-  }) => (
-    <div>
-      <input
-        {...input}
-        placeholder={label}
-        type={type}
-        className="mx-auto form-control"
-        style={{ 'max-width': '500px' }}
-      />
-      {touched &&
-      ((error && <div className="text-danger text-center">{error}</div>) ||
-        (warning && <span>{warning}</span>))}
-    </div>
-  );
+  handleGetMore = () => {
+    const { query } = this.state;
+    const { currentPage, dispatch } = this.props;
+
+    this.handleSearch(query, currentPage + 1)
+      .then((action) => {
+        if (action.type === HOME_SEARCH.SUCCESS) {
+          dispatch({
+            type: INCREMENT_HOME_SEARCH_PAGE,
+          });
+        }
+      });
+  };
 
   render() {
     // State
@@ -95,67 +98,91 @@ class Search extends Component {
     // Props
     const {
       instances,
+      done,
+
+      // Redux
+      openInstance,
+      openInstanceModal,
+      dispatch,
     } = this.props;
 
     return (
-      <div className="home__search__wrapper">
-        <Row
-          noGutters
-          className="home__search__form__wrapper justify-content-center bg-shady-layout"
-        >
-          <i className="fal fa-vote-yea home__search__background-icon one" />
-          <i className="fal fa-vote-nay home__search__background-icon two" />
-          <h4>¡Infórmate e Investiga!</h4>
-          <Col md={12} className="align-content-center justify-content-center px-4 mt-3 mx-auto">
-            <form className="home__search__form" onSubmit={this.handleOnSubmit}>
-              <input
-                name="query"
-                type="text"
-                placeholder="ej. Asamblea 080"
-                onKeyUp={this.handleOnKeyUp}
-              />
-              <i className="fal fa-search" />
-            </form>
-            <div className="mt-2 text-danger text-center">
-              <p>{this.validateQuery(query).message}</p>
-            </div>
-            <div className="mt-2 text-center">
-              <p>Descubre todas las controversias, promesas y perfiles políticos que hemos recopilado.</p>
-            </div>
-          </Col>
-        </Row>
-        <div className="home__search__results__wrapper">
-          <Container>
-            {(query.length !== 0 && this.validateQuery(query).valid) && (
-              <Col xs={12} className="justify-content-center mx-auto py-2 mb-2">
-                <Generic
-                  instances={instances}
-                  light
-                  gridClass="variable-new-grid"
-                  relatedModelLabel="noneType"
-                  typeContext="public"
+      <>
+        {/* Instance Detail Modal */}
+        <DetailModal
+          instance={openInstance}
+          isOpen={openInstanceModal}
+
+          // Callbacks
+          toggle={toggleDetailModal(dispatch)}
+        />
+
+        <div className="home__search__wrapper">
+          <Row
+            noGutters
+            className="home__search__form__wrapper justify-content-center bg-shady-layout"
+          >
+            <i className="fal fa-vote-yea home__search__background-icon one" />
+            <i className="fal fa-vote-nay home__search__background-icon two" />
+            <h4>¡Infórmate e Investiga!</h4>
+            <Col md={12} className="align-content-center justify-content-center px-4 mt-3 mx-auto">
+              <form className="home__search__form" onSubmit={this.handleOnSubmit}>
+                <input
+                  name="query"
+                  type="text"
+                  placeholder="ej. Asamblea 080"
+                  onKeyUp={this.handleOnKeyUp}
                 />
-              </Col>
-            )}
-          </Container>
+                <i className="fal fa-search" />
+              </form>
+              <div className="mt-2 text-danger text-center">
+                <p>{this.validateQuery(query).message}</p>
+              </div>
+              <div className="mt-2 text-center">
+                <p>Descubre todas las controversias, promesas y perfiles políticos que hemos recopilado.</p>
+              </div>
+            </Col>
+          </Row>
+          <div className="home__search__results__wrapper">
+            <Container>
+              {(query.length !== 0 && this.validateQuery(query).valid) && (
+                <Col xs={12} className="justify-content-center mx-auto py-2 mb-0 mb-lg-2">
+                  <GenericGridWrapper
+                    instances={instances}
+                    light
+                    gridClass="variable-new-grid"
+                    relatedModelLabel="noneType"
+                    typeContext="public"
+                    getMore={this.handleGetMore}
+                    getMoreEnabled={!done}
+                    location="search"
+                  />
+                </Col>
+              )}
+            </Container>
+          </div>
         </div>
-      </div>
+      </>
     );
   }
 }
 
 
 const mapStateToProps = (state) => {
-  const { instances } = state.home.search;
-  const { search } = state.form;
+  const { instances, currentPage, done } = state.home.search;
+  const { openInstance, openInstanceModal } = state.reusable;
 
   return {
+    // Search
     instances,
-    search,
+    currentPage,
+    done,
+
+    // Reusable
+    openInstance,
+    openInstanceModal,
   };
 };
 
-export default connect(mapStateToProps)(reduxForm({
-  form: 'search',
-})(Search));
+export default connect(mapStateToProps)(Search);
 

@@ -13,7 +13,7 @@ const Footer = () => (
           md
           sm={12}
         >
-          <ul>
+          <ul className="p-0">
             <li><a href="/">Regresa Arriba</a></li>
             <li><a href="/legal">Legal</a></li>
             <li><a href="https://s3.amazonaws.com/votoinformado2019/Manual_Voto_Informado_2019.pdf">Manual</a></li>
@@ -39,7 +39,7 @@ const Footer = () => (
         >
           <h5> INFÓRMATE ● DEBATE ● VOTA</h5>
           <p className="lead text-center mb-1 mt-1 mx-1">
-            ¿Quieres contribuir?
+            ¿Quieres contribuir a la información del sitio?
           </p>
           <a href="https://studio.votoinformado2019.com" className="sl">
             <p className="m-0 p-1 text-center">
@@ -54,6 +54,9 @@ const Footer = () => (
           </a>
         </Col>
       </Row>
+      <p className="text-center"> Dínos que piensas en
+        <a href="mailto:votoinformado2019@gmail.com">votoinformado2019@gmail.com</a>
+      </p>
       <p className="text-center"> © Praxis Comunicaciones S.A. & © Escuela Callejera 2016</p>
       <p className="text-center">Voto Informado 2019</p>
     </Container>

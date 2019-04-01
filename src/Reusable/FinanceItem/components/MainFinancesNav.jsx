@@ -2,7 +2,7 @@
 
 // Libraries
 import React, { PureComponent } from 'react';
-import { Nav, NavItem } from 'reactstrap';
+import { NavItem } from 'reactstrap';
 import numeral from 'numeral';
 import { connect } from 'react-redux';
 
@@ -16,8 +16,8 @@ import FinanceModal from './FinanceModal';
 
 class MainFinancesNav extends PureComponent {
   static propTypes = {
-    corruptionRelatedFunds: PropTypes.number.isRequired,
-    nonCorruptionRelatedFunds: PropTypes.number.isRequired,
+    instances: PropTypes.instanceOf(Object).isRequired,
+    relatedFunds: PropTypes.number.isRequired,
     parent: PropTypes.string.isRequired,
     light: PropTypes.bool.isRequired,
   };
@@ -34,30 +34,29 @@ class MainFinancesNav extends PureComponent {
 
   render() {
     const {
-      corruptionRelatedFunds,
-      nonCorruptionRelatedFunds,
+      relatedFunds,
       parent,
       light,
+      instances,
     } = this.props;
     const { showModal } = this.state;
     return (
       <div className="justify-content-center">
-        <h4 className="text-center mt-2">Finanzas</h4>
-        {corruptionRelatedFunds || nonCorruptionRelatedFunds ? (
+        <h4 className="text-center mt-2">Donaciones</h4>
+        {relatedFunds || instances[0] ? (
           <>
-            <Nav className="mx-auto">
-              <NavItem
-                className="list-right list-group-item m-2 rounded-0 border-0 w-100"
-                onClick={this.toggleModal}
-              >
-                <div>
-                  <h5>{numeral(nonCorruptionRelatedFunds + corruptionRelatedFunds).format('$ 0,0.00')}</h5>
-                </div>
-                <div>
-                  <h6>Total de Dinero Manejado</h6>
-                </div>
-              </NavItem>
-            </Nav>
+            <NavItem
+              className="list-group-item small-enlarge m-2 rounded-0 border-0 w-100"
+              onClick={this.toggleModal}
+            >
+              <div>
+                <h5>{numeral(relatedFunds).format('$ 0,0.00')}</h5>
+              </div>
+              <div>
+                <h6>Total de Donaciones Manejado</h6>
+                <p className="small">Haz click para el desglose</p>
+              </div>
+            </NavItem>
             <FinanceModal isOpen={showModal} toggle={this.toggleModal} />
           </>
         ) : (
@@ -72,4 +71,11 @@ class MainFinancesNav extends PureComponent {
   }
 }
 
-export default connect()(MainFinancesNav);
+const mapStateToProps = (state) => {
+  const { instances } = state.openPage.relatedInstances.financialItems;
+  return {
+    instances,
+  };
+};
+
+export default connect(mapStateToProps)(MainFinancesNav);

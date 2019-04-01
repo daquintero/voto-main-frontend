@@ -13,7 +13,11 @@ import layoutMap from '../styling/layoutMap';
 
 // Shared Function
 import getColDims from '../../../shared/utils/getColDims';
+
+import typeBanner from '../../typeBanner';
 import categoryInfo from '../../../shared/utils/categoryInfo';
+
+const profile = `${process.env.PUBLIC_URL}/img/user.svg`;
 
 const CardWithImage = ({ instance, light }) => {
   const primaryImage = instance.media.images[0];
@@ -28,13 +32,13 @@ const CardWithImage = ({ instance, light }) => {
             {...getColDims(layoutMap, instance.size, 'outer', 'wrapper')}
           >
             <img
-              className="img-full"
-              src={primaryImage.url}
+              className="img-full p-3"
+              src={primaryImage ? primaryImage.url : profile}
               alt=""
             />
           </Col>
           <Col >
-            <CardBody className="p-2">
+            <CardBody className="p-2 pb-4">
               <Row noGutters>
                 <Col xs={12} className="mb-2">
                   <h5 className="card-title mb-0">{instance.name}</h5>
@@ -45,7 +49,7 @@ const CardWithImage = ({ instance, light }) => {
                 instance.campaigns.map(campaign => (
                   <Row noGutters className="py-2">
                     <Col>
-                      <h6 className="mb-0 p-1">{categoryInfo[campaign.type]}</h6>
+                      <h6 className="mb-0 p-1">{categoryInfo[campaign.type].t || campaign.type}</h6>
                       {campaign.reelection && (
                         <p className="mb-0">
                           <i className="fa p-1 fa-podium" />
@@ -60,6 +64,7 @@ const CardWithImage = ({ instance, light }) => {
           </Col>
         </Row>
       </Link>
+      {typeBanner('Individuo', '#fbffff')}
     </Card>
   );
 };

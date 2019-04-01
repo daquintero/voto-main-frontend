@@ -26,13 +26,15 @@ class Statistics extends PureComponent {
       <div className="justify-content-center">
         <h4 className="text-center mt-2 rel">{typeInfo['political.Statistic'].name}</h4>
         <Row className="mx-auto">
+          <div className="statistics-grid w-100">
           {instances ? (instances.map(instance => (
-            <div className="p-2 variable-grid" key={instance.id}>
+            <div key={instance.id}>
               <StatisticBlock instance={instance} />
             </div>
           ))) : (
             <NFCard parent={parent} type="political.Statistic" light />
           )}
+          </div>
         </Row>
       </div>
     );

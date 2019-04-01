@@ -8,7 +8,11 @@
   grid-auto-rows: minmax(50px, auto);
   grid-auto-flow: dense;
 
-  padding: 2%
+  padding: 2%;
+
+  @media (max-width: 768px) {
+    grid-template-columns: none;
+  }
 }
 
 .variable-related-grid {
@@ -25,34 +29,57 @@
 .variable-new-grid {
   display: grid;
   grid-gap: 10px;
-  grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+  // grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+  grid-template-columns: repeat(auto-fill, 6.3%);
   grid-template-rows: repeat(auto-fill, minmax(min-content, 1fr));
   grid-auto-rows: minmax(0px, auto);
   grid-auto-flow: dense;
 
-  padding: 2%
+  padding: 2%;
+
+  @media (max-width: 768px) {
+    grid-template-columns: none;
+    padding: 5% !important;
+    grid-row-gap: 30px;
+  };
+
+  @media (min-width: 1000px) {
+    grid-template-columns: repeat(auto-fill, 7%);
+  };
 }
 
 .candidates-grid {
   display: grid;
   grid-gap: 10px;
-  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  grid-template-columns: repeat(auto-fill, 45%);
   grid-template-rows: repeat(auto-fill, minmax(min-content, 1fr));
   grid-auto-rows: minmax(0px, auto);
   grid-auto-flow: dense;
 
-  padding: 2%
+  padding: 2%;
+
+  @media (max-width: 768px) {
+    grid-template-columns: none;
+    padding: 0 !important;
+    grid-gap: 0;
+  };
 }
 
 .presidential-grid {
   display: grid;
   grid-gap: 10px;
-  grid-template-columns: repeat(auto-fill, minmax(65px, 1fr));
+  grid-template-columns: repeat(auto-fill, 9%);
   grid-template-rows: repeat(auto-fill, minmax(min-content, 1fr));
   grid-auto-rows: minmax(0px, auto);
   grid-auto-flow: dense;
 
-  padding: 2%
+  padding: 2%;
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(auto-fill, 12%);
+    padding: 0 !important;
+    grid-gap: 3%;
+  };
 }
 
 
@@ -161,11 +188,117 @@
 .subsection-grid {
   display: grid;
   grid-gap: 10px;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   grid-template-rows: repeat(auto-fill, minmax(min-content, 1fr));
   grid-auto-flow: dense;
 
-  @media (min-width: 768px) {
+  @media (max-width: 768px) {
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   }
+}
+
+// ----------- RELATIONSHIPS GRID --------
+.relationships-grid {
+  display: grid;
+  grid-gap: 1%;
+  grid-template-columns: repeat(auto-fill, 45%);
+  grid-template-rows: repeat(auto-fill, minmax(min-content, 1fr));
+  grid-auto-rows: minmax(50px, auto);
+  grid-auto-flow: dense;
+
+  padding: 4%;
+
+  @media (max-width: 768px) {
+    grid-template-columns: none;
+  }
+}
+
+// --------- CONTROVERSIES GRID DETAILED --------
+.controversies-grid {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fill, 6%);
+  grid-template-rows: repeat(auto-fill, minmax(min-content, 1fr));
+  grid-auto-rows: minmax(50px, auto);
+  grid-auto-flow: dense;
+
+  padding: 2%;
+
+  @media (max-width: 768px) {
+    grid-template-columns: none;
+  }
+}
+
+
+// --------- EXPERIENCES GRID DETAILED --------
+.experiences-grid {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fill, 33%);
+  grid-template-rows: repeat(auto-fill, minmax(min-content, 1fr));
+  grid-auto-rows: minmax(50px, auto);
+  grid-auto-flow: dense;
+
+  padding: 2%;
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(auto-fill, 45%);
+  }
+}
+
+
+// --------- PROMISES GRID DETAILED --------
+.promises-grid {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fill, 10%);
+  grid-template-rows: repeat(auto-fill, minmax(min-content, 1fr));
+  grid-auto-rows: minmax(50px, auto);
+  grid-auto-flow: dense;
+
+  padding: 2%;
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(auto-fill, 9%);
+  }
+}
+
+// --------- ACHIEVEMENTS GRID DETAILED --------
+.achievements-grid {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fill, 10%);
+  grid-template-rows: repeat(auto-fill, minmax(min-content, 1fr));
+  grid-auto-rows: minmax(50px, auto);
+  grid-auto-flow: dense;
+
+  padding: 2%;
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(auto-fill, 9%);
+  }
+}
+
+// --------- STATISTICS GRID DETAILED --------
+.statistics-grid {
+  display: grid;
+  grid-gap: 5%;
+  grid-template-columns: repeat(auto-fill, 45%);
+  grid-template-rows: repeat(auto-fill, minmax(min-content, 1fr));
+  grid-auto-rows: minmax(50px, auto);
+  grid-auto-flow: dense;
+
+  padding: 2%;
+}
+
+
+// --------- ORGANIZATIONS GRID DETAILED --------
+.organizations-grid {
+  display: grid;
+  grid-gap: 5%;
+  grid-template-columns: repeat(auto-fill, 45%);
+  grid-template-rows: repeat(auto-fill, minmax(min-content, 1fr));
+  grid-auto-rows: minmax(50px, auto);
+  grid-auto-flow: dense;
+
+  padding: 2%;
 }

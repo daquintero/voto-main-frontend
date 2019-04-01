@@ -1,61 +1,117 @@
-/* eslint-disable */
-// Grid of Variable Positions
-// Libraries
+// Absolute Imports
 import React, { PureComponent } from 'react';
-// Prop Types
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { Row } from 'reactstrap';
 
-// Card Selector
-import CardSelector from '../../../shared/components/cardSelector';
-import NFCard from '../../../shared/components/404/Card';
+// Components
+import NotFoundCard from '../../../shared/components/404/Card';
 
-// Declaration
+// Functions
+import cardSelector from '../../../shared/components/cardSelector';
+import wrapper from '../../../shared/utils/wrapper';
+
+// Actions
+import { INSTANCE_DETAIL, TOGGLE_INSTANCE_DETAIL_MODAL } from '../../redux/actionCreators';
+
+
 class Generic extends PureComponent {
   static propTypes = {
-    instances: PropTypes.instanceOf(Object).isRequired,
+    instances: PropTypes.instanceOf(Object),
     gridClass: PropTypes.string.isRequired,
     relatedModelLabel: PropTypes.string.isRequired,
-    parentModelLabel: PropTypes.string.isRequired,
     light: PropTypes.bool.isRequired,
     typeContext: PropTypes.string.isRequired,
+    location: PropTypes.string.isRequired,
+
+    // Redux
+    dispatch: PropTypes.func.isRequired,
+    parentModelLabel: PropTypes.string.isRequired,
   };
+
+  static defaultProps = {
+    instances: [],
+  };
+
+  handleOnClick = (e) => {
+    e.preventDefault();
+    const { dispatch } = this.props;
+    const { instance } = e.currentTarget.dataset;
+
+    dispatch({
+      type: INSTANCE_DETAIL,
+      instance: JSON.parse(instance),
+    });
+    dispatch({
+      type: TOGGLE_INSTANCE_DETAIL_MODAL,
+    });
+  };
+
   render() {
+    // Props
     const {
       instances,
       gridClass,
       relatedModelLabel,
-      parentModelLabel,
       light,
       typeContext,
+      location,
+
+      // Redux
+      parentModelLabel,
     } = this.props;
+
     return (
-      instances && instances[0] ? (
-        <div className={gridClass}>
-          {instances.map((instance) => {
-            if (instance.modelLabel) {
-              return CardSelector(instance, typeContext ||'relation', light);
-            }
-            const withLabel = instance;
-            withLabel.modelLabel = relatedModelLabel;
-            return CardSelector(withLabel, typeContext || 'relation', light);
-          })}
-        </div>
-      ) :
-        <div
-          className={`mx-auto justify-content-center align-items-center ${gridClass}`}
-        >
-          <NFCard
-            type={relatedModelLabel}
-            parent={parentModelLabel || 'noneParent'}
-            light={light}
-          />
-        </div>
+      instances !== null && instances.length > 0 ? (
+        <>
+          <div className={`${gridClass} justify-content-center w-100`}>
+            {instances.map((instance) => {
+              if (instance.modelLabel) {
+                return cardSelector({
+                  instance,
+                  typeContext: typeContext || '',
+                  light,
+                  location,
+
+                  // Callbacks
+                  onClick: this.handleOnClick,
+                });
+              }
+
+              // Copy instance and add ``modelLabel``.
+              return cardSelector({
+                instance: {
+                  ...instance,
+                  modelLabel: relatedModelLabel,
+                },
+                typeContext: typeContext || '',
+                light,
+                location,
+
+                // Callbacks
+                onClick: this.handleOnClick,
+              });
+            })}
+          </div>
+        </>
+      ) : (
+        <Row noGutters>
+          <div
+            className={`mx-auto justify-content-center align-items-center ${gridClass}`}
+          >
+            <NotFoundCard
+              type={relatedModelLabel}
+              parent={parentModelLabel || 'noneParent'}
+              light={light}
+            />
+          </div>
+        </Row>
+      )
     );
   }
 }
 
-// TODO State Store Connection
+
 const mapStateToProps = (state) => {
   const { modelLabel } = state.openPage.parentInstance;
 
@@ -64,13 +120,11 @@ const mapStateToProps = (state) => {
   };
 };
 
-// State Store Connection
-export default connect(mapStateToProps)(Generic);
 
-// TODO DECIDE IF REMOVE
-// <Col
-//   xs={gridLayout[container].xs}
-//   sm={gridLayout[container].sm}
-//   md={gridLayout[container].md}
-//   className="mx-auto"
-// >
+export default wrapper({
+  component: Generic,
+  wrappers: [
+    connect(mapStateToProps),
+  ],
+});
+

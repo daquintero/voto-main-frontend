@@ -24,7 +24,7 @@ class MainFinanceList extends PureComponent {
                   <h4>{numeral(nonCorruptionRelatedFunds + corruptionRelatedFunds).format('$ 0,0.00')}</h4>
                 </div>
                 <div>
-                  <h6>Total de Dinero Manejado</h6>
+                  <h6>Total de Donaciones Manejado</h6>
                 </div>
               </ListGroupItem>
             </ListGroup>

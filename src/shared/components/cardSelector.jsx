@@ -2,83 +2,159 @@
 // Libraries
 import React from 'react';
 
-// ------------- CARDS IMPORTS -----------------
+// ------------- CARD IMPORTS -----------------
 // Corruption Case
-import CORRCard from '../../Reusable/CorruptionCase/components/Card';
+import CorruptionCaseCard from '../../Reusable/CorruptionCase/components/Card';
 // Informative Snippet
-import INFOCard from '../../Reusable/InformativeSnippet/components/Card';
+import InformativeSnippetCard from '../../Reusable/InformativeSnippet/components/Card';
 // Individual
-import INDICard from '../../Reusable/Individual/components/Card';
+import IndividualCard from '../../Reusable/Individual/components/Card';
+import IndividualCardLong from '../../Reusable/Individual/components/CardLong';
 // Controversy
-import CONTCard from '../../Reusable/Individual/components/Controversy/components/Card';
-import CONTCardWP from '../../Reusable/Individual/components/Controversy/components/CardWP';
+import ControversyCardWithParent from '../../Reusable/Controversy/components/CardWithParent';
 // Promises
-import PROMCard from '../../Reusable/Individual/components/Promise/components/Card';
-import PROMCardWP from '../../Reusable/Individual/components/Promise/components/CardWP';
+import PromiseCardWithParent from '../../Reusable/Promise/components/CardWithParent';
+// Achievement
+import AchievementCardWithParent from '../../Reusable/Achievement/components/CardWithParent';
 // Experience
-import EXPCard from '../../Reusable/Individual/components/Experience/components/Card';
-import EXPCardWP from '../../Reusable/Individual/components/Experience/components/CardWP';
+import ExperienceCardWithParent from '../../Reusable/Individual/components/Experience/components/CardWithParent';
 // Law
-import LAWCard from '../../Reusable/Law/components/Card';
-import LAWCardWP from '../../Reusable/Law/components/CardWP';
+import LawCardWithParent from '../../Reusable/Law/components/CardWithParent';
 // Statistics
-import STATCard from '../../Reusable/Statistics/components/StatisticBlock';
+import StatisticCard from '../../Reusable/Statistics/components/StatisticBlock';
 // Financial Item
-import FINCard from '../../Reusable/FinanceItem/components/FinanceItem';
-import FINCardWP from '../../Reusable/FinanceItem/components/FinanceItemWP';
+import FinancialItemCardWithParent from '../../Reusable/FinanceItem/components/FinanceItemWithParent';
 // Organization
-import ORGCard from '../../Reusable/Organization/components/Card';
+import OrganisationCard from '../../Reusable/Organization/components/Card';
+import OrganizationCardLong from '../../Reusable/Organization/components/CardLong';
 // Resource
-import RESCard from '../../Reusable/Individual/components/Resource/components/Card';
+import ResourceCard from '../../Reusable/Resource/components/Card';
 
-// ---------- FUNCTION -----------
-export default function (instance, context, light) {
+
+export default ({
+  instance, typeContext, light, ...rest
+}) => {
   switch (instance.modelLabel) {
     case 'corruption.InformativeSnippet':
-      return (<INFOCard instance={instance} />);
+      return (
+        <InformativeSnippetCard
+          instance={instance}
+          {...rest}
+        />
+      );
+
     case 'corruption.CorruptionCase':
       return (
-        <CORRCard instance={instance} />
+        <CorruptionCaseCard
+          instance={instance}
+          {...rest}
+        />
       );
+
     case 'corruption.FinancialItem':
-      if (context === 'relation') {
-        return (<FINCard instance={instance} />);
-      }
-      return (<FINCardWP instance={instance} />);
+      return (
+        <FinancialItemCardWithParent
+          instance={instance}
+          {...rest}
+        />
+      );
+
     case 'political.Individual':
-      return (<INDICard instance={instance} light={light} />);
+      if (typeContext === 'detailed') {
+        return (
+          <IndividualCardLong
+            instance={instance}
+            light={light}
+            {...rest}
+          />
+        );
+      }
+      return (
+        <IndividualCard
+          instance={instance}
+          light={light}
+          {...rest}
+        />
+      );
+
     case 'political.Controversy':
-      if (context === 'relation') {
-        return (<CONTCard instance={instance} light={light} />);
-      }
-      return (<CONTCardWP instance={instance} light={light} />);
+      return (
+        <ControversyCardWithParent
+          instance={instance}
+          light={light}
+          {...rest}
+        />
+      );
+
     case 'political.Promise':
-      if (context === 'relation') {
-        return (<PROMCard instance={instance} light={light} />);
-      }
-      return (<PROMCardWP instance={instance} />);
+      return (
+        <PromiseCardWithParent
+          instance={instance}
+          {...rest}
+        />
+      );
+
     case 'political.Achievement':
-      if (context === 'relation') {
-        return (<PROMCard instance={instance} light={light} />);
-      }
-      return (<PROMCardWP instance={instance} />);
+      return (
+        <AchievementCardWithParent
+          instance={instance}
+          {...rest}
+        />
+      );
+
     case 'political.Experience':
-      if (context === 'relation') {
-        return (<EXPCard instance={instance} light={light} />);
-      }
-      return (<EXPCardWP instance={instance} />);
+      return (
+        <ExperienceCardWithParent
+          instance={instance}
+          {...rest}
+        />
+      );
+
     case 'political.Statistic':
-      return (<STATCard instance={instance} />);
+      return (
+        <StatisticCard
+          instance={instance}
+          {...rest}
+        />
+      );
+
     case 'political.Organization':
-      return (<ORGCard instance={instance} light={light} />);
-    case 'political.Law':
-      if (context === 'relation') {
-        return (<LAWCard instance={instance} typeContext={context} />);
+      if (typeContext === 'detailed') {
+        return (
+          <OrganizationCardLong
+            instance={instance}
+            light={light}
+            {...rest}
+          />
+        );
       }
-      return (<LAWCardWP instance={instance} typeContext={context} />);
+      return (
+        <OrganisationCard
+          instance={instance}
+          light={light}
+          {...rest}
+        />
+      );
+
+
+    case 'political.Law':
+      return (
+        <LawCardWithParent
+          instance={instance}
+          typeContext={typeContext}
+          {...rest}
+        />
+      );
+
     case 'media.Resource':
-      return (<RESCard instance={instance} />);
+      return (
+        <ResourceCard
+          instance={instance}
+          {...rest}
+        />
+      );
+
     default:
       return null;
   }
-}
+};

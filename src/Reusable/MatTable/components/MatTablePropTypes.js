@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 export const MatTablePropTypes = {
   // Contains all data and headers for MatTable
-  field: PropTypes.instanceOf(Object).isRequired,
+  instances: PropTypes.instanceOf(Array).isRequired,
 };
 
 export const MatTableDefaultPropTypes = {};

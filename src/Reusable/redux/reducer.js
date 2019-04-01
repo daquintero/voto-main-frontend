@@ -1,10 +1,14 @@
 import {
   GET_MORE_RELATED_INSTANCES,
+  INSTANCE_DETAIL,
+  TOGGLE_INSTANCE_DETAIL_MODAL,
 } from './actionCreators';
 import { initializeActions, actionResult } from '../../shared/utils/asyncHelpers';
 
 
 const initialState = {
+  openInstance: {},
+  openInstanceModal: false,
   actions: initializeActions([
     'GET_MORE_RELATED_INSTANCES',
   ]),
@@ -37,6 +41,19 @@ export default (state = initialState, action) => {
           ...actionResult('GET_MORE_RELATED_INSTANCES.ERROR', { error: action.error, id: action.modelLabel }),
         },
       };
+
+    case INSTANCE_DETAIL:
+      return {
+        ...state,
+        openInstance: action.instance,
+      };
+
+    case TOGGLE_INSTANCE_DETAIL_MODAL:
+      return {
+        ...state,
+        openInstanceModal: !state.openInstanceModal,
+      };
+
     default:
       return state;
   }

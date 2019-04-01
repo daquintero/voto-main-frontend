@@ -7,7 +7,7 @@ import Card from './Card';
 import layoutMap from '../styling/layoutMap';
 
 // Shared Function
-import getColDims from '../../../../../shared/utils/getColDims';
+import getColDims from '../../../shared/utils/getColDims';
 
 /* Imperative PureFunction Grid Approach  */
 class BootCardGrid extends PureComponent {

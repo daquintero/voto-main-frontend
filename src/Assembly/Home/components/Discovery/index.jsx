@@ -49,7 +49,7 @@ class Discover extends Component {
               >
                 <h5 className="py-2 m-0 text-center">
                   <i className="fal fa-podium" />
-                  {' '}Descúbre tus Candidatos
+                  {' '}Fiscaliza a tus Diputados
                 </h5>
               </div>
               <div

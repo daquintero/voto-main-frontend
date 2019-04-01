@@ -1,6 +1,7 @@
 // Libraries
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import { withRouter } from 'react-router-dom';
 import ReactRouterPropTypes from 'react-router-prop-types';
 import { Container, Row, Col } from 'reactstrap';
 import { connect } from 'react-redux';
@@ -17,7 +18,11 @@ import Relationships from '../Relationships';
 import RightSide from '../RightSide';
 import Loader from '../../../../shared/components/Loader';
 import History from './History';
-// import TopBanner from '../../../TopBanner';
+import DetailModal from '../../../../Reusable/Grid/components/DetailModal';
+
+// Functions
+import toggleDetailModal from '../../../../shared/utils/toggleDetailModal';
+import wrapper from '../../../../shared/utils/wrapper';
 
 
 const parentModelLabel = 'political.Individual';
@@ -29,10 +34,13 @@ class Page extends PureComponent {
     dispatch: PropTypes.func.isRequired,
     instance: PropTypes.instanceOf(Object).isRequired,
     actions: PropTypes.instanceOf(Object).isRequired,
+    openInstance: PropTypes.instanceOf(Object).isRequired,
+    openInstanceModal: PropTypes.bool.isRequired,
 
     // Router
     match: ReactRouterPropTypes.match.isRequired,
   };
+
   constructor(props) {
     super();
     this.state = {
@@ -83,11 +91,25 @@ class Page extends PureComponent {
 
   render() {
     const {
-      instance, actions,
+      // Redux
+      instance,
+      actions,
+      openInstance,
+      openInstanceModal,
+      dispatch,
     } = this.props;
 
     return actions.GET_DETAILED_PAGE.loaded ? (
       <>
+        {/* Instance Detail Modal */}
+        <DetailModal
+          instance={openInstance}
+          isOpen={openInstanceModal}
+
+          // Callbacks
+          toggle={toggleDetailModal(dispatch)}
+        />
+
         {/* TODO READD */}
         {/* TopBanner /> */}
         <Container>
@@ -116,28 +138,23 @@ class Page extends PureComponent {
 
 const mapStateToProps = (state) => {
   const { parentInstance, actions } = state.openPage;
+  const { openInstance, openInstanceModal } = state.reusable;
+
   return {
+    // Open Page
     instance: parentInstance,
     actions,
+
+    // Reusable
+    openInstance,
+    openInstanceModal,
   };
 };
 
-export default connect(mapStateToProps)(Page);
-
-
-// constructor(props) {
-//   super();
-//   this.state = {
-//     currentID: props.match.params.id,
-//   };
-// }
-//
-// static getDerivedStateFromProps(nextProps, prevState) {
-//   if (nextProps.match.params.id !== prevState.currentID) {
-//     nextProps.dispatch(getDetailedPage({
-//       ml: parentModelLabel,
-//       id: this.props.match.params.id,
-//       sn: 0,
-//     }));
-//   }
-// }
+export default wrapper({
+  component: Page,
+  wrappers: [
+    withRouter,
+    connect(mapStateToProps),
+  ],
+});

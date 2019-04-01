@@ -5,72 +5,77 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Button, Row } from 'reactstrap';
 
-// Actions
-import { getMoreRelatedInstances } from '../../redux/actions';
+// Components
+import GenericGrid from './Generic';
 
-// Presentational Component
-import CardGrid from './Generic';
+// Misc
 import typeInfo from '../../../shared/utils/typeInfo';
 
-// Detailed DEVELOPMENT-ONLY-Page Redux Card Grid
-class DetailedReduxCardGrid extends PureComponent {
+
+class GenericWrapper extends PureComponent {
   static propTypes = {
     // Redux
-    dispatch: PropTypes.func.isRequired,
     instances: PropTypes.instanceOf(Array),
-    subsetNumber: PropTypes.number.isRequired,
     actions: PropTypes.instanceOf(Array).isRequired,
-    parentModelLabel: PropTypes.string.isRequired,
-    parentId: PropTypes.number.isRequired,
 
     // Variable Props
     relatedModelLabel: PropTypes.string.isRequired,
     gridClass: PropTypes.string.isRequired,
     typeContext: PropTypes.string.isRequired,
     light: PropTypes.bool.isRequired,
+    getMoreEnabled: PropTypes.bool.isRequired,
+    location: PropTypes.string.isRequired,
+
+    // Callbacks
+    getMore: PropTypes.func,
   };
 
   static defaultProps = {
+    // Redux
     instances: [],
+
+    // Callbacks
+    getMore: () => {},
   };
 
-  handleGetMore = () => {
-    const {
-      dispatch, subsetNumber, parentModelLabel, parentId, relatedModelLabel,
-    } = this.props;
-    dispatch(getMoreRelatedInstances({
-      sn: parseInt(subsetNumber, 10) + 1,
-      ml: parentModelLabel,
-      pid: parentId,
-      rml: relatedModelLabel,
-    }));
-  };
+  // As this is a general component the implementation of some "getMore" function
+  // will vary depending on where and how this component is used. So we let the
+  // getMore function be defined the component(s) that mount this one and pass
+  // it down through props.
 
   render() {
     const {
       instances,
-      actions,
       relatedModelLabel,
       gridClass,
       light,
       typeContext,
+      getMore,
+      getMoreEnabled,
+      location,
+
+      // Redux
+      actions,
     } = this.props;
 
     return (
-      <div>
-        <h4 className="p-2 rel text-center">{typeInfo[relatedModelLabel].title}</h4>
-        <CardGrid
+      <>
+        <Row noGutters className="w-100 pl-4 justify-content-center">
+          <h4 className="p-2 rel text-center">{typeInfo[relatedModelLabel].title}</h4>
+        </Row>
+        <GenericGrid
           instances={instances}
           action={actions.GET_MORE_RELATED_INSTANCES[relatedModelLabel]}
           gridClass={gridClass}
           relatedModelLabel={relatedModelLabel}
           light={light}
           typeContext={typeContext}
+          location={location}
         />
-        {(instances && instances.length !== 0 && instances.length % 10 === 0) && (
+        {getMoreEnabled && (
           <Row noGutters className="p-2">
             <Button
-              onClick={this.handleGetMore}
+              onClick={getMore}
               className={`${light ? 'bg-layout' : 'bg-shady-layout'}
             small-enlarge rounded-0 text-center border-0 mx-auto more text-dark`}
             >
@@ -78,27 +83,20 @@ class DetailedReduxCardGrid extends PureComponent {
             </Button>
           </Row>
         )}
-      </div>
+      </>
     );
   }
 }
 
+
 const mapStateToProps = (state) => {
   const { actions } = state.openPage;
-  // TODO Pass through normal props
-  // const { instances, subsetNumber } = // NEXT LINE WRONG NO THIS.PROPS
-  //   state.openPage.relatedInstances.individuals;
-  const { modelLabel, id } = state.openPage.parentInstance;
 
   return {
-    parentModelLabel: modelLabel,
-    parentId: id,
-    // instances,
-    // subsetNumber,
     actions,
   };
 };
 
 // State Store Connection
-export default connect(mapStateToProps)(DetailedReduxCardGrid);
+export default connect(mapStateToProps)(GenericWrapper);
 
