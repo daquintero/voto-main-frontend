@@ -1,6 +1,6 @@
 // Card with Parent for the Promise
 import React, { PureComponent } from 'react';
-import { Card, CardHeader, CardBody } from 'reactstrap';
+import { Card, CardBody } from 'reactstrap';
 import PropTypes from 'prop-types';
 import relTopCreator from '../../Individual/components/relTopCreator';
 
