@@ -21,17 +21,23 @@ Array [
         className="align-content-center justify-content-center px-4 mt-3 mx-auto col-md-12"
       >
         <form
+          autoComplete="off"
           className="home__search__form"
           onSubmit={[Function]}
         >
           <input
+            className="home__search__form__input"
             name="query"
+            onChange={[Function]}
             onKeyUp={[Function]}
             placeholder="ej. Asamblea 080"
             type="text"
+            value=""
           />
           <i
             className="fal fa-search"
+            onClick={[Function]}
+            role="presentation"
           />
         </form>
         <div
