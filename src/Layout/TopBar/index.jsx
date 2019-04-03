@@ -14,11 +14,11 @@ import {
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import classNames from 'classnames';
 
 // Actions
 import { finishedFirstVisit } from './redux/actions';
 
+// Images
 import logo from './favicon.ico';
 
 
@@ -27,14 +27,15 @@ class TopBar extends Component {
     dispatch: PropTypes.func.isRequired,
     visited: PropTypes.bool.isRequired,
   };
+
   constructor(props) {
     super(props);
     this.state = {
       collapsed: true,
-      currentTab: '1',
       privacySeen: false,
     };
   }
+
   componentDidMount() {
     const { visited } = this.props;
 
@@ -45,6 +46,7 @@ class TopBar extends Component {
 
   closePrivacy = () => {
     const { dispatch } = this.props;
+
     dispatch(finishedFirstVisit());
     this.setState(({
       privacySeen: false,
@@ -58,75 +60,17 @@ class TopBar extends Component {
   };
 
   toggleNavbar = () => {
-    this.setState(prevState => ({ collapsed: !prevState.collapsed }));
+    this.setState(prevState => ({
+      collapsed: !prevState.collapsed,
+    }));
   };
 
-  handleOnHover = (e) => {
-    e.persist();
-    const { id } = e.currentTarget.dataset;
-    this.setState({ currentTab: id });
-  };
-
-  handleOnMouseLeave = () => {
-    this.setState({
-      currentTab: '1',
-    });
-  };
-
-  renderSubNav = () => {
-    const { currentTab } = this.state;
-    switch (currentTab) {
-      case '1':
-        return (
-          <div className="navbar__subnav__wrapper one">
-            <Container>
-              <div className="navbar__subnav__head">
-                <h3>Hi</h3>
-              </div>
-            </Container>
-          </div>
-        );
-      case '2':
-        return (
-          <div className="navbar__subnav__wrapper one">
-            <Container>
-              <div className="navbar__subnav__head">
-                <h3>News</h3>
-              </div>
-            </Container>
-          </div>
-        );
-      case '3':
-        return (
-          <div className="navbar__subnav__wrapper two">
-            <Container>
-              <div className="navbar__subnav__head">
-                <h3>Corruption</h3>
-              </div>
-            </Container>
-          </div>
-        );
-      case '4':
-        return (
-          <div className="navbar__subnav__wrapper three">
-            <Container>
-              <div className="navbar__subnav__head">
-                <h3>Candidates</h3>
-              </div>
-            </Container>
-          </div>
-        );
-      default:
-        return (
-          <></>
-        );
-    }
-  };
   render() {
     // State
     const {
-      currentTab, privacySeen,
+      privacySeen,
     } = this.state;
+
     return (
       <>
         <Modal isOpen={privacySeen} className="p-4">
@@ -164,20 +108,8 @@ class TopBar extends Component {
             <Collapse isOpen={!this.state.collapsed} navbar className="justify-content-end">
               <div
                 className="navbar__nav__wrapper bg-white justify-content-center"
-                onMouseLeave={this.handleOnMouseLeave}
               >
-                {/* <div */}
-                {/* className={classNames('navbar__nav__item one', { active: currentTab === '2' })} */}
-                {/* data-id="2" */}
-                {/* onMouseEnter={this.handleOnHover} */}
-                {/* > */}
-                {/* <Link className="navbar__nav__link" to="/mapa">Mapa</Link> */}
-                {/* </div> */}
-                <div
-                  className={classNames('navbar__nav__item two', { active: currentTab === '3' })}
-                  data-id="3"
-                  onMouseEnter={this.handleOnHover}
-                >
+                <div className="navbar__nav__item">
                   <div className="navbar__nav__link" >
                     {/* TODO remove coloring */}
                     <a
@@ -189,18 +121,12 @@ class TopBar extends Component {
                     </a>
                   </div>
                 </div>
-                <div
-                  className={classNames('navbar__nav__item three', { active: currentTab === '4' })}
-                  data-id="4"
-                  onMouseEnter={this.handleOnHover}
-                >
-                  <Link className="navbar__nav__link" to="/acerca">Nosotros</Link>
+                <div className="navbar__nav__item">
+                  <Link className="navbar__nav__link" to="/acerca">
+                    Nosotros
+                  </Link>
                 </div>
-                <div
-                  className={classNames('navbar__nav__item end three', { active: currentTab === '5' })}
-                  data-id="5"
-                  onMouseEnter={this.handleOnHover}
-                >
+                <div className="navbar__nav__item end">
                   <a className="navbar__nav__link" href="https://studio.votoinformado2019.com">
                     <i className="fal fa-user-circle" />
                   </a>
@@ -209,8 +135,6 @@ class TopBar extends Component {
             </Collapse>
           </Container>
         </Navbar>
-        {/* TODO ADD THIS LATER SINCE NOT MANY PAGES SO FAR */}
-        {/* {this.renderSubNav()} */}
       </>
     );
   }

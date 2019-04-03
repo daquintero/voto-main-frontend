@@ -21,17 +21,23 @@ Array [
         className="align-content-center justify-content-center px-4 mt-3 mx-auto col-md-12"
       >
         <form
+          autoComplete="off"
           className="home__search__form"
           onSubmit={[Function]}
         >
           <input
+            className="home__search__form__input"
             name="query"
+            onChange={[Function]}
             onKeyUp={[Function]}
             placeholder="ej. Asamblea 080"
             type="text"
+            value=""
           />
           <i
             className="fal fa-search"
+            onClick={[Function]}
+            role="presentation"
           />
         </form>
         <div
@@ -166,6 +172,200 @@ Array [
                     </a>
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>,
+  <div
+    className="py-5"
+  >
+    <div
+      className="container"
+    >
+      <div
+        className="m-0 m-md-4 no-gutters row"
+      >
+        <div
+          className="py-4 col-md-12"
+        >
+          <div
+            className="map__tab-panel__wrapper"
+          >
+            <div
+              className="map__tab-panel__item active"
+              data-tab="2"
+              onClick={[Function]}
+              role="presentation"
+            >
+              <h5
+                className="py-2 m-0 text-center"
+              >
+                <i
+                  className="fal fa-vote-yea"
+                />
+                 
+                Votos Históricos - Presidente
+              </h5>
+            </div>
+            <div
+              className="map__tab-panel__item"
+              data-tab="1"
+              onClick={[Function]}
+              role="presentation"
+            >
+              <h5
+                className="py-2 m-0 text-center"
+              >
+                <i
+                  className="fal fa-podium"
+                />
+                 
+                Descúbre tus Candidatos
+              </h5>
+            </div>
+          </div>
+          <div
+            className="map__tab__wrapper"
+          >
+            <div
+              style={
+                Object {
+                  "cursor": "grab",
+                  "height": 0,
+                  "position": "relative",
+                  "width": 0,
+                }
+              }
+            >
+              <div
+                style={
+                  Object {
+                    "height": "100%",
+                    "position": "relative",
+                    "width": "100%",
+                  }
+                }
+              >
+                <div
+                  className=""
+                  style={
+                    Object {
+                      "height": "100%",
+                      "overflow": "hidden",
+                      "position": "absolute",
+                      "visibility": "inherit",
+                      "width": "100%",
+                    }
+                  }
+                />
+                <div
+                  style={
+                    Object {
+                      "height": 0,
+                      "overflow": "visible",
+                      "width": 0,
+                    }
+                  }
+                />
+              </div>
+            </div>
+            <div
+              className="map__control-panel__wrapper"
+            >
+              <div
+                className="map__control-panel__select__wrapper"
+              >
+                <select
+                  className="form-control"
+                  name="year"
+                  onChange={[Function]}
+                  value={2014}
+                >
+                  <option
+                    value="2014"
+                  >
+                    2014
+                  </option>
+                  <option
+                    value="2009"
+                  >
+                    2009
+                  </option>
+                  <option
+                    value="2004"
+                  >
+                    2004
+                  </option>
+                  <option
+                    value="1994"
+                  >
+                    1994
+                  </option>
+                </select>
+                <span
+                  className="text-black-50"
+                >
+                  Año
+                </span>
+              </div>
+              <div
+                className="map__control-panel__select__wrapper"
+              >
+                <select
+                  className="form-control"
+                  name="party"
+                  onChange={[Function]}
+                  value="ValidVotes"
+                >
+                  <option
+                    value="ValidVotes"
+                  >
+                    Total
+                  </option>
+                  <option
+                    value="PRD"
+                  >
+                    Juan Carlos Navarro- PRD
+                  </option>
+                  <option
+                    value="Arnulfista"
+                  >
+                    Juan Carlos Varela - Panameñismo
+                  </option>
+                  <option
+                    value="FAD"
+                  >
+                    Genaro López - FAD
+                  </option>
+                  <option
+                    value="CD"
+                  >
+                    José Domingo Arias- CD
+                  </option>
+                  <option
+                    value="Celeste"
+                  >
+                    Esteban Rodríguez- Celeste
+                  </option>
+                  <option
+                    value="Verde"
+                  >
+                    Gerardo Barroso- Verde
+                  </option>
+                  <option
+                    value="Chocolate"
+                  >
+                    Juan Jované- Chocolate
+                  </option>
+                </select>
+                <span
+                  className="text-black-50"
+                >
+                  Partido
+                </span>
               </div>
             </div>
           </div>
@@ -419,110 +619,6 @@ Array [
             <div>
               Loading PDF...
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>,
-  <div
-    className="py-5"
-  >
-    <div
-      className="container"
-    >
-      <div
-        className="m-0 m-md-4 no-gutters row"
-      >
-        <div
-          className="py-4 col-md-12"
-        >
-          <div
-            className="map__tab-panel__wrapper"
-          >
-            <div
-              className="map__tab-panel__item active"
-              data-tab="1"
-              onClick={[Function]}
-              role="presentation"
-            >
-              <h5
-                className="py-2 m-0 text-center"
-              >
-                <i
-                  className="fal fa-podium"
-                />
-                 
-                Fiscaliza a tus Diputados
-              </h5>
-            </div>
-            <div
-              className="map__tab-panel__item"
-              data-tab="2"
-              onClick={[Function]}
-              role="presentation"
-            >
-              <h5
-                className="py-2 m-0 text-center"
-              >
-                <i
-                  className="fal fa-vote-yea"
-                />
-                 
-                Votos Históricos - Presidente
-              </h5>
-            </div>
-          </div>
-          <div
-            className="map__tab__wrapper"
-          >
-            <div
-              style={
-                Object {
-                  "cursor": "grab",
-                  "height": 0,
-                  "position": "relative",
-                  "width": 0,
-                }
-              }
-            >
-              <div
-                style={
-                  Object {
-                    "height": "100%",
-                    "position": "relative",
-                    "width": "100%",
-                  }
-                }
-              >
-                <div
-                  className=""
-                  style={
-                    Object {
-                      "height": "100%",
-                      "overflow": "hidden",
-                      "position": "absolute",
-                      "visibility": "inherit",
-                      "width": "100%",
-                    }
-                  }
-                />
-                <div
-                  style={
-                    Object {
-                      "height": 0,
-                      "overflow": "visible",
-                      "width": 0,
-                    }
-                  }
-                />
-              </div>
-            </div>
-            <h5
-              className="text-black-50 mt-3"
-            >
-              Haz click en los circuitos del mapa para ver sus politicos.
-            </h5>
-            <hr />
           </div>
         </div>
       </div>

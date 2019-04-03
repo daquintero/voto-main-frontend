@@ -26,7 +26,6 @@
       &__wrapper {
         padding: 7% 0;
         position: relative;
-        overflow: hidden;
         background-size: cover;
         &:before {
           content: '';
@@ -43,7 +42,7 @@
       }
 
       position: relative;
-      width: 40%;
+      width: 750px;
       margin: 0 auto;
 
       @media (max-width: 768px) {
@@ -55,7 +54,7 @@
         width: 90%;
       }
 
-      input {
+      &__input {
         width: 100%;
         border: none;
         box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
@@ -64,6 +63,11 @@
         font-size: 1.25em;
         padding: 5px 15px;
         border-radius: 10px;
+
+        &.has-options {
+          border-radius: 10px 10px 0 0;
+        }
+
         &:focus {
           border: none;
           border-color: transparent;
@@ -81,8 +85,41 @@
         right: 10px;
         top: 50%;
         transform: translateY(-50%);
-        font-size: 1.75em;
-        color: rgba(black, 0.5)
+        font-size: 1.7em;
+        color: rgba(black, 0.5);
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+
+    &__suggestions {
+      &__wrapper {
+        margin: 0 auto;
+        background-color: white;
+        box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+        position: absolute;
+        left: 0;
+        right: 0;
+        border-radius: 0 0 10px 10px;
+        z-index: 9999;
+
+        width: 100%;
+      }
+
+      &__option {
+        font-size: 1.25em;
+        padding: 5px 15px;
+
+        &.selected {
+          background-color: darken(white, 4%);
+        }
+
+        &:hover {
+          background-color: darken(white, 4%);
+          cursor: pointer;
+        }
       }
     }
 

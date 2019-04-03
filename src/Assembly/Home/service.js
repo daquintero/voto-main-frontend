@@ -3,17 +3,19 @@ import buildUrl from '../../shared/utils/buildUrl';
 
 
 const baseUrl = process.env.REACT_APP_BASE_URL;
-const homeApiUrl = `${baseUrl}/home/api/v1/`;
-const searchApiUrl = `${baseUrl}/search/api/v1/`;
+const homeApiUrl = `${baseUrl}/home/api/v1`;
+const searchApiUrl = `${baseUrl}/search/api/v1`;
+
 
 const urls = {
   get: {
-    home: homeApiUrl,
-    subscribedStats: `${baseUrl}/home/api/v1/get_subscribed_stats/`,
-    discoverCandidates: `${baseUrl}/home/api/v1/discover_candidates/`,
+    home: `${homeApiUrl}/`,
+    subscribedStats: `${homeApiUrl}/get_subscribed_stats/`,
+    discoverCandidates: `${homeApiUrl}/discover_candidates/`,
   },
   search: {
-    home: searchApiUrl,
+    suggest: `${searchApiUrl}/suggest/`,
+    search: `${searchApiUrl}/`,
   },
 };
 
@@ -24,7 +26,9 @@ const subscribedStats = () => axios.get(urls.get.subscribedStats);
 const discoverCandidates = gid => axios.get(buildUrl(urls.get.discoverCandidates, { gid }));
 
 // Search
-const homeSearch = searchData => axios.get(buildUrl(urls.search.home, searchData));
+const suggest = requestData => axios.get(buildUrl(urls.search.suggest, requestData));
+const search = requestData => axios.get(buildUrl(urls.search.search, requestData));
+
 
 const service = {
   get: {
@@ -33,7 +37,8 @@ const service = {
     discoverCandidates,
   },
   search: {
-    home: homeSearch,
+    suggest,
+    search,
   },
 };
 
