@@ -24,7 +24,10 @@ const initialState = {
     mailchimpSubscribed: 0,
     studioUsers: 0,
   },
-  presidential: [],
+  instances: {
+    presidentialCandidates: [],
+    mayorCandidates: [],
+  },
   discover: {
     candidates: [],
     gid: '8_0',
@@ -58,7 +61,7 @@ export default (state = initialState, action) => {
     case GET_HOME.SUCCESS:
       return {
         ...state,
-        presidential: action.response.instances.individuals,
+        ...action.response,
         actions: {
           ...state.actions,
           ...actionResult('GET_HOME.SUCCESS'),
