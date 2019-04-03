@@ -11,7 +11,7 @@ script:
 deploy:
   - provider: surge
     skip_cleanup: true
-    domain: votoinformado2019.com
+    domain: https://votoinformado2019.com
     project: ./build/
     on:
       branch: master
