@@ -4,6 +4,7 @@ import {
   Container,
   Navbar,
   NavbarBrand,
+  Nav,
   NavbarToggler,
   Collapse,
   Modal,
@@ -14,6 +15,7 @@ import {
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import classNames from 'classnames';
 
 // Actions
 import { finishedFirstVisit } from './redux/actions';
@@ -68,7 +70,7 @@ class TopBar extends Component {
   render() {
     // State
     const {
-      privacySeen,
+      privacySeen, collapsed,
     } = this.state;
 
     return (
@@ -96,8 +98,9 @@ class TopBar extends Component {
           <Container className="navbar__wrapper bg-white px-0">
             <NavbarBrand className="navbar__brand d-inline">
               <Link to="/">
-                <h4 className="p-1 m-0">
-                  <img className="img-fluid pr-2" src={logo} alt="" />#VotoInformado2019
+                <img className="img-fluid pr-2" src={logo} alt="" />
+                <h4 className="p-1 m-0 d-inline">
+                  #VotoInformado2019
                 </h4>
               </Link>
             </NavbarBrand>
@@ -105,33 +108,39 @@ class TopBar extends Component {
               onClick={this.toggleNavbar}
               className="mr-4"
             />
-            <Collapse isOpen={!this.state.collapsed} navbar className="justify-content-end">
-              <div
+            <Collapse isOpen={!collapsed} navbar className="justify-content-end">
+              <Nav
+                vertical={!collapsed}
                 className="navbar__nav__wrapper bg-white justify-content-center"
               >
-                <div className="navbar__nav__item">
-                  <div className="navbar__nav__link" >
-                    {/* TODO remove coloring */}
-                    <a
-                      target="_blank"
-                      rel="noreferrer noopener"
-                      href="https://s3.amazonaws.com/votoinformado2019/Manual_Voto_Informado_2019.pdf"
-                    >
+                <a
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  href="https://s3.amazonaws.com/votoinformado2019/Manual_Voto_Informado_2019.pdf"
+                >
+                  <div className={classNames('navbar__nav__item', { collapsed: !collapsed })}>
+                    <div className="navbar__nav__link" >
                       Manual
-                    </a>
+                    </div>
                   </div>
-                </div>
-                <div className="navbar__nav__item">
-                  <Link className="navbar__nav__link" to="/acerca">
-                    Nosotros
-                  </Link>
-                </div>
-                <div className="navbar__nav__item end">
-                  <a className="navbar__nav__link" href="https://studio.votoinformado2019.com">
-                    <i className="fal fa-user-circle" />
-                  </a>
-                </div>
-              </div>
+                </a>
+                <Link to="/acerca">
+                  <div className={classNames('navbar__nav__item', { collapsed: !collapsed })}>
+                    <div className="navbar__nav__link">
+                      Nosotros
+                    </div>
+                  </div>
+                </Link>
+                <a
+                  href="https://studio.votoinformado2019.com"
+                >
+                  <div className={classNames('navbar__nav__item end', { collapsed: !collapsed })}>
+                    <div className="navbar__nav__link">
+                      <i className="fal fa-user-circle" />
+                    </div>
+                  </div>
+                </a>
+              </Nav>
             </Collapse>
           </Container>
         </Navbar>

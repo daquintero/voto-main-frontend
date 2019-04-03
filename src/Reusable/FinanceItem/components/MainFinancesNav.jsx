@@ -53,7 +53,6 @@ class MainFinancesNav extends PureComponent {
                 <h5>{numeral(relatedFunds).format('$ 0,0.00')}</h5>
               </div>
               <div>
-                <h6>Total de Donaciones Manejado</h6>
                 <p className="small">Haz click para el desglose</p>
               </div>
             </NavItem>

@@ -12,7 +12,7 @@ class Discover extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentTab: '1',
+      currentTab: '2',
     };
   }
 
@@ -42,7 +42,7 @@ class Discover extends Component {
           <Col md={12} className="py-4">
             <div className="map__tab-panel__wrapper">
               <div
-                className={classNames('map__tab-panel__item', { active: currentTab === '1' })}
+                className={classNames('map__tab-panel__item', { active: currentTab === '2' })}
                 role="presentation"
                 onClick={this.handleOnChangeTab}
                 data-tab="2"
@@ -53,22 +53,22 @@ class Discover extends Component {
                 </h5>
               </div>
               <div
-                className={classNames('map__tab-panel__item', { active: currentTab === '2' })}
+                className={classNames('map__tab-panel__item', { active: currentTab === '1' })}
                 role="presentation"
                 onClick={this.handleOnChangeTab}
                 data-tab="1"
               >
                 <h5 className="py-2 m-0 text-center">
                   <i className="fal fa-podium" />
-                  {' '}Descúbre tus Candidatos
+                  {' '}Descubre tus Candidatos
                 </h5>
               </div>
             </div>
             {currentTab === '1' && (
-            <DataVisualization />
+              <DiscoverCandidates />
             )}
             {currentTab === '2' && (
-              <DiscoverCandidates />
+              <DataVisualization />
             )}
           </Col>
         </Row>

@@ -22,7 +22,7 @@ export const SEARCH = {
 };
 
 
-export const INCREMENT_HOME_SEARCH_PAGE = 'INCREMENT_HOME_SEARCH_PAGE';
+export const INCREMENT_SEARCH_PAGE = 'INCREMENT_HOME_SEARCH_PAGE';
 
 
 export const SUBSCRIBED_STATS = {

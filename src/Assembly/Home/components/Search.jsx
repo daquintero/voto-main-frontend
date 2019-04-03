@@ -7,7 +7,7 @@ import classNames from 'classnames';
 
 // Actions
 import { suggest, search } from '../redux/actions';
-import { SUGGEST, SEARCH, INCREMENT_HOME_SEARCH_PAGE } from '../redux/actionCreators';
+import { SUGGEST, SEARCH, INCREMENT_SEARCH_PAGE } from '../redux/actionCreators';
 
 // Components
 import GenericGridWrapper from '../../../Reusable/Grid/components/GenericWrapper';
@@ -18,6 +18,7 @@ import toggleDetailModal from '../../../shared/utils/toggleDetailModal';
 class Search extends Component {
   static propTypes = {
     // Redux
+    actions: PropTypes.instanceOf(Array).isRequired,
     options: PropTypes.instanceOf(Array).isRequired,
     instances: PropTypes.arrayOf(Object).isRequired,
     dispatch: PropTypes.func.isRequired,
@@ -36,34 +37,38 @@ class Search extends Component {
     };
   }
 
-  validateQuery = value => ((value && /[^a-zA-Z0-9áéíóú() ]/i.test(value))
-    ? { message: 'Por favor solo caracteres alfanuméricos', valid: false }
-    : { message: null, valid: true });
+  cleanQuery = query => query.replace(/[|&;$%@"<>()+,]/g, '');
 
   handleSuggest = (query) => {
     const { dispatch } = this.props;
 
-    if (query.length && this.validateQuery(query).valid) {
+    if (query.length) {
       return dispatch(suggest({
-        search: query,
+        search: this.cleanQuery(query),
       }));
     }
 
     return null;
   };
 
-  handleSearch = (query, page) => {
+  handleSearch = (query, page, increment = false) => {
     const { dispatch } = this.props;
 
-    if (query.length && this.validateQuery(query).valid) {
+    if (query.length) {
       return dispatch(search({
-        search: query,
+        search: this.cleanQuery(query),
         page,
       }))
         .then((action) => {
           if (action.type === SEARCH.SUCCESS) {
             dispatch({
               type: SUGGEST.INIT,
+            });
+          }
+
+          if (increment) {
+            dispatch({
+              type: INCREMENT_SEARCH_PAGE,
             });
           }
         });
@@ -99,7 +104,17 @@ class Search extends Component {
       // the search with the current term.
       this.handleSearch(value, 0);
     } else if (key === 'ArrowDown') {
-      if (selectedOption < options.length - 1) {
+      if (selectedOption === null) {
+        this.setState(() => {
+          const nextSelectedOption = 0;
+
+          return {
+            query: options[nextSelectedOption].text,
+            selectedOption: nextSelectedOption,
+          };
+        });
+      }
+      if (selectedOption < options.length - 1 && selectedOption !== null) {
         this.setState(({ selectedOption: prevSelectedOption }) => {
           const nextSelectedOption = prevSelectedOption + 1;
 
@@ -152,16 +167,9 @@ class Search extends Component {
 
   handleGetMore = () => {
     const { query } = this.state;
-    const { currentPage, dispatch } = this.props;
+    const { currentPage } = this.props;
 
-    this.handleSearch(query, currentPage + 1)
-      .then((action) => {
-        if (action.type === SEARCH.SUCCESS) {
-          dispatch({
-            type: INCREMENT_HOME_SEARCH_PAGE,
-          });
-        }
-      });
+    this.handleSearch(query, currentPage + 1, true);
   };
 
   render() {
@@ -174,6 +182,7 @@ class Search extends Component {
     // Props
     const {
       // Redux
+      actions: { SEARCH: SEARCH_ACTION },
       options,
       instances,
       done,
@@ -221,38 +230,37 @@ class Search extends Component {
                   role="presentation"
                   onClick={this.handleSearchIconOnClick}
                 />
-                {options.length > 0 && (
+                {options.length > 0 && query.length > 0 && (
                   <div className="home__search__suggestions__wrapper">
-                    {options.map(({ text }, index) => (
-                      <div
-                        key={text}
-                        className={classNames('home__search__suggestions__option', {
-                          selected: selectedOption === index,
-                        })}
-                        role="presentation"
-                        onClick={this.handleSuggestionOnClick}
-                        data-text={text}
-                      >
-                        {selectedOption === null ? (
-                          <>
-                            <span>
-                              {query}
-                            </span>
-                            <span className="font-weight-bold">
-                              {text.toLowerCase().slice(query.length)}
-                            </span>
-                          </>
-                        ) : (
-                          <span>{text}</span>
-                        )}
-                      </div>
+                    {options
+                      .slice(0, 10)
+                      .map(({ text }, index) => (
+                        <div
+                          key={text}
+                          className={classNames('home__search__suggestions__option', {
+                            selected: selectedOption === index,
+                          })}
+                          role="presentation"
+                          onClick={this.handleSuggestionOnClick}
+                          data-text={text.toLowerCase()}
+                        >
+                          {selectedOption === null ? (
+                            <>
+                              <span>
+                                {text.toLowerCase().slice(0, this.cleanQuery(query).length)}
+                              </span>
+                              <span className="font-weight-bold">
+                                {text.toLowerCase().slice(this.cleanQuery(query).length)}
+                              </span>
+                            </>
+                          ) : (
+                            <span>{text.toLowerCase()}</span>
+                          )}
+                        </div>
                     ))}
                   </div>
                 )}
               </form>
-              <div className="mt-2 text-danger text-center">
-                <p>{this.validateQuery(query).message}</p>
-              </div>
               <div className="mt-2 text-center">
                 <p>Descubre todas las controversias, promesas y perfiles políticos que hemos recopilado.</p>
               </div>
@@ -260,8 +268,8 @@ class Search extends Component {
           </Row>
           <div className="home__search__results__wrapper">
             <Container>
-              {(query.length !== 0 && this.validateQuery(query).valid) && (
-                <Col xs={12} className="justify-content-center mx-auto py-2 mb-0 mb-lg-2">
+              {(SEARCH_ACTION.loaded || instances.length > 0) && (
+                <Col xs={12} className="justify-content-center mx-auto pb-2 mb-0 mb-lg-2">
                   <GenericGridWrapper
                     instances={instances}
                     light
@@ -284,12 +292,16 @@ class Search extends Component {
 
 
 const mapStateToProps = (state) => {
+  const { actions } = state.home;
   const {
     options, instances, currentPage, done,
   } = state.home.search;
   const { openInstance, openInstanceModal } = state.reusable;
 
   return {
+    // Home
+    actions,
+
     // Search
     options,
     instances,

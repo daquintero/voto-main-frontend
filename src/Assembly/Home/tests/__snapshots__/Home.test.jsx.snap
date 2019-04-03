@@ -41,11 +41,6 @@ Array [
           />
         </form>
         <div
-          className="mt-2 text-danger text-center"
-        >
-          <p />
-        </div>
-        <div
           className="mt-2 text-center"
         >
           <p>
@@ -63,25 +58,6 @@ Array [
     </div>
   </div>,
   <div
-    className="py-5 container"
-  >
-    <div
-      className="featured-video"
-    >
-      <div
-        className="video"
-      >
-        <iframe
-          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen={true}
-          frameBorder="0"
-          src="https://www.youtube.com/embed/1cJ2yb3RJw8"
-          title="Bienvenido a Voto Informado"
-        />
-      </div>
-    </div>
-  </div>,
-  <div
     className="bg-shady-layout py-5"
   >
     <div
@@ -96,13 +72,6 @@ Array [
           />
           Candidatos Presidenciales
         </h4>
-        <div
-          className="w-100 pl-4 justify-content-center no-gutters row"
-        >
-          <h4
-            className="p-2 rel text-center"
-          />
-        </div>
         <div
           className="no-gutters row"
         >
@@ -223,7 +192,7 @@ Array [
                   className="fal fa-podium"
                 />
                  
-                Descúbre tus Candidatos
+                Descubre tus Candidatos
               </h5>
             </div>
           </div>
@@ -621,6 +590,25 @@ Array [
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </div>,
+  <div
+    className="py-5 container"
+  >
+    <div
+      className="featured-video"
+    >
+      <div
+        className="video"
+      >
+        <iframe
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen={true}
+          frameBorder="0"
+          src="https://www.youtube.com/embed/1cJ2yb3RJw8"
+          title="Bienvenido a Voto Informado"
+        />
       </div>
     </div>
   </div>,
