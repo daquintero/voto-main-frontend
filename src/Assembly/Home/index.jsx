@@ -40,11 +40,6 @@ class Home extends PureComponent {
         {/* Separator */}
         {/* <img src={sep} alt="" className="sep" /> */}
 
-        {/* Video */}
-        <Container className="py-5">
-          <Video />
-        </Container>
-
         {/* Candidates */}
         <div className="bg-shady-layout py-5">
           <Container>
@@ -58,6 +53,11 @@ class Home extends PureComponent {
             <Discovery />
           </ErrorBoundary>
         </div>
+
+        {/* Video */}
+        <Container className="py-5">
+          <Video />
+        </Container>
 
         {/* Info */}
         <div className="bg-shady-layout">
