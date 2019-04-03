@@ -41,11 +41,6 @@ Array [
           />
         </form>
         <div
-          className="mt-2 text-danger text-center"
-        >
-          <p />
-        </div>
-        <div
           className="mt-2 text-center"
         >
           <p>
@@ -96,13 +91,6 @@ Array [
           />
           Candidatos Presidenciales
         </h4>
-        <div
-          className="w-100 pl-4 justify-content-center no-gutters row"
-        >
-          <h4
-            className="p-2 rel text-center"
-          />
-        </div>
         <div
           className="no-gutters row"
         >
