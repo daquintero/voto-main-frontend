@@ -11,7 +11,6 @@ body {
 }
 
 .navbar {
-  height: 48px;
   padding: 10%;
   background-color: white;
   position: fixed;
@@ -24,8 +23,6 @@ body {
 
   &__wrapper {
     display: block;
-    flex-direction: row;
-    justify-content: space-between;
 
     z-index: 2000;
     @include gel-typography('canon-bold');
@@ -37,7 +34,6 @@ body {
     z-index: 2020;
     padding-top: 0;
     margin-top: 0;
-    height: 44px;
     width: 50%;
 
     img {
@@ -51,19 +47,28 @@ body {
     border-left: $border;
     line-height: 0.32em;
     border-bottom: 3px solid transparent;
+    height: 100%;
 
     &:hover {
       cursor: pointer;
       border-bottom: 3px solid $impDark;
     }
 
+    &:hover .navbar__nav__link {
+      color: red !important;
+    }
+
     @media (max-width: 768px) {
       font-size: 45px;
     }
-  }
 
-  &__nav__item.end {
-    border-right: $border;
+    &.end {
+      border-right: $border;
+    }
+
+    &.collapsed {
+      border: none !important;
+    }
   }
 
   &__nav__link {
@@ -73,6 +78,7 @@ body {
     font-size: 0.32em;
     font-weight: normal;
     letter-spacing: 1px;
+
     &:hover {
       text-decoration: none;
       color: lighten(black, 20%);

@@ -4,7 +4,7 @@ import {
   SUBSCRIBED_STATS,
   SUGGEST,
   SEARCH,
-  INCREMENT_HOME_SEARCH_PAGE,
+  INCREMENT_SEARCH_PAGE,
 } from './actionCreators';
 import { initializeActions, actionResult } from '../../../shared/utils/asyncHelpers';
 
@@ -131,7 +131,7 @@ export default (state = initialState, action) => {
         ...state,
         actions: {
           ...state.actions,
-          ...actionResult('HOME_SEARCH.REQUEST'),
+          ...actionResult('SEARCH.REQUEST'),
         },
       };
     case SEARCH.SUCCESS: {
@@ -142,6 +142,10 @@ export default (state = initialState, action) => {
             ...state.search,
             instances: action.response.instances,
             done: action.response.done,
+          },
+          actions: {
+            ...state.actions,
+            ...actionResult('SEARCH.SUCCESS'),
           },
         };
       }
@@ -157,7 +161,7 @@ export default (state = initialState, action) => {
         },
         actions: {
           ...state.actions,
-          ...actionResult('HOME_SEARCH.SUCCESS'),
+          ...actionResult('SEARCH.SUCCESS'),
         },
       };
     }
@@ -166,11 +170,11 @@ export default (state = initialState, action) => {
         ...state,
         actions: {
           ...state.actions,
-          ...actionResult('HOME_SEARCH.ERROR'),
+          ...actionResult('SEARCH.ERROR'),
         },
       };
 
-    case INCREMENT_HOME_SEARCH_PAGE:
+    case INCREMENT_SEARCH_PAGE:
       return {
         ...state,
         search: {
