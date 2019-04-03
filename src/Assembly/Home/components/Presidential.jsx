@@ -1,4 +1,4 @@
-// Presidential Discovery
+// Absolute Imports
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -7,15 +7,15 @@ import { connect } from 'react-redux';
 import GenericWrapper from '../../../Reusable/Grid/components/GenericWrapper';
 
 
-// Declaration
 class Presidential extends PureComponent {
   static propTypes = {
-    presidential: PropTypes.instanceOf(Array).isRequired,
+    presidentialCandidates: PropTypes.instanceOf(Array).isRequired,
   };
+
   render() {
     // Props
     const {
-      presidential,
+      presidentialCandidates,
     } = this.props;
 
     return (
@@ -29,7 +29,7 @@ class Presidential extends PureComponent {
           relatedModelLabel="noneType"
           subsetNumber={0}
           light
-          instances={presidential}
+          instances={presidentialCandidates}
           gridClass="presidential-grid"
         />
       </div>
@@ -39,10 +39,10 @@ class Presidential extends PureComponent {
 
 
 const mapStateToProps = (state) => {
-  const { presidential } = state.home;
+  const { presidentialCandidates } = state.home.instances;
 
   return {
-    presidential,
+    presidentialCandidates,
   };
 };
 
