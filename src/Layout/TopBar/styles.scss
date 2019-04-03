@@ -30,7 +30,8 @@ body {
   }
 
   &__brand {
-    line-height: 44px !important;
+    display: inline;
+    line-height: 40px !important;
     z-index: 2020;
     padding-top: 0;
     margin-top: 0;
@@ -39,6 +40,12 @@ body {
     img {
       padding: 0;
       height: 38px;
+    }
+
+    h4 {
+      display: inline;
+      line-height: 40px !important;
+      //margin-bottom: 0;
     }
   }
 
@@ -66,7 +73,7 @@ body {
       border-right: $border;
     }
 
-    &.collapsed {
+    &.vertical {
       border: none !important;
     }
   }
