@@ -72,6 +72,11 @@
           border-color: transparent;
           border-radius: 10px;
         }
+
+        @media (max-width: 768px) {
+          border: black;
+          background: rgb(232, 240, 254) !important;
+        }
       };
 
       i {

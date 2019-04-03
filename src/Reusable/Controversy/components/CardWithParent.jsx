@@ -21,8 +21,9 @@ class CardWithParent extends PureComponent {
     onClick: PropTypes.func.isRequired,
   };
 
-  renderCardBody = ({ briefDescription }, maxLength) => (
+  renderCardBody = ({ briefDescription, title }, maxLength) => (
     <CardBody className="p-2 pb-4">
+      <p className="p-1 m-0 strong">{title}</p>
       <p className="p-1 pb-4 m-0 small">
         {squashString(briefDescription, maxLength)}
         <span className="text-black-50"> {briefDescription.length > maxLength && 'averigua mas'}</span>
@@ -57,7 +58,7 @@ class CardWithParent extends PureComponent {
             </a>
           </Card>
         )}
-        {typeBanner('Controversia')}
+        {typeBanner('Controversia', '#fffbff')}
       </div>
     );
   }

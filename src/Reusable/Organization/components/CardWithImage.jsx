@@ -47,7 +47,7 @@ const CardWithImage = ({ instance, light }) => {
             </CardBody>
           </Col>
         </Row>
-        {typeBanner('Organización')}
+        {typeBanner('Organización', '#fff4ff')}
       </Link>
     </Card>
   );

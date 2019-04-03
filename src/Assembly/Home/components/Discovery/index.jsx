@@ -45,17 +45,6 @@ class Discover extends Component {
                 className={classNames('map__tab-panel__item', { active: currentTab === '1' })}
                 role="presentation"
                 onClick={this.handleOnChangeTab}
-                data-tab="1"
-              >
-                <h5 className="py-2 m-0 text-center">
-                  <i className="fal fa-podium" />
-                  {' '}Fiscaliza a tus Diputados
-                </h5>
-              </div>
-              <div
-                className={classNames('map__tab-panel__item', { active: currentTab === '2' })}
-                role="presentation"
-                onClick={this.handleOnChangeTab}
                 data-tab="2"
               >
                 <h5 className="py-2 m-0 text-center">
@@ -63,12 +52,23 @@ class Discover extends Component {
                   {' '}Votos Históricos - Presidente
                 </h5>
               </div>
+              <div
+                className={classNames('map__tab-panel__item', { active: currentTab === '2' })}
+                role="presentation"
+                onClick={this.handleOnChangeTab}
+                data-tab="1"
+              >
+                <h5 className="py-2 m-0 text-center">
+                  <i className="fal fa-podium" />
+                  {' '}Descúbre tus Candidatos
+                </h5>
+              </div>
             </div>
             {currentTab === '1' && (
-              <DiscoverCandidates />
+            <DataVisualization />
             )}
             {currentTab === '2' && (
-              <DataVisualization />
+              <DiscoverCandidates />
             )}
           </Col>
         </Row>

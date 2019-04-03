@@ -192,6 +192,7 @@ class DiscoverCandidates extends PureComponent {
             light
             instances={candidates}
             gridClass="candidates-grid"
+            typeContext="detailed"
           />
         ) : !DISCOVER_CANDIDATES.init && <Loader elemClass="load__page" />}
       </div>

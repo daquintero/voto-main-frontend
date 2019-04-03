@@ -2,9 +2,9 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { Provider } from 'react-redux';
+import { StaticRouter } from 'react-router';
 import InformativeSnippetPage from '../INFPage';
 import store from '../../../../../App/store';
-import { StaticRouter } from 'react-router';
 
 describe('<InformativeSnippetPage />', () => {
   const initialState = store;
