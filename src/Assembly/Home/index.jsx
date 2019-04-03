@@ -54,11 +54,6 @@ class Home extends PureComponent {
           </ErrorBoundary>
         </div>
 
-        {/* Video */}
-        <Container className="py-5">
-          <Video />
-        </Container>
-
         {/* Info */}
         <div className="bg-shady-layout">
           <Container className="bg-shady-layout py-4">
@@ -118,6 +113,11 @@ class Home extends PureComponent {
             </Row>
           </Container>
         </div>
+
+        {/* Video */}
+        <Container className="py-5">
+          <Video />
+        </Container>
       </>
     );
   }
