@@ -11,7 +11,7 @@ const defaultState = {
     height: 450,
     latitude: 8.25,
     longitude: -80.1,
-    zoom: 6.5,
+    zoom: 5.5,
     maxZoom: 16,
     pitch: 30,
     bearing: 0,
