@@ -37,9 +37,6 @@ class Home extends PureComponent {
         {/* Search */}
         <Search />
 
-        {/* Separator */}
-        {/* <img src={sep} alt="" className="sep" /> */}
-
         {/* Candidates */}
         <div className="bg-shady-layout py-5">
           <Container>
