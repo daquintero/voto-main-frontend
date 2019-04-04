@@ -116,7 +116,7 @@ class TopBar extends Component {
         <Navbar light expand="md" className="navbar p-0 shadow">
           <Container className="navbar__wrapper bg-white px-0">
             <NavbarBrand className="navbar__brand">
-              <Link to="/">
+              <Link to="/" className="navbar__brand__inner">
                 <img className="img-fluid pr-2" src={logo} alt="" />
                 <h4>
                   #VotoInformado2019
