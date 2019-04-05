@@ -16,6 +16,13 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import classNames from 'classnames';
+import { withBreakpoints } from 'react-breakpoints';
+
+// PropTypes
+import breakpointsPropTypes from '../../shared/propTypes/breakpoints';
+
+// Functions
+import wrapper from '../../shared/utils/wrapper';
 
 // Actions
 import { finishedFirstVisit } from './redux/actions';
@@ -26,8 +33,12 @@ import logo from './favicon.ico';
 
 class TopBar extends Component {
   static propTypes = {
+    // Redux
     dispatch: PropTypes.func.isRequired,
     visited: PropTypes.bool.isRequired,
+
+    // Breakpoints
+    ...breakpointsPropTypes,
   };
 
   constructor(props) {
@@ -73,6 +84,14 @@ class TopBar extends Component {
       privacySeen, collapsed,
     } = this.state;
 
+    // Props
+    const {
+      currentBreakpoint,
+      breakpoints,
+    } = this.props;
+
+    const vertical = breakpoints[currentBreakpoint] === breakpoints.mobile;
+
     return (
       <>
         <Modal isOpen={privacySeen} className="p-4">
@@ -96,10 +115,10 @@ class TopBar extends Component {
         </Modal>
         <Navbar light expand="md" className="navbar p-0 shadow">
           <Container className="navbar__wrapper bg-white px-0">
-            <NavbarBrand className="navbar__brand d-inline">
-              <Link to="/">
+            <NavbarBrand className="navbar__brand">
+              <Link to="/" className="navbar__brand__inner">
                 <img className="img-fluid pr-2" src={logo} alt="" />
-                <h4 className="p-1 m-0 d-inline">
+                <h4>
                   #VotoInformado2019
                 </h4>
               </Link>
@@ -108,9 +127,13 @@ class TopBar extends Component {
               onClick={this.toggleNavbar}
               className="mr-4"
             />
-            <Collapse isOpen={!collapsed} navbar className="justify-content-end">
+            <Collapse
+              isOpen={!collapsed}
+              navbar
+              className="justify-content-end"
+            >
               <Nav
-                vertical={!collapsed}
+                vertical={vertical}
                 className="navbar__nav__wrapper bg-white justify-content-center"
               >
                 <a
@@ -118,14 +141,14 @@ class TopBar extends Component {
                   rel="noreferrer noopener"
                   href="https://s3.amazonaws.com/votoinformado2019/Manual_Voto_Informado_2019.pdf"
                 >
-                  <div className={classNames('navbar__nav__item', { collapsed: !collapsed })}>
+                  <div className={classNames('navbar__nav__item', { vertical })}>
                     <div className="navbar__nav__link" >
                       Manual
                     </div>
                   </div>
                 </a>
                 <Link to="/acerca">
-                  <div className={classNames('navbar__nav__item', { collapsed: !collapsed })}>
+                  <div className={classNames('navbar__nav__item', { vertical })}>
                     <div className="navbar__nav__link">
                       Nosotros
                     </div>
@@ -134,7 +157,7 @@ class TopBar extends Component {
                 <a
                   href="https://studio.votoinformado2019.com"
                 >
-                  <div className={classNames('navbar__nav__item end', { collapsed: !collapsed })}>
+                  <div className={classNames('navbar__nav__item end', { vertical })}>
                     <div className="navbar__nav__link">
                       <i className="fal fa-user-circle" />
                     </div>
@@ -148,4 +171,11 @@ class TopBar extends Component {
     );
   }
 }
-export default connect()(TopBar);
+
+export default wrapper({
+  component: TopBar,
+  wrappers: [
+    withBreakpoints,
+    connect(),
+  ],
+});

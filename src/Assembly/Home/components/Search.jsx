@@ -269,7 +269,7 @@ class Search extends Component {
           <div className="home__search__results__wrapper">
             <Container>
               {(SEARCH_ACTION.loaded || instances.length > 0) && (
-                <Col xs={12} className="justify-content-center mx-auto pb-2 mb-0 mb-lg-2">
+                <Col xs={12} className="justify-content-center mx-auto pb-2 mb-0">
                   <GenericGridWrapper
                     instances={instances}
                     light
