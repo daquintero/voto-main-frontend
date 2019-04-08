@@ -21,13 +21,11 @@ const Thanks = () => (
         todo lo que compone Voto Informado 2019.
       </p>
       <p style={{ 'letter-spacing': '0.02em' }}>
-         Apreciamos mucho el apoyo y tiempo de todos,
-         en especial a: los participantes del Investigatón 2018,
-         los participantes de Panamá-Hackea 2018, a los desarrolladores
-         de la plataforma, a Melida Botacio, Angel Corro,
-        Augusto Revello, Franz Delgado, Dario Quintero,
-         James Williams, Leopoldo Alfaro,
-         Emmanuel Lobo, Cynthia Paolini y a David Chumpitaz.
+        Apreciamos mucho el apoyo y tiempo de todos,
+        en especial a: los participantes del Investigatón 2018,
+        los participantes de Panamá-Hackea 2018, a los desarrolladores de la plataforma,
+        a Melida Botacio, Angel Corro, Augusto Revello, Franz Delgado, Dario Quintero,
+        James Williams, Leopoldo Alfaro, Emmanuel Lobo, y Cynthia Paolini.
       </p>
     </Col>
     <Col md={5} className="p-4">

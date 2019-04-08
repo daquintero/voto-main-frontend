@@ -60,7 +60,7 @@ class Discover extends Component {
               >
                 <h5 className="py-2 m-0 text-center">
                   <i className="fal fa-podium" />
-                  {' '}Fiscaliza a tus Diputados
+                  {' '}Diputados por Circuito
                 </h5>
               </div>
             </div>

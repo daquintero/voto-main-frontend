@@ -40,7 +40,7 @@ class ShareCard extends PureComponent {
         {/* TODO HAVE Horizontal Alignment */}
         {hasHeader && (
           <Col xs={12}>
-            <h5 className="text-center pb-2">¡Compárte!</h5>
+            <h5 className="text-center pb-2">¡Comparte!</h5>
           </Col>
         )}
         <Col className="mx-2">
