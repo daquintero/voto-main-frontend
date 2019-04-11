@@ -79,7 +79,7 @@
   @media (max-width: 768px) {
     grid-template-columns: repeat(auto-fill, 12%);
     padding: 0 !important;
-    grid-gap: 3%;
+    grid-column-gap: 3%;
   };
 }
 

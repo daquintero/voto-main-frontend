@@ -54,7 +54,7 @@ const Footer = () => (
           </a>
         </Col>
       </Row>
-      <p className="text-center"> Dínos que piensas en &nbsp;
+      <p className="text-center"> Dinos que piensas en &nbsp;
         <a href="mailto:votoinformado2019@gmail.com">votoinformado2019@gmail.com</a>
       </p>
       <p className="text-center"> © Praxis Comunicaciones S.A. & © Escuela Callejera 2016</p>

@@ -66,6 +66,7 @@ class RightSide extends PureComponent {
             gridClass="variable-grid"
             instances={resources}
             subsetNumber={0}
+            typeContext="detailed"
             light={light}
           />
         </Row>

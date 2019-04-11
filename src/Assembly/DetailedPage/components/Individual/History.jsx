@@ -35,6 +35,7 @@ class Relationships extends PureComponent {
                   gridClass="experiences-grid"
                   instances={experience}
                   subsetNumber={experience}
+                  typeContext="detailed"
                   light
                 />
               </Row>
@@ -51,6 +52,7 @@ class Relationships extends PureComponent {
                   gridClass="controversies-grid"
                   instances={controversies.instances}
                   subsetNumber={controversies.subsetNumber}
+                  typeContext="detailed"
                   light
                 />
               </Row>
@@ -66,6 +68,7 @@ class Relationships extends PureComponent {
                   gridClass="promises-grid"
                   instances={promises.instances}
                   subsetNumber={promises.subsetNumber}
+                  typeContext="detailed"
                   light
                 />
               </Row>
@@ -81,6 +84,7 @@ class Relationships extends PureComponent {
                   gridClass="achievements-grid"
                   instances={achievements.instances}
                   subsetNumber={achievements.subsetNumber}
+                  typeContext="detailed"
                   light
                 />
               </Row>
