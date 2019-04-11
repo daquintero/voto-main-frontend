@@ -222,7 +222,11 @@
   grid-auto-rows: minmax(50px, auto);
   grid-auto-flow: dense;
 
-  padding: 2%;
+  padding: 3%;
+
+  @media (min-width: 1000px) {
+    grid-template-columns: repeat(auto-fill, 6.6%);
+  }
 
   @media (max-width: 768px) {
     grid-template-columns: none;
@@ -239,7 +243,7 @@
   grid-auto-rows: minmax(50px, auto);
   grid-auto-flow: dense;
 
-  padding: 2%;
+  padding: 3%;
 
   @media (max-width: 768px) {
     grid-template-columns: repeat(auto-fill, 45%);
@@ -256,7 +260,7 @@
   grid-auto-rows: minmax(50px, auto);
   grid-auto-flow: dense;
 
-  padding: 2%;
+  padding: 3%;
 
   @media (max-width: 768px) {
     grid-template-columns: repeat(auto-fill, 9%);
@@ -272,7 +276,7 @@
   grid-auto-rows: minmax(50px, auto);
   grid-auto-flow: dense;
 
-  padding: 2%;
+  padding: 3%;
 
   @media (max-width: 768px) {
     grid-template-columns: repeat(auto-fill, 9%);
@@ -290,6 +294,10 @@
 
   padding: 2%;
   padding-bottom: 8%;
+
+  @media (max-width: 768px) {
+    padding-bottom: 13%;
+  }
 }
 
 
@@ -302,5 +310,5 @@
   grid-auto-rows: minmax(50px, auto);
   grid-auto-flow: dense;
 
-  padding: 2%;
+  padding: 3%;
 }
