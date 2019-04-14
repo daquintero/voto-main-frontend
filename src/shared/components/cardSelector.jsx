@@ -13,6 +13,7 @@ import IndividualCardLong from '../../Reusable/Individual/components/CardLong';
 // Controversy
 import ControversyCardWithParent from '../../Reusable/Controversy/components/CardWithParent';
 // Promises
+import PromiseCard from '../../Reusable/Promise/components/Card';
 import PromiseCardWithParent from '../../Reusable/Promise/components/CardWithParent';
 // Achievement
 import AchievementCardWithParent from '../../Reusable/Achievement/components/CardWithParent';
@@ -87,6 +88,14 @@ export default ({
       );
 
     case 'political.Promise':
+      if (typeContext === 'detailed') {
+        return (
+          <PromiseCard
+            instance={instance}
+            {...rest}
+          />
+        );
+      }
       return (
         <PromiseCardWithParent
           instance={instance}
