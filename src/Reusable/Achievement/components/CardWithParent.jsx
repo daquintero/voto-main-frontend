@@ -25,7 +25,7 @@ class AchievementCardWithParent extends PureComponent {
     return (
       <div className={`${light ? 'bg-layout' : 'bg-shady-layout'} shadow span-4-cols p-rel`}>
         {relTopCreator(instance)}
-        <a target="_blank" rel="noreferrer noopener" href={instance.url}>
+        <a target="_blank" rel="noreferrer noopener" href={instance.source}>
           <Card className="bg-light border-0 rounded-0">
             <CardBody className="p-2 pb-4">
               {categoryInfo[instance.type] &&
