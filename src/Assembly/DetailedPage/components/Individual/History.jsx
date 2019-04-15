@@ -59,7 +59,7 @@ class Relationships extends PureComponent {
             </div>
             <div
               className={`mt-2 p-1
-            ${promises.instances[0] ? (promises.instances.length < 3 ? '' : 'span-5-rows') : ''}`}
+            ${promises && promises.instances[0] ? (promises.instances.length < 3 ? '' : 'span-5-rows') : ''}`}
               style={{ background: '#fff5ef' }}
             >
               <Row noGutters className="justify-content-center p-0">
