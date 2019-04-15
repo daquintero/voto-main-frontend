@@ -46,7 +46,7 @@ class MainFinancesNav extends PureComponent {
         {relatedFunds || instances[0] ? (
           <>
             <NavItem
-              className="list-group-item small-enlarge m-2 rounded-0 border-0 w-100"
+              className="list-group-item small-enlarge m-2 rounded-0 border-0 w-100 sl"
               onClick={this.toggleModal}
             >
               <div>

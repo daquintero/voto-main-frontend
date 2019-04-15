@@ -5,6 +5,7 @@ import { withRouter } from 'react-router-dom';
 import ReactRouterPropTypes from 'react-router-prop-types';
 import { Container, Row, Col } from 'reactstrap';
 import { connect } from 'react-redux';
+import { withBreakpoints } from 'react-breakpoints';
 
 // Redux Actions
 import { getDetailedPage } from '../../redux/actions';
@@ -16,6 +17,7 @@ import Gallery from '../Gallery';
 import Description from '../Description';
 import Relationships from '../Relationships';
 import RightSide from '../RightSide';
+import MobileRightSide from '../MobileRightSide';
 import Loader from '../../../../shared/components/Loader';
 import History from './History';
 import DetailModal from '../../../../Reusable/Grid/components/DetailModal';
@@ -24,6 +26,7 @@ import DetailModal from '../../../../Reusable/Grid/components/DetailModal';
 import toggleDetailModal from '../../../../shared/utils/toggleDetailModal';
 import wrapper from '../../../../shared/utils/wrapper';
 
+import breakpointsPropTypes from '../../../../shared/propTypes/breakpoints';
 
 const parentModelLabel = 'political.Individual';
 
@@ -39,6 +42,9 @@ class Page extends PureComponent {
 
     // Router
     match: ReactRouterPropTypes.match.isRequired,
+
+    // Breakpoints
+    ...breakpointsPropTypes,
   };
 
   constructor(props) {
@@ -97,6 +103,8 @@ class Page extends PureComponent {
       openInstance,
       openInstanceModal,
       dispatch,
+      currentBreakpoint,
+      breakpoints,
     } = this.props;
 
     return actions.GET_DETAILED_PAGE.loaded ? (
@@ -109,26 +117,41 @@ class Page extends PureComponent {
           // Callbacks
           toggle={toggleDetailModal(dispatch)}
         />
-
-        {/* TODO READD */}
-        {/* TopBanner /> */}
-        <Container>
-          <Row className="p-2 pt-4 overflow-hidden column-primary">
-            <Col xs={12} md={8} className="overflow-hidden p-0">
-              <Header instance={instance} />
-              <Description instance={instance} />
-              <Gallery instance={instance} />
-              <History />
-              <Relationships />
-            </Col>
-            <Col xs={12} md={4} className="p-2 mt-0 column-secondary">
-              <RightSide
-                instance={instance}
-                url={this.props.match.url}
-              />
-            </Col>
-          </Row>
-        </Container>
+        {breakpoints[currentBreakpoint] === breakpoints.mobile ? (
+          <Container>
+            <Row className="p-2 pt-4 overflow-hidden column-primary">
+              <Col xs={12} md={8} className="overflow-hidden p-0">
+                <Header instance={instance} />
+                <MobileRightSide
+                  instance={instance}
+                  url={this.props.match.url}
+                />
+                <Description instance={instance} />
+                <Gallery instance={instance} />
+                <History />
+                <Relationships />
+              </Col>
+            </Row>
+          </Container>
+        ) : (
+          <Container>
+            <Row className="p-2 pt-4 overflow-hidden column-primary">
+              <Col xs={12} md={8} className="overflow-hidden p-0">
+                <Header instance={instance} />
+                <Description instance={instance} />
+                <Gallery instance={instance} />
+                <History />
+                <Relationships />
+              </Col>
+              <Col xs={12} md={4} className="p-2 mt-0 column-secondary">
+                <RightSide
+                  instance={instance}
+                  url={this.props.match.url}
+                />
+              </Col>
+            </Row>
+          </Container>
+        )}
       </>
     ) : (
       <Loader elemClass="load__page" />
@@ -155,6 +178,7 @@ export default wrapper({
   component: Page,
   wrappers: [
     withRouter,
+    withBreakpoints,
     connect(mapStateToProps),
   ],
 });
