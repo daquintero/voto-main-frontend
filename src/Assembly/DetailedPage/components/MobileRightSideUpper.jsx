@@ -8,8 +8,6 @@ import { Row } from 'reactstrap';
 // Components
 import MainFinancesNav from '../../../Reusable/FinanceItem/components/MainFinancesNav';
 import Statistics from './Statistics';
-import Share from '../../../Reusable/SocialShare/components/Card';
-import LawList from '../../../Reusable/Law/components/List';
 import GenericGridWrapper from '../../../Reusable/Grid/components/GenericWrapper';
 // import TwitterFeed from '../../../Reusable/SocialShare/components/TwitterFeed';
 
@@ -19,8 +17,6 @@ class RightSide extends PureComponent {
     instance: PropTypes.instanceOf(Object).isRequired,
 
     // Variable
-    url: PropTypes.string.isRequired,
-    laws: PropTypes.instanceOf(Array).isRequired,
     resources: PropTypes.instanceOf(Array).isRequired,
   };
   constructor(props) {
@@ -32,7 +28,7 @@ class RightSide extends PureComponent {
 
   render() {
     const {
-      instance, url, laws, resources,
+      instance, resources,
     } = this.props;
     const { light } = this.state;
 
@@ -61,20 +57,6 @@ class RightSide extends PureComponent {
             subsetNumber={0}
             typeContext="detailed"
             light={light}
-          />
-        </Row>
-        <Row noGutters className="px-2 py-4 justify-content-center right-side__row">
-          <LawList
-            instances={laws}
-            parent={instance.modelLabel}
-            light={light}
-          />
-        </Row>
-        <Row noGutters className="p-3 right-side__row share justify-content-center">
-          <Share
-            title={instance.title || instance.name}
-            description={instance.briefDescription}
-            url={`https://www.votoinformado2019.com${url}`}
           />
         </Row>
       </Row>

@@ -17,7 +17,8 @@ import Gallery from '../Gallery';
 import Description from '../Description';
 import Relationships from '../Relationships';
 import RightSide from '../RightSide';
-import MobileRightSide from '../MobileRightSide';
+import MobileRightSideUpper from '../MobileRightSideUpper';
+import MobileRightSideLower from '../MobileRightSideLower';
 import Loader from '../../../../shared/components/Loader';
 import History from './History';
 import DetailModal from '../../../../Reusable/Grid/components/DetailModal';
@@ -122,14 +123,17 @@ class Page extends PureComponent {
             <Row className="p-2 pt-4 overflow-hidden column-primary">
               <Col xs={12} md={8} className="overflow-hidden p-0">
                 <Header instance={instance} />
-                <MobileRightSide
+                <MobileRightSideUpper
+                  instance={instance}
+                />
+                <Description instance={instance} />
+                <History />
+                <Gallery instance={instance} />
+                <Relationships />
+                <MobileRightSideLower
                   instance={instance}
                   url={this.props.match.url}
                 />
-                <Description instance={instance} />
-                <Gallery instance={instance} />
-                <History />
-                <Relationships />
               </Col>
             </Row>
           </Container>
