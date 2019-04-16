@@ -15,7 +15,7 @@ class Resource extends PureComponent {
     const { instance } = this.props;
     return (
       <Card className="text-center p-2">
-        <a target="_blank" rel="noreferrer noopener" href={instance.source}>
+        <a target="_blank" rel="noreferrer noopener" href={instance.url}>
           <h5 className="lead m-0"><i className="fal fa-link" /> {instance.title} </h5>
         </a>
       </Card>
