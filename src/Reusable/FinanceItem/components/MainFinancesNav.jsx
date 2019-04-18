@@ -53,10 +53,6 @@ class MainFinancesNav extends PureComponent {
                 <h5>{numeral(relatedFunds).format('$ 0,0.00')}</h5>
               </div>
               <div>
-<<<<<<< HEAD
-                <h6>Desglose</h6>
-=======
->>>>>>> staging
                 <p className="small">Haz click para el desglose</p>
               </div>
             </NavItem>
