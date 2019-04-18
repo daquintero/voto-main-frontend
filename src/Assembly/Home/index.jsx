@@ -115,7 +115,7 @@ class Home extends PureComponent {
                   href="https://s3.amazonaws.com/votoinformado2019/Manual_Voto_Informado_2019.pdf"
                   className="p-2"
                 >
-                  <img src={manual} alt="" className="w-100 w-md-75 p-2 justify-content-center" />
+                  <img src={manual} alt="" className="w-100 p-2 px-lg-5 justify-content-center" />
                 </a>
               </Col>
             </Row>
