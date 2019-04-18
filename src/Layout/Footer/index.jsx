@@ -49,12 +49,12 @@ const Footer = () => (
               <i className="fal fa-sign-in-alt px-2" /> ¡Entra a VotoStudio haciendo click aquí y contribuye!
             </p>
             <p className="m-0 p-1 text-center">
-              <i className="fal fa-check-square px-2" /> Y lo verifícaremos contra los fake news.
+              <i className="fal fa-check-square px-2" /> Y lo verificaremos contra los fake news.
             </p>
           </a>
         </Col>
       </Row>
-      <p className="text-center"> Dínos que piensas en &nbsp;
+      <p className="text-center"> Dinos que piensas en &nbsp;
         <a href="mailto:votoinformado2019@gmail.com">votoinformado2019@gmail.com</a>
       </p>
       <p className="text-center"> © Praxis Comunicaciones S.A. & © Escuela Callejera 2016</p>

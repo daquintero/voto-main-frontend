@@ -40,7 +40,7 @@ class ShareCard extends PureComponent {
         {/* TODO HAVE Horizontal Alignment */}
         {hasHeader && (
           <Col xs={12}>
-            <h5 className="text-center pb-2">¡Compárte!</h5>
+            <h5 className="text-center pb-2">¡Comparte!</h5>
           </Col>
         )}
         <Col className="mx-2">
@@ -49,7 +49,7 @@ class ShareCard extends PureComponent {
             hashtag="#votoinformado2019"
             quote={`${title} - #VotoInformado2019`}
           >
-            <FacebookIcon round size={40} />
+            <FacebookIcon round size={44} />
           </FacebookShareButton>
         </Col>
         <Col className="mx-2">
@@ -58,7 +58,7 @@ class ShareCard extends PureComponent {
             hashtags={['#votoinformado2019']}
             url={url}
           >
-            <TwitterIcon round size={40} />
+            <TwitterIcon round size={44} />
           </TwitterShareButton>
         </Col>
         <Col className="mx-2">
@@ -66,7 +66,7 @@ class ShareCard extends PureComponent {
             url={url}
             title={title}
           >
-            <WhatsappIcon round size={40} />
+            <WhatsappIcon round size={44} />
           </WhatsappShareButton>
         </Col>
         <Col className="mx-2">
@@ -75,7 +75,7 @@ class ShareCard extends PureComponent {
             body={description}
             url={url}
           >
-            <EmailIcon round size={40} />
+            <EmailIcon round size={44} />
           </EmailShareButton>
         </Col>
       </Row>

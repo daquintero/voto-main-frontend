@@ -2,8 +2,9 @@ import {
   GET_HOME,
   DISCOVER_CANDIDATES,
   SUBSCRIBED_STATS,
-  HOME_SEARCH,
-  INCREMENT_HOME_SEARCH_PAGE,
+  SUGGEST,
+  SEARCH,
+  INCREMENT_SEARCH_PAGE,
 } from './actionCreators';
 import { initializeActions, actionResult } from '../../../shared/utils/asyncHelpers';
 
@@ -11,6 +12,7 @@ import { initializeActions, actionResult } from '../../../shared/utils/asyncHelp
 const initialState = {
   visited: true,
   search: {
+    options: [],
     instances: [],
     currentPage: 0,
     done: false,
@@ -22,7 +24,10 @@ const initialState = {
     mailchimpSubscribed: 0,
     studioUsers: 0,
   },
-  presidential: [],
+  instances: {
+    presidentialCandidates: [],
+    mayorCandidates: [],
+  },
   discover: {
     candidates: [],
     gid: '8_0',
@@ -30,7 +35,8 @@ const initialState = {
   subscriptionForm: {},
   actions: initializeActions([
     'GET_HOME',
-    'HOME_SEARCH',
+    'SUGGEST',
+    'SEARCH',
     'DISCOVER_CANDIDATES',
     'SUBSCRIBED_STATS',
   ]),
@@ -55,7 +61,7 @@ export default (state = initialState, action) => {
     case GET_HOME.SUCCESS:
       return {
         ...state,
-        presidential: action.response.instances.individuals,
+        ...action.response,
         actions: {
           ...state.actions,
           ...actionResult('GET_HOME.SUCCESS'),
@@ -70,23 +76,68 @@ export default (state = initialState, action) => {
         },
       };
 
-    case HOME_SEARCH.INIT:
+    case SUGGEST.INIT:
+      return {
+        ...state,
+        search: {
+          ...state.search,
+          options: [],
+        },
+        actions: {
+          ...state.actions,
+          ...initializeActions(['SUGGEST']),
+        },
+      };
+    case SUGGEST.REQUEST:
+      return {
+        ...state,
+        actions: {
+          ...state.actions,
+          ...actionResult('SUGGEST.REQUEST'),
+        },
+      };
+    case SUGGEST.SUCCESS:
+      return {
+        ...state,
+        search: {
+          ...state.search,
+          options: action.response.options,
+        },
+        actions: {
+          ...state.actions,
+          ...actionResult('SUGGEST.SUCCESS'),
+        },
+      };
+    case SUGGEST.ERROR:
+      return {
+        ...state,
+        actions: {
+          ...state.actions,
+          ...actionResult('SUGGEST.ERROR', { error: action.error }),
+        },
+      };
+
+    case SEARCH.INIT:
       return {
         ...state,
         search: {
           ...state.search,
           currentPage: 0,
         },
+        actions: {
+          ...state.actions,
+          ...initializeActions(['SEARCH']),
+        },
       };
-    case HOME_SEARCH.REQUEST:
+    case SEARCH.REQUEST:
       return {
         ...state,
         actions: {
           ...state.actions,
-          ...actionResult('HOME_SEARCH.REQUEST'),
+          ...actionResult('SEARCH.REQUEST'),
         },
       };
-    case HOME_SEARCH.SUCCESS: {
+    case SEARCH.SUCCESS: {
       if (action.currentPage === 0) {
         return {
           ...state,
@@ -94,6 +145,10 @@ export default (state = initialState, action) => {
             ...state.search,
             instances: action.response.instances,
             done: action.response.done,
+          },
+          actions: {
+            ...state.actions,
+            ...actionResult('SEARCH.SUCCESS'),
           },
         };
       }
@@ -109,20 +164,20 @@ export default (state = initialState, action) => {
         },
         actions: {
           ...state.actions,
-          ...actionResult('HOME_SEARCH.SUCCESS'),
+          ...actionResult('SEARCH.SUCCESS'),
         },
       };
     }
-    case HOME_SEARCH.ERROR:
+    case SEARCH.ERROR:
       return {
         ...state,
         actions: {
           ...state.actions,
-          ...actionResult('HOME_SEARCH.ERROR'),
+          ...actionResult('SEARCH.ERROR'),
         },
       };
 
-    case INCREMENT_HOME_SEARCH_PAGE:
+    case INCREMENT_SEARCH_PAGE:
       return {
         ...state,
         search: {

@@ -2,6 +2,7 @@ $border: 1px solid rgba($impDark, 0.2);
 
 body {
   padding-top: 44px;
+
   @media screen and (max-width: 768px) {
     body {
       padding-top: 0;
@@ -10,9 +11,7 @@ body {
 }
 
 .navbar {
-  height: 45px;
   padding: 10%;
-  //border-bottom: $border;
   background-color: white;
   position: fixed;
   top: 0;
@@ -22,13 +21,8 @@ body {
   z-index: 10000;
   box-shadow: 1px 0 10px rgba(0, 0, 0, 0.1);
 
-
-
   &__wrapper {
     display: block;
-    flex-direction: row;
-    //align-items: center;
-    justify-content: space-between;
 
     z-index: 2000;
     @include gel-typography('canon-bold');
@@ -36,80 +30,25 @@ body {
   }
 
   &__brand {
-    line-height: 44px !important;
+    line-height: 40px !important;
     z-index: 2020;
     padding-top: 0;
     margin-top: 0;
-    height: 44px;
+    width: 50%;
 
-    img {
-      padding: 0;
-      height: 38px;
-    }
-  }
+    &__inner {
+      display: table;
 
-  &__search__wrapper {
-    display: flex;
-    flex-direction: row;
-    flex: 1;
-    width: 60%;
-    justify-self: start;
-    margin-right: auto;
-  }
+      img {
+        padding: 0;
+        height: 38px;
+      }
 
-  &__search__form {
-    display: flex;
-    flex-direction: row;
-    width: 60%;
-    height: 32px;
-    margin-right: auto;
-  }
-
-  &__search__input {
-    border-radius: 2px;
-    width: 100%;
-    height: 32px;
-  }
-
-  &__search__icon {
-    position: relative;
-    background-color: darken(white, 10%);
-    height: 32px;
-    width: 58px;
-    text-align: center;
-    &:hover {
-      cursor: pointer;
-      background-color: darken(white, 15%);
-    }
-    i {
-      top: 9px;
-      right: 0;
-      left: 0;
-      position: absolute;
-      font-size: 0.32em;
-      color: lighten(black, 30%);
-    }
-  }
-
-  &__top__wrapper {
-    background-color: white;
-    border-bottom: $border;
-  }
-
-  &__nav__wrapper {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-
-    @media (max-width: 768px) {
-      padding: 2%;
-      position: fixed;
-      top: 16px;
-      left: 0;
-      right: 0;
-
-      transform: translateY(30px);
-      transition: height;
+      h4 {
+        display: table-cell;
+        vertical-align: middle;
+        //margin-bottom: 0;
+      }
     }
   }
 
@@ -118,22 +57,28 @@ body {
     border-left: $border;
     line-height: 0.32em;
     border-bottom: 3px solid transparent;
+    height: 100%;
+
     &:hover {
       cursor: pointer;
       border-bottom: 3px solid $impDark;
     }
+
+    &:hover .navbar__nav__link {
+      color: red !important;
+    }
+
     @media (max-width: 768px) {
       font-size: 45px;
     }
 
-  }
+    &.end {
+      border-right: $border;
+    }
 
-  &__nav__item.end {
-    border-right: $border;
-  }
-
-  &__nav__item.one.active {
-
+    &.vertical {
+      border: none !important;
+    }
   }
 
   &__nav__link {
@@ -143,36 +88,10 @@ body {
     font-size: 0.32em;
     font-weight: normal;
     letter-spacing: 1px;
+
     &:hover {
       text-decoration: none;
       color: lighten(black, 20%);
-    }
-  }
-
-  &__subnav__wrapper {
-    height: 66px;
-  }
-
-  &__subnav__wrapper.one {
-    background-color: #044389;
-  }
-
-  &__subnav__wrapper.two {
-    background-color: #07415E;
-  }
-
-  &__subnav__wrapper.three {
-    background-color: #f2545b;
-  }
-
-  &__subnav__head {
-    color: white;
-    text-transform: uppercase;
-
-    h3 {
-      margin-left: 5px;
-      line-height: 66px;
-      display: block;
     }
   }
 }
@@ -191,10 +110,12 @@ body {
   display: flex;
   justify-content: center;
 }
+
 .customViewer > canvas {
   grid-area: pdf;
   width: 100%;
 }
+
 .customPrevBtn {
   cursor: pointer;
   display: flex;
@@ -205,6 +126,7 @@ body {
   width: 50%;
   height: 100%;
 }
+
 .customPrevBtn  > a {
   color: transparent;
   display: none;
@@ -225,15 +147,16 @@ body {
   color: transparent;
   display: none;
 }
+
 .customPages {
   display: none;
   visibility: hidden;
   width: calc(100% - 2 * 50px);
 }
+
 .customWrapper {
   position: absolute;
   width: 100%;
   height: 100%;
   font-size: 24px;
 }
-

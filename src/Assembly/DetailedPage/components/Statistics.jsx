@@ -23,10 +23,10 @@ class Statistics extends PureComponent {
     } = this.props;
 
     return (
-      <div className="justify-content-center">
+      <div className="justify-content-center w-100">
         <h4 className="text-center mt-2 rel">{typeInfo['political.Statistic'].name}</h4>
         <Row className="mx-auto">
-          <div className="statistics-grid w-100">
+          <div className="statistics-grid w-100 justify-content-center">
           {instances ? (instances.map(instance => (
             <div key={instance.id}>
               <StatisticBlock instance={instance} />

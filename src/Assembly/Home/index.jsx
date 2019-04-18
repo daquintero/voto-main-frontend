@@ -7,7 +7,6 @@ import { Container, Row, Col } from 'reactstrap';
 // Components
 import Video from '../Video';
 import Commit from './components/Commit';
-import PDF from './components/pdfPreviewer';
 import Candidates from './components/Presidential';
 import Search from './components/Search';
 import ErrorBoundary from '../../shared/components/ErrorBoundary';
@@ -17,7 +16,7 @@ import { getHome } from './redux/actions';
 import Discovery from './components/Discovery';
 
 
-// const sep = `${process.env.PUBLIC_URL}/img/star-separator.svg`;
+const manual = `${process.env.PUBLIC_URL}/img/manual.JPG`;
 
 
 class Home extends PureComponent {
@@ -37,9 +36,6 @@ class Home extends PureComponent {
         {/* Search */}
         <Search />
 
-        {/* Separator */}
-        {/* <img src={sep} alt="" className="sep" /> */}
-
         {/* Video */}
         <Container className="py-5">
           <Video />
@@ -50,6 +46,13 @@ class Home extends PureComponent {
           <Container>
             <Candidates />
           </Container>
+        </div>
+
+        {/* Discovery */}
+        <div className="py-5">
+          <ErrorBoundary>
+            <Discovery />
+          </ErrorBoundary>
         </div>
 
         {/* Info */}
@@ -106,17 +109,17 @@ class Home extends PureComponent {
                     ¡Descarga el Manual de Cívica Electoral Gratis!
                   </a>
                 </h4>
-                <PDF />
+                <a
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  href="https://s3.amazonaws.com/votoinformado2019/Manual_Voto_Informado_2019.pdf"
+                  className="p-2"
+                >
+                  <img src={manual} alt="" className="w-100 p-2 px-lg-5 justify-content-center" />
+                </a>
               </Col>
             </Row>
           </Container>
-        </div>
-
-        {/* Discovery */}
-        <div className="py-5">
-          <ErrorBoundary>
-            <Discovery />
-          </ErrorBoundary>
         </div>
       </>
     );

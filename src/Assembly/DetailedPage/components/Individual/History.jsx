@@ -35,6 +35,7 @@ class Relationships extends PureComponent {
                   gridClass="experiences-grid"
                   instances={experience}
                   subsetNumber={experience}
+                  typeContext="detailed"
                   light
                 />
               </Row>
@@ -51,13 +52,14 @@ class Relationships extends PureComponent {
                   gridClass="controversies-grid"
                   instances={controversies.instances}
                   subsetNumber={controversies.subsetNumber}
+                  typeContext="detailed"
                   light
                 />
               </Row>
             </div>
             <div
               className={`mt-2 p-1
-            ${promises.instances[0] ? (promises.instances.length < 3 ? '' : 'span-5-rows') : ''}`}
+            ${promises && promises.instances[0] ? (promises.instances.length < 3 ? '' : 'span-5-rows') : ''}`}
               style={{ background: '#fff5ef' }}
             >
               <Row noGutters className="justify-content-center p-0">
@@ -66,6 +68,7 @@ class Relationships extends PureComponent {
                   gridClass="promises-grid"
                   instances={promises.instances}
                   subsetNumber={promises.subsetNumber}
+                  typeContext="detailed"
                   light
                 />
               </Row>
@@ -81,6 +84,7 @@ class Relationships extends PureComponent {
                   gridClass="achievements-grid"
                   instances={achievements.instances}
                   subsetNumber={achievements.subsetNumber}
+                  typeContext="detailed"
                   light
                 />
               </Row>

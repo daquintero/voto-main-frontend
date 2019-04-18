@@ -15,7 +15,7 @@ class StatisticBlock extends PureComponent {
   render() {
     const { instance } = this.props;
     return (
-      <div className="mincontent">
+      <div className="h-100">
         {instance.source ? (
           <a className="sl" target="_blank" rel="noreferrer noopener" href={instance.source}>
             <Card

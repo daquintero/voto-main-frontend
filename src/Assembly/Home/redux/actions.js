@@ -2,19 +2,12 @@ import {
   GET_HOME,
   DISCOVER_CANDIDATES,
   SUBSCRIBED_STATS,
-  HOME_SEARCH,
+  SUGGEST,
+  SEARCH,
 } from './actionCreators';
 import service from '../service';
 
-// ------- FIRST VISIT --------
-// TODO NOT HAPPENING
-// export const openFirstVisit = () => (dispatch) => {
-//   dispatch({
-//     type: 'FIRST_VISIT',
-//   });
-// };
 
-// ------ HOME SERVICES -------
 export const getHome = () => (dispatch) => {
   dispatch({
     type: GET_HOME.REQUEST,
@@ -33,24 +26,45 @@ export const getHome = () => (dispatch) => {
   );
 };
 
-export const homeSearch = searchData => (dispatch) => {
+
+export const suggest = requestData => (dispatch) => {
   dispatch({
-    type: HOME_SEARCH.REQUEST,
+    type: SUGGEST.REQUEST,
   });
-  return service.search.home(searchData).then(
+  return service.search.suggest(requestData).then(
     response =>
       dispatch({
-        type: HOME_SEARCH.SUCCESS,
+        type: SUGGEST.SUCCESS,
         response: response.data,
-        currentPage: searchData.page,
       }),
     error =>
       dispatch({
-        type: HOME_SEARCH.ERROR,
+        type: SUGGEST.ERROR,
         error,
       }),
   );
 };
+
+
+export const search = requestData => (dispatch) => {
+  dispatch({
+    type: SEARCH.REQUEST,
+  });
+  return service.search.search(requestData).then(
+    response =>
+      dispatch({
+        type: SEARCH.SUCCESS,
+        response: response.data,
+        currentPage: requestData.page,
+      }),
+    error =>
+      dispatch({
+        type: SEARCH.ERROR,
+        error,
+      }),
+  );
+};
+
 
 export const subscribedStats = () => (dispatch) => {
   dispatch({
@@ -69,6 +83,7 @@ export const subscribedStats = () => (dispatch) => {
       }),
   );
 };
+
 
 export const discoverCandidates = gid => (dispatch) => {
   dispatch({

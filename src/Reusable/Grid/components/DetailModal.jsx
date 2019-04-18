@@ -41,6 +41,13 @@ class DetailModal extends PureComponent {
         </div>
         <div className="modal__body">
           {instance.briefDescription}
+          {instance.source && (
+          <p className="m-0 p-2 text-center lead" >
+            <a target="_blank" rel="noreferrer noopener" href={instance.source} className="sl">
+                  Ver Fuente <i className="fal fa-external-link p-2" />
+            </a>
+          </p>
+          )}
         </div>
         <ButtonToolbar className="modal__footer">
           <Button onClick={toggle}>Cerrar</Button>

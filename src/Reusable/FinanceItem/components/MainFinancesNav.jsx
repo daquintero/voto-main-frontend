@@ -46,14 +46,17 @@ class MainFinancesNav extends PureComponent {
         {relatedFunds || instances[0] ? (
           <>
             <NavItem
-              className="list-group-item small-enlarge m-2 rounded-0 border-0 w-100"
+              className="list-group-item small-enlarge m-2 rounded-0 border-0 w-100 sl"
               onClick={this.toggleModal}
             >
               <div>
                 <h5>{numeral(relatedFunds).format('$ 0,0.00')}</h5>
               </div>
               <div>
+<<<<<<< HEAD
                 <h6>Desglose</h6>
+=======
+>>>>>>> staging
                 <p className="small">Haz click para el desglose</p>
               </div>
             </NavItem>
