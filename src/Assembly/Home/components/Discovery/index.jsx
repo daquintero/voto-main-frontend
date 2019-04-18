@@ -48,8 +48,8 @@ class Discover extends Component {
                 data-tab="2"
               >
                 <h5 className="py-2 m-0 text-center">
-                  <i className="fal fa-podium" />
-                  {' '}Descubre tus Candidatos
+                  <i className="fal fa-vote-yea" />
+                  {' '}Votos Históricos - Presidente
                 </h5>
               </div>
               <div
