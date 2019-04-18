@@ -596,18 +596,18 @@ Array [
               ¡Descarga el Manual de Cívica Electoral Gratis!
             </a>
           </h4>
-          <div
-            className="customViewer"
-            style={
-              Object {
-                "textAlign": "center",
-              }
-            }
+          <a
+            className="p-2"
+            href="https://s3.amazonaws.com/votoinformado2019/Manual_Voto_Informado_2019.pdf"
+            rel="noreferrer noopener"
+            target="_blank"
           >
-            <div>
-              Loading PDF...
-            </div>
-          </div>
+            <img
+              alt=""
+              className="w-100 p-2 px-lg-5 justify-content-center"
+              src="/img/manual.JPG"
+            />
+          </a>
         </div>
       </div>
     </div>
